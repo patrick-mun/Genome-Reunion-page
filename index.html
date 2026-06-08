@@ -1,29 +1,866 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genome Reunion</title>
-    <link rel="stylesheet" href="css/styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Génome Réunion — Référentiel génomique de La Réunion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Genome Reunion</h1>
-        <p>Bienvenue sur la page de génome reunion</p>
-    </header>
 
-    <main>
-        <section class="content">
-            <h2>À propos</h2>
-            <p>Cette page a été restructurée pour une meilleure maintenabilité.</p>
-            <button id="demoBtn">Cliquez-moi</button>
-        </section>
-    </main>
+<!-- ═══════════════════════════════════════════════════════
+     NAV
+════════════════════════════════════════════════════════════ -->
+<nav>
+  <a href="#hero" class="nav-logo">
+    <span class="nav-logo-mark">GR</span>
+    Génome Réunion
+  </a>
+  <ul class="nav-links">
+    <li><a href="#contexte">Contexte</a></li>
+    <li><a href="#singularite">La Réunion</a></li>
+    <li><a href="#methodologie">Méthodologie</a></li>
+    <li><a href="#ia">Modules IA</a></li>
+    <li><a href="#budget">Budget</a></li>
+    <li><a href="#equipe">Équipe</a></li>
+    <li><a href="#documents" class="nav-cta">Documents</a></li>
+  </ul>
+</nav>
 
-    <footer>
-        <p>&copy; 2026 Genome Reunion. Tous droits réservés.</p>
-    </footer>
 
-    <script src="js/script.js"></script>
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+════════════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          CHU de La Réunion · Service de Génétique
+        </div>
+        <h1 class="hero-title">
+          Premier référentiel<br>
+          génomique de <em>La Réunion</em>
+        </h1>
+        <p class="hero-subtitle">
+          Construire une base de données génomiques locale pour une population admixée et fondatrice,
+          absente des référentiels internationaux (gnomAD, 1000 Genomes).
+        </p>
+        <div class="hero-actions">
+          <a href="#methodologie" class="btn btn-primary">Découvrir le projet →</a>
+          <a href="#documents" class="btn btn-ghost">Documents détaillés</a>
+        </div>
+        <p style="font-size:0.78rem; color:var(--muted); margin-top:20px;">
+          Porteur : Laboratoire de Génétique, CHU de La Réunion · Version V3.5 géo-ancestrale · Juin 2026
+        </p>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card teal">
+          <div class="stat-num">2 500</div>
+          <div class="stat-label">Individus génotypés sur puce SNP (~1,9 M SNP)</div>
+        </div>
+        <div class="stat-card blue">
+          <div class="stat-num">350</div>
+          <div class="stat-label">WGS optimisés — pris en charge par POPgen (0 €)</div>
+        </div>
+        <div class="stat-card amber">
+          <div class="stat-num">100</div>
+          <div class="stat-label">Familles nucléaires pour le phasage haplotypique</div>
+        </div>
+        <div class="stat-card coral">
+          <div class="stat-num">36 mois</div>
+          <div class="stat-label">Durée du projet · 7 phases · 4 modules IA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     EN BREF — DÉCISIONS
+════════════════════════════════════════════════════════════ -->
+<section id="decisions">
+  <div class="container">
+    <div class="section-label">En bref</div>
+    <h2>Trois décisions à prendre</h2>
+    <p>Le projet nécessite un arbitrage sur trois axes structurants. Chaque choix impacte directement le budget total sur 36 mois.</p>
+
+    <div class="decision-grid">
+      <div class="decision-card">
+        <div class="decision-num">Décision 1</div>
+        <h3>Génotypage SNP</h3>
+        <div class="scenario-row">
+          <span class="scenario-label">Sous-traitance (CNG, GenomEast…)</span>
+          <span class="scenario-val">265 000 €</span>
+        </div>
+        <div class="scenario-row">
+          <span class="scenario-label">Acquisition iScan Illumina</span>
+          <span class="scenario-val">479 000 €</span>
+        </div>
+        <p style="font-size:0.78rem; color:var(--muted); margin-top:12px;">
+          L'iScan crée un actif durable pour le CHU ; les génotypages futurs reviennent à &lt; 30 €/éch.
+        </p>
+      </div>
+      <div class="decision-card">
+        <div class="decision-num">Décision 2</div>
+        <h3>Infrastructure IT</h3>
+        <div class="scenario-row">
+          <span class="scenario-label">On-premise CAPEX</span>
+          <span class="scenario-val">334 000 €</span>
+        </div>
+        <div class="scenario-row">
+          <span class="scenario-label">Cloud hybride HDS (OPEX)</span>
+          <span class="scenario-val">270 000 €</span>
+        </div>
+        <p style="font-size:0.78rem; color:var(--muted); margin-top:12px;">
+          Le cloud hybride réduit de 64 000 € le sous-total mais génère des coûts récurrents.
+        </p>
+      </div>
+      <div class="decision-card">
+        <div class="decision-num">Décision 3</div>
+        <h3>Ressources humaines</h3>
+        <div class="scenario-row">
+          <span class="scenario-label">Prop. 1 — Stages + CDD</span>
+          <span class="scenario-val">565 000 €</span>
+        </div>
+        <div class="scenario-row">
+          <span class="scenario-label">Prop. 2 — Alternance + CIFRE ★</span>
+          <span class="scenario-val">524 000 €</span>
+        </div>
+        <div class="scenario-row">
+          <span class="scenario-label">Prop. 3 — Max alternance</span>
+          <span class="scenario-val">485 000 €</span>
+        </div>
+        <p style="font-size:0.78rem; color:var(--muted); margin-top:12px;">
+          La prop. 2 offre le meilleur équilibre coût / risque / complexité administrative.
+        </p>
+      </div>
+    </div>
+
+    <div class="budget-summary">
+      <div class="budget-scenario opt">
+        <h4>Scénario Optimal</h4>
+        <div class="budget-total">~1 403 000 €</div>
+        <div class="budget-sub">Sous-traitance + Cloud hybride + Prop. RH 2</div>
+      </div>
+      <div class="budget-scenario max">
+        <h4>Scénario Maximal</h4>
+        <div class="budget-total" style="color:var(--muted)">~1 709 000 €</div>
+        <div class="budget-sub">iScan à acquérir + On-premise + Prop. RH 2</div>
+      </div>
+    </div>
+
+    <div class="highlight-box">
+      <p><strong>Point structurant :</strong> le séquençage WGS des 350 individus est pris en charge par le consortium POPgen — son coût pour le laboratoire est nul. Le principal poste biologique reste le génotypage SNP (~265–479 K€ selon le scénario).</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     CONTEXTE — LE BIAIS
+════════════════════════════════════════════════════════════ -->
+<section id="contexte">
+  <div class="container">
+    <div class="section-label">Contexte scientifique</div>
+    <h2>L'angle mort de la médecine de précision</h2>
+    <p>Les génomes de référence et bases de fréquences internationales sont dominés par des individus d'ascendance européenne. La population réunionnaise est quasi absente de ces ressources, avec des conséquences cliniques directes.</p>
+
+    <div class="biais-grid">
+      <div class="biais-card">
+        <h4>🧬 Représentation</h4>
+        <p>Environ 96 % des séquences disponibles en 2009 provenaient d'ascendance européenne. La part africaine dans les GWAS : 1,1 % en 2022.</p>
+      </div>
+      <div class="biais-card">
+        <h4>⚗️ Fréquences alléliques</h4>
+        <p>Un variant fréquent localement peut être classé « rare » dans gnomAD, et inversement. Les profils réunionnais restent dilués dans des catégories trop larges.</p>
+      </div>
+      <div class="biais-card">
+        <h4>🤖 Biais IA hérité</h4>
+        <p>Les modèles entraînés sur des cohortes euro-centrées (PRS, pharmacogénétique, pathogénicité) perdent en précision sur les populations admixées.</p>
+      </div>
+      <div class="biais-card">
+        <h4>💊 Pharmacogénétique</h4>
+        <p>Les allèles CYP2C9*5,*6,*8,*11 (warfarine) et CYP2C19 (clopidogrel) fréquents en Afrique n'étaient pas inclus dans les algorithmes de dosage calibrés sur cohortes européennes.</p>
+      </div>
+      <div class="biais-card">
+        <h4>📋 Annotation fonctionnelle</h4>
+        <p>Les bases ClinVar, ACMG et les scores CADD/SIFT/PolyPhen sont calibrés sur des cohortes européennes ou est-asiatiques — inadaptés à La Réunion.</p>
+      </div>
+      <div class="biais-card">
+        <h4>⚖️ Équité en santé</h4>
+        <p>Les patients asiatiques, africains ou hispaniques reçoivent significativement plus de VUS que les patients européens — stress et errance diagnostique.</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="margin-bottom:12px;">Le mur clinique : VUS et pertes de chance</h3>
+    <div class="clinical-comparison">
+      <div class="clin-card ok">
+        <div class="clin-label">Patient Européen standard</div>
+        <div class="clin-result">✓ Diagnostic clair</div>
+        <p class="clin-desc">Variant interprétable grâce aux fréquences de référence calibrées sur sa population.</p>
+      </div>
+      <div class="clin-card problem">
+        <div class="clin-label">Patient Réunionnais</div>
+        <div class="clin-result">⚠ Variant de Signification Inconnue (VUS)</div>
+        <div class="clin-item clin-desc" style="padding:5px 0; border-bottom:1px solid var(--border)">Faux positifs — diagnostics erronés (ex. cardiomyopathie hypertrophique)</div>
+        <div class="clin-item clin-desc">Analyses complémentaires inutiles · errance diagnostique · anxiété familiale</div>
+      </div>
+    </div>
+
+    <div class="highlight-box" style="margin-top:24px;">
+      <p>La population réunionnaise n'est pas absente de toute littérature, mais absente comme <strong>référence dédiée</strong>. C'est cette absence qui fragilise l'imputation, l'interprétation des variants et les scores de risque polygénique.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     SINGULARITÉ DE LA RÉUNION
+════════════════════════════════════════════════════════════ -->
+<section id="singularite">
+  <div class="container">
+    <div class="two-col-wide">
+      <div>
+        <div class="section-label">La Réunion</div>
+        <h2>Une double singularité unique au monde</h2>
+        <p>La Réunion combine deux logiques que les outils standards traitent mal ensemble : une admixture multicontinentale ancienne et des effets fondateurs régionaux.</p>
+
+        <div class="singularity-grid">
+          <div class="singularity-card">
+            <div class="singularity-icon">🌍</div>
+            <h3>Admixture multicontinentale</h3>
+            <p style="font-size:0.82rem;">Un peuplement sans autochtones, façonné par l'esclavage (Afrique, Madagascar), l'engagisme (Inde du Sud, Chine) et les migrations récentes. Chaque individu porte une combinaison unique de segments ancestraux.</p>
+          </div>
+          <div class="singularity-card">
+            <div class="singularity-icon">🏔</div>
+            <h3>Effet fondateur</h3>
+            <p style="font-size:0.82rem;">Des goulots historiques produisent des variants rares localement fixés, invisibles dans les bases mondiales. Ex. : syndrome de Larsen-Bourbon (B4GALT7) et syndrome de Ravine, décrits uniquement chez des familles réunionnaises.</p>
+          </div>
+        </div>
+
+        <div class="highlight-box">
+          <p><strong>Conséquence analytique :</strong> parler de "la population réunionnaise" est utile cliniquement, mais insuffisant analytiquement. Il faut modéliser sa diversité interne — c'est précisément ce que justifie la méthode géo-ancestrale S_div.</p>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:6px; font-size:0.85rem; color:var(--muted); font-weight:500; text-transform:uppercase; letter-spacing:0.06em;">Composition ancestrale illustrative</h3>
+        <p style="font-size:0.75rem; color:var(--muted); margin-bottom:20px;">Valeurs à valider sur la cohorte — données pédagogiques issues de la présentation du projet</p>
+        <div class="ancestry-bars">
+          <div class="anc-row">
+            <span class="anc-label">Afrique / Malgache</span>
+            <div class="anc-bar-wrap"><div class="anc-bar" style="width:45%"></div></div>
+            <span class="anc-val" style="color:var(--teal)">≈ 45 %</span>
+          </div>
+          <div class="anc-row">
+            <span class="anc-label">Inde du Sud</span>
+            <div class="anc-bar-wrap"><div class="anc-bar" style="width:25%"></div></div>
+            <span class="anc-val" style="color:var(--amber)">≈ 25 %</span>
+          </div>
+          <div class="anc-row">
+            <span class="anc-label">Européen</span>
+            <div class="anc-bar-wrap"><div class="anc-bar" style="width:15%"></div></div>
+            <span class="anc-val" style="color:var(--blue)">≈ 15 %</span>
+          </div>
+          <div class="anc-row">
+            <span class="anc-label">Zarabe / Gujarati</span>
+            <div class="anc-bar-wrap"><div class="anc-bar" style="width:8%"></div></div>
+            <span class="anc-val" style="color:var(--coral)">≈ 8 %</span>
+          </div>
+          <div class="anc-row">
+            <span class="anc-label">Chinois / Asie</span>
+            <div class="anc-bar-wrap"><div class="anc-bar" style="width:7%"></div></div>
+            <span class="anc-val" style="color:var(--green)">≈ 7 %</span>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <h3 style="margin-bottom:14px;">Chronologie du peuplement</h3>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.78rem; font-weight:700; color:var(--teal); white-space:nowrap; margin-top:2px;">1663</span>
+            <p style="font-size:0.82rem; color:var(--muted); margin:0;">Colonisation française. Esclavage : plus de 160 000 esclaves d'Afrique orientale et de Madagascar.</p>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.78rem; font-weight:700; color:var(--teal); white-space:nowrap; margin-top:2px;">1848</span>
+            <p style="font-size:0.82rem; color:var(--muted); margin:0;">Abolition. Engagisme : 200 000+ travailleurs du sud de l'Inde (Tamouls), Chine, Madagascar, Comores.</p>
+          </div>
+          <div style="display:flex; gap:14px; align-items:flex-start;">
+            <span style="font-family:'Space Grotesk',sans-serif; font-size:0.78rem; font-weight:700; color:var(--teal); white-space:nowrap; margin-top:2px;">XXe s.</span>
+            <p style="font-size:0.82rem; color:var(--muted); margin:0;">Migrations comoriennes et malgaches. Population actuelle : diversité génétique exceptionnelle, façonnée sur un espace insulaire clos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MÉTHODOLOGIE
+════════════════════════════════════════════════════════════ -->
+<section id="methodologie">
+  <div class="container">
+    <div class="section-label">Architecture scientifique</div>
+    <h2>Pipeline méthodologique en 3 couches</h2>
+    <p>Le WGS n'est pas un tirage au sort mais une optimisation raisonnée. Sous contrainte budgétaire, chaque individu séquencé doit maximiser l'information génétique utile au référentiel.</p>
+
+    <div class="two-col" style="margin-top:40px;">
+      <div>
+        <div class="pipeline-steps">
+          <div class="pipeline-step">
+            <div class="step-num active">1</div>
+            <div class="step-body">
+              <div class="step-tag">Couche populationnelle</div>
+              <h3>Cohorte SNP — 2 500 individus</h3>
+              <p>Génotypage sur puce GDA-8 (~1,9 M SNP). Décrit la structure de la population : PCA, ADMIXTURE, proportions d'ascendance. Base du recalibrage des fréquences finales.</p>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-num active">2</div>
+            <div class="step-body">
+              <div class="step-tag">Module familial</div>
+              <h3>100 familles nucléaires</h3>
+              <p>Hors cohorte. Fournit des contraintes de transmission mendélienne à SHAPEIT4, indispensables pour le phasage haplotypique réunionnais. <strong>Ressource technique, pas analytique.</strong></p>
+            </div>
+          </div>
+          <div class="pipeline-step">
+            <div class="step-num active">3</div>
+            <div class="step-body">
+              <div class="step-tag">Panel hybride · POPgen gratuit</div>
+              <h3>350 WGS sélectionnés</h3>
+              <p>Noyau géo-ancestral (322) + bras de découverte (28). Séquençage WGS pris en charge par POPgen à coût nul pour le laboratoire. Sert de vérité terrain pour l'imputation et la découverte de variants.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:16px;">Trois ressources complémentaires</h3>
+        <div class="table-wrap" style="margin-top:0;">
+          <table>
+            <thead>
+              <tr>
+                <th>Ressource</th>
+                <th>Taille</th>
+                <th>Rôle principal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Cohorte SNP</strong></td>
+                <td class="td-highlight">2 500</td>
+                <td>Structure génétique, sélection WGS, fréquences</td>
+              </tr>
+              <tr>
+                <td><strong>Panel WGS</strong></td>
+                <td class="td-highlight">350</td>
+                <td>Variants rares, imputation locale, référence clinique</td>
+              </tr>
+              <tr>
+                <td><strong>Familles SNP</strong></td>
+                <td class="td-highlight">~300</td>
+                <td>Phasage par transmission mendélienne</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="warn-box" style="margin-top:20px;">
+          <p><strong>⚠ Point critique :</strong> les 100 familles ne sont pas incluses dans les 2 500 et ne servent jamais à estimer des fréquences populationnelles. Les fréquences finales sont recalibrées sur les 2 500 SNP.</p>
+        </div>
+
+        <div style="margin-top:24px;">
+          <h3 style="margin-bottom:12px;">Seuil opérationnel — 700 haplotypes</h3>
+          <p style="font-size:0.82rem; color:var(--muted);">350 WGS diploïdes = 700 haplotypes. P(détection) = 1 − (1 − MAF)⁷⁰⁰</p>
+          <div class="table-wrap" style="margin-top:12px;">
+            <table>
+              <thead><tr><th>MAF</th><th>Copies</th><th>P(détection)</th><th>Fiabilité</th></tr></thead>
+              <tbody>
+                <tr><td>5 %</td><td>35</td><td>&gt; 99,9 %</td><td><span class="badge badge-green">✓ Robuste</span></td></tr>
+                <tr><td>1 %</td><td>7</td><td>&gt; 99,9 %</td><td><span class="badge badge-teal">✓ Limite acceptable</span></td></tr>
+                <tr><td>0,5 %</td><td>3,5</td><td>≈ 97 %</td><td><span class="badge badge-amber">⚠ Fragile</span></td></tr>
+                <tr><td>0,1 %</td><td>0,7</td><td>≈ 50 %</td><td><span class="badge badge-coral">✗ Non fiable</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+    <h3 style="margin-bottom:20px;">Les 7 phases sur 36 mois</h3>
+    <div class="phases-grid">
+      <div class="phase-card">
+        <div class="phase-id">Phase 0</div>
+        <h4>Panels témoins</h4>
+        <p>Accès et harmonisation 1000G, EGA, MGUA Madagascar, H3Africa…</p>
+        <span class="phase-timing">M1–M3</span>
+      </div>
+      <div class="phase-card">
+        <div class="phase-id">Phase 1</div>
+        <h4>Validation externe</h4>
+        <p>Simulation sur 1000G high-coverage. Gel des paramètres V3.5.</p>
+        <span class="phase-timing">M1–M5</span>
+      </div>
+      <div class="phase-card">
+        <div class="phase-id">Phase 2</div>
+        <h4>Cohorte Réunion SNP</h4>
+        <p>QC des 2500, PCA / ADMIXTURE, sélection des 350 WGS.</p>
+        <span class="phase-timing">M4–M9</span>
+      </div>
+      <div class="phase-card">
+        <div class="phase-id">Phase 3</div>
+        <h4>Module familial</h4>
+        <p>100 familles nucléaires, phasage haplotypique réunionnais.</p>
+        <span class="phase-timing">M4–M14</span>
+      </div>
+      <div class="phase-card">
+        <div class="phase-id">Phase 4</div>
+        <h4>WGS POPgen</h4>
+        <p>Séquençage, VCF/BAM, base de données variants, fréquences.</p>
+        <span class="phase-timing">M8–M22</span>
+      </div>
+      <div class="phase-card">
+        <div class="phase-id">Phase 5</div>
+        <h4>Modules IA</h4>
+        <p>Développement et validation des 4 modules cliniques (AUC ≥ 0,85).</p>
+        <span class="phase-timing">M17–M30</span>
+      </div>
+      <div class="phase-card">
+        <div class="phase-id">Phase 6</div>
+        <h4>Portail web clinique</h4>
+        <p>Django, API (&lt; 500 ms), validation CHU, publication.</p>
+        <span class="phase-timing">M27–M36</span>
+      </div>
+      <div class="phase-card" style="background:var(--teal-dim); border-color:oklch(0.72 0.14 183 / 0.25);">
+        <div class="phase-id" style="color:var(--teal);">WGS</div>
+        <h4 style="color:var(--teal);">POPgen — 0 €</h4>
+        <p style="color:oklch(0.85 0.03 190);">Le séquençage WGS des 350 individus est entièrement pris en charge par le consortium POPgen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     ALGORITHME S_div
+════════════════════════════════════════════════════════════ -->
+<section id="algorithme">
+  <div class="container">
+    <div class="section-label">Algorithme de sélection</div>
+    <h2>Score géo-ancestral S_div</h2>
+    <p>Un score composite explicite, reproductible et auditable, qui classe les individus <em>au sein de chaque cellule géo-ancestrale</em> (secteur × cluster d'ascendance inférée). Il remplace une stratification strictement géographique par une logique distributionnelle.</p>
+
+    <div class="sdiv-formula">
+      <div class="formula-text">
+        S_div(i) = <span class="fw">0,30</span> × <span class="fv">PCA_score</span>(i)
+        + <span class="fw">0,30</span> × <span class="fv">ADMIX_score</span>(i)
+        + <span class="fw">0,25</span> × <span class="fv">IBD_score</span>(i)
+        + <span class="fw">0,15</span> × <span class="fv">ROH_score</span>(i)
+      </div>
+      <p style="font-size:0.75rem; color:var(--muted); margin-top:12px; margin-bottom:0;">Poids de travail pré-validation · analysés par sensibilité (±10 %) et leave-one-component-out avant gel</p>
+    </div>
+
+    <div class="sdiv-components">
+      <div class="comp-card">
+        <div class="comp-weight">30 %</div>
+        <div class="comp-name">PCA_score — Position</div>
+        <div class="comp-desc">Distance au centroïde dans l'espace ancré sur les pools témoins (1000G + EGA). Capture la marginalité génétique du secteur.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-weight">30 %</div>
+        <div class="comp-name">ADMIX_score — Composition</div>
+        <div class="comp-desc">Entropie de Shannon des proportions ancestrales q_k issues d'ADMIXTURE supervisée. Capture la diversité ancestrale individuelle.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-weight">25 %</div>
+        <div class="comp-name">IBD_score — Indépendance</div>
+        <div class="comp-desc">1 − max parenté KING. Évite la redondance informationnelle. Contrainte dure cross-secteur : kinship ≥ 0,0625 = exclusion.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-weight">15 %</div>
+        <div class="comp-name">ROH_score — Fondateur</div>
+        <div class="comp-desc">max(0, 1 − ROH_total / 100 Mb). Pénalise l'excès d'autozygotie, signature de consanguinité ou d'effet fondateur fort.</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="two-col">
+      <div>
+        <h3 style="margin-bottom:16px;">Panel hybride V3 : noyau + découverte</h3>
+        <div class="table-wrap" style="margin-top:0;">
+          <table>
+            <thead><tr><th>Composante</th><th>Part</th><th>N approx.</th><th>Objectif</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>Noyau géo-ancestral</td>
+                <td><strong>90–95 %</strong></td>
+                <td class="td-highlight">322</td>
+                <td>Ancrage démographique, profils repr.</td>
+              </tr>
+              <tr>
+                <td>Bras découverte</td>
+                <td><strong>5–10 %</strong></td>
+                <td class="td-highlight">28</td>
+                <td>Profils rares, fondateurs, extrêmes</td>
+              </tr>
+              <tr>
+                <td style="font-weight:700;">Total</td>
+                <td></td>
+                <td class="td-highlight">350</td>
+                <td>Panel hybride POPgen</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 style="margin:24px 0 14px;">Allocation par secteur (valeurs illustratives)</h3>
+        <div class="table-wrap" style="margin-top:0;">
+          <table>
+            <thead><tr><th>Secteur</th><th>% cohorte</th><th>N noyau</th></tr></thead>
+            <tbody>
+              <tr><td>Nord-Est</td><td>20,0 %</td><td>64</td></tr>
+              <tr><td>Sud-Est</td><td>16,0 %</td><td>52</td></tr>
+              <tr><td>Est</td><td>15,2 %</td><td>49</td></tr>
+              <tr><td>Sud</td><td>14,0 %</td><td>45</td></tr>
+              <tr><td>Nord</td><td>12,8 %</td><td>41</td></tr>
+              <tr><td>Ouest</td><td>12,0 %</td><td>39</td></tr>
+              <tr><td>Nord-Ouest</td><td>10,0 %</td><td>32</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:16px;">Anti-biais directionnel — Quintiles</h3>
+        <p style="font-size:0.82rem; color:var(--muted); margin-bottom:16px;">Sélectionner uniquement les S_div élevés sur-représenterait les profils marginaux. La stratification par quintile ancre le panel dans les profils typiques du secteur.</p>
+        <div style="background:var(--bg2); border:1px solid var(--border); border-radius:8px; overflow:hidden; margin-bottom:16px;">
+          <div style="display:flex; height:48px;">
+            <div style="flex:2; background:var(--teal-dim); display:flex; align-items:center; justify-content:center; font-size:0.72rem; font-weight:600; color:var(--teal); border-right:1px solid var(--border);">Q1 · 20 %</div>
+            <div style="flex:2; background:oklch(0.72 0.14 183 / 0.08); display:flex; align-items:center; justify-content:center; font-size:0.72rem; font-weight:600; color:var(--teal); border-right:1px solid var(--border);">Q2 · 20 %</div>
+            <div style="flex:3; background:oklch(0.72 0.14 183 / 0.05); display:flex; align-items:center; justify-content:center; font-size:0.72rem; font-weight:700; color:var(--text); border-right:1px solid var(--border);">Q3 médiane · 30 %</div>
+            <div style="flex:2; background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:0.72rem; color:var(--muted); border-right:1px solid var(--border);">Q4 · 20 %</div>
+            <div style="flex:1; background:var(--bg3); display:flex; align-items:center; justify-content:center; font-size:0.72rem; color:var(--muted);">Q5 · 10 %</div>
+          </div>
+          <div style="padding:10px 16px; font-size:0.72rem; color:var(--muted); border-top:1px solid var(--border);">← scores élevés (marginalité) · scores bas (typique) →</div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:0;">
+          <table>
+            <thead><tr><th>N par cellule</th><th>Stratégie</th></tr></thead>
+            <tbody>
+              <tr><td>≥ 20</td><td><strong>Quintile</strong> 20-20-30-20-10 %</td></tr>
+              <tr><td>6 à 19</td><td><strong>Binaire 60/40</strong></td></tr>
+              <tr><td>&lt; 6</td><td>Greedy seul, documenté</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box" style="margin-top:16px;">
+          <p><strong>Robustesse :</strong> l'algorithme est exécuté sur 100+ ordres aléatoires de secteurs. Cible de stabilité : &gt; 95 % de l'ensemble sélectionné est identique entre ordres.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MODULES IA
+════════════════════════════════════════════════════════════ -->
+<section id="ia">
+  <div class="container">
+    <div class="section-label">Valorisation clinique</div>
+    <h2>4 modules d'IA clinique</h2>
+    <p>L'IA intervient en surcouche du référentiel. Une fois les variants réunionnais catalogués et leurs fréquences locales établies, ces modules transforment la donnée brute en aide à la décision clinique recalibrée sur la population réunionnaise.</p>
+
+    <div class="ia-grid">
+      <div class="ia-card">
+        <div class="ia-num">01</div>
+        <div>
+          <h3>Pathogénicité des variants</h3>
+          <p>Graph Neural Networks entraînés sur ClinVar, COSMIC et variants locaux. Reclassification des VUS réunionnais.</p>
+          <div class="ia-target" style="color:var(--teal);">Cible : AUC ≥ 0,85 sur jeu de validation local</div>
+        </div>
+      </div>
+      <div class="ia-card">
+        <div class="ia-num">02</div>
+        <div>
+          <h3>Pharmacogénétique × admixture</h3>
+          <p>Random Forest + XGBoost sur CYP2C19, CYP2D6, CYP3A4/5, SLCO1B1. Recommandation thérapeutique personnalisée.</p>
+          <div class="ia-target" style="color:var(--amber);">Comparaison vs recommandations CPIC</div>
+        </div>
+      </div>
+      <div class="ia-card">
+        <div class="ia-num">03</div>
+        <div>
+          <h3>Analyse d'admixture</h3>
+          <p>Autoencoders + clustering HDBSCAN sur scores ADMIXTURE, PCA, IBD et ROH. Profils ancestraux individuels.</p>
+          <div class="ia-target" style="color:var(--blue);">Profils + strate géo-ancestrale par individu</div>
+        </div>
+      </div>
+      <div class="ia-card">
+        <div class="ia-num">04</div>
+        <div>
+          <h3>Polygenic Risk Score recalibré</h3>
+          <p>PRS recalibrés localement sur diabète T2, HTA, cardiopathies pour une prévention stratifiée à la Réunion.</p>
+          <div class="ia-target" style="color:var(--coral);">Risque stratifié × population × secteur</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-stack" style="margin-top:28px;">
+      <div class="tech-group">
+        <h4>Frameworks ML</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">PyTorch 2.x</span>
+          <span class="tech-tag">TensorFlow 2.x</span>
+          <span class="tech-tag">scikit-learn</span>
+          <span class="tech-tag">XGBoost</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4>MLOps & Déploiement</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">MLflow</span>
+          <span class="tech-tag">Kubeflow</span>
+          <span class="tech-tag">Docker</span>
+          <span class="tech-tag">Kubernetes</span>
+          <span class="tech-tag">ONNX Runtime</span>
+        </div>
+      </div>
+      <div class="tech-group">
+        <h4>Portail clinique</h4>
+        <div class="tech-tags">
+          <span class="tech-tag">Django</span>
+          <span class="tech-tag">API REST</span>
+          <span class="tech-tag">PostgreSQL</span>
+          <span class="tech-tag">MongoDB</span>
+          <span class="tech-tag">&lt; 500 ms</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     BUDGET
+════════════════════════════════════════════════════════════ -->
+<section id="budget">
+  <div class="container">
+    <div class="section-label">Plan économique</div>
+    <h2>Budget sur 36 mois</h2>
+    <p>Scénario recommandé : acquisition iScan + Proposition RH 2 (alternance + CIFRE) + infrastructure on-premise. Le WGS des 350 individus est pris en charge par POPgen — coût nul pour le laboratoire.</p>
+
+    <div class="budget-visual">
+      <div class="budget-bar-section">
+        <div class="budget-item">
+          <span class="budget-item-label">RH Prop. 2 (coût employeur)</span>
+          <div class="budget-item-bar-wrap"><div class="budget-item-bar bar-rh" style="width:100%"></div></div>
+          <span class="budget-item-val" style="color:var(--teal)">524 000 €</span>
+        </div>
+        <div class="budget-item">
+          <span class="budget-item-label">Infrastructure IT on-premise</span>
+          <div class="budget-item-bar-wrap"><div class="budget-item-bar bar-it" style="width:64%"></div></div>
+          <span class="budget-item-val" style="color:var(--blue)">334 000 €</span>
+        </div>
+        <div class="budget-item">
+          <span class="budget-item-label">iScan + AutoLoader + qualification</span>
+          <div class="budget-item-bar-wrap"><div class="budget-item-bar bar-iscan" style="width:48%"></div></div>
+          <span class="budget-item-val" style="color:var(--amber)">253 000 €</span>
+        </div>
+        <div class="budget-item">
+          <span class="budget-item-label">Génotypage GDA-8 (consommables)</span>
+          <div class="budget-item-bar-wrap"><div class="budget-item-bar bar-geno" style="width:43%"></div></div>
+          <span class="budget-item-val" style="color:var(--coral)">226 000 €</span>
+        </div>
+        <div class="budget-item">
+          <span class="budget-item-label">Conservation CRB 36 mois</span>
+          <div class="budget-item-bar-wrap"><div class="budget-item-bar bar-crb" style="width:24%"></div></div>
+          <span class="budget-item-val">127 676 €</span>
+        </div>
+        <div class="budget-item">
+          <span class="budget-item-label">Extraction ADN (~2 800 éch.)</span>
+          <div class="budget-item-bar-wrap"><div class="budget-item-bar bar-adn" style="width:10%"></div></div>
+          <span class="budget-item-val">54 000 €</span>
+        </div>
+        <div class="budget-item">
+          <span class="budget-item-label">Prestation web + formation</span>
+          <div class="budget-item-bar-wrap"><div class="budget-item-bar bar-web" style="width:7%"></div></div>
+          <span class="budget-item-val">35 000 €</span>
+        </div>
+        <div class="budget-item" style="opacity:0.5;">
+          <span class="budget-item-label">WGS 350 individus (POPgen)</span>
+          <div class="budget-item-bar-wrap"><div class="budget-item-bar" style="width:0%;background:var(--green)"></div></div>
+          <span class="budget-item-val" style="color:var(--green)">0 €</span>
+        </div>
+      </div>
+      <div class="budget-total-row">
+        <div>
+          <div class="budget-total-label">Total (Sc. 2 iScan + Prop. RH 2) · hors contingence</div>
+          <div style="font-size:0.75rem; color:var(--muted); margin-top:2px;">+ contingence 10 % = 155 368 € → <strong>~1 709 000 €</strong> au total</div>
+        </div>
+        <div class="budget-total-val">1 553 676 €</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="margin-bottom:20px;">Jalons clés</h3>
+    <div class="milestones">
+      <div class="milestone"><span class="milestone-m">M3</span><span class="milestone-text">Infrastructure IT opérationnelle (serveurs, réseau, sécurité)</span></div>
+      <div class="milestone"><span class="milestone-m">M5</span><span class="milestone-text">Génotypage des 2 500 individus lancé</span></div>
+      <div class="milestone"><span class="milestone-m">M9</span><span class="milestone-text">Liste 350 WGS gelée → envoi consortium POPgen</span></div>
+      <div class="milestone"><span class="milestone-m">M14</span><span class="milestone-text">Module familial phasé + haplotypes réunionnais</span></div>
+      <div class="milestone"><span class="milestone-m">M22</span><span class="milestone-text">Premiers VCF/BAM + base de données variants v1</span></div>
+      <div class="milestone"><span class="milestone-m">M26</span><span class="milestone-text">Modules IA 1+2 validés (AUC ≥ 0,85)</span></div>
+      <div class="milestone"><span class="milestone-m">M30</span><span class="milestone-text">Modules IA 3+4 opérationnels (admixture, PRS)</span></div>
+      <div class="milestone"><span class="milestone-m">M34</span><span class="milestone-text">Portail web clinique en production (API &lt; 500 ms)</span></div>
+      <div class="milestone"><span class="milestone-m">M36</span><span class="milestone-text">Validation clinique · ≥ 3 publications · ≥ 5 centres</span></div>
+    </div>
+
+    <div class="divider"></div>
+
+    <h3 style="margin-bottom:16px;">Métriques de succès</h3>
+    <div class="table-wrap" style="margin-top:0;">
+      <table>
+        <thead><tr><th>Métrique</th><th>Cible</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Collecte</td><td class="td-highlight">≥ 2 500 individus</td><td>Représentativité géo-ancestrale validée (audit EFS)</td></tr>
+          <tr><td>Sélection WGS</td><td class="td-highlight">350 WGS</td><td>Sélection stricte ou hybride 322 + 28</td></tr>
+          <tr><td>AUC pathogénicité</td><td class="td-highlight">≥ 0,85</td><td>Module 1 sur jeu de validation local</td></tr>
+          <tr><td>Latence API</td><td class="td-highlight">&lt; 500 ms</td><td>Requêtes cliniques en production</td></tr>
+          <tr><td>Publications</td><td class="td-highlight">≥ 3 articles</td><td>Peer-reviewed, année 2</td></tr>
+          <tr><td>Adoption clinique</td><td class="td-highlight">≥ 5 centres</td><td>Intégration CHU + partenaires diagnostiques</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     ÉQUIPE
+════════════════════════════════════════════════════════════ -->
+<section id="equipe">
+  <div class="container">
+    <div class="section-label">Équipe</div>
+    <h2>Porteur et auteurs</h2>
+    <p>Projet porté par le Laboratoire de Génétique du CHU de La Réunion.</p>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">PM</div>
+        <div class="team-name">Patrick MUNIER</div>
+        <div class="team-role">Service de génétique moléculaire<br>CHU de La Réunion</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">TH</div>
+        <div class="team-name">Dr Thomas HUBY</div>
+        <div class="team-role">Responsable du service<br>CHU de La Réunion</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">SG</div>
+        <div class="team-name">Susie GUILLY</div>
+        <div class="team-role">Ingénieure<br>Service de génétique moléculaire</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">FF</div>
+        <div class="team-name">Dr Fanny FERROUL</div>
+        <div class="team-role">Service de Génétique Médicale<br>CHU de La Réunion</div>
+      </div>
+    </div>
+
+    <div style="margin-top:32px; background:var(--bg2); border:1px solid var(--border); border-radius:var(--r); padding:28px;">
+      <h3 style="margin-bottom:16px; font-size:1rem;">Partenaires & contexte</h3>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
+        <div>
+          <div class="section-label" style="margin-bottom:8px;">Séquençage WGS</div>
+          <p style="font-size:0.82rem; color:var(--muted); margin:0;">Consortium <strong style="color:var(--text);">POPgen</strong> — prise en charge intégrale des 350 WGS (0 € pour le laboratoire)</p>
+        </div>
+        <div>
+          <div class="section-label" style="margin-bottom:8px;">Plateformes génotypage</div>
+          <p style="font-size:0.82rem; color:var(--muted); margin:0;">CNG Évry · GenomEast · CNRGH (sous-traitance) ou acquisition iScan Illumina au CHU</p>
+        </div>
+        <div>
+          <div class="section-label" style="margin-bottom:8px;">Donneurs</div>
+          <p style="font-size:0.82rem; color:var(--muted); margin:0;"><strong style="color:var(--text);">EFS</strong> — Établissement Français du Sang · donneurs volontaires, audit de représentativité préalable</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     DOCUMENTS
+════════════════════════════════════════════════════════════ -->
+<section id="documents">
+  <div class="container">
+    <div class="section-label">Documents</div>
+    <h2>Accéder aux documents détaillés</h2>
+    <p>L'ensemble de la documentation technique, scientifique et économique est disponible en ligne.</p>
+
+    <div class="docs-grid">
+      <a href="https://patrick-mun.github.io/IT-and-reseach-cost-/" target="_blank" class="doc-card">
+        <div class="doc-icon">📊</div>
+        <h3>Dossier de faisabilité</h3>
+        <p>Évaluation complète des besoins matériels, humains et IT. Budget détaillé par scénario, architecture technique, analyse des risques.</p>
+        <div class="doc-arrow">Consulter le dossier →</div>
+      </a>
+      <a href="https://patrick-mun.github.io/IT-and-reseach-cost-/dossier.html" target="_blank" class="doc-card">
+        <div class="doc-icon">🔬</div>
+        <h3>Synthèse scientifique complète</h3>
+        <p>Document de travail scientifique complet : biais structurel, singularité réunionnaise, pipeline, algorithme S_div, validation, bibliographie 208 références.</p>
+        <div class="doc-arrow">Consulter la synthèse →</div>
+      </a>
+      <a href="https://patrick-mun.github.io/genome_reunion/" target="_blank" class="doc-card">
+        <div class="doc-icon">📽</div>
+        <h3>Présentation scientifique</h3>
+        <p>Présentation complète du projet (33 slides) : angle mort, singularité génétique, pipeline méthodologique, algorithme de sélection, impacts attendus.</p>
+        <div class="doc-arrow">Voir la présentation →</div>
+      </a>
+    </div>
+
+    <div class="highlight-box" style="margin-top:32px;">
+      <p><strong>Statut du document :</strong> document de travail scientifique, non destiné à diffusion grand public. Version méthodologique V3.5 géo-ancestrale (pools témoins EGA + 1000G) · Juin 2026.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <span class="footer-logo-mark">GR</span>
+          Génome Réunion
+        </div>
+        <div class="footer-meta">CHU de La Réunion · Service de Génétique · Juin 2026</div>
+      </div>
+      <div class="footer-right">
+        Référentiel génomique de La Réunion · V3.5 géo-ancestrale<br>
+        Budget optimal : ~1 403 000 € · Durée : 36 mois
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

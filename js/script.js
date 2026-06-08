@@ -1,11 +1,6 @@
-// Demo button functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const demoBtn = document.getElementById('demoBtn');
+// Génome Réunion - Script principal
+// Espace réservé pour les futures fonctionnalités interactives
 
-    if (demoBtn) {
-        demoBtn.addEventListener('click', function() {
-            alert('Bouton cliqué ! La page fonctionne correctement.');
-            console.log('Button clicked at:', new Date().toLocaleTimeString());
-        });
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Génome Réunion page loaded');
 });
