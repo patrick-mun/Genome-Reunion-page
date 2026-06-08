@@ -46,13 +46,9 @@ nav {
   color: var(--text); text-decoration: none;
   display: flex; align-items: center; gap: 10px;
 }
-.nav-logo-mark {
-  width: 28px; height: 28px; border-radius: 6px;
-  background: linear-gradient(135deg, var(--teal), var(--blue));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.8rem; font-weight: 800; color: #fff;
-  font-family: 'Space Grotesk', sans-serif;
-  flex-shrink: 0;
+.nav-logo-img {
+  height: 40px; width: auto;
+  display: block;
 }
 .nav-links {
   display: flex; align-items: center; gap: 4px;
@@ -540,12 +536,9 @@ footer {
   font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.95rem;
   display: flex; align-items: center; gap: 8px;
 }
-.footer-logo-mark {
-  width: 24px; height: 24px; border-radius: 5px;
-  background: linear-gradient(135deg, var(--teal), var(--blue));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.7rem; font-weight: 800; color: #fff;
-  font-family: 'Space Grotesk', sans-serif;
+.footer-logo-img {
+  height: 32px; width: auto;
+  display: block;
 }
 .footer-meta { font-size: 0.78rem; color: var(--muted); }
 .footer-right { font-size: 0.78rem; color: var(--muted); text-align: right; }
