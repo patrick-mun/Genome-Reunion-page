@@ -211,6 +211,7 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 2px;
 }
 .budget-scenario.opt .budget-total { color: var(--teal); }
+.budget-scenario.max .budget-total { color: var(--muted); }
 .budget-sub { font-size: 0.78rem; color: var(--muted); }
 
 /* ─── TABLE ───────────────────────────────────────────── */
