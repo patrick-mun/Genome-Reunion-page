@@ -6,6 +6,12 @@ Site web officiel du projet **Génome Réunion**, un référentiel génomique lo
 
 ---
 
+## 🌐 Site en ligne
+
+📍 **Consultez le site** : [https://patrick-mun.github.io/Genome-Reunion-page/](https://patrick-mun.github.io/Genome-Reunion-page/)
+
+---
+
 ## 📖 À propos du projet
 
 **Génome Réunion** vise à construire le **premier référentiel génomique dédié à la population réunionnaise** — une population admixée et fondatrice, quasi absente des bases de données génomiques internationales (gnomAD, 1000 Genomes).
