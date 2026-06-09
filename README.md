@@ -243,7 +243,7 @@ Voir `git log --oneline` pour l'historique complet.
 ## 👥 Équipe
 
 - **Patrick MUNIER** — Service de génétique moléculaire, CHU de La Réunion
-- **Dr Thomas HUBY** — Responsable du service, CHU de La Réunion
+- **Dr Thomas HUBY** — Responsable génétique moléculaire, CHU de La Réunion
 - **Susie GUILLY** — Ingénieure, Service de génétique moléculaire
 - **Dr Fanny FERROUL** — Service de Génétique Médicale, CHU de La Réunion
 
