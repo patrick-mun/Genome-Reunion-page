@@ -887,16 +887,24 @@ footer.page-footer .pageno {
  ============================================================================ */
 (function () {
  "use strict";
- /* Fill TOC page numbers from the pages Paged.js produced. */
+ /* Fill TOC page numbers from the pages Paged.js produced.
+ Strategy: iterate pages in order and record the first page each section ID
+ appears on — robust regardless of whether Paged.js keeps or moves id attrs. */
  function fillTocNumbers() {
- document.querySelectorAll('a.toc-entry[href^="#"]').forEach(function (link) {
- var id = link.getAttribute('href').slice(1);
- var target = document.getElementById(id);
+ var seen = {};
+ document.querySelectorAll('.pagedjs_page[data-page-number]').forEach(function (page) {
+ var n = page.getAttribute('data-page-number');
+ /* Check elements with id (original fragment) or data-id (split continuation) */
+ page.querySelectorAll('[id], [data-id]').forEach(function (el) {
+ var id = el.id || el.getAttribute('data-id');
+ if (!id || seen[id]) return;
+ seen[id] = n;
+ var link = document.querySelector('a.toc-entry[href="#' + id + '"]');
+ if (link) {
  var numEl = link.querySelector('.toc-page-num');
- if (!target || !numEl) return;
- var pageEl = target.closest('.pagedjs_page');
- var n = pageEl && pageEl.getAttribute('data-page-number');
- if (n) numEl.textContent = n;
+ if (numEl) numEl.textContent = n;
+ }
+ });
  });
  }
  /* On-screen page chrome: grey backdrop, centered white A4 sheets with a shadow
