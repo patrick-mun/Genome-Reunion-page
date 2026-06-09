@@ -741,10 +741,9 @@ footer.page-footer .pageno {
  @bottom-left { content: none; }
  @bottom-right { content: none; }
 }
-/* No footer or page number on the Table of Contents either (named page).
+/* No footer or page number on the Table of Contents (page 2).
  Content sections therefore carry the first visible footer. */
-nav.toc-page { page: tocpage; }
-@page tocpage {
+@page :nth(2) {
  @bottom-left { content: none; }
  @bottom-right { content: none; }
 }
