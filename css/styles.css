@@ -109,6 +109,15 @@ p:last-child { margin-bottom: 0; }
   margin-bottom: 24px;
 }
 .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); }
+.hero-badge-logo {
+  display: inline-block;
+  height: 20px;
+  width: 60px;
+  flex-shrink: 0;
+  background-color: var(--teal);
+  -webkit-mask: url('https://upload.wikimedia.org/wikipedia/fr/5/57/Centre_hospitalier_universitaire_de_La_R%C3%A9union_%28logo%29.svg') no-repeat left center / contain;
+  mask: url('https://upload.wikimedia.org/wikipedia/fr/5/57/Centre_hospitalier_universitaire_de_La_R%C3%A9union_%28logo%29.svg') no-repeat left center / contain;
+}
 .hero-title { margin-bottom: 8px; }
 .hero-title em { font-style: normal; color: var(--teal); }
 .hero-subtitle { font-size: 1.1rem; color: var(--muted); margin-bottom: 32px; line-height: 1.55; }
