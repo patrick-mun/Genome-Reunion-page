@@ -54,6 +54,15 @@ nav {
   display: flex; align-items: center; gap: 4px;
   list-style: none;
 }
+.doc-gh-btn {
+  position: absolute;
+  top: 12px; right: 12px;
+  color: #8c959f;
+  cursor: pointer;
+  line-height: 0;
+  transition: color .15s;
+}
+.doc-gh-btn:hover { color: #1f2328; }
 .nav-github {
   display: flex; align-items: center;
   color: var(--teal);
