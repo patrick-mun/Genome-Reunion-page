@@ -56,12 +56,15 @@ nav {
 }
 .nav-github {
   display: flex; align-items: center;
-  color: var(--muted);
+  color: var(--teal);
+  font-size: .85rem;
+  font-weight: 600;
   text-decoration: none;
-  transition: color .18s;
+  white-space: nowrap;
   flex-shrink: 0;
+  transition: opacity .18s;
 }
-.nav-github:hover { color: var(--text); }
+.nav-github:hover { opacity: .75; }
 .nav-links a {
   font-size: 0.8rem; font-weight: 500;
   color: var(--muted); text-decoration: none;
