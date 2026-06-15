@@ -891,6 +891,14 @@ footer.page-footer .pageno {
  Strategy: iterate pages in order and record the first page each section ID
  appears on — robust regardless of whether Paged.js keeps or moves id attrs. */
  function fillTocNumbers() {
+ /* Build a map of anchor → toc link, robust against absolute URLs.
+    Paged.js (or htmlpreview) can rewrite href="#s1" to a full URL ending in #s1. */
+ var tocLinks = {};
+ document.querySelectorAll('a.toc-entry[href]').forEach(function (a) {
+ var href = a.getAttribute('href') || '';
+ var hashIdx = href.indexOf('#');
+ if (hashIdx !== -1) { var hash = href.slice(hashIdx + 1); if (hash) tocLinks[hash] = a; }
+ });
  var seen = {};
  document.querySelectorAll('.pagedjs_page[data-page-number]').forEach(function (page) {
  var n = page.getAttribute('data-page-number');
@@ -899,7 +907,7 @@ footer.page-footer .pageno {
  var id = el.id || el.getAttribute('data-id');
  if (!id || seen[id]) return;
  seen[id] = n;
- var link = document.querySelector('a.toc-entry[href="#' + id + '"]');
+ var link = tocLinks[id];
  if (link) {
  var numEl = link.querySelector('.toc-page-num');
  if (numEl) numEl.textContent = n;
