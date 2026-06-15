@@ -503,33 +503,41 @@ tr:hover td { background: var(--bg3); }
 
 /* ─── DOCUMENTS ───────────────────────────────────────── */
 .docs-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
   margin-top: 36px;
 }
 .doc-card {
   background: var(--bg2); border: 1px solid var(--border);
-  border-radius: var(--r); padding: 28px;
+  border-radius: var(--r); padding: 20px;
   text-decoration: none; color: inherit;
   transition: border-color .2s, background .2s;
   display: flex; flex-direction: column;
 }
 .doc-card:hover { border-color: var(--teal); background: var(--bg3); }
 .doc-icon {
-  width: 44px; height: 44px; border-radius: 10px;
+  width: 40px; height: 40px; border-radius: 9px;
   background: var(--teal-dim); border: 1px solid oklch(0.72 0.14 183 / 0.3);
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem; margin-bottom: 20px;
+  font-size: 1.2rem; margin-bottom: 14px;
 }
 .doc-card:nth-child(2) .doc-icon { background: var(--blue-dim); border-color: oklch(0.65 0.14 252 / 0.3); }
 .doc-card:nth-child(3) .doc-icon { background: var(--amber-dim); border-color: oklch(0.80 0.14 75 / 0.3); }
-.doc-card h3 { font-size: 1rem; margin-bottom: 8px; }
-.doc-card p { font-size: 0.82rem; color: var(--muted); flex: 1; }
+.doc-card:nth-child(4) .doc-icon { background: var(--blue-dim); border-color: oklch(0.65 0.14 252 / 0.3); }
+.doc-card:nth-child(5) .doc-icon { background: var(--amber-dim); border-color: oklch(0.80 0.14 75 / 0.3); }
+.doc-card:nth-child(6) .doc-icon { background: var(--blue-dim); border-color: oklch(0.65 0.14 252 / 0.3); }
+.doc-card:nth-child(7) .doc-icon { background: var(--amber-dim); border-color: oklch(0.80 0.14 75 / 0.3); }
+.doc-card h3 { font-size: 0.93rem; margin-bottom: 7px; }
+.doc-card p { font-size: 0.79rem; color: var(--muted); flex: 1; }
 .doc-arrow {
-  margin-top: 20px; font-size: 0.8rem; font-weight: 600;
+  margin-top: 16px; font-size: 0.78rem; font-weight: 600;
   color: var(--teal); display: flex; align-items: center; gap: 6px;
 }
 .doc-card:nth-child(2) .doc-arrow { color: var(--blue); }
 .doc-card:nth-child(3) .doc-arrow { color: var(--amber); }
+.doc-card:nth-child(4) .doc-arrow { color: var(--blue); }
+.doc-card:nth-child(5) .doc-arrow { color: var(--amber); }
+.doc-card:nth-child(6) .doc-arrow { color: var(--blue); }
+.doc-card:nth-child(7) .doc-arrow { color: var(--amber); }
 
 /* ─── FOOTER ──────────────────────────────────────────── */
 footer {
@@ -641,7 +649,7 @@ footer { background: var(--bg3); }
   .sdiv-components { grid-template-columns: 1fr 1fr; }
   .ia-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: 1fr 1fr; }
-  .docs-grid { grid-template-columns: 1fr; }
+  .docs-grid { grid-template-columns: 1fr 1fr; }
   .milestones { grid-template-columns: 1fr 1fr; }
   .tech-stack { grid-template-columns: 1fr; }
   .risk-row { grid-template-columns: 1fr 1fr; }
@@ -650,4 +658,8 @@ footer { background: var(--bg3); }
   .clinical-comparison { grid-template-columns: 1fr; }
   .budget-summary { grid-template-columns: 1fr; }
   .milestones { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .docs-grid { grid-template-columns: 1fr; }
 }
