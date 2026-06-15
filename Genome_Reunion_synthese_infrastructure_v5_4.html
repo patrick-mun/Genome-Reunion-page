@@ -1138,14 +1138,15 @@ nav.toc-page { page: tocpage; }
     <div class="cover-accent-band"></div>
     <div class="cover-center">
       <h1>Synthèse de l'infrastructure logicielle</h1>
-      <div class="cover-subtitle">Pipeline de validation WGS Génome Réunion : architecture, jobs, base de données, sécurité, déploiement et feuille de route (version v5.4)</div>
+      <div class="cover-subtitle">Pipeline de validation et de sélection WGS Génome Réunion : architecture en couches, modules, état d'avancement, sécurité, déploiement et feuille de route (version v5.4)</div>
     </div>
     <div class="cover-meta">
       <table>
         <tr><td>Porteur</td><td>Laboratoire de Génétique, CHU de La Réunion</td></tr>
         <tr><td>Auteur</td><td>Patrick Munier</td></tr>
+        <tr><td>Dépôt</td><td>Validation_Selection_GR</td></tr>
         <tr><td>Périmètre</td><td>Démonstrateur de recherche bioinformatique, hors usage clinique</td></tr>
-        <tr><td>Sources</td><td>Documentation technique du dépôt (docs/, README, ROADMAP, notes de version)</td></tr>
+        <tr><td>Sources</td><td>Diagramme d'architecture des modules et documentation technique du dépôt</td></tr>
         <tr><td>Version</td><td>v5.4 infrastructure</td></tr>
         <tr><td>Date</td><td>Juin 2026</td></tr>
       </table>
@@ -1157,15 +1158,17 @@ nav.toc-page { page: tocpage; }
     <ol>
       <li><a class="toc-entry" href="#s1"><span class="toc-title">1. Résumé</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
       <li><a class="toc-entry" href="#s2"><span class="toc-title">2. Objectif et positionnement</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s3"><span class="toc-title">3. Architecture générale</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s4"><span class="toc-title">4. Interface web Flask et front vanilla</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s5"><span class="toc-title">5. Jobs et worker</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s6"><span class="toc-title">6. Base de données PostgreSQL</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s7"><span class="toc-title">7. Sécurité des données et de l'exécution</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s8"><span class="toc-title">8. Déploiement Docker</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s9"><span class="toc-title">9. Feuille de route, du socle au déploiement</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s10"><span class="toc-title">10. Évolutions de la version v5.4</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s11"><span class="toc-title">Annexes</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s3"><span class="toc-title">3. Architecture en couches</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s4"><span class="toc-title">4. Points d'entrée et interface</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s5"><span class="toc-title">5. Jobs, contrats et orchestration</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s6"><span class="toc-title">6. Cœur scientifique et wrappers d'outils</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s7"><span class="toc-title">7. Parseurs et services métier</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s8"><span class="toc-title">8. Persistance : base et stockage</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s9"><span class="toc-title">9. Rapports et sorties</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s10"><span class="toc-title">10. Sécurité, exécution et éléments transversaux</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s11"><span class="toc-title">11. Déploiement Docker</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s12"><span class="toc-title">12. Feuille de route et état d'avancement</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s13"><span class="toc-title">Annexes</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
     </ol>
   </nav>
 
@@ -1173,174 +1176,304 @@ nav.toc-page { page: tocpage; }
 
     <section id="s1">
       <h2>1. Résumé</h2>
-      <p>Le projet Génome Réunion transforme un pipeline bioinformatique de validation de la sélection WGS en une application de recherche pilotable par une interface web. La version v5.4 stabilise le socle logiciel : elle ne touche pas encore aux algorithmes scientifiques, elle prépare le terrain avant l'implémentation des étapes QC, PCA, ADMIXTURE, KING, ROH et S_div.</p>
+      <p>Le dépôt Validation_Selection_GR transforme un pipeline bioinformatique de validation et de sélection WGS en une application de recherche pilotable. La version v5.4 stabilise le socle logiciel : l'infrastructure est réelle et testée, le cœur scientifique reste majoritairement en stubs, prêt à recevoir les algorithmes QC, PCA, ADMIXTURE, KING, ROH, S_div et la sélection V3.5.</p>
 
       <div class="stat-grid">
+        <div class="stat-card"><span class="num">9</span><span class="label">couches d'architecture, niveaux 0 à 8</span></div>
         <div class="stat-card"><span class="num">3</span><span class="label">services Docker : app, worker, base</span></div>
-        <div class="stat-card"><span class="num">18</span><span class="label">tables PostgreSQL principales</span></div>
-        <div class="stat-card"><span class="num">10</span><span class="label">phases de feuille de route, 0 à 9</span></div>
-        <div class="stat-card"><span class="num">26</span><span class="label">tests verts en sandbox v5.4</span></div>
+        <div class="stat-card"><span class="num">10</span><span class="label">étapes scientifiques dans l'ordre du pipeline</span></div>
+        <div class="stat-card"><span class="num">26</span><span class="label">fichiers de tests, sans données réelles</span></div>
       </div>
 
       <aside class="callout">
-        <strong>Principe directeur.</strong> L'interface déclenche l'analyse, elle ne l'exécute jamais directement. Toute commande externe passe par un job, un worker et un wrapper sécurisé, sans aucune commande shell libre.
+        <strong>Principe directeur.</strong> L'interface déclenche l'analyse, elle ne l'exécute jamais directement. Toute commande externe passe par un job, un worker, un wrapper sécurisé et une liste blanche d'exécutables, sans aucune commande shell libre.
       </aside>
 
-      <p>L'architecture sépare nettement trois responsabilités : une couche de présentation et de pilotage (Flask et front vanilla), un système de jobs déposés dans des dossiers de run reproductibles, et un worker qui exécute les étapes via des wrappers d'outils. PostgreSQL indexe les métadonnées, les statuts, les métriques et l'audit, mais ne stocke jamais les fichiers génétiques lourds. Docker Compose assemble le tout pour le déploiement.</p>
+      <p>L'architecture sépare strictement les responsabilités sur neuf couches : points d'entrée, interface Flask, gestion des jobs, orchestration, cœur scientifique et wrappers d'outils, parseurs, services métier, persistance, rapports. Des éléments transversaux, dépendances, intégration continue, tests et documentation, restent disponibles à tous les niveaux. Le socle, interface, jobs, orchestration, base de données et stockage, est implémenté ; le cœur scientifique, les parseurs, les services métier et les rapports sont des stubs à remplir.</p>
     </section>
 
     <section id="s2">
       <h2>2. Objectif et positionnement</h2>
-      <p>L'objectif est de rendre le pipeline bioinformatique du projet utilisable par une interface, en gardant un système pilotable, traçable, reproductible, visuel, extensible et compatible d'abord avec les données 1000 Genomes, puis avec les données EGA ou DAC autorisées.</p>
-      <p>Le périmètre est volontairement borné : il s'agit d'un démonstrateur de recherche interne. Ce n'est ni un outil clinique, ni un dispositif médical, ni un produit commercial finalisé. Le système ne réalise aucune interprétation clinique, aucun diagnostic, et ne doit servir à aucune décision médicale.</p>
-      <p>Les données 1000 Genomes servent de socle public de démarrage : développement du pipeline, vérification de cohérence, tests PCA et ADMIXTURE, test de sélection et simulation puce vers WGS. Le MVP conseillé démarre sur le chromosome 22 pour limiter la volumétrie.</p>
+      <p>L'objectif est de rendre le pipeline du projet utilisable par une interface, en gardant un système pilotable, traçable, reproductible, visuel, extensible et compatible d'abord avec les données 1000 Genomes, puis avec les données EGA ou DAC autorisées.</p>
+      <p>Le périmètre est volontairement borné : il s'agit d'un démonstrateur de recherche interne. Ce n'est ni un outil clinique, ni un dispositif médical, ni un produit commercial finalisé. Le système ne réalise aucune interprétation clinique, aucun diagnostic, et ne doit servir à aucune décision médicale. Les sorties de démonstration sont marquées <code>dry_run</code>, <code>demo</code> ou <code>simulation</code>.</p>
     </section>
 
     <section id="s3">
-      <h2>3. Architecture générale</h2>
-      <p>Le flux retenu enchaîne cinq couches : l'interface valide les paramètres, le Job Manager fige un dossier de run, le worker exécute les étapes autorisées, les wrappers appellent les outils bioinformatiques, puis les résultats et l'audit remontent vers le système de fichiers et vers PostgreSQL.</p>
-
-    <figure role="img" aria-label="Flux d'exécution de l'architecture">
-      <svg viewBox="0 0 660 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-        <text x="8" y="18" font-size="12" font-weight="700" fill="#0F3A56">Figure 1 : flux d'exécution, de l'interface aux résultats</text>
-        <defs>
-          <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-            <path d="M0 0L9 4.5L0 9z" fill="#6b7785"/>
-          </marker>
-        </defs>
-        <g font-family="Segoe UI, sans-serif" font-size="11.5">
-          <rect x="200" y="34" width="260" height="40" rx="6" fill="#0F3A56"/>
-          <text x="330" y="52" text-anchor="middle" fill="#fff" font-weight="600">Interface web (Flask + vanilla)</text>
-          <text x="330" y="67" text-anchor="middle" fill="#cfe0ea" font-size="10">collecte et valide les paramètres</text>
-
-          <rect x="200" y="104" width="260" height="38" rx="6" fill="#1E6E8C"/>
-          <text x="330" y="123" text-anchor="middle" fill="#fff" font-weight="600">Job Manager</text>
-          <text x="330" y="137" text-anchor="middle" fill="#dff0ec" font-size="10">crée work/runs/&lt;run_id&gt;/, fige la config</text>
-
-          <rect x="200" y="172" width="260" height="38" rx="6" fill="#1E6E8C"/>
-          <text x="330" y="191" text-anchor="middle" fill="#fff" font-weight="600">Worker (local ou Docker)</text>
-          <text x="330" y="205" text-anchor="middle" fill="#dff0ec" font-size="10">exécute les étapes autorisées</text>
-
-          <rect x="200" y="240" width="260" height="38" rx="6" fill="#E8654A"/>
-          <text x="330" y="259" text-anchor="middle" fill="#fff" font-weight="600">Wrappers bioinformatiques</text>
-          <text x="330" y="273" text-anchor="middle" fill="#fde7df" font-size="10">PLINK, KING, ADMIXTURE, bcftools, Beagle</text>
-
-          <rect x="120" y="316" width="190" height="38" rx="6" fill="#eef3f7" stroke="#0F3A56"/>
-          <text x="215" y="333" text-anchor="middle" fill="#0F3A56" font-weight="600">Résultats, logs, rapports</text>
-          <text x="215" y="347" text-anchor="middle" fill="#3a5560" font-size="10">work/runs/&lt;run_id&gt;/</text>
-
-          <rect x="350" y="316" width="190" height="38" rx="6" fill="#eef3f7" stroke="#0F3A56"/>
-          <text x="445" y="333" text-anchor="middle" fill="#0F3A56" font-weight="600">PostgreSQL</text>
-          <text x="445" y="347" text-anchor="middle" fill="#3a5560" font-size="10">statuts, métriques, audit</text>
-
-          <line x1="330" y1="74" x2="330" y2="102" stroke="#6b7785" stroke-width="1.5" marker-end="url(#ar)"/>
-          <line x1="330" y1="142" x2="330" y2="170" stroke="#6b7785" stroke-width="1.5" marker-end="url(#ar)"/>
-          <line x1="330" y1="210" x2="330" y2="238" stroke="#6b7785" stroke-width="1.5" marker-end="url(#ar)"/>
-          <line x1="290" y1="278" x2="225" y2="314" stroke="#6b7785" stroke-width="1.5" marker-end="url(#ar)"/>
-          <line x1="370" y1="278" x2="435" y2="314" stroke="#6b7785" stroke-width="1.5" marker-end="url(#ar)"/>
-        </g>
-      </svg>
-      <figcaption>L'interface déclenche l'analyse mais ne construit jamais de commande shell libre : elle met le job en file, le worker l'exécute.</figcaption>
-    </figure>
-
+      <h2>3. Architecture en couches</h2>
+      <p>Le système se lit de haut en bas : une requête entre par un point d'entrée, traverse l'interface, devient un job, est orchestrée en étapes, appelle le cœur scientifique et les wrappers d'outils, dont les sorties sont relues par les parseurs, agrégées par les services métier, persistées en base et sur disque, puis transformées en rapports. La figure ci-dessous reprend ce découpage, avec le statut de chaque famille de modules.</p>
+      <figure role="img" aria-label="Architecture en couches du pipeline Génome Réunion">
+<svg viewBox="0 0 660 752" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;font-family:Segoe UI, Arial, sans-serif;">
+<defs><marker id="aarr" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9z" fill="#33414d"/></marker></defs>
+<text x="8" y="16" font-size="13" font-weight="700" fill="#0F3A56">Figure 1 : architecture en couches, du déclenchement aux rapports</text>
+<rect x="8" y="30" width="14" height="11" rx="2" fill="#0F3A56" stroke="#0F3A56" stroke-width="1.2" /><text x="27" y="39" font-size="10" fill="#33414d">Point d'entrée</text>
+<rect x="121.39999999999999" y="30" width="14" height="11" rx="2" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2" /><text x="140.39999999999998" y="39" font-size="10" fill="#33414d">Implémenté</text>
+<rect x="212.39999999999998" y="30" width="14" height="11" rx="2" fill="#fff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray='3 2'/><text x="231.39999999999998" y="39" font-size="10" fill="#33414d">Stub, à venir</text>
+<rect x="320.2" y="30" width="14" height="11" rx="2" fill="#fff" stroke="#E8654A" stroke-width="1.2" stroke-dasharray='3 2'/><text x="339.2" y="39" font-size="10" fill="#33414d">Module scientifique critique</text>
+<rect x="8" y="50" width="644" height="53" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="50" width="138" height="53" rx="7" fill="#0F3A56"/>
+<rect x="139" y="50" width="7" height="53" fill="#0F3A56"/>
+<circle cx="30" cy="76.5" r="13" fill="#E8654A"/>
+<text x="30" y="80.5" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">0</text>
+<text x="50" y="74.5" font-size="11" font-weight="600" fill="#fff">Entrée</text>
+<text x="50" y="87.5" font-size="11" font-weight="600" fill="#fff">utilisateur</text>
+<text x="156" y="66" font-size="10.5" fill="#33414d" font-style="italic">Déclencher un pipeline</text>
+<rect x="156" y="74" width="102" height="19" rx="9" fill="#0F3A56" stroke="#0F3A56" stroke-width="1.2"/>
+<text x="207.0" y="87" font-size="9.5" fill="#ffffff" text-anchor="middle">Navigateur web</text>
+<rect x="264" y="74" width="72" height="19" rx="9" fill="#0F3A56" stroke="#0F3A56" stroke-width="1.2"/>
+<text x="300.0" y="87" font-size="9.5" fill="#ffffff" text-anchor="middle">CLI Typer</text>
+<rect x="342" y="74" width="108" height="19" rx="9" fill="#0F3A56" stroke="#0F3A56" stroke-width="1.2"/>
+<text x="396.0" y="87" font-size="9.5" fill="#ffffff" text-anchor="middle">Docker / worker</text>
+<rect x="456" y="74" width="114" height="19" rx="9" fill="#0F3A56" stroke="#0F3A56" stroke-width="1.2"/>
+<text x="513.0" y="87" font-size="9.5" fill="#ffffff" text-anchor="middle">Scripts démo, CI</text>
+<rect x="8" y="119" width="644" height="78" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="119" width="138" height="78" rx="7" fill="#0F3A56"/>
+<rect x="139" y="119" width="7" height="78" fill="#0F3A56"/>
+<circle cx="30" cy="158.0" r="13" fill="#E8654A"/>
+<text x="30" y="162.0" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">1</text>
+<text x="50" y="156.0" font-size="11" font-weight="600" fill="#fff">Interface Flask,</text>
+<text x="50" y="169.0" font-size="11" font-weight="600" fill="#fff">CLI</text>
+<text x="156" y="135" font-size="10.5" fill="#33414d" font-style="italic">Valider, rendre les vues, aucune logique bioinfo</text>
+<rect x="156" y="143" width="84" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="198.0" y="156" font-size="9.5" fill="#ffffff" text-anchor="middle">App Factory</text>
+<rect x="246" y="143" width="54" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="273.0" y="156" font-size="9.5" fill="#ffffff" text-anchor="middle">Routes</text>
+<rect x="306" y="143" width="114" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="363.0" y="156" font-size="9.5" fill="#ffffff" text-anchor="middle">Templates Jinja2</text>
+<rect x="426" y="143" width="108" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="480.0" y="156" font-size="9.5" fill="#ffffff" text-anchor="middle">JS, CSS vanilla</text>
+<rect x="540" y="143" width="84" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="582.0" y="156" font-size="9.5" fill="#ffffff" text-anchor="middle">Validateurs</text>
+<rect x="156" y="168" width="90" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="201.0" y="181" font-size="9.5" fill="#ffffff" text-anchor="middle">Settings env</text>
+<rect x="8" y="213" width="644" height="53" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="213" width="138" height="53" rx="7" fill="#0F3A56"/>
+<rect x="139" y="213" width="7" height="53" fill="#0F3A56"/>
+<circle cx="30" cy="239.5" r="13" fill="#E8654A"/>
+<text x="30" y="243.5" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">2</text>
+<text x="50" y="243.5" font-size="11" font-weight="600" fill="#fff">Gestion des jobs</text>
+<text x="156" y="229" font-size="10.5" fill="#33414d" font-style="italic">Créer, suivre, exécuter un job</text>
+<rect x="156" y="237" width="78" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="195.0" y="250" font-size="9.5" fill="#ffffff" text-anchor="middle">JobManager</text>
+<rect x="240" y="237" width="72" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="276.0" y="250" font-size="9.5" fill="#ffffff" text-anchor="middle">JobStatus</text>
+<rect x="318" y="237" width="132" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="384.0" y="250" font-size="9.5" fill="#ffffff" text-anchor="middle">LocalPipelineWorker</text>
+<rect x="456" y="237" width="72" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="492.0" y="250" font-size="9.5" fill="#ffffff" text-anchor="middle">Contracts</text>
+<rect x="8" y="282" width="644" height="53" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="282" width="138" height="53" rx="7" fill="#0F3A56"/>
+<rect x="139" y="282" width="7" height="53" fill="#0F3A56"/>
+<circle cx="30" cy="308.5" r="13" fill="#E8654A"/>
+<text x="30" y="312.5" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">3</text>
+<text x="50" y="312.5" font-size="11" font-weight="600" fill="#fff">Orchestration</text>
+<text x="156" y="298" font-size="10.5" fill="#33414d" font-style="italic">Ordonner les étapes, gérer le contexte et les erreurs</text>
+<rect x="156" y="306" width="120" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="216.0" y="319" font-size="9.5" fill="#ffffff" text-anchor="middle">Ordre du pipeline</text>
+<rect x="282" y="306" width="54" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="309.0" y="319" font-size="9.5" fill="#ffffff" text-anchor="middle">Runner</text>
+<rect x="342" y="306" width="78" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="381.0" y="319" font-size="9.5" fill="#ffffff" text-anchor="middle">RunContext</text>
+<rect x="426" y="306" width="78" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="465.0" y="319" font-size="9.5" fill="#ffffff" text-anchor="middle">StepStatus</text>
+<rect x="510" y="306" width="78" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="549.0" y="319" font-size="9.5" fill="#ffffff" text-anchor="middle">Exceptions</text>
+<rect x="8" y="351" width="644" height="78" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="351" width="138" height="78" rx="7" fill="#0F3A56"/>
+<rect x="139" y="351" width="7" height="78" fill="#0F3A56"/>
+<circle cx="30" cy="390.0" r="13" fill="#E8654A"/>
+<text x="30" y="394.0" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">4</text>
+<text x="50" y="394.0" font-size="11" font-weight="600" fill="#fff">Cœur et outils</text>
+<text x="156" y="367" font-size="10.5" fill="#33414d" font-style="italic">Algorithmes purs (core) et wrappers sécurisés (external)</text>
+<rect x="156" y="375" width="102" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="207.0" y="388" font-size="9.5" fill="#ffffff" text-anchor="middle">command_runner</text>
+<rect x="264" y="375" width="84" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="306.0" y="388" font-size="9.5" fill="#0F3A56" text-anchor="middle">PLINK, KING</text>
+<rect x="354" y="375" width="132" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="420.0" y="388" font-size="9.5" fill="#0F3A56" text-anchor="middle">ADMIXTURE, bcftools</text>
+<rect x="492" y="375" width="114" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="549.0" y="388" font-size="9.5" fill="#0F3A56" text-anchor="middle">BEAGLE, SHAPEIT4</text>
+<rect x="156" y="400" width="90" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="201.0" y="413" font-size="9.5" fill="#0F3A56" text-anchor="middle">QC, PCA, ROH</text>
+<rect x="252" y="400" width="54" height="19" rx="9" fill="#fff" stroke="#E8654A" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="279.0" y="413" font-size="9.5" fill="#0F3A56" text-anchor="middle">★ S_div</text>
+<rect x="312" y="400" width="102" height="19" rx="9" fill="#fff" stroke="#E8654A" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="363.0" y="413" font-size="9.5" fill="#0F3A56" text-anchor="middle">★ Sélection V3.5</text>
+<rect x="420" y="400" width="120" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="480.0" y="413" font-size="9.5" fill="#0F3A56" text-anchor="middle">Imputation, éval.</text>
+<rect x="8" y="445" width="644" height="53" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="445" width="138" height="53" rx="7" fill="#0F3A56"/>
+<rect x="139" y="445" width="7" height="53" fill="#0F3A56"/>
+<circle cx="30" cy="471.5" r="13" fill="#E8654A"/>
+<text x="30" y="475.5" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">5</text>
+<text x="50" y="475.5" font-size="11" font-weight="600" fill="#fff">Parseurs</text>
+<text x="156" y="461" font-size="10.5" fill="#33414d" font-style="italic">Sorties d'outils vers structures Python typées</text>
+<rect x="156" y="469" width="54" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="183.0" y="482" font-size="9.5" fill="#0F3A56" text-anchor="middle">PLINK</text>
+<rect x="216" y="469" width="54" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="243.0" y="482" font-size="9.5" fill="#0F3A56" text-anchor="middle">KING</text>
+<rect x="276" y="469" width="72" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="312.0" y="482" font-size="9.5" fill="#0F3A56" text-anchor="middle">ADMIXTURE</text>
+<rect x="354" y="469" width="54" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="381.0" y="482" font-size="9.5" fill="#0F3A56" text-anchor="middle">PCA</text>
+<rect x="414" y="469" width="54" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="441.0" y="482" font-size="9.5" fill="#0F3A56" text-anchor="middle">ROH</text>
+<rect x="474" y="469" width="78" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="513.0" y="482" font-size="9.5" fill="#0F3A56" text-anchor="middle">Imputation</text>
+<rect x="8" y="514" width="644" height="53" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="514" width="138" height="53" rx="7" fill="#0F3A56"/>
+<rect x="139" y="514" width="7" height="53" fill="#0F3A56"/>
+<circle cx="30" cy="540.5" r="13" fill="#E8654A"/>
+<text x="30" y="544.5" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">6</text>
+<text x="50" y="544.5" font-size="11" font-weight="600" fill="#fff">Services métier</text>
+<text x="156" y="530" font-size="10.5" fill="#33414d" font-style="italic">Orchestrer core, base, stockage, aucune commande shell</text>
+<rect x="156" y="538" width="96" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="204.0" y="551" font-size="9.5" fill="#0F3A56" text-anchor="middle">Dataset, File</text>
+<rect x="258" y="538" width="108" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="312.0" y="551" font-size="9.5" fill="#0F3A56" text-anchor="middle">Project, Sample</text>
+<rect x="372" y="538" width="54" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="399.0" y="551" font-size="9.5" fill="#0F3A56" text-anchor="middle">Run</text>
+<rect x="432" y="538" width="72" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="468.0" y="551" font-size="9.5" fill="#0F3A56" text-anchor="middle">Selection</text>
+<rect x="510" y="538" width="102" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="561.0" y="551" font-size="9.5" fill="#0F3A56" text-anchor="middle">Result, Report</text>
+<rect x="8" y="583" width="644" height="78" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="583" width="138" height="78" rx="7" fill="#0F3A56"/>
+<rect x="139" y="583" width="7" height="78" fill="#0F3A56"/>
+<circle cx="30" cy="622.0" r="13" fill="#E8654A"/>
+<text x="30" y="626.0" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">7</text>
+<text x="50" y="626.0" font-size="11" font-weight="600" fill="#fff">Persistance</text>
+<text x="156" y="599" font-size="10.5" fill="#33414d" font-style="italic">PostgreSQL, ORM SQLAlchemy et stockage fichiers</text>
+<rect x="156" y="607" width="84" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="198.0" y="620" font-size="9.5" fill="#ffffff" text-anchor="middle">Modèles SQL</text>
+<rect x="246" y="607" width="90" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="291.0" y="620" font-size="9.5" fill="#ffffff" text-anchor="middle">Repositories</text>
+<rect x="342" y="607" width="108" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="396.0" y="620" font-size="9.5" fill="#ffffff" text-anchor="middle">Session, Engine</text>
+<rect x="456" y="607" width="60" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="486.0" y="620" font-size="9.5" fill="#ffffff" text-anchor="middle">Alembic</text>
+<rect x="522" y="607" width="78" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="561.0" y="620" font-size="9.5" fill="#ffffff" text-anchor="middle">work/runs/</text>
+<rect x="156" y="632" width="84" height="19" rx="9" fill="#1E6E8C" stroke="#1E6E8C" stroke-width="1.2"/>
+<text x="198.0" y="645" font-size="9.5" fill="#ffffff" text-anchor="middle">Config YAML</text>
+<rect x="246" y="632" width="60" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="276.0" y="645" font-size="9.5" fill="#0F3A56" text-anchor="middle">storage</text>
+<rect x="8" y="677" width="644" height="53" rx="7" fill="#f6f8fa" stroke="#e2e8ee"/>
+<rect x="8" y="677" width="138" height="53" rx="7" fill="#0F3A56"/>
+<rect x="139" y="677" width="7" height="53" fill="#0F3A56"/>
+<circle cx="30" cy="703.5" r="13" fill="#E8654A"/>
+<text x="30" y="707.5" font-size="13" font-weight="700" fill="#fff" text-anchor="middle">8</text>
+<text x="50" y="701.5" font-size="11" font-weight="600" fill="#fff">Rapports et</text>
+<text x="50" y="714.5" font-size="11" font-weight="600" fill="#fff">sorties</text>
+<text x="156" y="693" font-size="10.5" fill="#33414d" font-style="italic">Rapports déterministes depuis un run figé (phase 6)</text>
+<rect x="156" y="701" width="54" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="183.0" y="714" font-size="9.5" fill="#0F3A56" text-anchor="middle">HTML</text>
+<rect x="216" y="701" width="54" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="243.0" y="714" font-size="9.5" fill="#0F3A56" text-anchor="middle">PDF</text>
+<rect x="276" y="701" width="66" height="19" rx="9" fill="#ffffff" stroke="#9bb0bd" stroke-width="1.2" stroke-dasharray="3 2"/>
+<text x="309.0" y="714" font-size="9.5" fill="#0F3A56" text-anchor="middle">Markdown</text>
+<line x1="77" y1="103" x2="77" y2="118" stroke="#33414d" stroke-width="1.6" marker-end="url(#aarr)"/>
+<line x1="77" y1="197" x2="77" y2="212" stroke="#33414d" stroke-width="1.6" marker-end="url(#aarr)"/>
+<line x1="77" y1="266" x2="77" y2="281" stroke="#33414d" stroke-width="1.6" marker-end="url(#aarr)"/>
+<line x1="77" y1="335" x2="77" y2="350" stroke="#33414d" stroke-width="1.6" marker-end="url(#aarr)"/>
+<line x1="77" y1="429" x2="77" y2="444" stroke="#33414d" stroke-width="1.6" marker-end="url(#aarr)"/>
+<line x1="77" y1="498" x2="77" y2="513" stroke="#33414d" stroke-width="1.6" marker-end="url(#aarr)"/>
+<line x1="77" y1="567" x2="77" y2="582" stroke="#33414d" stroke-width="1.6" marker-end="url(#aarr)"/>
+<line x1="77" y1="661" x2="77" y2="676" stroke="#33414d" stroke-width="1.6" marker-end="url(#aarr)"/>
+</svg>
+        <figcaption>Architecture des modules du dépôt Validation_Selection_GR, niveaux 0 à 8, avec le statut de chaque famille.</figcaption>
+      </figure>
+      <p>La couleur indique l'état : un point d'entrée en navy, un module implémenté en teal plein, un stub en pointillé, et en pointillé corail les deux modules scientifiques critiques, le score de diversité S_div et la sélection V3.5 du panel hybride. Cette séparation en couches, garantie par des protocoles Python, prépare une montée en charge ultérieure vers une API ou un orchestrateur sans réécrire le cœur scientifique.</p>
       <h3>Organisation du code</h3>
-      <p>Le dépôt sépare la présentation de la logique métier, ce qui prépare une migration ultérieure vers une API ou un orchestrateur sans réécrire le cœur scientifique :</p>
-      <pre>web/                interface web (Flask + vanilla)
-src/core/           logique scientifique
-src/external/       wrappers des outils externes
-src/jobs/           création, suivi et exécution locale des jobs
-src/orchestration/  moteur de pipeline
-src/database/       modèles SQLAlchemy
-src/services/       couche applicative
-src/storage/        gestion des chemins et fichiers
-src/parsers/        import des sorties outils
-src/reporting/      génération de rapports
+      <pre>web/                interface Flask et front vanilla
+src/.../cli.py      CLI Typer (create_job, run_worker, list_jobs)
+src/.../jobs/       JobManager, schémas de statut, worker local, contrats
+src/.../orchestration/  ordre du pipeline, runner, RunContext, statuts, exceptions
+src/.../core/       algorithmes scientifiques purs (stubs)
+src/.../external/   command_runner et wrappers d'outils (stubs)
+src/.../parsers/    lecture des sorties d'outils (stubs)
+src/.../services/   services métier (stubs)
+src/.../database/   modèles SQLAlchemy, repositories, session, init
+src/.../storage/    chemins, checksums, registre de fichiers (stubs)
+src/.../reporting/  rapports HTML, PDF, Markdown (stubs)
 config/             fichiers YAML de configuration
-scripts/            commandes utilitaires
-data/  work/  results/  reports/  logs/   données et sorties hors GitHub</pre>
-      <p>Chaque dossier de run regroupe une trace auditable et reproductible : <code>config.yaml</code>, <code>manifest.json</code>, <code>status.json</code>, un journal <code>logs/pipeline.log</code>, un dossier <code>outputs/</code> et un dossier <code>report/</code>.</p>
+alembic/            migrations de base
+tests/              26 fichiers de tests
+work/ data/ results/ logs/ reports/   données et sorties hors GitHub</pre>
     </section>
 
     <section id="s4">
-      <h2>4. Interface web Flask et front vanilla</h2>
-      <p>L'interface est une application servie par Flask, avec un front en HTML, CSS et JavaScript vanilla, sans framework d'interface et sans étape de build. Elle reste une couche de présentation et de pilotage : elle ne contient ni logique scientifique, ni commande bioinformatique. Le choix d'architecture place Flask comme une fine couche au-dessus du backend, la base restant gérée par SQLAlchemy et Alembic.</p>
-      <h3>Rôle autorisé</h3>
-      <p>L'interface affiche les datasets, les profils et les stratégies, collecte et valide les paramètres, crée un job et le met en file, puis affiche la progression, les logs, les résultats, les rapports et les alertes via des endpoints JSON interrogés par le front.</p>
-      <h3>Rôle interdit</h3>
-      <p>L'interface ne construit pas de commandes shell libres, n'exécute jamais directement PLINK, KING, ADMIXTURE, bcftools, Beagle ou SHAPEIT, ne contient ni la logique scientifique (S_div, sélection), ni les parsers, ne stocke aucune donnée génétique réelle, et ne bloque jamais la requête HTTP sur l'analyse.</p>
-      <h3>Fichiers principaux</h3>
-      <pre>web/__init__.py        Factory Flask (create_app)
-web/wsgi.py            Point d'entrée gunicorn : gunicorn web.wsgi:app
-web/routes.py          Routes : /, /api/jobs, /api/jobs/&lt;id&gt;/status, /runs/&lt;id&gt;
-web/templates/         base.html, dashboard.html, run_detail.html
-web/static/css/app.css Styles vanilla (palette teal/navy/coral)
-web/static/js/app.js   Soumission de job et polling du statut</pre>
-      <p>En développement, l'interface se lance par <code>flask --app web run --debug</code>. En production et sous Docker, elle tourne via <code>gunicorn web.wsgi:app --bind 0.0.0.0:8000 --workers 2</code>.</p>
+      <h2>4. Points d'entrée et interface</h2>
+      <h3>Niveau 0, points d'entrée</h3>
+      <p>Quatre voies déclenchent un pipeline : le navigateur web, via un formulaire de lancement (dataset, profil, stratégie) et un suivi de statut JSON interrogé toutes les trois secondes ; une CLI Typer, avec les commandes <code>create_job</code>, <code>run_worker</code> et <code>list_jobs</code> ; le couple Docker et worker en boucle, qui assemble <code>genorun-app</code>, <code>genorun-worker</code> et <code>genorun-db</code> ; enfin des scripts de démonstration et la CI (<code>create_demo_job</code>, <code>run_worker</code>, <code>check_tools.sh</code>, <code>init_database.py</code>).</p>
+      <h3>Niveau 1, interface Flask</h3>
+      <p>La couche Flask valide les paramètres et rend les vues, sans aucune logique bioinformatique. Elle réunit une App Factory (<code>create_app()</code>, blueprints, <code>SECRET_KEY</code> par variable d'environnement, taille de requête plafonnée à 64 Mo), les routes (<code>GET /</code>, <code>POST /api/jobs</code>, <code>GET /api/jobs/&lt;id&gt;/status</code>, <code>GET /runs/&lt;id&gt;</code>), les gabarits Jinja2, le front JavaScript et CSS vanilla, un jeu de validateurs d'entrée (<code>validate_identifier</code>, <code>ensure_within_base</code>, <code>validate_input_file</code>, <code>validate_weights_sum</code>) et les réglages lus depuis l'environnement, jamais codés en dur.</p>
+      <aside class="callout"><strong>Rôle interdit.</strong> L'interface ne construit pas de commande shell libre, n'exécute jamais directement PLINK, KING, ADMIXTURE, bcftools, BEAGLE ou SHAPEIT4, ne contient ni la logique scientifique ni les parseurs, ne stocke aucune donnée génétique réelle, et ne bloque jamais la requête HTTP sur l'analyse.</aside>
     </section>
 
     <section id="s5">
-      <h2>5. Jobs et worker</h2>
-      <p>Le bouton « Lancer l'analyse » reste le point d'entrée, mais l'interface délègue l'exécution à un worker. Trois couches se partagent le travail : l'interface collecte et valide, le Job Manager attribue un identifiant, crée le dossier de run, écrit la configuration figée et le manifest d'audit, et maintient <code>status.json</code> ; le worker lit le job, exécute les étapes autorisées, met à jour les statuts, écrit les logs et arrête proprement le pipeline en cas d'erreur.</p>
+      <h2>5. Jobs, contrats et orchestration</h2>
+      <h3>Niveau 2, gestion des jobs</h3>
+      <p>Le JobManager crée un dossier de run <code>work/runs/&lt;id&gt;/</code> contenant <code>config.yaml</code>, <code>manifest.json</code> et <code>status.json</code>, liste et recharge les jobs, et se synchronise avec PostgreSQL quand la base est activée. Les schémas de statut décrivent le cycle de vie, et le LocalPipelineWorker exécute les étapes dans l'ordre du pipeline en mode dry run tant que les algorithmes sont des stubs. La séparation des couches est garantie par des contrats, des protocoles Python <code>CoreStep</code>, <code>ExternalToolWrapper</code> et <code>OutputParser</code>.</p>
 
-    <figure role="img" aria-label="Statuts standard d'un job">
-      <svg viewBox="0 0 660 92" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+    <figure role="img" aria-label="Cycle de vie d'un job">
+      <svg viewBox="0 0 660 96" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
         <text x="8" y="16" font-size="12" font-weight="700" fill="#0F3A56">Figure 2 : cycle de vie d'un job</text>
-        <defs>
-          <marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
-            <path d="M0 0L9 4.5L0 9z" fill="#6b7785"/>
-          </marker>
-        </defs>
+        <defs><marker id="ar2" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9z" fill="#33414d"/></marker></defs>
         <g font-family="Segoe UI, sans-serif" font-size="11" text-anchor="middle">
-          <rect x="6"   y="40" width="92" height="34" rx="17" fill="#eef3f7" stroke="#0F3A56"/><text x="52"  y="61" fill="#0F3A56">created</text>
-          <rect x="142" y="40" width="92" height="34" rx="17" fill="#eef3f7" stroke="#0F3A56"/><text x="188" y="61" fill="#0F3A56">queued</text>
-          <rect x="278" y="40" width="92" height="34" rx="17" fill="#1E6E8C"/><text x="324" y="61" fill="#fff">running</text>
-          <rect x="430" y="40" width="92" height="34" rx="17" fill="#0F3A56"/><text x="476" y="61" fill="#fff">completed</text>
-          <rect x="430" y="2"  width="92" height="28" rx="14" fill="#E8654A"/><text x="476" y="20" fill="#fff">failed</text>
-          <rect x="560" y="40" width="92" height="34" rx="17" fill="#9c9a92"/><text x="606" y="61" fill="#fff">cancelled</text>
-          <line x1="98"  y1="57" x2="140" y2="57" stroke="#6b7785" stroke-width="1.4" marker-end="url(#ar2)"/>
-          <line x1="234" y1="57" x2="276" y2="57" stroke="#6b7785" stroke-width="1.4" marker-end="url(#ar2)"/>
-          <line x1="370" y1="57" x2="428" y2="57" stroke="#6b7785" stroke-width="1.4" marker-end="url(#ar2)"/>
-          <line x1="370" y1="50" x2="428" y2="22" stroke="#e8765a" stroke-width="1.4" marker-end="url(#ar2)"/>
-          <line x1="522" y1="57" x2="558" y2="57" stroke="#6b7785" stroke-width="1.4" marker-end="url(#ar2)"/>
+          <rect x="6"   y="44" width="92" height="34" rx="17" fill="#eef3f7" stroke="#0F3A56"/><text x="52"  y="65" fill="#0F3A56">created</text>
+          <rect x="142" y="44" width="92" height="34" rx="17" fill="#eef3f7" stroke="#0F3A56"/><text x="188" y="65" fill="#0F3A56">queued</text>
+          <rect x="278" y="44" width="92" height="34" rx="17" fill="#1E6E8C"/><text x="324" y="65" fill="#fff">running</text>
+          <rect x="430" y="44" width="92" height="34" rx="17" fill="#0F3A56"/><text x="476" y="65" fill="#fff">completed</text>
+          <rect x="430" y="4"  width="92" height="28" rx="14" fill="#E8654A"/><text x="476" y="22" fill="#fff">failed</text>
+          <rect x="560" y="44" width="92" height="34" rx="17" fill="#9c9a92"/><text x="606" y="65" fill="#fff">cancelled</text>
+          <line x1="98"  y1="61" x2="140" y2="61" stroke="#33414d" stroke-width="1.4" marker-end="url(#ar2)"/>
+          <line x1="234" y1="61" x2="276" y2="61" stroke="#33414d" stroke-width="1.4" marker-end="url(#ar2)"/>
+          <line x1="370" y1="61" x2="428" y2="61" stroke="#33414d" stroke-width="1.4" marker-end="url(#ar2)"/>
+          <line x1="370" y1="54" x2="428" y2="26" stroke="#E8654A" stroke-width="1.4" marker-end="url(#ar2)"/>
+          <line x1="522" y1="61" x2="558" y2="61" stroke="#33414d" stroke-width="1.4" marker-end="url(#ar2)"/>
         </g>
       </svg>
-      <figcaption>Les six statuts standard tracent chaque run de sa création à sa fin, succès, échec ou annulation.</figcaption>
+      <figcaption>Six statuts standard : chaque run est tracé de sa création à sa fin, par les étapes définies dans l'enum de statut.</figcaption>
     </figure>
 
-      <p>L'interface ne lance pas le worker dans le processus web. Elle met le job en file, et le service <code>genorun-worker</code> l'exécute en mode Docker, ou les scripts <code>run_worker.py</code> et <code>run_worker_loop.py</code> le prennent en charge en local. Le worker en boucle lit la file depuis PostgreSQL quand la base est activée, avec repli sur le système de fichiers pour le mode local simple.</p>
-      <aside class="callout">
-        <strong>État actuel.</strong> Le worker fonctionne en mode dry run sécurisé : il valide la chaîne job, worker, logs, résultats, sans analyser de données génétiques réelles. Toute sortie de démonstration est marquée <code>dry_run</code>, <code>demo</code> ou <code>simulation</code>.
-      </aside>
+      <h3>Niveau 3, orchestration</h3>
+      <p>Le moteur d'exécution fixe l'ordre des étapes, gère le contexte de run et les erreurs. L'ordre du pipeline est : <code>qc</code>, <code>ld_pruning</code>, <code>pca</code>, <code>admixture</code>, <code>kinship</code>, <code>roh</code>, <code>sdiv</code>, <code>selection</code>, <code>imputation</code>, <code>evaluation</code>. Le runner itère cette liste, appelle chaque étape et met à jour <code>status.json</code>. Le RunContext, dataclass figée, porte les chemins d'un run (<code>run_dir</code>, <code>logs/</code>, <code>config.yaml</code>, <code>manifest.json</code>). Un enum d'étape (<code>pending</code>, <code>running</code>, <code>skipped</code>, <code>completed</code>, <code>failed</code>) et une hiérarchie d'exceptions (<code>PipelineError</code>, <code>StepExecutionError</code>, <code>StepNotImplementedError</code>) complètent la couche.</p>
     </section>
 
     <section id="s6">
-      <h2>6. Base de données PostgreSQL</h2>
-      <p>PostgreSQL est la base officielle dès la première version structurée. SQLite n'est pas la base principale, il reste cantonné aux tests unitaires isolés. La base sert à indexer et auditer : projets, cohortes, échantillons anonymisés, métadonnées de fichiers, jobs, étapes, logs courts, versions logicielles, métriques QC, PCA, ADMIXTURE, ROH et IBD, scores de sélection, sélection WGS finale, rapports et événements d'audit.</p>
-      <h3>Règle des fichiers lourds</h3>
-      <p>Les fichiers génétiques bruts ou volumineux restent hors base. Pour un fichier, la base ne conserve que le chemin relatif, le type, la taille, le checksum, le statut de validation et le lien avec la cohorte ou le job.</p>
-      <table>
-        <thead><tr><th>Hors base (système de fichiers)</th><th>En base (métadonnées)</th></tr></thead>
-        <tbody>
-          <tr><td><code>.bed .bim .fam .ped .map</code></td><td>chemin relatif, type de fichier</td></tr>
-          <tr><td><code>.vcf .vcf.gz .bcf</code></td><td>taille, checksum</td></tr>
-          <tr><td><code>.bam .cram</code></td><td>statut de validation</td></tr>
-          <tr><td>bases locales, logs, résultats</td><td>lien cohorte ou job</td></tr>
-        </tbody>
-      </table>
-      <h3>Tables principales</h3>
-      <pre>projects        cohorts          samples          input_files
-analysis_jobs   analysis_steps   job_logs         software_versions
-audit_events    qc_metrics       pca_results      admixture_results
-roh_results     ibd_results      selection_scores wgs_selection
-reports</pre>
-      <p>Les modèles sont définis dans <code>src/genorun_validation/database/models.py</code>, les migrations dans <code>alembic/</code>. Toute modification du modèle passe par une migration Alembic et une ligne dans <code>docs/DEV_TRACKING.md</code>. La persistance n'est activée que si <code>GENORUN_ENABLE_DATABASE=true</code>.</p>
+      <h2>6. Cœur scientifique et wrappers d'outils</h2>
+      <h3>Niveau 4a, cœur scientifique (core)</h3>
+      <p>Le cœur regroupe des fonctions Python pures, aujourd'hui en stubs : contrôle qualité du génotypage, élagage du déséquilibre de liaison, analyse en composantes principales, proportions ancestrales ADMIXTURE, parenté et IBD, runs d'homozygotie, score de diversité S_div, sélection V3.5 du panel hybride, imputation et évaluation. Les deux modules critiques sont le score S_div, pilier central du panel, et la sélection V3.5, qui combine un noyau géo-ancestral, un bras de découverte contrôlé, des quotas par secteur, des contraintes IBD et des analyses de sensibilité. Les seuils et poids vivent dans <code>config/validation.yaml</code> et <code>config/strategies.yaml</code>.</p>
+      <h3>Niveau 4b, wrappers d'outils (external)</h3>
+      <p>Le module <code>command_runner</code> est implémenté : il exécute les commandes via une liste blanche d'exécutables, en <code>shell=False</code>, capture la sortie standard et la sortie d'erreur dans une dataclass <code>CommandResult</code>, et contrôle le code de retour. Les wrappers proprement dits, PLINK et PLINK2, KING, ADMIXTURE, bcftools, BEAGLE et SHAPEIT4, sont des stubs qui suivront le schéma <code>prepare</code>, <code>validate</code>, <code>run_command</code>.</p>
     </section>
 
     <section id="s7">
-      <h2>7. Sécurité des données et de l'exécution</h2>
-      <p>Les données génétiques réelles ne sont jamais versionnées dans Git : VCF, BCF, fichiers PLINK, BAM, CRAM, bases locales, logs et résultats générés sont exclus par <code>.gitignore</code> et <code>.dockerignore</code>. La base SQL ne conserve que des métadonnées, des chemins contrôlés, des checksums, des métriques, des statuts et des rapports.</p>
-      <h3>Exécution des commandes</h3>
-      <p>Toute commande externe passe par un wrapper sécurisé, construite comme une liste d'arguments, jamais comme une chaîne shell concaténée :</p>
+      <h2>7. Parseurs et services métier</h2>
+      <h3>Niveau 5, parseurs</h3>
+      <p>Les parseurs lisent les sorties d'outils et les convertissent en structures Python typées, DataFrames pandas ou dataclasses. Ils couvrent PLINK (<code>.log</code>, <code>.frq</code>, <code>.hwe</code>, <code>.missing</code>), KING (<code>.kin</code>, <code>.kin0</code>), ADMIXTURE (<code>.Q</code>, <code>.P</code>), PCA (<code>.eigenvec</code>, <code>.eigenval</code>), ROH (<code>.hom</code>) et l'imputation (scores r²). Tous sont des stubs.</p>
+      <h3>Niveau 6, services métier</h3>
+      <p>Les services portent la logique applicative et orchestrent le cœur, la base et le stockage, sans jamais lancer de commande shell. On y trouve les services Dataset, File, Project, Sample, Run, Selection, Result et Report. Le service de sélection appelle <code>core/selection</code>, applique les quotas et valide les contraintes IBD ; le service de rapport déclenche la couche reporting depuis un run figé. Tous sont des stubs.</p>
+    </section>
+
+    <section id="s8">
+      <h2>8. Persistance : base et stockage</h2>
+      <h3>Niveau 7a, base PostgreSQL</h3>
+      <p>PostgreSQL est la base officielle, SQLite restant cantonné aux tests isolés. La couche base est implémentée : modèles SQLAlchemy (Project, Cohort, Sample, InputFile, AnalysisJob, AnalysisStep, QCMetrics, PCAProjection, AuditEvent, JobLog), un patron Repository qui isole le SQL (<code>JobRepository</code>, <code>AuditRepository</code>), la gestion de session (<code>build_engine()</code> depuis <code>GENORUN_DATABASE_URL</code>, un <code>session_scope()</code> avec commit et rollback automatiques), et les migrations Alembic (<code>0001_initial_schema</code>, <code>upgrade head</code>, sans <code>DROP</code> non contrôlé).</p>
+      <aside class="callout"><strong>Règle des fichiers lourds.</strong> Les fichiers génétiques bruts ou volumineux restent hors base. Pour un fichier, la base ne conserve que le chemin relatif, le type, la taille, le checksum, le statut de validation et le lien avec la cohorte ou le job.</aside>
+      <h3>Niveau 7b, stockage fichiers</h3>
+      <p>Au runtime, le JobManager produit <code>work/runs/&lt;run_id&gt;/</code> avec sa configuration figée, son manifest, son statut et son journal. La configuration vit dans <code>config/</code> (<code>validation.yaml</code>, <code>tools.yaml</code>, <code>paths.yaml</code>, <code>profiles.yaml</code> pour les profils A, C et D, <code>strategies.yaml</code>, <code>demo_chr22.yaml</code>). Le module <code>storage</code> (chemins, checksums, registre de fichiers, nettoyage) reste à implémenter, de même que la consolidation des dossiers <code>results/</code>, <code>logs/</code> et <code>reports/</code>.</p>
+    </section>
+
+    <section id="s9">
+      <h2>9. Rapports et sorties</h2>
+      <p>La couche reporting, prévue en phase 6, génère des rapports déterministes depuis un run figé. Trois formats sont prévus, tous en stubs : un rapport HTML interactif avec la palette teal, navy et corail et des figures Plotly, exportable en PDF ; un rapport PDF imprimable, rendu depuis le HTML ou via WeasyPrint ; un rapport Markdown reproductible, archivable dans git et lisible sans navigateur. Les vues web de résultats, pages de données, de comparaison et de rapports, relèvent de la phase 7.</p>
+    </section>
+
+    <section id="s10">
+      <h2>10. Sécurité, exécution et éléments transversaux</h2>
+      <p>Les données génétiques réelles ne sont jamais versionnées : VCF, BCF, fichiers PLINK, BAM, CRAM, bases locales, logs et résultats sont exclus par <code>.gitignore</code> et <code>.dockerignore</code>. La base ne conserve que des métadonnées, des chemins contrôlés, des checksums, des métriques, des statuts et des rapports.</p>
+      <p>Toute commande externe passe par le wrapper sécurisé, construite comme une liste d'arguments, jamais comme une chaîne shell concaténée :</p>
       <pre># Autorisé
 subprocess.run(
   ["plink", "--bfile", "input", "--make-bed", "--out", "output"],
@@ -1348,11 +1481,12 @@ subprocess.run(
 
 # Interdit
 subprocess.run("plink --bfile " + user_input, shell=True)</pre>
-      <p>Le socle de sécurité impose une validation stricte des chemins, une liste blanche d'exécutables, des secrets passés par variables d'environnement et un refus systématique de <code>shell=True</code>. Chaque run produit son audit minimal : <code>config.yaml</code>, <code>manifest.json</code>, <code>status.json</code>, <code>logs/pipeline.log</code>, un dossier <code>outputs/</code> et un dossier <code>report/</code>.</p>
+      <h3>Éléments transversaux</h3>
+      <p>Trois ensembles outillent toutes les couches. Les dépendances (<code>pyproject.toml</code>) reposent sur Flask, SQLAlchemy, Alembic, pandas, numpy, scipy, scikit-learn, Plotly, Typer, Jinja2, psycopg3, pydantic-settings et rich. L'intégration continue (GitHub Actions) enchaîne <code>compileall</code>, ruff, mypy et pytest avec couverture, complétée par des hooks pre-commit (ruff, blocage des gros fichiers, détection de clés privées). Enfin, 26 fichiers de tests couvrent l'infrastructure, les commandes, les jobs, la base, le pipeline et les validateurs, sans données réelles ni outil bioinformatique réel, et la documentation est portée par <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>CODE_INDEX.md</code>, <code>DEV_TRACKING.md</code>, <code>ROADMAP.md</code> et neuf fiches thématiques.</p>
     </section>
 
-    <section id="s8">
-      <h2>8. Déploiement Docker</h2>
+    <section id="s11">
+      <h2>11. Déploiement Docker</h2>
       <p>Le mode recommandé repose sur Docker Compose. Après copie de <code>.env.example</code> vers <code>.env</code>, la commande <code>docker compose up --build</code> démarre trois services et expose l'interface sur le port 8000.</p>
       <table>
         <thead><tr><th>Service</th><th>Rôle</th></tr></thead>
@@ -1362,16 +1496,13 @@ subprocess.run("plink --bfile " + user_input, shell=True)</pre>
           <tr><td><code>genorun-db</code></td><td>base PostgreSQL</td></tr>
         </tbody>
       </table>
-      <p>Le service <code>genorun-app</code> applique <code>alembic upgrade head</code> avant de lancer Gunicorn, ce qui migre la base automatiquement au démarrage. Le <code>Dockerfile</code> installe le package avec <code>pip install -e .</code> et définit <code>PYTHONPATH=/app/src</code>, afin que les imports <code>genorun_validation</code> fonctionnent dans le conteneur. Aucune donnée génétique ni secret ne doit entrer dans l'image.</p>
-      <aside class="callout">
-        <strong>Mode local simple.</strong> Hors Docker, l'environnement se crée via Conda, le package s'installe en mode éditable, les outils se vérifient par <code>scripts/check_tools.sh</code>, la base s'initialise par <code>scripts/init_database.py</code>, puis l'interface se lance en mode debug.
-      </aside>
+      <p>Le service <code>genorun-app</code> applique <code>alembic upgrade head</code> avant de lancer Gunicorn, ce qui migre la base au démarrage. Le <code>Dockerfile</code> installe le package avec <code>pip install -e .</code> et définit <code>PYTHONPATH</code>, afin que les imports <code>genorun_validation</code> fonctionnent dans le conteneur. Aucune donnée génétique ni secret ne doit entrer dans l'image.</p>
     </section>
 
-    <section id="s9">
-      <h2>9. Feuille de route, du socle au déploiement</h2>
-      <p>La feuille de route va du point de départ, un scaffold dont l'infrastructure est réelle mais le cœur scientifique en stubs, jusqu'au déploiement. Les couches se remplissent du socle vers le sommet. Entre chaque phase, une porte de test ferme le passage, selon la règle d'or répétée à chaque étape :</p>
-      <aside class="callout"><strong>« Étape à tester avant la suivante. »</strong> On ne franchit pas une porte tant que ses tests ne sont pas verts, documentés et reproductibles. La vérification minimale combine <code>python -m compileall src scripts web</code> et <code>pytest -q</code>.</aside>
+    <section id="s12">
+      <h2>12. Feuille de route et état d'avancement</h2>
+      <p>La lecture par couches recoupe la feuille de route : le socle (interface, jobs, orchestration, base, stockage) est implémenté, le cœur scientifique, les parseurs, les services métier et les rapports restent à écrire. Les couches se remplissent du socle vers le sommet, et entre chaque phase une porte de test ferme le passage.</p>
+      <aside class="callout"><strong>« Étape à tester avant la suivante. »</strong> On ne franchit pas une porte tant que ses tests ne sont pas verts, documentés et reproductibles. La vérification minimale combine <code>python -m compileall</code> et <code>pytest -q</code>.</aside>
       <div class="two-col-figure">
         <figure class="roadmap" role="img" aria-label="Feuille de route Génome Réunion du socle au déploiement">
 <svg width="100%" viewBox="0 0 680 1124" role="img" xmlns="http://www.w3.org/2000/svg" style="">
@@ -1503,56 +1634,49 @@ subprocess.run("plink --bfile " + user_input, shell=True)</pre>
         </figure>
       </div>
       <table>
-        <thead><tr><th>Phase</th><th>Objet</th></tr></thead>
+        <thead><tr><th>Phase</th><th>Objet</th><th>État</th></tr></thead>
         <tbody>
-          <tr><td>0</td><td>Socle et durcissement : gouvernance, outillage qualité, CI, contrats d'interface, harnais de test, sécurité socle</td></tr>
-          <tr><td>1</td><td>Wrappers des outils externes : PLINK, plink2, KING, ADMIXTURE, bcftools, Beagle, SHAPEIT</td></tr>
-          <tr><td>2</td><td>Parsers de sorties vers des structures Python typées</td></tr>
-          <tr><td>3</td><td>Cœur scientifique : QC, LD pruning, PCA, ADMIXTURE, KING, ROH, S_div, sélection WGS hybride, imputation</td></tr>
-          <tr><td>4</td><td>Orchestration et worker réel, sortie du mode dry run</td></tr>
-          <tr><td>5</td><td>Persistance SQL synchronisée avec les jobs</td></tr>
-          <tr><td>6</td><td>Reporting Markdown, HTML et PDF reproductibles</td></tr>
-          <tr><td>7</td><td>Interface web Flask et front vanilla</td></tr>
-          <tr><td>8</td><td>Recette V3.5 de bout en bout, règles de sélection traduites en tests d'acceptation</td></tr>
-          <tr><td>9</td><td>Déploiement : images Docker, init base et secrets, smoke test, runbook</td></tr>
+          <tr><td>0</td><td>Socle et durcissement : gouvernance, qualité, CI, contrats, tests, sécurité</td><td>Implémenté</td></tr>
+          <tr><td>1</td><td>Wrappers des outils externes : PLINK, plink2, KING, ADMIXTURE, bcftools, BEAGLE, SHAPEIT4</td><td>Stub</td></tr>
+          <tr><td>2</td><td>Parseurs de sorties vers structures Python typées</td><td>Stub</td></tr>
+          <tr><td>3</td><td>Cœur scientifique : QC, PCA, ADMIXTURE, KING, ROH, S_div, sélection V3.5, imputation</td><td>Stub</td></tr>
+          <tr><td>4</td><td>Orchestration et worker réel, sortie du mode dry run</td><td>En cours</td></tr>
+          <tr><td>5</td><td>Persistance SQL synchronisée avec les jobs</td><td>Implémenté</td></tr>
+          <tr><td>6</td><td>Reporting Markdown, HTML et PDF reproductibles</td><td>Stub</td></tr>
+          <tr><td>7</td><td>Vues web de résultats dans l'interface Flask</td><td>Stub</td></tr>
+          <tr><td>8</td><td>Recette de bout en bout, règles de sélection en tests d'acceptation</td><td>À venir</td></tr>
+          <tr><td>9</td><td>Déploiement : images Docker, init base et secrets, smoke test, runbook</td><td>En cours</td></tr>
         </tbody>
       </table>
     </section>
 
-    <section id="s10">
-      <h2>10. Évolutions de la version v5.4</h2>
-      <p>La v5.4 corrige les points d'infrastructure relevés lors de l'audit de la v5.3. Elle stabilise le socle sans modifier les algorithmes.</p>
-      <h3>Interface et qualité</h3>
-      <p>Les références à l'ancien dossier <code>app/</code> sont remplacées par <code>web/</code> dans les commandes de test, la CI et la documentation. La commande officielle enchaîne compilation, lint, vérification de format et tests. L'intégration continue rejoue cette chaîne sur chaque pull request.</p>
-      <h3>Docker, PostgreSQL et Alembic</h3>
-      <p>Le <code>Dockerfile</code> installe le package en mode éditable, <code>genorun-app</code> migre la base avant Gunicorn, et <code>docker-compose.yml</code> lit les identifiants depuis <code>.env</code>. La migration initiale est devenue explicite table par table, sans <code>create_all()</code>. PostgreSQL sert de file officielle des jobs quand la base est activée, tandis que <code>work/runs/&lt;job_id&gt;/</code> reste la trace reproductible des runs.</p>
-      <h3>Worker et tests</h3>
-      <p>Le worker en boucle s'appuie désormais sur <code>JobManager.list_runnable_jobs()</code> au lieu de scanner directement les statuts. Deux tests ont été ajoutés, un test filesystem et un test PostgreSQL conditionnel. La vérification en sandbox a passé 26 tests verts.</p>
-    </section>
-
-    <section id="s11">
+    <section id="s13">
       <h2>Annexes</h2>
       <h3>A. Commandes clés</h3>
       <pre># Docker (recommandé)
 cp .env.example .env
 docker compose up --build            # interface : http://localhost:8000
 
-# Local simple
-conda env create -f environment.yml
-conda activate genorun-validation
-pip install -e .
-flask --app web run --debug
+# CLI Typer
+genorun create_job ...               # crée un job
+genorun run_worker --job-id ...      # exécute un job
+genorun list_jobs                    # liste les jobs
 
 # Qualité avant tout changement
 python -m compileall src scripts web
 ruff check src scripts web tests
+mypy src
 pytest --cov</pre>
-      <h3>B. Données 1000 Genomes</h3>
-      <p>Le socle public démarre sur le jeu haute couverture IGSR, à l'adresse de collecte <code>1000G_2504_high_coverage</code>, avec les VCF phasés de 3202 échantillons. Le MVP conseillé commence par le chromosome 22, téléchargé via <code>scripts/download_1000g_chr22.sh</code>.</p>
-      <h3>C. Gouvernance documentaire</h3>
-      <p>Les règles de développement sont portées par <code>AGENTS.md</code> (autorité), <code>CLAUDE.md</code> (guide opérationnel subordonné), <code>.codex/rules.md</code> (rappel court), <code>docs/CODE_INDEX.md</code> (localisation du code), <code>docs/DEV_TRACKING.md</code> (décisions, dettes et erreurs connues) et <code>docs/ROADMAP.md</code> (phases et portes de test).</p>
-      <h3>D. Sources</h3>
-      <p>Cette synthèse reprend la documentation technique du dépôt : README, <code>docs/00</code> à <code>docs/09</code>, <code>docs/05_structure_base_donnees.md</code>, <code>docs/06_interface_web.md</code>, <code>docs/08_securite_donnees.md</code>, <code>docs/09_architecture_jobs_interface_worker.md</code>, <code>docs/ROADMAP.md</code> et les notes de version v5.4. Les documents <code>01</code>, <code>02</code>, <code>04</code> et <code>07</code> restent des fiches de cadrage à compléter, leur contenu n'a donc pas pu être synthétisé.</p>
+      <h3>B. Tables principales de la base</h3>
+      <pre>Project        Cohort          Sample          InputFile
+AnalysisJob    AnalysisStep    JobLog          AuditEvent
+QCMetrics      PCAProjection</pre>
+      <h3>C. Fichiers de configuration</h3>
+      <p><code>config/</code> réunit <code>validation.yaml</code> (seuils QC, MAF, HWE), <code>tools.yaml</code>, <code>paths.yaml</code>, <code>profiles.yaml</code> (profils de validation A, C, D), <code>strategies.yaml</code> (poids du score S_div) et <code>demo_chr22.yaml</code> pour le MVP sur le chromosome 22.</p>
+      <h3>D. Pile de dépendances</h3>
+      <p>Flask, SQLAlchemy, Alembic, pandas, numpy, scipy, scikit-learn, Plotly, Typer, Jinja2, psycopg3, pydantic-settings et rich, déclarées dans <code>pyproject.toml</code>, <code>requirements.txt</code> et <code>environment.yml</code>.</p>
+      <h3>E. Sources</h3>
+      <p>Cette synthèse reprend le diagramme d'architecture des modules du dépôt Validation_Selection_GR (généré le 15 juin 2026) et la documentation technique : README, fiches <code>docs/00</code> à <code>docs/09</code>, notes de version v5.4, <code>AGENTS.md</code>, <code>CLAUDE.md</code>, <code>CODE_INDEX.md</code> et <code>ROADMAP.md</code>.</p>
     </section>
 
   </main>
