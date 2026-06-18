@@ -1127,7 +1127,7 @@ table caption{caption-side:top;text-align:left;font-style:italic;color:var(--mut
 <tr><td>Auteurs</td><td>Patrick MUNIER · Dr Thomas HUBY · Susie GUILLY · Dr Fanny FERROUL</td></tr>
 <tr><td>Affiliation</td><td>Laboratoire de Génétique, CHU de La Réunion</td></tr>
 <tr><td>Statut</td><td>Protocole de validation resserré pour le gel méthodologique de la sélection WGS</td></tr>
-<tr><td>Version</td><td>v1.1 · Juin 2026</td></tr>
+<tr><td>Version</td><td>v1.2 corrigée · Juin 2026</td></tr>
 <tr><td>Documents de référence</td><td>METHODOLOGY_selection_V3_5.md (méthode de sélection) ; METHODOLOGIE_validation_4_profils_population_INSEE.md (protocole dense, profils A à D)</td></tr>
 </table></div>
 </section>
@@ -1143,30 +1143,33 @@ table caption{caption-side:top;text-align:left;font-style:italic;color:var(--mut
       <li><a class="toc-entry" href="#s7"><span class="toc-title">7. Bras découverte : ratio par sensibilité</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
       <li><a class="toc-entry" href="#s8"><span class="toc-title">8. Sensibilité algorithmique</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
       <li><a class="toc-entry" href="#s9"><span class="toc-title">9. Audit puce SNP vers WGS</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s10"><span class="toc-title">10. Validation externe</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s10"><span class="toc-title">10. Validation externe secondaire</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
       <li><a class="toc-entry" href="#s11"><span class="toc-title">11. Règle de décision hiérarchique à portes</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
-      <li><a class="toc-entry" href="#s12"><span class="toc-title">12. Livrables</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
+      <li><a class="toc-entry" href="#s12"><span class="toc-title">12. Livrables et traçabilité</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
       <li><a class="toc-entry" href="#s13"><span class="toc-title">13. Effet sur la voilure</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
       <li><a class="toc-entry" href="#s14"><span class="toc-title">14. Ce qui est délibérément conservé</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
       <li><a class="toc-entry" href="#s15"><span class="toc-title">15. Bibliographie</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
       <li><a class="toc-entry" href="#s16"><span class="toc-title">Annexe A. Glossaire</span><span class="toc-dots"></span><span class="toc-page-num"></span></a></li>
 </ol></nav>
 <main><section id="s-res"><div class="summary"><h2>Résumé exécutif</h2>
-<p>Cette validation vérifie, <strong>avant déploiement</strong>, que la sélection WGS géo-ancestrale du projet Génome Réunion (350 WGS choisis dans une cohorte de 2500) apporte un gain réel, justifie sa complexité et reste pertinente face à une structure de population qu'elle ne sait pas lire a priori. Elle concentre la rigueur là où elle décide, sur une surface d'analyse minimale et un risque statistique maîtrisé.</p>
+<p>Cette validation vérifie, <strong>avant déploiement</strong>, que la sélection WGS géo-ancestrale du projet Génome Réunion (350 WGS choisis dans une cohorte candidate de 2500 personnes) améliore l'imputation des variants rares, justifie sa complexité et ne s'effondre pas lorsque la structure génétique utile est partiellement invisible au score de sélection.</p>
 <ul>
-<li><strong>Un endpoint primaire unique</strong>, la qualité d'imputation des variants rares et fondateurs, complété d'un co-primaire, la capture binaire des fondateurs.</li>
-<li><strong>Quatre stratégies décisives</strong> (random, géographique strict, géo-ancestral + bras découverte, maximin), au lieu de onze.</li>
-<li><strong>Trois profils de population décisifs</strong> (A homogène, C mixte-hétérogène, D isolat cryptique), le profil D étant élargi car il porte l'essentiel de la valeur probante.</li>
-<li><strong>Une décision à trois portes</strong> (gatekeeping) qui conduit au gel de la sélection ou à une revue documentée.</li>
-<li><strong>Un périmètre assumé</strong> : la preuve décisive est in silico ; EPIGEN-Brasil sert de test de transférabilité, non de juge ; l'audit de représentativité EFS reste une condition de déploiement séparée et obligatoire.</li>
+<li><strong>Un endpoint primaire unique et apparié</strong> : la différence absolue de R² d'imputation des variants rares entre la stratégie candidate et le tirage aléatoire, sur le profil C, avec panel combiné.</li>
+<li><strong>Une cohorte test indépendante et commune</strong> de 1000 individus par seed : aucune stratégie n'est évaluée sur ses propres non-sélectionnés.</li>
+<li><strong>Quatre stratégies décisives</strong> : random, géographique stratifié strict, géo-ancestral avec bras découverte, et maximin génétique.</li>
+<li><strong>Trois profils décisifs</strong> : A homogène, C mixte-hétérogène synthétique et D à structure cryptique randomisée.</li>
+<li><strong>Un seul test confirmatoire primaire</strong>, puis des comparaisons secondaires examinées dans un ordre hiérarchique pré-enregistré.</li>
+<li><strong>Les variants fondateurs sont évalués séparément</strong>, variant par variant, par le nombre de copies et de porteurs indépendants captés.</li>
+<li><strong>La validation externe est secondaire et non substitutive</strong> : SABE-WGS teste le principe d'un panel local admixé ; EPIGEN-2.5M teste la transférabilité sur puce, sans prétendre fournir une vérité WGS rare.</li>
+<li><strong>L'audit EFS porte sur la couverture géographique du recrutement</strong>, non sur une représentativité démographique parfaite de La Réunion ; l'âge n'est pas requis.</li>
 </ul></div>
-<aside class="callout"><div class="label">Thèse centrale</div><p>Le panel local, ou combiné, doit battre le référentiel externe seul sur les variants rares et fondateurs. Le profil D élargi est ce qui empêche cette preuve simulée de se réduire à une tautologie géo-ancestrale.</p></aside>
+<aside class="callout"><div class="label">Thèse centrale</div><p>Sur une même cohorte test indépendante, la stratégie géo-ancestrale doit produire un panel combiné plus performant que le panel issu d'un tirage aléatoire, tout en apportant un gain mesurable par rapport à une stratification géographique simple. Le profil D vérifie que ce gain ne dépend pas uniquement des variables utilisées pour construire le score.</p></aside>
 <figure class="viz"><svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Effet de la réduction sur la voilure">
 <text x="14" y="18" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#0F3A56">Effet de la réduction : protocole dense comparé au protocole resserré</text>
 <rect x="14" y="28" width="12" height="12" fill="#888"/>
 <text x="31" y="38" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#555">Protocole dense</text>
 <rect x="150" y="28" width="12" height="12" fill="#1E6E8C"/>
-<text x="167" y="38" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#555">Protocole resserré (présent)</text>
+<text x="167" y="38" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#555">Protocole corrigé (présent)</text>
 <text x="14" y="64" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1a1a1a">Stratégies décisives</text>
 <rect x="195" y="50" width="333.7" height="15" rx="3" fill="#888"/>
 <text x="535.7" y="62" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#888">11</text>
@@ -1177,50 +1180,61 @@ table caption{caption-side:top;text-align:left;font-style:italic;color:var(--mut
 <text x="566.0" y="114" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#888">12</text>
 <rect x="195" y="121" width="30.3" height="15" rx="3" fill="#1E6E8C"/>
 <text x="232.3" y="133" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1E6E8C">1</text>
-<text x="14" y="168" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1a1a1a">Livrables .tsv</text>
+<text x="14" y="168" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1a1a1a">Livrables minimaux</text>
 <rect x="195" y="154" width="455.0" height="15" rx="3" fill="#888"/>
 <text x="657.0" y="166" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#888">15</text>
-<rect x="195" y="173" width="182.0" height="15" rx="3" fill="#1E6E8C"/>
-<text x="384.0" y="185" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1E6E8C">6</text>
+<rect x="195" y="173" width="273.0" height="15" rx="3" fill="#1E6E8C"/>
+<text x="475.0" y="185" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1E6E8C">9</text>
 </svg><figcaption>Figure 1 : effet de la réduction de voilure, du protocole dense au protocole resserré (détail au &#167;13).</figcaption></figure>
 </section><section id="s0"><h2>0. Pourquoi une version à voilure réduite</h2>
-<p>Le protocole dense croise environ 11 stratégies, 4 profils, au moins 100 seeds, environ 24 variantes de sensibilité, 3 validations externes et plus de 15 livrables. Cette surface est à la fois ingérable opérationnellement et statistiquement risquée : avec autant de cellules (métrique, profil, stratégie, scénario), des « succès » apparaîtront par hasard, par comparaisons multiples non corrigées, le <em>garden of forking paths</em>.</p>
-<p>Cette version applique cinq décisions de réduction, sans renoncer à ce qui fait la valeur scientifique du protocole dense.</p>
+<p>Le protocole dense croisait environ 11 stratégies, 4 profils, de nombreuses variantes de sensibilité, plusieurs jeux externes et plus de 15 livrables. Cette surface augmentait fortement le coût de calcul et le risque de sélectionner a posteriori la comparaison la plus favorable.</p>
+<p>La version resserrée applique six décisions.</p>
 <ol>
-<li><strong>Un seul endpoint primaire décisif</strong> (imputation aval), avec en co-primaire la capture binaire des fondateurs, au lieu d'environ 12 métriques juges.</li>
-<li><strong>Trois à quatre stratégies</strong> au chemin de décision, au lieu de 11.</li>
-<li><strong>Trois profils décisifs</strong> (A, C, D), le profil D étant <em>élargi</em> en distribution de structures cryptiques ; le profil B passe en exploratoire.</li>
-<li><strong>Seeds en deux étages</strong> (criblage à 25 puis confirmation à 100), au lieu de 100 partout.</li>
-<li><strong>Sensibilité non croisée</strong> : un seul couple (profil C × stratégie candidate).</li>
+<li><strong>Un seul endpoint primaire confirmatoire</strong>, défini par un contraste, un profil, un type de panel et une population test fixés avant simulation.</li>
+<li><strong>Trois comparateurs utiles</strong> autour de la stratégie candidate : random, géographique stratifié strict et maximin génétique.</li>
+<li><strong>Trois profils décisifs</strong> A, C et D ; B reste exploratoire.</li>
+<li><strong>Une cohorte test indépendante commune</strong> à toutes les stratégies, supprimant le biais lié à des groupes held-out différents.</li>
+<li><strong>Des seeds en trois niveaux</strong> : 25 seeds pilotes aveugles pour estimer la variance, 200 seeds confirmatoires indépendants pour l'imputation, et 1000 seeds légers pour la capture des fondateurs.</li>
+<li><strong>Une sensibilité non croisée</strong>, centrée sur le couple profil C × stratégie candidate.</li>
 </ol>
-<p>Tout ce qui n'appartient pas au noyau décisif ne participe <strong>pas</strong> au verdict : cela forme un <em>anneau exploratoire</em> facultatif, utile à la discussion mais hors du chemin de gel.</p>
-<h3>Distinction de périmètre assumée</h3>
-<p>Cette validation <strong>ne cherche pas</strong> à reconstituer la structure démographique réelle de La Réunion. Elle teste la robustesse de la méthode à travers plusieurs régimes possibles de structure populationnelle. Les profils ne sont pas des portraits de l'île : ce sont des mondes possibles.</p>
-<p>La représentativité de la cohorte réelle des 2500 donneurs EFS n'est <strong>pas un endpoint de validation in silico</strong>, car elle ne peut pas être résolue par simulation. Elle constitue en revanche une <strong>condition de déploiement séparée mais obligatoire</strong> : avant application finale de la sélection WGS, un audit EFS devra documenter la distribution par commune ou secteur, âge, sexe, accessibilité territoriale et écarts majeurs aux proxys INSEE disponibles. La sélection WGS ne devra donc pas être présentée comme directement représentative de la population réunionnaise générale, mais comme une sélection optimisée dans une cohorte EFS auditée et, si nécessaire, recalibrée.</p>
-<h3>Limite résiduelle reconnue d'emblée</h3>
-<p>Les mondes simulés A, C (et B) sont engendrés dans le langage <code>secteur × composante × période</code>, exactement les coordonnées que la méthode géo-ancestrale exploite. Une méthode géo-ancestrale est donc quasi assurée de bien faire dans ces mondes. <strong>Le profil D est le seul qui injecte un signal hors des coordonnées fournies au score <code>S_div</code></strong> (isolat cryptique non annoté). C'est pourquoi cette version <em>renforce</em> D plutôt que de le réduire : il porte l'essentiel de la valeur probante interne.</p>
-<p><strong>Conséquence assumée du poids probant.</strong> Le seul test sur <strong>données réelles</strong> (EPIGEN-Brasil, &#167;10) est délibérément non décisif : le Brésil n'est pas La Réunion, il ne peut donc servir que de test de transférabilité, pas de juge. Le verdict décisif repose par conséquent sur la <strong>simulation</strong> (Porte 1 sur A, C, D), la donnée réelle ne venant qu'en appui (Porte 3). C'est une limite structurelle revendiquée : la preuve décisive est in silico, la donnée réelle est confirmatoire.</p>
+<p>Les analyses non incluses dans le chemin de décision restent autorisées, mais sont marquées <em>exploratory</em> et ne peuvent modifier les seuils ni le verdict.</p>
+<h3>Distinction de périmètre</h3>
+<p>Les profils simulés ne cherchent pas à reproduire parfaitement la démographie de La Réunion. Ils représentent des régimes de structure possibles permettant de tester la méthode. Les valeurs d'ascendance sont donc des paramètres synthétiques et non des estimations de population.</p>
+<p>La cohorte EFS est une cohorte de recrutement. Son audit préalable vérifie que les zones ciblées sont effectivement couvertes et que le dispositif n'est pas dominé par un seul site de collecte. Il ne prétend pas démontrer une représentativité épidémiologique de l'ensemble de la population réunionnaise.</p>
+<h3>Limite résiduelle reconnue</h3>
+<p>Les profils A et C sont décrits avec des secteurs et des composantes ancestrales que la méthode exploite. Le profil D introduit donc une structure cryptique dont le label n'est jamais transmis à l'algorithme. Il constitue le principal contrôle contre une validation circulaire.</p>
+<p>Les jeux réels externes ne correspondent pas à La Réunion. Ils ne peuvent ni valider ni invalider seuls la sélection finale ; ils servent à rechercher une concordance de direction et d'éventuelles contradictions majeures.</p>
 </section><section id="s1"><h2>1. Principe et questions</h2>
-<p>La validation répond à trois questions, et trois seulement, au niveau décisif.</p>
+<p>La validation répond à trois questions décisives.</p>
 <ol>
-<li><strong>Le panel local améliore-t-il réellement l'imputation</strong> des variants rares et fondateurs, par rapport à un référentiel externe seul et à un tirage aléatoire ? (endpoint primaire)</li>
-<li><strong>La complexité géo-ancestrale se justifie-t-elle</strong> face à l'alternative bien moins coûteuse de la stratification géographique stricte ?</li>
-<li><strong>La méthode reste-t-elle pertinente face à une structure qu'elle ne sait pas lire a priori</strong> (isolat cryptique) ?</li>
+<li><strong>Gain principal :</strong> sur le profil C et une cohorte test indépendante, la stratégie géo-ancestrale avec bras découverte améliore-t-elle le R² d'imputation des variants rares par rapport à un tirage aléatoire, lorsque les deux panels locaux sont combinés au même référentiel externe ?</li>
+<li><strong>Justification de la complexité :</strong> ce gain reste-t-il supérieur à celui obtenu par un simple échantillonnage géographique stratifié, sans score génétique ?</li>
+<li><strong>Robustesse :</strong> la méthode reste-t-elle au minimum non inférieure au random lorsque le signal utile provient d'une structure cryptique non annotée ?</li>
 </ol>
-<p>Le scénario central pour La Réunion est défini comme <strong>mixte-hétérogène</strong> : population globalement admixée, structurée par des gradients géographiques, des sous-profils locaux, des effets fondateurs et des différences haplotypiques.</p>
-</section><section id="s2"><h2>2. Contraintes structurelles (rappel)</h2>
-<p><strong>N = 2500 est une contrainte budgétaire dure</strong>, alignée sur la cohorte SNP réelle. On sélectionne <strong>350 WGS</strong>. Conséquences conservées du protocole dense.</p>
-<ul>
-<li><strong>Sous-puissance assumée de <code>random</code> pour les fondateurs</strong> : c'est l'argument central de la méthode, pas un défaut. Le reporting se fait en <strong>distribution de capture</strong> sur les seeds, pas en moyenne seule.</li>
-<li><strong>Apparentement comme paramètre de simulation</strong> (<code>&#966;</code>, <code>G_endo</code>) : il modélise l'inflation naturelle des fréquences fondatrices en petite population insulaire.</li>
-<li><strong>Maille géographique constante à 8 secteurs</strong> sur tous les profils, condition de comparabilité : Nord urbain, Nord-Est/Est agricole, Saint-Leu/Hauts Ouest, Sud agricole, Hauts du Sud/Plaine, Sud-Est périphérique, Cirques/Hauts isolés, Ouest littoral.</li>
-</ul>
-<table><caption>Tableau 1 : paramètres de simulation de l'apparentement.</caption>
-<thead><tr><th>Paramètre</th><th>Notation</th><th>Plage</th></tr></thead><tbody>
-<tr><td>Coefficient d'apparentement intra sous-profil</td><td><code>&#966;</code></td><td>0,03 (C) ; 0,08 (D)</td></tr>
-<tr><td>Profondeur d'endogamie simulée</td><td><code>G_endo</code></td><td>4 à 5 (C) ; 5 à 6 (D)</td></tr>
+<p>Une question secondaire examine ensuite si l'ajout du panel local sélectionné au référentiel externe améliore l'imputation par rapport au référentiel externe seul.</p>
+<p>Le scénario central est un monde synthétique mixte-hétérogène : population admixée, gradients territoriaux, sous-profils locaux et effets fondateurs variables. Il est inspiré du contexte scientifique de La Réunion sans être présenté comme une estimation de sa structure réelle.</p>
+</section><section id="s2"><h2>2. Contraintes structurelles et plan d'évaluation</h2>
+<p><strong>La cohorte candidate contient 2500 individus</strong>, dont 350 doivent être sélectionnés pour le WGS. Cette contrainte budgétaire est inchangée.</p>
+<h3>2.1 Cohorte candidate et cohorte test</h3>
+<p>Pour chaque seed et chaque profil, le simulateur génère deux ensembles distincts.</p>
+<table><caption>Tableau 1 : séparation des données de sélection et d'évaluation.</caption><thead><tr><th>Ensemble</th><th>Effectif</th><th>Rôle</th></tr></thead><tbody>
+<tr><td>Cohorte candidate</td><td class="num">2500</td><td>calcul des variables de sélection puis choix des 350 WGS</td></tr>
+<tr><td>Cohorte test indépendante</td><td class="num">1000</td><td>génotypes puce masqués et vérité WGS utilisés pour l'évaluation de toutes les stratégies</td></tr>
 </tbody></table>
-<p>Valeurs scénarisées, à calibrer dès que les SNP réels et les pedigrees CGB seront disponibles.</p>
+<p>La cohorte test est générée avec les mêmes paramètres populationnels que la cohorte candidate, mais avec des individus indépendants. Elle n'est jamais éligible à la sélection. Pour un seed donné, <strong>toutes les stratégies sont évaluées sur exactement les mêmes individus et les mêmes variants</strong>.</p>
+<p>Les pedigrees simulés restent internes à la cohorte candidate ou à la cohorte test. Aucun couple candidat-test ne doit dépasser un coefficient KING de 0,0442 ; sinon le seed est régénéré avant toute analyse.</p>
+<h3>2.2 Contraintes conservées</h3>
+<ul>
+<li><strong>Maille constante à huit secteurs</strong> pour les quotas et les scénarios géographiques.</li>
+<li><strong>Apparentement et endogamie simulés</strong> comme paramètres de structure, mais exclusion uniforme des apparentés jusqu'au troisième degré dans les panels de référence lorsque <code>KING &gt; 0,0442</code>.</li>
+<li><strong>Mêmes ressources externes</strong>, mêmes paramètres d'imputation et mêmes variants évaluables pour toutes les stratégies d'un seed.</li>
+<li><strong>Comparaisons appariées par seed</strong>, afin que la variabilité démographique et génétique ne soit pas confondue avec l'effet de la stratégie.</li>
+</ul>
+<table><caption>Tableau 2 : paramètres scénarisés d'apparentement.</caption><thead><tr><th>Paramètre</th><th>Notation</th><th>Plage de travail</th></tr></thead><tbody>
+<tr><td>Coefficient d'apparentement intra sous-profil</td><td><code>φ</code></td><td>0,03 pour C ; 0,06 à 0,10 pour la structure cryptique D</td></tr>
+<tr><td>Profondeur d'endogamie simulée</td><td><code>G_endo</code></td><td>4 à 5 pour C ; 5 à 6 pour D</td></tr>
+</tbody></table>
+<p>Ces valeurs sont des scénarios de stress à figer avant exécution, puis à recalibrer lors d'une version ultérieure sur les données SNP réelles.</p>
 </section><section id="s3"><h2>3. Profils de population</h2>
 <p>Les tableaux d'admixture ci-dessous sont des <strong>valeurs scénarisées</strong> (composition ancestrale simulée, en %, par secteur). Ce sont des mondes possibles destinés à tester la méthode, non des portraits de la population réelle.</p>
 <h3>3.1 Noyau décisif : A, C, D</h3>
@@ -1228,8 +1242,8 @@ table caption{caption-side:top;text-align:left;font-style:italic;color:var(--mut
 <p>Tous les secteurs présentent une admixture proche. Ce profil sert à vérifier que la méthode <strong>ne crée pas</strong> de gain artificiel quand la population est peu structurée.</p>
 <table><caption>Tableau 2 : profil A, homogène (composition ancestrale simulée, %).</caption><thead><tr><th>Secteur</th><th>Eur</th><th>Afr</th><th>Malg</th><th>Ind</th><th>ChinEA</th><th>OcéanInd</th></tr></thead><tbody><tr><td>Nord urbain</td><td class="num">20</td><td class="num">15</td><td class="num">18</td><td class="num">30</td><td class="num">8</td><td class="num">9</td></tr><tr><td>Nord-Est / Est agricole</td><td class="num">18</td><td class="num">16</td><td class="num">20</td><td class="num">30</td><td class="num">7</td><td class="num">9</td></tr><tr><td>Saint-Leu / Hauts Ouest</td><td class="num">19</td><td class="num">15</td><td class="num">18</td><td class="num">30</td><td class="num">8</td><td class="num">10</td></tr><tr><td>Sud agricole</td><td class="num">19</td><td class="num">14</td><td class="num">18</td><td class="num">31</td><td class="num">8</td><td class="num">10</td></tr><tr><td>Hauts du Sud / Plaine</td><td class="num">22</td><td class="num">14</td><td class="num">18</td><td class="num">28</td><td class="num">7</td><td class="num">11</td></tr><tr><td>Sud-Est périphérique</td><td class="num">18</td><td class="num">17</td><td class="num">20</td><td class="num">29</td><td class="num">6</td><td class="num">10</td></tr><tr><td>Cirques / Hauts isolés</td><td class="num">20</td><td class="num">15</td><td class="num">19</td><td class="num">30</td><td class="num">7</td><td class="num">9</td></tr><tr><td>Ouest littoral</td><td class="num">21</td><td class="num">15</td><td class="num">17</td><td class="num">29</td><td class="num">9</td><td class="num">9</td></tr></tbody></table>
 <p><strong>Résultat attendu :</strong> <code>random &#8776; géographique strict &#8776; géo-ancestral</code>. Un gain élevé signalerait un biais de métrique ou une simulation mal contrôlée.</p>
-<h3>Profil C : mixte-hétérogène réunionnais plausible (scénario principal)</h3>
-<p>La population est très métissée à l'échelle de l'île, mais certains secteurs portent des signatures particulières (zones agricoles, Hauts, cirques, foyers fondateurs, mobilité récente).</p>
+<h3>Profil C : mixte-hétérogène synthétique inspiré du contexte réunionnais (scénario principal)</h3>
+<p>Le monde simulé est très admixé à l'échelle globale, tandis que certains secteurs portent des distributions ancestrales, haplotypiques et fondatrices différentes. Ces paramètres testent une situation compatible avec le contexte réunionnais sans prétendre en mesurer les proportions réelles.</p>
 <table><caption>Tableau 3 : profil C, mixte-hétérogène (composition ancestrale simulée, %).</caption><thead><tr><th>Secteur</th><th>Eur</th><th>Afr</th><th>Malg</th><th>Ind</th><th>ChinEA</th><th>OcéanInd</th></tr></thead><tbody><tr><td>Nord urbain</td><td class="num">25</td><td class="num">10</td><td class="num">10</td><td class="num">22</td><td class="num">20</td><td class="num">13</td></tr><tr><td>Nord-Est / Est agricole</td><td class="num">12</td><td class="num">20</td><td class="num">28</td><td class="num">30</td><td class="num">4</td><td class="num">6</td></tr><tr><td>Saint-Leu / Hauts Ouest</td><td class="num">28</td><td class="num">8</td><td class="num">12</td><td class="num">42</td><td class="num">3</td><td class="num">7</td></tr><tr><td>Sud agricole</td><td class="num">18</td><td class="num">10</td><td class="num">10</td><td class="num">50</td><td class="num">4</td><td class="num">8</td></tr><tr><td>Hauts du Sud / Plaine</td><td class="num">45</td><td class="num">8</td><td class="num">10</td><td class="num">25</td><td class="num">2</td><td class="num">10</td></tr><tr><td>Sud-Est périphérique</td><td class="num">12</td><td class="num">18</td><td class="num">25</td><td class="num">35</td><td class="num">3</td><td class="num">7</td></tr><tr><td>Cirques / Hauts isolés</td><td class="num">35</td><td class="num">14</td><td class="num">25</td><td class="num">16</td><td class="num">1</td><td class="num">9</td></tr><tr><td>Ouest littoral</td><td class="num">22</td><td class="num">13</td><td class="num">15</td><td class="num">32</td><td class="num">8</td><td class="num">10</td></tr></tbody></table>
 <p>Sous-profils internes forts, hétérogénéité haplotypique forte, variants fondateurs localisés probables (<code>&#966; &#8776; 0,03</code>, <code>G_endo = 4 à 5</code> dans les foyers).</p>
 <p><strong>Résultat attendu :</strong> <code>random &lt; géographique strict &lt; géo-ancestral &lt; géo-ancestral + bras découverte</code>. Écart modéré à net, jamais caricatural.</p>
@@ -1237,13 +1251,15 @@ table caption{caption-side:top;text-align:left;font-style:italic;color:var(--mut
 <p>Secteurs très contrastés <strong>et</strong> isolat local généré par le simulateur, <strong>non transmis au score <code>S_div</code></strong>. C'est le seul test réellement adverse.</p>
 <table><caption>Tableau 4 : profil D, isolat cryptique (composition ancestrale simulée, %).</caption><thead><tr><th>Secteur</th><th>Eur</th><th>Afr</th><th>Malg</th><th>Ind</th><th>ChinEA</th><th>OcéanInd</th></tr></thead><tbody><tr><td>Nord urbain</td><td class="num">30</td><td class="num">8</td><td class="num">8</td><td class="num">20</td><td class="num">25</td><td class="num">9</td></tr><tr><td>Nord-Est / Est agricole</td><td class="num">7</td><td class="num">20</td><td class="num">29</td><td class="num">38</td><td class="num">2</td><td class="num">4</td></tr><tr><td>Saint-Leu / Hauts Ouest</td><td class="num">32</td><td class="num">6</td><td class="num">10</td><td class="num">45</td><td class="num">1</td><td class="num">6</td></tr><tr><td>Sud agricole</td><td class="num">12</td><td class="num">6</td><td class="num">8</td><td class="num">66</td><td class="num">2</td><td class="num">6</td></tr><tr><td>Hauts du Sud / Plaine</td><td class="num">60</td><td class="num">5</td><td class="num">8</td><td class="num">18</td><td class="num">1</td><td class="num">8</td></tr><tr><td>Sud-Est périphérique</td><td class="num">10</td><td class="num">15</td><td class="num">22</td><td class="num">42</td><td class="num">2</td><td class="num">9</td></tr><tr><td>Cirques / Hauts isolés</td><td class="num">45</td><td class="num">18</td><td class="num">25</td><td class="num">6</td><td class="num">0</td><td class="num">6</td></tr><tr><td>Ouest littoral</td><td class="num">28</td><td class="num">12</td><td class="num">12</td><td class="num">28</td><td class="num">12</td><td class="num">8</td></tr></tbody></table>
 <p><strong>Structure cryptique randomisée.</strong> Au lieu d'un isolat unique fixé d'avance, le profil D est une <strong>distribution de structures cryptiques randomisées sur les seeds</strong>. À chaque seed, le simulateur tire les paramètres suivants.</p>
-<pre><code>secteur_injection      ~ Uniforme(8 secteurs)            # pas fixé d'avance
-Ne_bottleneck          ~ Uniforme[20, 50]
-G_endo                 ~ Uniforme{5, 6}
-&#966;                      ~ Uniforme[0,06 ; 0,10]
-intensité_dérive       ~ Uniforme[modérée, forte]
-nb_variants_fondateurs ~ Uniforme{1..5}
-mobilité_sortante      = faible ;  mobilité_entrante = faible à modérée</code></pre>
+<pre><code>secteur_injection       ~ Uniforme{1..8}                  # jamais fixé d'avance
+Ne_cryptique            ~ Uniforme_discrète{50..250}
+durée_bottleneck_gen    ~ Uniforme_discrète{4..12}
+G_endo                  ~ Uniforme{5, 6}
+&#966;                       ~ Uniforme[0,06 ; 0,10]
+m_sortante              ~ LogUniforme[0,001 ; 0,020]
+m_entrante              ~ LogUniforme[0,001 ; 0,030]
+nb_variants_fondateurs  ~ Uniforme{1..5}
+MAF_initiale_fondateur  ~ LogUniforme[0,0025 ; 0,020]</code></pre>
 <p>Trois niveaux d'information sont strictement séparés (Figure 4) : le simulateur connaît la vérité-terrain, le validateur utilise les labels cachés uniquement pour calculer les métriques finales, et l'algorithme <code>S_div</code> reste aveugle au label d'isolat.</p>
 <figure class="viz"><svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Barrière d’information du profil D">
 <text x="14" y="18" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#0F3A56">Profil D : trois niveaux d’information strictement séparés</text>
@@ -1255,7 +1271,7 @@ mobilité_sortante      = faible ;  mobilité_entrante = faible à modérée</co
 <rect x="183.0" y="62" width="80.0" height="22" rx="5" fill="#0F3A56"/>
 <text x="223.0" y="76.2" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#fff">profondeur</text>
 <rect x="271.0" y="62" width="143.0" height="22" rx="5" fill="#0F3A56"/>
-<text x="342.5" y="76.2" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#fff">intensité de dérive</text>
+<text x="342.5" y="76.2" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#fff">durée / intensité de dérive</text>
 <rect x="422.0" y="62" width="234.0" height="22" rx="5" fill="#0F3A56"/>
 <text x="539.0" y="76.2" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#fff">variants / haplotypes fondateurs</text>
 <rect x="14" y="108" width="672" height="66" rx="8" fill="#e8f1ee" stroke="#1E6E8C" stroke-width="1.4"/>
@@ -1485,7 +1501,7 @@ mobilité_sortante      = faible ;  mobilité_entrante = faible à modérée</co
 <text x="150" y="377" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" fill="#555">5 Hauts Sud/Plaine   6 Sud-Est périph.   7 Cirques/Hauts   8 Ouest littoral</text>
 </svg><figcaption>Figure 2 : composition ancestrale simulée par secteur, comparaison des trois profils décisifs. A est visiblement homogène ; C et D sont contrastés, D portant en plus un isolat cryptique.</figcaption></figure>
 <figure class="viz"><svg viewBox="0 0 700 308" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Résultat attendu par profil">
-<text x="14" y="18" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#0F3A56">Performance d’imputation attendue (variants rares + fondateurs), par profil</text>
+<text x="14" y="18" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#0F3A56">Performance d’imputation attendue des variants rares, par profil</text>
 <text x="14" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="10.5" font-weight="700" fill="#1E6E8C">Profil A</text>
 <text x="14" y="66" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" fill="#555">homogène (contrôle négatif)</text>
 <line x1="150" y1="64" x2="648" y2="64" stroke="#cdd5dc" stroke-width="2"/>
@@ -1536,254 +1552,263 @@ mobilité_sortante      = faible ;  mobilité_entrante = faible à modérée</co
 <text x="424.80000000000007" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" fill="#333">géo-ancestral</text>
 <circle cx="531.0000000000001" cy="291" r="5" fill="#0F3A56"/>
 <text x="540.0000000000001" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" fill="#333">+ bras découverte</text>
-</svg><figcaption>Figure 3 : performance d'imputation attendue (variants rares et fondateurs) des stratégies, par profil.</figcaption></figure>
-<h3>3.2 Anneau exploratoire (hors décision) : profil B</h3>
+</svg><figcaption>Figure 3 : schéma qualitatif de la performance d'imputation rare attendue ; il n'entre pas dans le calcul confirmatoire.</figcaption></figure>
+<h3>3.2 Variabilité individuelle et mobilité</h3>
+<p>Les tableaux sectoriels décrivent des <strong>moyennes</strong>. Ils ne sont pas appliqués comme des proportions identiques à tous les individus. Pour chaque individu, le vecteur d'ascendance est tiré selon une loi de Dirichlet centrée sur la moyenne du secteur : <code>q_i ~ Dirichlet(κ_P × q_secteur)</code>, avec <code>κ_A = 80</code>, <code>κ_C = 25</code> et <code>κ_D = 20</code> pour le fond de population. Une valeur plus faible produit davantage d'hétérogénéité individuelle.</p>
+<p>La mobilité entre secteur d'origine simulé et secteur de recrutement est tirée avec les probabilités de travail suivantes : <code>p_move = 0,20</code> pour A, <code>0,25</code> pour C, <code>0,15</code> pour le fond de D et <code>0,02 à 0,08</code> pour le groupe cryptique. Ces valeurs sont scénarisées et pré-enregistrées ; elles ne sont pas interprétées comme des estimations démographiques.</p>
+<p>Pour chaque seed, les mêmes paramètres tirés gouvernent la cohorte candidate et la cohorte test indépendante. Les individus, les recombinaisons et les mutations restent distincts.</p>
+<h3>3.3 Anneau exploratoire (hors décision) : profil B</h3>
 <p>Le profil B (« mixte avec sous-structure cachée », moyennes sectorielles proches mais sous-profils localisés) est largement un profil C atténué. Il est conservé <strong>uniquement en exploration</strong> (seeds réduits, stratégie candidate seule) et ne participe pas au verdict de gel. Sa table d'admixture est celle du protocole dense, inchangée.</p>
 </section><section id="s4"><h2>4. Stratégies de sélection</h2>
-<h3>4.1 Noyau décisif (4 stratégies)</h3>
-<table><caption>Tableau 5 : les quatre stratégies du noyau décisif.</caption>
-<thead><tr><th class="num">#</th><th>Stratégie</th><th>Rôle décisif</th></tr></thead><tbody>
-<tr><td class="num">1</td><td><strong>Random</strong></td><td>plancher de référence</td></tr>
-<tr><td class="num">5</td><td><strong>Géographique strict + <code>S_div_sector</code></strong></td><td>l'alternative bien moins coûteuse à battre (justifie ou non la complexité)</td></tr>
-<tr><td class="num">7</td><td><strong>Géo-ancestral + bras découverte</strong></td><td>stratégie candidate (ratio noyau/pool libre par sensibilité, cf. &#167;7)</td></tr>
-<tr><td class="num">10</td><td><strong>Maximin PCA / ADMIX / IBD</strong></td><td>benchmark informationnel supérieur, non nécessairement déployable</td></tr>
+<h3>4.1 Noyau décisif</h3>
+<table><caption>Tableau 5 : stratégies comparées sur la même cohorte candidate.</caption><thead><tr><th>#</th><th>Stratégie</th><th>Définition et rôle</th></tr></thead><tbody>
+<tr><td class="num">1</td><td><strong>Random</strong></td><td>tirage aléatoire simple de 350 individus, après application des mêmes exclusions de qualité et d'apparentement</td></tr>
+<tr><td class="num">5</td><td><strong>Géographique stratifié strict</strong></td><td>quotas sectoriels pré-enregistrés puis tirage aléatoire dans chaque secteur, sans PCA, ADMIXTURE, IBD, ROH ni score génétique</td></tr>
+<tr><td class="num">7</td><td><strong>Géo-ancestral + bras découverte</strong></td><td>stratégie candidate : noyau soumis aux contraintes territoriales et au score <code>S_div</code>, complété par un bras découverte global</td></tr>
+<tr><td class="num">10</td><td><strong>Maximin génétique</strong></td><td>benchmark informationnel basé sur PCA, ADMIXTURE et IBD, sans obligation de déploiement territorial</td></tr>
 </tbody></table>
-<p>Ces quatre stratégies suffisent à trancher les trois questions du &#167;1. Le contraste 5 contre 7 répond directement à « la complexité géo-ancestrale paie-t-elle ? ».</p>
-<p>La stratégie 10 sert uniquement de <strong>plafond informationnel génétique pur</strong> : elle indique ce qu'un algorithme pourrait capter en relâchant les contraintes de représentativité géographique. Elle ne constitue pas automatiquement une stratégie déployable. Si elle gagne mais viole fortement la représentativité territoriale ou augmente la redondance IBD/ROH, elle reste un benchmark et non une recommandation opérationnelle.</p>
-<h3>4.2 Anneau exploratoire (hors décision)</h3>
-<p>PCA-only, maximin IBD seul, <code>S_div</code> naïf, <code>S_div</code> + novelty <code>&#955;</code>, ADMIXTURE + greedy global, opportuniste urbain : exécutés <strong>sur le profil C seulement, à seeds réduits</strong>. Ils éclairent la discussion (d'où vient le gain ?) mais ne décident rien.</p>
-</section><section id="s5"><h2>5. Métriques</h2>
-<h3>5.1 Endpoint primaire décisif : imputation aval</h3>
-<p><strong><code>R&#178;</code> d'imputation sur held-out, agrégé par classe de MAF, classe <code>rare (&lt;1 %) + fondateurs (F1 à F5)</code>.</strong> C'est une tâche prédictive réelle, falsifiable, et la moins circulaire du dispositif (corrélation entre dosage imputé et génotype vrai masqué).</p>
+<p>Les quatre stratégies sélectionnent 350 individus dans <strong>la même cohorte candidate</strong> pour chaque seed. L'ordre des individus, les tie-breakers et les exclusions sont déterministes à seed identique.</p>
+<p>La stratégie 5 constitue le comparateur direct de la complexité : elle mesure ce que produisent les quotas territoriaux seuls. La stratégie 10 représente un plafond génétique ; elle n'est recommandée que si elle reste compatible avec les contraintes du projet.</p>
+<h3>4.2 Règle uniforme d'apparentement</h3>
+<p>Une composante de parenté est construite avec KING. Pour les stratégies décisives, aucun panel ne peut contenir deux individus appartenant à une même composante reliée par <code>kinship &gt; 0,0442</code>, sauf analyse exploratoire explicitement étiquetée. La valeur 0,0625 reste l'espérance théorique des cousins germains, mais n'est pas utilisée comme frontière de classification.</p>
+<h3>4.3 Anneau exploratoire</h3>
+<p>PCA seul, maximin IBD seul, variantes de <code>S_div</code>, opportuniste urbain et autres stratégies du protocole dense peuvent être exécutés sur C avec des seeds réduits. Sur D, un <strong>oracle</strong> utilisant le label caché de la structure cryptique est ajouté uniquement pour estimer la performance maximale atteignable. Il ne participe jamais au classement ni au gel.</p>
+</section><section id="s5"><h2>5. Métriques et estimands</h2>
+<h3>5.1 Endpoint primaire confirmatoire</h3>
+<p>L'endpoint primaire est défini par un seul contraste :</p>
+<pre><code>Δ_primary = moyenne_variant[R²(stratégie 7, panel combiné)]
+          − moyenne_variant[R²(stratégie 1, panel combiné)]
+
+profil = C
+population d'évaluation = cohorte test indépendante commune
+variants = MAF vraie 0,1 % à 1 %, MAC_test ≥ 5
+outil primaire = Beagle 5.4, build 29Oct24.c8e</code></pre>
+<p>Le R² est la corrélation au carré entre dosage imputé et génotype WGS vrai, calculée par variant. Les variants éligibles sont fixés à partir de la vérité de la cohorte test avant comparaison des stratégies et sont identiques pour toutes les stratégies d'un seed. Les variants fondateurs injectés sont exclus de cet endpoint et analysés séparément.</p>
+<p>Le panel combiné associe les 350 WGS locaux sélectionnés au même panel externe figé. Le masque puce, la carte génétique GRCh38, les paramètres Beagle et les filtres de variants sont identiques dans toutes les branches.</p>
+<h3>5.2 Comparaisons secondaires hiérarchiques</h3>
+<p>Elles ne sont examinées qu'après succès du test primaire, dans l'ordre suivant.</p>
+<ol>
+<li><strong>Contrôle négatif :</strong> équivalence entre stratégie 7 et random sur A.</li>
+<li><strong>Stress-test cryptique :</strong> non-infériorité de la stratégie 7 face au random sur D.</li>
+<li><strong>Valeur du panel local :</strong> stratégie 7, panel combiné contre panel externe seul, sur C.</li>
+<li><strong>Valeur de la complexité :</strong> stratégie 7 contre stratégie 5, toutes deux avec panel combiné, sur C.</li>
+</ol>
+<h3>5.3 Variants fondateurs : endpoint secondaire variant par variant</h3>
+<p>Pour chaque variant fondateur <code>F_k</code> et chaque seed, le succès de capture est défini par :</p>
+<pre><code>I_k = 1 si MAC_local(F_k) ≥ 4
+          ET nombre de porteurs indépendants ≥ 2
+          ET aucun couple de porteurs retenus n'a KING &gt; 0,0442
+      0 sinon</code></pre>
+<p>Sont rapportés pour chaque <code>F_k</code> : <code>P(I_k = 1)</code>, le nombre médian de copies, le nombre de porteurs indépendants, la diversité des haplotypes porteurs et la valeur minimale observée parmi F1 à F5. La simple présence d'au moins un allèle reste descriptive et ne constitue plus un co-endpoint primaire.</p>
+<h3>5.4 Métriques de support</h3>
+<p>Sont rapportées sans pouvoir renverser le verdict : couverture allélique totale, classes MAF 1 à 5 %, couverture haplotypique, couverture des cellules géo-ancestrales, IBD résiduel, ROH, diversité du bras découverte et précision des fréquences recalibrées.</p>
+<h3>5.5 Diagnostiques et tolérance</h3>
+<table><caption>Tableau 6 : diagnostiques non décisifs.</caption><thead><tr><th>Domaine</th><th>Mesure</th></tr></thead><tbody>
+<tr><td>PCA</td><td>distance de distribution et couverture de l'enveloppe de la cohorte candidate</td></tr>
+<tr><td>ADMIXTURE</td><td>écart moyen des proportions et couverture des profils minoritaires</td></tr>
+<tr><td>IBD / parenté</td><td>distribution des segments ≥ 5 cM ; KING avec frontière d'exclusion à 0,0442</td></tr>
+<tr><td>ROH</td><td>distribution de <code>F_ROH</code> et représentation des queues de distribution</td></tr>
+</tbody></table>
+<p>Une dégradation supérieure à 5 % sur un diagnostique déclenche une revue, mais ne remplace jamais l'endpoint d'imputation.</p>
+</section><section id="s6"><h2>6. Seuils pré-enregistrés et puissance</h2>
+<p>Les seuils, les versions logicielles, le panel externe, la liste des variants évaluables et les seeds confirmatoires sont enregistrés avant la première analyse confirmatoire dans <code>validation_thresholds.tsv</code> et un manifeste horodaté. Les 25 seeds pilotes ne sont jamais réutilisés pour le verdict.</p>
+<h3>6.1 Seuils de décision</h3>
+<table><caption>Tableau 7 : seuils de travail à confirmer avant lancement.</caption><thead><tr><th>Ordre</th><th>Contraste</th><th>Règle</th></tr></thead><tbody>
+<tr><td class="num">1</td><td>Primaire C : stratégie 7 combinée − random combiné</td><td>borne inférieure de l'IC95 apparié ≥ <strong>+0,03 R²</strong></td></tr>
+<tr><td class="num">2</td><td>A : stratégie 7 combinée − random combiné</td><td>IC90 entièrement contenu dans <strong>[−0,01 ; +0,01]</strong> (test d'équivalence)</td></tr>
+<tr><td class="num">3</td><td>D : stratégie 7 combinée − random combiné</td><td>borne inférieure de l'IC95 &gt; <strong>−0,02 R²</strong> ; une borne ≥ 0 est rapportée comme supériorité</td></tr>
+<tr><td class="num">4</td><td>C : stratégie 7 combinée − externe seul</td><td>borne inférieure de l'IC95 apparié ≥ <strong>+0,02 R²</strong></td></tr>
+<tr><td class="num">5</td><td>C : stratégie 7 combinée − géographique stratifié combiné</td><td>borne inférieure de l'IC95 apparié ≥ <strong>+0,01 R²</strong></td></tr>
+<tr><td class="num">6</td><td>Fondateurs</td><td>pour chaque Fk prioritaire, borne inférieure de Wilson de <code>P(I_k=1)</code> ≥ 0,85 sur C et ≥ 0,80 sur D</td></tr>
+</tbody></table>
+<p>Les seuils sont des différences <strong>absolues</strong> de R². Aucun gain relatif divisant par le R² du random n'est utilisé, afin d'éviter l'instabilité lorsque la performance de référence est faible.</p>
+<h3>6.2 Nombre de seeds et analyse de puissance</h3>
 <ul>
-<li>Held-out = individus de la cohorte <strong>non sélectionnés</strong> dans les 350 (les ~2150 restants), génome complet connu en simulation.</li>
-<li>Trois panels de référence comparés : <strong>local seul</strong> (350 WGS), <strong>externe seul</strong> (pools 1000G/EGA), <strong>combiné</strong>.</li>
-<li>Thèse centrale, testable et réfutable : <em>le panel local (ou combiné) bat l'externe seul sur les rares et fondateurs.</em></li>
-<li>Logiciel figé : Beagle 5.4 ou GLIMPSE2, carte génétique HapMap GRCh38, conteneurs versionnés. Panel phasé via les 100 familles nucléaires.</li>
+<li><strong>Pilote aveugle :</strong> 25 seeds indépendants servent uniquement à estimer l'écart-type des différences appariées et le coût de calcul.</li>
+<li><strong>Confirmation d'imputation :</strong> 200 nouveaux seeds au minimum.</li>
+<li><strong>Capture des fondateurs :</strong> 1000 seeds légers, sans imputation complète lorsque celle-ci n'est pas nécessaire.</li>
 </ul>
-<h3>5.2 Co-primaire : capture binaire des fondateurs</h3>
-<p><strong><code>P(&#8805;1 allèle F_k capté)</code></strong> sur au moins 100 seeds. Cette métrique répond à la bimodalité de <code>random</code> sous N=2500 : un panel qui capte un fondateur dans 50 % des runs n'est pas exploitable cliniquement, même si la moyenne d'allèles paraît honorable.</p>
-<h3>5.3 Métriques de support (reportées, non décisives)</h3>
-<p>Conservées du protocole dense mais <strong>rétrogradées</strong> : couverture allélique totale, MAF 1 à 5 %, couverture géo-ancestrale, couverture haplotypique, IBD résiduel intra pool libre, précision du recalibrage de fréquences. Elles documentent le <em>comment</em>, pas le verdict.</p>
-<h3>5.4 Diagnostiques (sanity-check) et tolérance</h3>
-<p>Témoins, jamais juges. Pour réduire l'alignement trivial objectif &#8596; métrique, la <strong>forme mathématique diffère</strong> de <code>S_div</code>.</p>
-<table><caption>Tableau 6 : formes mathématiques des diagnostiques à l'évaluation.</caption>
-<thead><tr><th>Dimension</th><th>Forme à l'évaluation</th></tr></thead><tbody>
-<tr><td>PCA</td><td>volume de l'enveloppe convexe (PC1 à PC4)</td></tr>
-<tr><td>ADMIXTURE</td><td>divergence KL <code>q_k(sélection)</code> contre <code>q_k(cohorte)</code></td></tr>
-<tr><td>IBD</td><td>distribution des longueurs &#8805; 5 cM (KS) ; <strong>KING kinship</strong>, seuil 0,0625</td></tr>
-<tr><td>ROH</td><td>distribution des longueurs (KS) + Gini</td></tr>
-</tbody></table>
-<p><strong>Tolérance :</strong> une diagnostique ne doit pas se dégrader de plus de <code>&#8722;5 %</code> contre <code>random</code>. La divergence PCA/ADMIXTURE du <strong>bras découverte</strong> n'est pas éliminatoire (c'est son mécanisme), mais sa redondance IBD interne l'est.</p>
-<h3>5.5 Hiérarchie de jugement</h3>
-<figure class="viz"><svg viewBox="0 0 700 212" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hiérarchie de jugement">
-<text x="14" y="18" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#0F3A56">Hiérarchie de jugement : un ordre d’autorité jamais inversé</text>
-<rect x="70" y="38" width="616" height="46" rx="8" fill="#eaf1f6" stroke="#0F3A56" stroke-width="1.4"/>
-<rect x="70" y="38" width="118" height="46" rx="8" fill="#0F3A56"/>
-<rect x="178" y="38" width="10" height="46" fill="#0F3A56"/>
-<text x="129" y="59" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#fff">JUGES</text>
-<text x="129" y="74" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" fill="#dbe6ee">Décisif</text>
-<text x="202" y="65" font-family="Segoe UI, Arial, sans-serif" font-size="9.6" fill="#333">Endpoint primaire (imputation rares + fondateurs) + co-primaire (capture des fondateurs)</text>
-<rect x="70" y="98" width="616" height="46" rx="8" fill="#f3f5f7" stroke="#1E6E8C" stroke-width="1.4"/>
-<rect x="70" y="98" width="118" height="46" rx="8" fill="#1E6E8C"/>
-<rect x="178" y="98" width="10" height="46" fill="#1E6E8C"/>
-<text x="129" y="119" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#fff">TÉMOINS</text>
-<text x="129" y="134" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" fill="#dbe6ee">Sanity-check</text>
-<text x="202" y="125" font-family="Segoe UI, Arial, sans-serif" font-size="9.6" fill="#333">Diagnostiques §5.4 : PCA, ADMIXTURE, IBD (KING), ROH ; jamais juges, tolérance − 5 %</text>
-<rect x="70" y="158" width="616" height="46" rx="8" fill="#f3f5f7" stroke="#6B7785" stroke-width="1.4"/>
-<rect x="70" y="158" width="118" height="46" rx="8" fill="#6B7785"/>
-<rect x="178" y="158" width="10" height="46" fill="#6B7785"/>
-<text x="129" y="179" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#fff">CONTRÔLES</text>
-<text x="129" y="194" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8.5" fill="#dbe6ee">Robustesse</text>
-<text x="202" y="185" font-family="Segoe UI, Arial, sans-serif" font-size="9.6" fill="#333">Stabilité algorithmique §8 : poids S_div, LOCO, ordre greedy, bruit de panel</text>
-<line x1="34" y1="44" x2="34" y2="198" stroke="#0F3A56" stroke-width="2"/>
-<polygon points="34,206 30,198 38,198" fill="#0F3A56"/>
-<text x="20" y="121" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#0F3A56" transform="rotate(-90 20 121)" text-anchor="middle">autorité décroissante</text>
-</svg><figcaption>Figure 5 : hiérarchie de jugement, un ordre d'autorité jamais inversé.</figcaption></figure>
-<p>Gagner sur l'endpoint primaire &#167;5.1 et le co-primaire &#167;5.2 est <strong>décisif</strong>. Un comportement raisonnable sur les diagnostiques &#167;5.4 sert de <strong>témoin</strong>. La stabilité algorithmique &#167;8 sert de <strong>contrôle</strong>. Les &#167;5.1 sont les juges, les &#167;5.4 les témoins, le &#167;8 les contrôles. Cette hiérarchie n'est jamais inversée.</p>
-</section><section id="s6"><h2>6. Seuils pré-enregistrés</h2>
-<p>Les seuils sont <strong>figés avant la première simulation</strong> dans <code>validation_thresholds.tsv</code>, déposé avec horodatage externe (OSF/Zenodo ou tag Git signé). Tout amendement postérieur exige un défaut technique documenté ou une courbe de saturation <code>random</code> rendant le seuil manifestement inadapté, versionné avec justification.</p>
-<h3>6.1 Gain relatif</h3>
-<p>Pour l'endpoint primaire <code>M</code> et chaque profil <code>P</code>, agrégé sur au moins 100 seeds.</p>
-<pre><code>&#916;_M,P = ( M(stratégie testée) &#8722; M(random) ) / M(random)   [%]</code></pre>
-<p>On exige que l'<strong>IC 95 % bootstrap</strong> du &#916; ne croise pas le seuil dans le mauvais sens.</p>
-<h3>6.2 Table de seuils (valeurs de travail à figer)</h3>
-<table><caption>Tableau 7 : seuils pré-enregistrés par endpoint et profil.</caption>
-<thead><tr><th>Endpoint</th><th>&#948;_A_max</th><th>&#948;_C_min</th><th>&#948;_D_min</th><th>Unité</th></tr></thead><tbody>
-<tr><td>Imputation <code>R&#178;</code> rare+fondateur (&#916;R&#178; moyen)</td><td class="num">&#8804; 0,01</td><td class="num">&#8805; 0,03</td><td class="num">&#8805; 0,05</td><td>différence absolue de R&#178;</td></tr>
-<tr><td>Capture fondateurs <code>P(&#8805;1 allèle)</code></td><td><code>|P_méthode &#8722; P_random| &#8804; 0,10</code></td><td><code>P_random &#8804; 0,55</code> ET <code>P_méthode &#8805; 0,85</code></td><td><code>P_random &#8804; 0,50</code> ET <code>P_méthode &#8805; 0,90</code></td><td>probabilité sur &#8805; 100 seeds</td></tr>
-</tbody></table>
-<h3>6.3 Analyse de puissance <em>a priori</em></h3>
-<p>Avant de figer le &#167;6.2, vérifier le MDE théorique pour chaque couple (endpoint × profil).</p>
-<ul>
-<li><strong>Fondateurs</strong> : capture binomiale <code>B(2&#183;n_sub_sel, f_k_eff)</code>, <code>f_k_eff</code> après inflation par <code>&#966;</code> ; <code>P_random</code> analytique, <code>P_méthode</code> par simulation ciblée.</li>
-<li><strong>Imputation</strong> : bootstrap léger sur cohorte stub (N=2500) pour estimer la SD du &#916; ; <code>MDE = 2 × SD / &#8730;100</code>.</li>
-</ul>
-<p>Si <code>MDE &gt; &#948;</code>, décision documentée : ajuster le seuil (justifié), ajuster le design (<code>&#966;</code>, <code>G_endo</code>, dans la limite N=2500), ou déclarer le couple <strong>non-évaluable</strong> comme limitation explicite. Livrable <code>power_analysis_pre_simulation.tsv</code>, soumis à la clause de pré-enregistrement.</p>
-</section><section id="s7"><h2>7. Bras découverte : ratio par sensibilité (couple unique)</h2>
-<p>Le protocole principal pré-spécifie un ratio conservateur.</p>
-<pre><code>ratio principal     = 90 / 10
-noyau géo-ancestral = 315 WGS
-bras découverte     = 35 WGS</code></pre>
-<aside class="callout"><div class="label">Écart assumé vis-à-vis de METHODOLOGY_selection_V3_5.md (&#167;3.2)</div>
-<p>Le document maître pose <code>N_discovery = 28</code> (ratio 92/8) comme valeur de travail par défaut. La présente validation retient 90/10 (35) pour donner au bras découverte une marge suffisante à <em>tester</em> sa propre utilité sans le sous-dimensionner d'emblée. Si la sensibilité ci-dessous ne montre aucun gain au-delà de 28, le ratio sera réaligné sur V3.5 lors du gel.</p></aside>
-<p>Deux ratios alternatifs sont évalués uniquement en <strong>sensibilité sur le profil C</strong>.</p>
-<table><caption>Tableau 8 : ratios noyau/pool libre évalués.</caption>
-<thead><tr><th>Ratio noyau / pool libre</th><th>Statut</th><th>Effectifs</th></tr></thead><tbody>
-<tr><td>90 / 10</td><td>ratio principal pré-spécifié</td><td>315 / 35</td></tr>
+<p>Le nombre confirmatoire requis est calculé sur l'écart-type apparié : <code>n = plafond[((z0,975 + z0,80) × SD_Δ / δ)²]</code>. Si ce nombre dépasse 200, il est augmenté avant l'ouverture des résultats confirmatoires. Il n'est jamais réduit sur la base d'un effet favorable observé.</p>
+<p>Les IC de R² sont obtenus par bootstrap apparié des seeds. Les probabilités de capture utilisent un intervalle de Wilson. Le chemin hiérarchique empêche l'interprétation confirmatoire des contrastes secondaires si le contraste précédent échoue.</p>
+</section><section id="s7"><h2>7. Bras découverte : ratio par sensibilité</h2>
+<p>Le ratio principal reste pré-spécifié à 90/10.</p>
+<pre><code>noyau géo-ancestral = 315 WGS
+bras découverte     = 35 WGS
+total                = 350 WGS</code></pre>
+<p>Le document maître utilisait 92/8 comme valeur de travail. La présente validation accorde 35 places au bras découverte pour tester sa contribution sans le rendre mécaniquement trop faible.</p>
+<table><caption>Tableau 8 : ratios testés sur le profil C seulement.</caption><thead><tr><th>Ratio noyau / découverte</th><th>Statut</th><th>Effectifs</th></tr></thead><tbody>
+<tr><td>90 / 10</td><td>principal</td><td>315 / 35</td></tr>
 <tr><td>80 / 20</td><td>sensibilité</td><td>280 / 70</td></tr>
 <tr><td>70 / 30</td><td>sensibilité</td><td>245 / 105</td></tr>
 </tbody></table>
-<p>Le ratio principal reste retenu par défaut. Un ratio alternatif ne peut le remplacer que si les trois conditions suivantes sont réunies.</p>
-<pre><code>gain endpoint primaire alternatif &#8805; gain ratio 90/10 + seuil pré-enregistré
-ET
-IBD_résiduel(pool libre seul) &#8804; 1,5 × IBD_résiduel(sélection complète)
-ET
-absence de dégradation diagnostique &gt; &#8722;5 %</code></pre>
-<p>Aucune contrainte de fidélité à la cohorte n'est imposée au bras découverte : sa divergence est attendue et acceptée. En revanche, sa redondance IBD interne, sa concentration excessive sur un foyer unique ou l'absence de gain primaire restent éliminatoires. Livrable <code>discovery_arm_sensitivity.tsv</code>.</p>
-</section><section id="s8"><h2>8. Sensibilité algorithmique (non croisée)</h2>
-<p>Toutes les analyses de robustesse sont exécutées <strong>sur le seul couple (profil C × stratégie 7 candidate)</strong>. C'est là, et seulement là, que la stabilité de la candidate compte pour le gel.</p>
-<table><caption>Tableau 9 : analyses de robustesse sur le couple décisif.</caption>
-<thead><tr><th>Analyse</th><th>Procédure</th></tr></thead><tbody>
-<tr><td>Poids <code>S_div</code></td><td><code>w1&#8230;w4 ± 10 %</code> puis <code>± 20 %</code> ; relance et comparaison</td></tr>
-<tr><td><strong>LOCO</strong></td><td><code>S_full</code>, <code>S_&#8722;PCA</code>, <code>S_&#8722;ADMIX</code>, <code>S_&#8722;IBD</code>, <code>S_&#8722;ROH</code> : chaque composante est-elle indispensable ?</td></tr>
-<tr><td>Ordre greedy</td><td>au moins 100 permutations ; invariance ?</td></tr>
-<tr><td>Tie-breakers</td><td>résolution stable des égalités ?</td></tr>
-<tr><td>Bruit panel témoin</td><td><code>clean</code> / <code>missingness 1 à 3 %</code> / <code>reduced_overlap</code> / <code>ambiguous_removed</code> / <code>batch_shift_PCA</code></td></tr>
+<p>Un ratio alternatif ne remplace 90/10 que si, sur la même cohorte test et les mêmes seeds :</p>
+<pre><code>Δ_primary(alternatif) ≥ Δ_primary(90/10) + 0,01
+ET IBD_résiduel(bras découverte) ≤ 1,5 × IBD_résiduel(panel complet)
+ET aucune dégradation diagnostique &gt; 5 %
+ET stabilité sur au moins 90 % des seeds confirmatoires</code></pre>
+<p>À défaut, 90/10 reste la valeur gelée. Les résultats de cette sensibilité ne modifient pas rétroactivement les seuils du §6.</p>
+</section><section id="s8"><h2>8. Sensibilité algorithmique</h2>
+<p>La robustesse est évaluée uniquement sur le couple profil C × stratégie 7, après gel de l'endpoint primaire.</p>
+<table><caption>Tableau 9 : analyses de sensibilité.</caption><thead><tr><th>Analyse</th><th>Procédure</th></tr></thead><tbody>
+<tr><td>Poids de <code>S_div</code></td><td>variation de chaque poids de ±10 %, puis ±20 %, avec renormalisation</td></tr>
+<tr><td>LOCO</td><td>retrait successif de PCA, ADMIXTURE, IBD et ROH</td></tr>
+<tr><td>Ordre greedy</td><td>au moins 100 permutations de l'ordre initial, tie-breaker déterministe</td></tr>
+<tr><td>Bruit de génotypage</td><td>missingness 1 à 3 %, chevauchement réduit, variants ambigus retirés, décalage de batch PCA</td></tr>
+<tr><td>Logiciel d'imputation</td><td>Beagle 5.4 reste primaire ; GLIMPSE2 est une sensibilité secondaire, sans changement de verdict</td></tr>
+<tr><td>Panel externe</td><td>analyse avec le panel principal, puis panels alternatifs autorisés selon disponibilité</td></tr>
 </tbody></table>
-<p>Reporting : intersection moyenne des panels, individus stables, individus frontière, variance des métriques, recommandation consensus. Interprétation des poids : variance faible &#8594; robuste ; modérée &#8594; conserver mais justifier ; forte &#8594; calibration critique avant déploiement.</p>
-</section><section id="s9"><h2>9. Audit puce SNP &#8594; WGS</h2>
-<p>La sélection réelle part de la <strong>puce SNP 1,9 M</strong>, pas du WGS. Le test est conservé intégralement (monde du déploiement).</p>
+<p>Sont rapportés : intersection des panels sélectionnés, individus stables, individus frontière, dispersion des R² et sensibilité des variants fondateurs. Une forte instabilité entraîne une revue du score avant déploiement, mais ne permet pas de choisir après coup la configuration la plus favorable.</p>
+</section><section id="s9"><h2>9. Audit puce SNP vers WGS</h2>
+<p>La sélection réelle sera calculée à partir de la puce SNP, alors que la simulation dispose d'une vérité WGS. L'audit mesure donc la perte provoquée par cette réduction d'information.</p>
 <ol>
-<li>Cohortes A/C/D avec WGS complet simulé.</li>
-<li>Restreindre aux SNP de la puce 1,9 M ; QC + LD pruning (PLINK 2).</li>
-<li>Calculer <code>S_div_geoancestry</code> et <code>S_discovery_global</code> <strong>sur la version puce</strong>.</li>
-<li>Sélectionner 350 selon les stratégies du &#167;4.1.</li>
-<li>Mesurer l'endpoint primaire &#167;5.1 sur les individus sélectionnés.</li>
+<li>Générer les cohortes candidate et test WGS des profils A, C et D.</li>
+<li>Restreindre <strong>la cohorte candidate</strong> aux marqueurs de la puce 1,9 M, puis appliquer QC et LD pruning pré-enregistrés.</li>
+<li>Calculer les quatre sélections sur la version puce de la cohorte candidate.</li>
+<li>Construire les panels locaux WGS correspondant aux individus sélectionnés.</li>
+<li>Évaluer tous les panels sur <strong>la même cohorte test indépendante</strong>.</li>
+<li>Comparer le contraste primaire obtenu après sélection sur puce à celui obtenu après sélection sur WGS complet.</li>
 </ol>
-<p><strong>Critère :</strong> <code>|primaire(sélection_puce) &#8722; primaire(sélection_WGS_complet)| &#8804; 5 %</code> sur le profil C. Au-delà : limitation explicite. Livrable <code>chip_to_wgs_audit.tsv</code>.</p>
-</section><section id="s10"><h2>10. Validation externe : un test principal de transférabilité, deux témoins</h2>
-<p>Triangulation conservée mais ré-équilibrée : la donnée réelle la plus pertinente devient le juge.</p>
-<table><caption>Tableau 10 : sources de validation externe et leurs rôles.</caption>
-<thead><tr><th>Source</th><th>Données</th><th>Rôle</th><th>Critère</th></tr></thead><tbody>
-<tr><td><strong>EPIGEN-Brasil</strong> (publié, 6487 ind.)</td><td>cohorte admixée continue, multi-vagues, insulaire-like</td><td><strong>test externe principal de transférabilité</strong></td><td>géo-ancestral + découverte <strong>gagne</strong> sur l'endpoint primaire (&#8805; 75 % des couples)</td></tr>
-<tr><td>1000G public</td><td>ACB/ASW, GIH/BEB, CEU/IBS/TSI, CHB/CHS/JPT/KHV</td><td>sanity-check</td><td>non-régression contre <code>random</code></td></tr>
-<tr><td>EGA prioritaires</td><td>MGUA Malagasy, MAGE, GenomeAsia, Angola/Mozambique</td><td>sanity-check (selon accès)</td><td>non-régression contre <code>random</code></td></tr>
+<p>Critère de concordance sur C : <code>|Δ_primary(puce) − Δ_primary(WGS complet)| ≤ 0,02 R²</code>, absence d'inversion du classement stratégie 7 versus random, et Jaccard des panels rapporté. Un écart supérieur impose une limitation explicite ou une recalibration du score à partir des variables réellement disponibles sur puce.</p>
+<p>Livrable : <code>chip_to_wgs_audit.tsv</code>.</p>
+</section><section id="s10"><h2>10. Validation externe secondaire</h2>
+<p>La validation externe recherche une concordance de direction dans des populations admixées réelles. Elle ne remplace pas la validation interne, car aucune cohorte externe disponible n'est un équivalent démographique et historique de La Réunion.</p>
+<table><caption>Tableau 10 : jeux externes et portée autorisée.</caption><thead><tr><th>Source</th><th>Données</th><th>Analyse autorisée</th><th>Limite</th></tr></thead><tbody>
+<tr><td><strong>SABE-1171-WGS</strong></td><td>1171 génomes complets à haute couverture d'une cohorte brésilienne admixée</td><td>resampling candidat/test pour vérifier si un panel local diversifié améliore l'imputation rare face à 1000G et face au random</td><td>teste le principe génétique d'un panel local admixé, pas la couche géographique réunionnaise</td></tr>
+<tr><td><strong>EPIGEN-Brasil</strong></td><td>6487 individus génotypés sur Omni2.5M ; petit sous-ensemble WGS historique</td><td>imputation de SNP de puce masqués, couverture PCA/ADMIXTURE et transfert de classement</td><td>ne fournit pas une vérité WGS rare pour les 6487 individus ; ne doit pas être présenté comme un test des variants rares privés</td></tr>
+<tr><td><strong>1000G haute couverture</strong></td><td>populations de référence diverses et trios</td><td>sanity-check, calibration technique et comparaison des panels externes</td><td>populations plus discrètes que le cas réunionnais</td></tr>
+<tr><td><strong>EGA / GenomeAsia / jeux malgaches et africains</strong></td><td>selon autorisations et compatibilité</td><td>analyses exploratoires de transportabilité</td><td>non garanti au moment du pré-enregistrement</td></tr>
 </tbody></table>
-<p><strong>Justification du ré-équilibrage :</strong> dans 1000G, les populations sont discrètes et bien séparées, la cellule <code>population × cluster ADMIXTURE</code> y est quasi triviale, ce qui avantage artificiellement la méthode. EPIGEN-Brasil teste un cas dur d'admixture continue intra-population. Il ne valide pas directement La Réunion, mais sert de test externe principal de transférabilité du score dans une population admixée réelle. Pour 1000G/EGA, l'analogue de secteur reste <code>population/pool d'origine × cluster ADMIXTURE</code>.</p>
-</section><section id="s11"><h2>11. Règle de décision hiérarchique à portes</h2>
-<p>Le verdict suit un <strong>gatekeeping</strong> strict : on n'examine une porte que si la précédente est franchie. Cela maîtrise le risque statistique (un endpoint, un chemin) et évite le <em>forking</em>.</p>
-<figure class="viz"><svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Règle de décision hiérarchique à portes">
-<text x="14" y="18" font-family="Segoe UI, Arial, sans-serif" font-size="12.5" font-weight="700" fill="#0F3A56" text-anchor="start">Chemin de gel : on n'examine une porte que si la précédente est franchie</text>
-<rect x="30" y="38" width="400" height="86" rx="7" fill="#eef3f7" stroke="#1E6E8C" stroke-width="1.5"/>
-<text x="44" y="60" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#1E6E8C" text-anchor="start">PORTE 1 : pertinence intrinsèque</text>
-<text x="44" y="79" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">A : contrôle négatif respecté (pas de faux gain)</text>
-<text x="44" y="95" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">C : géo-anc + découverte bat random (IC95 > seuil)</text>
-<text x="44" y="111" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">D : gain attendu ou non-effondrement documenté</text>
-<rect x="480" y="56" width="210" height="50" rx="7" fill="#fdeeea" stroke="#E8654A" stroke-width="1.5"/>
-<text x="492" y="76" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#E8654A" text-anchor="start">NON sur A ou C</text>
-<text x="492" y="92" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">STOP, méthode non validée</text>
-<line x1="430" y1="81.0" x2="473" y2="81.0" stroke="#E8654A" stroke-width="2"/>
-<polygon points="473,76.0 473,86.0 480,81.0" fill="#E8654A"/>
-<text x="455.0" y="75.0" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#E8654A" text-anchor="middle">NON</text>
-<line x1="230.0" y1="124" x2="230.0" y2="161" stroke="#0F3A56" stroke-width="2"/>
-<polygon points="225.0,161 235.0,161 230.0,168" fill="#0F3A56"/>
-<text x="239.0" y="149.0" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2E8B6F" text-anchor="start">OUI</text>
-<rect x="30" y="168" width="400" height="86" rx="7" fill="#eef3f7" stroke="#1E6E8C" stroke-width="1.5"/>
-<text x="44" y="190" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#1E6E8C" text-anchor="start">PORTE 2 : la complexité paie-t-elle ?</text>
-<text x="44" y="212" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">géo-anc + découverte ≥ géographique strict,</text>
-<text x="44" y="228" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">avec gain primaire ≥ seuil pré-enregistré</text>
-<rect x="480" y="186" width="210" height="50" rx="7" fill="#fdeeea" stroke="#E8654A" stroke-width="1.5"/>
-<text x="492" y="206" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#E8654A" text-anchor="start">NON</text>
-<text x="492" y="222" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">Retenir géographique strict</text>
-<line x1="430" y1="211.0" x2="473" y2="211.0" stroke="#E8654A" stroke-width="2"/>
-<polygon points="473,206.0 473,216.0 480,211.0" fill="#E8654A"/>
-<text x="455.0" y="205.0" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#E8654A" text-anchor="middle">NON</text>
-<line x1="230.0" y1="254" x2="230.0" y2="291" stroke="#0F3A56" stroke-width="2"/>
-<polygon points="225.0,291 235.0,291 230.0,298" fill="#0F3A56"/>
-<text x="239.0" y="279.0" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2E8B6F" text-anchor="start">OUI</text>
-<rect x="30" y="298" width="400" height="86" rx="7" fill="#eef3f7" stroke="#1E6E8C" stroke-width="1.5"/>
-<text x="44" y="320" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="700" fill="#1E6E8C" text-anchor="start">PORTE 3 : robustesse et transférabilité</text>
-<text x="44" y="339" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">EPIGEN-Brasil + sensibilité (C×7) stable + D tenu</text>
-<text x="44" y="355" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">+ audit puce→WGS ≤ 5 %</text>
-<text x="44" y="371" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">+ audit EFS disponible et sans biais majeur</text>
-<rect x="480" y="316" width="210" height="50" rx="7" fill="#fdeeea" stroke="#E8654A" stroke-width="1.5"/>
-<text x="492" y="336" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#E8654A" text-anchor="start">NON</text>
-<text x="492" y="352" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="400" fill="#1a1a1a" text-anchor="start">REVIEW, report ou re-validation</text>
-<line x1="430" y1="341.0" x2="473" y2="341.0" stroke="#E8654A" stroke-width="2"/>
-<polygon points="473,336.0 473,346.0 480,341.0" fill="#E8654A"/>
-<text x="455.0" y="335.0" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#E8654A" text-anchor="middle">NON</text>
-<line x1="230.0" y1="384" x2="230.0" y2="401" stroke="#0F3A56" stroke-width="2"/>
-<polygon points="225.0,401 235.0,401 230.0,408" fill="#0F3A56"/>
-<text x="239.0" y="399.0" font-family="Segoe UI, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#2E8B6F" text-anchor="start">OUI</text>
-<rect x="70" y="408" width="320" height="44" rx="7" fill="#e6f3ee" stroke="#2E8B6F" stroke-width="1.5"/>
-<text x="230" y="435" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#2E8B6F" text-anchor="middle">GEL de la sélection des 350 WGS</text>
-</svg><figcaption>Figure 6 : règle de décision à trois portes conduisant au gel ou à la revue de la sélection.</figcaption></figure>
-<h3>Porte 1 : pertinence intrinsèque</h3>
+<h3>10.1 SABE-WGS</h3>
+<p>SABE est distinct d'EPIGEN. Des splits répétés et indépendants sont utilisés : une partie sert de pool candidat, une partie de test WGS. La comparaison principale externe porte sur la direction du gain d'un panel local diversifié ajouté au panel externe. Les strates génétiques éventuellement utilisées sont définies sans employer le jeu test.</p>
+<h3>10.2 EPIGEN-2.5M</h3>
+<p>EPIGEN sert à vérifier la transférabilité sur une cohorte admixée de grande taille génotypée sur puce. Les SNP testés sont des marqueurs présents sur la puce puis masqués. Les résultats ne sont pas extrapolés aux variants rares absents de la puce.</p>
+<h3>10.3 Rôle dans la décision</h3>
+<p>Un résultat externe favorable renforce l'interprétation mais ne peut pas sauver un échec du test primaire. Un résultat externe isolé défavorable n'annule pas automatiquement la validation. Une <strong>contradiction majeure</strong> est pré-définie comme une borne supérieure de l'IC95 inférieure ou égale à −0,02 R² sur SABE-WGS, accompagnée d'une direction défavorable concordante sur EPIGEN ; elle déclenche une revue avant déploiement.</p>
+</section><section id="s11"><h2>11. Règle de décision hiérarchique</h2>
+<p>Le chemin est gelé avant la confirmation. Une étape secondaire n'est interprétée que si l'étape précédente est franchie.</p>
+<div class="flow flow--small">
+<div class="flow-step alt"><strong>Porte 1</strong><br/>C : endpoint primaire réussi<br/>A : équivalence respectée<br/>D : non-infériorité respectée</div>
+<div class="flow-step"><strong>Porte 2</strong><br/>panel combiné supérieur à l'externe seul<br/>puis stratégie 7 supérieure au géographique stratifié</div>
+<div class="flow-step alt"><strong>Porte 3</strong><br/>capture fondatrice acceptable<br/>sensibilité stable<br/>audit puce-WGS conforme</div>
+<div class="flow-step"><strong>Condition opérationnelle</strong><br/>audit de couverture EFS satisfaisant et absence de contradiction externe majeure non résolue</div>
+</div>
+<h3>Porte 1 : validité intrinsèque</h3>
 <ul>
-<li><strong>A, contrôle négatif respecté</strong> : pas de faux gain majeur ; <code>|&#916;R&#178; rare+fondateur| &#8804; &#948;_A_max</code>.</li>
-<li><strong>C, succès principal</strong> : géo-ancestral + découverte bat <code>random</code> sur l'endpoint primaire, IC95 au-dessus du seuil &#167;6.2.</li>
-<li><strong>D, stress-test cryptique</strong> : gain primaire attendu ou, au minimum, non-effondrement documenté sur la distribution des secteurs d'injection.</li>
+<li>C : borne inférieure de l'IC95 du contraste primaire ≥ +0,03.</li>
+<li>A : IC90 entièrement compris entre −0,01 et +0,01.</li>
+<li>D : borne inférieure de l'IC95 supérieure à −0,02.</li>
 </ul>
-<p>NON sur A ou C &#8594; STOP, méthode non validée. D faible seul &#8594; REVIEW, sauf si C est également fragile. Sinon, OUI, on passe à la porte 2.</p>
-<h3>Porte 2 : la complexité paie-t-elle ?</h3>
-<p>géo-ancestral + découverte doit dépasser le géographique strict (gain primaire &#8805; +&#916; pré-enregistré). NON &#8594; la couche géo-ancestrale ne se justifie pas, on retient le géographique strict. OUI, on passe à la porte 3.</p>
-<h3>Porte 3 : robustesse et transférabilité externe</h3>
-<p>On exige la conjonction : EPIGEN-Brasil soutient la transférabilité (&#167;10) ET sensibilité (C × 7) stable (&#167;8) ET profil D élargi tenu sur la distribution des secteurs d'injection (&#167;3.1) ET audit puce &#8594; WGS &#8804; 5 % (&#167;9) ET audit EFS disponible et sans biais majeur non corrigé avant déploiement final. Si OUI &#8594; <strong>GEL de la sélection des 350 WGS</strong>. Si NON &#8594; REVIEW documenté, report ou déploiement sous engagement de re-validation.</p>
-<aside class="callout"><div class="label">Précision sur l'audit EFS en Porte 3</div>
-<p>La condition n'est pas la seule <em>existence</em> de l'audit : un audit révélant un biais EFS majeur (sur ou sous-représentation sectorielle, démographique ou d'accessibilité) non corrigé met la Porte 3 en <code>REVIEW</code>. L'audit documente <em>et</em> peut bloquer ; il ne se contente pas d'exister.</p></aside>
-<h3>Statuts par stratégie (en appui des portes)</h3>
-<table><caption>Tableau 11 : statuts attribués à une stratégie en appui des portes.</caption>
-<thead><tr><th>Statut</th><th>Condition</th></tr></thead><tbody>
-<tr><td><code>PASS</code></td><td>gain primaire significatif + diagnostiques dans la tolérance + stabilité acceptable</td></tr>
-<tr><td><code>REVIEW</code></td><td>gain primaire significatif mais anomalie diagnostique modérée ou divergence attendue du bras découverte</td></tr>
-<tr><td><code>FAIL</code></td><td>gain primaire insuffisant, ou obtenu au prix d'une dégradation diagnostique majeure non justifiée, ou instabilité forte</td></tr>
+<p>Un échec sur C arrête la validation. Un échec du contrôle A signale un biais du simulateur ou de l'évaluation. Un échec sur D interdit de présenter la méthode comme robuste à une structure non annotée et impose une révision.</p>
+<h3>Porte 2 : le panel local et la complexité apportent-ils un gain ?</h3>
+<p>Le panel combiné de la stratégie 7 doit d'abord dépasser le panel externe seul d'au moins 0,02 R². La stratégie 7 doit ensuite dépasser la stratégie géographique stratifiée stricte d'au moins 0,01 R². Si le premier contraste échoue, la valeur ajoutée du panel local n'est pas démontrée. Si seul le second échoue, la stratégie 5 est retenue comme option parcimonieuse.</p>
+<h3>Porte 3 : robustesse technique</h3>
+<p>La capture variant par variant des fondateurs, la sensibilité algorithmique et l'audit puce vers WGS doivent satisfaire les règles pré-enregistrées. Les métriques descriptives ne peuvent pas compenser un échec de l'endpoint primaire.</p>
+<h3>Condition opérationnelle EFS</h3>
+<p>L'audit obligatoire porte sur la <strong>couverture du recrutement</strong>. Les critères de travail sont :</p>
+<ul>
+<li>donnée de secteur ou commune disponible pour au moins 90 % des individus après QC ;</li>
+<li>au moins 50 individus par secteur pré-spécifié, ou regroupement de secteurs défini avant la sélection ;</li>
+<li>aucun site de collecte ne représente plus de 50 % de la cohorte, sauf si une analyse leave-site-out ou un recalibrage montre la stabilité de la sélection ;</li>
+<li>comparaison aux objectifs de recrutement EFS ; les données INSEE restent contextuelles et ne servent pas à revendiquer une représentativité démographique parfaite ;</li>
+<li>l'âge n'est pas requis. Le sexe n'est utilisé que s'il est disponible et justifié par une analyse génétique pré-spécifiée.</li>
+</ul>
+<p><strong>Décision :</strong> gel de la sélection des 350 WGS si les trois portes sont franchies, si l'audit EFS permet un déploiement interprétable et si aucune contradiction externe majeure ne reste sans explication. Sinon : revue documentée, stratégie géographique simplifiée, recalibrage ou report.</p>
+</section><section id="s12"><h2>12. Livrables et traçabilité</h2>
+<table><caption>Tableau 11 : sorties minimales.</caption><thead><tr><th>Livrable</th><th>Contenu</th></tr></thead><tbody>
+<tr><td><code>simulation_manifest.tsv</code></td><td>seed, paramètres A/C/D, identifiants des cohortes candidate et test, versions de données et contrôles de parenté</td></tr>
+<tr><td><code>validation_thresholds.tsv</code></td><td>estimands, seuils, ordre hiérarchique, calcul de puissance et versions logicielles</td></tr>
+<tr><td><code>primary_imputation_performance.tsv</code></td><td>R² par seed et variant, contraste primaire apparié et comparaisons secondaires</td></tr>
+<tr><td><code>founder_capture_by_variant.tsv</code></td><td>Fk, MAC, porteurs indépendants, haplotypes et probabilité de succès sur 1000 seeds</td></tr>
+<tr><td><code>discovery_arm_sensitivity.tsv</code></td><td>ratios 90/10, 80/20 et 70/30 sur C</td></tr>
+<tr><td><code>sensitivity_and_chip_audit.tsv</code></td><td>LOCO, poids, ordre greedy, bruit technique et concordance puce-WGS</td></tr>
+<tr><td><code>external_validation.tsv</code></td><td>SABE-WGS, EPIGEN-2.5M, 1000G et jeux complémentaires avec portée explicitée</td></tr>
+<tr><td><code>efs_geographic_coverage_audit.tsv</code></td><td>couverture par secteur et site, taux de données manquantes, écarts aux objectifs EFS et mesures correctrices</td></tr>
+<tr><td><code>decision_log.md</code></td><td>statut de chaque porte, déviations, justification de la décision et limites</td></tr>
 </tbody></table>
-</section><section id="s12"><h2>12. Livrables (resserrés)</h2>
-<table><caption>Tableau 12 : livrables du protocole resserré.</caption>
-<thead><tr><th>Livrable</th><th>Contenu</th></tr></thead><tbody>
-<tr><td><code>validation_thresholds.tsv</code></td><td>seuils pré-enregistrés &#167;6.2 + power analysis &#167;6.3</td></tr>
-<tr><td><code>primary_imputation_performance.tsv</code></td><td>endpoint primaire : stratégie × profil (A/C/D) × panel (local/externe/combiné) × classe MAF × R&#178; × IC95</td></tr>
-<tr><td><code>founder_capture.tsv</code></td><td>co-primaire : stratégie × profil × <code>P(&#8805;1 allèle F_k)</code> sur seeds</td></tr>
-<tr><td><code>discovery_arm_sensitivity.tsv</code></td><td>ratio noyau/pool libre × endpoint primaire (profil C)</td></tr>
-<tr><td><code>sensitivity_and_gates.tsv</code></td><td>sensibilité (C×7) + audit puce&#8594;WGS + statut des 3 portes + décision globale</td></tr>
-<tr><td><code>efs_representativity_audit.tsv</code></td><td>condition de déploiement : distribution EFS contre proxys INSEE, écarts et limites</td></tr>
-</tbody></table>
-<p>Six fichiers au lieu de plus de 15. Les sorties de l'anneau exploratoire (profil B, stratégies hors &#167;4.1) sont produites séparément, marquées <code>exploratory</code>, et n'entrent dans aucune porte.</p>
+<p>Les sorties exploratoires sont stockées séparément avec un préfixe <code>exploratory_</code>. Elles ne sont jamais fusionnées aux tables confirmatoires.</p>
 </section><section id="s13"><h2>13. Effet sur la voilure</h2>
-<table><caption>Tableau 13 : protocole dense comparé au protocole resserré.</caption>
-<thead><tr><th>Dimension</th><th>Protocole dense</th><th>Présent protocole (réduit)</th></tr></thead><tbody>
+<table><caption>Tableau 12 : protocole dense comparé au protocole corrigé.</caption><thead><tr><th>Dimension</th><th>Protocole dense</th><th>Protocole corrigé</th></tr></thead><tbody>
 <tr><td>Stratégies décisives</td><td class="num">11</td><td class="num">4</td></tr>
-<tr><td>Profils décisifs</td><td class="num">4</td><td class="num">3 (+ D élargi)</td></tr>
-<tr><td>Métriques juges</td><td class="num">~12</td><td class="num">1 (+ 1 co-primaire)</td></tr>
-<tr><td>Seeds</td><td>100 partout</td><td>25 criblage &#8594; 100 ciblé</td></tr>
-<tr><td>Sensibilité</td><td>croisée</td><td>1 couple (C × 7)</td></tr>
-<tr><td>Validations externes décisives</td><td>3 (A, B, C pondérées)</td><td>1 test principal de transférabilité (EPIGEN) + 2 témoins</td></tr>
-<tr><td>Livrables <code>.tsv</code></td><td class="num">15+</td><td class="num">6</td></tr>
-<tr><td>Risque comparaisons multiples</td><td>non corrigé</td><td>un endpoint, chemin à portes</td></tr>
+<tr><td>Profils décisifs</td><td class="num">4</td><td class="num">3, dont D randomisé</td></tr>
+<tr><td>Endpoint confirmatoire</td><td>multiples métriques et cellules</td><td>1 contraste primaire unique</td></tr>
+<tr><td>Population test</td><td>non-sélectionnés différents selon la stratégie</td><td>1000 individus indépendants communs à toutes les stratégies</td></tr>
+<tr><td>Seeds</td><td>100 partout</td><td>25 pilotes + 200 confirmatoires + 1000 légers fondateurs</td></tr>
+<tr><td>Sensibilité</td><td>croisée</td><td>profil C × stratégie 7</td></tr>
+<tr><td>Validation externe</td><td>rôle décisionnel ambigu</td><td>secondaire, portée séparée pour SABE-WGS et EPIGEN-2.5M</td></tr>
+<tr><td>Audit EFS</td><td>représentativité large incluant l'âge</td><td>couverture géographique du recrutement, sans âge obligatoire</td></tr>
+<tr><td>Risque de multiplicité</td><td>élevé</td><td>ordre hiérarchique pré-enregistré</td></tr>
 </tbody></table>
-<p>La Figure 1 résume ces réductions. Seeds en deux étages : criblage à environ 25 seeds sur le noyau pour repérer le signal, puis 100 seeds <strong>uniquement</strong> sur les cellules décisives (primaire × {A,C,D} × {5,7}). Économie typique de 60 à 70 % des runs.</p>
+<p>La charge d'imputation augmente par rapport à une confirmation limitée à 100 seeds, mais la cohorte test commune rend chaque run beaucoup plus informatif et évite un biais structurel. Les 1000 seeds fondateurs restent légers car ils ne nécessitent pas tous une imputation complète.</p>
 </section><section id="s14"><h2>14. Ce qui est délibérément conservé</h2>
-<p>Malgré la réduction, restent intacts car ils portent la rigueur réelle.</p>
 <ul>
-<li><strong>Pré-enregistrement</strong> des seuils + power analysis <em>a priori</em>.</li>
-<li><strong>Séparation des trois tiroirs</strong> de métriques avec formes mathématiques distinctes à l'évaluation (anti-alignement objectif &#8596; métrique).</li>
-<li><strong>Audit puce &#8594; WGS</strong> (monde du déploiement).</li>
-<li><strong>LOCO</strong> et sensibilité aux poids (sur le couple décisif).</li>
-<li><strong>Triangulation</strong> simulation + donnée réelle externe + squelette historique, mais avec EPIGEN-Brasil en test de transférabilité.</li>
-<li><strong>Profil D renforcé</strong> : distribution de structures cryptiques, seul rempart contre le couplage simulateur &#8596; méthode.</li>
+<li><strong>Pré-enregistrement</strong> des seuils, seeds, logiciels, panels et règles d'exclusion.</li>
+<li><strong>Profil D renforcé</strong>, avec structure cryptique randomisée et oracle strictement exploratoire.</li>
+<li><strong>Audit puce vers WGS</strong>, évalué sur une population test indépendante.</li>
+<li><strong>LOCO et sensibilité des poids</strong>, sans sélection a posteriori de la meilleure configuration.</li>
+<li><strong>Comparaison au random et au géographique strict</strong>, afin de séparer le bénéfice des quotas du bénéfice génétique.</li>
+<li><strong>Triangulation externe</strong>, avec SABE-WGS pour l'imputation rare et EPIGEN pour la transférabilité sur puce, sans confusion de leur portée.</li>
+<li><strong>Audit ex-post des 350 WGS</strong> comme contrôle de cohérence final, et non comme validation rétroactive de la méthode.</li>
 </ul>
-<p>L'audit ex-post après obtention des 350 WGS reste un sanity-check qui <strong>ne valide pas</strong> la méthode (déjà faite en pré-déploiement), il ferme la boucle.</p>
+<aside class="callout"><div class="label">Résultat attendu du gel</div><p>Le protocole ne promet pas une photographie parfaite de toute la population réunionnaise. Il doit démontrer qu'à l'intérieur d'une cohorte EFS géographiquement couverte et explicitement limitée, la sélection retenue utilise mieux le budget de 350 WGS qu'un tirage aléatoire ou qu'une simple stratification territoriale.</p></aside>
 </section><section id="s15"><h2>15. Bibliographie</h2>
-<p>Références des outils, méthodes et jeux de données mobilisés par le protocole. Elles complètent, sans les remplacer, les références du document maître <code>METHODOLOGY_selection_V3_5.md</code> et du protocole dense <code>METHODOLOGIE_validation_4_profils_population_INSEE.md</code>.</p>
-<h3>Phasage et imputation</h3><ol start="1"><li>Delaneau O, Zagury J-F, Robinson MR, Marchini JL, Dermitzakis ET. <em>Accurate, scalable and integrative haplotype estimation.</em> Nature Communications. 2019;10:5436, <strong>SHAPEIT4</strong>.</li><li>Browning BL, Tian X, Zhou Y, Browning SR. <em>Fast two-stage phasing of large-scale sequence data.</em> American Journal of Human Genetics. 2021;108(10):1880 à 1890, <strong>Beagle 5.4</strong>.</li><li>Rubinacci S, Ribeiro DM, Hofmeister RJ, Delaneau O. <em>Efficient phasing and imputation of low-coverage sequencing data using large reference panels.</em> Nature Genetics. 2021;53:120 à 126, <strong>GLIMPSE</strong>.</li><li>Rubinacci S, Hofmeister RJ, Sousa da Mota B, Delaneau O. <em>Imputation of low-coverage sequencing data from 150,119 UK Biobank genomes.</em> Nature Genetics. 2023;55, <strong>GLIMPSE2</strong>.</li><li>McCarthy S, et al. <em>A reference panel of 64,976 haplotypes for genotype imputation.</em> Nature Genetics. 2016;48:1279 à 1283, panel <strong>HRC</strong> (référentiel externe de base).</li><li>Taliun D, et al. <em>Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program.</em> Nature. 2021;590:290 à 299, panel <strong>TOPMed</strong>.</li></ol>
-<h3>Structure de population et ascendance</h3><ol start="7"><li>Price AL, Patterson NJ, Plenge RM, Weinblatt ME, Shadick NA, Reich D. <em>Principal components analysis corrects for stratification in genome-wide association studies.</em> Nature Genetics. 2006;38:904 à 909, <strong>PCA</strong>.</li><li>Alexander DH, Novembre J, Lange K. <em>Fast model-based estimation of ancestry in unrelated individuals.</em> Genome Research. 2009;19:1655 à 1664, <strong>ADMIXTURE</strong>.</li><li>Maples BK, Gravel S, Kenny EE, Bustamante CD. <em>RFMix: a discriminative modeling approach for rapid and robust local-ancestry inference.</em> American Journal of Human Genetics. 2013;93(2):278 à 288, <strong>LAI</strong>.</li></ol>
-<h3>Apparentement, IBD et ROH</h3><ol start="10"><li>Manichaikul A, Mychaleckyj JC, Rich SS, Daly K, Sale M, Chen W-M. <em>Robust relationship inference in genome-wide association studies.</em> Bioinformatics. 2010;26(22):2867 à 2873, <strong>KING</strong> (seuil kinship 0,0625).</li><li>Browning BL, Browning SR. <em>Improving the accuracy and efficiency of identity-by-descent detection in population data.</em> Genetics. 2013;194(2):459 à 471, <strong>IBD</strong>.</li><li>Ceballos FC, Joshi PK, Clark DW, Ramsay M, Wilson JF. <em>Runs of homozygosity: windows into population history and trait architecture.</em> Nature Reviews Genetics. 2018;19:220 à 234, <strong>ROH</strong>.</li><li>Chang CC, Chow CC, Tellier LCAM, Vattikuti S, Purcell SM, Lee JJ. <em>Second-generation PLINK: rising to the challenge of larger and richer datasets.</em> GigaScience. 2015;4:7, <strong>PLINK 2</strong>.</li></ol>
-<h3>Panels de référence et cohortes admixées</h3><ol start="14"><li>1000 Genomes Project Consortium. <em>A global reference for human genetic variation.</em> Nature. 2015;526:68 à 74, <strong>1000G</strong>.</li><li>Byrska-Bishop M, et al. <em>High-coverage whole-genome sequencing of the expanded 1000 Genomes Project cohort including 602 trios.</em> Cell. 2022;185(18):3426 à 3440, <strong>1000G haute couverture</strong>.</li><li>GenomeAsia100K Consortium. <em>The GenomeAsia 100K Project enables genetic discoveries across Asia.</em> Nature. 2019;576:106 à 111, <strong>GenomeAsia</strong>.</li><li>Gurdasani D, et al. <em>The African Genome Variation Project shapes medical genetics in Africa.</em> Nature. 2015;517:327 à 332, <strong>AGVP</strong>.</li><li>Pierron D, et al. <em>Genomic landscape of human diversity across Madagascar.</em> PNAS. 2017;114(32):E6498 à E6506, ancrage <strong>malgache</strong>.</li><li>Kehdy FSG, et al. <em>Origin and dynamics of admixture in Brazilians and its effect on the pattern of deleterious mutations.</em> PNAS. 2015;112(28):8696 à 8701, <strong>EPIGEN-Brasil</strong> (test externe de transférabilité, &#167;10).</li></ol>
-<h3>Simulation et cadre méthodologique</h3><ol start="20"><li>Haller BC, Messer PW. <em>SLiM 3: Forward genetic simulations beyond the Wright-Fisher model.</em> Molecular Biology and Evolution. 2019;36(3):632 à 637, simulation <strong>forward-time</strong> (cohortes synthétiques A/C/D).</li><li>Nosek BA, Ebersole CR, DeHaven AC, Mellor DT. <em>The preregistration revolution.</em> PNAS. 2018;115(11):2600 à 2606, <strong>pré-enregistrement</strong> des seuils (&#167;6).</li></ol>
+<p>Références principales des outils, méthodes et jeux de données mobilisés. Elles complètent les références du document maître de sélection et du protocole dense.</p>
+<h3>Phasage et imputation</h3><ol start="1">
+<li>Delaneau O, Zagury J-F, Robinson MR, Marchini JL, Dermitzakis ET. <em>Accurate, scalable and integrative haplotype estimation.</em> Nature Communications. 2019;10:5436. SHAPEIT4.</li>
+<li>Browning BL, Tian X, Zhou Y, Browning SR. <em>Fast two-stage phasing of large-scale sequence data.</em> American Journal of Human Genetics. 2021;108(10):1880–1890. Beagle 5.4.</li>
+<li>Browning BL, Zhou Y, Browning SR. <em>A one-penny imputed genome from next-generation reference panels.</em> American Journal of Human Genetics. 2018;103(3):338–348.</li>
+<li>Rubinacci S, Ribeiro DM, Hofmeister RJ, Delaneau O. <em>Efficient phasing and imputation of low-coverage sequencing data using large reference panels.</em> Nature Genetics. 2021;53:120–126. GLIMPSE.</li>
+<li>Rubinacci S, Hofmeister RJ, Sousa da Mota B, Delaneau O. <em>Imputation of low-coverage sequencing data from 150,119 UK Biobank genomes.</em> Nature Genetics. 2023;55. GLIMPSE2.</li>
+<li>McCarthy S, et al. <em>A reference panel of 64,976 haplotypes for genotype imputation.</em> Nature Genetics. 2016;48:1279–1283. HRC.</li>
+<li>Taliun D, et al. <em>Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program.</em> Nature. 2021;590:290–299. TOPMed.</li>
+</ol>
+<h3>Structure de population et ascendance</h3><ol start="8">
+<li>Price AL, Patterson NJ, Plenge RM, Weinblatt ME, Shadick NA, Reich D. <em>Principal components analysis corrects for stratification in genome-wide association studies.</em> Nature Genetics. 2006;38:904–909.</li>
+<li>Alexander DH, Novembre J, Lange K. <em>Fast model-based estimation of ancestry in unrelated individuals.</em> Genome Research. 2009;19:1655–1664.</li>
+<li>Maples BK, Gravel S, Kenny EE, Bustamante CD. <em>RFMix: a discriminative modeling approach for rapid and robust local-ancestry inference.</em> American Journal of Human Genetics. 2013;93(2):278–288.</li>
+</ol>
+<h3>Apparentement, IBD et ROH</h3><ol start="11">
+<li>Manichaikul A, Mychaleckyj JC, Rich SS, Daly K, Sale M, Chen W-M. <em>Robust relationship inference in genome-wide association studies.</em> Bioinformatics. 2010;26(22):2867–2873. KING ; espérance des cousins germains 0,0625 et frontière pratique troisième degré/non apparenté 0,0442.</li>
+<li>Browning BL, Browning SR. <em>Improving the accuracy and efficiency of identity-by-descent detection in population data.</em> Genetics. 2013;194(2):459–471.</li>
+<li>Ceballos FC, Joshi PK, Clark DW, Ramsay M, Wilson JF. <em>Runs of homozygosity: windows into population history and trait architecture.</em> Nature Reviews Genetics. 2018;19:220–234.</li>
+<li>Chang CC, Chow CC, Tellier LCAM, Vattikuti S, Purcell SM, Lee JJ. <em>Second-generation PLINK: rising to the challenge of larger and richer datasets.</em> GigaScience. 2015;4:7.</li>
+</ol>
+<h3>Panels et cohortes admixées</h3><ol start="15">
+<li>1000 Genomes Project Consortium. <em>A global reference for human genetic variation.</em> Nature. 2015;526:68–74.</li>
+<li>Byrska-Bishop M, et al. <em>High-coverage whole-genome sequencing of the expanded 1000 Genomes Project cohort including 602 trios.</em> Cell. 2022;185(18):3426–3440.</li>
+<li>GenomeAsia100K Consortium. <em>The GenomeAsia 100K Project enables genetic discoveries across Asia.</em> Nature. 2019;576:106–111.</li>
+<li>Gurdasani D, et al. <em>The African Genome Variation Project shapes medical genetics in Africa.</em> Nature. 2015;517:327–332.</li>
+<li>Pierron D, et al. <em>Genomic landscape of human diversity across Madagascar.</em> PNAS. 2017;114(32):E6498–E6506.</li>
+<li>Kehdy FSG, et al. <em>Origin and dynamics of admixture in Brazilians and its effect on the pattern of deleterious mutations.</em> PNAS. 2015;112(28):8696–8701. EPIGEN-Brasil.</li>
+<li>Magalhães WCS, et al. <em>EPIGEN-Brazil Initiative resources: a Latin American imputation panel and the Scientific Workflow.</em> Genome Research. 2018;28:1090–1095.</li>
+<li>Naslavsky MS, et al. <em>Whole-genome sequencing of 1,171 elderly admixed individuals from Brazil.</em> Nature Communications. 2022;13:1004. SABE-WGS / ABraOM.</li>
+</ol>
+<h3>Simulation et cadre méthodologique</h3><ol start="23">
+<li>Haller BC, Messer PW. <em>SLiM 3: Forward genetic simulations beyond the Wright-Fisher model.</em> Molecular Biology and Evolution. 2019;36(3):632–637.</li>
+<li>Nosek BA, Ebersole CR, DeHaven AC, Mellor DT. <em>The preregistration revolution.</em> PNAS. 2018;115(11):2600–2606.</li>
+<li>Lakens D. <em>Equivalence tests: a practical primer for t tests, correlations, and meta-analyses.</em> Social Psychological and Personality Science. 2017;8(4):355–362.</li>
+</ol>
 </section><section id="s16"><h2>Annexe A. Glossaire</h2>
-<p>Aide à la lecture : définitions concises des principaux sigles et notions employés dans ce protocole.</p>
-<dl class="glossary"><dt>WGS</dt><dd>séquençage de génome entier (whole-genome sequencing).</dd><dt>SNP</dt><dd>variation ponctuelle d'une base de l'ADN ; ici, la sélection part d'une puce SNP 1,9 M.</dd><dt>MAF</dt><dd>fréquence de l'allèle mineur ; les variants rares ont une MAF inférieure à 1 %.</dd><dt>R&#178;</dt><dd>qualité d'imputation : corrélation entre le dosage imputé et le génotype vrai masqué.</dd><dt>IC95</dt><dd>intervalle de confiance à 95 %, ici estimé par bootstrap.</dd><dt>Held-out</dt><dd>individus de la cohorte non sélectionnés (environ 2150), dont le génome complet sert de vérité en simulation.</dd><dt>Panel local / externe / combiné</dt><dd>référentiels d'imputation comparés : 350 WGS locaux, pools externes (1000G/EGA), ou les deux.</dd><dt>S_div</dt><dd>score de sélection géo-ancestral combinant PCA, ADMIXTURE, IBD, ROH et haplotypes dérivés.</dd><dt>Bras découverte</dt><dd>fraction de la sélection laissée libre pour capter des signaux hors contrainte géographique (ratio 90/10 par défaut).</dd><dt>PCA</dt><dd>analyse en composantes principales, qui corrige la stratification de population.</dd><dt>ADMIXTURE</dt><dd>estimation des proportions d'ascendance par individu.</dd><dt>LAI / RFMix</dt><dd>inférence d'ascendance locale le long du génome.</dd><dt>IBD</dt><dd>segments identiques par descendance, partagés entre apparentés.</dd><dt>ROH</dt><dd>segments d'homozygotie continue, traces d'endogamie.</dd><dt>KING</dt><dd>inférence d'apparentement ; seuil de kinship 0,0625 utilisé en diagnostique.</dd><dt>LOCO</dt><dd>leave-one-component-out : retrait d'une composante de S_div pour tester son utilité.</dd><dt>MDE</dt><dd>plus petit effet détectable (minimum detectable effect), vérifié a priori.</dd><dt>&#966; / G_endo</dt><dd>coefficient d'apparentement intra sous-profil et profondeur d'endogamie simulés.</dd><dt>Gatekeeping</dt><dd>règle de décision à portes : une porte n'est examinée que si la précédente est franchie.</dd><dt>Pré-enregistrement</dt><dd>fixation horodatée des seuils avant la première simulation (OSF/Zenodo ou tag Git signé).</dd><dt>EFS / INSEE</dt><dd>Établissement Français du Sang (origine de la cohorte de donneurs) ; Institut national de la statistique (proxys de référence).</dd><dt>EPIGEN-Brasil</dt><dd>cohorte brésilienne admixée réelle, utilisée comme test de transférabilité, non comme juge.</dd></dl>
+<dl class="glossary">
+<dt>Cohorte candidate</dt><dd>les 2500 individus parmi lesquels les 350 WGS sont sélectionnés.</dd>
+<dt>Cohorte test indépendante</dt><dd>1000 individus simulés séparément, communs à toutes les stratégies d'un seed et jamais éligibles à la sélection.</dd>
+<dt>Endpoint primaire</dt><dd>différence absolue appariée de R² entre la stratégie 7 et random, sur C, panel combiné et variants rares définis au §5.1.</dd>
+<dt>Panel local / externe / combiné</dt><dd>350 WGS sélectionnés ; référentiel externe figé ; réunion des deux.</dd>
+<dt>R²</dt><dd>corrélation au carré entre dosage imputé et génotype WGS vrai.</dd>
+<dt>MAF</dt><dd>fréquence de l'allèle mineur.</dd>
+<dt>MAC</dt><dd>nombre total de copies de l'allèle mineur dans l'ensemble considéré.</dd>
+<dt>S_div</dt><dd>score géo-ancestral combinant les informations génétiques pré-spécifiées.</dd>
+<dt>Bras découverte</dt><dd>fraction de la sélection non contrainte par les quotas géographiques, destinée à capter des signaux inattendus.</dd>
+<dt>KING</dt><dd>méthode d'inférence d'apparentement ; 0,0625 est l'espérance des cousins germains, tandis que 0,0442 est utilisée ici comme frontière pratique d'exclusion jusqu'au troisième degré.</dd>
+<dt>LOCO</dt><dd><em>leave-one-component-out</em>, retrait successif d'une composante du score.</dd>
+<dt>Test d'équivalence</dt><dd>test vérifiant que tout l'intervalle de confiance reste à l'intérieur d'une marge pré-définie.</dd>
+<dt>Non-infériorité</dt><dd>test vérifiant que la perte éventuelle ne dépasse pas une marge négative pré-définie.</dd>
+<dt>Seed pilote</dt><dd>seed utilisé uniquement pour estimer variance et coût, exclu du verdict.</dd>
+<dt>Seed confirmatoire</dt><dd>seed indépendant pré-enregistré utilisé dans l'analyse finale.</dd>
+<dt>SABE-WGS</dt><dd>cohorte brésilienne distincte d'EPIGEN comprenant 1171 WGS à haute couverture.</dd>
+<dt>EPIGEN-2.5M</dt><dd>6487 Brésiliens génotypés sur puce Omni2.5M ; utile pour une validation sur marqueurs de puce, pas comme vérité WGS rare complète.</dd>
+<dt>Audit EFS</dt><dd>audit de couverture géographique et de concentration des sites de recrutement, sans revendication de représentativité démographique parfaite.</dd>
+<dt>Gatekeeping</dt><dd>ordre d'analyse dans lequel une comparaison secondaire n'est interprétée que si la précédente est franchie.</dd>
+</dl>
 </section></main><footer class="page-footer"><span>Validation de la méthodologie de sélection · Génome Réunion · CHU de La Réunion</span></footer>
 </body>
 </html>
