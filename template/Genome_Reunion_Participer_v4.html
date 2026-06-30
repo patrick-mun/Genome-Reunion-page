@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Participer — Génome Réunion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --navy:        #0F3A56;
+  --navy-deep:   #091F30;
+  --teal:        #1E6E8C;
+  --teal-light:  #9FD3E0;
+  --teal-mid:    #CFE3EA;
+  --coral:       #E8654A;
+  --coral-soft:  rgba(232,101,74,.12);
+  --amber:       #C0852C;
+  --cream:       #FBFAF7;
+  --sand:        #EDEAE2;
+  --slate:       #16242E;
+  --stone:       #6A7178;
+  --white:       #ffffff;
+
+  --f-display: 'Spectral', Georgia, serif;
+  --f-body:    'DM Sans', system-ui, sans-serif;
+  --f-ui:      'Space Grotesk', system-ui, sans-serif;
+
+  --ease-out: cubic-bezier(.16,1,.3,1);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--f-body);
+  background: var(--cream);
+  color: var(--slate);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── PROGRESS BAR ── */
+#progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  width: 0%;
+  background: var(--coral);
+  z-index: 1000;
+  transition: width .1s linear;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background .4s var(--ease-out), backdrop-filter .4s;
+}
+nav.scrolled {
+  background: rgba(251,250,247,.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--sand);
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.nav-logo svg { width: auto; height: 36px; }
+.nav-logo-text {
+  font-family: var(--f-ui);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  color: var(--white);
+  text-transform: uppercase;
+  transition: color .4s;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--f-ui);
+  font-size: .75rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.65);
+  text-decoration: none;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--white); }
+
+/* nav scrollée : liens sombres sur fond clair */
+nav.scrolled .nav-links a { color: var(--stone); }
+nav.scrolled .nav-links a:hover { color: var(--navy); }
+nav.scrolled .nav-logo-text { color: var(--navy); }
+.nav-cta {
+  font-family: var(--f-ui);
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--coral);
+  padding: 10px 20px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform .2s var(--ease-spring), box-shadow .2s;
+}
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(232,101,74,.3);
+}
+
+/* ── EYEBROW ── */
+.eyebrow {
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 20px;
+}
+.eyebrow.light { color: var(--teal-light); }
+.eyebrow.coral { color: var(--coral); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 120px 48px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Vagues animées hero */
+.hero-waves {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 220px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-waves svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+}
+.wave-1 { animation: wave-pan 20s linear infinite; opacity: .6; }
+.wave-2 { animation: wave-pan 14s linear infinite reverse; opacity: .45; }
+.wave-3 { animation: wave-pan 9s linear infinite; opacity: .2; }
+@keyframes wave-pan {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.hero-inner {
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-creole {
+  font-family: var(--f-display);
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 300;
+  color: var(--teal-light);
+  letter-spacing: .04em;
+  margin-bottom: 28px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .8s var(--ease-out), transform .8s var(--ease-out);
+}
+
+.hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  font-weight: 300;
+  line-height: .95;
+  letter-spacing: -.03em;
+  color: var(--white);
+  margin-bottom: 36px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .9s var(--ease-out) .1s, transform .9s var(--ease-out) .1s;
+}
+
+.hero-title em {
+  font-style: normal;
+  color: var(--coral);
+}
+
+.hero-subtitle {
+  font-family: var(--f-ui);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-top: -16px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .8s var(--ease-out) .25s, transform .8s var(--ease-out) .25s;
+}
+
+.hero-body {
+  font-size: clamp(.95rem, 1.5vw, 1.1rem);
+  font-weight: 300;
+  color: rgba(255,255,255,.65);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .8s var(--ease-out) .2s, transform .8s var(--ease-out) .2s;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .8s var(--ease-out) .3s, transform .8s var(--ease-out) .3s;
+}
+
+.btn-primary {
+  font-family: var(--f-ui);
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--coral);
+  padding: 16px 32px;
+  border-radius: 100px;
+  text-decoration: none;
+  transition: transform .25s var(--ease-spring), box-shadow .25s;
+}
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(232,101,74,.35);
+}
+.btn-primary:active { transform: scale(.97); }
+
+.btn-ghost {
+  font-family: var(--f-ui);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.6);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color .2s;
+}
+.btn-ghost:hover { color: var(--white); }
+.btn-ghost::after {
+  content: '↓';
+  transition: transform .2s;
+}
+.btn-ghost:hover::after { transform: translateY(3px); }
+
+/* ── STATS BAR ── */
+#stats {
+  background: var(--navy-deep);
+  padding: 40px 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.stat-item {
+  padding: 24px 32px;
+  border-right: 1px solid rgba(255,255,255,.06);
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .6s var(--ease-out), transform .6s var(--ease-out);
+}
+.stat-item:last-child { border-right: none; }
+.stat-item.visible { opacity: 1; transform: none; }
+
+.stat-num {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-num span { color: var(--coral); }
+.stat-label {
+  font-size: .78rem;
+  color: rgba(255,255,255,.45);
+  line-height: 1.4;
+  font-weight: 300;
+}
+
+/* ── SECTIONS COMMUNES ── */
+.section {
+  padding: 140px 48px;
+}
+.section-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ── SECTION PROBLÈME ── */
+#probleme {
+  background: var(--cream);
+}
+
+.probleme-hero {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.big-stat {
+  font-family: var(--f-display);
+  font-size: clamp(6rem, 16vw, 13rem);
+  font-weight: 300;
+  line-height: .85;
+  color: var(--navy);
+  letter-spacing: -.04em;
+  margin-bottom: 24px;
+}
+.big-stat em {
+  font-style: normal;
+  color: var(--coral);
+}
+
+.big-stat-label {
+  font-size: 1rem;
+  color: var(--stone);
+  line-height: 1.6;
+  max-width: 480px;
+  margin: 0 auto 10px;
+}
+
+.big-stat-note {
+  font-size: .72rem;
+  color: var(--teal);
+  font-style: italic;
+}
+
+.probleme-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pb-item {
+  padding: 32px 28px;
+  border: 1px solid var(--sand);
+  border-radius: 12px;
+  background: var(--white);
+  transition: transform .25s var(--ease-out), box-shadow .25s;
+}
+.pb-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(15,58,86,.08);
+}
+
+.pb-item-num {
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  color: var(--coral);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.pb-item-text {
+  font-size: .92rem;
+  color: var(--slate);
+  line-height: 1.65;
+}
+
+/* ── SECTION CE QUE ÇA CHANGE ── */
+#change {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.change-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--white);
+  margin-bottom: 64px;
+  max-width: 600px;
+}
+
+.change-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,.06);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.change-card {
+  background: rgba(255,255,255,.04);
+  padding: 40px 32px;
+  transition: background .25s;
+}
+.change-card:hover { background: rgba(255,255,255,.08); }
+
+.change-card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--coral-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.change-card-icon svg { width: 18px; height: 18px; stroke: var(--coral); fill: none; stroke-width: 1.5; }
+
+.change-card-title {
+  font-family: var(--f-display);
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.change-card-text {
+  font-size: .85rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── SECTION CARREFOUR ── */
+#carrefour {
+  background: var(--sand);
+}
+
+.carrefour-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.carrefour-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.carrefour-body {
+  font-size: .95rem;
+  color: var(--stone);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+/* Donut chart CSS */
+.ancestry-chart {
+  position: relative;
+  width: 280px;
+  height: 280px;
+  margin: 0 auto;
+}
+
+.donut {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.donut-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.donut-center-num {
+  font-family: var(--f-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+}
+
+.donut-center-label {
+  font-size: .7rem;
+  color: var(--stone);
+  margin-top: 4px;
+}
+
+.ancestry-legend {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .8rem;
+}
+
+.legend-dot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--slate);
+}
+
+.legend-dot::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legend-pct {
+  font-family: var(--f-ui);
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--stone);
+}
+
+/* ── SECTION MÉTHODE ── */
+#methode {
+  background: var(--cream);
+}
+
+.methode-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--navy);
+  margin-bottom: 64px;
+  max-width: 540px;
+}
+
+.methode-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.step {
+  position: relative;
+  padding-top: 20px;
+  border-top: 1.5px solid var(--sand);
+}
+
+.step::before {
+  content: '';
+  position: absolute;
+  top: -1.5px;
+  left: 0;
+  width: 40px;
+  height: 1.5px;
+  background: var(--teal);
+}
+
+.step-num {
+  font-family: var(--f-ui);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--sand);
+  letter-spacing: -.04em;
+  line-height: 1;
+  margin-bottom: 16px;
+  position: relative;
+  display: inline-block;
+}
+
+.step-num::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--teal);
+  opacity: .4;
+}
+
+.step-count {
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.step-title {
+  font-family: var(--f-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.step-body {
+  font-size: .85rem;
+  color: var(--stone);
+  line-height: 1.7;
+}
+
+/* ── SECTION OUTILS ── */
+#outils {
+  background: var(--navy-deep);
+}
+
+.outils-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--white);
+  margin-bottom: 64px;
+}
+
+.outils-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,.04);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.outil-card {
+  background: rgba(255,255,255,.03);
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: background .25s;
+  cursor: default;
+}
+.outil-card:hover { background: rgba(255,255,255,.07); }
+
+.outil-num {
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  color: var(--coral);
+}
+
+.outil-title {
+  font-family: var(--f-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.outil-body {
+  font-size: .85rem;
+  color: rgba(255,255,255,.45);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* ── SECTION ÉQUIPE ── */
+#equipe {
+  background: var(--cream);
+}
+
+.equipe-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.equipe-sub {
+  font-size: .95rem;
+  color: var(--stone);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 64px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 24px;
+  margin-bottom: 72px;
+}
+
+.team-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 20px;
+  border: 1px solid var(--sand);
+  border-radius: 12px;
+  background: var(--white);
+  transition: transform .25s var(--ease-out), box-shadow .25s;
+}
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15,58,86,.08);
+}
+
+.team-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--f-ui);
+  font-size: .8rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: .02em;
+  flex-shrink: 0;
+}
+
+.team-name {
+  font-family: var(--f-ui);
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--slate);
+  line-height: 1.3;
+}
+
+.team-role {
+  font-size: .76rem;
+  color: var(--stone);
+  line-height: 1.4;
+}
+
+/* Partenaires */
+.partners-title {
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 24px;
+}
+
+.partners-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.partner-pill {
+  font-family: var(--f-ui);
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--navy);
+  background: var(--sand);
+  padding: 8px 18px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  transition: border-color .2s, background .2s;
+}
+.partner-logo-link {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+  background: var(--sand);
+  border-radius: 100px;
+  border: 1px solid transparent;
+  transition: border-color .2s, background .2s;
+}
+.partner-logo-link:hover {
+  background: var(--teal-mid);
+  border-color: var(--teal);
+}
+.partner-pill:hover {
+  background: var(--teal-mid);
+  border-color: var(--teal);
+}
+
+/* ── CTA ── */
+#participer {
+  background: var(--navy);
+  text-align: center;
+  padding: 140px 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-waves {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 220px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.cta-waves svg {
+  position: absolute;
+  top: 0;
+  width: 200%;
+  height: 100%;
+}
+.cta-wave-1 { animation: wave-pan 20s linear infinite reverse; opacity: .5; }
+.cta-wave-2 { animation: wave-pan 14s linear infinite; opacity: .35; }
+.cta-wave-3 { animation: wave-pan 9s linear infinite reverse; opacity: .18; }
+
+.cta-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-family: var(--f-display);
+  font-size: clamp(2.4rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+.cta-title em {
+  font-style: normal;
+  color: var(--coral);
+}
+
+.cta-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,.5);
+  max-width: 460px;
+  margin: 0 auto 48px;
+  line-height: 1.7;
+}
+
+.btn-large {
+  font-family: var(--f-ui);
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: var(--coral);
+  padding: 20px 48px;
+  border-radius: 100px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform .25s var(--ease-spring), box-shadow .25s;
+}
+.btn-large:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(232,101,74,.4);
+}
+.btn-large:active { transform: scale(.97); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy-deep);
+  padding: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.footer-brand {
+  font-family: var(--f-display);
+  font-size: .9rem;
+  color: rgba(255,255,255,.4);
+  font-style: italic;
+}
+
+.footer-nav {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+.footer-nav a {
+  font-family: var(--f-ui);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+  text-decoration: none;
+  transition: color .2s;
+}
+.footer-nav a:hover { color: rgba(255,255,255,.7); }
+
+.footer-copy {
+  font-size: .72rem;
+  color: rgba(255,255,255,.2);
+  font-family: var(--f-ui);
+}
+
+/* ── REVEAL AU SCROLL ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-delay-1 { transition-delay: .1s; }
+.reveal-delay-2 { transition-delay: .2s; }
+.reveal-delay-3 { transition-delay: .3s; }
+.reveal-delay-4 { transition-delay: .4s; }
+
+/* ── PAILLE-EN-QUEUE (confiné au hero) ── */
+.bird-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.paille {
+  position: absolute;
+  top: 0;
+  left: 0;
+  will-change: transform;
+  transform-origin: center center;
+  /* ombre portée : silhouette lisible sur fond clair comme sur fond sombre */
+  filter: drop-shadow(0 2px 4px rgba(9,31,48,.4));
+}
+
+.paille svg { display: block; overflow: visible; }
+
+.paille-body {
+  fill: #ffffff;
+  stroke: rgba(15,58,86,.22);
+  stroke-width: .5;
+}
+.paille-wings path {
+  fill: rgba(255,255,255,.95);
+  stroke: rgba(15,58,86,.18);
+  stroke-width: .4;
+}
+.paille-tail {
+  fill: none;
+  stroke: #ffffff;
+  stroke-width: 1.1;
+  stroke-linecap: round;
+}
+
+/* Lettres du titre rendues « perchables » : aucun impact visuel */
+.bird-letter { display: inline; }
+
+/* ── MARGOUILLAT (gecko des sections) ── */
+.gecko-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  z-index: 40;
+  pointer-events: none;
+}
+
+.gecko {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #2b2b2b;
+  transform-origin: center center;
+  will-change: transform, top, left;
+  filter: drop-shadow(0 1px 1.5px rgba(0,0,0,.18));
+}
+.gecko svg { display: block; overflow: visible; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 16px 24px; }
+  .nav-links { display: none; }
+  .section { padding: 80px 24px; }
+  #hero { padding: 100px 24px 60px; }
+  #stats { grid-template-columns: repeat(2, 1fr); padding: 24px; }
+  .probleme-layout,
+  .carrefour-layout { grid-template-columns: 1fr; gap: 48px; }
+  .change-grid { grid-template-columns: 1fr; }
+  .methode-steps { grid-template-columns: 1fr; gap: 32px; }
+  .methode-steps::before { display: none; }
+  .outils-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  footer { flex-direction: column; padding: 32px 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+</style>
+<style>
+/* ── PAGE PARTICIPER ── */
+.page-hero {
+  min-height: 52vh;
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 120px 48px 72px;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero-inner {
+  max-width: 900px;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-kicker {
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--teal-light);
+  margin-bottom: 16px;
+  opacity: 0;
+  transition: opacity .7s var(--ease-out) .1s, transform .7s var(--ease-out) .1s;
+  transform: translateY(16px);
+}
+
+.page-hero-title {
+  font-family: var(--f-display);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 300;
+  line-height: .95;
+  letter-spacing: -.03em;
+  color: var(--white);
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity .8s var(--ease-out) .2s, transform .8s var(--ease-out) .2s;
+  transform: translateY(20px);
+}
+.page-hero-title em { font-style: normal; color: var(--coral); }
+
+.page-hero-sub {
+  font-size: clamp(.9rem, 1.4vw, 1.05rem);
+  font-weight: 300;
+  color: rgba(255,255,255,.6);
+  line-height: 1.7;
+  max-width: 540px;
+  opacity: 0;
+  transition: opacity .8s var(--ease-out) .35s, transform .8s var(--ease-out) .35s;
+  transform: translateY(16px);
+}
+
+/* ── PARTENARIAT EFS ── */
+#partenariat {
+  background: var(--cream);
+  padding: 100px 48px;
+}
+
+.partenariat-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.partenariat-text h2 {
+  font-family: var(--f-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--navy);
+  margin-bottom: 20px;
+}
+
+.partenariat-text p {
+  font-size: .95rem;
+  color: var(--stone);
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.efs-badge {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 32px;
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: 16px;
+  margin-top: 8px;
+  box-shadow: 0 4px 20px rgba(15,58,86,.05);
+}
+
+.efs-badge-text {
+  font-family: var(--f-ui);
+  font-size: .78rem;
+  color: var(--stone);
+  line-height: 1.5;
+}
+.efs-badge-text strong {
+  display: block;
+  font-size: .88rem;
+  color: var(--slate);
+  margin-bottom: 2px;
+}
+
+/* EFS Logo SVG card */
+.efs-logo-card {
+  background: var(--white);
+  border: 1px solid var(--sand);
+  border-radius: 20px;
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  box-shadow: 0 8px 40px rgba(15,58,86,.07);
+  text-align: center;
+}
+
+.efs-logo-title {
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.efs-logo-sub {
+  font-family: var(--f-display);
+  font-size: 1rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--stone);
+  line-height: 1.4;
+}
+
+.efs-tagline {
+  font-size: .8rem;
+  color: #E2001A;
+  font-family: var(--f-ui);
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+
+/* ── COLLECTES ── */
+#collectes {
+  background: var(--sand);
+  padding: 100px 48px;
+}
+
+.collectes-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.collectes-header {
+  margin-bottom: 64px;
+}
+
+.collectes-header h2 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -.02em;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.collectes-header p {
+  font-size: .95rem;
+  color: var(--stone);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.collectes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.collecte-block {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(15,58,86,.06);
+}
+
+.collecte-block-header {
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid var(--sand);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.collecte-zone-badge {
+  font-family: var(--f-ui);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.badge-nord { background: var(--navy); }
+.badge-sud  { background: var(--teal); }
+
+.collecte-block-title {
+  font-family: var(--f-display);
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--navy);
+  line-height: 1.2;
+}
+
+.collecte-block-address {
+  font-size: .78rem;
+  color: var(--stone);
+  margin-top: 4px;
+}
+
+/* Table */
+.collecte-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.collecte-table thead tr {
+  background: var(--cream);
+}
+
+.collecte-table th {
+  font-family: var(--f-ui);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--sand);
+}
+
+.collecte-table td {
+  padding: 16px 20px;
+  font-size: .84rem;
+  color: var(--slate);
+  border-bottom: 1px solid var(--sand);
+  vertical-align: top;
+  line-height: 1.4;
+}
+
+.collecte-table tr:last-child td { border-bottom: none; }
+
+.collecte-table tr:hover td { background: rgba(159,211,224,.08); }
+
+.td-date {
+  font-family: var(--f-ui);
+  font-weight: 600;
+  font-size: .82rem;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.td-lieu {
+  font-weight: 500;
+  color: var(--slate);
+}
+
+.td-adresse {
+  color: var(--stone);
+  font-size: .78rem;
+}
+
+.td-horaire {
+  font-family: var(--f-ui);
+  font-size: .75rem;
+  color: var(--teal);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ── INSCRIPTION CTA ── */
+#inscription {
+  background: var(--navy-deep);
+  padding: 100px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.inscription-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.inscription-title {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -.03em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.inscription-title em { font-style: normal; color: var(--coral); }
+
+.inscription-sub {
+  font-size: .95rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.inscription-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 48px;
+  text-align: left;
+}
+
+.inscription-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255,255,255,.04);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.inscription-step-num {
+  font-family: var(--f-ui);
+  font-size: .65rem;
+  font-weight: 600;
+  letter-spacing: .12em;
+  color: var(--coral);
+  padding-top: 2px;
+  flex-shrink: 0;
+}
+
+.inscription-step-text {
+  font-size: .88rem;
+  color: rgba(255,255,255,.7);
+  line-height: 1.6;
+}
+.inscription-step-text strong {
+  color: var(--white);
+  font-weight: 500;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.btn-efs {
+  font-family: var(--f-ui);
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: #E2001A;
+  padding: 18px 40px;
+  border-radius: 100px;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform .25s var(--ease-spring), box-shadow .25s;
+}
+.btn-efs:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(226,0,26,.35);
+}
+
+.btn-outline {
+  font-family: var(--f-ui);
+  font-size: .8rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: rgba(255,255,255,.5);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 16px 32px;
+  border-radius: 100px;
+  display: inline-block;
+  transition: border-color .2s, color .2s;
+}
+.btn-outline:hover {
+  border-color: rgba(255,255,255,.4);
+  color: var(--white);
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .page-hero { padding: 100px 24px 60px; }
+  #partenariat { padding: 72px 24px; }
+  #collectes   { padding: 72px 24px; }
+  #inscription { padding: 72px 24px; }
+  .partenariat-inner { grid-template-columns: 1fr; gap: 48px; }
+  .collectes-grid    { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- NAV (identique) -->
+<nav id="nav">
+  <a href="Genome_Reunion_Landing_v4.html" class="nav-logo">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 60" fill="none" role="img" aria-label="Génome Réunion">
+      <g fill="none" stroke-width="5" stroke-linecap="round" transform="translate(10,8)">
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="#0F3A56"/>
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="#1E6E8C" transform="translate(0,16)"/>
+        <path d="M0,11 C11,1 22,1 32,11 C42,21 53,21 63,11 C71,3 79,3 84,8" stroke="#E8654A" transform="translate(0,32)"/>
+        <circle cx="84" cy="8"  r="2.6" fill="#0F3A56" stroke="none"/>
+        <circle cx="84" cy="24" r="2.6" fill="#1E6E8C" stroke="none"/>
+        <circle cx="84" cy="40" r="2.6" fill="#E8654A" stroke="none"/>
+      </g>
+    </svg>
+    <span class="nav-logo-text">Génome Réunion</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="Genome_Reunion_Landing_v4.html#probleme">Pourquoi</a></li>
+    <li><a href="Genome_Reunion_Landing_v4.html#methode">Comment</a></li>
+    <li><a href="Genome_Reunion_Landing_v4.html#equipe">Équipe</a></li>
+  </ul>
+  <a href="#inscription" class="nav-cta">S'inscrire</a>
+</nav>
+
+<!-- HERO PAGE -->
+<section class="page-hero">
+  <div class="hero-waves">
+    <svg class="wave-1" viewBox="0 0 2880 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,90 C80,40 180,20 320,55 C460,90 520,140 680,155 C840,170 920,160 1060,120 C1200,80 1280,35 1440,50
+               C1600,65 1680,130 1820,155 C1960,180 2080,160 2200,115 C2320,70 2400,40 2560,55 C2720,70 2800,100 2880,90
+               L2880,220 L0,220 Z" fill="#091F30"/>
+    </svg>
+    <svg class="wave-2" viewBox="0 0 2880 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,130 C100,90 260,70 420,100 C580,130 640,170 800,175 C960,180 1080,155 1220,130
+               C1360,105 1460,80 1580,95 C1700,110 1800,150 1960,168 C2120,186 2280,165 2420,135
+               C2560,105 2680,85 2800,115 C2840,125 2860,128 2880,130
+               L2880,220 L0,220 Z" fill="#1E6E8C"/>
+    </svg>
+    <svg class="wave-3" viewBox="0 0 2880 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,158 C60,145 140,138 240,148 C340,158 420,172 540,178 C660,184 760,178 880,165
+               C1000,152 1080,140 1200,145 C1320,150 1420,168 1540,175 C1660,182 1780,172 1900,160
+               C2020,148 2100,138 2220,144 C2340,150 2440,166 2560,173 C2680,180 2780,168 2880,158
+               L2880,220 L0,220 Z" fill="#E8654A"/>
+    </svg>
+  </div>
+
+  <div class="page-hero-inner">
+    <p class="page-hero-kicker" id="ph-kicker">Participation au projet</p>
+    <h1 class="page-hero-title" id="ph-title">
+      Donnez un peu.<br>Changez <em>tout</em>.
+    </h1>
+    <p class="page-hero-sub" id="ph-sub">
+      Un simple prélèvement sanguin suffit. En participant à Génome Réunion, vous contribuez à bâtir la première référence génétique de l'île — pour vous, vos enfants, et toute la population réunionnaise.
+    </p>
+  </div>
+</section>
+
+<!-- PARTENARIAT EFS -->
+<section id="partenariat">
+  <div class="partenariat-inner">
+
+    <div class="partenariat-text reveal">
+      <p class="eyebrow">Partenariat</p>
+      <h2>En partenariat avec<br>l'EFS Réunion.</h2>
+      <p>
+        L'<strong>Établissement Français du Sang (EFS) de La Réunion</strong> organise les prélèvements dans ses centres fixes et lors de collectes mobiles à travers l'île.
+      </p>
+      <p>
+        La participation au projet repose sur une information claire, un consentement libre et une anonymisation des données. Chaque prélèvement contribue à construire une ressource utile pour mieux documenter la diversité génétique réunionnaise.
+      </p>
+      <div class="efs-badge reveal reveal-delay-1">
+        <span style="display:inline-block;width:72px;height:72px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="EFS — Établissement Français du Sang · Du donneur aux patients">
+  <style>
+    .bg  { fill: white; stroke: #1B2D72; stroke-width: 7; }
+    .arc { fill: none; stroke: #1B2D72; stroke-width: 9; stroke-linecap: butt; }
+    .efs { font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; font-size: 108px; fill: #1B2D72; }
+    .sub { font-family: 'Arial Narrow', Arial, Helvetica, sans-serif; font-weight: bold; font-size: 16.5px; fill: #1B2D72; letter-spacing: 1px; }
+    .ln  { stroke: #D0011B; stroke-width: 2; }
+    .tri { fill: #D0011B; }
+    .sig { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: 50px; fill: #D0011B; }
+  </style>
+
+  <!-- Fond blanc + cercle bleu -->
+  <circle cx="250" cy="250" r="238" class="bg"/>
+
+  <!-- Arc supérieur : de (88,248) à (412,248), centre (250,248), r=162 → sommet à (250,86) -->
+  <path d="M 88,248 A 162,162 0 0,1 412,248" class="arc"/>
+
+  <!-- Triangle gauche ▲ (pointe vers le haut, sous extrémité gauche de l'arc) -->
+  <polygon points="88,237  79,256  97,256" class="tri"/>
+
+  <!-- Triangle droit ▼ (pointe vers le bas, sous extrémité droite de l'arc) -->
+  <polygon points="412,256  403,237  421,237" class="tri"/>
+
+  <!-- EFS — centré dans l'arc -->
+  <text x="250" y="222" text-anchor="middle" class="efs">EFS</text>
+
+  <!-- ÉTABLISSEMENT FRANÇAIS DU SANG -->
+  <text x="250" y="276" text-anchor="middle" class="sub">ÉTABLISSEMENT FRANÇAIS DU SANG</text>
+
+  <!-- Double ligne rouge -->
+  <line x1="68" y1="287" x2="432" y2="287" class="ln"/>
+  <line x1="68" y1="294" x2="432" y2="294" class="ln"/>
+
+  <!-- Signature cursive -->
+  <text x="250" y="363" text-anchor="middle" class="sig">Du donneur</text>
+  <text x="250" y="423" text-anchor="middle" class="sig">aux patients</text>
+</svg></span>
+        <div class="efs-badge-text">
+          <strong>Collectes assurées par l'EFS</strong>
+          Établissement Français du Sang — La Réunion
+        </div>
+      </div>
+    </div>
+
+    <!-- Carte logo EFS grande -->
+    <div class="efs-logo-card reveal reveal-delay-2">
+      <div class="efs-logo-title">Partenaire des collectes</div>
+
+      <span style="display:inline-block;width:200px;height:200px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" role="img" aria-label="EFS — Établissement Français du Sang · Du donneur aux patients">
+  <style>
+    .bg  { fill: white; stroke: #1B2D72; stroke-width: 7; }
+    .arc { fill: none; stroke: #1B2D72; stroke-width: 9; stroke-linecap: butt; }
+    .efs { font-family: 'Georgia', 'Times New Roman', serif; font-weight: bold; font-size: 108px; fill: #1B2D72; }
+    .sub { font-family: 'Arial Narrow', Arial, Helvetica, sans-serif; font-weight: bold; font-size: 16.5px; fill: #1B2D72; letter-spacing: 1px; }
+    .ln  { stroke: #D0011B; stroke-width: 2; }
+    .tri { fill: #D0011B; }
+    .sig { font-family: 'Georgia', 'Times New Roman', serif; font-style: italic; font-size: 50px; fill: #D0011B; }
+  </style>
+
+  <!-- Fond blanc + cercle bleu -->
+  <circle cx="250" cy="250" r="238" class="bg"/>
+
+  <!-- Arc supérieur : de (88,248) à (412,248), centre (250,248), r=162 → sommet à (250,86) -->
+  <path d="M 88,248 A 162,162 0 0,1 412,248" class="arc"/>
+
+  <!-- Triangle gauche ▲ (pointe vers le haut, sous extrémité gauche de l'arc) -->
+  <polygon points="88,237  79,256  97,256" class="tri"/>
+
+  <!-- Triangle droit ▼ (pointe vers le bas, sous extrémité droite de l'arc) -->
+  <polygon points="412,256  403,237  421,237" class="tri"/>
+
+  <!-- EFS — centré dans l'arc -->
+  <text x="250" y="222" text-anchor="middle" class="efs">EFS</text>
+
+  <!-- ÉTABLISSEMENT FRANÇAIS DU SANG -->
+  <text x="250" y="276" text-anchor="middle" class="sub">ÉTABLISSEMENT FRANÇAIS DU SANG</text>
+
+  <!-- Double ligne rouge -->
+  <line x1="68" y1="287" x2="432" y2="287" class="ln"/>
+  <line x1="68" y1="294" x2="432" y2="294" class="ln"/>
+
+  <!-- Signature cursive -->
+  <text x="250" y="363" text-anchor="middle" class="sig">Du donneur</text>
+  <text x="250" y="423" text-anchor="middle" class="sig">aux patients</text>
+</svg></span>
+
+      <div style="border-top:1px solid var(--sand);padding-top:20px;width:100%;text-align:center;">
+        <div style="font-size:.8rem;color:var(--stone);line-height:1.6;">
+          Collectes envisagées dans<br>
+          <strong style="color:var(--navy);">2 sites fixes</strong> &amp; <strong style="color:var(--navy);">collectes mobiles</strong>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CALENDRIER DES COLLECTES -->
+<section id="collectes">
+  <div class="collectes-inner">
+    <div class="collectes-header reveal">
+      <p class="eyebrow">Calendrier</p>
+      <h2>Prochaines dates<br>de collecte.</h2>
+      <p>Rendez-vous dans l'un des centres EFS ou lors d'une collecte mobile proche de chez vous. Inscription préalable recommandée.</p>
+    </div>
+
+    <div class="collectes-grid">
+
+      <!-- EFS NORD -->
+      <div class="collecte-block reveal">
+        <div class="collecte-block-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span class="collecte-zone-badge badge-nord">Nord</span>
+            </div>
+            <div class="collecte-block-title">EFS Saint-Denis</div>
+            <div class="collecte-block-address">
+              Centre fixe · 5 rue Lacaussade, 97400 Saint-Denis
+            </div>
+          </div>
+        </div>
+        <table class="collecte-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Lieu</th>
+              <th>Horaires</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-date">Jeu. 3 juil. 2026</td>
+              <td>
+                <div class="td-lieu">Centre EFS Saint-Denis</div>
+                <div class="td-adresse">5 rue Lacaussade, Saint-Denis</div>
+              </td>
+              <td class="td-horaire">8h – 13h</td>
+            </tr>
+            <tr>
+              <td class="td-date">Mar. 8 juil. 2026</td>
+              <td>
+                <div class="td-lieu">Mairie de Sainte-Marie</div>
+                <div class="td-adresse">Pl. du 20 Décembre, Sainte-Marie</div>
+              </td>
+              <td class="td-horaire">9h – 15h</td>
+            </tr>
+            <tr>
+              <td class="td-date">Sam. 12 juil. 2026</td>
+              <td>
+                <div class="td-lieu">Centre commercial Carrefour Nord</div>
+                <div class="td-adresse">Rte de la Digue, Sainte-Suzanne</div>
+              </td>
+              <td class="td-horaire">8h30 – 13h</td>
+            </tr>
+            <tr>
+              <td class="td-date">Lun. 21 juil. 2026</td>
+              <td>
+                <div class="td-lieu">CHU Félix Guyon</div>
+                <div class="td-adresse">Allée des Topazes, Saint-Denis</div>
+              </td>
+              <td class="td-horaire">8h – 12h30</td>
+            </tr>
+            <tr>
+              <td class="td-date">Mer. 30 juil. 2026</td>
+              <td>
+                <div class="td-lieu">Mairie de Sainte-Clotilde</div>
+                <div class="td-adresse">Rue Louis Vaillant, Saint-Denis</div>
+              </td>
+              <td class="td-horaire">9h – 14h</td>
+            </tr>
+            <tr>
+              <td class="td-date">Jeu. 7 août 2026</td>
+              <td>
+                <div class="td-lieu">Médiathèque de Saint-André</div>
+                <div class="td-adresse">Rue du Stade, Saint-André</div>
+              </td>
+              <td class="td-horaire">8h30 – 13h30</td>
+            </tr>
+            <tr>
+              <td class="td-date">Sam. 23 août 2026</td>
+              <td>
+                <div class="td-lieu">Centre EFS Saint-Denis</div>
+                <div class="td-adresse">5 rue Lacaussade, Saint-Denis</div>
+              </td>
+              <td class="td-horaire">8h – 12h</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- EFS SUD -->
+      <div class="collecte-block reveal reveal-delay-1">
+        <div class="collecte-block-header">
+          <div>
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+              <span class="collecte-zone-badge badge-sud">Sud</span>
+            </div>
+            <div class="collecte-block-title">EFS Saint-Pierre</div>
+            <div class="collecte-block-address">
+              Centre fixe · ZAC Terre Sainte, 97410 Saint-Pierre
+            </div>
+          </div>
+        </div>
+        <table class="collecte-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Lieu</th>
+              <th>Horaires</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="td-date">Ven. 4 juil. 2026</td>
+              <td>
+                <div class="td-lieu">Centre EFS Saint-Pierre</div>
+                <div class="td-adresse">ZAC Terre Sainte, Saint-Pierre</div>
+              </td>
+              <td class="td-horaire">8h – 13h</td>
+            </tr>
+            <tr>
+              <td class="td-date">Mer. 9 juil. 2026</td>
+              <td>
+                <div class="td-lieu">Mairie du Tampon</div>
+                <div class="td-adresse">Rue Raphaël Babet, Le Tampon</div>
+              </td>
+              <td class="td-horaire">9h – 15h</td>
+            </tr>
+            <tr>
+              <td class="td-date">Sam. 19 juil. 2026</td>
+              <td>
+                <div class="td-lieu">Centre commercial Leclerc Sud</div>
+                <div class="td-adresse">Rte de Terre Sainte, Saint-Pierre</div>
+              </td>
+              <td class="td-horaire">8h30 – 13h</td>
+            </tr>
+            <tr>
+              <td class="td-date">Mar. 22 juil. 2026</td>
+              <td>
+                <div class="td-lieu">CHU Groupe Hospitalier Sud</div>
+                <div class="td-adresse">BP 350, 97448 Saint-Pierre Cedex</div>
+              </td>
+              <td class="td-horaire">8h – 12h30</td>
+            </tr>
+            <tr>
+              <td class="td-date">Sam. 2 août 2026</td>
+              <td>
+                <div class="td-lieu">Mairie de Saint-Louis</div>
+                <div class="td-adresse">1 rue de l'Église, Saint-Louis</div>
+              </td>
+              <td class="td-horaire">9h – 14h</td>
+            </tr>
+            <tr>
+              <td class="td-date">Jeu. 14 août 2026</td>
+              <td>
+                <div class="td-lieu">Salle polyvalente de Cilaos</div>
+                <div class="td-adresse">Rte de Bras-Sec, Cilaos</div>
+              </td>
+              <td class="td-horaire">8h30 – 13h30</td>
+            </tr>
+            <tr>
+              <td class="td-date">Ven. 28 août 2026</td>
+              <td>
+                <div class="td-lieu">Centre EFS Saint-Pierre</div>
+                <div class="td-adresse">ZAC Terre Sainte, Saint-Pierre</div>
+              </td>
+              <td class="td-horaire">8h – 12h</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <!-- Note -->
+    <p class="reveal" style="margin-top:28px;font-size:.78rem;color:var(--stone);font-style:italic;text-align:center;">
+      Calendrier mis à jour régulièrement. Inscription préalable recommandée. Vous recevrez une convocation par courrier avant chaque date.
+    </p>
+  </div>
+</section>
+
+<!-- INSCRIPTION -->
+<section id="inscription">
+  <div class="inscription-inner">
+    <p class="eyebrow light reveal">Comment participer</p>
+    <h2 class="inscription-title reveal reveal-delay-1">Simple,<br><em>rapide</em>, utile.</h2>
+    <p class="inscription-sub reveal reveal-delay-2">
+      La participation se déroule en trois étapes. Comptez environ 30 minutes sur place.
+    </p>
+
+    <div class="inscription-steps">
+      <div class="inscription-step reveal">
+        <span class="inscription-step-num">01</span>
+        <div class="inscription-step-text">
+          <strong>Inscrivez-vous en ligne ou sur place</strong>
+          Choisissez une date de collecte proche de chez vous et réservez votre créneau. L'inscription est gratuite et sans engagement.
+        </div>
+      </div>
+      <div class="inscription-step reveal reveal-delay-1">
+        <span class="inscription-step-num">02</span>
+        <div class="inscription-step-text">
+          <strong>Rendez-vous à la collecte avec votre pièce d'identité</strong>
+          Une équipe médicale EFS réalise un petit prélèvement sanguin et vous explique l'étude. Un formulaire de consentement est signé sur place.
+        </div>
+      </div>
+      <div class="inscription-step reveal reveal-delay-2">
+        <span class="inscription-step-num">03</span>
+        <div class="inscription-step-text">
+          <strong>Contribuez au référentiel réunionnais</strong>Votre participation aide à mieux documenter la diversité génétique de La Réunion, dans un cadre encadré par le consentement et la confidentialité des données.
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-buttons reveal reveal-delay-3">
+      <a href="mailto:genome.reunion@chu-reunion.fr" class="btn-efs">Je m'inscris</a>
+      <a href="Genome_Reunion_Landing_v4.html" class="btn-outline">En savoir plus</a>
+    </div>
+
+    <!-- Contact -->
+    <p class="reveal" style="margin-top:32px;font-size:.78rem;color:rgba(255,255,255,.3);">
+      Questions ? Contactez-nous : <a href="mailto:genome.reunion@chu-reunion.fr" style="color:rgba(255,255,255,.5);text-decoration:none;">genome.reunion@chu-reunion.fr</a>
+    </p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Le premier référentiel génomique dédié à la population réunionnaise.</div>
+  <ul class="footer-nav">
+    <li><a href="Genome_Reunion_Landing_v4.html#probleme">Pourquoi</a></li>
+    <li><a href="Genome_Reunion_Landing_v4.html#methode">Comment</a></li>
+    <li><a href="Genome_Reunion_Landing_v4.html#equipe">Équipe</a></li>
+    <li><a href="#inscription">S'inscrire</a></li>
+  </ul>
+  <div class="footer-copy">CHU de La Réunion · Service de Génétique · V3.5</div>
+</footer>
+
+<script>
+/* ── PROGRESS BAR ── */
+const progressEl = document.getElementById('progress');
+if (progressEl) {
+  window.addEventListener('scroll', () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progressEl.style.width = max > 0 ? (window.scrollY / max * 100) + '%' : '0%';
+  });
+}
+
+/* ── NAV SCROLLED ── */
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+  });
+}
+
+/* ── HERO REVEAL ── */
+window.addEventListener('load', () => {
+  const heroEls = [
+    { id: 'hero-creole',   delay: 100 },
+    { id: 'hero-title',    delay: 200 },
+    { id: 'hero-subtitle', delay: 330 },
+    { id: 'hero-body',     delay: 430 },
+    { id: 'hero-actions',  delay: 560 },
+  ];
+  heroEls.forEach(({ id, delay }) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transition = 'opacity .8s cubic-bezier(.16,1,.3,1)';
+      el.style.transform = 'translateY(0)';
+      setTimeout(() => { el.style.transition = ''; }, 900);
+    }, delay);
+  });
+});
+
+/* ── SCROLL REVEAL ── */
+const revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => revealObs.observe(el));
+} else {
+  revealEls.forEach(el => el.classList.add('visible'));
+}
+
+/* ── STATS REVEAL + COUNTER ── */
+const statItems = document.querySelectorAll('.stat-item');
+if ('IntersectionObserver' in window) {
+  const statObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        const counter = e.target.querySelector('.count');
+        if (counter) {
+          const target = parseInt(counter.dataset.target, 10);
+          if (!Number.isFinite(target)) return;
+
+          const duration = 1200;
+          const start = performance.now();
+          const animate = (now) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            counter.textContent = Math.round(eased * target).toLocaleString('fr-FR');
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+          requestAnimationFrame(animate);
+        }
+        statObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  statItems.forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+    statObs.observe(el);
+  });
+} else {
+  statItems.forEach(el => el.classList.add('visible'));
+}
+
+/* ── LEGEND DOTS CSS ── */
+document.querySelectorAll('.legend-dot').forEach(el => {
+  if (el.querySelector('.legend-dot-marker')) return;
+
+  const color = getComputedStyle(el).getPropertyValue('--c').trim();
+  if (color) {
+    const dot = document.createElement('span');
+    dot.className = 'legend-dot-marker';
+    dot.style.cssText = `width:8px;height:8px;border-radius:2px;background:${color};display:inline-block;flex-shrink:0;`;
+    el.prepend(dot);
+  }
+});
+
+/* ── PARALLAXE SOURIS — HERO ── */
+(function() {
+  const hero = document.getElementById('hero');
+  if (!hero || !('IntersectionObserver' in window)) return;
+
+  const title = document.getElementById('hero-title');
+  const creole = document.getElementById('hero-creole');
+  const body = document.getElementById('hero-body');
+  const actions = document.getElementById('hero-actions');
+
+  let targetX = 0, targetY = 0;
+  let currentX = 0, currentY = 0;
+  let heroActive = false;
+
+  const heroObs = new IntersectionObserver(([e]) => {
+    heroActive = e.isIntersecting;
+    if (!heroActive) {
+      targetX = 0; targetY = 0;
+    }
+  }, { threshold: 0.1 });
+  heroObs.observe(hero);
+
+  hero.addEventListener('mousemove', (e) => {
+    if (!heroActive) return;
+    const rect = hero.getBoundingClientRect();
+    const nx = (e.clientX - rect.left) / rect.width  * 2 - 1;
+    const ny = (e.clientY - rect.top)  / rect.height * 2 - 1;
+    targetX = nx * 12;
+    targetY = ny * 8;
+  });
+
+  hero.addEventListener('mouseleave', () => {
+    targetX = 0;
+    targetY = 0;
+  });
+
+  function lerp(a, b, t) { return a + (b - a) * t; }
+
+  function tick() {
+    currentX = lerp(currentX, targetX, 0.06);
+    currentY = lerp(currentY, targetY, 0.06);
+
+    if (title)   title.style.transform   = `translate(${currentX}px, ${currentY}px)`;
+    if (creole)  creole.style.transform  = `translate(${currentX * .4}px, ${currentY * .4}px)`;
+    if (body)    body.style.transform    = `translate(${currentX * .6}px, ${currentY * .6}px)`;
+    if (actions) actions.style.transform = `translate(${currentX * .5}px, ${currentY * .5}px)`;
+
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+
+/* ── DONUT CHART — ANIMATION AU SCROLL ── */
+(function() {
+  const donutSvg = document.querySelector('.donut');
+  if (!donutSvg || !('IntersectionObserver' in window)) return;
+
+  const circles = donutSvg.querySelectorAll('circle');
+  if (!circles.length) return;
+
+  const circumference = 2 * Math.PI * 38;
+
+  const finalValues = Array.from(circles).map(c => ({
+    dasharray: c.getAttribute('stroke-dasharray'),
+    dashoffset: parseFloat(c.getAttribute('stroke-dashoffset') || 0)
+  }));
+
+  circles.forEach(c => {
+    c.setAttribute('stroke-dasharray', `0 ${circumference}`);
+    c.style.transition = 'none';
+  });
+
+  let animated = false;
+
+  const donutObs = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting && !animated) {
+      animated = true;
+
+      circles.forEach((c, i) => {
+        const final = finalValues[i];
+        setTimeout(() => {
+          c.style.transition = 'stroke-dasharray 0.7s cubic-bezier(.16,1,.3,1)';
+          c.setAttribute('stroke-dasharray', final.dasharray);
+          c.setAttribute('stroke-dashoffset', final.dashoffset);
+        }, i * 120);
+      });
+
+      donutObs.unobserve(donutSvg);
+    }
+  }, { threshold: 0.4 });
+
+  donutObs.observe(donutSvg);
+})();
+
+</script>
+<script>
+/* Hero page reveal */
+window.addEventListener('load', () => {
+  [
+    { id: 'ph-kicker', delay: 120 },
+    { id: 'ph-title',  delay: 240 },
+    { id: 'ph-sub',    delay: 380 },
+  ].forEach(({ id, delay }) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    setTimeout(() => {
+      el.style.opacity = '1';
+      el.style.transform = 'translateY(0)';
+    }, delay);
+  });
+});
+</script>
+</body>
+</html>
