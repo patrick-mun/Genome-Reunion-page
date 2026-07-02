@@ -498,7 +498,7 @@ tr:hover td { background: var(--bg3); }
 
 /* ─── ÉQUIPE ──────────────────────────────────────────── */
 .team-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px;
   margin-top: 36px;
 }
 .team-card {
@@ -518,6 +518,7 @@ tr:hover td { background: var(--bg3); }
 .team-card:nth-child(2) .team-avatar { background: var(--blue-dim); color: var(--blue); border-color: oklch(0.65 0.14 252 / 0.3); }
 .team-card:nth-child(3) .team-avatar { background: var(--amber-dim); color: var(--amber); border-color: oklch(0.80 0.14 75 / 0.3); }
 .team-card:nth-child(4) .team-avatar { background: var(--coral-dim); color: var(--coral); border-color: oklch(0.72 0.15 33 / 0.3); }
+.team-card:nth-child(5) .team-avatar { background: oklch(0.45 0.03 250 / 0.12); color: oklch(0.40 0.03 250); border-color: oklch(0.45 0.03 250 / 0.3); }
 .team-name { font-family: 'Space Grotesk', sans-serif; font-size: 0.92rem; font-weight: 700; margin-bottom: 4px; }
 .team-role { font-size: 0.78rem; color: var(--muted); line-height: 1.45; }
 
