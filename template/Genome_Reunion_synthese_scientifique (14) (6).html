@@ -993,7 +993,7 @@ footer.page-footer .pageno {
  <div class="cover-subtitle">Du biais des génomes de référence à la sélection géo-ancestrale optimisée de 350 WGS : synthèse scientifique, méthodologique et économique</div>
  </div>
  <div class="cover-meta">
- <div><strong>Auteurs :</strong> Pr Bérénice DORAY (chef du service de génétique), Patrick MUNIER, Dr Thomas HYBY, Susie GUILLY, Dr Fanny FERROUL</div>
+ <div><strong>Auteurs :</strong> Pr Bérénice DORAY (chef du service de génétique), Patrick MUNIER, Dr Thomas Huby, Susie GUILLY, Dr Fanny FERROUL</div>
  <div><strong>Public :</strong> communauté scientifique / experts</div>
  <div><strong>Porteur :</strong> Laboratoire de génétique, CHU de La Réunion</div>
  <div><strong>Version méthodologique :</strong> V3.5 géo-ancestrale (pools témoins EGA + 1000G)</div>
@@ -1278,12 +1278,12 @@ footer.page-footer .pageno {
  <p>La validation répond à trois questions : le panel local améliore-t-il réellement l'imputation des variants rares et fondateurs ? La complexité géo-ancestrale se justifie-t-elle face à la stratification géographique seule ? La méthode reste-t-elle robuste face à une structure que le score ne peut pas prévoir ? La réponse s'appuie sur simulation (résultat décisif) et données externes (transférabilité).</p>
  <h3>6.1 Trois profils de population simulée</h3>
  <p><strong>Profil A (homogène, contrôle négatif).</strong> Tous les secteurs sont admixés de façon similaire. Si la méthode génère un gain sur ce profil, c'est un biais de simulation. Résultat attendu : random ≈ géographique ≈ géo-ancestral.</p>
- <p><strong>Profil C (mixte-hétérogène, scénario réunionnais plausible).</strong> Certains secteurs portent des signatures ancestrales particulières (zones agricoles, hauts, cirques). C'est le monde pour lequel la méthode est conçue. Résultat attendu : random &lt; géographique &lt; géo-ancestral &lt; géo-ancestral + découverte.</p>
- <p><strong>Profil D (isolat cryptique).</strong> Une distribution de structures non-annotées, que le score S_div ne peut pas lire a priori. C'est le test le plus exigeant. La méthode doit montrer sa robustesse même face à l'imprévu.</p>
+ <p><strong>Profil B (mixte-hétérogène, scénario réunionnais plausible).</strong> Certains secteurs portent des signatures ancestrales particulières (zones agricoles, hauts, cirques). C'est le monde pour lequel la méthode est conçue. Résultat attendu : random &lt; géographique &lt; géo-ancestral &lt; géo-ancestral + découverte.</p>
+ <p><strong>Profil C (isolat cryptique).</strong> Une distribution de structures non-annotées, que le score S_div ne peut pas lire a priori. C'est le test le plus exigeant. La méthode doit montrer sa robustesse même face à l'imprévu.</p>
  <p>Un test de transférabilité sur EPIGEN-Brasil complète ce cadre : le Brésil n'est pas La Réunion, donc confirme la portée générale sans valider localement.</p>
  <h3>6.2 Endpoint primaire et co-primaire</h3>
- <p><strong>Endpoint primaire : imputation.</strong> Gain de performance R² en imputation aval, segmenté par classe de fréquence allélique (variants rares MAF &lt; 1 %, modérément rares 1–5 %). Seuils pré-enregistrés par profil avant simulation : ≤ 2 % pour A (rien attendu), ≥ 8 % pour C, ≥ 15 % pour D.</p>
- <p><strong>Co-primaire : capture des fondateurs.</strong> Probabilité que le panel capture au moins un allèle d'un variant fondateur, mesurée sur ≥ 100 réalisations. Cible : P_géo-ancestral ≥ 0,85 vs P_random ≤ 0,55 sur profil C.</p>
+ <p><strong>Endpoint primaire : imputation.</strong> Gain de performance R² en imputation aval, segmenté par classe de fréquence allélique (variants rares MAF &lt; 1 %, modérément rares 1–5 %). Seuils pré-enregistrés par profil avant simulation : ≤ 2 % pour A (rien attendu), ≥ 8 % pour B, ≥ 15 % pour C.</p>
+ <p><strong>Co-primaire : capture des fondateurs.</strong> Probabilité que le panel capture au moins un allèle d'un variant fondateur, mesurée sur ≥ 100 réalisations. Cible : P_géo-ancestral ≥ 0,85 vs P_random ≤ 0,55 sur profil B.</p>
  <h3>6.3 Métriques diagnostiques (vérification interne)</h3>
  <table>
  <thead><tr><th>Métrique</th><th>But</th></tr></thead>
@@ -1296,7 +1296,7 @@ footer.page-footer .pageno {
  </table>
  <p>Ces métriques ne tranchent pas le verdict, elles le complètent. C'est la distinction entre ce qui décide (endpoint) et ce qui aide à comprendre (diagnostic).</p>
  <h3>6.4 Sensibilité et portes de contrôle</h3>
- <p>Avant gel, deux analyses de sensibilité assurent la robustesse : variation des poids de S_div (importance relative des composantes), et leave-one-component-out (LOCO) pour tester la dépendance à une source de données unique. Ces analyses couramment s'avèrent stables sur le profil C.</p>
+ <p>Avant gel, deux analyses de sensibilité assurent la robustesse : variation des poids de S_div (importance relative des composantes), et leave-one-component-out (LOCO) pour tester la dépendance à une source de données unique. Ces analyses couramment s'avèrent stables sur le profil B.</p>
  <p>Trois portes doivent tous franchir « PASS » ou « REVIEW »:</p>
  <ul>
  <li><strong>Porte 1 (Simulation)</strong> : endpoint primaire sur A/C/D, seuils pré-enregistrés validés.</li>
@@ -1328,7 +1328,7 @@ footer.page-footer .pageno {
  <tr><td>4. Score polygénique (PRS)</td><td>PRS pondérés localement + ensemble learning</td><td>Diabète T2, HTA, cardiopathies, maladies fondatrices</td><td>Risque stratifié × population × secteur</td></tr>
  </tbody>
  </table>
- <p class="caption">Tableau 7 : Les quatre modules IA en surcouche du référentiel. Stack : PyTorch / TensorFlow, scikit-learn / XGBoost, MLflow, Kubeflow, déploiement Docker/Kubernetes, API Django. Source : dossier économique du projet §6.</p>
+ <p class="caption">Tableau 6 : Les quatre modules IA en surcouche du référentiel. Stack : PyTorch / TensorFlow, scikit-learn / XGBoost, MLflow, Kubeflow, déploiement Docker/Kubernetes, API Django. Source : dossier économique du projet §6.</p>
  <h3>7.3 Impacts attendus par domaine</h3>
  <table>
  <thead><tr><th>Domaine</th><th>Bénéfices attendus</th><th>Exemples concrets</th></tr></thead>
@@ -1341,18 +1341,18 @@ footer.page-footer .pageno {
  <tr><td>Justice et équité en santé</td><td>Réduction des inégalités d'accès au diagnostic</td><td>Inclusion dans les essais cliniques internationaux ; pilotage réunionnais</td></tr>
  </tbody>
  </table>
- <p class="caption">Tableau 8 : Impacts attendus du référentiel réunionnais par domaine. Source : document de projet (tableau de synthèse des bénéfices).</p>
+ <p class="caption">Tableau 7 : Impacts attendus du référentiel réunionnais par domaine. Source : document de projet (tableau de synthèse des bénéfices).</p>
  <h3>7.4 Valorisation scientifique et régionale</h3>
  <p>Au-delà du diagnostic, le projet positionne La Réunion comme centre de référence en génomique du sud-ouest de l'océan Indien, ouvrant des coopérations avec Madagascar, les Comores, Maurice et les Seychelles (cadre Commission de l'océan Indien), avec les pays d'origine des composantes ancestrales, et avec les grands programmes (NIH/H3Africa, European Genome-phenome Archive). La base sera accessible aux partenaires sous conventions encadrées (RGPD, HDS), favorisant projets multicentriques et publications collaboratives.</p>
  </section>
  <!-- ==================== 8. PLAN ÉCONOMIQUE (AJOUTÉ) ==================== -->
  <section id="s8">
  <h2>8. Plan économique et opérationnel</h2>
- <p>Le projet s'exécute sur 36 mois avec un coût total de <strong>~1 709 000 €</strong> (scénario génotypage 2 : acquisition iScan + montage RH Proposition 2). Le point structurant : le WGS de 350 individus est <strong>pris en charge gratuitement par le consortium POPgen</strong>, le coût porte sur l'acquisition d'iScan pour le CHU, le génotypage SNP des 2 500 + 300 familles, l'extraction d'ADN et la conservation biologique.</p>
+ <p>Le projet s'exécute sur 36 mois avec un coût total de <strong>~1 709 000 €</strong> (scénario génotypage 2 : acquisition iScan + montage RH Proposition 2). Le point structurant : le WGS de 350 individus est <strong>pris en charge gratuitement par le consortium POPgen</strong>, le coût porte sur l'acquisition d'iScan pour le CHU, le génotypage SNP des 2 500 + ~300 individus (100 familles), l'extraction d'ADN et la conservation biologique.</p>
  <div class="stat-grid">
  <div class="stat-card on-accent"><div class="num">~1 709 000 €</div><div class="label">Budget total (36 mois, charges incluses, iScan inclus)</div></div>
  <div class="stat-card"><div class="num">0 €</div><div class="label">WGS 350 individus (POPgen)</div></div>
- <div class="stat-card"><div class="num">~2 940</div><div class="label">Puces de génotypage GDA-8 (2500 + 300 familles + QC)</div></div>
+ <div class="stat-card"><div class="num">~2 940</div><div class="label">Puces de génotypage GDA-8 (2500 + ~300 individus [100 familles] + QC)</div></div>
  <div class="stat-card"><div class="num">36 mois</div><div class="label">Durée complète du projet</div></div>
  </div>
  <h3>8.1 Architecture des ressources</h3>
@@ -1390,18 +1390,18 @@ footer.page-footer .pageno {
  <p><strong>Phase 5 (M17–30).</strong> Développement 4 modules IA : (1) Pathogénicité (GNN, AUC ≥0,85), (2) Pharmacogénétique (XGBoost, comparaison vs CPIC), (3) Admixture (autoencoder), (4) PRS (recalibrés sur fréquences locales).</p>
  <p><strong>Phase 6 (M27–36).</strong> Portail web Django, API clinique (&lt; 500 ms latence), validation avec cliniciens CHU, documentation modèles (MLMD), préparation publication.</p>
  <h3>8.4 Génotypage : deux scénarios</h3>
- <p>Le CHU ne dispose pas d'iScan. Un seul scénario est à retenir selon la stratégie d'équipement à long terme.</p>
+ <p>Le CHU ne dispose pas d'iScan. Les deux scénarios ci-dessous sont comparés ; un seul sera retenu selon la stratégie d'équipement à long terme.</p>
  <table>
  <thead><tr><th>Poste</th><th>Scénario 1 : Sous-traitance</th><th>Scénario 2 : Acquisition iScan</th></tr></thead>
  <tbody>
- <tr><td><strong>Volume</strong></td><td colspan="2">~2 940 puces GDA-8 (2500 cohorte + ~300 familles + 140 réplicats QC)</td></tr>
+ <tr><td><strong>Volume</strong></td><td colspan="2">~2 940 puces GDA-8 (2500 cohorte + ~300 individus [100 familles] + 140 réplicats QC)</td></tr>
  <tr><td>Coût génotypage tout compris</td><td>265 000 € (~90 €/échantillon plateforme)</td><td>226 000 € (consommables seulement)</td></tr>
  <tr><td>iScan System + AutoLoader + qualification + maintenance M1</td><td>0 €</td><td>253 000 €</td></tr>
  <tr><td><strong>Total génotypage</strong></td><td><strong>265 000 €</strong></td><td><strong>479 000 €</strong></td></tr>
  <tr><td><strong>Bénéfice CHU long terme</strong></td><td>Aucun (dépendance plateforme)</td><td>Actif durable, génotypages futurs < 30 €/éch.</td></tr>
  </tbody>
  </table>
- <p class="caption"><strong>Recommandation :</strong> Scénario 2 (acquisition iScan, ~479 K€) pour ce projet. Investissement dans un équipement durable au CHU permettra de réaliser des génotypages futurs à coût réduit (< 30 €/échantillon). Capital technologique bénéfique pour la pérennité de la plateforme.</p>
+ <p class="caption"><strong>Recommandation :</strong> Scénario 2 (acquisition iScan) pour ce projet, soit ~479 K€ sur le seul poste génotypage. Investissement dans un équipement durable au CHU permettra de réaliser des génotypages futurs à coût réduit (< 30 €/échantillon). Capital technologique bénéfique pour la pérennité de la plateforme.</p>
  <h3>8.5 Infrastructure informatique</h3>
  <p><strong>Option A : On-premise (CAPEX).</strong> Serveurs CPU/GPU, stockage NVMe ~100 To, réseau, sécurité, licences logicielles. Coût : 334 000 € (capex unique), pérenne. Maîtrise totale des données, pas de risque egress.</p>
  <p><strong>Option B : Cloud hybride souverain (OPEX).</strong> Solution HDS-certifiée (ex. Scalingo, OVH, Outscale). Coût : ~270 000 € sur 36 mois (30 % d'économie), mais récurrent à chaque renouvellement et sensible aux frais egress données (coûts cachés ~5–10 K€/an).</p>
@@ -1429,58 +1429,54 @@ footer.page-footer .pageno {
  <p class="caption"><strong>Recommandation :</strong> Proposition 2 (524 K€) offre le meilleur équilibre coût/risque. Alternance + CIFRE stabilisent l'équipe tout en réduisant 23 % le coût par rapport à la référence. Technicien de laboratoire 100 % inclus dans tous les montages.</p>
  <h3>8.8 Effectif de l'équipe par mois</h3>
  <figure>
- <svg viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Évolution de l'équipe (ETP) par mois, Proposition 2 recommandée">
+ <svg viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Évolution de l'effectif (ETP) par mois, montage Proposition 2">
  <text x="20" y="30" font-size="16" font-weight="700" fill="#1a1a1a">Effectif cumulatif (ETP) — Proposition 2 (Alternance + CIFRE)</text>
  <!-- grille horizontale -->
- <line x1="80" y1="280" x2="850" y2="280" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
- <line x1="80" y1="220" x2="850" y2="220" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
- <line x1="80" y1="160" x2="850" y2="160" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
- <line x1="80" y1="100" x2="850" y2="100" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
+ <line x1="80" y1="236" x2="850" y2="236" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
+ <line x1="80" y1="192" x2="850" y2="192" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
+ <line x1="80" y1="148" x2="850" y2="148" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
+ <line x1="80" y1="104" x2="850" y2="104" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
+ <line x1="80" y1="60" x2="850" y2="60" stroke="#e9ecef" stroke-width="1" stroke-dasharray="3,3"/>
  <!-- axes -->
  <line x1="80" y1="280" x2="850" y2="280" stroke="#333" stroke-width="2"/>
  <line x1="80" y1="280" x2="80" y2="50" stroke="#333" stroke-width="2"/>
- <!-- flèches axes -->
  <polygon points="850,280 840,275 840,285" fill="#333"/>
  <polygon points="80,50 75,60 85,60" fill="#333"/>
- <!-- labels axes -->
  <text x="875" y="285" font-size="13" fill="#1a1a1a" font-weight="600">Mois</text>
  <text x="50" y="30" font-size="13" fill="#1a1a1a" font-weight="600">ETP</text>
- <!-- graduations Y et étiquettes -->
+ <!-- graduations Y -->
  <text x="70" y="290" font-size="12" fill="#333" font-weight="600" text-anchor="end">0</text>
- <text x="70" y="230" font-size="12" fill="#333" font-weight="600" text-anchor="end">2.5</text>
- <text x="70" y="170" font-size="12" fill="#333" font-weight="600" text-anchor="end">3.75</text>
- <text x="70" y="110" font-size="12" fill="#333" font-weight="600" text-anchor="end">5</text>
- <text x="70" y="50" font-size="12" fill="#333" font-weight="600" text-anchor="end">6.25</text>
- <!-- graduations X (tous les 3 mois) -->
+ <text x="70" y="240" font-size="12" fill="#333" font-weight="600" text-anchor="end">1</text>
+ <text x="70" y="196" font-size="12" fill="#333" font-weight="600" text-anchor="end">2</text>
+ <text x="70" y="152" font-size="12" fill="#333" font-weight="600" text-anchor="end">3</text>
+ <text x="70" y="108" font-size="12" fill="#333" font-weight="600" text-anchor="end">4</text>
+ <text x="70" y="64" font-size="12" fill="#333" font-weight="600" text-anchor="end">5</text>
+ <!-- graduations X -->
  <line x1="80" y1="280" x2="80" y2="290" stroke="#333" stroke-width="2"/><text x="80" y="310" font-size="12" fill="#333" font-weight="600" text-anchor="middle">M1</text>
- <line x1="230" y1="280" x2="230" y2="290" stroke="#333" stroke-width="1"/><text x="230" y="310" font-size="11" fill="#555" text-anchor="middle">M6</text>
- <line x1="380" y1="280" x2="380" y2="290" stroke="#333" stroke-width="1"/><text x="380" y="310" font-size="11" fill="#555" text-anchor="middle">M12</text>
- <line x1="530" y1="280" x2="530" y2="290" stroke="#333" stroke-width="1"/><text x="530" y="310" font-size="11" fill="#555" text-anchor="middle">M18</text>
- <line x1="680" y1="280" x2="680" y2="290" stroke="#333" stroke-width="1"/><text x="680" y="310" font-size="11" fill="#555" text-anchor="middle">M24</text>
- <line x1="830" y1="280" x2="830" y2="290" stroke="#333" stroke-width="1"/><text x="830" y="310" font-size="11" fill="#555" text-anchor="middle">M30</text>
+ <line x1="190" y1="280" x2="190" y2="290" stroke="#333" stroke-width="1"/><text x="190" y="310" font-size="11" fill="#555" text-anchor="middle">M6</text>
+ <line x1="322" y1="280" x2="322" y2="290" stroke="#333" stroke-width="1"/><text x="322" y="310" font-size="11" fill="#555" text-anchor="middle">M12</text>
+ <line x1="454" y1="280" x2="454" y2="290" stroke="#333" stroke-width="1"/><text x="454" y="310" font-size="11" fill="#555" text-anchor="middle">M18</text>
+ <line x1="586" y1="280" x2="586" y2="290" stroke="#333" stroke-width="1"/><text x="586" y="310" font-size="11" fill="#555" text-anchor="middle">M24</text>
+ <line x1="718" y1="280" x2="718" y2="290" stroke="#333" stroke-width="1"/><text x="718" y="310" font-size="11" fill="#555" text-anchor="middle">M30</text>
  <line x1="850" y1="280" x2="850" y2="290" stroke="#333" stroke-width="2"/><text x="850" y="310" font-size="12" fill="#333" font-weight="600" text-anchor="middle">M36</text>
- <!-- courbe épaisse -->
- <polyline points="80,260 115,260 150,240 185,200 220,180 255,160 290,150 325,140 360,120 395,100 430,100 465,110 500,125 535,140 570,150 605,160 640,160 675,170 710,175 745,180 780,185 815,190 850,190" 
-   fill="none" stroke="#1f4e79" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
- <!-- points clés (gros cercles) -->
- <circle cx="80" cy="260" r="5" fill="#1f4e79" stroke="#fff" stroke-width="2"/>
- <text x="80" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M1: 3.5 ETP</text>
- <circle cx="220" cy="180" r="5" fill="#3a7ca5" stroke="#fff" stroke-width="2"/>
- <text x="220" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M5: +Data Eng</text>
- <circle cx="430" cy="100" r="5" fill="#8b5cf6" stroke="#fff" stroke-width="2"/>
- <text x="430" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M17: +Data Sci IA</text>
- <circle cx="640" cy="160" r="5" fill="#e85d38" stroke="#fff" stroke-width="2"/>
- <text x="640" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M27: −Data Eng</text>
- <circle cx="850" cy="190" r="5" fill="#1f4e79" stroke="#fff" stroke-width="2"/>
- <text x="850" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M36: Fin</text>
- <!-- annotations jalons -->
+ <!-- courbe ETP Proposition 2 -->
+ <polyline points="80,192 124,192 124,170 344,170 344,126 850,126" fill="none" stroke="#1f4e79" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+ <!-- points clés -->
+ <circle cx="80" cy="192.0" r="5" fill="#1f4e79" stroke="#fff" stroke-width="2"/>
+ <text x="80" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M1 : 2,0 ETP</text>
+ <circle cx="124" cy="170.0" r="5" fill="#3a7ca5" stroke="#fff" stroke-width="2"/>
+ <text x="124" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M3 : +alternant</text>
+ <circle cx="344" cy="126.0" r="5" fill="#e85d38" stroke="#fff" stroke-width="2"/>
+ <text x="344" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M13 : +CIFRE</text>
+ <circle cx="850" cy="126.0" r="5" fill="#1f4e79" stroke="#fff" stroke-width="2"/>
+ <text x="850" y="340" font-size="11" fill="#1a1a1a" font-weight="600" text-anchor="middle">M36 : fin</text>
+ <!-- annotations -->
  <g font-size="10" fill="#1a1a1a" font-weight="500">
- <text x="95" y="75">+Data Eng → 4.5 ETP</text>
- <text x="450" y="60">+Data Sci IA → 5.5 ETP</text>
- <text x="655" y="130">−Data Eng → 4.0 ETP</text>
+ <text x="132" y="160.0">+ alternant bioinfo → 2,5 ETP</text>
+ <text x="352" y="116.0">+ CIFRE Data Science → 3,5 ETP</text>
  </g>
  </svg>
- <figcaption class="caption">Figure 6 : Évolution mensuelle de l'équipe (ETP) pour Proposition 2. Démarrage M1 : 3,5 ETP (Coordinateur + Technicien + Bioinformaticien + DevOps 50 %). Phases critiques M4–M22 maintiennent 4,5–5,5 ETP. Fin du projet M36. Grille de référence pour lecture aisée.</figcaption>
+ <figcaption class="caption">Figure 6 : Évolution mensuelle de l'effectif (ETP) — montage Proposition 2. Socle permanent M1–M36 : coordinateur scientifique (IR2, 1,0 ETP) et technicien de laboratoire (1,0 ETP). S'y ajoutent un alternant bioinformatique (contrat 3 ans, ~0,5 ETP effectif en alternance) dès M3, puis un doctorant CIFRE Data Science (contrat 2 ans, 1,0 ETP) à partir de M13 pour les modules IA (Ph.5) et le portail (Ph.6). Pic à 3,5 ETP. Hypothèses d'ETP explicites, à ajuster selon les contrats retenus.</figcaption>
  </figure>
  <h3>8.9 Budget récapitulatif par scénario</h3>
  <table>
@@ -1512,7 +1508,7 @@ footer.page-footer .pageno {
  <div class="row"><div>Prestation web + formation</div><div class="track"><div class="fill" style="width:2%"></div></div><div class="val">35 000 €</div></div>
  <div class="row"><div>WGS (POPgen)</div><div class="track"><div class="fill g" style="width:0%"></div></div><div class="val">0 €</div></div>
  </div>
- <figcaption class="caption">Figure 7 : Répartition du budget Scénario 2 (hors contingence 10 %). RH domine (31 %), suivies d'IT (20 %) et investissement iScan (15 %). Acquisition iScan crée un actif durable pour le CHU. Contingence 10 % = 155 368 € (total final ~1 709 K€).</figcaption>
+ <figcaption class="caption">Figure 7 : Répartition du budget Scénario 2 (en % du total ~1 709 K€, contingence non figurée comme poste). RH domine (31 %), suivies d'IT (20 %) et investissement iScan (15 %). Acquisition iScan crée un actif durable pour le CHU. Contingence 10 % = 155 368 € (total final ~1 709 K€).</figcaption>
  </figure>
  <h3>8.11 Jalons clés et métriques de succès</h3>
  <table>
@@ -1563,7 +1559,7 @@ footer.page-footer .pageno {
  <tr><td>Datadrift des modèles IA</td><td>Évolution des données</td><td>Monitoring continu, réentraînement semestriel</td></tr>
  </tbody>
  </table>
- <p class="caption">Tableau 12 : Principaux risques et mitigations. Sources : METHODOLOGY V3.5 §16 et dossier économique §7.</p>
+ <p class="caption">Tableau 8 : Principaux risques et mitigations. Sources : METHODOLOGY V3.5 §16 et dossier économique §7.</p>
  </section>
  <!-- ==================== 10. CONCLUSION ==================== -->
  <section id="s10">
@@ -1616,7 +1612,7 @@ footer.page-footer .pageno {
  <tr><td>WGS</td><td><em>Whole Genome Sequencing</em> : séquençage du génome entier.</td></tr>
  </tbody>
  </table>
- <p class="caption">Tableau 13 : Glossaire des termes et acronymes. Source : synthèse du document de projet et de la méthodologie V3.5.</p>
+ <p class="caption">Tableau 9 : Glossaire des termes et acronymes. Source : synthèse du document de projet et de la méthodologie V3.5.</p>
  </section>
  <!-- ==================== 12. ANNEXE A ==================== -->
  <section id="s12">
@@ -1673,29 +1669,29 @@ shapeit4 \
 <h2>Annexe B : Bibliographie consolidée</h2>
 <p>Bibliographie de référence du projet Génome Réunion — version consolidée Zotero, numérotation globale <strong>[001]–[208]</strong>. Les 208 références sont organisées en 20 sous-sections thématiques correspondant à la structure analytique du protocole. Les références marquées <span class="ref-validate">À valider</span> doivent être relues avant intégration définitive.</p>
 <div class="biblio-toc">
-  <a href="#b211">§ 21.1</a>
-  <a href="#b212">§ 21.2</a>
-  <a href="#b213">§ 21.3</a>
-  <a href="#b214">§ 21.4</a>
-  <a href="#b215">§ 21.5</a>
-  <a href="#b216">§ 21.6</a>
-  <a href="#b217">§ 21.7</a>
-  <a href="#b218">§ 21.8</a>
-  <a href="#b219">§ 21.9</a>
-  <a href="#b2110">§ 21.10</a>
-  <a href="#b2111">§ 21.11</a>
-  <a href="#b2112">§ 21.12</a>
-  <a href="#b2113">§ 21.13</a>
-  <a href="#b2114">§ 21.14</a>
-  <a href="#b2115">§ 21.15</a>
-  <a href="#b2116">§ 21.16</a>
-  <a href="#b2117">§ 21.17</a>
-  <a href="#b2118">§ 21.18</a>
-  <a href="#b2119">§ 21.19</a>
-  <a href="#b2120">§ 21.20</a>
+  <a href="#b211">B.1</a>
+  <a href="#b212">B.2</a>
+  <a href="#b213">B.3</a>
+  <a href="#b214">B.4</a>
+  <a href="#b215">B.5</a>
+  <a href="#b216">B.6</a>
+  <a href="#b217">B.7</a>
+  <a href="#b218">B.8</a>
+  <a href="#b219">B.9</a>
+  <a href="#b2110">B.10</a>
+  <a href="#b2111">B.11</a>
+  <a href="#b2112">B.12</a>
+  <a href="#b2113">B.13</a>
+  <a href="#b2114">B.14</a>
+  <a href="#b2115">B.15</a>
+  <a href="#b2116">B.16</a>
+  <a href="#b2117">B.17</a>
+  <a href="#b2118">B.18</a>
+  <a href="#b2119">B.19</a>
+  <a href="#b2120">B.20</a>
 </div>
 
-<h3 id="b211">§ 21.1 — Cadre général : diversité génomique, équité et interprétation clinique</h3>
+<h3 id="b211">B.1 — Cadre général : diversité génomique, équité et interprétation clinique</h3>
 <div class="biblio-context">Soutient la justification scientifique générale du projet (§ 1.1, § 1.2) et la défense du référentiel local face aux référentiels internationaux dominés par les ascendances européennes.</div>
 <div class="biblio-subhead">Références centrales</div>
 <ul class="biblio-new">
@@ -1715,7 +1711,7 @@ shapeit4 \
 <li><span class="ref-badge">011</span><div class="ref-body">Petrovski S, Goldstein DB. Unequal representation of genetic variation across ancestry groups creates healthcare inequality in the application of precision medicine. <em>Genome Biology</em>, 2016;17:157. <a href="https://doi.org/10.1186/s13059-016-1016-y" target="_blank" rel="noopener">DOI: 10.1186/s13059-016-1016-y</a><span class="ref-annot">Référence forte sur le lien entre sous-représentation génétique et inégalités de santé en médecine de précision.</span></div></li>
 </ul>
 
-<h3 id="b212">§ 21.2 — Population réunionnaise et océan Indien</h3>
+<h3 id="b212">B.2 — Population réunionnaise et océan Indien</h3>
 <div class="biblio-context">Soutient l’interprétation des composantes ancestrales attendues à La Réunion, la compréhension du contexte régional de l’océan Indien et la définition des pools témoins pertinents (§ 6.2 à § 6.5).</div>
 <div class="biblio-subhead">Réunion — structure génétique et admixture</div>
 <ul class="biblio-new">
@@ -1735,7 +1731,7 @@ shapeit4 \
 <li><span class="ref-badge">019</span><div class="ref-body">Kumar M, Aaron R, Varkki SD, Danda S, Ranganathan S, Paul GR. A rare variant c.1802T&gt;C (p.Ile601Thr) associated with severe phenotype among people with cystic fibrosis from South India, and potential genetic admixture in Réunion, France. <em>Pediatric Pulmonology</em>, 2024;59(6):1820-1825. <a href="https://doi.org/10.1002/ppul.26965" target="_blank" rel="noopener">DOI: 10.1002/ppul.26965</a><span class="ref-annot">Référence ponctuelle à conserver comme indice clinique et populationnel possible reliant l’Inde du Sud et La Réunion. Elle ne remplace pas une analyse de population, mais peut soutenir l’hypothèse d’un lien historique ou génétique à explorer.</span></div></li>
 </ul>
 
-<h3 id="b213">§ 21.3 — Pools témoins et populations parentales</h3>
+<h3 id="b213">B.3 — Pools témoins et populations parentales</h3>
 <div class="biblio-context">Soutient le choix des références ancestrales utilisées en projection PCA, ADMIXTURE supervisée, LAI et comparaison de fréquences (§ 6.2 à § 6.5). Ces ressources ne doivent pas être utilisées comme substituts à la cohorte réunionnaise, mais comme points d’ancrage pour interpréter les composantes ancestrales africaines, malgaches, sud-asiatiques, est-asiatiques et européennes.</div>
 <div class="biblio-subhead">Afrique subsaharienne</div>
 <ul class="biblio-new">
@@ -1770,7 +1766,7 @@ shapeit4 \
 <li><span class="ref-badge">036</span><div class="ref-body">Chen S, Francioli LC, Goodrich JK, et al. A genome-wide mutational constraint map quantified from variation in 76,156 human genomes. <em>Nature</em>, 2024;625:92-100. <a href="https://doi.org/10.1038/s41586-023-06045-0" target="_blank" rel="noopener">DOI: 10.1038/s41586-023-06045-0</a><span class="ref-annot">Mise à jour gnomAD v4, utile pour les contraintes mutationnelles et les fréquences de variants à grande échelle.</span></div></li>
 </ul>
 
-<h3 id="b214">§ 21.4 — Populations admixées et insulaires comparables</h3>
+<h3 id="b214">B.4 — Populations admixées et insulaires comparables</h3>
 <div class="biblio-context">Permet de positionner Génome Réunion par rapport aux autres référentiels nationaux, insulaires, fondateurs ou fortement admixés existants (§ 1, § 13). Cette section ne vise pas à identifier un équivalent exact de La Réunion, mais à documenter des modèles comparables : populations admixées récentes, îles, isolats fondateurs, cohortes nationales et populations issues de diasporas.</div>
 <div class="biblio-subhead">Populations admixées récentes et cohortes multi-ancestrales</div>
 <ul class="biblio-new">
@@ -1799,7 +1795,7 @@ shapeit4 \
 <li><span class="ref-badge">050</span><div class="ref-body">Carter RC, Yang Z, Akkaya-Hocagil T, Tosto G, Heylen E, Jacobson SW, et al. Genetic admixture predictors of fetal alcohol spectrum disorders (FASD) in a South African population. <em>Gene</em>, 2024;931:148854. <a href="https://doi.org/10.1016/j.gene.2024.148854" target="_blank" rel="noopener">DOI: 10.1016/j.gene.2024.148854</a><span class="ref-annot">Référence complémentaire illustrant comment l’admixture peut être intégrée dans l’étude d’un phénotype clinique complexe.</span></div></li>
 </ul>
 
-<h3 id="b215">§ 21.5 — Structure des populations : PCA, ADMIXTURE et modèles d’admixture</h3>
+<h3 id="b215">B.5 — Structure des populations : PCA, ADMIXTURE et modèles d’admixture</h3>
 <div class="biblio-context">Soutient les analyses des sections § 6 et § 7 : stratification géo-ancestrale, projection PCA, estimation globale des composantes d’admixture, interprétation prudente des barplots ADMIXTURE et choix méthodologiques associés.</div>
 <div class="biblio-subhead">Références fondamentales — PCA et structure génétique</div>
 <ul class="biblio-new">
@@ -1826,7 +1822,7 @@ shapeit4 \
 <li><span class="ref-badge">062</span><div class="ref-body">Dominguez Mantes A, Mas Montserrat D, Bustamante CD, Giró-i-Nieto X, Ioannidis AG. Neural ADMIXTURE for rapid genomic clustering. <em>Nature Computational Science</em>, 2023;3(7):621-629. <a href="https://doi.org/10.1038/s43588-023-00482-7" target="_blank" rel="noopener">DOI: 10.1038/s43588-023-00482-7</a><span class="ref-annot">Référence récente sur une approche accélérée de type ADMIXTURE par réseau neuronal. À citer comme perspective méthodologique, sans remplacer ADMIXTURE classique dans la version actuelle du protocole.</span></div></li>
 </ul>
 
-<h3 id="b216">§ 21.6 — Inférence de parenté : IBD, kinship et apparentement cryptique</h3>
+<h3 id="b216">B.6 — Inférence de parenté : IBD, kinship et apparentement cryptique</h3>
 <div class="biblio-context">Soutient les choix méthodologiques formulés en § 7.5 : estimation de la parenté, exclusion ou pondération des apparentés, contrôle de la redondance génétique dans la sélection WGS, et interprétation prudente des coefficients de kinship en population admixée. Dans le protocole, KING-robust peut être utilisé comme métrique principale opérationnelle. Les méthodes REAP, PC-AiR et PC-Relate constituent des références complémentaires importantes lorsque l’admixture et la structure populationnelle risquent de biaiser l’estimation de parenté.</div>
 <div class="biblio-subhead">Référence principale — KING-robust</div>
 <ul class="biblio-new">
@@ -1845,7 +1841,7 @@ shapeit4 \
 <li>En pratique, KING-robust peut être utilisé comme outil principal, puis REAP ou PC-Relate comme analyses de sensibilité si la structure d’admixture réunionnaise produit des estimations ambiguës.</li>
 </ul></div>
 
-<h3 id="b217">§ 21.7 — Effets fondateurs, ROH, IBD long segment et homozygotie</h3>
+<h3 id="b217">B.7 — Effets fondateurs, ROH, IBD long segment et homozygotie</h3>
 <div class="biblio-context">Soutient les analyses des sections § 7.6 et § 8.4 : détection des runs of homozygosity, identification de segments autozygotes, interprétation de l’effet fondateur, mesure du partage allélique et documentation des pathologies fondatrices réunionnaises.</div>
 <div class="biblio-subhead">ROH, homozygotie et histoire démographique</div>
 <ul class="biblio-new">
@@ -1870,7 +1866,7 @@ shapeit4 \
 <li><span class="ref-badge">076</span><div class="ref-body">Kääriäinen H, Muilu J, Perola M, Kristiansson K. Genetics in an isolated population like Finland: a different basis for genomic medicine? <em>Journal of Community Genetics</em>, 2017;8:319-326. <a href="https://doi.org/10.1007/s12687-017-0318-4" target="_blank" rel="noopener">DOI: 10.1007/s12687-017-0318-4</a><span class="ref-annot">Référence utile pour comparer La Réunion à d’autres populations partiellement isolées, tout en soulignant que l’isolement finlandais et l’admixture réunionnaise relèvent de contextes démographiques différents.</span></div></li>
 </ul>
 
-<h3 id="b218">§ 21.8 — Phasage haplotypique</h3>
+<h3 id="b218">B.8 — Phasage haplotypique</h3>
 <div class="biblio-context">Soutient les analyses du § 12 : reconstruction haplotypique, phasage des génotypes, préparation éventuelle à l’imputation, à l’analyse IBD, à la LAI et à l’interprétation des segments transmis. Dans le protocole Génome Réunion, SHAPEIT4 peut être retenu comme outil principal pour la version opérationnelle initiale, avec SHAPEIT5 comme perspective d’évolution pour les variants rares et les données WGS.</div>
 <div class="biblio-subhead">Référence générale sur le phasage</div>
 <ul class="biblio-new">
@@ -1889,7 +1885,7 @@ shapeit4 \
 <li><span class="ref-badge">080</span><div class="ref-body">Hofmeister RJ, Ribeiro DM, Rubinacci S, Delaneau O. Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank. <em>Nature Genetics</em>, 2023;55:1243-1249. <a href="https://doi.org/10.1038/s41588-023-01415-w" target="_blank" rel="noopener">DOI: 10.1038/s41588-023-01415-w</a><span class="ref-annot">Référence SHAPEIT5, particulièrement pertinente pour le phasage des variants rares dans les données WGS/WES à grande échelle. À considérer pour une version ultérieure du protocole, notamment si l’analyse des variants rares devient prioritaire.</span></div></li>
 </ul>
 
-<h3 id="b219">§ 21.9 — Imputation et panels de référence</h3>
+<h3 id="b219">B.9 — Imputation et panels de référence</h3>
 <div class="biblio-context">Soutient les analyses du § 12.5 : imputation des génotypes, choix des panels de référence, évaluation de la qualité d’imputation et perspectives d’extension vers le low-pass sequencing. Dans le protocole Génome Réunion, l’imputation doit être considérée comme une stratégie complémentaire : elle ne remplace pas le WGS local, mais peut permettre d’exploiter les 2 500 génotypages SNP en s’appuyant sur le référentiel WGS réunionnais construit par le projet.</div>
 <div class="biblio-subhead">Références générales sur l’imputation</div>
 <ul class="biblio-new">
@@ -1921,7 +1917,7 @@ shapeit4 \
 <li>L’imputation doit être évaluée par fréquence allélique, par classe d’ascendance, par région génomique et par catégorie de variants, en particulier pour les variants rares ou pharmacogénétiques.</li>
 </ul></div>
 
-<h3 id="b2110">§ 21.10 — Local Ancestry Inference (LAI)</h3>
+<h3 id="b2110">B.10 — Local Ancestry Inference (LAI)</h3>
 <div class="biblio-context">Soutient les analyses du § 12.6.</div>
 <ul class="biblio-new">
 <li><span class="ref-badge">089</span><div class="ref-body">Maples BK, Gravel S, Kenny EE, Bustamante CD. RFMix: a discriminative modeling approach for rapid and robust local-ancestry inference. American Journal of Human Genetics, 2013;93(2):278-288. <a href="https://doi.org/10.1016/j.ajhg.2013.06.020" target="_blank" rel="noopener">DOI: 10.1016/j.ajhg.2013.06.020</a> Référence princeps de la LAI moderne ; outil le plus utilisé.</div></li>
@@ -1932,7 +1928,7 @@ shapeit4 \
 <li><span class="ref-badge">094</span><div class="ref-body">Geza E, Mugo J, Mulder NJ, Wonkam A, Chimusa ER, Mazandu GK. A comprehensive survey of models for dissecting local ancestry deconvolution in human genome. Briefings in Bioinformatics, 2019;20(5):1709-1724. <a href="https://doi.org/10.1093/bib/bby044" target="_blank" rel="noopener">DOI: 10.1093/bib/bby044</a> Revue comparative des outils LAI.</div></li>
 </ul>
 
-<h3 id="b2111">§ 21.11 — Sélection d’échantillons et stratégies de séquençage</h3>
+<h3 id="b2111">B.11 — Sélection d’échantillons et stratégies de séquençage</h3>
 <div class="biblio-context">Soutient les choix stratégiques des sections § 9 et § 10 : génotypage initial large, sélection optimisée d’un sous-ensemble WGS, articulation entre puce SNP, séquençage complet, imputation, détection des variants rares et construction progressive d’un référentiel génomique local. Les références marquées **À valider** sont des ajouts proposés à partir de la recherche bibliographique. Elles doivent être relues avant intégration définitive dans le corpus scientifique du projet.</div>
 <div class="biblio-subhead">Génotypage large par puce SNP</div>
 <ul class="biblio-new">
@@ -1972,7 +1968,7 @@ shapeit4 \
 <li>Les variants très rares resteront partiellement sous-détectés avec un nombre limité de WGS ; cette limite doit être assumée et documentée dans le protocole.</li>
 </ul></div>
 
-<h3 id="b2112">§ 21.12 — Outils logiciels</h3>
+<h3 id="b2112">B.12 — Outils logiciels</h3>
 <div class="biblio-context">Références princeps des principaux outils bioinformatiques et statistiques mobilisés dans le pipeline : contrôle qualité, manipulation des fichiers génomiques, appel de variants, analyses multivariées, visualisation de la structure populationnelle et production des résultats.</div>
 <div class="biblio-subhead">Contrôle qualité, manipulation des génotypes et analyses populationnelles</div>
 <ul class="biblio-new">
@@ -2003,7 +1999,7 @@ shapeit4 \
 <li>Les outils déjà traités dans d’autres sections, comme ADMIXTURE, KING, SHAPEIT, FLARE ou GLIMPSE, ne sont pas systématiquement répétés ici afin d’éviter les doublons bibliographiques.</li>
 </ul></div>
 
-<h3 id="b2113">§ 21.13 — Interprétation clinique des variants en populations diverses</h3>
+<h3 id="b2113">B.13 — Interprétation clinique des variants en populations diverses</h3>
 <div class="biblio-context">Soutient la justification clinique du projet (§ 1.1) : réduction des erreurs d’interprétation, meilleure classification des variants, diminution des VUS, adaptation des seuils de fréquence et prise en compte de la diversité génétique dans les bases de référence. Cette section documente le lien entre sous-représentation génomique, erreurs de classification, rendement diagnostique inégal et nécessité d’un référentiel populationnel local pour La Réunion.</div>
 <div class="biblio-subhead">Références centrales — erreurs d’interprétation et disparités cliniques</div>
 <ul class="biblio-new">
@@ -2031,7 +2027,7 @@ shapeit4 \
 <li><span class="ref-badge">130</span><div class="ref-body">Andaluz S, Zhao B, Sinha S, Lagniton PN, Costa DA, Ding X, et al. Using Portuguese BRCA pathogenic variation as a model to study the impact of human admixture on human health. <em>BMC Genomics</em>, 2024;25:393. <a href="https://doi.org/10.1186/s12864-024-10311-4" target="_blank" rel="noopener">DOI: 10.1186/s12864-024-10311-4</a><span class="ref-annot">Référence utile pour documenter l’impact de l’admixture récente sur la distribution des variants pathogènes BRCA et sur la santé humaine.</span></div></li>
 </ul>
 
-<h3 id="b2114">§ 21.14 — Pharmacogénomique en populations diverses</h3>
+<h3 id="b2114">B.14 — Pharmacogénomique en populations diverses</h3>
 <div class="biblio-context">Soutient les applications cliniques mentionnées en § 1.1 : pharmacogénétique locale, adaptation des recommandations thérapeutiques aux profils génétiques réunionnais, limites de l’extrapolation européenne et intérêt d’un référentiel populationnel pour les variants pharmacogénétiques actionnables. Cette section documente le fait que les fréquences des variants pharmacogénétiques varient fortement selon les populations et que l’admixture peut modifier la pertinence des recommandations de génotypage, de choix thérapeutique ou de posologie.</div>
 <div class="biblio-subhead">Cadres de référence pharmacogénomiques</div>
 <ul class="biblio-new">
@@ -2077,7 +2073,7 @@ shapeit4 \
 <li>Les résultats devront être interprétés avec prudence : une base populationnelle améliore la connaissance des fréquences, mais ne remplace pas les recommandations cliniques validées ni les essais pharmacogénétiques spécifiques.</li>
 </ul></div>
 
-<h3 id="b2115">§ 21.15 — Scores polygéniques en populations diverses</h3>
+<h3 id="b2115">B.15 — Scores polygéniques en populations diverses</h3>
 <div class="biblio-context">Soutient les éléments de § 1.1 sur la portabilité des outils prédictifs, les limites des scores polygéniques construits à partir de cohortes majoritairement européennes et le risque d’aggravation des inégalités en médecine de précision. Dans le contexte Génome Réunion, cette section justifie la prudence dans l’utilisation des PRS/PGS et souligne l’intérêt d’un référentiel local pour mieux évaluer leur transférabilité dans une population fortement admixée.</div>
 <div class="biblio-subhead">Références centrales — perte de portabilité et inégalités</div>
 <ul class="biblio-new">
@@ -2102,7 +2098,7 @@ shapeit4 \
 <li>Cette section doit être utilisée comme argument de prudence : le projet ne promet pas de produire immédiatement des PRS réunionnais cliniquement validés, mais il crée les bases nécessaires pour les évaluer correctement.</li>
 </ul></div>
 
-<h3 id="b2116">§ 21.16 — Cadre conceptuel et éthique des descripteurs de population</h3>
+<h3 id="b2116">B.16 — Cadre conceptuel et éthique des descripteurs de population</h3>
 <div class="biblio-context">Soutient la distinction explicite faite par le protocole entre « ascendance génétique inférée », « ethnicité sociale », « origine déclarée », « identité culturelle » et « race » (§ 1.2, § 6.1, § 6.6). Cette section est indispensable pour la défense du projet devant un comité de protection des personnes, un comité d’éthique, des partenaires institutionnels ou des lecteurs non spécialistes. Elle encadre l’usage des catégories de population afin d’éviter toute essentialisation biologique des identités réunionnaises.</div>
 <div class="biblio-subhead">Cadre général — recommandations institutionnelles</div>
 <ul class="biblio-new">
@@ -2128,7 +2124,7 @@ shapeit4 \
 <li>Les analyses doivent donc être présentées comme des outils destinés à améliorer l’équité diagnostique et thérapeutique, et non comme une classification identitaire des Réunionnais.</li>
 </ul></div>
 
-<h3 id="b2117">§ 21.17 — Effet Wahlund, Hardy-Weinberg et populations structurées</h3>
+<h3 id="b2117">B.17 — Effet Wahlund, Hardy-Weinberg et populations structurées</h3>
 <div class="biblio-context">Soutient les précautions formulées en § 11.4 : test de Hardy-Weinberg par strate, prudence sur les filtres HWE globaux, interprétation des déficits d’hétérozygotes et distinction entre erreur de génotypage, consanguinité, sous-structure populationnelle et effet Wahlund. Dans le contexte Génome Réunion, cette section justifie que les filtres HWE ne doivent pas être appliqués mécaniquement à l’ensemble de la cohorte sans tenir compte de l’admixture, de la structure géographique et des effets fondateurs locaux.</div>
 <div class="biblio-subhead">Références fondatrices — Hardy-Weinberg et dérive génétique</div>
 <ul class="biblio-new">
@@ -2160,7 +2156,7 @@ shapeit4 \
 <li>Cette prudence est particulièrement importante pour les variants rares, les régions d’autozygotie, les segments associés à des effets fondateurs et les marqueurs différenciés entre composantes ancestrales.</li>
 </ul></div>
 
-<h3 id="b2118">§ 21.18 — Datasets opérationnels EGA, 1000 Genomes et panels témoins mobilisables</h3>
+<h3 id="b2118">B.18 — Datasets opérationnels EGA, 1000 Genomes et panels témoins mobilisables</h3>
 <div class="biblio-context">Soutient les sections § 6.2 à § 6.8, § 13.2, § 13.6 et § 19.4–19.5. Cette section ne recense pas seulement des références bibliographiques : elle identifie les datasets concrets susceptibles d’être utilisés comme ressources opérationnelles pour la PCA projetée, ADMIXTURE avec références, la validation géo-ancestrale, l’imputation, le phasage ou la LAI. Ces datasets ne sont pas des substituts à la cohorte réunionnaise. Ils servent uniquement à ancrer les axes d’analyse, stabiliser l’interprétation des composantes ADMIXTURE, tester la robustesse des profils d’ascendance génétique inférée et, lorsque pertinent, soutenir l’imputation ou la LAI. Leur utilisation devra être conditionnée à l’accès DAC/EGA, au passage d’un QC commun, à l’intersection suffisante avec la puce SNP utilisée, à la vérification de l’effet batch et à une interprétation prudente des composantes.</div>
 <div class="biblio-subhead">Ressource publique centrale — 1000 Genomes / IGSR</div>
 <ul class="biblio-new">
@@ -2195,7 +2191,7 @@ shapeit4 \
 <li>Le rapport final devra documenter précisément quels datasets ont été utilisés, lesquels ont été exclus, et pourquoi : accès refusé, intersection SNP insuffisante, batch effect, effectif trop faible ou inadéquation avec l’objectif d’analyse.</li>
 </ul></div>
 
-<h3 id="b2119">§ 21.19 — IA, drug discovery, oncogénomique et multi-omiques</h3>
+<h3 id="b2119">B.19 — IA, drug discovery, oncogénomique et multi-omiques</h3>
 <div class="biblio-context">Rubrique proposée en complément du Markdown initial, car plusieurs références Zotero concernent explicitement l’IA appliquée à la découverte de médicaments, aux bases oncogénomiques et à l’analyse multi-omique. Cette section soutient l’argument suivant : les modèles d’IA biomédicale, les approches de drug discovery, les analyses multi-omiques et les bases oncogénomiques dépendent fortement de la qualité, de la diversité et de la représentativité des données génomiques utilisées. Dans le contexte Génome Réunion, elle permet de montrer que l’absence de populations admixées et sous-représentées dans les bases d’entraînement peut produire des biais scientifiques, cliniques et thérapeutiques.</div>
 <div class="biblio-subhead">IA biomédicale, biais et représentativité des données</div>
 <ul class="biblio-new">
@@ -2242,7 +2238,7 @@ shapeit4 \
 <li>Les références IA doivent donc être utilisées comme argument de prospective et de vigilance : les outils algorithmiques ne corrigeront pas les biais des bases de données si les populations comme La Réunion restent absentes des référentiels.</li>
 </ul></div>
 
-<h3 id="b2120">§ 21.20 — Documents institutionnels, technologies et sources web à vérifier</h3>
+<h3 id="b2120">B.20 — Documents institutionnels, technologies et sources web à vérifier</h3>
 <div class="biblio-context">Rubrique réservée aux documents institutionnels, fiches techniques, pages projet et sources web utiles au contexte opérationnel de Génome Réunion. Ces références ne doivent pas être confondues avec les articles scientifiques évalués par les pairs. Elles servent à documenter le contexte sanitaire, les technologies mobilisées, les cadres nationaux et les sources institutionnelles utiles au montage du projet.</div>
 <div class="biblio-subhead">Contexte sanitaire réunionnais</div>
 <ul class="biblio-new">
