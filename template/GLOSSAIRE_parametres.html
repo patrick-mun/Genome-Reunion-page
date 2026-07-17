@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glossaire des paramètres — Génome Réunion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        oklch(0.97 0.007 248);
+  --bg2:       oklch(1 0 0);
+  --bg3:       oklch(0.93 0.010 248);
+  --border:    oklch(0.87 0.012 248);
+  --text:      oklch(0.18 0.036 248);
+  --muted:     oklch(0.50 0.025 248);
+  --navy:      #0F3A56;
+  --teal:      #1E6E8C;
+  --coral:     #E8654A;
+
+  /* statuts — palette dédiée, distincte de la palette ancestrale du projet */
+  --st-gele:        #1E6E8C;
+  --st-gele-bg:     oklch(0.94 0.03 210);
+  --st-param:       #2E8B6F;
+  --st-param-bg:    oklch(0.94 0.04 155);
+  --st-scenar:      #B5762A;
+  --st-scenar-bg:   oklch(0.94 0.05 70);
+  --st-calibrer:    #A63D5A;
+  --st-calibrer-bg: oklch(0.94 0.04 5);
+  --st-derive:      #6B6F7B;
+  --st-derive-bg:   oklch(0.93 0.008 260);
+  --st-concept:     #5A5FA6;
+  --st-concept-bg:  oklch(0.94 0.03 280);
+
+  --dom-protocole:  #0F3A56;
+  --dom-moteur:     #B5762A;
+
+  --r: 12px;
+}
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ─── NAV ─────────────────────────────────────────────── */
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: oklch(1 0 0 / 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 32px;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap;
+}
+.topbar-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700; font-size: 0.95rem;
+  color: var(--navy); text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.topbar-brand .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); }
+.topbar-links { display: flex; gap: 8px; flex-wrap: wrap; }
+.topbar-links a {
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  padding: 7px 12px; border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: all .15s;
+  white-space: nowrap;
+}
+.topbar-links a:hover { color: var(--navy); border-color: var(--navy); background: var(--bg3); }
+
+/* ─── HERO ────────────────────────────────────────────── */
+.hero {
+  max-width: 900px; margin: 0 auto;
+  padding: 56px 32px 24px;
+  text-align: center;
+}
+.hero-eyebrow {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--teal);
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 600; color: var(--navy);
+  letter-spacing: -0.01em;
+  margin-bottom: 14px;
+}
+.hero p {
+  color: var(--muted); font-size: 1rem; max-width: 620px; margin: 0 auto;
+}
+
+/* ─── SEARCH & FILTERS ────────────────────────────────── */
+.controls {
+  max-width: 900px; margin: 0 auto;
+  padding: 8px 32px 32px;
+  position: sticky; top: 62px; z-index: 40;
+  background: var(--bg);
+}
+.search-box {
+  position: relative;
+  margin-bottom: 16px;
+}
+.search-box svg {
+  position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--muted); pointer-events: none;
+}
+.search-box input {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  padding: 14px 18px 14px 48px;
+  border-radius: var(--r);
+  border: 1.5px solid var(--border);
+  background: var(--bg2);
+  color: var(--text);
+  transition: border-color .15s, box-shadow .15s;
+}
+.search-box input:focus {
+  outline: none;
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px oklch(0.47 0.14 183 / 0.12);
+}
+.search-box .clear-btn {
+  position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+  width: 26px; height: 26px; border-radius: 50%;
+  border: none; background: var(--bg3); color: var(--muted);
+  cursor: pointer; display: none; align-items: center; justify-content: center;
+  font-size: 0.9rem; line-height: 1;
+}
+.search-box .clear-btn:hover { background: var(--border); }
+.search-box.has-value .clear-btn { display: flex; }
+
+.filter-row {
+  display: flex; flex-wrap: wrap; gap: 8px;
+}
+.chip {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8rem; font-weight: 500;
+  padding: 7px 14px; border-radius: 999px;
+  border: 1.5px solid var(--border);
+  background: var(--bg2); color: var(--muted);
+  cursor: pointer; transition: all .15s;
+  user-select: none;
+  display: flex; align-items: center; gap: 6px;
+}
+.chip .swatch { width: 8px; height: 8px; border-radius: 50%; }
+.chip:hover { border-color: var(--muted); }
+.chip.active {
+  color: var(--bg2); border-color: transparent;
+}
+.chip[data-status="all"].active     { background: var(--navy); }
+.chip[data-status="GELÉ"].active         { background: var(--st-gele); }
+.chip[data-status="PARAMÉTRABLE"].active { background: var(--st-param); }
+.chip[data-status="SCÉNARISÉ"].active    { background: var(--st-scenar); }
+.chip[data-status="À CALIBRER"].active   { background: var(--st-calibrer); }
+.chip[data-status="DÉRIVÉ"].active       { background: var(--st-derive); }
+.chip[data-status="CONCEPT"].active      { background: var(--st-concept); }
+
+.chip[data-domain="Protocole"].active { background: var(--dom-protocole); }
+.chip[data-domain="Moteur"].active    { background: var(--dom-moteur); }
+
+.result-count {
+  max-width: 900px; margin: 0 auto;
+  padding: 0 32px 8px;
+  font-size: 0.82rem; color: var(--muted);
+}
+.result-count strong { color: var(--text); }
+
+/* ─── CARDS ───────────────────────────────────────────── */
+.grid {
+  max-width: 900px; margin: 0 auto;
+  padding: 0 32px 64px;
+  display: grid; gap: 14px;
+}
+.param-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border);
+  border-radius: var(--r);
+  padding: 18px 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 20px;
+  align-items: start;
+  transition: box-shadow .15s, transform .15s;
+}
+.param-card:hover {
+  box-shadow: 0 6px 20px oklch(0 0 0 / 0.07);
+  transform: translateY(-1px);
+}
+.param-card[data-status="GELÉ"]         { border-left-color: var(--st-gele); }
+.param-card[data-status="PARAMÉTRABLE"] { border-left-color: var(--st-param); }
+.param-card[data-status="SCÉNARISÉ"]    { border-left-color: var(--st-scenar); }
+.param-card[data-status="À CALIBRER"]   { border-left-color: var(--st-calibrer); }
+.param-card[data-status="DÉRIVÉ"]       { border-left-color: var(--st-derive); }
+.param-card[data-status="CONCEPT"]      { border-left-color: var(--st-concept); }
+
+.param-id {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600; font-size: 0.95rem;
+  color: var(--navy);
+  grid-column: 1;
+}
+.param-status {
+  grid-column: 2; grid-row: 1;
+  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+  white-space: nowrap;
+}
+.param-status[data-status="GELÉ"]         { color: var(--st-gele); background: var(--st-gele-bg); }
+.param-status[data-status="PARAMÉTRABLE"] { color: var(--st-param); background: var(--st-param-bg); }
+.param-status[data-status="SCÉNARISÉ"]    { color: var(--st-scenar); background: var(--st-scenar-bg); }
+.param-status[data-status="À CALIBRER"]   { color: var(--st-calibrer); background: var(--st-calibrer-bg); }
+.param-status[data-status="DÉRIVÉ"]       { color: var(--st-derive); background: var(--st-derive-bg); }
+.param-status[data-status="CONCEPT"]      { color: var(--st-concept); background: var(--st-concept-bg); }
+
+.param-domain {
+  grid-column: 1; grid-row: 2;
+  font-size: 0.72rem; font-weight: 600;
+  margin-top: -4px;
+}
+.param-domain[data-domain="Protocole"] { color: var(--dom-protocole); }
+.param-domain[data-domain="Moteur"]    { color: var(--dom-moteur); }
+
+.param-meaning {
+  grid-column: 1 / -1;
+  color: var(--text); font-size: 0.92rem;
+}
+.param-value {
+  grid-column: 1 / -1;
+  font-size: 0.85rem; color: var(--muted);
+  padding-top: 2px;
+}
+.param-value strong { color: var(--teal); font-weight: 600; font-family: 'JetBrains Mono', monospace; font-size: 0.83rem; }
+
+mark {
+  background: oklch(0.88 0.09 90);
+  color: inherit; border-radius: 3px; padding: 0 2px;
+}
+
+.empty-state {
+  max-width: 900px; margin: 0 auto;
+  padding: 48px 32px; text-align: center;
+  color: var(--muted); display: none;
+}
+.empty-state.show { display: block; }
+.reset-btn {
+  margin-top: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  padding: 9px 18px; border-radius: 999px;
+  border: 1.5px solid var(--teal); background: var(--bg2); color: var(--teal);
+  cursor: pointer; transition: all .15s;
+}
+.reset-btn:hover { background: var(--teal); color: var(--bg2); }
+
+/* ─── LEGEND ──────────────────────────────────────────── */
+.legend {
+  max-width: 900px; margin: 0 auto 48px;
+  padding: 0 32px;
+}
+.legend-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--navy); margin-bottom: 12px;
+}
+.legend-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+}
+.legend-item {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: var(--r);
+  padding: 12px 14px;
+}
+.legend-item .name {
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em;
+  padding: 3px 9px; border-radius: 999px; display: inline-block; margin-bottom: 6px;
+}
+.legend-item p { font-size: 0.8rem; color: var(--muted); }
+
+/* ─── NAMING NOTE ─────────────────────────────────────── */
+.naming-note {
+  max-width: 900px; margin: 0 auto 64px;
+  padding: 24px 28px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+}
+.naming-note h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.05rem; color: var(--navy); margin-bottom: 10px;
+}
+.naming-note p { color: var(--muted); font-size: 0.88rem; margin-bottom: 8px; }
+.naming-note ul { padding-left: 20px; color: var(--muted); font-size: 0.88rem; }
+.naming-note li { margin-bottom: 4px; }
+.naming-note code {
+  font-family: 'JetBrains Mono', monospace; font-size: 0.85em;
+  background: var(--bg3); padding: 1px 5px; border-radius: 4px; color: var(--navy);
+}
+
+footer {
+  text-align: center; padding: 28px; color: var(--muted); font-size: 0.78rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 560px) {
+  .topbar { padding: 12px 16px; }
+  .hero { padding: 40px 20px 16px; }
+  .controls, .grid, .legend, .naming-note { padding-left: 20px; padding-right: 20px; }
+  .param-card { grid-template-columns: 1fr; }
+  .param-status { grid-row: auto; justify-self: start; }
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="topbar-brand" href="../index.html"><span class="dot"></span>Génome Réunion</a>
+  <div class="topbar-links">
+    <a href="METHODOLOGIE_validation_protocole_v1_5.html">← Protocole de validation</a>
+    <a href="METHODOLOGIE_validation_annexeB_simulation_v1_5.html">Spécification du moteur →</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Document 3/3 · Génome Réunion</div>
+  <h1>Glossaire des paramètres</h1>
+  <p>Concepts, acronymes et paramètres utilisés dans le protocole de validation et la spécification du moteur de simulation. Chaque entrée porte un statut — gelé, paramétrable, scénarisé, à calibrer, dérivé, ou concept méthodologique — et un domaine d'origine : protocole ou moteur.</p>
+</div>
+
+<div class="controls">
+  <div class="search-box" id="searchBox">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+    <input type="text" id="searchInput" placeholder="Rechercher (ex. S_div, KING, N_seed, endogamie…)" autocomplete="off">
+    <button class="clear-btn" id="clearBtn" aria-label="Effacer">✕</button>
+  </div>
+  <div class="filter-row" id="filterRow">
+    <span class="chip active" data-status="all"><span class="swatch" style="background:var(--navy)"></span>Tous les statuts</span>
+    <span class="chip" data-status="GELÉ"><span class="swatch" style="background:var(--st-gele)"></span>Gelé</span>
+    <span class="chip" data-status="PARAMÉTRABLE"><span class="swatch" style="background:var(--st-param)"></span>Paramétrable</span>
+    <span class="chip" data-status="SCÉNARISÉ"><span class="swatch" style="background:var(--st-scenar)"></span>Scénarisé</span>
+    <span class="chip" data-status="À CALIBRER"><span class="swatch" style="background:var(--st-calibrer)"></span>À calibrer</span>
+    <span class="chip" data-status="DÉRIVÉ"><span class="swatch" style="background:var(--st-derive)"></span>Dérivé / calculé</span>
+    <span class="chip" data-status="CONCEPT"><span class="swatch" style="background:var(--st-concept)"></span>Concept</span>
+  </div>
+  <div class="filter-row" id="domainRow" style="margin-top:8px;">
+    <span class="chip active" data-domain="all"><span class="swatch" style="background:var(--navy)"></span>Protocole + Moteur</span>
+    <span class="chip" data-domain="Protocole"><span class="swatch" style="background:var(--dom-protocole)"></span>Protocole de validation</span>
+    <span class="chip" data-domain="Moteur"><span class="swatch" style="background:var(--dom-moteur)"></span>Moteur de simulation</span>
+  </div>
+</div>
+
+<div class="result-count" id="resultCount"></div>
+
+<div class="grid" id="grid"></div>
+
+<div class="empty-state" id="emptyState">
+  <p id="emptyStateText">Aucun paramètre ne correspond à cette recherche.</p>
+  <button id="resetFiltersBtn" class="reset-btn">Réinitialiser les filtres</button>
+</div>
+
+<div class="legend">
+  <div class="legend-title">Convention de statut</div>
+  <div class="legend-grid">
+    <div class="legend-item">
+      <span class="name" style="color:var(--st-gele); background:var(--st-gele-bg);">GELÉ</span>
+      <p>Valeur ou règle fixée avant l'étape expérimentale concernée ; toute modification substantielle impose une nouvelle version et, si nécessaire, un nouveau lot de seeds.</p>
+    </div>
+    <div class="legend-item">
+      <span class="name" style="color:var(--st-param); background:var(--st-param-bg);">PARAMÉTRABLE</span>
+      <p>Paramètre autorisé à varier explicitement dans les limites prévues par le protocole.</p>
+    </div>
+    <div class="legend-item">
+      <span class="name" style="color:var(--st-scenar); background:var(--st-scenar-bg);">SCÉNARISÉ</span>
+      <p>Valeur choisie pour construire un profil de stress-test ; elle ne constitue pas une estimation démographique de la population réelle.</p>
+    </div>
+    <div class="legend-item">
+      <span class="name" style="color:var(--st-calibrer); background:var(--st-calibrer-bg);">À CALIBRER</span>
+      <p>Paramètre dont la valeur finale est déterminée pendant le pilote selon une règle pré-définie, avant le confirmatoire.</p>
+    </div>
+    <div class="legend-item">
+      <span class="name" style="color:var(--st-derive); background:var(--st-derive-bg);">DÉRIVÉ / CALCULÉ</span>
+      <p>Valeur obtenue automatiquement à partir des données ou des paramètres d'entrée.</p>
+    </div>
+    <div class="legend-item">
+      <span class="name" style="color:var(--st-concept); background:var(--st-concept-bg);">CONCEPT</span>
+      <p>Terme ou acronyme méthodologique du protocole (score, endpoint, profil de population…). Catégorie ajoutée pour ce glossaire ; elle ne fait pas partie de la convention de statut d'origine, réservée aux paramètres du dictionnaire.</p>
+    </div>
+  </div>
+</div>
+
+<div class="naming-note">
+  <h2>Convention de nommage informatique</h2>
+  <p>Ce dictionnaire constitue la référence canonique de nommage. Lorsqu'un même objet est utilisé dans la méthodologie, le fichier de configuration du simulateur, le code, les logs, les manifestes de seed et les tables de résultats, le même identifiant doit être conservé.</p>
+  <ul>
+    <li><code>K_ADMIXTURE</code> désigne exclusivement le nombre de composantes ADMIXTURE ; <code>K_source</code> désigne le nombre de sources ancestrales du simulateur.</li>
+    <li><code>N_repro_total</code> désigne l'effectif reproducteur total calibré ; <code>N_repro_sector</code> sa déclinaison sectorielle.</li>
+    <li><code>N_seed_pilot</code>, <code>N_seed_confirm</code> et <code>N_seed_founder</code> distinguent explicitement les différents lots de seeds.</li>
+    <li>Tout nouveau paramètre doit être ajouté au dictionnaire avec sa définition, son unité, son niveau d'application et son statut avant utilisation dans un lot confirmatoire.</li>
+  </ul>
+</div>
+
+<footer>Génome Réunion · CHU de La Réunion · Glossaire extrait du protocole de validation v1.4 WORKING lors de sa scission en trois documents</footer>
+
+<script>
+const PARAMS = [
+  // --- Concepts et acronymes du protocole analytique (Document 1/3) ---
+  { id: "S_div", meaning: "Score du noyau géo-ancestral. Le score central de la stratégie géo-ancestrale, combinant quatre dimensions complémentaires : PCA, ADMIXTURE, IBD et ROH.", value: "Score composite, application par procédure greedy avec tie-breakers gelés", status: "CONCEPT", domain: "Protocole" },
+  { id: "Endpoint primaire", meaning: "Différence absolue de R² d'imputation des variants rares entre la stratégie candidate et le tirage aléatoire, sur le profil C, avec panel combiné.", value: "Contraste unique, apparié, pré-enregistré", status: "CONCEPT", domain: "Protocole" },
+  { id: "PCA", meaning: "Composante de S_div : mesure la position et l'originalité génétique dans l'espace des composantes principales.", value: "—", status: "CONCEPT", domain: "Protocole" },
+  { id: "ADMIXTURE", meaning: "Composante de S_div : mesure la composition ancestrale et la rareté relative du profil.", value: "—", status: "CONCEPT", domain: "Protocole" },
+  { id: "IBD", meaning: "Composante de S_div : mesure l'indépendance haplotypique et la non-redondance génétique. Sert aussi de vérité généalogique produite par le moteur (voir IBD_truth).", value: "—", status: "CONCEPT", domain: "Protocole" },
+  { id: "ROH", meaning: "Composante de S_div : décrit l'autozygotie et les signatures démographiques susceptibles de renseigner la diversité capturée.", value: "—", status: "CONCEPT", domain: "Protocole" },
+  { id: "KING", meaning: "Métrique d'apparentement par paires. Seuil opérationnel utilisé pour exclure les apparentés jusqu'au troisième degré dans les panels de référence (voir KING_threshold).", value: "Seuil : 0,0442", status: "CONCEPT", domain: "Protocole" },
+  { id: "MAF", meaning: "Fréquence allélique mineure. Les classes MAF 1 à 5 % servent de métrique de support pour caractériser la couverture allélique et la diversité du bras découverte.", value: "Classes 1–5 %", status: "CONCEPT", domain: "Protocole" },
+  { id: "Profil A", meaning: "Profil homogène, contrôle négatif : tous les secteurs présentent une admixture proche. Vérifie que la méthode ne crée pas de gain artificiel quand la population est peu structurée.", value: "—", status: "CONCEPT", domain: "Protocole" },
+  { id: "Profil C", meaning: "Profil mixte-hétérogène synthétique inspiré du contexte réunionnais (scénario principal). Le monde simulé est très admixé globalement, certains secteurs portant des distributions ancestrales, haplotypiques et fondatrices différentes.", value: "Profil de l'endpoint primaire", status: "CONCEPT", domain: "Protocole" },
+  { id: "Profil D", meaning: "Stress-test d'isolat cryptique artificiel (élargi). Secteurs très contrastés et isolat local généré par le simulateur, non transmis au score S_div. Seul test réellement adverse du protocole.", value: "—", status: "CONCEPT", domain: "Protocole" },
+
+  // --- Dictionnaire des paramètres (Annexe A d'origine) ---
+  { id: "N_candidate", meaning: "Effectif de la cohorte candidate", value: "2 500", status: "GELÉ", domain: "Protocole" },
+  { id: "N_test", meaning: "Effectif de la cohorte test indépendante", value: "1 000 par seed", status: "GELÉ", domain: "Protocole" },
+  { id: "N_WGS", meaning: "Taille du panel WGS local", value: "350", status: "GELÉ", domain: "Protocole" },
+  { id: "KING_threshold", meaning: "Seuil pratique d'exclusion d'apparentement", value: "0,0442", status: "GELÉ", domain: "Protocole" },
+  { id: "K_ADMIXTURE", meaning: "Nombre de composantes du modèle ADMIXTURE", value: "Déterminé selon la procédure de CV", status: "DÉRIVÉ", statusLabel: "DÉRIVÉ / CALCULÉ", domain: "Moteur" },
+  { id: "S_sector", meaning: "Nombre de secteurs géographiques simulés", value: "8 pour les profils confirmatoires", status: "GELÉ", statusLabel: "GELÉ pour confirmatoire", domain: "Moteur" },
+  { id: "K_source", meaning: "Nombre de sources ancestrales actives", value: "2 à 6 selon le scénario", status: "PARAMÉTRABLE", statusLabel: "PARAMÉTRABLE / SCÉNARISÉ", domain: "Moteur" },
+  { id: "G0…G10", meaning: "Générations simulées", value: "10 générations harmonisées", status: "GELÉ", domain: "Moteur" },
+  { id: "N_repro_total", meaning: "Effectif reproducteur total de référence", value: "Plus petite valeur pilote satisfaisant les critères démographiques, génétiques et de calcul", status: "À CALIBRER", domain: "Moteur" },
+  { id: "N_repro_sector", meaning: "Effectif reproducteur d'un secteur", value: "Dérivé du scénario et de N_repro_total", status: "DÉRIVÉ", statusLabel: "DÉRIVÉ / CALCULÉ", domain: "Moteur" },
+  { id: "endo_rate", meaning: "Taux cible d'endogamie activée", value: "2–6 % ; défini par secteur et génération", status: "PARAMÉTRABLE", statusLabel: "PARAMÉTRABLE / SCÉNARISÉ", domain: "Moteur" },
+  { id: "migration_rate", meaning: "Taux d'apport migratoire", value: "Défini par secteur et génération", status: "PARAMÉTRABLE", statusLabel: "PARAMÉTRABLE / SCÉNARISÉ", domain: "Moteur" },
+  { id: "F_ROH", meaning: "Coefficient d'autozygotie basé sur les ROH", value: "Calculé à partir des ROH", status: "DÉRIVÉ", statusLabel: "DÉRIVÉ / CALCULÉ", domain: "Moteur" },
+  { id: "IBD_truth", meaning: "Vérité IBD généalogique du simulateur", value: "Produite et tracée par le moteur", status: "DÉRIVÉ", statusLabel: "DÉRIVÉ / CALCULÉ", domain: "Moteur" },
+  { id: "N_seed_pilot", meaning: "Nombre de seeds pilotes", value: "25", status: "GELÉ", domain: "Protocole" },
+  { id: "N_seed_confirm", meaning: "Nombre de seeds confirmatoires", value: "200", status: "GELÉ", domain: "Protocole" },
+  { id: "N_seed_founder", meaning: "Nombre de seeds légers pour variants fondateurs", value: "1 000", status: "GELÉ", domain: "Protocole" }
+];
+
+const grid = document.getElementById('grid');
+const searchInput = document.getElementById('searchInput');
+const searchBox = document.getElementById('searchBox');
+const clearBtn = document.getElementById('clearBtn');
+const resultCount = document.getElementById('resultCount');
+const emptyState = document.getElementById('emptyState');
+const emptyStateText = document.getElementById('emptyStateText');
+const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+const filterRow = document.getElementById('filterRow');
+const domainRow = document.getElementById('domainRow');
+
+let activeStatus = 'all';
+let activeDomain = 'all';
+
+const STATUS_LABELS = {
+  'GELÉ': 'Gelé',
+  'PARAMÉTRABLE': 'Paramétrable',
+  'SCÉNARISÉ': 'Scénarisé',
+  'À CALIBRER': 'À calibrer',
+  'DÉRIVÉ': 'Dérivé / calculé',
+  'CONCEPT': 'Concept'
+};
+const DOMAIN_LABELS = {
+  'Protocole': 'Protocole de validation',
+  'Moteur': 'Moteur de simulation'
+};
+
+function escapeHtml(str) {
+  return str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function highlight(text, query) {
+  if (!query) return escapeHtml(text);
+  const escaped = escapeHtml(text);
+  const q = escapeHtml(query);
+  const re = new RegExp('(' + q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig');
+  return escaped.replace(re, '<mark>$1</mark>');
+}
+
+function render() {
+  const query = searchInput.value.trim().toLowerCase();
+  searchBox.classList.toggle('has-value', query.length > 0);
+
+  const filtered = PARAMS.filter(p => {
+    const matchesStatus = activeStatus === 'all' || p.status === activeStatus;
+    const matchesDomain = activeDomain === 'all' || p.domain === activeDomain;
+    const haystack = (p.id + ' ' + p.meaning + ' ' + p.value + ' ' + (p.statusLabel || p.status)).toLowerCase();
+    const matchesQuery = !query || haystack.includes(query);
+    return matchesStatus && matchesDomain && matchesQuery;
+  });
+
+  grid.innerHTML = filtered.map(p => `
+    <div class="param-card" data-status="${p.status}">
+      <div class="param-id">${highlight(p.id, query)}</div>
+      <div class="param-status" data-status="${p.status}">${p.statusLabel || p.status}</div>
+      <div class="param-domain" data-domain="${p.domain}">${p.domain === 'Protocole' ? 'Protocole de validation' : 'Moteur de simulation'}</div>
+      <div class="param-meaning">${highlight(p.meaning, query)}</div>
+      ${p.value !== '—' ? `<div class="param-value">Valeur / règle : <strong>${highlight(p.value, query)}</strong></div>` : ''}
+    </div>
+  `).join('');
+
+  emptyState.classList.toggle('show', filtered.length === 0);
+  if (filtered.length === 0) {
+    const parts = [];
+    if (query) parts.push(`la recherche « ${query} »`);
+    if (activeStatus !== 'all') parts.push(`le statut « ${STATUS_LABELS[activeStatus]} »`);
+    if (activeDomain !== 'all') parts.push(`le domaine « ${DOMAIN_LABELS[activeDomain]} »`);
+    emptyStateText.textContent = parts.length
+      ? `Aucune entrée ne correspond à ${parts.join(' + ')}. Ces filtres ne se recoupent peut-être pas — essayez d'en retirer un.`
+      : 'Aucun paramètre ne correspond à cette recherche.';
+  }
+  resultCount.textContent = filtered.length === PARAMS.length
+    ? `${PARAMS.length} paramètres au total`
+    : `${filtered.length} résultat${filtered.length > 1 ? 's' : ''} sur ${PARAMS.length}`;
+}
+
+searchInput.addEventListener('input', render);
+clearBtn.addEventListener('click', () => { searchInput.value = ''; searchInput.focus(); render(); });
+
+filterRow.addEventListener('click', (e) => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  filterRow.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  activeStatus = chip.dataset.status;
+  render();
+});
+
+domainRow.addEventListener('click', (e) => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  domainRow.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  chip.classList.add('active');
+  activeDomain = chip.dataset.domain;
+  render();
+});
+
+resetFiltersBtn.addEventListener('click', () => {
+  searchInput.value = '';
+  activeStatus = 'all';
+  activeDomain = 'all';
+  filterRow.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  filterRow.querySelector('[data-status="all"]').classList.add('active');
+  domainRow.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  domainRow.querySelector('[data-domain="all"]').classList.add('active');
+  render();
+});
+
+render();
+</script>
+
+</body>
+</html>
