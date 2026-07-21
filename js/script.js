@@ -24,8 +24,9 @@ const OFFICIAL_NEWS = [
   {
     date: '31/07/2026',
     category: 'Agenda',
-    title: 'Réunion DRCI',
-    desc: "Présentation du projet : plan économique, ressources humaines, montage du dossier FEDER et évaluation des besoins, ainsi que la communication et les conventions."
+    title: 'Réunion DRCI — 10h à 11h30',
+    desc: "Présentation du projet : plan économique, ressources humaines, montage du dossier FEDER et évaluation des besoins, ainsi que la communication et les conventions.",
+    link: { url: 'https://teams.microsoft.com/meet/31234095055717?p=oDUpADNLgcQn8uMeZj', label: 'Rejoindre la réunion Teams →' }
   },
   {
     date: '21/07/2026',
@@ -78,6 +79,11 @@ function renderEntry(entry, { removable = false, id = null } = {}) {
          <button type="button" class="danger" data-delete-draft="${id}">Supprimer</button>
        </div>`
     : '';
+  // entry.link n'existe que sur les entrées officielles (données de confiance
+  // définies dans ce fichier), jamais sur les brouillons saisis par l'utilisateur.
+  const link = entry.link
+    ? `<a class="news-entry-link" href="${escapeHtml(entry.link.url)}" target="_blank" rel="noopener">${escapeHtml(entry.link.label)}</a>`
+    : '';
   return `
     <div class="news-entry">
       <div class="news-entry-date">${escapeHtml(entry.date)}</div>
@@ -85,6 +91,7 @@ function renderEntry(entry, { removable = false, id = null } = {}) {
         <span class="news-entry-tag ${tagClass}">${escapeHtml(entry.category)}</span>
         <div class="news-entry-title">${escapeHtml(entry.title)}</div>
         <p class="news-entry-desc">${escapeHtml(entry.desc)}</p>
+        ${link}
         ${actions}
       </div>
     </div>`;
