@@ -25,9 +25,63 @@
     <li><a href="#ia">Modules IA</a></li>
     <li><a href="#budget">Budget</a></li>
     <li><a href="#equipe">Équipe</a></li>
+    <li><button type="button" id="newsBtn" class="nav-news-btn">🔔 Actualités</button></li>
     <li><a href="#documents" class="nav-cta">Documents</a></li>
   </ul>
 </nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     MODALE ACTUALITÉS
+════════════════════════════════════════════════════════════ -->
+<div class="news-overlay" id="newsOverlay">
+  <div class="news-modal" role="dialog" aria-modal="true" aria-labelledby="newsModalTitle">
+    <div class="news-modal-header">
+      <h2 id="newsModalTitle">Actualités du site</h2>
+      <button type="button" class="news-close" id="newsCloseBtn" aria-label="Fermer">✕</button>
+    </div>
+    <div class="news-tabs">
+      <button type="button" class="news-tab active" data-tab="consulter">Consulter</button>
+      <button type="button" class="news-tab" data-tab="ajouter">Ajouter</button>
+    </div>
+
+    <div class="news-tab-panel active" id="newsPanelConsulter">
+      <div class="news-timeline" id="newsOfficialList"></div>
+
+      <div class="news-drafts-section">
+        <h3>Mes brouillons (visibles sur cet appareil uniquement)</h3>
+        <p class="news-drafts-hint">Ces notes restent privées dans ce navigateur ; elles ne sont pas visibles par les autres visiteurs du site.</p>
+        <div class="news-timeline" id="newsDraftsList"></div>
+      </div>
+    </div>
+
+    <div class="news-tab-panel" id="newsPanelAjouter">
+      <p class="news-drafts-hint">
+        Ce formulaire enregistre une note dans ce navigateur (localStorage), pour toi seul(e).
+        Pour qu'une actualité apparaisse dans l'onglet « Consulter » pour tous les visiteurs,
+        elle doit ensuite être intégrée au code du site.
+      </p>
+      <form id="newsDraftForm" class="news-form">
+        <label for="newsDraftTitle">Titre</label>
+        <input type="text" id="newsDraftTitle" maxlength="120" required placeholder="Ex. Ajout du dossier FEDER">
+
+        <label for="newsDraftCategory">Catégorie</label>
+        <select id="newsDraftCategory">
+          <option value="Nouveau document">Nouveau document</option>
+          <option value="Mise à jour">Mise à jour</option>
+          <option value="Réorganisation">Réorganisation</option>
+          <option value="Correction">Correction</option>
+          <option value="Autre">Autre</option>
+        </select>
+
+        <label for="newsDraftDesc">Description</label>
+        <textarea id="newsDraftDesc" rows="3" maxlength="500" required placeholder="Détail de la modification…"></textarea>
+
+        <button type="submit" class="btn btn-primary">Enregistrer le brouillon</button>
+      </form>
+    </div>
+  </div>
+</div>
 
 
 <!-- ═══════════════════════════════════════════════════════
