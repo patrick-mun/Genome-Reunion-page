@@ -14,12 +14,19 @@ const TAG_CLASS = {
   'Mise à jour': 'tag-update',
   'Réorganisation': 'tag-reorg',
   'Correction': 'tag-fix',
+  'Agenda': 'tag-agenda',
   'Autre': 'tag-autre'
 };
 
 // Liste officielle, visible par tous les visiteurs. Alimentée manuellement
 // à chaque évolution notable du site.
 const OFFICIAL_NEWS = [
+  {
+    date: '31/07/2026',
+    category: 'Agenda',
+    title: 'Réunion DRCI',
+    desc: "Présentation du projet : plan économique, ressources humaines, montage du dossier FEDER et évaluation des besoins, ainsi que la communication et les conventions."
+  },
   {
     date: '21/07/2026',
     category: 'Nouveau document',
