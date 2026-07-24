@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Synthèse scientifique V3.6 — Génome Réunion
+  </title>
+  <style>
+   :root{--accent:#1f4e79;--soft:#eaf0f6;--text:#1a1a1a;--muted:#555;--border:#d9d9d9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef1f4;color:var(--text);font-family:"Segoe UI",Arial,sans-serif;line-height:1.58}main{max-width:920px;margin:28px auto;padding:50px 60px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--accent);line-height:1.25}h1{font-size:2em}h2{margin-top:1.8em;border-bottom:2px solid var(--soft);padding-bottom:.2em}h3{color:#222;margin-top:1.35em}table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.94em}th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--accent);color:#fff}tr:nth-child(even){background:#f7f9fb}code{background:#f2f4f6;padding:1px 4px;border-radius:3px}blockquote{margin:1.2em 0;padding:12px 16px;background:var(--soft);border-left:4px solid var(--accent)}.toc{background:#fafafa;border:1px solid var(--border);padding:14px 20px;margin:1.5em 0}.toc a{color:var(--accent);text-decoration:none}.toc li{margin:.2em 0}@media(max-width:760px){main{margin:0;padding:28px 20px;box-shadow:none}}@media print{body{background:#fff;font-size:11pt}main{margin:0;max-width:none;padding:0;box-shadow:none}h2{break-before:page}table,blockquote{break-inside:avoid}}
+  </style>
+ </head>
+ <body>
+  <main>
+   <h1>
+    Projet Génome Réunion — Synthèse scientifique
+   </h1>
+   <nav class="toc">
+    <strong>
+     Sommaire
+    </strong>
+    <ol>
+     <li>
+      1. Résumé exécutif
+     </li>
+     <li>
+      2. Problème scientifique et clinique
+     </li>
+     <li>
+      3. Singularité réunionnaise
+     </li>
+     <li>
+      4. Architecture en trois couches
+     </li>
+     <li>
+      5. Sélection des 350 WGS
+     </li>
+     <li>
+      6. Validation
+     </li>
+     <li>
+      7. Fréquences et phasage
+     </li>
+     <li>
+      8. Robustesse et audit
+     </li>
+     <li>
+      9. Livrables
+     </li>
+     <li>
+      10. Statut
+     </li>
+    </ol>
+   </nav>
+   <p>
+    <strong>
+     Version :
+    </strong>
+    3.6
+    <br/>
+    <strong>
+     Porteur :
+    </strong>
+    CHU de La Réunion, Service de génétique moléculaire
+    <br/>
+    <strong>
+     Objet :
+    </strong>
+    construction d'un référentiel génomique local pour une population admixée et fondatrice
+   </p>
+   <h2>
+    1. Résumé exécutif
+   </h2>
+   <p>
+    Génome Réunion répond à la sous-représentation de la population réunionnaise dans les référentiels internationaux. Le projet combine 2 500 individus génotypés sur puce SNP, 350 WGS sélectionnés parmi ces candidats et 100 familles nucléaires externes utilisées pour le contrôle mendélien et le phasage.
+   </p>
+   <p>
+    La sélection WGS repose sur une allocation géo-ancestrale hybride, un score dynamique
+    <code>
+     S_div
+    </code>
+    et un bras de découverte. Cette stratégie est une candidate principale, non un résultat acquis. Son adoption dépend d'une validation confirmatoire indépendante.
+   </p>
+   <h2>
+    2. Problème scientifique et clinique
+   </h2>
+   <p>
+    Les bases de fréquences et modèles de médecine de précision sont déséquilibrés vers les populations européennes. Dans une population admixée et fondatrice, ce biais peut augmenter les VUS, fausser l'interprétation de la rareté, réduire la transférabilité des PRS et dégrader certains outils de pharmacogénétique ou de pathogénicité.
+   </p>
+   <p>
+    Le référentiel local vise à produire des fréquences qualifiées, un panel d'imputation, une ressource haplotypique et des données de recherche utilisables sous gouvernance adaptée.
+   </p>
+   <h2>
+    3. Singularité réunionnaise
+   </h2>
+   <p>
+    La population actuelle résulte de migrations successives provenant d'Europe, d'Afrique orientale et de Madagascar, d'Asie du Sud, de Chine et de la zone océan Indien. L'admixture est continue et hétérogène entre individus. L'insularité, les effets fondateurs, les bottlenecks et la géographie des peuplements ajoutent une structure locale qui n'est pas correctement décrite par des catégories continentales simples.
+   </p>
+   <h2>
+    4. Architecture en trois couches
+   </h2>
+   <table>
+    <thead>
+     <tr>
+      <th>
+       Couche
+      </th>
+      <th style="text-align:right">
+       Effectif
+      </th>
+      <th>
+       Fonction
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       Cohorte SNP
+      </td>
+      <td style="text-align:right">
+       2 500
+      </td>
+      <td>
+       sélection, structure, fréquences directes, support d'imputation
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Panel WGS
+      </td>
+      <td style="text-align:right">
+       350
+      </td>
+      <td>
+       découverte, phasage, panel local, variants fondateurs
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Familles externes
+      </td>
+      <td style="text-align:right">
+       100
+      </td>
+      <td>
+       contrôle mendélien, phasage, haplotypes
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <p>
+    Les familles ne participent ni aux quotas ni aux fréquences populationnelles. Le panel WGS est optimisé et ne constitue pas un échantillon aléatoire simple.
+   </p>
+   <h2>
+    5. Sélection des 350 WGS
+   </h2>
+   <h3>
+    5.1 Strates et allocation
+   </h3>
+   <p>
+    La
+    <strong>
+     strate de profil ancestral inféré
+    </strong>
+    est une discrétisation algorithmique d'un espace continu PCA/ADMIXTURE. Elle n'est pas une population biologique ou ethnique.
+   </p>
+   <p>
+    <code>
+     cellule géo-ancestrale = secteur × strate de profil ancestral inféré
+    </code>
+    .
+   </p>
+   <p>
+    L'allocation combine poids sectoriels observés, planchers sectoriels, protection des strates rares suffisamment représentées, fusion des petites cellules et redistribution déterministe. Les cellules ne sont pas forcées à des tailles égales.
+   </p>
+   <h3>
+    5.2 Score
+    <code>
+     S_div
+    </code>
+   </h3>
+   <p>
+    <code>
+     S_div(i | S) = w_PCA·PCA_novelty + w_ADMIX·ADMIX_diversity + w_IBD·IBD_independence + w_ROH·ROH_penalty_nucleus
+    </code>
+    .
+   </p>
+   <ul>
+    <li>
+     PCA : espace, nombre de PC, métrique et normalisation robustes préspécifiés ;
+    </li>
+    <li>
+     ADMIXTURE : entropie séparée de la rareté globale ;
+    </li>
+    <li>
+     IBD :
+     <code>
+      1 − max(R_IBD(i,j), j ∈ S)
+     </code>
+     , recalculé à chaque itération ;
+    </li>
+    <li>
+     ROH : pénalité du noyau distincte du score fondateur.
+    </li>
+   </ul>
+   <p>
+    Le seuil opérationnel des stratégies concernées est
+    <code>
+     KING &gt; 0,0442
+    </code>
+    . La valeur 0,0625 est uniquement descriptive.
+   </p>
+   <h3>
+    5.3 Bras de découverte
+   </h3>
+   <p>
+    Le bras cible les extrêmes PCA globaux, les profils ancestraux rares, les signatures fondatrices cohérentes et, si disponible avant gel, l'utilité haplotypique. L'allocation nominale est 322 + 28 ; le ratio définitif est choisi sur un lot indépendant puis gelé.
+   </p>
+   <h2>
+    6. Validation
+   </h2>
+   <p>
+    Le noyau décisif utilise :
+   </p>
+   <ul>
+    <li>
+     profil A homogène, contrôle négatif ;
+    </li>
+    <li>
+     profil C mixte-hétérogène, scénario principal ;
+    </li>
+    <li>
+     profil D à structure cryptique, contrôle de non-circularité.
+    </li>
+   </ul>
+   <p>
+    Les stratégies confirmatoires sont random brut, géographique strict, maximin et
+    <code>
+     S_div + découverte
+    </code>
+    . Le random brut ne reçoit pas d'exclusion spécifique de parenté. Le set-cover reste exploratoire.
+   </p>
+   <p>
+    L'endpoint principal compare la performance d'imputation rare de la stratégie candidate au random sur une cohorte test disjointe. Les analyses secondaires couvrent le gain face à la géographie, la robustesse sur D, la capture de variants fondateurs et l'absence de gain artificiel sur A.
+   </p>
+   <h2>
+    7. Fréquences et phasage
+   </h2>
+   <table>
+    <thead>
+     <tr>
+      <th>
+       Type de variant
+      </th>
+      <th>
+       Sortie
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       directement génotypé
+      </td>
+      <td>
+       fréquence dans les 2 500 après QC
+      </td>
+     </tr>
+     <tr>
+      <td>
+       WGS correctement imputable
+      </td>
+      <td>
+       fréquence imputée avec qualité et incertitude
+      </td>
+     </tr>
+     <tr>
+      <td>
+       observé uniquement dans les 350
+      </td>
+      <td>
+       fréquence brute descriptive
+      </td>
+     </tr>
+     <tr>
+      <td>
+       calibration validée
+      </td>
+      <td>
+       fréquence recalibrée ou pondérée documentée
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <p>
+    Les 350 WGS ne garantissent pas la détection de tous les variants à MAF ≥ 1 %. L'exposition ancestrale théorique et la probabilité d'observation sont analysées comme approximations, pas comme garanties.
+   </p>
+   <p>
+    Le phasage est progressif : SNP populationnels, ajout des familles, puis intégration des WGS. Le bénéfice de chaque niveau est mesuré.
+   </p>
+   <h2>
+    8. Robustesse et audit
+   </h2>
+   <p>
+    La méthode prévoit sensibilité des poids, LOCO, diagnostic de corrélation des composantes, comparaison avec et sans quintiles et audit puce-WGS.
+   </p>
+   <p>
+    Trois niveaux ADMIXTURE sont distincts : stabilité entre seeds, robustesse aux données et représentativité du recrutement EFS. Un recrutement déséquilibré n'est pas corrigé par les multi-seeds.
+   </p>
+   <h2>
+    9. Livrables
+   </h2>
+   <ul>
+    <li>
+     panel WGS et manifeste reproductible ;
+    </li>
+    <li>
+     base locale de variants avec statut de fréquence ;
+    </li>
+    <li>
+     panel de phasage et d'imputation ;
+    </li>
+    <li>
+     rapports PCA, ADMIXTURE, KING, IBD et ROH ;
+    </li>
+    <li>
+     pipeline versionné et environnement reproductible ;
+    </li>
+    <li>
+     ressources de recherche sous gouvernance éthique, réglementaire et institutionnelle.
+    </li>
+   </ul>
+   <h2>
+    10. Statut
+   </h2>
+   <p>
+    La V3.6 est une architecture scientifique et opérationnelle à valider. Les figures, performances et valeurs obtenues sur les données réelles ou simulées appartiennent à des rapports d'analyse versionnés et ne sont pas présentées comme déjà acquises.
+   </p>
+  </main>
+ </body>
+</html>

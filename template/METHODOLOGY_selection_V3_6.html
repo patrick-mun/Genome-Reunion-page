@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Méthodologie de sélection V3.6 — Génome Réunion</title>
+<style>:root{--a:#1f4e79;--s:#eaf0f6;--b:#d9d9d9;--t:#1a1a1a}*{box-sizing:border-box}body{margin:0;background:#eef1f4;color:var(--t);font-family:"Segoe UI",Arial,sans-serif;line-height:1.58}main{max-width:940px;margin:28px auto;padding:48px 58px;background:#fff;box-shadow:0 2px 12px #0002}h1,h2,h3{font-family:Georgia,serif;color:var(--a);line-height:1.25}h2{margin-top:1.8em;border-bottom:2px solid var(--s);padding-bottom:.2em}h3{color:#222}code{background:#f2f4f6;padding:1px 4px;border-radius:3px}table{width:100%;border-collapse:collapse;margin:1em 0;font-size:.94em}th,td{border:1px solid var(--b);padding:8px 10px;vertical-align:top;text-align:left}th{background:var(--a);color:#fff}blockquote{margin:1.2em 0;padding:12px 16px;background:var(--s);border-left:4px solid var(--a)}@media(max-width:760px){main{margin:0;padding:26px 19px;box-shadow:none}}@media print{body{background:#fff;font-size:11pt}main{margin:0;max-width:none;padding:0;box-shadow:none}h2{break-before:page}table,blockquote{break-inside:avoid}}</style>
+</head>
+<body><main>
+<h1>Méthodologie de sélection géo-ancestrale des 350 WGS</h1>
+<p><strong>Version :</strong> 3.6<br><strong>Statut :</strong> spécification opérationnelle candidate à geler après validation indépendante.<br><strong>Périmètre :</strong> sélection de 350 individus parmi 2 500 candidats génotypés sur puce SNP.</p>
+<blockquote><strong>Règle directrice.</strong> <code>S_div + bras découverte</code> constitue la stratégie candidate principale en raison de sa cohérence théorique. Son adoption définitive dépend du protocole confirmatoire et du gel des paramètres sur un lot indépendant.</blockquote>
+<h2>1. Cohortes et fonctions</h2>
+<table><thead><tr><th>Couche</th><th>Effectif</th><th>Fonction</th></tr></thead><tbody><tr><td>Cohorte SNP</td><td>2 500</td><td>Espace de sélection, structure, fréquences directes et support d’imputation.</td></tr><tr><td>Panel WGS</td><td>350</td><td>Découverte, phasage et panel local optimisé.</td></tr><tr><td>Familles externes</td><td>100</td><td>Contrôle mendélien, phasage et haplotypes ; aucune contribution aux quotas ni aux fréquences populationnelles.</td></tr></tbody></table>
+<p><code>Haplotype_utility</code> n’intervient avant le gel que si une information familiale ou de phasage suffisante est réellement disponible ; sinon son poids initial est nul.</p>
+<h2>2. Préparation et contrôle qualité</h2>
+<p>Après harmonisation du build, des allèles et des brins, trois jeux sont produits : un jeu LD-pruned pour PCA/ADMIXTURE, un jeu dense pour KING/IBD/ROH et un jeu harmonisé puce-WGS pour l’imputation. Les seuils de taux de génotypage, hétérozygotie, duplicats, sex-check, batch, MAF et HWE sont versionnés. Le HWE global n’est pas utilisé comme exclusion aveugle en population structurée.</p>
+<h2>3. Espaces génétiques et terminologie</h2>
+<h3>PCA</h3><p>Le LD-pruning, le nombre de PC, l’espace interne ou projeté, la métrique, la transformation et les règles des petites cellules sont préspécifiés. Une normalisation robuste par percentiles ou médiane/MAD est préférée au min-max.</p>
+<h3>ADMIXTURE</h3><ul><li><code>ADMIX_entropy</code> : équilibre du mélange individuel ;</li><li><code>ADMIX_rarity_global</code> : rareté ou faible densité du profil ;</li><li><code>ADMIX_reference_distance</code> : distance optionnelle aux références.</li></ul><p>Une forte entropie ne signifie pas qu’un profil est rare.</p>
+<h3>Strates</h3><p>La <strong>strate de profil ancestral inféré</strong> est une discrétisation algorithmique d’un espace continu PCA/ADMIXTURE. Elle ne représente ni population biologique, ni ethnie, ni origine déclarée.</p><p><code>cellule géo-ancestrale = secteur × strate de profil ancestral inféré</code>.</p>
+<h2>4. Allocation hybride du noyau</h2>
+<p>L’allocation combine : poids sectoriels observés, plancher minimal par secteur, subdivision par strate, plancher pour les strates rares suffisamment représentées, fusion explicite des petites cellules, redistribution déterministe des places et journalisation. Les cellules ne sont jamais forcées à des tailles égales.</p>
+<h2>5. Score dynamique du noyau</h2>
+<p><code>S_div(i|S)=w_PCA·PCA_novelty(i|S)+w_ADMIX·ADMIX_diversity(i)+w_IBD·IBD_independence(i|S)+w_ROH·ROH_penalty_nucleus(i)</code>.</p>
+<ul><li><strong>PCA_novelty</strong> mesure la nouveauté par rapport au panel déjà retenu.</li><li><strong>ADMIX_diversity</strong> combine des informations distinctes d’entropie et de rareté selon les paramètres gelés.</li><li><code>IBD_independence(i|S)=1−max(R_IBD(i,j),j∈S)</code>, recalculé à chaque itération.</li><li><code>ROH_penalty_nucleus</code> limite une concentration excessive d’autozygotie dans le noyau.</li></ul>
+<p>Le filtre dur KING est indépendant du score. Pour les stratégies concernées, le seuil opérationnel est <code>kinship KING &gt; 0,0442</code>. <code>0,0625</code> est uniquement une espérance théorique descriptive de cousins germains.</p>
+<h3>Greedy reproductible</h3><ol><li>appliquer contraintes de cellule et filtre KING ;</li><li>recalculer les composantes dépendant de <code>S</code> ;</li><li>sélectionner le score maximal ;</li><li>appliquer les tie-breakers gelés ;</li><li>répéter puis redistribuer déterministiquement les places impossibles.</li></ol>
+<h2>6. Quintiles</h2><p>Les quintiles sont un garde-fou candidat contre une sélection uniquement extrême. Une version avec quintiles est comparée à une version sans quintiles ; la règle n’est gelée que si la validation indépendante la soutient.</p>
+<h2>7. Bras de découverte</h2>
+<p><code>S_discovery=a·PCA_global_outlier+b·ADMIX_rarity_global+c·IBD_independence_global+d·Haplotype_utility+e·Founder_ROH_score</code>.</p>
+<p><code>Founder_ROH_score</code> exige un signal cohérent partagé par plusieurs individus non proches ; un ROH individuel élevé ne suffit pas. Le seuil de 100 Mb reste un seuil de travail à recalibrer.</p>
+<p>L’allocation nominale est <strong>322 noyau + 28 découverte</strong>. Plusieurs ratios sont comparés sur un lot indépendant ; le ratio final est gelé avant le confirmatoire.</p>
+<h2>8. Comparateurs</h2>
+<p>Les quatre stratégies confirmatoires sont random brut, géographique strict, maximin et <code>S_div + découverte</code>. Le <strong>random brut</strong> reçoit uniquement le QC technique et aucun filtre KING spécifique, afin de mesurer l’effet des contraintes ajoutées par les autres stratégies.</p>
+<p>Le set-cover reste exploratoire : <code>set-cover_puce</code> et <code>set-cover_oracle_WGS</code>. Il n’est évalué que lorsque les données sont observées pour tous les candidats et ne constitue pas une cinquième stratégie confirmatoire.</p>
+<h2>9. Diagnostics préspécifiés</h2>
+<ul><li>sensibilité des poids et leave-one-component-out ;</li><li>corrélations de Spearman entre composantes ;</li><li>PCA des composantes standardisées, variance expliquée et colinéarité ;</li><li>comparaison avec/sans quintiles ;</li><li>stabilité ADMIXTURE séparée en stabilité algorithmique, robustesse aux marqueurs/batches/références et représentativité du recrutement.</li></ul>
+<p>Les multi-seeds ne corrigent pas un recrutement déséquilibré. Aucune garantie de sous-modularité n’est revendiquée sans démonstration pour la fonction exacte.</p>
+<h2>10. Fréquences</h2>
+<table><thead><tr><th>Situation</th><th>Interprétation autorisée</th></tr></thead><tbody><tr><td>Variant génotypé sur puce</td><td>Fréquence directe dans les 2 500 après QC.</td></tr><tr><td>Variant WGS correctement imputable</td><td>Fréquence imputée avec qualité et incertitude.</td></tr><tr><td>Variant uniquement WGS</td><td>Fréquence brute descriptive dans les 350, non populationnelle.</td></tr><tr><td>Calibration validée</td><td>Fréquence recalibrée ou pondérée avec hypothèses publiées.</td></tr></tbody></table>
+<p>La pondération inverse n’est utilisée que si les probabilités d’inclusion sont positives, calculables et validées. Les 350 WGS ne garantissent pas la détection de tous les variants à MAF ≥ 1 %.</p>
+<h2>11. Exposition haplotypique ancestrale</h2>
+<p>Pour une composante <code>k</code>, <code>H_k=2×Σ_i q_ik</code> et <code>P(observation≥1)≈1−(1−p_k)^(H_k)</code>. Cette valeur est une approximation théorique à compléter par l’IBD, l’ascendance locale et les simulations, jamais un plancher garanti.</p>
+<h2>12. Sorties, gel et versionnage</h2>
+<p>La sélection produit : liste finale et ordre d’entrée, scores bruts et normalisés, composantes, cellules et quotas, fusions et redistributions, exclusions KING/QC, décisions greedy, tie-breakers, versions logicielles, paramètres et manifeste reproductible.</p>
+<p>Le snapshot de gel comprend références, QC, PCA/ADMIXTURE, strates, poids, scores, seuil KING, ratio noyau/découverte, comparateurs et endpoints. Toute modification postérieure impose une nouvelle version et ne s’applique pas rétroactivement au lot confirmatoire.</p>
+<h2>13. Statut</h2><p>La V3.6 préspécifie les calculs ; les figures, performances et résultats sur les 2 500, les 350 ou les simulations appartiennent aux rapports d’analyse. La méthode ne présente ni ses performances comme acquises ni <code>S_div</code> comme optimum mathématique.</p>
+</main></body></html>

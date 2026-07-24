@@ -1,0 +1,283 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>
+   Protocole de validation v1.6 — Génome Réunion
+  </title><style>
+   :root{--accent:#1f4e79;--soft:#eaf0f6;--text:#1a1a1a;--muted:#555;--border:#d9d9d9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef1f4;color:var(--text);font-family:"Segoe UI",Arial,sans-serif;line-height:1.58}main{max-width:920px;margin:28px auto;padding:50px 60px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--accent);line-height:1.25}h1{font-size:2em}h2{margin-top:1.8em;border-bottom:2px solid var(--soft);padding-bottom:.2em}h3{color:#222;margin-top:1.35em}table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.94em}th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--accent);color:#fff}tr:nth-child(even){background:#f7f9fb}code{background:#f2f4f6;padding:1px 4px;border-radius:3px}blockquote{margin:1.2em 0;padding:12px 16px;background:var(--soft);border-left:4px solid var(--accent)}.toc{background:#fafafa;border:1px solid var(--border);padding:14px 20px;margin:1.5em 0}.toc a{color:var(--accent);text-decoration:none}.toc li{margin:.2em 0}@media(max-width:760px){main{margin:0;padding:28px 20px;box-shadow:none}}@media print{body{background:#fff;font-size:11pt}main{margin:0;max-width:none;padding:0;box-shadow:none}h2{break-before:page}table,blockquote{break-inside:avoid}}
+  </style></head><body><main><h1>
+    Validation de la méthodologie de sélection — Protocole
+   </h1><nav class="toc"><strong>
+     Sommaire
+    </strong><ol><li>
+      Résumé exécutif
+     </li><li>
+      1. Questions
+     </li><li>
+      2. Profils
+     </li><li>
+      3. Lots indépendants
+     </li><li>
+      4. Stratégies confirmatoires
+     </li><li>
+      5. Anneau exploratoire
+     </li><li>
+      6. Endpoint primaire
+     </li><li>
+      7. Comparaisons secondaires
+     </li><li>
+      8. Optimisation du ratio
+     </li><li>
+      9. Sensibilité algorithmique
+     </li><li>
+      10. Audit puce vers WGS
+     </li><li>
+      11. Gel
+     </li><li>
+      12. Règle de décision
+     </li><li>
+      13. Validation externe
+     </li><li>
+      14. Livrables
+     </li><li>
+      15. Documents liés
+     </li></ol></nav><p><strong>
+     Version :
+    </strong>
+    1.6
+    <br/><strong>
+     Statut :
+    </strong>
+    protocole confirmatoire de référence
+    <br/><strong>
+     Méthode candidate :
+    </strong><code>
+     S_div + bras découverte
+    </code></p><h2>
+    Résumé exécutif
+   </h2><p>
+    Le protocole teste si la stratégie candidate améliore la construction d'un panel local par rapport à des comparateurs préspécifiés, sans calibrer la méthode sur les résultats confirmatoires. Les lots de développement, pilote, optimisation de l'allocation et confirmation sont disjoints.
+   </p><h2>
+    1. Questions
+   </h2><ol><li>
+     La stratégie améliore-t-elle l'imputation des variants rares sur le profil C ?
+    </li><li>
+     Apporte-t-elle un gain par rapport à une stratification géographique stricte ?
+    </li><li>
+     Reste-t-elle robuste sur une structure cryptique non fournie à l'algorithme ?
+    </li><li>
+     Évite-t-elle un gain artificiel sur un profil homogène ?
+    </li><li>
+     Capture-t-elle les variants fondateurs prioritaires avec des porteurs indépendants ?
+    </li></ol><h2>
+    2. Profils
+   </h2><h3>
+    Profil A — homogène
+   </h3><p>
+    Contrôle négatif. Les stratégies doivent être proches ; un avantage important de la candidate suggère un biais.
+   </p><h3>
+    Profil C — mixte-hétérogène
+   </h3><p>
+    Scénario principal : secteurs, admixture multi-vagues, hétérogénéité individuelle, migrations et structures familiales.
+   </p><h3>
+    Profil D — structure cryptique
+   </h3><p>
+    Stress-test. L'isolat ou la structure cachée est randomisé entre seeds et son label n'est jamais transmis à la sélection.
+   </p><h3>
+    Profil B — exploratoire
+   </h3><p>
+    Conservé hors verdict principal pour analyses de sensibilité.
+   </p><h2>
+    3. Lots indépendants
+   </h2><ol><li>
+     seeds techniques de développement, exclus de l'inférence ;
+    </li><li>
+     25 seeds pilotes aveugles, utilisés pour la précision et le coût ;
+    </li><li>
+     lot indépendant d'optimisation du ratio noyau/découverte ;
+    </li><li>
+     au moins 200 nouveaux seeds confirmatoires après gel ;
+    </li><li>
+     simulations légères supplémentaires pour les variants fondateurs si nécessaire.
+    </li></ol><h2>
+    4. Stratégies confirmatoires
+   </h2><table><thead><tr><th>
+       Stratégie
+      </th><th>
+       Définition
+      </th><th>
+       Filtre KING spécifique
+      </th></tr></thead><tbody><tr><td>
+       Random brut
+      </td><td>
+       tirage après QC technique
+      </td><td>
+       non
+      </td></tr><tr><td>
+       Géographique strict
+      </td><td>
+       quotas sectoriels
+      </td><td><code>
+        &gt; 0,0442
+       </code></td></tr><tr><td>
+       Maximin
+      </td><td>
+       dispersion génétique
+      </td><td><code>
+        &gt; 0,0442
+       </code></td></tr><tr><td><code>
+        S_div + découverte
+       </code></td><td>
+       allocation hybride et scores gelés
+      </td><td><code>
+        &gt; 0,0442
+       </code>
+       dans le noyau
+      </td></tr></tbody></table><p>
+    Le random brut conserve la structure naturelle de la cohorte. Lui appliquer le filtre KING détruirait sa fonction de référence.
+   </p><p><code>
+     0,0625
+    </code>
+    est une valeur théorique descriptive ; le seuil opérationnel est
+    <code>
+     0,0442
+    </code>
+    .
+   </p><h2>
+    5. Anneau exploratoire
+   </h2><ul><li>
+     S_div avec et sans quintiles ;
+    </li><li>
+     variantes de poids et LOCO ;
+    </li><li><code>
+      set-cover_puce
+     </code>
+     ;
+    </li><li><code>
+      set-cover_oracle_WGS
+     </code>
+     lorsque tous les candidats sont séquencés ou simulés ;
+    </li><li>
+     analyse de sous-modularité uniquement si la fonction exacte est démontrée compatible.
+    </li></ul><p>
+    Le set-cover n'est pas une cinquième stratégie confirmatoire.
+   </p><h2>
+    6. Endpoint primaire
+   </h2><p>
+    Différence appariée de R² d'imputation des variants rares entre la stratégie candidate et le random brut, sur le profil C, avec cohorte test indépendante et même panel externe.
+   </p><p>
+    L'unité d'analyse est le seed. Les intervalles de confiance et la règle de supériorité ou de non-infériorité sont préspécifiés avant confirmation.
+   </p><h2>
+    7. Comparaisons secondaires
+   </h2><ol><li>
+     candidate versus géographique strict ;
+    </li><li>
+     robustesse sur le profil D ;
+    </li><li>
+     absence de gain artificiel sur A ;
+    </li><li>
+     capture de variants fondateurs variant par variant ;
+    </li><li>
+     couverture par secteur et strate ;
+    </li><li>
+     redondance KING/IBD ;
+    </li><li>
+     équilibre ROH et signatures fondatrices.
+    </li></ol><p>
+    Un variant fondateur est considéré capturé selon une règle préspécifiée de nombre de copies et de porteurs indépendants ; aucun couple de porteurs retenus ne doit dépasser
+    <code>
+     KING &gt; 0,0442
+    </code>
+    lorsque cette contrainte s'applique.
+   </p><h2>
+    8. Optimisation du ratio
+   </h2><p>
+    La valeur nominale est 322 + 28. La grille d'allocations est évaluée sur un lot indépendant. Le ratio final remplace la valeur nominale uniquement s'il améliore l'endpoint de manière pratiquement pertinente tout en franchissant les garde-fous de couverture et de redondance.
+   </p><p>
+    Le ratio est gelé avant confirmation et ne peut pas être rouvert par les seeds confirmatoires.
+   </p><h2>
+    9. Sensibilité algorithmique
+   </h2><ul><li>
+     variation des poids ;
+    </li><li>
+     LOCO ;
+    </li><li>
+     quintiles versus absence de quintiles ;
+    </li><li>
+     paramètres PCA, ADMIXTURE, IBD et ROH ;
+    </li><li>
+     matrice de Spearman ;
+    </li><li>
+     PCA des composantes standardisées ;
+    </li><li>
+     variance expliquée et diagnostic de colinéarité.
+    </li></ul><p>
+    Trois niveaux ADMIXTURE sont séparés : stabilité algorithmique, robustesse aux données et représentativité du recrutement. Les multi-seeds ne corrigent pas un recrutement déséquilibré.
+   </p><h2>
+    10. Audit puce vers WGS
+   </h2><p>
+    L'audit mesure la concordance des variables de sélection avec la vérité WGS, la couverture de variants et la qualité d'imputation.
+   </p><ul><li>
+     fréquence directe : variant génotypé dans les 2 500 ;
+    </li><li>
+     fréquence imputée : variant WGS projeté avec QC ;
+    </li><li>
+     fréquence brute : variant uniquement observé dans les 350 ;
+    </li><li>
+     fréquence recalibrée : méthode validée et incertitude documentée.
+    </li></ul><p>
+    La pondération inverse n'est utilisée que si les probabilités d'inclusion sont positives, calculables et validées.
+   </p><p>
+    Le calcul sur 700 haplotypes est un ordre de grandeur, pas une garantie de détection à MAF ≥ 1 %.
+   </p><h2>
+    11. Gel
+   </h2><p>
+    Le snapshot confirmatoire comprend : code, environnement, panels de référence, paramètres du simulateur, QC, PCA/ADMIXTURE, strates, poids, seuils, scores, tie-breakers, ratio, comparateurs, endpoints et manifeste.
+   </p><p>
+    Toute modification postérieure impose une nouvelle version et ne peut pas être appliquée rétroactivement.
+   </p><h2>
+    12. Règle de décision
+   </h2><p>
+    La stratégie est déclarée :
+   </p><ul><li><strong>
+      validée
+     </strong>
+     si l'endpoint primaire et les garde-fous hiérarchiques sont franchis ;
+    </li><li><strong>
+      non validée
+     </strong>
+     si la condition principale échoue ;
+    </li><li><strong>
+      non concluante
+     </strong>
+     si la précision ou les non-conformités empêchent une décision fiable.
+    </li></ul><p>
+    Les résultats négatifs ou non concluants sont conservés et rapportés.
+   </p><h2>
+    13. Validation externe
+   </h2><p>
+    Les cohortes externes servent à évaluer la transférabilité et non à remplacer la validation locale. Leur structure, leur disponibilité et les différences de protocole sont explicitement documentées.
+   </p><h2>
+    14. Livrables
+   </h2><ul><li>
+     manifeste par seed ;
+    </li><li>
+     résultats appariés et intervalles ;
+    </li><li>
+     audit des non-conformités ;
+    </li><li>
+     analyse de sensibilité ;
+    </li><li>
+     rapport de choix du ratio ;
+    </li><li>
+     rapport confirmatoire final ;
+    </li><li>
+     snapshot reproductible.
+    </li></ul><h2>
+    15. Documents liés
+   </h2><ul><li>
+     Méthodologie de sélection V3.6 ;
+    </li><li>
+     Justification du choix S_div V3.6 ;
+    </li><li>
+     Annexe B simulation v1.6 ;
+    </li><li>
+     Glossaire canonique v1.6.
+    </li></ul></main></body></html>

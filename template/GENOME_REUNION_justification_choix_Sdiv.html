@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="fr">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Justification du choix S_div V3.6
+  </title>
+  <style>
+   :root{--accent:#1f4e79;--soft:#eaf0f6;--text:#1a1a1a;--muted:#555;--border:#d9d9d9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef1f4;color:var(--text);font-family:"Segoe UI",Arial,sans-serif;line-height:1.58}main{max-width:920px;margin:28px auto;padding:50px 60px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--accent);line-height:1.25}h1{font-size:2em}h2{margin-top:1.8em;border-bottom:2px solid var(--soft);padding-bottom:.2em}h3{color:#222;margin-top:1.35em}table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.94em}th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--accent);color:#fff}tr:nth-child(even){background:#f7f9fb}code{background:#f2f4f6;padding:1px 4px;border-radius:3px}blockquote{margin:1.2em 0;padding:12px 16px;background:var(--soft);border-left:4px solid var(--accent)}.toc{background:#fafafa;border:1px solid var(--border);padding:14px 20px;margin:1.5em 0}.toc a{color:var(--accent);text-decoration:none}.toc li{margin:.2em 0}@media(max-width:760px){main{margin:0;padding:28px 20px;box-shadow:none}}@media print{body{background:#fff;font-size:11pt}main{margin:0;max-width:none;padding:0;box-shadow:none}h2{break-before:page}table,blockquote{break-inside:avoid}}
+  </style>
+ </head>
+ <body>
+  <main>
+   <h1>
+    Justification du choix méthodologique
+    <code>
+     S_div
+    </code>
+   </h1>
+   <nav class="toc">
+    <strong>
+     Sommaire
+    </strong>
+    <ol>
+     <li>
+      Résumé
+     </li>
+     <li>
+      1. Cahier des charges
+     </li>
+     <li>
+      2. Pourquoi les approches simples ne suffisent pas
+     </li>
+     <li>
+      3. Unité d'allocation
+     </li>
+     <li>
+      4. Construction de S_div
+     </li>
+     <li>
+      5. Bras de découverte
+     </li>
+     <li>
+      6. Pourquoi ne pas maximiser directement la couverture de variants ?
+     </li>
+     <li>
+      7. Fréquences et puissance de détection
+     </li>
+     <li>
+      8. Analyses de robustesse
+     </li>
+     <li>
+      9. Conclusion
+     </li>
+     <li>
+      Références principales
+     </li>
+    </ol>
+   </nav>
+   <p>
+    <strong>
+     Version :
+    </strong>
+    3.6
+    <br/>
+    <strong>
+     Statut :
+    </strong>
+    justification scientifique de la stratégie candidate principale
+    <br/>
+    <strong>
+     Document opérationnel associé :
+    </strong>
+    Méthodologie de sélection V3.6
+   </p>
+   <h2>
+    Résumé
+   </h2>
+   <p>
+    Le choix de
+    <code>
+     S_div
+    </code>
+    ne repose pas sur l'idée qu'un score composite serait intrinsèquement supérieur. Il résulte de cinq contraintes simultanées : une population admixée sans catégories ancestrales naturelles, un peuplement géographiquement structuré, une parenté cryptique élevée, des signatures fondatrices localisées et un budget limité à 350 WGS.
+   </p>
+   <p>
+    La stratégie combine un noyau géo-ancestral et un bras de découverte. Elle vise une couverture distribuée de la diversité, et non le nombre brut maximal de variants. Elle reste une stratégie candidate : son adoption définitive dépend du protocole confirmatoire.
+   </p>
+   <h2>
+    1. Cahier des charges
+   </h2>
+   <h3>
+    1.1 Trois couches complémentaires
+   </h3>
+   <ul>
+    <li>
+     <strong>
+      2 500 SNP
+     </strong>
+     : espace de sélection, fréquences directes et support d'imputation ;
+    </li>
+    <li>
+     <strong>
+      350 WGS
+     </strong>
+     : découverte, phasage et panel local optimisé ;
+    </li>
+    <li>
+     <strong>
+      100 familles externes
+     </strong>
+     : contrôle mendélien et phasage, sans participation aux quotas ni aux fréquences populationnelles.
+    </li>
+   </ul>
+   <h3>
+    1.2 Contraintes fermes
+   </h3>
+   <ul>
+    <li>
+     aucun usage d'étiquette ethnique ou d'origine déclarée ;
+    </li>
+    <li>
+     sélection sur des profils génétiques inférés ;
+    </li>
+    <li>
+     non-redondance familiale pour les stratégies concernées avec
+     <code>
+      KING &gt; 0,0442
+     </code>
+     ;
+    </li>
+    <li>
+     allocation nominale 322 + 28, ratio final gelé après optimisation indépendante ;
+    </li>
+    <li>
+     traçabilité complète des scores, exclusions, quotas et redistributions.
+    </li>
+   </ul>
+   <h2>
+    2. Pourquoi les approches simples ne suffisent pas
+   </h2>
+   <h3>
+    2.1 Tirage aléatoire
+   </h3>
+   <p>
+    Le random est indispensable comme référence confirmatoire, mais il reproduit les déséquilibres de la cohorte candidate et ne protège ni les secteurs ni les profils minoritaires.
+   </p>
+   <h3>
+    2.2 Stratification géographique seule
+   </h3>
+   <p>
+    Elle préserve le territoire mais peut sélectionner uniquement le profil ancestral modal de chaque secteur.
+   </p>
+   <h3>
+    2.3 Quotas ancestraux rigides
+   </h3>
+   <p>
+    Ils transforment un espace continu en groupes artificiels et risquent d'être interprétés comme des catégories biologiques ou ethniques.
+   </p>
+   <h3>
+    2.4 Maximin génétique
+   </h3>
+   <p>
+    Il augmente la dispersion mais peut surpondérer les extrêmes et sous-représenter le centre de la distribution.
+   </p>
+   <h3>
+    2.5 Familles
+   </h3>
+   <p>
+    Elles améliorent le phasage et les contrôles de transmission, mais ne remplacent pas une sélection populationnelle.
+   </p>
+   <h2>
+    3. Unité d'allocation
+   </h2>
+   <p>
+    La terminologie canonique est
+    <strong>
+     strate de profil ancestral inféré
+    </strong>
+    . Il s'agit d'une discrétisation algorithmique d'un espace continu PCA/ADMIXTURE. Elle ne représente ni population biologique, ni ethnie, ni origine déclarée.
+   </p>
+   <p>
+    <code>
+     cellule géo-ancestrale = secteur × strate de profil ancestral inféré
+    </code>
+    .
+   </p>
+   <p>
+    L'allocation est hybride : poids sectoriels observés, planchers sectoriels, protection des strates rares suffisamment représentées, fusion explicite des petites cellules et redistribution déterministe. Les cellules ne sont pas forcées à des tailles égales.
+   </p>
+   <h2>
+    4. Construction de
+    <code>
+     S_div
+    </code>
+   </h2>
+   <p>
+    Pour un candidat
+    <code>
+     i
+    </code>
+    et un panel déjà retenu
+    <code>
+     S
+    </code>
+    :
+   </p>
+   <p>
+    <code>
+     S_div(i | S) = w_PCA·PCA_novelty(i | S) + w_ADMIX·ADMIX_diversity(i) + w_IBD·IBD_independence(i | S) + w_ROH·ROH_penalty_nucleus(i)
+    </code>
+    .
+   </p>
+   <h3>
+    4.1 PCA
+   </h3>
+   <p>
+    La composante PCA mesure la nouveauté dans un espace préspécifié. LD-pruning, nombre de PC, projection, métrique, normalisation et règles des petites cellules sont gelés. Une normalisation robuste par percentiles ou médiane/MAD est préférée au min-max.
+   </p>
+   <h3>
+    4.2 ADMIXTURE
+   </h3>
+   <p>
+    Trois notions sont séparées :
+   </p>
+   <ul>
+    <li>
+     <code>
+      ADMIX_entropy
+     </code>
+     : équilibre du mélange individuel ;
+    </li>
+    <li>
+     <code>
+      ADMIX_rarity_global
+     </code>
+     : rareté ou faible densité du profil ;
+    </li>
+    <li>
+     <code>
+      ADMIX_reference_distance
+     </code>
+     : distance optionnelle aux références.
+    </li>
+   </ul>
+   <p>
+    Une forte entropie n'implique pas une forte rareté.
+   </p>
+   <h3>
+    4.3 IBD dynamique
+   </h3>
+   <p>
+    <code>
+     IBD_independence(i | S) = 1 − max(R_IBD(i,j), j ∈ S)
+    </code>
+    .
+   </p>
+   <p>
+    Cette composante est recalculée à chaque itération. Le filtre KING reste indépendant. Le seuil opérationnel est
+    <code>
+     KING &gt; 0,0442
+    </code>
+    ;
+    <code>
+     0,0625
+    </code>
+    est uniquement une valeur théorique descriptive de cousins germains.
+   </p>
+   <h3>
+    4.4 ROH
+   </h3>
+   <p>
+    <code>
+     ROH_penalty_nucleus
+    </code>
+    évite de concentrer l'autozygotie dans le noyau. Il est distinct de
+    <code>
+     Founder_ROH_score
+    </code>
+    , utilisé dans le bras de découverte. Un ROH élevé isolé ne suffit pas à définir un effet fondateur. Le seuil de 100 Mb reste à recalibrer.
+   </p>
+   <h3>
+    4.5 Quintiles
+   </h3>
+   <p>
+    Les quintiles sont un garde-fou candidat contre une sélection uniquement extrême. Une version avec quintiles est comparée à une version sans quintiles ; la règle n'est gelée que si la validation indépendante la soutient.
+   </p>
+   <h2>
+    5. Bras de découverte
+   </h2>
+   <p>
+    Le noyau protège la distribution locale mais peut sous-capturer des profils globalement rares. Le bras de découverte utilise un score distinct :
+   </p>
+   <p>
+    <code>
+     S_discovery = a·PCA_global_outlier + b·ADMIX_rarity_global + c·IBD_independence_global + d·Haplotype_utility + e·Founder_ROH_score
+    </code>
+    .
+   </p>
+   <p>
+    <code>
+     Haplotype_utility
+    </code>
+    n'est activé avant gel que si une information de phasage suffisante existe ; sinon son poids initial est nul.
+   </p>
+   <p>
+    L'allocation nominale est de 322 individus dans le noyau et 28 dans le bras. Le ratio définitif est choisi sur un lot indépendant puis gelé.
+   </p>
+   <h2>
+    6. Pourquoi ne pas maximiser directement la couverture de variants ?
+   </h2>
+   <p>
+    Un set-cover sur la puce est une alternative légitime, mais la puce est elle-même soumise à un ascertainment historique. Maximiser le nombre brut de variants peut favoriser certains fonds ancestraux et dégrader l'équilibre du panel.
+   </p>
+   <p>
+    Le set-cover reste donc exploratoire :
+   </p>
+   <ul>
+    <li>
+     <code>
+      set-cover_puce
+     </code>
+     sur les variants génotypés ;
+    </li>
+    <li>
+     <code>
+      set-cover_oracle_WGS
+     </code>
+     uniquement lorsque la vérité WGS existe pour tous les candidats.
+    </li>
+   </ul>
+   <p>
+    Il ne constitue pas une cinquième stratégie confirmatoire et ne peut pas être évalué ex post sur des individus réels non séquencés.
+   </p>
+   <h2>
+    7. Fréquences et puissance de détection
+   </h2>
+   <p>
+    Le panel WGS est enrichi et ne produit pas automatiquement des fréquences populationnelles.
+   </p>
+   <table>
+    <thead>
+     <tr>
+      <th>
+       Situation
+      </th>
+      <th>
+       Interprétation
+      </th>
+     </tr>
+    </thead>
+    <tbody>
+     <tr>
+      <td>
+       Variant directement génotypé
+      </td>
+      <td>
+       fréquence directe dans les 2 500 après QC
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Variant WGS imputable
+      </td>
+      <td>
+       fréquence imputée dans les 2 500 avec qualité et incertitude
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Variant uniquement WGS
+      </td>
+      <td>
+       fréquence brute descriptive dans les 350
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Calibration validée
+      </td>
+      <td>
+       fréquence recalibrée ou pondérée avec hypothèses publiées
+      </td>
+     </tr>
+    </tbody>
+   </table>
+   <p>
+    La pondération inverse n'est possible que si les probabilités d'inclusion sont positives, calculables et validées.
+   </p>
+   <p>
+    Les 350 WGS correspondent à environ 700 haplotypes, mais ne garantissent pas la détection de tous les variants à MAF ≥ 1 %. Pour une composante ancestrale
+    <code>
+     k
+    </code>
+    , l'exposition théorique peut être résumée par
+    <code>
+     H_k = 2 × Σ_i q_ik
+    </code>
+    et
+    <code>
+     P(observation ≥ 1) ≈ 1 − (1 − p_k)^(H_k)
+    </code>
+    . Cette approximation doit être complétée par l'IBD, l'ascendance locale et les simulations.
+   </p>
+   <h2>
+    8. Analyses de robustesse
+   </h2>
+   <p>
+    La V3.6 préspécifie :
+   </p>
+   <ul>
+    <li>
+     sensibilité des poids ;
+    </li>
+    <li>
+     leave-one-component-out ;
+    </li>
+    <li>
+     corrélations de Spearman entre composantes ;
+    </li>
+    <li>
+     PCA des composantes standardisées et variance expliquée ;
+    </li>
+    <li>
+     diagnostic de colinéarité ;
+    </li>
+    <li>
+     comparaison avec et sans quintiles ;
+    </li>
+    <li>
+     stabilité ADMIXTURE séparée en stabilité algorithmique, robustesse aux données et représentativité du recrutement.
+    </li>
+   </ul>
+   <p>
+    Les multi-seeds ne corrigent pas un recrutement déséquilibré.
+   </p>
+   <p>
+    Aucune garantie de sous-modularité n'est revendiquée tant que la fonction d'ensemble exacte n'est pas formalisée et démontrée monotone et sous-modulaire.
+   </p>
+   <h2>
+    9. Conclusion
+   </h2>
+   <p>
+    <code>
+     S_div + bras découverte
+    </code>
+    est la stratégie candidate principale parce qu'elle rend explicites les compromis entre géographie, profils ancestraux, indépendance haplotypique et signatures fondatrices. Elle n'est ni déclarée optimale ni validée par avance. La décision finale appartient au protocole confirmatoire, avec conservation des résultats négatifs ou non concluants.
+   </p>
+   <h2>
+    Références principales
+   </h2>
+   <ul>
+    <li>
+     Manichaikul A et al. Robust relationship inference in genome-wide association studies.
+     <em>
+      Bioinformatics
+     </em>
+     . 2010.
+    </li>
+    <li>
+     De Beukelaer H et al. Core Hunter 3: flexible core subset selection.
+     <em>
+      BMC Bioinformatics
+     </em>
+     . 2018.
+    </li>
+    <li>
+     Delaneau O et al. Accurate, scalable and integrative haplotype estimation.
+     <em>
+      Nature Communications
+     </em>
+     . 2019.
+    </li>
+    <li>
+     Human Pangenome Reference Consortium. A draft human pangenome reference.
+     <em>
+      Nature
+     </em>
+     . 2023.
+    </li>
+   </ul>
+  </main>
+ </body>
+</html>
