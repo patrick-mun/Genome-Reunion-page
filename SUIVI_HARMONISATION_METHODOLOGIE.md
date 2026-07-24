@@ -103,6 +103,7 @@ Les évaluations et recommandations externes ou préparatoires, dont `GENOME_REU
 | HARM-018 | P2 | Sous-modularité revendiquée uniquement si démontrée | Justification | Sélection, protocole | Exploratoire |
 | HARM-019 | P0 | Stabilité algorithmique ADMIXTURE distincte de la robustesse aux données et du recrutement | Sélection | Synthèse, justification, protocole, glossaire | À traiter |
 | HARM-020 | P0 | Méthode préspécifiée distincte des résultats empiriques futurs | Sélection | Synthèse, justification, protocole | À traiter |
+| HARM-021 | P0 | Conserver la justification `S_div` sous la forme d’un fichier HTML monolithique autonome | Justification `S_div` | `template/methodologie.html`, journal et suppression de `template/sdiv_parts/` | À traiter |
 
 ---
 
@@ -212,6 +213,18 @@ Les multi-seeds ne corrigent pas un recrutement déséquilibré.
 
 Les documents méthodologiques préspécifient les calculs. Les valeurs, figures et performances obtenues sur les 2 500, les 350 WGS ou les simulations sont consignées dans les rapports d’analyse, sauf mise à jour explicitement versionnée.
 
+### HARM-021 — Fichier autonome de justification `S_div`
+
+Le document `template/GENOME_REUNION_justification_choix_Sdiv.html` doit rester un **fichier HTML monolithique autonome**, conforme au fichier original fourni. Il ne doit pas dépendre de fragments chargés dynamiquement.
+
+Avant la pull request :
+
+1. remplacer la page assemblée actuelle par le fichier HTML original autonome, en conservant le nom stable ;
+2. supprimer le dossier provisoire `template/sdiv_parts/` et ses huit fragments ;
+3. conserver la carte et le lien relatifs dans `template/methodologie.html` ;
+4. appliquer ensuite les corrections HARM-001 à HARM-020 directement dans le fichier monolithique ;
+5. contrôler l’ouverture hors ligne, le rendu GitHub Pages, l’impression et la pagination Paged.js.
+
 ---
 
 ## Intégration de la justification du choix `S_div`
@@ -222,14 +235,18 @@ Les documents méthodologiques préspécifient les calculs. Les valeurs, figures
 - **Document publié dans le dépôt :** `template/GENOME_REUNION_justification_choix_Sdiv.html` ;
 - **Commit du document principal :** `362274d8a45eb3b235d53059de800e3fc1c7ef8b` ;
 - **Lignes :** fichier principal entier, environ L1–L282 ;
-- **Ancres :** `#cover`, `#toc`, chargement de `sdiv_parts/s1.html` à `sdiv_parts/s8.html` ;
-- **Statut :** `En cours`.
+- **Ancres :** `#cover`, `#toc`, chargement provisoire de `sdiv_parts/s1.html` à `sdiv_parts/s8.html` ;
+- **Statut :** `En cours — architecture provisoire à remplacer selon HARM-021`.
 
 **Modification appliquée**
 
-Le document absent du dépôt a été ajouté sous un nom stable. Afin de conserver des sources lisibles et modifiables, le contenu scientifique est organisé en huit fichiers de section assemblés dans une page unique sur GitHub Pages.
+Le document absent du dépôt a été ajouté sous un nom stable. La désolidarisation en huit sections a été réalisée provisoirement, mais n’est pas retenue comme architecture finale.
 
-**Sections ajoutées**
+**Correction structurelle obligatoire avant pull request**
+
+La version finale devra reprendre le fichier HTML monolithique original. Le dossier `template/sdiv_parts/` devra être supprimé après remplacement et vérification du fichier autonome.
+
+**Sections provisoires actuellement présentes**
 
 | Fichier | Ancre | Contenu | Commit |
 |---|---|---|---|
@@ -264,11 +281,11 @@ La landing page comporte désormais cinq cartes : méthodologie de sélection, j
 |---|---|
 | Synthèse scientifique | HARM-001 à 010, 012, 014, 016, 017, 019, 020 |
 | Méthodologie de sélection V3.6 | HARM-001 à 010, 012 à 020 |
-| Justification `S_div` | HARM-001 à 008, 010 à 020 |
+| Justification `S_div` | HARM-001 à 008, 010 à 021 |
 | Protocole de validation | HARM-001 à 014, 016 à 020 selon portée |
 | Annexe B | HARM-010, 013, 017 et renvois terminologiques seulement |
 | Glossaire | HARM-001 à 010, 016, 017, 019 |
-| `methodologie.html` | HARM-014, HARM-015, liens et versions |
+| `methodologie.html` | HARM-014, HARM-015, HARM-021, liens et versions |
 
 ---
 
@@ -278,10 +295,11 @@ La landing page comporte désormais cinq cartes : méthodologie de sélection, j
 |---|---|---|---|
 | 2026-07-24 | `9b0c2b8f2147e825c3b0cc300b43bda7a8ac0659` | `SUIVI_HARMONISATION_METHODOLOGIE.md` | Création du registre |
 | 2026-07-24 | `0dd4c93999210369d926c852a4bc4381a7c1e233` | registre | Intégration des recommandations V3.6 pertinentes |
-| 2026-07-24 | `4cd69f7` à `e308d70` | `template/sdiv_parts/` | Ajout des huit sections de la justification |
-| 2026-07-24 | `362274d8a45eb3b235d53059de800e3fc1c7ef8b` | page principale `S_div` | Assemblage de la page unique |
+| 2026-07-24 | `4cd69f7` à `e308d70` | `template/sdiv_parts/` | Ajout provisoire des huit sections de la justification |
+| 2026-07-24 | `362274d8a45eb3b235d53059de800e3fc1c7ef8b` | page principale `S_div` | Assemblage provisoire de la page |
 | 2026-07-24 | `3974dd15a5be78f9f1b9e4c5c45af490dc205c96` | `template/methodologie.html` | Ajout de la carte et normalisation des liens |
-| 2026-07-24 | À compléter par ce commit | registre | Enregistrement de l’intégration `S_div` |
+| 2026-07-24 | `9c8a915d17b9ebae948f29b48fb20da842705197` | registre | Enregistrement de l’intégration `S_div` |
+| 2026-07-24 | À compléter par ce commit | registre | Enregistrement de HARM-021 : retour au fichier monolithique autonome |
 
 ---
 
@@ -305,8 +323,10 @@ La landing page comporte désormais cinq cartes : méthodologie de sélection, j
 - [ ] Versions actives et archives identifiées
 - [x] Justification `S_div` présente dans le dépôt
 - [x] Carte `S_div` présente dans `template/methodologie.html`
-- [ ] Chargement des huit sections contrôlé sur GitHub Pages après fusion
-- [ ] Pagination Paged.js contrôlée après fusion
+- [ ] Fichier `template/GENOME_REUNION_justification_choix_Sdiv.html` rétabli sous forme monolithique autonome
+- [ ] Dossier provisoire `template/sdiv_parts/` supprimé
+- [ ] Ouverture hors ligne du fichier `S_div` contrôlée
+- [ ] Pagination Paged.js du fichier monolithique contrôlée
 - [ ] Tous les liens internes et externes vérifiés
 - [ ] Tous les fichiers HTML actifs validés
 
@@ -316,6 +336,6 @@ La landing page comporte désormais cinq cartes : méthodologie de sélection, j
 
 | ID | Décision | Statut |
 |---|---|---|
-| — | Aucune décision supplémentaire requise pour l’ajout du document et de sa carte | Clos |
+| HARM-021 | Remplacer l’assemblage dynamique par le fichier HTML monolithique original et supprimer `template/sdiv_parts/` | À traiter avant pull request |
 
-Les décisions scientifiques restantes sont celles portées par HARM-001 à HARM-020 et seront traitées dans l’ordre défini par la hiérarchie documentaire.
+Les décisions scientifiques restantes sont celles portées par HARM-001 à HARM-020 et seront traitées dans l’ordre défini par la hiérarchie documentaire. HARM-021 constitue une correction structurelle obligatoire avant la pull request.
