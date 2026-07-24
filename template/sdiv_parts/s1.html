@@ -1,0 +1,112 @@
+<section id="s1">
+ <h2>
+  1. Objet et cahier des charges
+ </h2>
+ <h3>
+  1.1 Objet du document
+ </h3>
+ <p>
+  Ce document justifie le choix de l'algorithme S_div associé au bras de découverte pour sélectionner les 350 génomes complets du projet Génome Réunion. Il procède en trois temps : établir les contraintes que la population réunionnaise impose à toute stratégie de prélèvement, confronter les méthodologies publiées à ces contraintes, puis dériver la solution retenue en montrant à quelle contrainte répond chacun de ses éléments.
+ </p>
+ <p>
+  La démarche est celle d'un dossier de conception, pas d'une revue de littérature. Chaque méthodologie écartée l'est pour une raison nommée, opposable et vérifiable. Les limites du choix retenu figurent au même titre que ses avantages, en section 7.
+ </p>
+ <h3>
+  1.2 Ce que le panel doit produire
+ </h3>
+ <p>
+  Le référentiel doit servir quatre usages, qui n'imposent pas les mêmes exigences à la sélection.
+ </p>
+ <table>
+  <thead>
+   <tr>
+    <th>
+     Usage attendu
+    </th>
+    <th>
+     Exigence sur le panel
+    </th>
+    <th>
+     Couche du dispositif qui y répond
+    </th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>
+     Filtrage de variants selon les critères ACMG en diagnostic
+    </td>
+    <td>
+     Fréquences alléliques non biaisées dans la population source
+    </td>
+    <td>
+     2 500 génotypages sur puce
+    </td>
+   </tr>
+   <tr>
+    <td>
+     Imputation pour les études d'association locales
+    </td>
+    <td>
+     Couverture haplotypique large, incluant les fonds ancestraux minoritaires
+    </td>
+    <td>
+     350 WGS, noyau
+    </td>
+   </tr>
+   <tr>
+    <td>
+     Découverte de variants absents des bases internationales
+    </td>
+    <td>
+     Accès aux profils génomiques atypiques et aux segments fondateurs
+    </td>
+    <td>
+     350 WGS, bras de découverte
+    </td>
+   </tr>
+   <tr>
+    <td>
+     Pharmacogénétique et haplotypes cliniquement actionnables
+    </td>
+    <td>
+     Phasage fiable sur des haplotypes longs
+    </td>
+    <td>
+     100 familles nucléaires
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="caption">
+  Tableau 1 : Correspondance entre usages attendus et couches du dispositif.
+ </p>
+ <aside class="callout">
+  <span class="label">
+   Tension fondatrice
+  </span>
+  <p>
+   Les deux premières lignes du tableau 1 s'opposent. La représentativité produit des fréquences justes et une couverture haplotypique médiocre des marges. La maximisation de la diversité produit l'inverse. Toute stratégie de sélection à couche unique doit trancher cette tension au détriment de l'un des deux usages. L'architecture à trois couches du projet permet de ne pas trancher, à condition d'énoncer explicitement quelle couche porte quel usage. C'est la première décision de conception, et elle précède le choix de l'algorithme.
+  </p>
+ </aside>
+ <h3>
+  1.3 Contraintes fermes
+ </h3>
+ <ul>
+  <li>
+   Budget de séquençage arrêté à 350 génomes complets, couvert par le partenariat POPgen. L'effectif n'est pas une variable d'ajustement.
+  </li>
+  <li>
+   Cohorte source de 2 500 individus génotypés sur puce à environ 1,9 M SNP. La sélection ne dispose d'aucune autre information génomique préalable.
+  </li>
+  <li>
+   Calendrier de 36 mois, avec gel de la sélection avant lancement du séquençage.
+  </li>
+  <li>
+   Aucune catégorisation ethnique auto-déclarée ne peut servir de variable de stratification, pour des raisons à la fois réglementaires et scientifiques développées en section 2.2.
+  </li>
+  <li>
+   Le référentiel a une destination clinique, ce qui interdit de traiter le biais de fréquence allélique comme une limite secondaire.
+  </li>
+ </ul>
+</section>
