@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>
+   Annexe B simulation v1.6 — Génome Réunion
+  </title><style>
+   :root{--accent:#1f4e79;--soft:#eaf0f6;--text:#1a1a1a;--muted:#555;--border:#d9d9d9}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#eef1f4;color:var(--text);font-family:"Segoe UI",Arial,sans-serif;line-height:1.58}main{max-width:920px;margin:28px auto;padding:50px 60px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;color:var(--accent);line-height:1.25}h1{font-size:2em}h2{margin-top:1.8em;border-bottom:2px solid var(--soft);padding-bottom:.2em}h3{color:#222;margin-top:1.35em}table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.94em}th,td{border:1px solid var(--border);padding:8px 10px;text-align:left;vertical-align:top}th{background:var(--accent);color:#fff}tr:nth-child(even){background:#f7f9fb}code{background:#f2f4f6;padding:1px 4px;border-radius:3px}blockquote{margin:1.2em 0;padding:12px 16px;background:var(--soft);border-left:4px solid var(--accent)}.toc{background:#fafafa;border:1px solid var(--border);padding:14px 20px;margin:1.5em 0}.toc a{color:var(--accent);text-decoration:none}.toc li{margin:.2em 0}@media(max-width:760px){main{margin:0;padding:28px 20px;box-shadow:none}}@media print{body{background:#fff;font-size:11pt}main{margin:0;max-width:none;padding:0;box-shadow:none}h2{break-before:page}table,blockquote{break-inside:avoid}}
+  </style></head><body><main><h1>
+    Validation de la méthodologie de sélection — Annexe B
+   </h1><nav class="toc"><strong>
+     Sommaire
+    </strong><ol><li>
+      0. Rôle de l'annexe
+     </li><li>
+      1. Architecture générale
+     </li><li>
+      2. Panels haplotypiques
+     </li><li>
+      3. Calibration des pools
+     </li><li>
+      4. Fondateurs et couples
+     </li><li>
+      5. Sources ancestrales
+     </li><li>
+      6. Chronologie et migrations
+     </li><li>
+      7. Structure sectorielle
+     </li><li>
+      8. Transmission et recombinaison
+     </li><li>
+      9. Vérité WGS et projection puce
+     </li><li>
+      10. Variants documentés
+     </li><li>
+      11. Variants fondateurs
+     </li><li>
+      12. Parenté, endogamie, IBD et ROH
+     </li><li>
+      13. Profil D
+     </li><li>
+      14. Cohortes et indépendance
+     </li><li>
+      15. Prévention des fuites
+     </li><li>
+      16. Sorties et traçabilité
+     </li><li>
+      17. Moteur logiciel
+     </li><li>
+      18. État de validation
+     </li><li>
+      Documents liés
+     </li></ol></nav><p><strong>
+     Version :
+    </strong>
+    1.6
+    <br/><strong>
+     Objet :
+    </strong>
+    spécification complète du moteur de simulation
+    <br/><strong>
+     Contrainte matérielle :
+    </strong>
+    exécution possible sur un poste de référence de type Intel i7, 16 Go RAM et environ 500 Go de stockage
+   </p><h2>
+    0. Rôle de l'annexe
+   </h2><p>
+    L'annexe définit comment générer les cohortes simulées et leur vérité génomique. Elle ne fixe ni les poids de
+    <code>
+     S_div
+    </code>
+    , ni le ratio final noyau/découverte, ni le verdict. Ces décisions appartiennent à la méthodologie de sélection et au protocole.
+   </p><h2>
+    1. Architecture générale
+   </h2><p>
+    Le moteur simule dix générations, huit secteurs et jusqu'à six macro-composantes ancestrales. Il produit une vérité WGS complète, puis une projection de type puce utilisée par les algorithmes de sélection.
+   </p><p>
+    Deux modes sont prévus :
+   </p><ul><li><strong>
+      pilote
+     </strong>
+     , pour calibrer coût, mémoire et tolérances ;
+    </li><li><strong>
+      confirmatoire
+     </strong>
+     , exécuté après gel du moteur et des paramètres.
+    </li></ul><h2>
+    2. Panels haplotypiques
+   </h2><p>
+    Les haplotypes fondateurs proviennent de panels indépendants 1000 Genomes et HGDP sur hg38. Les individus sources sont séparés en :
+   </p><ul><li>
+     pool de simulation ;
+    </li><li>
+     pool de référence analytique.
+    </li></ul><p>
+    Aucun individu ni haplotype source ne peut être partagé entre les deux pools. La partition est stratifiée par population source et tracée dans un manifeste.
+   </p><h2>
+    3. Calibration des pools
+   </h2><p>
+    Aucun effectif minimal arbitraire n'est imposé avant les pilotes. Plusieurs tailles sont testées et la plus petite compatible avec la diversité haplotypique, la stabilité des projections et l'indépendance des pools est retenue puis gelée.
+   </p><h2>
+    4. Fondateurs et couples
+   </h2><p>
+    Les fondateurs G0 sont non admixés et tirés de populations sources homogènes. Les couples initiaux sont non apparentés, sauf lorsqu'une endogamie sectorielle est explicitement activée.
+   </p><p>
+    La réutilisation involontaire d'un reproducteur ou d'un haplotype source est bloquante. Une réutilisation volontaire n'est possible que dans un scénario d'endogamie documenté.
+   </p><h2>
+    5. Sources ancestrales
+   </h2><p>
+    Le nombre de sources par scénario peut varier de 2 à 6, avec deux sources dominantes possibles. Les tables sectorielles représentent des compositions moyennes cibles ; elles ne sont jamais appliquées comme proportions identiques à tous les individus.
+   </p><p>
+    L'ascendance individuelle émerge des fondateurs, unions, migrations, transmissions mendéliennes, recombinaisons, dérive, bottlenecks et endogamie. Aucune loi de Dirichlet n'est appliquée individuellement à G0.
+   </p><h2>
+    6. Chronologie et migrations
+   </h2><p>
+    Le moteur autorise des apports successifs génération par génération. À partir de G5, jusqu'à quatre sources peuvent contribuer au cours d'une même génération selon le scénario. Les migrations inter-secteurs et inter-sources sont paramétrables et tracées.
+   </p><h2>
+    7. Structure sectorielle
+   </h2><p>
+    Les huit secteurs sont conservés dans les seeds confirmatoires A, C et D. Un test isolé additionnel peut être réalisé séparément avec une taille de 20 à 30 % du secteur concerné.
+   </p><p>
+    La vérité ancestrale reste continue. Si des catégories algorithmiques sont nécessaires pour résumer les sorties, le terme canonique est
+    <strong>
+     strate de profil ancestral inféré
+    </strong>
+    , sans interprétation ethnique ou biologique.
+   </p><h2>
+    8. Transmission et recombinaison
+   </h2><p>
+    La transmission est mendélienne, avec recombinaison selon une carte génétique documentée. Le moteur conserve les identifiants parentaux, les haplotypes transmis, les points de recombinaison et les mutations injectées.
+   </p><h2>
+    9. Vérité WGS et projection puce
+   </h2><p>
+    Chaque candidat possède :
+   </p><ul><li>
+     une vérité WGS ;
+    </li><li>
+     une projection puce correspondant au manifest choisi ;
+    </li><li>
+     une vérité de pedigree, d'ascendance, d'IBD et de ROH.
+    </li></ul><p>
+    La vérité WGS de tous les candidats permet l'évaluation exploratoire de
+    <code>
+     set-cover_oracle_WGS
+    </code>
+    . Cet oracle n'est jamais exposé à l'algorithme de sélection réel.
+   </p><h2>
+    10. Variants documentés
+   </h2><p>
+    Le moteur injecte des SNV et indels bialléliques documentés. Il ne simule pas de mutations de novo non documentées dans la version confirmatoire. Les variants peuvent être injectés à G0 ou au cours des générations afin de créer des effets fondateurs primaires ou secondaires.
+   </p><p>
+    Chaque variant possède un identifiant, une génération d'injection, un secteur, une source, une fréquence initiale et une vérité réalisée.
+   </p><h2>
+    11. Variants fondateurs
+   </h2><p>
+    La fréquence réalisée à G0 et dans la cohorte finale est enregistrée. Les porteurs, copies, haplotypes et relations de parenté sont connus. Les scénarios évitent qu'un succès apparent repose uniquement sur plusieurs membres d'une même famille.
+   </p><h2>
+    12. Parenté, endogamie, IBD et ROH
+   </h2><p>
+    L'endogamie est paramétrable par secteur et génération, avec une fenêtre récente typique G5 à G3 et un taux cible de travail de 2 à 6 %. Les scénarios sans endogamie volontaire empêchent les unions apparentées.
+   </p><p>
+    Le moteur conserve séparément :
+   </p><ul><li>
+     coefficient de parenté ;
+    </li><li>
+     segments IBD et leurs longueurs ;
+    </li><li>
+     charge ROH individuelle ;
+    </li><li>
+     ROH partagés ;
+    </li><li>
+     haplotypes fondateurs.
+    </li></ul><p>
+    Cette séparation permet d'évaluer
+    <code>
+     ROH_penalty_nucleus
+    </code>
+    et
+    <code>
+     Founder_ROH_score
+    </code>
+    sans confondre autozygotie individuelle et effet fondateur partagé.
+   </p><h2>
+    13. Profil D
+   </h2><p>
+    Le profil D contient une structure cryptique randomisée entre seeds : secteur d'injection, taille efficace, bottleneck, endogamie, migrations et variants fondateurs. Le label caché n'est jamais transmis à la sélection.
+   </p><h2>
+    14. Cohortes et indépendance
+   </h2><p>
+    Les cohortes candidate et test sont disjointes. Les lots de développement, pilote, optimisation et confirmation utilisent des seeds distincts. Un seed confirmatoire non conforme à un garde-fou préspécifié n'est pas régénéré silencieusement ; il est conservé avec un statut explicite.
+   </p><h2>
+    15. Prévention des fuites
+   </h2><p>
+    Sont bloquants :
+   </p><ul><li>
+     partage d'un individu source entre simulation et référence ;
+    </li><li>
+     partage direct d'un haplotype source ;
+    </li><li>
+     transmission d'un label caché au score ;
+    </li><li>
+     utilisation de la vérité WGS pour calculer la sélection, hors comparateurs oracle exploratoires ;
+    </li><li>
+     recalibrage du moteur à partir des performances comparatives confirmatoires.
+    </li></ul><h2>
+    16. Sorties et traçabilité
+   </h2><p>
+    Chaque fichier est identifiable par projet, profil, seed, étape et contenu. Les formats incluent VCF/BCF, PLINK 2, tables IBD/ROH/KING/PCA/ADMIXTURE, pedigrees et manifestes structurés.
+   </p><p>
+    Tous les inputs, outputs, logs et configurations sont conservés pendant le développement. La politique d'allègement n'est définie qu'après les pilotes. Les checksums sont obligatoires pour les ressources gelées et les livrables finaux.
+   </p><p>
+    Les sorties permettent de calculer l'exposition ancestrale
+    <code>
+     H_k = 2 × Σ_i q_ik
+    </code>
+    , puis de comparer l'approximation de détection à la vérité simulée.
+   </p><p>
+    Le moteur reste neutre sur le ratio noyau/découverte et fournit les vérités nécessaires à sa comparaison indépendante.
+   </p><h2>
+    17. Moteur logiciel
+   </h2><p>
+    Le traitement privilégie les chromosomes ou lots, les checkpoints et l'absence de matérialisation exhaustive de populations intermédiaires. Un environnement Docker de référence est construit dès le développement et gelé avant confirmation.
+   </p><p>
+    Les performances sont calibrées sur le poste de référence. Le recours à un HPC reste optionnel et ne doit pas devenir une dépendance fonctionnelle.
+   </p><h2>
+    18. État de validation
+   </h2><p>
+    Avant confirmation, un rapport pilote documente :
+   </p><ul><li>
+     paramètres testés ;
+    </li><li>
+     valeurs retenues ;
+    </li><li>
+     coûts mémoire, stockage et temps ;
+    </li><li>
+     non-conformités ;
+    </li><li>
+     corrections ;
+    </li><li>
+     justification du passage au confirmatoire.
+    </li></ul><p>
+    Toute modification ultérieure donne lieu à une nouvelle version et à un nouveau snapshot.
+   </p><h2>
+    Documents liés
+   </h2><ul><li>
+     Méthodologie de sélection V3.6 ;
+    </li><li>
+     Justification du choix S_div V3.6 ;
+    </li><li>
+     Protocole de validation v1.6 ;
+    </li><li>
+     Glossaire canonique v1.6.
+    </li></ul></main></body></html>
