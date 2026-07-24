@@ -1,0 +1,237 @@
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>
+   Glossaire canonique des paramètres — Génome Réunion
+  </title><style>
+   :root{--accent:#1f4e79;--soft:#eaf0f6;--text:#1a1a1a;--muted:#555;--border:#d9d9d9}*{box-sizing:border-box}body{margin:0;background:#eef1f4;font-family:"Segoe UI",Arial,sans-serif;color:var(--text);line-height:1.5}main{max-width:1100px;margin:28px auto;padding:48px 56px;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.12)}h1,h2{font-family:Georgia,"Times New Roman",serif;color:var(--accent)}.intro{background:var(--soft);border-left:4px solid var(--accent);padding:14px 18px;margin:1.2em 0}table{border-collapse:collapse;width:100%;font-size:.93em}th,td{border:1px solid var(--border);padding:8px 10px;vertical-align:top;text-align:left}th{background:var(--accent);color:#fff;position:sticky;top:0}tr:nth-child(even){background:#f7f9fb}.status{white-space:nowrap;font-weight:600;color:var(--accent)}code{background:#f2f4f6;padding:1px 4px;border-radius:3px}@media(max-width:760px){main{margin:0;padding:24px 14px;box-shadow:none}table{font-size:.82em}}@media print{body{background:#fff}main{margin:0;max-width:none;padding:0;box-shadow:none}th{position:static}tr{break-inside:avoid}}
+  </style></head><body><main><h1>
+    Glossaire canonique des paramètres
+   </h1><p><strong>
+     Version 1.6 — harmonisée avec la méthodologie de sélection V3.6
+    </strong></p><div class="intro">
+    Ce glossaire constitue la référence terminologique et numérique commune à la synthèse scientifique, à la méthodologie de sélection, à la justification de
+    <code>
+     S_div
+    </code>
+    , au protocole de validation et à l’annexe B. Une valeur marquée « à geler » ou « à calibrer » ne doit pas être présentée comme définitivement validée.
+   </div><table><thead><tr><th>
+       Terme / paramètre
+      </th><th>
+       Définition canonique
+      </th><th>
+       Statut
+      </th></tr></thead><tbody><tr><td><strong>
+        Cohorte candidate SNP
+       </strong></td><td>
+       2 500 individus génotypés sur puce SNP servant à calculer les variables de sélection et à estimer les fréquences directes ou imputées.
+      </td><td class="status">
+       Gelé
+      </td></tr><tr><td><strong>
+        Panel WGS
+       </strong></td><td>
+       350 individus sélectionnés de manière optimisée ; panel enrichi, non assimilable à un échantillon aléatoire simple.
+      </td><td class="status">
+       Gelé
+      </td></tr><tr><td><strong>
+        Familles nucléaires
+       </strong></td><td>
+       100 familles externes aux 2 500 candidats et aux 350 WGS ; contrôle mendélien, phasage et haplotypes.
+      </td><td class="status">
+       Gelé
+      </td></tr><tr><td><strong>
+        Strate de profil ancestral inféré
+       </strong></td><td>
+       Discrétisation algorithmique d’un espace continu PCA/ADMIXTURE ; ne représente ni population biologique, ni ethnie, ni origine déclarée.
+      </td><td class="status">
+       Canonique
+      </td></tr><tr><td><strong>
+        Cellule géo-ancestrale
+       </strong></td><td>
+       Secteur géographique × strate de profil ancestral inféré.
+      </td><td class="status">
+       Canonique
+      </td></tr><tr><td><strong>
+        Allocation hybride
+       </strong></td><td>
+       Poids sectoriels observés + planchers sectoriels + strates + protection des strates rares + fusion des petites cellules + redistribution déterministe.
+      </td><td class="status">
+       À geler
+      </td></tr><tr><td><strong>
+        S_div
+       </strong></td><td>
+       Score dynamique du noyau combinant nouveauté PCA, diversité ADMIXTURE, indépendance IBD et pénalité ROH du noyau.
+      </td><td class="status">
+       À valider
+      </td></tr><tr><td><strong>
+        PCA_novelty(i | S)
+       </strong></td><td>
+       Nouveauté génétique du candidat i relativement au panel déjà retenu S dans l’espace PCA préspécifié.
+      </td><td class="status">
+       À geler
+      </td></tr><tr><td><strong>
+        ADMIX_entropy
+       </strong></td><td>
+       Entropie de Shannon des proportions ancestrales ; mesure l’équilibre du mélange individuel, pas la rareté.
+      </td><td class="status">
+       Canonique
+      </td></tr><tr><td><strong>
+        ADMIX_rarity_global
+       </strong></td><td>
+       Rareté ou faible densité du profil ancestral dans la cohorte.
+      </td><td class="status">
+       Canonique
+      </td></tr><tr><td><strong>
+        ADMIX_reference_distance
+       </strong></td><td>
+       Distance optionnelle à l’espace des références externes.
+      </td><td class="status">
+       Optionnel
+      </td></tr><tr><td><strong>
+        IBD_independence(i | S)
+       </strong></td><td>
+       1 − max(R_IBD(i,j), j ∈ S), recalculé à chaque itération greedy.
+      </td><td class="status">
+       Canonique
+      </td></tr><tr><td><strong>
+        KING &gt; 0,0442
+       </strong></td><td>
+       Seuil opérationnel d’exclusion des apparentés jusqu’au troisième degré inclus dans les stratégies concernées.
+      </td><td class="status">
+       Gelé
+      </td></tr><tr><td><strong>
+        KING 0,0625
+       </strong></td><td>
+       Espérance théorique approximative pour des cousins germains ; valeur descriptive uniquement, jamais cutoff opérationnel.
+      </td><td class="status">
+       Descriptif
+      </td></tr><tr><td><strong>
+        ROH_penalty_nucleus
+       </strong></td><td>
+       Pénalité visant à éviter une concentration excessive d’autozygotie dans le noyau.
+      </td><td class="status">
+       À calibrer
+      </td></tr><tr><td><strong>
+        Founder_ROH_score
+       </strong></td><td>
+       Score du bras découverte recherchant un signal fondateur cohérent et partagé ; un ROH individuel élevé ne suffit pas.
+      </td><td class="status">
+       À calibrer
+      </td></tr><tr><td><strong>
+        Seuil ROH 100 Mb
+       </strong></td><td>
+       Valeur de travail à recalibrer empiriquement ; pas une constante universelle.
+      </td><td class="status">
+       À calibrer
+      </td></tr><tr><td><strong>
+        Haplotype_utility
+       </strong></td><td>
+       Utilité haplotypique activée avant gel seulement si une information de phasage ou familiale suffisante existe ; sinon poids initial nul.
+      </td><td class="status">
+       Conditionnel
+      </td></tr><tr><td><strong>
+        Bras découverte
+       </strong></td><td>
+       Sous-panel destiné aux profils sous-capturés par le noyau : extrêmes PCA, rareté ancestrale, signal fondateur, utilité haplotypique.
+      </td><td class="status">
+       À valider
+      </td></tr><tr><td><strong>
+        Allocation 322 + 28
+       </strong></td><td>
+       Valeur nominale initiale : 322 noyau et 28 découverte ; ratio final choisi sur lot indépendant puis gelé.
+      </td><td class="status">
+       Nominal
+      </td></tr><tr><td><strong>
+        Random brut
+       </strong></td><td>
+       Comparateur conservant la structure naturelle de la cohorte après QC technique, sans exclusion spécifique de parenté.
+      </td><td class="status">
+       Confirmatoire
+      </td></tr><tr><td><strong>
+        Set-cover_puce
+       </strong></td><td>
+       Comparateur exploratoire maximisant la couverture sur les variants de la puce.
+      </td><td class="status">
+       Exploratoire
+      </td></tr><tr><td><strong>
+        Set-cover_oracle_WGS
+       </strong></td><td>
+       Comparateur exploratoire utilisant la vérité WGS dans les simulations ou cohortes entièrement séquencées.
+      </td><td class="status">
+       Exploratoire
+      </td></tr><tr><td><strong>
+        Quintiles
+       </strong></td><td>
+       Garde-fou candidat contre la sélection exclusive des extrêmes ; comparé à une version sans quintiles avant gel.
+      </td><td class="status">
+       À valider
+      </td></tr><tr><td><strong>
+        Stabilité algorithmique ADMIXTURE
+       </strong></td><td>
+       Concordance entre seeds et initialisations.
+      </td><td class="status">
+       Diagnostic
+      </td></tr><tr><td><strong>
+        Robustesse ADMIXTURE aux données
+       </strong></td><td>
+       Sensibilité aux marqueurs, batches, QC et références.
+      </td><td class="status">
+       Diagnostic
+      </td></tr><tr><td><strong>
+        Représentativité du recrutement
+       </strong></td><td>
+       Adéquation de la cohorte EFS à la diversité de la population cible ; non corrigée par les multi-seeds.
+      </td><td class="status">
+       Audit
+      </td></tr><tr><td><strong>
+        Fréquence directe puce
+       </strong></td><td>
+       Fréquence d’un variant génotypé directement dans les 2 500 après QC.
+      </td><td class="status">
+       Populationnelle sous QC
+      </td></tr><tr><td><strong>
+        Fréquence imputée
+       </strong></td><td>
+       Fréquence d’un variant WGS projeté dans les 2 500, avec seuils de qualité et incertitude documentés.
+      </td><td class="status">
+       Conditionnelle
+      </td></tr><tr><td><strong>
+        Fréquence WGS brute
+       </strong></td><td>
+       Fréquence observée dans les 350 WGS ; ne doit pas être présentée automatiquement comme populationnelle.
+      </td><td class="status">
+       Descriptive
+      </td></tr><tr><td><strong>
+        Fréquence recalibrée
+       </strong></td><td>
+       Fréquence corrigée par une méthode validée, avec hypothèses, poids et incertitude publiés.
+      </td><td class="status">
+       Conditionnelle
+      </td></tr><tr><td><strong>
+        H_k
+       </strong></td><td>
+       Exposition haplotypique attendue d’une composante ancestrale k : H_k = 2 × Σ_i q_ik.
+      </td><td class="status">
+       Exploratoire
+      </td></tr><tr><td><strong>
+        P(observation ≥ 1)
+       </strong></td><td>
+       Approximation 1 − (1 − p_k)^(H_k) ; ordre de grandeur, non garantie.
+      </td><td class="status">
+       Exploratoire
+      </td></tr><tr><td><strong>
+        Méthode préspécifiée
+       </strong></td><td>
+       Calculs, paramètres et décisions définis avant analyse confirmatoire.
+      </td><td class="status">
+       Canonique
+      </td></tr><tr><td><strong>
+        Résultat futur
+       </strong></td><td>
+       Valeur, figure ou performance produite après analyse ; ne doit pas être écrite comme résultat acquis dans la méthodologie.
+      </td><td class="status">
+       Canonique
+      </td></tr><tr><td><strong>
+        Snapshot de gel
+       </strong></td><td>
+       Version complète des données de référence, paramètres, seuils, scores, tie-breakers, comparateurs et endpoints appliqués au confirmatoire.
+      </td><td class="status">
+       Obligatoire
+      </td></tr></tbody></table></main></body></html>
