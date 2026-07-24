@@ -1,0 +1,129 @@
+<section id="s5">
+ <h2>
+  5. Construction de S_div, composante par composante
+ </h2>
+ <p>
+  Chaque élément de l'algorithme répond à une contrainte identifiée. Cette section établit la correspondance.
+ </p>
+ <h3>
+  5.1 La cellule géo-ancestrale, unité de sélection
+ </h3>
+ <p>
+  L'unité de sélection croise un secteur géographique et un cluster d'ascendance inféré par ADMIXTURE. Ce croisement répond simultanément à trois contraintes : il fournit un axe ancestral sans recourir à une étiquette déclarée, conformément à la section 2.2 ; il préserve l'information de peuplement portée par la géographie, conformément à la section 2.5 ; il garantit que les fonds ancestraux minoritaires disposent de places réservées, ce qui traite la contrainte 2.3 et neutralise le mécanisme de dérive décrit en section 4.2.
+ </p>
+ <p>
+  Aucun panel identifié dans la revue des méthodologies existantes ne croise ces deux axes pour définir des cellules de sélection. Les projets géographiques ignorent l'ascendance, les projets ancestraux utilisent des étiquettes déclarées. Le Mexican Biobank applique bien plusieurs résolutions géographiques et ancestrales, mais à l'analyse et non à la sélection.
+ </p>
+ <h3>
+  5.2 Distance en composantes principales, normalisée par cellule
+ </h3>
+ <p>
+  La distance au centroïde de la cellule mesure la position structurale relative d'un individu à l'intérieur de son groupe de référence, et non dans l'espace global. Cette normalisation locale est le mécanisme central décrit en section 4.3 : elle rend les scores non comparables entre cellules, ce qui est exactement l'effet recherché puisqu'aucune cellule ne doit concourir contre une autre.
+ </p>
+ <h3>
+  5.3 Entropie d'admixture
+ </h3>
+ <p>
+  Un individu dont les proportions ancestrales sont réparties entre plusieurs composantes porte, à génome égal, un plus grand nombre de blocs haplotypiques d'origines distinctes. Chaque génome séquencé apporte donc davantage d'information sur un plus grand nombre de fonds ancestraux. Cette composante augmente le rendement informatif par génome, ce qui répond directement à la contrainte budgétaire de la section 2.7. Elle sert aussi les analyses d'ascendance locale, qui exigent des individus présentant des transitions ancestrales le long du génome.
+ </p>
+ <h3>
+  5.4 Indépendance haplotypique par IBD
+ </h3>
+ <p>
+  Le score pénalise la proximité génétique avec les individus déjà retenus. Cette composante traite la contrainte 2.6, l'apparentement cryptique élevé propre à une population insulaire fondatrice. Le seuil de parenté KING inférieur à 0,0625, qui exclut jusqu'aux apparentés du troisième degré, constitue le filtre dur, mais il ne suffit pas : deux individus sous ce seuil peuvent encore partager des segments substantiels. La composante IBD gère ce continuum là où le seuil ne gère qu'une frontière.
+ </p>
+ <h3>
+  5.5 Charge en régions d'homozygotie
+ </h3>
+ <p>
+  Dans le noyau, le score favorise les individus à faible charge en ROH. Un génome fortement homozygote apporte moins d'haplotypes distincts pour un coût de séquençage identique, ce qui le rend moins efficient pour un panel d'imputation. Cette composante protège la diversité haplotypique du noyau.
+ </p>
+ <p>
+  Ce même critère fonctionne en sens inverse dans le bras de découverte, où les segments fondateurs constituent l'information recherchée. Cette inversion n'est pas une incohérence : elle traduit le fait que les deux bras poursuivent des objectifs distincts, ce que la section 6 développe.
+ </p>
+ <h3>
+  5.6 Stratification anti-biais directionnel
+ </h3>
+ <p>
+  Sélectionner uniquement les scores les plus élevés concentrerait le panel sur les marges génétiques et le détacherait de la population réelle. La procédure retenue échantillonne par quintiles lorsque l'effectif de la cellule atteint vingt, par partage binaire entre six et dix-neuf, et par procédure gloutonne documentée en dessous de six.
+ </p>
+ <p>
+  Cette disposition répond au mode d'échec que la littérature sur les collections noyaux a identifié et formalisé de manière indépendante : maximiser la distance moyenne entre entrées surreprésente les valeurs extrêmes. Core Hunter y répond par des critères de distance au plus proche voisin, Génome Réunion par une stratification en quantiles. Les deux voies diffèrent, le problème traité est le même. Cette convergence constitue un argument de solidité du design.
+ </p>
+ <h3>
+  5.7 Récapitulatif
+ </h3>
+ <table>
+  <thead>
+   <tr>
+    <th>
+     Contrainte
+    </th>
+    <th>
+     Élément de S_div qui y répond
+    </th>
+   </tr>
+  </thead>
+  <tbody>
+   <tr>
+    <td>
+     2.1 Admixture continue
+    </td>
+    <td>
+     Cluster inféré plutôt que partition a priori
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2.2 Étiquettes inutilisables
+    </td>
+    <td>
+     Axe ancestral construit par ADMIXTURE
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2.3 Variance d'ascendance dominante
+    </td>
+    <td>
+     Places réservées par cellule, entropie d'admixture
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2.4 Effet fondateur exploitable
+    </td>
+    <td>
+     Composante ROH inversée dans le bras de découverte
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2.5 Géographie informative
+    </td>
+    <td>
+     Axe secteur de la cellule
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2.6 Apparentement cryptique
+    </td>
+    <td>
+     Seuil KING dur et composante IBD continue
+    </td>
+   </tr>
+   <tr>
+    <td>
+     2.7 Budget contraint
+    </td>
+    <td>
+     Score composite, entropie d'admixture, procédure gloutonne
+    </td>
+   </tr>
+  </tbody>
+ </table>
+ <p class="caption">
+  Tableau 3 : Correspondance entre contraintes et éléments de l'algorithme.
+ </p>
+</section>
