@@ -112,15 +112,13 @@ trouvée par rapport aux fichiers déjà corrigés ou au glossaire :
 - Même note d'origine « v1.4 WORKING » qu'au glossaire (page de garde, ligne tableau `Version`),
   cohérente entre les deux documents plutôt que contradictoire.
 
-**Point ouvert, décision utilisateur en attente — HARM-009 :** la page de garde (ligne du tableau
-« Documents de référence ») cite trois documents : le protocole (`METHODOLOGIE_validation_protocole_v1_5.html`,
-présent), le glossaire (`GLOSSAIRE_parametres.html`, présent), et
-`Correction_3_Specification_simulateur_genomique_cadrage_v120.md`, décrit comme le « cadrage
-progressif d'origine » — **absent du dépôt** (vérifié par recherche de fichiers). Contrairement à
-HARM-007 (corrigé), cette référence ne promet pas un artefact futur mais cite un document de travail
-historique ; il n'est pas certain qu'il doive exister dans le dépôt public. Trois options ont été
-proposées à l'utilisateur (laisser tel quel / retirer la mention / préciser qu'il s'agit d'un
-document interne non publié) sans réponse à ce stade — **ne pas corriger sans arbitrage**.
+**HARM-009 — corrigé :** la page de garde (ligne du tableau « Documents de référence ») citait trois
+documents : le protocole (`METHODOLOGIE_validation_protocole_v1_5.html`, présent), le glossaire
+(`GLOSSAIRE_parametres.html`, présent), et `Correction_3_Specification_simulateur_genomique_cadrage_v120.md`,
+décrit comme le « cadrage progressif d'origine » — absent du dépôt. L'utilisateur a confirmé qu'il
+s'agissait d'un document de suivi interne supprimé, sans lien avec le dépôt public. La mention a été
+retirée de la ligne « Documents de référence » (page de garde de l'annexe B), qui ne cite plus que
+les deux documents compagnons réellement présents dans le dépôt.
 
 ## 4quater. Fichiers bundle « Standalone » — statut clarifié par l'utilisateur
 

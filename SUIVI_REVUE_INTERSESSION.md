@@ -31,7 +31,7 @@ scientifique :
 | `template/GENOME_REUNION_justification_choix_Sdiv.html` | 570 Ko | Passe ciblée faite |
 | `template/METHODOLOGIE_validation_protocole_v1_5.html` | 633 Ko | Passe ciblée faite |
 | `template/GLOSSAIRE_parametres.html` | 28 Ko | **Lu intégralement (post-session 3) — aucune divergence trouvée**, voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4bis` |
-| `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` | 627 Ko | **Lu intégralement (post-session 3) — aucune divergence, 1 point ouvert (HARM-009)**, voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4ter` |
+| `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` | 627 Ko | **Lu intégralement (post-session 3) — aucune divergence, HARM-009 corrigé**, voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4ter` |
 | `index.html` (landing page principale) | 52 Ko | Passe ciblée faite |
 
 ### 1.2 Pages d'atterrissage / communication — priorité moyenne (mentionnent parfois les mêmes chiffres)
@@ -77,10 +77,10 @@ Corrigé/vérifié après session 3 (hors pipeline HARM, vérification ad hoc) :
 - [x] Lecture intégrale de `template/GLOSSAIRE_parametres.html` — aucune divergence, sert désormais de
   table de référence canonique (voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4bis`).
 - [x] Lecture sur le fond de `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` — aucune
-  divergence factuelle/terminologique, mais un point ouvert en attente d'arbitrage utilisateur :
-  **HARM-009**, référence en page de garde à `Correction_3_Specification_simulateur_genomique_cadrage_v120.md`
-  (« cadrage progressif d'origine »), absent du dépôt — voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4ter`
-  pour les options proposées. Ne pas corriger sans réponse de l'utilisateur.
+  divergence factuelle/terminologique. **HARM-009 corrigé** : la référence en page de garde à
+  `Correction_3_Specification_simulateur_genomique_cadrage_v120.md` (« cadrage progressif d'origine »),
+  absente du dépôt, a été retirée — l'utilisateur a confirmé qu'il s'agissait d'un document de suivi
+  interne supprimé. Voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4ter`.
 - [x] Fichiers bundle « Standalone » : statut clarifié par l'utilisateur.
   `template/Genome_Reunion_Standalone.html` supprimé (ancienne landing page donneurs, orpheline,
   obsolète). `template/Stratégie visuelle Genome Reunion - Standalone.html` conservé (alimente
