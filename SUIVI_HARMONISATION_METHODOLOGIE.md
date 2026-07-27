@@ -68,13 +68,14 @@ Avant toute nouvelle affirmation de statut « harmonisé », toute correction de
 2. être accompagnée du hachage de commit réel introduisant la modification ;
 3. être vérifiée par relecture du fichier modifié sur la branche, pas seulement décrite en prose.
 
-## 5. Fichier de justification `S_div` reçu hors dépôt
+## 5. Fichier de justification `S_div`
 
 Un fichier `GENOME_REUNION_justification_choix_Sdiv.html` (upload utilisateur, 1377 lignes) a été
-fourni en dehors du dépôt. Il ne contient pas de valeur de seuil KING chiffrée et se réfère
-lui-même à un futur « fichier de recommandations V3.6 », ce qui indique qu'il ne s'agit pas non
-plus de la version V3.6 harmonisée décrite (à tort) par la précédente version de ce document. Il
-n'a pas été ajouté au dépôt.
+fourni en dehors du dépôt, puis ajouté à `template/GENOME_REUNION_justification_choix_Sdiv.html`
+et référencé depuis `template/methodologie.html`. Il ne contient pas de valeur de seuil KING
+chiffrée et se réfère lui-même à un futur « fichier de recommandations V3.6 », ce qui indique qu'il
+ne s'agit pas de la version V3.6 harmonisée décrite (à tort) par la précédente version de ce
+document — c'est un document V3.5, avec les mêmes écarts non résolus listés en section 3.
 
 ## 6. Historique de l'incident
 
