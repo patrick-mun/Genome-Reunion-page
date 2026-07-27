@@ -7,11 +7,11 @@ la synthèse scientifique.
 
 **Découpage retenu :** 3 sessions, en pipeline pour limiter la charge en tokens de chacune.
 
-| Session | Rôle | Entrée | Sortie |
-|---|---|---|---|
-| 1 — Extraction | Lire chaque fichier une fois, en extraire les faits/paramètres/citations exactes (fichier + ligne) | fichiers bruts du dépôt | `DIAGNOSTIC_COMPACT_HARMONISATION.md` |
-| 2 — Diagnostic | Repartir uniquement du fichier compact pour lister les contradictions, sans rouvrir les gros fichiers sauf pour confirmer un doute | `DIAGNOSTIC_COMPACT_HARMONISATION.md` | liste de corrections précises (fichier + ligne des deux côtés) |
-| 3 — Correction | Appliquer les corrections fichier par fichier, en ne rouvrant que la portion concernée | liste de corrections | fichiers corrigés + ce suivi mis à jour |
+| Session | Rôle | Entrée | Sortie | Statut |
+|---|---|---|---|---|
+| 1 — Extraction | Lire chaque fichier une fois, en extraire les faits/paramètres/citations exactes (fichier + ligne) | fichiers bruts du dépôt | `DIAGNOSTIC_COMPACT_HARMONISATION.md` | Fait |
+| 2 — Diagnostic | Repartir uniquement du fichier compact pour lister les contradictions, sans rouvrir les gros fichiers sauf pour confirmer un doute | `DIAGNOSTIC_COMPACT_HARMONISATION.md` | liste de corrections précises (fichier + ligne des deux côtés) | Fait |
+| 3 — Correction | Appliquer les corrections fichier par fichier, en ne rouvrant que la portion concernée | liste de corrections | fichiers corrigés + ce suivi mis à jour | Fait (commit `0d10cf8`, écarts HARM-001/002/006/007/008) |
 
 Règle commune aux trois sessions : **aucune ligne de ce suivi ne doit affirmer un statut
 « harmonisé » ou « cohérent » sans une citation fichier + ligne vérifiée dans la session en cours.**
@@ -62,14 +62,24 @@ scientifique :
 | `template/Genome_Reunion_Standalone.html` | 819 Ko | Artefact auto-extractible (`__bundler_loading`, contenu échappé en JS sur une poignée de lignes géantes). **Ne peut pas être diffé/corrigé directement comme du texte** — toute correction doit passer par la source qui l'a généré, pas par édition manuelle du bundle. À statuer : encore utilisé par le site ou artefact obsolète à archiver ? |
 | `template/Stratégie visuelle Genome Reunion - Standalone.html` | 1017 Ko | Même nature que ci-dessus. Contient bien des mentions 2 500 / 350 WGS / S_div / KING dans son contenu échappé — **à extraire et vérifier en session 2 ou 3**, pas par lecture directe. |
 
-## 2. Ce qui reste à faire (répartition suggérée pour sessions 2 et 3)
+## 2. Ce qui reste à faire (au-delà de la session 3)
+
+Corrigé en session 3 (commit `0d10cf8`), voir `SUIVI_HARMONISATION_METHODOLOGIE.md §3` :
+- [x] Seuil KING 0,0625 utilisé à tort comme cutoff (HARM-001).
+- [x] Terminologie « cluster d'ascendance » incohérente avec l'admixture continue (HARM-002).
+- [x] Notation `S_div` non unifiée — HARM-006 résolu par annotation explicite des variantes comme
+  reformulations dérivées de la notation du protocole, pas par unification forcée (les notations
+  restent différentes par document, mais documentées comme telles).
+- [x] Référence pendante à un fichier de recommandations V3.6 inexistant (HARM-007).
+- [x] `README.md` : lien mort et arborescence/table des documents obsolète (HARM-008).
+
+Toujours en attente :
 
 - [ ] Lire intégralement `template/GLOSSAIRE_parametres.html` (actuellement vérifié seulement sur le seuil KING) et en faire la table de référence canonique.
 - [ ] Lire `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` sur le fond (non fait).
-- [ ] Extraire le texte des deux fichiers bundle (`Standalone.html` et « Stratégie visuelle… ») pour vérifier s'ils reproduisent les chiffres/seuils obsolètes (0,0625, « cluster »).
+- [ ] Extraire le texte des deux fichiers bundle (`Standalone.html` et « Stratégie visuelle… ») pour vérifier s'ils reproduisent les chiffres/seuils obsolètes (0,0625, « cluster ») — non corrigés en session 3 car ces fichiers ne peuvent pas être édités comme du texte brut.
 - [ ] Décider du calendrier M4–M9 (sélection des 350) vs M4–M14 (familles) et de l'activation de `Haplotype_utility` — évoqué dans la revue précédente, pas revérifié dans cette passe.
 - [ ] Vérifier la formalisation du recalibrage fréquentiel (brut/pondéré/imputé) dans tous les fichiers qui le mentionnent (synthèse §16, protocole).
-- [ ] Trancher la question de nommage de la formule `S_div` (voir diagnostic §3.3) : notation unique à adopter partout, ou notations volontairement différentes par document (pédagogique vs formelle) — à documenter explicitement si c'est le cas.
 - [ ] Lire en détail les fichiers de priorité basse (§1.3) au moins une fois, même s'ils ne contiennent pas de paramètre scientifique, pour vérifier les chiffres budgétaires/calendrier (le budget et les dates apparaissent dans `index.html`, `README.md`, `SESSION.md` avec des valeurs qui pourraient diverger ailleurs).
 
 ## 3. Voir aussi

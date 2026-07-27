@@ -1,11 +1,10 @@
 # Suivi d'harmonisation méthodologique — Génome Réunion
 
-**Branche :** `claude/harmonisation-suivi-fichier-nqdxxs`
-**Statut :** réécrit le 27 juillet 2026, en session 2 du pipeline défini par
-`SUIVI_REVUE_INTERSESSION.md` — reconstruit **exclusivement** à partir de
-`DIAGNOSTIC_COMPACT_HARMONISATION.md` (aucun fichier source rouvert dans cette session), conformément
-à la règle du pipeline : chaque écart listé ci-dessous cite le fichier + la ligne déjà vérifiés en
-session 1, aucune ligne n'affirme un statut « harmonisé » sans cette citation.
+**Branche :** `claude/harmonisation-fichiers-depot-s3-exqj2k`
+**Statut :** session 3 (correction) exécutée le 27 juillet 2026 — les écarts HARM-001, HARM-002,
+HARM-006, HARM-007 et HARM-008 ont été corrigés directement dans les fichiers du dépôt par le commit
+`0d10cf8` (« Session 3: applique les corrections HARM-001/002/006/007/008 »). Voir section 3 pour le
+détail par écart et section 4 pour les nouveaux points vérifiés cohérents.
 
 Pour l'historique de l'incident précédent (un ancien suivi affirmant un travail d'harmonisation
 fictif), voir section 6.
@@ -34,28 +33,18 @@ projet Génome Réunion, et de leur statut de correction réel. Il est maintenu 
 Aucune version V3.6 ou v1.6 n'existe dans ce dépôt (confirmé par recherche de fichiers, cf.
 `DIAGNOSTIC_COMPACT_HARMONISATION.md §1.4`).
 
-## 3. Écarts confirmés — corrections à appliquer en session 3
+## 3. Écarts corrigés en session 3 (commit `0d10cf8`)
 
-Chaque écart cite fichier + ligne des deux côtés (valeur/terme correct vs valeur/terme à corriger),
-tel qu'extrait dans `DIAGNOSTIC_COMPACT_HARMONISATION.md`.
+Chaque correction est vérifiée par relecture directe du fichier modifié sur la branche
+`claude/harmonisation-fichiers-depot-s3-exqj2k`, pas seulement décrite en prose.
 
-| ID | Écart | Référence correcte | Occurrences à corriger |
+| ID | Écart | Correction appliquée | Fichiers modifiés (commit `0d10cf8`) |
 |---|---|---|---|
-| HARM-001 | Seuil KING opérationnel incohérent : le protocole tranche pour `0,0442` comme seuil d'exclusion ; `0,0625` n'est que l'espérance théorique des cousins germains, à ne plus utiliser comme cutoff. | `template/GLOSSAIRE_parametres.html:425,435` ; `template/METHODOLOGIE_validation_protocole_v1_5.html:1228,1269,1569,1590,1617,1626,1828` | `index.html:542` ; `template/Genome_Reunion_synthese_scientifique (14) (6).html:1552,1597,1643,1839` ; `template/GENOME_REUNION_justification_choix_Sdiv.html:1271` |
-| HARM-002 | Terminologie « cluster d'ascendance/inféré » contredit l'admixture continue affirmée par ailleurs (justification §2.1) ; suggère à tort une partition discrète. | à définir : formulation neutre type « strate de profil ancestral inféré » (voir aussi `template/GLOSSAIRE_parametres.html`, non relu intégralement — pourrait déjà contenir la définition canonique) | `index.html:516` ; `template/Genome_Reunion_synthese_scientifique (14) (6).html:1202,1581` ; `template/GENOME_REUNION_justification_choix_Sdiv.html:1261,1285,1320,1321` |
-| HARM-006 | Notation de la formule `S_div` non unifiée entre documents (noms de composantes différents, poids en dur vs symboliques). Pas nécessairement une erreur de fond (granularité différente selon le public), mais rend le corpus difficile à auditer. | `template/METHODOLOGIE_validation_protocole_v1_5.html:1566` (document de référence proposé) | `template/Genome_Reunion_synthese_scientifique (14) (6).html:1206-1210,1229` (variante bras-découverte) ; `index.html:520` |
-| HARM-007 | `template/GENOME_REUNION_justification_choix_Sdiv.html:1252` renvoie à un « fichier de recommandations V3.6 » qui n'existe pas dans le dépôt (vérifié par recherche de fichiers et `git log --all`). | — | `template/GENOME_REUNION_justification_choix_Sdiv.html:1252` |
-| HARM-008 | `README.md` pointe vers un fichier supprimé et ne liste pas les documents actifs réels. | — | `README.md:41,69` (lien mort vers `template/METHODOLOGIE_validation_voilure_reduite_v1_2.html`, supprimé par le commit `66a473b`) ; `README.md:34-56,62-72` (arborescence et table des documents obsolètes — omettent `GLOSSAIRE_parametres.html`, `METHODOLOGIE_validation_protocole_v1_5.html`, `METHODOLOGIE_validation_annexeB_simulation_v1_5.html`, `GENOME_REUNION_justification_choix_Sdiv.html`, `methodologie.html`, `financement.html`, `presentation.html`, `Genome_Reunion_Landing_v4.html`, `Genome_Reunion_Participer_v4.html`) |
-
-**Décisions à prendre avant correction (session 2, en attente d'arbitrage) :**
-
-- HARM-002 : valider la formulation de remplacement retenue, idéalement après relecture intégrale de
-  `template/GLOSSAIRE_parametres.html` pour vérifier s'il propose déjà une définition canonique.
-- HARM-006 : confirmer que le protocole (`METHODOLOGIE_validation_protocole_v1_5.html:1566`) est bien
-  la notation de référence, et documenter explicitement les autres comme reformulations dérivées
-  plutôt que comme définitions concurrentes.
-- HARM-007 : choisir entre créer un fichier de recommandations minimal, ou reformuler la phrase pour
-  ne plus promettre un artefact absent.
+| HARM-001 | Seuil KING opérationnel incohérent (`0,0625` utilisé comme cutoff au lieu de `0,0442`). | `0,0625` remplacé par `0,0442` comme seuil d'exclusion partout où il était utilisé comme cutoff ; conservé uniquement comme valeur théorique descriptive, explicitement qualifiée comme telle (formulation calquée sur `template/METHODOLOGIE_validation_protocole_v1_5.html:1590`). | `index.html:543` ; `template/Genome_Reunion_synthese_scientifique (14) (6).html:1221,1552,1597,1643,1839` ; `template/GENOME_REUNION_justification_choix_Sdiv.html:1271` |
+| HARM-002 | Terminologie « cluster d'ascendance/inféré » contredisant l'admixture continue affirmée par ailleurs. | Remplacé par « strate de profil ancestral (inférée) » dans toutes les occurrences listées en session 2. | `index.html:516` ; `template/Genome_Reunion_synthese_scientifique (14) (6).html:1202,1204,1581` ; `template/GENOME_REUNION_justification_choix_Sdiv.html:1261,1285,1320,1321` |
+| HARM-006 | Notation de la formule `S_div` non unifiée entre documents. | Notation du protocole (`METHODOLOGIE_validation_protocole_v1_5.html:1566`) confirmée comme référence formelle ; les variantes de `index.html` et de la synthèse sont désormais explicitement annotées comme reformulations dérivées de cette notation, pas comme définitions concurrentes. Les valeurs numériques des poids n'ont pas changé. | `index.html:524` (note ajoutée) ; `template/Genome_Reunion_synthese_scientifique (14) (6).html:1220` (légende du tableau 4 complétée) |
+| HARM-007 | Référence à un « fichier de recommandations V3.6 » inexistant. | Phrase reformulée pour ne plus promettre un artefact absent (« reste à planifier dans une prochaine révision du protocole d'audit »). | `template/GENOME_REUNION_justification_choix_Sdiv.html:1252` |
+| HARM-008 | `README.md` pointait vers un fichier supprimé et omettait les documents actifs réels. | Lien mort vers `METHODOLOGIE_validation_voilure_reduite_v1_2.html` retiré ; arborescence et table des documents mises à jour avec les 16 fichiers réellement présents dans `template/`. | `README.md` (arborescence et table des documents) |
 
 ## 4. Points vérifiés cohérents — ne pas rouvrir sauf doute nouveau
 
@@ -68,7 +57,10 @@ tel qu'extrait dans `DIAGNOSTIC_COMPACT_HARMONISATION.md`.
 | Stratification quintiles | 20-20-30-20-10 % dès 20 individus/cellule | `index.html:617` ; synthèse `:1234` ; justification `:1278` (formulation différente, règle identique) | Cohérent |
 | Poids `S_div` (valeurs numériques) | 0,30 / 0,30 / 0,25 / 0,15 (PCA/ADMIX/IBD/ROH) | synthèse `:1214-1217` ; protocole `:1567` | Cohérent (voir HARM-006 pour la notation, pas les valeurs) |
 | Étiquetage de version | V3.5 (synthèse/justification/méthodologie) et v1.5 (protocole/annexe B) | `index.html:112` ; `template/methodologie.html:189,223` | Cohérent — aucune mention prématurée de V3.6/v1.6 |
-| Seuil KING théorique descriptif | 0,0625 ≈ cousins germains, valeur non-opérationnelle | protocole `:1590,1828` | Cohérent en tant que valeur théorique (voir HARM-001 pour son usage erroné ailleurs) |
+| Seuil KING théorique descriptif | 0,0625 ≈ cousins germains, valeur non-opérationnelle | protocole `:1590,1828` | Cohérent en tant que valeur théorique |
+| Seuil KING opérationnel (après correction) | `kinship_KING > 0,0442` comme seuil d'exclusion | `index.html:543` ; synthèse `:1221,1552,1597,1643,1839` ; justification `:1271` ; protocole `:1228,1269,1569,1590,1617,1626,1828` | Corrigé et cohérent (commit `0d10cf8`, ex-HARM-001) |
+| Terminologie strate ancestrale (après correction) | « strate de profil ancestral (inférée) », plus de « cluster » | `index.html:516` ; synthèse `:1202,1204,1581` ; justification `:1261,1285,1320,1321` | Corrigé et cohérent (commit `0d10cf8`, ex-HARM-002) |
+| Notation `S_div` (après annotation) | Protocole `:1566` confirmé référence formelle ; variantes de `index.html`/synthèse annotées comme reformulations dérivées | `index.html:524` ; synthèse `:1220` | Corrigé et cohérent (commit `0d10cf8`, ex-HARM-006) |
 
 Note : cette table annule et remplace l'ancien HARM-003 (« stratification par quintiles non
 distinguée ») de la version précédente de ce fichier — la session 1 a vérifié que la règle de
@@ -98,15 +90,22 @@ HARM-005 (« calendrier 350/familles non réconcilié ») de la version précéd
 points n'ont pas de citation fichier + ligne vérifiée dans cette session et ne doivent donc plus être
 présentés comme des écarts confirmés, seulement comme des points en attente de vérification.
 
-## 6. Prochaine action (session 3)
+## 6. Session 3 — bilan et reste à faire
 
-Avant toute nouvelle affirmation de statut « harmonisé », toute correction devra :
+Les cinq écarts confirmés en session 2 (HARM-001, HARM-002, HARM-006, HARM-007, HARM-008) ont été
+corrigés par le commit `0d10cf8` sur la branche `claude/harmonisation-fichiers-depot-s3-exqj2k`, et
+vérifiés par relecture directe des fichiers modifiés (voir section 3 pour le détail des lignes).
 
-1. être appliquée directement dans les fichiers listés en section 3 (diff vérifiable) ;
-2. être accompagnée du hachage de commit réel introduisant la modification ;
-3. être vérifiée par relecture du fichier modifié sur la branche, pas seulement décrite en prose ;
-4. mettre à jour ce fichier en déplaçant l'écart corrigé de la section 3 vers la section 4, avec la
-   citation de la ligne corrigée.
+Points non corrigés dans cette session, car hors périmètre des écarts confirmés (voir section 5 pour
+le détail) :
+- `template/GLOSSAIRE_parametres.html` n'a toujours pas été relu intégralement — n'a donc pas été
+  modifié ; s'il contient une définition canonique de la strate ancestrale ou du seuil KING
+  différente de la formulation retenue ici, une session ultérieure devra réconcilier les deux.
+- HARM-007 a été résolu par reformulation (pas de création de fichier de recommandations) ; à
+  documenter si un fichier de recommandations est finalement créé plus tard.
+- Les points listés en section 5 (annexe B, fichiers bundle, calendrier M4-M9/M14, recalibrage
+  fréquentiel, pages sans paramètre scientifique) restent non vérifiés et hors périmètre de cette
+  session de correction.
 
 ## 7. Historique de l'incident
 
@@ -122,3 +121,6 @@ Avant toute nouvelle affirmation de statut « harmonisé », toute correction de
   citations précises des deux côtés, trois nouveaux écarts sourcés (HARM-006 à HARM-008) sont
   ajoutés, et les anciens HARM-003/004/005 sont retirés de la liste des écarts confirmés faute de
   citation vérifiée dans cette session (HARM-003 s'avère même non fondé — voir section 4).
+- Session 3 (27 juillet 2026, branche `claude/harmonisation-fichiers-depot-s3-exqj2k`) a appliqué les
+  cinq écarts de la section 3 par le commit `0d10cf8`, vérifié chaque correction par relecture directe
+  des fichiers modifiés, et mis à jour ce suivi (déplacement en section 4, bilan en section 6).
