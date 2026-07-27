@@ -1711,12 +1711,13 @@ GEL COMPLET : méthode + ratio + manifeste confirmatoire
 <table><caption>Tableau 9 : analyses de sensibilité.</caption><thead><tr><th>Analyse</th><th>Procédure</th></tr></thead><tbody>
 <tr><td>Poids de <code>S_div</code></td><td>variation de chaque poids de ±10 %, puis ±20 %, avec renormalisation</td></tr>
 <tr><td>LOCO</td><td>retrait successif de PCA, ADMIXTURE, IBD et ROH</td></tr>
+<tr><td>Dimensionnalité effective (<code>D_eff</code>)</td><td>décomposition en valeurs propres de la matrice de corrélation entre les quatre composantes normalisées de <code>S_div</code> (§4.1), sur les 25 seeds pilotes : <code>D_eff = (Σλᵢ)² / Σ(λᵢ²)</code>, sans hypothèse a priori sur la paire de composantes en cause</td></tr>
 <tr><td>Ordre greedy</td><td>au moins 100 permutations de l'ordre initial, tie-breaker déterministe</td></tr>
 <tr><td>Bruit de génotypage</td><td>missingness 1 à 3 %, chevauchement réduit, variants ambigus retirés, décalage de batch PCA</td></tr>
 <tr><td>Logiciel d'imputation</td><td>Beagle 5.4 reste primaire ; GLIMPSE2 est une sensibilité secondaire, sans changement de verdict</td></tr>
 <tr><td>Panel externe</td><td>analyse avec le panel principal, puis panels alternatifs autorisés selon disponibilité</td></tr>
 </tbody></table>
-<p>Sont rapportés : intersection des panels sélectionnés, individus stables, individus frontière, dispersion des R² et sensibilité des variants fondateurs. Une forte instabilité entraîne une revue avant déploiement. Si cette revue conduit à modifier le score ou la méthode, la stratégie n’est plus celle qui a été gelée : un nouveau cycle d’optimisation et, selon la portée du changement, un nouveau cycle confirmatoire sur des seeds non ouverts sont alors requis.</p>
+<p>Sont rapportés : intersection des panels sélectionnés, individus stables, individus frontière, dispersion des R² et sensibilité des variants fondateurs, ainsi que <code>D_eff</code>. Le résultat du LOCO doit être lu à la lumière de <code>D_eff</code> : les composantes de <code>S_div</code> ne sont pas garanties indépendantes (document de justification méthodologique, §7.2), et un LOCO stable ne vaut preuve de robustesse qu'une fois rapporté à la dimensionnalité effective réellement mesurée. Une forte instabilité entraîne une revue avant déploiement. Si cette revue conduit à modifier le score ou la méthode, la stratégie n’est plus celle qui a été gelée : un nouveau cycle d’optimisation et, selon la portée du changement, un nouveau cycle confirmatoire sur des seeds non ouverts sont alors requis.</p>
 </section><section id="s9"><h2>9. Audit puce SNP vers WGS</h2>
 <p>La sélection réelle sera calculée à partir de la puce SNP, alors que la simulation dispose d'une vérité WGS. L'audit mesure donc la perte provoquée par cette réduction d'information.</p>
 <ol>
