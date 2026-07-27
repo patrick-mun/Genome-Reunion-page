@@ -155,14 +155,34 @@ précédente (ancien HARM-005), est retiré de la liste des écarts confirmés.
 - Aucun autre fichier du corpus (protocole, annexe B, glossaire, README) ne mentionne ce calendrier
   M4/M9/M14 — pas de risque de divergence croisée en dehors de `index.html`/synthèse.
 
+## 4sexies. Recalibrage fréquentiel (brut/pondéré/imputé) — vérifié, non fondé
+
+Vérifié le 27 juillet 2026 par citation directe. **Aucune discordance trouvée** — ce point, listé
+comme écart potentiel depuis la revue précédente (ancien HARM-004), est retiré de la liste des
+écarts confirmés.
+
+- Le mécanisme n'est **défini qu'à un seul endroit** du corpus, sans définition concurrente
+  ailleurs : synthèse `:1271` (§5.9 « Phasage réunionnais et recalibrage des fréquences »), qui
+  détaille la séquence **brute** (observée dans les 350) → **pondérée** (corrigée par strate
+  géographique et génétique) → **imputée** (projection de l'information WGS sur les 2 500 SNP) →
+  **finale annotée** (avec intervalle d'incertitude et statut de fiabilité).
+- `index.html:379,433` en donne un résumé compatible mais moins détaillé (« recalibrées sur les
+  2 500 SNP »), sans contredire la version détaillée de la synthèse.
+- Le protocole (`METHODOLOGIE_validation_protocole_v1_5.html:1621`) ne fait que le citer comme
+  métrique de support (« précision des fréquences recalibrées », Tableau 6 §5.4) sans redéfinir la
+  méthode — cohérent, pas de désaccord.
+- Aucune mention dans l'annexe B, la justification `S_div` ou le glossaire — pas de risque de
+  définition contradictoire ailleurs dans le corpus.
+- Point mineur, pas une divergence : le glossaire (référence canonique des concepts) ne liste pas ce
+  mécanisme comme entrée, contrairement à `S_div`, `KING`, `MAF`, etc. Trou de complétude à combler
+  si une entrée dédiée est souhaitée un jour, mais aucune contradiction à corriger.
+
 ## 5. Non vérifié — hors périmètre de cette session, à traiter en session 2/3
 
 - Extraction et vérification du contenu du fichier bundle restant
   (`template/Stratégie visuelle Genome Reunion - Standalone.html`) — ne peut pas être diffé comme du
   texte brut ; à envisager seulement si jugé nécessaire, ce fichier étant un support visuel actif et
   non une référence scientifique citée ailleurs dans le corpus.
-- Formalisation du recalibrage fréquentiel (brut/pondéré/imputé) — évoqué mais non revérifié par
-  citation directe dans cette session.
 - Lecture de fond des pages sans paramètre scientifique détecté (`communication.html`, `feder.html`,
   `financement.html`, `presentation.html`, `architecture_pipeline.html`,
   `Genome_Reunion_synthese_infrastructure_v5_4.html`), notamment pour les chiffres budgétaires et de
