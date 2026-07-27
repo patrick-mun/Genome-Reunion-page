@@ -31,7 +31,7 @@ scientifique :
 | `template/GENOME_REUNION_justification_choix_Sdiv.html` | 570 Ko | Passe ciblée faite |
 | `template/METHODOLOGIE_validation_protocole_v1_5.html` | 633 Ko | Passe ciblée faite |
 | `template/GLOSSAIRE_parametres.html` | 28 Ko | **Lu intégralement (post-session 3) — aucune divergence trouvée**, voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4bis` |
-| `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` | 627 Ko | **Non inspecté sur le fond** |
+| `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` | 627 Ko | **Lu intégralement (post-session 3) — aucune divergence, 1 point ouvert (HARM-009)**, voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4ter` |
 | `index.html` (landing page principale) | 52 Ko | Passe ciblée faite |
 
 ### 1.2 Pages d'atterrissage / communication — priorité moyenne (mentionnent parfois les mêmes chiffres)
@@ -76,10 +76,14 @@ Corrigé en session 3 (commit `0d10cf8`), voir `SUIVI_HARMONISATION_METHODOLOGIE
 Corrigé/vérifié après session 3 (hors pipeline HARM, vérification ad hoc) :
 - [x] Lecture intégrale de `template/GLOSSAIRE_parametres.html` — aucune divergence, sert désormais de
   table de référence canonique (voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4bis`).
+- [x] Lecture sur le fond de `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` — aucune
+  divergence factuelle/terminologique, mais un point ouvert en attente d'arbitrage utilisateur :
+  **HARM-009**, référence en page de garde à `Correction_3_Specification_simulateur_genomique_cadrage_v120.md`
+  (« cadrage progressif d'origine »), absent du dépôt — voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4ter`
+  pour les options proposées. Ne pas corriger sans réponse de l'utilisateur.
 
 Toujours en attente :
 
-- [ ] Lire `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` sur le fond (non fait).
 - [ ] Extraire le texte des deux fichiers bundle (`Standalone.html` et « Stratégie visuelle… ») pour vérifier s'ils reproduisent les chiffres/seuils obsolètes (0,0625, « cluster ») — non corrigés en session 3 car ces fichiers ne peuvent pas être édités comme du texte brut.
 - [ ] Décider du calendrier M4–M9 (sélection des 350) vs M4–M14 (familles) et de l'activation de `Haplotype_utility` — évoqué dans la revue précédente, pas revérifié dans cette passe.
 - [ ] Vérifier la formalisation du recalibrage fréquentiel (brut/pondéré/imputé) dans tous les fichiers qui le mentionnent (synthèse §16, protocole).

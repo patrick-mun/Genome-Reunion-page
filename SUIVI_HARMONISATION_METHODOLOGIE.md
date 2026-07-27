@@ -27,7 +27,7 @@ projet Génome Réunion, et de leur statut de correction réel. Il est maintenu 
 | Synthèse scientifique | `template/Genome_Reunion_synthese_scientifique (14) (6).html` | V3.5 | Passe ciblée faite |
 | Justification du choix `S_div` | `template/GENOME_REUNION_justification_choix_Sdiv.html` | V3.5 | Passe ciblée faite — présent dans le dépôt, référencé depuis `template/methodologie.html` |
 | Protocole de validation | `template/METHODOLOGIE_validation_protocole_v1_5.html` | v1.5 | Passe ciblée faite |
-| Annexe B — simulation | `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` | v1.5 | **Non inspecté sur le fond** |
+| Annexe B — simulation | `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` | v1.5 (extrait du protocole v1.4 WORKING d'origine) | **Lu intégralement (285 lignes de corps de document) — aucune divergence trouvée, un point ouvert** (voir §4ter) |
 | Glossaire des paramètres | `template/GLOSSAIRE_parametres.html` | — (protocole v1.4 WORKING d'origine, contenu à jour v1.5) | **Lu intégralement (563 lignes) — aucune divergence trouvée** (voir §4bis) |
 
 Aucune version V3.6 ou v1.6 n'existe dans ce dépôt (confirmé par recherche de fichiers, cf.
@@ -89,9 +89,41 @@ différentes, règle identique). L'écart n'est donc pas confirmé et ne doit pl
   (seuil KING 0,0442 notamment) est bien à jour avec le v1.5 actif. Formulation à clarifier si
   l'ambiguïté gêne un lecteur externe, mais ce n'est pas un écart de fond.
 
+## 4ter. Annexe B — spécification du moteur de simulation — lecture sur le fond
+
+`template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` (285 lignes de corps de document,
+18 sections) lu intégralement le 27 juillet 2026. Aucune divergence factuelle ou terminologique
+trouvée par rapport aux fichiers déjà corrigés ou au glossaire :
+
+- Aucune occurrence de `0,0625`, de « cluster d'ascendance » ou de référence V3.6/v1.6. La seule
+  occurrence de « cluster » concerne un « cluster HPC » de calcul (ligne 1416), sans rapport avec la
+  terminologie d'ascendance visée par HARM-002.
+- Effectifs et compteurs cohérents avec le glossaire et le protocole : cohorte candidate 2 500
+  (ligne 1300 ; « 3 500 individus de G0 » = 2 500 + 1 000, ligne 1359), cohorte test 1 000/seed
+  (lignes 1300, 1382), panel WGS 350 (mentionné à plusieurs reprises comme cible de sélection),
+  25 seeds pilotes / 200 seeds confirmatoires (lignes 1373, 1380), 8 secteurs et 6 macro-composantes
+  obligatoires en confirmatoire avec `K_source ∈ {2,3,4,5,6}` en développement (ligne 1230, déjà cité
+  en §4bis), 10 générations maximum (ligne 1223, déjà cité en §4bis).
+- Le document confirme explicitement que le seuil KING et les seuils analytiques n'interviennent
+  qu'au stade de la sélection des 350 (ligne 1361 : « aucun seuil KING ou autre seuil analytique
+  n'est utilisé pour générer les 3 500 individus [...] Ces seuils n'interviennent qu'au stade
+  ultérieur de la sélection des 350 »), cohérent avec le partage des responsabilités
+  protocole/moteur déjà établi.
+- Même note d'origine « v1.4 WORKING » qu'au glossaire (page de garde, ligne tableau `Version`),
+  cohérente entre les deux documents plutôt que contradictoire.
+
+**Point ouvert, décision utilisateur en attente — HARM-009 :** la page de garde (ligne du tableau
+« Documents de référence ») cite trois documents : le protocole (`METHODOLOGIE_validation_protocole_v1_5.html`,
+présent), le glossaire (`GLOSSAIRE_parametres.html`, présent), et
+`Correction_3_Specification_simulateur_genomique_cadrage_v120.md`, décrit comme le « cadrage
+progressif d'origine » — **absent du dépôt** (vérifié par recherche de fichiers). Contrairement à
+HARM-007 (corrigé), cette référence ne promet pas un artefact futur mais cite un document de travail
+historique ; il n'est pas certain qu'il doive exister dans le dépôt public. Trois options ont été
+proposées à l'utilisateur (laisser tel quel / retirer la mention / préciser qu'il s'agit d'un
+document interne non publié) sans réponse à ce stade — **ne pas corriger sans arbitrage**.
+
 ## 5. Non vérifié — hors périmètre de cette session, à traiter en session 2/3
 
-- Lecture sur le fond de `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html`.
 - Extraction et vérification du contenu des deux fichiers bundle auto-extractibles
   (`template/Genome_Reunion_Standalone.html`, `template/Stratégie visuelle Genome Reunion -
   Standalone.html`) — ne peuvent pas être diffés comme du texte brut.
