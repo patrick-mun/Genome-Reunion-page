@@ -447,7 +447,8 @@ const PARAMS = [
   { id: "N_seed_pilot", meaning: "Nombre de seeds pilotes", value: "25", status: "GELÉ", domain: "Protocole" },
   { id: "N_seed_confirm", meaning: "Nombre de seeds confirmatoires", value: "200", status: "GELÉ", domain: "Protocole" },
   { id: "N_seed_founder", meaning: "Nombre de seeds légers pour variants fondateurs", value: "1 000", status: "GELÉ", domain: "Protocole" },
-  { id: "N_seed_optim", meaning: "Nombre de seeds du lot indépendant d'optimisation de l'allocation noyau / bras découverte.", value: "n = plafond[((z0,975 + z0,80) × SD_Δ / δ)²], SD_Δ estimé sur les 25 seeds pilotes, δ = marge minimale d'amélioration pertinente", status: "À CALIBRER", domain: "Protocole" }
+  { id: "N_seed_optim", meaning: "Nombre de seeds du lot indépendant d'optimisation de l'allocation noyau / bras découverte.", value: "n = plafond[((z0,975 + z0,80) × SD_Δ / δ)²], SD_Δ estimé sur les 25 seeds pilotes, δ = marge minimale d'amélioration pertinente", status: "À CALIBRER", domain: "Protocole" },
+  { id: "D_eff", meaning: "Dimensionnalité effective des quatre composantes de S_div (PCA, ADMIXTURE, IBD, ROH), mesurée pour contextualiser le LOCO plutôt que supposée.", value: "D_eff = (Σλᵢ)² / Σ(λᵢ²), valeurs propres de la corrélation entre composantes normalisées sur les 25 seeds pilotes", status: "DÉRIVÉ", statusLabel: "DÉRIVÉ / CALCULÉ", domain: "Protocole" }
 ];
 
 const grid = document.getElementById('grid');
