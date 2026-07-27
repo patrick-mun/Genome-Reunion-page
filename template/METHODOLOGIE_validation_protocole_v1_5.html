@@ -1644,7 +1644,7 @@ outil primaire = Beagle 5.4, build 29Oct24.c8e</code></pre>
 <ul>
 <li><strong>Développement technique :</strong> des seeds dédiés peuvent être utilisés pour déboguer le pipeline, stabiliser <code>S_div</code>, fixer les poids, les contraintes, les tie-breakers et les règles d'exclusion. Leur effectif n'est pas décisionnel. Dès qu'une seed a été ouverte dans ce cadre, elle est définitivement exclue du pilote, de l'optimisation et de la confirmation.</li>
 <li><strong>Pilote aveugle :</strong> 25 seeds indépendants, exécutés après stabilisation technique, servent uniquement à estimer l'écart-type des différences appariées, la précision attendue et le coût de calcul. Ils ne servent ni à modifier la méthode, ni à choisir le ratio final, ni à confirmer sa performance.</li>
-<li><strong>Optimisation de l'allocation :</strong> un lot indépendant de seeds est réservé à la comparaison pré-spécifiée des répartitions noyau / bras découverte. Son effectif est gelé après le pilote sur un critère de précision, avant l'ouverture de ses résultats. Au moment de cette ouverture, toute la méthode est figée sauf le ratio d'allocation explicitement laissé ouvert par le §7.</li>
+<li><strong>Optimisation de l'allocation :</strong> un lot indépendant de seeds est réservé à la comparaison pré-spécifiée des répartitions noyau / bras découverte. Son effectif suit la même formule que le lot confirmatoire, <code>n = plafond[((z0,975 + z0,80) × SD_Δ / δ)²]</code>, avec <code>SD_Δ</code> estimé sur les 25 seeds pilotes et <code>δ</code> la marge minimale d'amélioration jugée pratiquement pertinente définie au §7.2 ; il est gelé après le pilote, avant l'ouverture de ses résultats. Au moment de cette ouverture, toute la méthode est figée sauf le ratio d'allocation explicitement laissé ouvert par le §7.</li>
 <li><strong>Confirmation d'imputation :</strong> 200 nouveaux seeds au minimum, ouverts uniquement après gel complet de la méthode de sélection et du ratio final.</li>
 <li><strong>Capture des fondateurs :</strong> 1 000 seeds légers, sans imputation complète lorsque celle-ci n'est pas nécessaire ; ils alimentent l'endpoint fondateur séparé et ne peuvent modifier le verdict primaire d'imputation.</li>
 </ul>
@@ -1685,7 +1685,7 @@ total                        = 350 WGS</code></pre>
 <li><strong>Valeur ajoutée rare :</strong> examen de la capture de variants fondateurs, des porteurs indépendants et des diagnostics de diversité rare pré-spécifiés.</li>
 <li><strong>Parcimonie :</strong> si plusieurs allocations sont pratiquement équivalentes, retenir celle qui conserve le plus grand noyau géo-ancestral.</li>
 </ol>
-<p>La marge minimale d'amélioration jugée pratiquement pertinente pour remplacer 322 / 28 est définie <strong>avant l'ouverture du lot d'optimisation</strong>. Le pilote peut servir à dimensionner la précision et le nombre de seeds, mais pas à choisir cette marge sur la base d'un effet favorable observé.</p>
+<p>La marge minimale d'amélioration jugée pratiquement pertinente pour remplacer 322 / 28 est définie <strong>avant l'ouverture du lot d'optimisation</strong>. Le pilote peut servir à dimensionner la précision et le nombre de seeds selon la formule du §6.2, mais pas à choisir cette marge sur la base d'un effet favorable observé.</p>
 <h3>7.3 Gel avant confirmation</h3>
 <pre><code>développement technique sur seeds dédiés
         ↓
