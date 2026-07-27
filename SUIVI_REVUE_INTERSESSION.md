@@ -59,8 +59,8 @@ scientifique :
 
 | Fichier | Taille | Constat |
 |---|---:|---|
-| `template/Genome_Reunion_Standalone.html` | 819 Ko | Artefact auto-extractible (`__bundler_loading`, contenu échappé en JS sur une poignée de lignes géantes). **Ne peut pas être diffé/corrigé directement comme du texte** — toute correction doit passer par la source qui l'a généré, pas par édition manuelle du bundle. À statuer : encore utilisé par le site ou artefact obsolète à archiver ? |
-| `template/Stratégie visuelle Genome Reunion - Standalone.html` | 1017 Ko | Même nature que ci-dessus. Contient bien des mentions 2 500 / 350 WGS / S_div / KING dans son contenu échappé — **à extraire et vérifier en session 2 ou 3**, pas par lecture directe. |
+| `template/Genome_Reunion_Standalone.html` | 819 Ko | **Supprimé** (confirmé par l'utilisateur : ancienne version de la landing page donneurs, orpheline — aucune page ne la liait — obsolète, remplacée). |
+| `template/Stratégie visuelle Genome Reunion - Standalone.html` | 1017 Ko | Artefact auto-extractible (`__bundler_loading`, contenu échappé en JS sur une poignée de lignes géantes). **Ne peut pas être diffé/corrigé directement comme du texte** — toute correction doit passer par la source qui l'a généré, pas par édition manuelle du bundle. Confirmé par l'utilisateur : alimente activement l'onglet Communication (lié depuis `template/communication.html:184`) — **à conserver**. Contient bien des mentions 2 500 / 350 WGS / S_div / KING dans son contenu échappé — **à extraire et vérifier** si une session future le juge nécessaire, pas par lecture directe. |
 
 ## 2. Ce qui reste à faire (au-delà de la session 3)
 
@@ -81,10 +81,14 @@ Corrigé/vérifié après session 3 (hors pipeline HARM, vérification ad hoc) :
   **HARM-009**, référence en page de garde à `Correction_3_Specification_simulateur_genomique_cadrage_v120.md`
   (« cadrage progressif d'origine »), absent du dépôt — voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4ter`
   pour les options proposées. Ne pas corriger sans réponse de l'utilisateur.
+- [x] Fichiers bundle « Standalone » : statut clarifié par l'utilisateur.
+  `template/Genome_Reunion_Standalone.html` supprimé (ancienne landing page donneurs, orpheline,
+  obsolète). `template/Stratégie visuelle Genome Reunion - Standalone.html` conservé (alimente
+  l'onglet Communication).
 
 Toujours en attente :
 
-- [ ] Extraire le texte des deux fichiers bundle (`Standalone.html` et « Stratégie visuelle… ») pour vérifier s'ils reproduisent les chiffres/seuils obsolètes (0,0625, « cluster ») — non corrigés en session 3 car ces fichiers ne peuvent pas être édités comme du texte brut.
+- [ ] Extraire le texte du fichier bundle restant (« Stratégie visuelle… ») pour vérifier s'il reproduit des chiffres/seuils obsolètes (0,0625, « cluster ») — reste non fait, ce fichier ne peut pas être édité comme du texte brut ; à ne faire que si jugé nécessaire puisqu'il est actif et sert de support visuel, pas de référence scientifique citée par le reste du corpus.
 - [ ] Décider du calendrier M4–M9 (sélection des 350) vs M4–M14 (familles) et de l'activation de `Haplotype_utility` — évoqué dans la revue précédente, pas revérifié dans cette passe.
 - [ ] Vérifier la formalisation du recalibrage fréquentiel (brut/pondéré/imputé) dans tous les fichiers qui le mentionnent (synthèse §16, protocole).
 - [ ] Lire en détail les fichiers de priorité basse (§1.3) au moins une fois, même s'ils ne contiennent pas de paramètre scientifique, pour vérifier les chiffres budgétaires/calendrier (le budget et les dates apparaissent dans `index.html`, `README.md`, `SESSION.md` avec des valeurs qui pourraient diverger ailleurs).
