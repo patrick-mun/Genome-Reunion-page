@@ -1199,8 +1199,8 @@ footer.page-footer .pageno {
  </table>
  <p class="caption">Tableau 3 : Hiérarchie opérationnelle des pools témoins (accessions EGA détaillées dans la méthodologie). Source : METHODOLOGY V3.5 §6.3.</p>
  <p>Les analyses sont conduites par niveaux croissants (Réunion seule → +1000G → +EGA prioritaires → +EGA complémentaires) pour mesurer si un panel améliore réellement l'ancrage ou introduit du bruit, un effet de lot ou une instabilité d'interprétation. La PCA fournit une position dans un espace de variation, non une identité ethnique ; l'interprétation en ascendance est toujours croisée avec ADMIXTURE, la géographie, le phasage, la LAI, les signaux IBD/ROH et l'histoire du peuplement.</p>
- <h3>5.5 Stratification géo-ancestrale : secteur × cluster d'ascendance</h3>
- <p>La strate opérationnelle n'est ni le secteur seul ni le profil d'ascendance seul, mais leur croisement : la <strong>cellule géo-ancestrale</strong> (secteur géographique × cluster d'ascendance inférée). Les clusters d'ascendance sont définis avant la sélection, à partir de la PCA projetée et de l'ADMIXTURE avec pools témoins. L'allocation des quotas WGS se fait en deux temps : chaque secteur reçoit un quota proportionnel à sa part dans la cohorte, puis ce quota se subdivise entre cellules selon leur fréquence, avec des garde-fous garantissant un minimum aux cellules rares suffisamment représentées, évitant qu'un secteur soit capté par son seul profil majoritaire et protégeant les profils mixtes ou intermédiaires.</p>
+ <h3>5.5 Stratification géo-ancestrale : secteur × strate de profil ancestral</h3>
+ <p>La strate opérationnelle n'est ni le secteur seul ni le profil d'ascendance seul, mais leur croisement : la <strong>cellule géo-ancestrale</strong> (secteur géographique × strate de profil ancestral inférée). Les strates de profil ancestral sont définies avant la sélection, à partir de la PCA projetée et de l'ADMIXTURE avec pools témoins. L'allocation des quotas WGS se fait en deux temps : chaque secteur reçoit un quota proportionnel à sa part dans la cohorte, puis ce quota se subdivise entre cellules selon leur fréquence, avec des garde-fous garantissant un minimum aux cellules rares suffisamment représentées, évitant qu'un secteur soit capté par son seul profil majoritaire et protégeant les profils mixtes ou intermédiaires.</p>
  <h3>5.6 Le score S_div : quatre dimensions complémentaires</h3>
  <p>Le score <code>S_div_geoancestry</code> classe les individus <em>au sein de chaque cellule</em> (ou du secteur, avec correction par profil, quand les cellules sont trop petites). Ses valeurs absolues ne sont pas comparables entre cellules sans normalisation adaptée.</p>
 <pre>S_div_geoancestry(i) =
@@ -1217,8 +1217,8 @@ footer.page-footer .pageno {
  <tr><td><strong>ROH</strong> (autozygotie)</td><td>0,15</td><td>Limite l'excès d'autozygotie : <code>max(0, 1 − ROH_total/100 Mb)</code></td></tr>
  </tbody>
  </table>
- <p class="caption">Tableau 4 : Composantes et poids de travail de S_div (pré-validation). Les poids sont testés par analyse de sensibilité et leave-one-component-out. Source : METHODOLOGY V3.5 §7.1.</p>
- <p>Précisions méthodologiques importantes : L'entropie favorise les profils mélangés mais ne mesure pas la rareté. D'où une métrique complémentaire <code>ADMIX_rarity</code> (distance au centroïde des proportions <code>q</code>) réservée au bras découverte. la métrique de parenté principale est le <strong>coefficient KING robuste</strong>, avec un seuil d'exclusion <code>kinship_KING ≥ 0,0625</code> (≈ cousins germains) ; le rapport final doit toujours indiquer la métrique exacte, l'outil, la version logicielle et le seuil. Le seuil ROH de 100 Mb est une valeur de travail à recalibrer empiriquement.</p>
+ <p class="caption">Tableau 4 : Composantes et poids de travail de S_div (pré-validation). Les poids sont testés par analyse de sensibilité et leave-one-component-out. Source : METHODOLOGY V3.5 §7.1. Cette notation (<code>S_div_geoancestry</code>, poids <code>w1</code>–<code>w4</code>) est une reformulation dérivée, à l'échelle de la cellule géo-ancestrale, de la notation formelle de référence <code>S_div(i) = w_PCA·PCA_i + w_ADMIX·ADMIX_i + w_IBD·IBD_i + w_ROH·ROH_i</code> du protocole de validation.</p>
+ <p>Précisions méthodologiques importantes : L'entropie favorise les profils mélangés mais ne mesure pas la rareté. D'où une métrique complémentaire <code>ADMIX_rarity</code> (distance au centroïde des proportions <code>q</code>) réservée au bras découverte. la métrique de parenté principale est le <strong>coefficient KING robuste</strong>, avec un seuil opérationnel d'exclusion <code>kinship_KING &gt; 0,0442</code> (0,0625 n'est que l'espérance théorique des cousins germains, non le seuil opérationnel) ; le rapport final doit toujours indiquer la métrique exacte, l'outil, la version logicielle et le seuil. Le seuil ROH de 100 Mb est une valeur de travail à recalibrer empiriquement.</p>
  <h3>5.7 Le score global du bras découverte</h3>
  <p>Comme <code>S_div</code> est normalisé localement, le bras découverte ne peut pas réutiliser ses valeurs à l'échelle de l'île. Un score distinct, <code>S_discovery_global</code>, se calcule en percentiles comparables entre tous les individus :</p>
 <pre>S_discovery_global(i) =
@@ -1549,7 +1549,7 @@ footer.page-footer .pageno {
  <tbody>
  <tr><td>Fréquences WGS biaisées</td><td>Panel enrichi en profils rares</td><td>Recalibrage sur les 2 500 SNP (brut/pondéré/imputé)</td></tr>
  <tr><td>ROH fondateurs sous-capturés</td><td>Score principal pénalise l'autozygotie</td><td>Bras découverte dédié ROH/fondateur</td></tr>
- <tr><td>Parenté excessive</td><td>Population insulaire, familles</td><td>Seuil KING 0,0625, annotation, filtrage</td></tr>
+ <tr><td>Parenté excessive</td><td>Population insulaire, familles</td><td>Seuil KING 0,0442, annotation, filtrage</td></tr>
  <tr><td>HWE global trompeur</td><td>Effet Wahlund</td><td>HWE par strate, prudence</td></tr>
  <tr><td>Greedy instable</td><td>Dépendance à l'ordre</td><td>Multi-ordre, multi-seed, liste consensus</td></tr>
  <tr><td>Accès EGA incomplet/retardé</td><td>Datasets en accès contrôlé (délais DAC)</td><td>Phase 0 dédiée, socle 1000G public en repli</td></tr>
@@ -1578,7 +1578,7 @@ footer.page-footer .pageno {
  <tr><td>ACMG/AMP</td><td>Standards de classification des variants (pathogène, bénin, VUS) de l'American College of Medical Genetics et de l'Association for Molecular Pathology.</td></tr>
  <tr><td>ADMIXTURE</td><td>Logiciel estimant les proportions d'ascendance (<em>q</em>) de chaque individu à partir de marqueurs SNP, pour un nombre K de composantes.</td></tr>
  <tr><td>CADD / REVEL / PolyPhen / SIFT</td><td>Scores prédictifs de l'effet (pathogénicité) d'un variant génétique.</td></tr>
- <tr><td>Cellule géo-ancestrale</td><td>Strate opérationnelle de sélection = croisement d'un secteur géographique et d'un cluster d'ascendance inférée.</td></tr>
+ <tr><td>Cellule géo-ancestrale</td><td>Strate opérationnelle de sélection = croisement d'un secteur géographique et d'une strate de profil ancestral inférée.</td></tr>
  <tr><td>CRB</td><td>Centre de Ressources Biologiques : structure de conservation des échantillons biologiques.</td></tr>
  <tr><td>DAC</td><td><em>Data Access Committee</em> : comité autorisant l'accès aux datasets en accès contrôlé (ex. EGA).</td></tr>
  <tr><td>EFS</td><td>Établissement Français du Sang, source envisagée de donneurs volontaires.</td></tr>
@@ -1594,7 +1594,7 @@ footer.page-footer .pageno {
  <tr><td>IBD (<em>identity by descent</em>)</td><td>Partage de segments génomiques hérités d'un ancêtre commun ; mesure d'apparentement.</td></tr>
  <tr><td>Imputation</td><td>Inférence statistique des génotypes non mesurés à partir d'un panel de référence haplotypique.</td></tr>
  <tr><td>iScan</td><td>Scanner Illumina lisant les puces de génotypage.</td></tr>
- <tr><td>KING (kinship)</td><td>Estimateur robuste de parenté adapté aux populations structurées ; seuil d'exclusion 0,0625 ≈ cousins germains.</td></tr>
+ <tr><td>KING (kinship)</td><td>Estimateur robuste de parenté adapté aux populations structurées ; seuil opérationnel d'exclusion 0,0442 (0,0625 est l'espérance théorique descriptive des cousins germains, pas le seuil retenu).</td></tr>
  <tr><td>LAI (<em>local ancestry inference</em>)</td><td>Attribution d'une origine ancestrale à chaque segment du génome d'un individu admixé.</td></tr>
  <tr><td>LD (déséquilibre de liaison)</td><td>Corrélation non aléatoire entre allèles de loci proches ; élevé en population fondatrice.</td></tr>
  <tr><td>MAF</td><td><em>Minor Allele Frequency</em> : fréquence de l'allèle le moins courant à un locus.</td></tr>
@@ -1640,7 +1640,7 @@ for K in 2 3 4 5 6 7 8 9 10; do
  | tee admixture_unsup_K${K}.log
 done</pre>
  <h3>A.3 Parenté KING, ROH et familles</h3>
-<pre># Parenté (seuil d'exclusion kinship_KING >= 0,0625)
+<pre># Parenté (seuil d'exclusion kinship_KING > 0,0442)
 plink2 --pfile reunion_qc_common --make-king-table --out king_global
 # ROH (paramètres à recalibrer sur la cohorte)
 plink --bfile reunion_qc_common --homozyg \
@@ -1836,7 +1836,7 @@ shapeit4 \
 </ul>
 <div class="biblio-method"><strong class="biblio-method-title">Note méthodologique pour Génome Réunion</strong><ul>
 <li>Le coefficient de kinship doit être interprété avec prudence dans une population à la fois admixée, insulaire et partiellement fondatrice.</li>
-<li>Un seuil de kinship autour de 0,0625 peut être utilisé comme repère théorique correspondant approximativement à un apparentement de type cousins germains, mais le seuil opérationnel d’exclusion doit rester documenté dans le protocole d’analyse.</li>
+<li>Un seuil de kinship autour de 0,0625 peut être utilisé comme repère théorique correspondant approximativement à un apparentement de type cousins germains, mais le seuil opérationnel d’exclusion retenu est <code>kinship_KING &gt; 0,0442</code>, documenté dans le protocole d’analyse.</li>
 <li>Pour la sélection WGS, l’objectif n’est pas seulement de détecter les apparentés proches, mais de limiter la redondance génétique afin d’augmenter l’information capturée par les individus séquencés.</li>
 <li>En pratique, KING-robust peut être utilisé comme outil principal, puis REAP ou PC-Relate comme analyses de sensibilité si la structure d’admixture réunionnaise produit des estimations ambiguës.</li>
 </ul></div>
