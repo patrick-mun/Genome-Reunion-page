@@ -132,18 +132,37 @@ L'utilisateur a confirmé le statut des deux fichiers bundle auto-extractibles :
   l'onglet Communication** du site (lié depuis `template/communication.html:184`) — **conservée**,
   aucune action requise.
 
+## 4quinquies. Calendrier M4–M9/M14 et activation de `Haplotype_utility` — vérifié, non fondé
+
+Vérifié le 27 juillet 2026 par citation directe dans `index.html` et la synthèse scientifique.
+**Aucune discordance logique trouvée** — ce point, listé comme écart potentiel depuis la revue
+précédente (ancien HARM-005), est retiré de la liste des écarts confirmés.
+
+- Phase 2 (`index.html:473,479,780-781` ; synthèse `:1382-1383,1519-1520`) : sélection des 350 WGS,
+  **M4–M9**, jalon M9 « liste 350 WGS gelée ». Phase 3, **M4–M14, explicitement en parallèle** :
+  100 familles nucléaires, phasage SHAPEIT4, jalon M14 « module familial phasé ». Les deux fichiers
+  donnent les mêmes bornes et le même sens (parallèle, pas séquentiel) — pas de désaccord entre eux.
+- Tension apparente identifiée puis résolue : la synthèse (`:1228-1230`) conditionne l'activation de
+  la composante `Haplotype_utility` du bras découverte à un phasage disponible « avant le gel de la
+  sélection » (M9), alors que le phasage familial (Phase 3) ne se termine qu'à M14. Deux éléments du
+  corpus lèvent cette tension explicitement plutôt que de la laisser ouverte :
+  1. La synthèse prévoit déjà le repli : si le phasage n'est pas prêt, le poids `d` de
+     `Haplotype_utility` est fixé à 0 « puis utilisé secondairement ».
+  2. La justification du choix `S_div` (`:1218`) tranche que le module familial « répond à la
+     question du phasage et non à celle du choix des lignées [...] sans en faire la règle de
+     sélection des 350 génomes » — le module familial n'est donc jamais censé alimenter la sélection
+     des 350, la dépendance temporelle M9/M14 ne pose donc pas de problème méthodologique.
+- Aucun autre fichier du corpus (protocole, annexe B, glossaire, README) ne mentionne ce calendrier
+  M4/M9/M14 — pas de risque de divergence croisée en dehors de `index.html`/synthèse.
+
 ## 5. Non vérifié — hors périmètre de cette session, à traiter en session 2/3
 
 - Extraction et vérification du contenu du fichier bundle restant
   (`template/Stratégie visuelle Genome Reunion - Standalone.html`) — ne peut pas être diffé comme du
   texte brut ; à envisager seulement si jugé nécessaire, ce fichier étant un support visuel actif et
   non une référence scientifique citée ailleurs dans le corpus.
-- Calendrier M4–M9 (sélection des 350 WGS) vs M4–M14 (familles) et activation de
-  `Haplotype_utility` — évoqué par une revue antérieure mais **pas revérifié par citation directe**
-  dans cette session ; ne doit plus être cité comme écart confirmé tant qu'aucune ligne précise n'a
-  été relevée.
-- Formalisation du recalibrage fréquentiel (brut/pondéré/imputé) — même remarque : évoqué mais non
-  revérifié par citation directe dans cette session.
+- Formalisation du recalibrage fréquentiel (brut/pondéré/imputé) — évoqué mais non revérifié par
+  citation directe dans cette session.
 - Lecture de fond des pages sans paramètre scientifique détecté (`communication.html`, `feder.html`,
   `financement.html`, `presentation.html`, `architecture_pipeline.html`,
   `Genome_Reunion_synthese_infrastructure_v5_4.html`), notamment pour les chiffres budgétaires et de

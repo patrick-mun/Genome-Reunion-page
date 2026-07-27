@@ -85,11 +85,15 @@ Corrigé/vérifié après session 3 (hors pipeline HARM, vérification ad hoc) :
   `template/Genome_Reunion_Standalone.html` supprimé (ancienne landing page donneurs, orpheline,
   obsolète). `template/Stratégie visuelle Genome Reunion - Standalone.html` conservé (alimente
   l'onglet Communication).
+- [x] Calendrier M4–M9 (sélection des 350) vs M4–M14 (familles) et activation de
+  `Haplotype_utility` — vérifié par citation directe dans `index.html` et la synthèse scientifique :
+  **aucune discordance logique**, les deux phases sont explicitement parallèles et le corpus tranche
+  déjà que le module familial (M14) n'alimente jamais la sélection des 350 (gelée à M9). Voir
+  `SUIVI_HARMONISATION_METHODOLOGIE.md §4quinquies` pour le détail des citations.
 
 Toujours en attente :
 
 - [ ] Extraire le texte du fichier bundle restant (« Stratégie visuelle… ») pour vérifier s'il reproduit des chiffres/seuils obsolètes (0,0625, « cluster ») — reste non fait, ce fichier ne peut pas être édité comme du texte brut ; à ne faire que si jugé nécessaire puisqu'il est actif et sert de support visuel, pas de référence scientifique citée par le reste du corpus.
-- [ ] Décider du calendrier M4–M9 (sélection des 350) vs M4–M14 (familles) et de l'activation de `Haplotype_utility` — évoqué dans la revue précédente, pas revérifié dans cette passe.
 - [ ] Vérifier la formalisation du recalibrage fréquentiel (brut/pondéré/imputé) dans tous les fichiers qui le mentionnent (synthèse §16, protocole).
 - [ ] Lire en détail les fichiers de priorité basse (§1.3) au moins une fois, même s'ils ne contiennent pas de paramètre scientifique, pour vérifier les chiffres budgétaires/calendrier (le budget et les dates apparaissent dans `index.html`, `README.md`, `SESSION.md` avec des valeurs qui pourraient diverger ailleurs).
 
