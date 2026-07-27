@@ -24,7 +24,7 @@ Site web officiel du projet **Génome Réunion**, un référentiel génomique lo
 
 ### Budget
 
-- **Scénario Optimal** : ~1 403 000 € (sous-traitance + cloud hybride + Prop. RH 2)
+- **Scénario Minimal** : ~1 403 000 € (sous-traitance + cloud hybride + Prop. RH 2)
 - **Scénario Maximal** : ~1 709 000 € (iScan + on-premise + Prop. RH 2)
 
 ---
