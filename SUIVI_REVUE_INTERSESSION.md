@@ -90,11 +90,14 @@ Corrigé/vérifié après session 3 (hors pipeline HARM, vérification ad hoc) :
   **aucune discordance logique**, les deux phases sont explicitement parallèles et le corpus tranche
   déjà que le module familial (M14) n'alimente jamais la sélection des 350 (gelée à M9). Voir
   `SUIVI_HARMONISATION_METHODOLOGIE.md §4quinquies` pour le détail des citations.
+- [x] Formalisation du recalibrage fréquentiel (brut/pondéré/imputé) — vérifiée par citation directe :
+  **aucune discordance**, le mécanisme n'est défini qu'une seule fois (synthèse §5.9) et les autres
+  fichiers qui y font référence (`index.html`, protocole) sont compatibles, sans redéfinition
+  concurrente. Voir `SUIVI_HARMONISATION_METHODOLOGIE.md §4sexies`.
 
 Toujours en attente :
 
 - [ ] Extraire le texte du fichier bundle restant (« Stratégie visuelle… ») pour vérifier s'il reproduit des chiffres/seuils obsolètes (0,0625, « cluster ») — reste non fait, ce fichier ne peut pas être édité comme du texte brut ; à ne faire que si jugé nécessaire puisqu'il est actif et sert de support visuel, pas de référence scientifique citée par le reste du corpus.
-- [ ] Vérifier la formalisation du recalibrage fréquentiel (brut/pondéré/imputé) dans tous les fichiers qui le mentionnent (synthèse §16, protocole).
 - [ ] Lire en détail les fichiers de priorité basse (§1.3) au moins une fois, même s'ils ne contiennent pas de paramètre scientifique, pour vérifier les chiffres budgétaires/calendrier (le budget et les dates apparaissent dans `index.html`, `README.md`, `SESSION.md` avec des valeurs qui pourraient diverger ailleurs).
 
 ## 3. Voir aussi
