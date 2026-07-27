@@ -112,4 +112,5 @@ python -m http.server 8000
 ---
 
 **Statut** : Document de travail scientifique · Version V3.5 géo-ancestrale · Juin 2026  
+**Dernière vérification de cohérence du corpus** : 27 juillet 2026 (voir `SESSION.md`)  
 **Repository** : [github.com/patrick-mun/Genome-Reunion-page](https://github.com/patrick-mun/Genome-Reunion-page)
