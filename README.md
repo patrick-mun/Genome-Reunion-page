@@ -49,8 +49,7 @@ Genome-Reunion-page/
 │   ├── communication.html              # Supports de communication
 │   ├── architecture_pipeline.html      # Architecture du pipeline de validation
 │   ├── Genome_Reunion_synthese_infrastructure_v5_4.html
-│   ├── Genome_Reunion_Standalone.html  # Bundle auto-extractible, landing page communication
-│   └── Stratégie visuelle Genome Reunion - Standalone.html  # Bundle auto-extractible
+│   └── Stratégie visuelle Genome Reunion - Standalone.html  # Bundle auto-extractible, alimente l'onglet Communication
 ├── css/
 │   └── styles.css                      # Feuille de styles
 ├── js/

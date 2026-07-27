@@ -122,11 +122,22 @@ historique ; il n'est pas certain qu'il doive exister dans le dépôt public. Tr
 proposées à l'utilisateur (laisser tel quel / retirer la mention / préciser qu'il s'agit d'un
 document interne non publié) sans réponse à ce stade — **ne pas corriger sans arbitrage**.
 
+## 4quater. Fichiers bundle « Standalone » — statut clarifié par l'utilisateur
+
+L'utilisateur a confirmé le statut des deux fichiers bundle auto-extractibles :
+
+- `template/Genome_Reunion_Standalone.html` (819 Ko) était une **ancienne version de la landing page
+  destinée aux donneurs**, orpheline (aucune page du site ne la liait). **Supprimée** du dépôt.
+- `template/Stratégie visuelle Genome Reunion - Standalone.html` (1017 Ko) **alimente activement
+  l'onglet Communication** du site (lié depuis `template/communication.html:184`) — **conservée**,
+  aucune action requise.
+
 ## 5. Non vérifié — hors périmètre de cette session, à traiter en session 2/3
 
-- Extraction et vérification du contenu des deux fichiers bundle auto-extractibles
-  (`template/Genome_Reunion_Standalone.html`, `template/Stratégie visuelle Genome Reunion -
-  Standalone.html`) — ne peuvent pas être diffés comme du texte brut.
+- Extraction et vérification du contenu du fichier bundle restant
+  (`template/Stratégie visuelle Genome Reunion - Standalone.html`) — ne peut pas être diffé comme du
+  texte brut ; à envisager seulement si jugé nécessaire, ce fichier étant un support visuel actif et
+  non une référence scientifique citée ailleurs dans le corpus.
 - Calendrier M4–M9 (sélection des 350 WGS) vs M4–M14 (familles) et activation de
   `Haplotype_utility` — évoqué par une revue antérieure mais **pas revérifié par citation directe**
   dans cette session ; ne doit plus être cité comme écart confirmé tant qu'aucune ligne précise n'a
