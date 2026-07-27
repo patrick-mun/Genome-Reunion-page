@@ -513,7 +513,7 @@
   <div class="container">
     <div class="section-label">Algorithme de sélection</div>
     <h2>Score géo-ancestral S_div</h2>
-    <p>Un score composite explicite, reproductible et auditable, qui classe les individus <em>au sein de chaque cellule géo-ancestrale</em> (secteur × cluster d'ascendance inférée). Il remplace une stratification strictement géographique par une logique distributionnelle.</p>
+    <p>Un score composite explicite, reproductible et auditable, qui classe les individus <em>au sein de chaque cellule géo-ancestrale</em> (secteur × strate de profil ancestral inférée). Il remplace une stratification strictement géographique par une logique distributionnelle.</p>
 
     <div class="sdiv-formula">
       <div class="formula-text">
@@ -523,6 +523,7 @@
         + <span class="fw">0,15</span> × <span class="fv">ROH_score</span>(i)
       </div>
       <p style="font-size:0.75rem; color:var(--muted); margin-top:12px; margin-bottom:0;">Poids de travail pré-validation · analysés par sensibilité (±10 %) et leave-one-component-out avant gel</p>
+      <p style="font-size:0.75rem; color:var(--muted); margin-top:4px; margin-bottom:0;">Reformulation pédagogique, poids explicités, de la notation formelle de référence <code>S_div(i) = w_PCA·PCA_i + w_ADMIX·ADMIX_i + w_IBD·IBD_i + w_ROH·ROH_i</code> (protocole de validation).</p>
     </div>
 
     <div class="sdiv-components">
@@ -539,7 +540,7 @@
       <div class="comp-card">
         <div class="comp-weight">25 %</div>
         <div class="comp-name">IBD_score — Indépendance</div>
-        <div class="comp-desc">1 − max parenté KING. Évite la redondance informationnelle. Contrainte dure cross-secteur : kinship ≥ 0,0625 = exclusion.</div>
+        <div class="comp-desc">1 − max parenté KING. Évite la redondance informationnelle. Contrainte dure cross-secteur : kinship KING &gt; 0,0442 = exclusion (0,0625 est l'espérance théorique des cousins germains, non le seuil opérationnel).</div>
       </div>
       <div class="comp-card">
         <div class="comp-weight">15 %</div>

@@ -35,14 +35,22 @@ Site web officiel du projet **Génome Réunion**, un référentiel génomique lo
 Genome-Reunion-page/
 ├── index.html                          # Page principale (GitHub Pages)
 ├── template/                           # Documents HTML
+│   ├── methodologie.html               # Page d'aiguillage vers les documents méthodologiques
+│   ├── GENOME_REUNION_justification_choix_Sdiv.html
+│   ├── GLOSSAIRE_parametres.html
+│   ├── METHODOLOGIE_validation_protocole_v1_5.html
+│   ├── METHODOLOGIE_validation_annexeB_simulation_v1_5.html
+│   ├── Genome_Reunion_synthese_scientifique (14) (6).html
+│   ├── Genome_Reunion_Landing_v4.html
+│   ├── Genome_Reunion_Participer_v4.html
 │   ├── feder.html                      # Demande de financement FEDER
+│   ├── financement.html                # Page financement
+│   ├── presentation.html               # Page présentation
 │   ├── communication.html              # Supports de communication
 │   ├── architecture_pipeline.html      # Architecture du pipeline de validation
-│   ├── METHODOLOGIE_validation_voilure_reduite_v1_2.html
 │   ├── Genome_Reunion_synthese_infrastructure_v5_4.html
-│   ├── Genome_Reunion_synthese_scientifique (14) (6).html
-│   ├── Genome_Reunion_Standalone.html  # Landing page communication
-│   └── Stratégie visuelle Genome Reunion - Standalone.html
+│   ├── Genome_Reunion_Standalone.html  # Bundle auto-extractible, landing page communication
+│   └── Stratégie visuelle Genome Reunion - Standalone.html  # Bundle auto-extractible
 ├── css/
 │   └── styles.css                      # Feuille de styles
 ├── js/
@@ -61,14 +69,19 @@ Genome-Reunion-page/
 
 | Document | URL |
 |----------|-----|
-| Synthèse du projet | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/Genome_Reunion_synthese_scientifique%20(14)%20(6).html) |
-| Méthodologie WGS V3.5 | [Voir](https://patrick-mun.github.io/IT-and-reseach-cost-/METHODOLOGY_selection_V3_5%20(3).html) |
+| Synthèse du projet (V3.5) | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/Genome_Reunion_synthese_scientifique%20(14)%20(6).html) |
+| Justification du choix S_div (V3.5) | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/GENOME_REUNION_justification_choix_Sdiv.html) |
+| Glossaire des paramètres | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/GLOSSAIRE_parametres.html) |
+| Protocole de validation (v1.5) | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/METHODOLOGIE_validation_protocole_v1_5.html) |
+| Annexe B — simulation (v1.5) | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html) |
+| Page d'aiguillage méthodologie | [Voir](https://patrick-mun.github.io/Genome-Reunion-page/template/methodologie.html) |
 | Budget | [Voir](https://patrick-mun.github.io/IT-and-reseach-cost-/) |
 | Présentation (42 slides) | [Voir](https://patrick-mun.github.io/genome_reunion/) |
 | Synthèse infrastructure logicielle v5.4 | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/Genome_Reunion_synthese_infrastructure_v5_4.html) |
-| Validation méthodologie v1.2 | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/METHODOLOGIE_validation_voilure_reduite_v1_2.html) |
 | Architecture pipeline de validation | [Voir](https://htmlpreview.github.io/?https://github.com/patrick-mun/Genome-Reunion-page/blob/main/template/architecture_pipeline.html) |
 | Demande de financement FEDER | [Voir](https://patrick-mun.github.io/Genome-Reunion-page/template/feder.html) |
+| Financement | [Voir](https://patrick-mun.github.io/Genome-Reunion-page/template/financement.html) |
+| Présentation (page) | [Voir](https://patrick-mun.github.io/Genome-Reunion-page/template/presentation.html) |
 | Communication | [Voir](https://patrick-mun.github.io/Genome-Reunion-page/template/communication.html) |
 
 ---
