@@ -174,5 +174,58 @@ git push origin main
 
 ---
 
-**Dernière mise à jour** : Session 2026-06-08  
-**Last commit** : `645c309`
+## 📋 Session d'harmonisation du corpus documentaire (Juillet 2026)
+
+**Date** : 27 juillet 2026
+**Objectif** : vérifier, par lecture directe fichier par fichier, l'absence de divergence factuelle
+entre tous les écrits du dépôt (documents scientifiques, pages d'atterrissage, README, budget,
+communication), après un incident où un suivi antérieur avait affirmé un travail d'harmonisation
+jamais fait.
+
+### ✅ Écarts corrigés
+- **Seuil KING** : `0,0625` (espérance théorique des cousins germains) était utilisé à tort comme
+  seuil d'exclusion opérationnel dans plusieurs documents ; corrigé partout en `0,0442`, conforme au
+  protocole de validation. `0,0625` reste mentionné uniquement comme valeur théorique descriptive.
+- **Terminologie « cluster d'ascendance »** : remplacée par « strate de profil ancestral (inférée) »,
+  cohérente avec l'admixture continue affirmée par ailleurs dans le corpus.
+- **Notation de la formule `S_div`** : les variantes de `index.html` et de la synthèse scientifique
+  sont désormais explicitement annotées comme des reformulations dérivées de la notation formelle de
+  référence du protocole de validation, plutôt que présentées comme des définitions concurrentes.
+- **Référence pendante** à un « fichier de recommandations V3.6 » inexistant, reformulée.
+- **`README.md`** : lien mort vers un document supprimé retiré ; arborescence et table des documents
+  mises à jour avec les fichiers réellement présents dans `template/`.
+- **Référence à un document de cadrage interne supprimé** (`Correction_3_Specification_simulateur_
+  genomique_cadrage_v120.md`), retirée de la page de garde de l'annexe B du protocole.
+- **Nettoyage des fichiers bundle** : `template/Genome_Reunion_Standalone.html` (ancienne landing
+  page donneurs, orpheline) supprimé ; `template/Stratégie visuelle Genome Reunion - Standalone.html`
+  conservé car il alimente activement l'onglet Communication.
+- **Terminologie budgétaire** : « Scénario Optimal » (le moins cher, sous-traitance + cloud hybride)
+  renommé en « Scénario Minimal » pour ne plus suggérer que c'est le scénario recommandé ; le footer
+  (« Budget optimal ») renommé en « Budget retenu » pour la même raison — le scénario réellement
+  recommandé est iScan + on-premise (~1 709 000 €).
+- **Nuance clinique** : les cartes « Le mur clinique : VUS et pertes de chance » (patients européen
+  et réunionnais) reformulées pour éviter des affirmations binaires absolues.
+
+### ✔️ Points vérifiés sans divergence trouvée
+Effectifs et compteurs (2 500 candidats, 350 WGS, 100 familles, 25 seeds pilotes, 200 confirmatoires,
+8 secteurs, poids `S_div`), calendrier M4–M9 (sélection des 350) vs M4–M14 (module familial, en
+parallèle), activation de `Haplotype_utility`, et formalisation du recalibrage fréquentiel
+(brut/pondéré/imputé) — vérifiés par citation directe fichier + ligne, aucune discordance logique.
+
+### 🧹 Nettoyage
+Le travail d'harmonisation s'est appuyé sur trois fichiers de suivi temporaires
+(`DIAGNOSTIC_COMPACT_HARMONISATION.md`, `SUIVI_HARMONISATION_METHODOLOGIE.md`,
+`SUIVI_REVUE_INTERSESSION.md`), retirés du dépôt une fois le travail achevé pour éviter leur
+accumulation. Ce résumé les remplace comme trace durable de la session.
+
+### 📝 Reste ouvert pour une session future
+- Lecture de fond des pages sans paramètre scientifique détecté (`communication.html`, `feder.html`,
+  `financement.html`, `presentation.html`, `architecture_pipeline.html`,
+  `Genome_Reunion_synthese_infrastructure_v5_4.html`), notamment pour les chiffres budgétaires/calendrier.
+- Extraction et vérification du contenu du fichier bundle restant (« Stratégie visuelle… ») si jugé
+  nécessaire — ne peut pas être diffé comme du texte brut.
+
+---
+
+**Dernière mise à jour** : Session 2026-07-27
+**Last commit** : voir historique Git de la branche `main`
