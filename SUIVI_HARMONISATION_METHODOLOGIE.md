@@ -28,7 +28,7 @@ projet Génome Réunion, et de leur statut de correction réel. Il est maintenu 
 | Justification du choix `S_div` | `template/GENOME_REUNION_justification_choix_Sdiv.html` | V3.5 | Passe ciblée faite — présent dans le dépôt, référencé depuis `template/methodologie.html` |
 | Protocole de validation | `template/METHODOLOGIE_validation_protocole_v1_5.html` | v1.5 | Passe ciblée faite |
 | Annexe B — simulation | `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html` | v1.5 | **Non inspecté sur le fond** |
-| Glossaire des paramètres | `template/GLOSSAIRE_parametres.html` | — | Passe ciblée faite (seuil KING seulement) — **relecture intégrale restante** |
+| Glossaire des paramètres | `template/GLOSSAIRE_parametres.html` | — (protocole v1.4 WORKING d'origine, contenu à jour v1.5) | **Lu intégralement (563 lignes) — aucune divergence trouvée** (voir §4bis) |
 
 Aucune version V3.6 ou v1.6 n'existe dans ce dépôt (confirmé par recherche de fichiers, cf.
 `DIAGNOSTIC_COMPACT_HARMONISATION.md §1.4`).
@@ -67,9 +67,30 @@ distinguée ») de la version précédente de ce fichier — la session 1 a vér
 quintiles est en fait cohérente entre `index.html`, la synthèse et la justification (formulations
 différentes, règle identique). L'écart n'est donc pas confirmé et ne doit plus être cité comme tel.
 
+## 4bis. Glossaire des paramètres — lecture intégrale (post-session 3)
+
+`template/GLOSSAIRE_parametres.html` (563 lignes, tableau JS de 24 entrées) lu intégralement le
+27 juillet 2026. Aucune divergence trouvée par rapport aux fichiers déjà corrigés :
+
+- Seuil KING : `0,0442` aux deux entrées concernées (`KING` ligne 425, `KING_threshold` ligne 435) —
+  cohérent avec le seuil opérationnel retenu partout ailleurs après correction HARM-001. Aucune
+  occurrence de `0,0625` dans tout le fichier.
+- Aucune occurrence de « cluster » dans tout le fichier — rien à harmoniser avec HARM-002 ici.
+- Aucune référence à un fichier V3.6/v1.6.
+- Effectifs cohérents avec le reste du corpus : `N_candidate` 2 500 (ligne 432), `N_WGS` 350
+  (ligne 434), `N_test` 1 000/seed (ligne 433, cohérent avec protocole `:1210`), `N_seed_pilot` 25,
+  `N_seed_confirm` 200, `N_seed_founder` 1 000 (lignes 446-448, cohérent avec protocole `:1799`),
+  `S_sector` 8 (ligne 437, cohérent avec « maille constante à huit secteurs »), `K_source` 2 à 6
+  (ligne 438, cohérent avec annexe B `:1230` `K_source ∈ {2,3,4,5,6}`), 10 générations max
+  (ligne 439, cohérent avec annexe B `:1223`).
+- Point mineur, non factuel : le pied de page (ligne 414) indique que le glossaire est « extrait du
+  protocole de validation v1.4 WORKING » — une note historique sur son origine (la scission en trois
+  documents a eu lieu en v1.4), pas une affirmation sur la version courante. Le contenu numérique
+  (seuil KING 0,0442 notamment) est bien à jour avec le v1.5 actif. Formulation à clarifier si
+  l'ambiguïté gêne un lecteur externe, mais ce n'est pas un écart de fond.
+
 ## 5. Non vérifié — hors périmètre de cette session, à traiter en session 2/3
 
-- Lecture intégrale de `template/GLOSSAIRE_parametres.html` (vérifié seulement sur le seuil KING).
 - Lecture sur le fond de `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html`.
 - Extraction et vérification du contenu des deux fichiers bundle auto-extractibles
   (`template/Genome_Reunion_Standalone.html`, `template/Stratégie visuelle Genome Reunion -
@@ -96,11 +117,11 @@ Les cinq écarts confirmés en session 2 (HARM-001, HARM-002, HARM-006, HARM-007
 corrigés par le commit `0d10cf8` sur la branche `claude/harmonisation-fichiers-depot-s3-exqj2k`, et
 vérifiés par relecture directe des fichiers modifiés (voir section 3 pour le détail des lignes).
 
+`template/GLOSSAIRE_parametres.html` a depuis été lu intégralement (voir section 4bis) : aucune
+divergence, rien à corriger dans ce fichier.
+
 Points non corrigés dans cette session, car hors périmètre des écarts confirmés (voir section 5 pour
 le détail) :
-- `template/GLOSSAIRE_parametres.html` n'a toujours pas été relu intégralement — n'a donc pas été
-  modifié ; s'il contient une définition canonique de la strate ancestrale ou du seuil KING
-  différente de la formulation retenue ici, une session ultérieure devra réconcilier les deux.
 - HARM-007 a été résolu par reformulation (pas de création de fichier de recommandations) ; à
   documenter si un fichier de recommandations est finalement créé plus tard.
 - Les points listés en section 5 (annexe B, fichiers bundle, calendrier M4-M9/M14, recalibrage
