@@ -31,6 +31,12 @@ const OFFICIAL_NEWS = [
   {
     date: '28/07/2026',
     category: 'Correction',
+    title: 'Normalisation',
+    desc: "Ajout d'une normalisation en amont de la pondération des paramètres du score S-div, afin d'harmoniser les valeurs de chaque paramètre (PCA, Admixture, IBD, ROH)."
+  },
+  {
+    date: '28/07/2026',
+    category: 'Correction',
     title: 'Bibliographie',
     desc: "Analyse complète de la bibliographie pour corriger les références manquantes et les erreurs de recopie."
   },
