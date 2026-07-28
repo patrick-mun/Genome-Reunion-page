@@ -29,6 +29,12 @@ const OFFICIAL_NEWS = [
     link: { url: 'https://teams.microsoft.com/meet/31234095055717?p=oDUpADNLgcQn8uMeZj', label: 'Rejoindre la réunion Teams →' }
   },
   {
+    date: '28/07/2026',
+    category: 'Nouveau document',
+    title: 'Justification du score S-div',
+    desc: "Document de synthèse justifiant le score de sélection des échantillons retenu pour la constitution du noyau."
+  },
+  {
     date: '21/07/2026',
     category: 'Nouveau document',
     title: 'Carte « Présentation »',
