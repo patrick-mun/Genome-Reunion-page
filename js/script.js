@@ -30,6 +30,12 @@ const OFFICIAL_NEWS = [
   },
   {
     date: '28/07/2026',
+    category: 'Correction',
+    title: 'Bibliographie',
+    desc: "Analyse complète de la bibliographie pour corriger les références manquantes et les erreurs de recopie."
+  },
+  {
+    date: '28/07/2026',
     category: 'Nouveau document',
     title: 'Justification du score S-div',
     desc: "Document de synthèse justifiant le score de sélection des échantillons retenu pour la constitution du noyau."
