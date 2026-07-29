@@ -1051,6 +1051,16 @@ table caption{caption-side:top;text-align:left;font-style:italic;color:var(--mut
     text-decoration: none;
   }
 }
+
+/* ========== SECTION 5: BIBLIOGRAPHIE ==========
+   Format harmonisé avec la synthèse scientifique (badge + annotation). */
+.biblio-context { font-style: italic; color: var(--muted); font-size: 0.88em; margin: 0.4em 0 1em; border-left: 3px solid var(--border); padding: 6px 14px; background: #fafafa; border-radius: 0 3px 3px 0; }
+.biblio-subhead { font-size: 0.78em; font-weight: 700; color: var(--accent2); text-transform: uppercase; letter-spacing: 0.07em; margin: 1.2em 0 0.5em; padding-bottom: 3px; border-bottom: 1px solid var(--accent-soft); }
+.biblio-new { list-style: none; padding: 0; margin: 0.3em 0 0.8em; }
+.biblio-new li { display: flex; gap: 9px; margin-bottom: 0.85em; align-items: flex-start; }
+.ref-badge { display: inline-block; background: var(--accent); color: #fff; font-size: 0.67em; font-weight: 700; padding: 2px 6px; border-radius: 3px; font-family: monospace; flex-shrink: 0; margin-top: 3px; letter-spacing: 0.02em; min-width: 2.8em; text-align: center; }
+.ref-body { flex: 1; font-size: 0.91em; line-height: 1.55; }
+.ref-annot { display: block; margin-top: 0.2em; font-style: italic; color: var(--muted); font-size: 0.9em; }
 </style>
 <script>
 /* ============================================================================
@@ -1812,42 +1822,47 @@ GEL COMPLET : méthode + ratio + manifeste confirmatoire
 </ul>
 <aside class="callout"><div class="label">Résultat attendu du gel</div><p>Le protocole ne promet pas une photographie parfaite de toute la population réunionnaise. Il doit démontrer qu'à l'intérieur d'une cohorte EFS géographiquement couverte et explicitement limitée, la sélection retenue utilise mieux le budget de 350 WGS qu'un tirage aléatoire ou qu'une simple stratification territoriale.</p></aside>
 </section><section id="s15"><h2>15. Bibliographie</h2>
-<p>Références principales des outils, méthodes et jeux de données mobilisés. Elles complètent les références du document maître de sélection et du protocole dense.</p>
-<h3>Phasage et imputation</h3><ol start="1">
-<li>Delaneau O, Zagury J-F, Robinson MR, Marchini JL, Dermitzakis ET. <em>Accurate, scalable and integrative haplotype estimation.</em> Nature Communications. 2019;10:5436. SHAPEIT4.</li>
-<li>Browning BL, Tian X, Zhou Y, Browning SR. <em>Fast two-stage phasing of large-scale sequence data.</em> American Journal of Human Genetics. 2021;108(10):1880–1890. Beagle 5.4.</li>
-<li>Browning BL, Zhou Y, Browning SR. <em>A one-penny imputed genome from next-generation reference panels.</em> American Journal of Human Genetics. 2018;103(3):338–348.</li>
-<li>Rubinacci S, Ribeiro DM, Hofmeister RJ, Delaneau O. <em>Efficient phasing and imputation of low-coverage sequencing data using large reference panels.</em> Nature Genetics. 2021;53:120–126. GLIMPSE.</li>
-<li>Rubinacci S, Hofmeister RJ, Sousa da Mota B, Delaneau O. <em>Imputation of low-coverage sequencing data from 150,119 UK Biobank genomes.</em> Nature Genetics. 2023;55. GLIMPSE2.</li>
-<li>McCarthy S, et al. <em>A reference panel of 64,976 haplotypes for genotype imputation.</em> Nature Genetics. 2016;48:1279–1283. HRC.</li>
-<li>Taliun D, et al. <em>Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program.</em> Nature. 2021;590:290–299. TOPMed.</li>
-</ol>
-<h3>Structure de population et ascendance</h3><ol start="8">
-<li>Price AL, Patterson NJ, Plenge RM, Weinblatt ME, Shadick NA, Reich D. <em>Principal components analysis corrects for stratification in genome-wide association studies.</em> Nature Genetics. 2006;38:904–909.</li>
-<li>Alexander DH, Novembre J, Lange K. <em>Fast model-based estimation of ancestry in unrelated individuals.</em> Genome Research. 2009;19:1655–1664.</li>
-<li>Maples BK, Gravel S, Kenny EE, Bustamante CD. <em>RFMix: a discriminative modeling approach for rapid and robust local-ancestry inference.</em> American Journal of Human Genetics. 2013;93(2):278–288.</li>
-</ol>
-<h3>Apparentement, IBD et ROH</h3><ol start="11">
-<li>Manichaikul A, Mychaleckyj JC, Rich SS, Daly K, Sale M, Chen W-M. <em>Robust relationship inference in genome-wide association studies.</em> Bioinformatics. 2010;26(22):2867–2873. KING ; espérance des cousins germains 0,0625 et frontière pratique troisième degré/non apparenté 0,0442.</li>
-<li>Browning BL, Browning SR. <em>Improving the accuracy and efficiency of identity-by-descent detection in population data.</em> Genetics. 2013;194(2):459–471.</li>
-<li>Ceballos FC, Joshi PK, Clark DW, Ramsay M, Wilson JF. <em>Runs of homozygosity: windows into population history and trait architecture.</em> Nature Reviews Genetics. 2018;19:220–234.</li>
-<li>Chang CC, Chow CC, Tellier LCAM, Vattikuti S, Purcell SM, Lee JJ. <em>Second-generation PLINK: rising to the challenge of larger and richer datasets.</em> GigaScience. 2015;4:7.</li>
-</ol>
-<h3>Panels et cohortes admixées</h3><ol start="15">
-<li>1000 Genomes Project Consortium. <em>A global reference for human genetic variation.</em> Nature. 2015;526:68–74.</li>
-<li>Byrska-Bishop M, et al. <em>High-coverage whole-genome sequencing of the expanded 1000 Genomes Project cohort including 602 trios.</em> Cell. 2022;185(18):3426–3440.</li>
-<li>GenomeAsia100K Consortium. <em>The GenomeAsia 100K Project enables genetic discoveries across Asia.</em> Nature. 2019;576:106–111.</li>
-<li>Gurdasani D, et al. <em>The African Genome Variation Project shapes medical genetics in Africa.</em> Nature. 2015;517:327–332.</li>
-<li>Pierron D, et al. <em>Genomic landscape of human diversity across Madagascar.</em> PNAS. 2017;114(32):E6498–E6506.</li>
-<li>Kehdy FSG, et al. <em>Origin and dynamics of admixture in Brazilians and its effect on the pattern of deleterious mutations.</em> PNAS. 2015;112(28):8696–8701. EPIGEN-Brasil.</li>
-<li>Magalhães WCS, et al. <em>EPIGEN-Brazil Initiative resources: a Latin American imputation panel and the Scientific Workflow.</em> Genome Research. 2018;28:1090–1095.</li>
-<li>Naslavsky MS, et al. <em>Whole-genome sequencing of 1,171 elderly admixed individuals from Brazil.</em> Nature Communications. 2022;13:1004. SABE-WGS / ABraOM.</li>
-</ol>
-<h3>Simulation et cadre méthodologique</h3><ol start="23">
-<li>Haller BC, Messer PW. <em>SLiM 3: Forward genetic simulations beyond the Wright-Fisher model.</em> Molecular Biology and Evolution. 2019;36(3):632–637.</li>
-<li>Nosek BA, Ebersole CR, DeHaven AC, Mellor DT. <em>The preregistration revolution.</em> PNAS. 2018;115(11):2600–2606.</li>
-<li>Lakens D. <em>Equivalence tests: a practical primer for t tests, correlations, and meta-analyses.</em> Social Psychological and Personality Science. 2017;8(4):355–362.</li>
-</ol>
+<div class="biblio-context">Références principales des outils, méthodes et jeux de données mobilisés par le protocole. Elles complètent les références du document maître de sélection et du protocole dense (bibliographie consolidée à 208 entrées).</div>
+<div class="biblio-subhead">Phasage et imputation</div>
+<ul class="biblio-new">
+<li><span class="ref-badge">01</span><div class="ref-body">Delaneau O, Zagury J-F, Robinson MR, Marchini JL, Dermitzakis ET. <em>Accurate, scalable and integrative haplotype estimation.</em> Nature Communications. 2019;10:5436.<span class="ref-annot">SHAPEIT4 : outil de phasage retenu comme référence principale du protocole (§ Outil principal retenu — SHAPEIT4).</span></div></li>
+<li><span class="ref-badge">02</span><div class="ref-body">Browning BL, Tian X, Zhou Y, Browning SR. <em>Fast two-stage phasing of large-scale sequence data.</em> American Journal of Human Genetics. 2021;108(10):1880–1890.<span class="ref-annot">Beagle 5.4 : alternative comparative de phasage évaluée face à SHAPEIT4.</span></div></li>
+<li><span class="ref-badge">03</span><div class="ref-body">Browning BL, Zhou Y, Browning SR. <em>A one-penny imputed genome from next-generation reference panels.</em> American Journal of Human Genetics. 2018;103(3):338–348.<span class="ref-annot">Référence Beagle 5 pour l'imputation à partir de grands panels de référence.</span></div></li>
+<li><span class="ref-badge">04</span><div class="ref-body">Rubinacci S, Ribeiro DM, Hofmeister RJ, Delaneau O. <em>Efficient phasing and imputation of low-coverage sequencing data using large reference panels.</em> Nature Genetics. 2021;53:120–126.<span class="ref-annot">GLIMPSE : méthode de phasage et d'imputation adaptée aux données de séquençage à faible couverture.</span></div></li>
+<li><span class="ref-badge">05</span><div class="ref-body">Rubinacci S, Hofmeister RJ, Sousa da Mota B, Delaneau O. <em>Imputation of low-coverage sequencing data from 150,119 UK Biobank genomes.</em> Nature Genetics. 2023;55.<span class="ref-annot">GLIMPSE2 : extension validée à grande échelle sur la UK Biobank.</span></div></li>
+<li><span class="ref-badge">06</span><div class="ref-body">McCarthy S, et al. <em>A reference panel of 64,976 haplotypes for genotype imputation.</em> Nature Genetics. 2016;48:1279–1283.<span class="ref-annot">HRC : panel de référence utilisé comme comparateur pour l'imputation.</span></div></li>
+<li><span class="ref-badge">07</span><div class="ref-body">Taliun D, et al. <em>Sequencing of 53,831 diverse genomes from the NHLBI TOPMed Program.</em> Nature. 2021;590:290–299.<span class="ref-annot">TOPMed : panel de référence comparateur pour l'imputation en population diverse.</span></div></li>
+</ul>
+<div class="biblio-subhead">Structure de population et ascendance</div>
+<ul class="biblio-new">
+<li><span class="ref-badge">08</span><div class="ref-body">Price AL, Patterson NJ, Plenge RM, Weinblatt ME, Shadick NA, Reich D. <em>Principal components analysis corrects for stratification in genome-wide association studies.</em> Nature Genetics. 2006;38:904–909.<span class="ref-annot">Référence fondatrice de la correction de stratification par PCA.</span></div></li>
+<li><span class="ref-badge">09</span><div class="ref-body">Alexander DH, Novembre J, Lange K. <em>Fast model-based estimation of ancestry in unrelated individuals.</em> Genome Research. 2009;19:1655–1664.<span class="ref-annot">ADMIXTURE : outil d'estimation des proportions d'ascendance.</span></div></li>
+<li><span class="ref-badge">10</span><div class="ref-body">Maples BK, Gravel S, Kenny EE, Bustamante CD. <em>RFMix: a discriminative modeling approach for rapid and robust local-ancestry inference.</em> American Journal of Human Genetics. 2013;93(2):278–288.<span class="ref-annot">RFMix : outil d'inférence d'ascendance locale (LAI).</span></div></li>
+</ul>
+<div class="biblio-subhead">Apparentement, IBD et ROH</div>
+<ul class="biblio-new">
+<li><span class="ref-badge">11</span><div class="ref-body">Manichaikul A, Mychaleckyj JC, Rich SS, Daly K, Sale M, Chen W-M. <em>Robust relationship inference in genome-wide association studies.</em> Bioinformatics. 2010;26(22):2867–2873.<span class="ref-annot">KING-robust : méthode d'inférence de parenté utilisée pour les seuils du protocole (espérance des cousins germains 0,0625 ; frontière pratique troisième degré/non apparenté 0,0442).</span></div></li>
+<li><span class="ref-badge">12</span><div class="ref-body">Browning BL, Browning SR. <em>Improving the accuracy and efficiency of identity-by-descent detection in population data.</em> Genetics. 2013;194(2):459–471.<span class="ref-annot">Refined IBD : détection de segments IBD utilisée en complément de KING.</span></div></li>
+<li><span class="ref-badge">13</span><div class="ref-body">Ceballos FC, Joshi PK, Clark DW, Ramsay M, Wilson JF. <em>Runs of homozygosity: windows into population history and trait architecture.</em> Nature Reviews Genetics. 2018;19:220–234.<span class="ref-annot">Revue de référence pour l'interprétation des runs of homozygosity (ROH).</span></div></li>
+<li><span class="ref-badge">14</span><div class="ref-body">Chang CC, Chow CC, Tellier LCAM, Vattikuti S, Purcell SM, Lee JJ. <em>Second-generation PLINK: rising to the challenge of larger and richer datasets.</em> GigaScience. 2015;4:7.<span class="ref-annot">PLINK2 : logiciel de référence pour les analyses de génotypage à grande échelle.</span></div></li>
+</ul>
+<div class="biblio-subhead">Panels et cohortes admixées</div>
+<ul class="biblio-new">
+<li><span class="ref-badge">15</span><div class="ref-body">1000 Genomes Project Consortium. <em>A global reference for human genetic variation.</em> Nature. 2015;526:68–74.<span class="ref-annot">Panel de référence public 1000 Genomes, socle des comparaisons populationnelles.</span></div></li>
+<li><span class="ref-badge">16</span><div class="ref-body">Byrska-Bishop M, et al. <em>High-coverage whole-genome sequencing of the expanded 1000 Genomes Project cohort including 602 trios.</em> Cell. 2022;185(18):3426–3440.<span class="ref-annot">Version étendue haute couverture du panel 1000 Genomes.</span></div></li>
+<li><span class="ref-badge">17</span><div class="ref-body">GenomeAsia100K Consortium. <em>The GenomeAsia 100K Project enables genetic discoveries across Asia.</em> Nature. 2019;576:106–111.<span class="ref-annot">Panel de référence pour les ascendances sud- et est-asiatiques.</span></div></li>
+<li><span class="ref-badge">18</span><div class="ref-body">Gurdasani D, et al. <em>The African Genome Variation Project shapes medical genetics in Africa.</em> Nature. 2015;517:327–332.<span class="ref-annot">Panel de référence pour les ascendances africaines.</span></div></li>
+<li><span class="ref-badge">19</span><div class="ref-body">Pierron D, et al. <em>Genomic landscape of human diversity across Madagascar.</em> PNAS. 2017;114(32):E6498–E6506.<span class="ref-annot">Panel de référence malgache, pertinent pour l'ancrage régional des ascendances réunionnaises.</span></div></li>
+<li><span class="ref-badge">20</span><div class="ref-body">Kehdy FSG, et al. <em>Origin and dynamics of admixture in Brazilians and its effect on the pattern of deleterious mutations.</em> PNAS. 2015;112(28):8696–8701.<span class="ref-annot">EPIGEN-Brasil : cohorte admixée brésilienne, modèle comparatif pour une population fortement métissée.</span></div></li>
+<li><span class="ref-badge">21</span><div class="ref-body">Magalhães WCS, et al. <em>EPIGEN-Brazil Initiative resources: a Latin American imputation panel and the Scientific Workflow.</em> Genome Research. 2018;28:1090–1095.<span class="ref-annot">Panel d'imputation latino-américain issu d'EPIGEN-Brésil.</span></div></li>
+<li><span class="ref-badge">22</span><div class="ref-body">Naslavsky MS, et al. <em>Whole-genome sequencing of 1,171 elderly admixed individuals from Brazil.</em> Nature Communications. 2022;13:1004.<span class="ref-annot">SABE-WGS / ABraOM : cohorte de séquençage en population urbaine admixée.</span></div></li>
+</ul>
+<div class="biblio-subhead">Simulation et cadre méthodologique</div>
+<ul class="biblio-new">
+<li><span class="ref-badge">23</span><div class="ref-body">Haller BC, Messer PW. <em>SLiM 3: Forward genetic simulations beyond the Wright-Fisher model.</em> Molecular Biology and Evolution. 2019;36(3):632–637.<span class="ref-annot">SLiM 3 : moteur de simulation génomique retenu comme socle du simulateur du protocole.</span></div></li>
+<li><span class="ref-badge">24</span><div class="ref-body">Nosek BA, Ebersole CR, DeHaven AC, Mellor DT. <em>The preregistration revolution.</em> PNAS. 2018;115(11):2600–2606.<span class="ref-annot">Cadre de préenregistrement, référence méthodologique pour la transparence du protocole.</span></div></li>
+<li><span class="ref-badge">25</span><div class="ref-body">Lakens D. <em>Equivalence tests: a practical primer for t tests, correlations, and meta-analyses.</em> Social Psychological and Personality Science. 2017;8(4):355–362.<span class="ref-annot">Tests d'équivalence (TOST), référence statistique pour les critères de validation du protocole.</span></div></li>
+</ul>
 </section><section id="s-docs"><h2>Documents liés</h2>
 <p>Ce protocole appartient à un ensemble de trois documents. Ils se versionnent séparément parce qu'ils ne partagent pas le même cycle de gel : le protocole se fige tôt et sert de référence citable, la spécification du moteur reste un document vivant jusqu'au pilote, et le glossaire centralise les valeurs pour éviter qu'elles divergent entre les deux.</p>
 <table>
