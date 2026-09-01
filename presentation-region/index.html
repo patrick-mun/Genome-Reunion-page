@@ -353,15 +353,42 @@
         <span class="slide-eyebrow">La démarche</span>
         <h1 class="slide-title">De la cohorte réunionnaise au référentiel génomique</h1>
       </div>
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px;">
-        <div class="figure-row" style="justify-content:center;">
-          <div class="figure-chip"><strong>2 500</strong><span>participants caractérisés</span></div>
-          <div class="figure-arrow">→</div>
-          <div class="figure-chip"><strong>Sélection</strong><span>raisonnée sur la diversité observée</span></div>
-          <div class="figure-arrow">→</div>
-          <div class="figure-chip"><strong>350</strong><span>génomes complets séquencés</span></div>
-          <div class="figure-arrow">→</div>
-          <div class="figure-chip"><strong>1</strong><span>référentiel réunionnais</span></div>
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px;">
+        <div class="funnel-wrap">
+          <svg class="funnel-bg" viewBox="0 0 1000 260" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="funnelGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--navy)" stop-opacity="0.08"/>
+                <stop offset="100%" stop-color="var(--coral)" stop-opacity="0.14"/>
+              </linearGradient>
+            </defs>
+            <polygon points="0,30 1000,95 1000,165 0,230" fill="url(#funnelGrad)"/>
+          </svg>
+          <div class="funnel-row">
+            <div class="funnel-step funnel-step--1">
+              <span class="funnel-step-idx">Étape 1</span>
+              <strong>2 500</strong>
+              <span class="funnel-label">participants caractérisés</span>
+            </div>
+            <div class="funnel-chevron"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 4 L16 12 L6 20" fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="funnel-step funnel-step--2">
+              <span class="funnel-step-idx">Étape 2</span>
+              <strong>Sélection</strong>
+              <span class="funnel-label">raisonnée sur la diversité observée</span>
+            </div>
+            <div class="funnel-chevron"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 4 L16 12 L6 20" fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="funnel-step funnel-step--3">
+              <span class="funnel-step-idx">Étape 3</span>
+              <strong>350</strong>
+              <span class="funnel-label">génomes complets séquencés</span>
+            </div>
+            <div class="funnel-chevron"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 4 L16 12 L6 20" fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+            <div class="funnel-step funnel-step--4">
+              <span class="funnel-step-idx">Résultat</span>
+              <strong>1</strong>
+              <span class="funnel-label">référentiel réunionnais</span>
+            </div>
+          </div>
         </div>
         <div class="callout" style="align-self:center;max-width:720px;">
           <p class="text-small">Les 350 génomes ne sont pas choisis au hasard : une cohorte initiale beaucoup plus large est d'abord caractérisée, afin de sélectionner les profils apportant le plus d'information sur la diversité réunionnaise.</p>
