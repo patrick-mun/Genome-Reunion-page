@@ -185,8 +185,21 @@
       <div class="slide-cols">
         <div class="slide-col">
           <p class="slide-lead">Les grands référentiels internationaux de la médecine génomique sont <strong>indispensables</strong>. Ils représentent cependant imparfaitement la diversité particulière de la population réunionnaise.</p>
-          <div class="chart-wrap chart-wrap--bar">
-            <canvas id="representationChart" role="img" aria-label="96 % des séquences disponibles en 2009 provenaient d'ascendance européenne ; 1,1 % de représentation africaine dans les études GWAS en 2022"></canvas>
+          <div class="propbar-group" role="img" aria-label="96 % des séquences disponibles en 2009 provenaient d'ascendance européenne ; 1,1 % de représentation africaine dans les études GWAS en 2022">
+            <div class="propbar-row">
+              <div class="propbar-head">
+                <span class="propbar-label">Ascendance européenne<span class="propbar-sub">séquences disponibles, 2009</span></span>
+                <span class="propbar-value" style="color:var(--navy);">96%</span>
+              </div>
+              <div class="propbar-track"><div class="propbar-fill" style="width:96%;background:var(--navy);"></div></div>
+            </div>
+            <div class="propbar-row">
+              <div class="propbar-head">
+                <span class="propbar-label">Ascendance africaine<span class="propbar-sub">études GWAS, 2022</span></span>
+                <span class="propbar-value" style="color:var(--coral);">1,1%</span>
+              </div>
+              <div class="propbar-track"><div class="propbar-fill" style="width:1.1%;background:var(--coral);"></div></div>
+            </div>
           </div>
           <div class="callout callout--coral">
             <div class="callout-title">Conséquence concrète</div>
@@ -225,7 +238,15 @@
           <h2 class="block-title">Composition ancestrale illustrative</h2>
           <div class="ancestry-chart-row">
             <div class="ancestry-chart-wrap">
-              <canvas id="ancestryChart" role="img" aria-label="Répartition ancestrale illustrative : Afrique et Madagascar 45 %, Inde du Sud 25 %, Européen 15 %, Zarabe et Gujarati 8 %, Chinois et Asie 7 %"></canvas>
+              <svg viewBox="0 0 160 160" role="img" aria-label="Répartition ancestrale illustrative : Afrique et Madagascar 45 %, Inde du Sud 25 %, Européen 15 %, Zarabe et Gujarati 8 %, Chinois et Asie 7 %">
+                <circle cx="80" cy="80" r="70" fill="none" stroke="var(--border)" stroke-width="20"/>
+                <circle cx="80" cy="80" r="70" fill="none" stroke="var(--teal)" stroke-width="20" stroke-dasharray="197.92 241.90" stroke-dashoffset="0"/>
+                <circle cx="80" cy="80" r="70" fill="none" stroke="var(--coral)" stroke-width="20" stroke-dasharray="109.96 329.87" stroke-dashoffset="-197.92"/>
+                <circle cx="80" cy="80" r="70" fill="none" stroke="var(--navy)" stroke-width="20" stroke-dasharray="65.97 373.85" stroke-dashoffset="-307.88"/>
+                <circle cx="80" cy="80" r="70" fill="none" stroke="oklch(0.55 0.12 200)" stroke-width="20" stroke-dasharray="35.19 404.64" stroke-dashoffset="-373.85"/>
+                <circle cx="80" cy="80" r="70" fill="none" stroke="oklch(0.50 0.10 150)" stroke-width="20" stroke-dasharray="30.79 409.04" stroke-dashoffset="-409.04"/>
+              </svg>
+              <div class="donut-total"><strong>5</strong><span>ascendances</span></div>
             </div>
             <ul class="ancestry-legend">
               <li><span class="legend-dot" style="background:var(--teal);"></span>Afrique / Malgache<strong>45%</strong></li>
@@ -557,8 +578,21 @@
           <p class="text-small">Un dispositif FEDER dédié existe déjà pour soutenir des programmes de recherche structurants portés localement.</p>
         </div>
       </div>
-      <div class="chart-wrap chart-wrap--funding">
-        <canvas id="fundingChart" role="img" aria-label="Contrat de convergence et de transformation 2024-2027 : 563,5 millions d'euros. FEDER-FSE+ 2021-2027 recherche et innovation : environ 100 millions d'euros."></canvas>
+      <div class="propbar-group" role="img" aria-label="Contrat de convergence et de transformation 2024-2027 : 563,5 millions d'euros. FEDER-FSE+ 2021-2027 recherche et innovation : environ 100 millions d'euros.">
+        <div class="propbar-row">
+          <div class="propbar-head">
+            <span class="propbar-label">Contrat de convergence et de transformation<span class="propbar-sub">2024-2027</span></span>
+            <span class="propbar-value" style="color:var(--teal);">563,5 M€</span>
+          </div>
+          <div class="propbar-track"><div class="propbar-fill" style="width:100%;background:var(--teal);"></div></div>
+        </div>
+        <div class="propbar-row">
+          <div class="propbar-head">
+            <span class="propbar-label">FEDER-FSE+ 2021-2027<span class="propbar-sub">recherche &amp; innovation</span></span>
+            <span class="propbar-value" style="color:var(--coral);">100 M€</span>
+          </div>
+          <div class="propbar-track"><div class="propbar-fill" style="width:17.8%;background:var(--coral);"></div></div>
+        </div>
       </div>
       <div class="callout">
         <div class="callout-title">Ce que cela signifie pour Génome Réunion</div>
@@ -738,8 +772,6 @@
 </div>
 </div>
 
-<script src="js/vendor/chart.umd.js"></script>
-<script src="js/charts.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>
