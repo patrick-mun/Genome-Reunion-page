@@ -353,41 +353,51 @@
         <span class="slide-eyebrow">La démarche</span>
         <h1 class="slide-title">De la cohorte réunionnaise au référentiel génomique</h1>
       </div>
-      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px;">
-        <div class="funnel-wrap">
-          <div class="funnel-row">
-            <div class="funnel-step funnel-step--1">
-              <span class="funnel-step-idx">Étape 1</span>
-              <strong>2 500</strong>
-              <span class="funnel-label">participants caractérisés</span>
+      <div style="flex:1;display:flex;flex-direction:column;gap:24px;">
+        <div class="pipeline">
+          <div class="pipeline-step" style="background:var(--navy);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="pipeline-num" style="color:var(--navy);">1</div>
+              <span class="pipeline-kicker" style="color:rgba(255,255,255,0.55);">Cohorte caractérisée</span>
             </div>
-            <div class="funnel-arrow"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 4 L16 12 L6 20" fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="funnel-step funnel-step--2">
-              <span class="funnel-step-idx">Étape 2</span>
-              <strong>Sélection</strong>
-              <span class="funnel-label">raisonnée sur la diversité observée</span>
+            <h2 class="pipeline-title">2 500 participants</h2>
+            <div class="pipeline-ghost" style="color:rgba(255,255,255,0.2);">2 500</div>
+            <p class="text-small" style="color:rgba(255,255,255,0.72);">Caractérisation génétique large de la cohorte, pour capturer la diversité réunionnaise avant toute sélection.</p>
+          </div>
+          <div class="pipeline-arrow" style="background:var(--teal);color:var(--teal);"></div>
+          <div class="pipeline-step" style="background:var(--teal);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="pipeline-num" style="color:var(--teal);">2</div>
+              <span class="pipeline-kicker" style="color:rgba(255,255,255,0.65);">Sélection raisonnée</span>
             </div>
-            <div class="funnel-arrow"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 4 L16 12 L6 20" fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="funnel-step funnel-step--3">
-              <span class="funnel-step-idx">Étape 3</span>
-              <strong>350</strong>
-              <span class="funnel-label">génomes complets séquencés</span>
-            </div>
-            <div class="funnel-arrow"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M6 4 L16 12 L6 20" fill="none" stroke="var(--coral)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-            <div class="funnel-step funnel-step--4">
-              <span class="funnel-step-idx">Résultat</span>
-              <strong>1</strong>
-              <span class="funnel-label">référentiel réunionnais</span>
+            <h2 class="pipeline-title">Diversité observée</h2>
+            <p class="text-small" style="color:rgba(255,255,255,0.85);">Les profils apportant le plus d'information sur la diversité réunionnaise sont identifiés — pas un tirage au hasard.</p>
+            <div style="margin-top:auto;padding:12px 16px;background:rgba(255,255,255,0.15);border-radius:8px;">
+              <p style="font-family:var(--font-body);font-size:16px;color:rgba(255,255,255,0.9);font-style:italic;">Basée sur la diversité mesurée dans la cohorte, pas sur un tirage aléatoire</p>
             </div>
           </div>
-          <div class="funnel-track">
-            <div class="funnel-track-seg" style="background:var(--border);"></div>
-            <div class="funnel-track-arrow-space"></div>
-            <div class="funnel-track-seg" style="background:var(--teal);"></div>
-            <div class="funnel-track-arrow-space"></div>
-            <div class="funnel-track-seg" style="background:var(--navy);"></div>
-            <div class="funnel-track-arrow-space"></div>
-            <div class="funnel-track-seg" style="background:var(--coral);"></div>
+          <div class="pipeline-arrow" style="background:var(--navy);color:var(--navy);"></div>
+          <div class="pipeline-step" style="background:var(--navy);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="pipeline-num" style="color:var(--navy);">3</div>
+              <span class="pipeline-kicker" style="color:rgba(255,255,255,0.55);">Séquençage complet</span>
+            </div>
+            <h2 class="pipeline-title">350 génomes</h2>
+            <div class="pipeline-ghost" style="color:rgba(255,255,255,0.2);">350</div>
+            <p class="text-small" style="color:rgba(255,255,255,0.72);">Génomes complets séquencés à partir des profils sélectionnés.</p>
+          </div>
+          <div class="pipeline-arrow" style="background:var(--coral);color:var(--coral);"></div>
+          <div class="pipeline-step" style="background:oklch(0.97 0.02 30);border:2px solid oklch(0.87 0.06 30);">
+            <div style="display:flex;align-items:center;gap:12px;">
+              <div class="pipeline-num" style="color:white;background:var(--coral);">4</div>
+              <span class="pipeline-kicker" style="color:var(--coral);">Résultat</span>
+            </div>
+            <h2 class="pipeline-title" style="color:var(--navy);">1 référentiel réunionnais</h2>
+            <div class="pipeline-ghost" style="color:var(--coral);opacity:0.35;">1</div>
+            <p class="text-small" style="color:var(--ink);">Une base de fréquences génétiques propre à La Réunion.</p>
+            <div style="margin-top:auto;padding:12px 16px;background:oklch(0.92 0.05 30);border-radius:8px;">
+              <p style="font-family:var(--font-title);font-size:16px;color:var(--coral);font-weight:700;">Le socle de tous les usages futurs</p>
+            </div>
           </div>
         </div>
         <div class="callout" style="align-self:center;max-width:720px;">

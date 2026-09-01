@@ -77,25 +77,6 @@
 .void-item p { font-family: var(--font-body); font-size: 18px; color: var(--muted); }
 @media (max-width: 900px) { .legacy-compare { grid-template-columns: 1fr; } }
 
-/* Parcours de la démarche (cohorte -> référentiel) */
-.funnel-wrap { padding: 30px 0; }
-.funnel-row { display: flex; align-items: stretch; justify-content: center; gap: 14px; }
-.funnel-step { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; width: 230px; padding: 28px 16px; border-radius: var(--r-lg); border: 1px solid var(--border); background: var(--bg-light); flex-shrink: 0; }
-.funnel-step-idx { font-family: var(--font-title); font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
-.funnel-step strong { font-family: var(--font-title); font-weight: 700; font-size: 34px; line-height: 1.05; color: var(--navy); }
-.funnel-step span.funnel-label { font-family: var(--font-body); font-size: 14px; text-align: center; color: var(--muted); max-width: 160px; }
-.funnel-step--4 { background: var(--coral); border-color: var(--coral); }
-.funnel-step--4 strong, .funnel-step--4 span.funnel-label { color: white; }
-.funnel-step--4 .funnel-step-idx { color: rgba(255,255,255,0.8); }
-.funnel-arrow { flex-shrink: 0; align-self: center; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; }
-.funnel-track { display: flex; justify-content: center; gap: 14px; margin-top: 16px; }
-.funnel-track-seg { width: 230px; height: 5px; border-radius: 3px; flex-shrink: 0; }
-.funnel-track-arrow-space { width: 26px; flex-shrink: 0; }
-@media (max-width: 1100px) {
-  .funnel-row, .funnel-track { flex-direction: column; align-items: center; gap: 10px; }
-  .funnel-arrow { transform: rotate(90deg); }
-  .funnel-track-seg { width: 5px; height: 40px; }
-}
 
 /* Encadré "la demande" (fin de présentation) */
 .ask-box {
