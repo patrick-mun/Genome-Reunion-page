@@ -65,10 +65,10 @@
 .align-tag--coral { background: var(--coral); }
 .align-tag--outline { background: transparent; border: 1.5px solid var(--border); color: var(--navy); }
 
-/* Mosaïque de silhouettes symbolisant la diversité de population (slide SRDEII/S3) */
-.population-mosaic { margin-top: auto; padding-top: 18px; }
-.population-mosaic svg { width: 100%; height: auto; max-height: 130px; display: block; }
-.population-mosaic-caption { margin-top: 10px; color: var(--muted); }
+/* Nuage de points symbolisant la diversité génétique (slide SRDEII/S3) */
+.population-scatter { margin-top: auto; padding-top: 18px; }
+.population-scatter svg { width: 100%; height: auto; max-height: 130px; display: block; }
+.population-scatter-caption { margin-top: 10px; color: var(--muted); }
 
 /* Liste de capacités laissées au territoire (message 3) */
 .legacy-list { display: flex; flex-direction: column; gap: 10px; }
