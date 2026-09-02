@@ -66,9 +66,9 @@
 .align-tag--outline { background: transparent; border: 1.5px solid var(--border); color: var(--navy); }
 
 /* Nuage de points symbolisant la diversité génétique (slide SRDEII/S3) */
-.population-scatter { margin-top: auto; padding-top: 18px; }
-.population-scatter svg { width: 100%; height: auto; max-height: 130px; display: block; }
-.population-scatter-caption { margin-top: 10px; color: var(--muted); }
+.population-scatter { flex: 1; min-height: 0; padding-top: 18px; display: flex; flex-direction: column; }
+.population-scatter svg { width: 100%; flex: 1; min-height: 0; display: block; }
+.population-scatter-caption { margin-top: 10px; color: var(--muted); flex-shrink: 0; }
 
 /* Liste de capacités laissées au territoire (message 3) */
 .legacy-list { display: flex; flex-direction: column; gap: 10px; }
