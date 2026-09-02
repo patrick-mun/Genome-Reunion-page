@@ -25,7 +25,7 @@ const OFFICIAL_NEWS = [
     date: '02/09/2026',
     category: 'Nouveau document',
     title: 'Présentation pour la Région Réunion',
-    desc: "Mise en ligne du support de présentation (20 slides) préparé pour le rendez-vous avec le Conseil régional : adhésion de principe au projet et alignement avec les orientations régionales.",
+    desc: "Mise en ligne du support de présentation (23 slides) préparé pour le rendez-vous avec le Conseil régional : adhésion de principe au projet et alignement avec les orientations régionales.",
     link: { url: 'presentation-region/index.html', label: 'Voir la présentation →' }
   },
   {
