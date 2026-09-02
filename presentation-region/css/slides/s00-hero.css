@@ -7,6 +7,16 @@
   display: flex;
   flex-direction: column;
 }
+/* Silhouette du Piton de la Fournaise — illustration vectorielle,
+   placeholder en attendant une vraie photo */
+.hero-mountains {
+  position: absolute;
+  right: 0; top: 0; bottom: 0;
+  width: 62%;
+  pointer-events: none;
+}
+.hero-mountains svg { width: 100%; height: 100%; }
+
 /* Vagues animées (reprise du site vitrine Génome Réunion) —
    deux copies identiques par piste : défilement parfaitement raccord */
 .hero-waves {
