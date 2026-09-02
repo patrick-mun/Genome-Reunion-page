@@ -24,6 +24,13 @@ const OFFICIAL_NEWS = [
   {
     date: '02/09/2026',
     category: 'Nouveau document',
+    title: 'Fiche persona — Huguette Bello',
+    desc: "Ajout dans la page Communication d'une fiche persona pour préparer le rendez-vous avec la Région : profil, messages clés, formulations à éviter et interlocuteurs du staff.",
+    link: { url: 'template/persona-bello.html', label: 'Voir la fiche →' }
+  },
+  {
+    date: '02/09/2026',
+    category: 'Nouveau document',
     title: 'Présentation pour la Région Réunion',
     desc: "Mise en ligne du support de présentation (23 slides) préparé pour le rendez-vous avec le Conseil régional : adhésion de principe au projet et alignement avec les orientations régionales.",
     link: { url: 'presentation-region/index.html', label: 'Voir la présentation →' }
