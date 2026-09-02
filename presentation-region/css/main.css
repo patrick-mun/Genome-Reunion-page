@@ -394,8 +394,10 @@ h2.block-title {
 /* Stat / chiffre clé */
 .stat-block { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 0 var(--r-sm) var(--r-sm) 0; background: var(--bg-light); border-left: 5px solid var(--navy); }
 .stat-block--teal { border-left-color: var(--teal); }
+.stat-block--lg { padding: 30px 34px; gap: 26px; border-left-width: 7px; }
 .stat-number { font-family: var(--font-title); font-weight: 700; font-size: 42px; line-height: 1; color: var(--navy); flex-shrink: 0; }
 .stat-block--teal .stat-number { color: var(--teal); }
+.stat-number--lg { font-size: 72px; }
 
 /* Section slide (intercalaire) */
 .section-slide {
