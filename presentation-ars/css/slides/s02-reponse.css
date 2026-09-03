@@ -1,22 +1,35 @@
 /* Slides 08–12 — Acte 2 : Comprendre la réponse Génome Réunion
    Familles de classes : eco-* / priority-* */
 
-/* Slide 09 — écosystème génomique (tableau) */
-.eco-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: 20px; }
-.eco-table th {
-  text-align: left;
-  font-family: var(--font-title);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: var(--muted);
-  padding: 10px 16px;
-  border-bottom: 2px solid var(--border);
+/* Slide 09 — écosystème génomique (couches concentriques, du mondial au local) */
+.eco-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; justify-content: center; }
+.eco-layer {
+  width: 100%;
+  max-width: 640px;
+  border-radius: var(--r-lg);
+  padding: 18px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
-.eco-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--ink); }
-.eco-table tr:nth-child(even) td { background: var(--bg-light); }
-.eco-table tr.eco-row--highlight td { background: oklch(0.97 0.02 30); font-weight: 700; color: var(--navy); border-color: oklch(0.85 0.06 30); }
+.eco-layer--intl { background: var(--bg-light); border: 1.5px solid var(--border); }
+.eco-layer--nat { max-width: 460px; background: var(--teal); }
+.eco-layer-title { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); }
+.eco-layer--nat .eco-layer-title { color: white; }
+.eco-tags-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.eco-tag { padding: 5px 14px; border-radius: 20px; font-family: var(--font-body); font-size: 15px; background: white; border: 1px solid var(--border); color: var(--navy); }
+.eco-tag--on-teal { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white; }
+.eco-chevron { color: var(--muted); font-size: 18px; line-height: 1; }
+.eco-core {
+  max-width: 320px;
+  background: var(--coral);
+  border-radius: var(--r-lg);
+  padding: 18px 28px;
+  text-align: center;
+}
+.eco-core-name { font-family: var(--font-title); font-weight: 700; font-size: 22px; color: white; }
+.eco-core-desc { font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 4px; }
 .eco-signature { text-align: center; font-family: var(--font-title); font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: 1px; margin-top: 18px; }
 
 /* Slides 10-11 — pipeline additionnel (familles nucléaires) */
@@ -53,13 +66,25 @@
 .selection-legend-tag .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); display: inline-block; }
 .selection-criteria-note { font-family: var(--font-body); font-size: 15px; color: var(--muted); margin-top: 6px; }
 
-/* Slide 12 — matrice de priorités ARS */
-.priority-list { display: flex; flex-direction: column; gap: 8px; }
-.priority-row { display: flex; align-items: center; gap: 18px; padding: 12px 18px; background: var(--bg-light); border-radius: var(--r-sm); border-left: 4px solid var(--teal); }
-.priority-row:nth-child(odd) { border-left-color: var(--navy); }
-.priority-label { font-family: var(--font-title); font-weight: 700; font-size: 18px; color: var(--navy); width: 190px; flex-shrink: 0; }
-.priority-value { font-family: var(--font-body); font-size: 18px; color: var(--ink); }
+/* Slide 12 — matrice de priorités ARS (grille de cartes) */
+.priority-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; flex: 1; align-content: center; }
+.priority-card {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--teal);
+  border-radius: var(--r-md);
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.priority-card--navy { border-top-color: var(--navy); }
+.priority-card--teal { border-top-color: var(--teal); }
+.priority-card--coral { border-top-color: var(--coral); }
+.priority-label { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); }
+.priority-value { font-family: var(--font-body); font-size: 14.5px; color: var(--muted); line-height: 1.35; }
 
 @media (max-width: 900px) {
   .selection-compare { grid-template-columns: 1fr; }
+  .priority-grid, .eco-tags-row { grid-template-columns: 1fr 1fr; }
 }

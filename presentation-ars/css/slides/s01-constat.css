@@ -31,17 +31,7 @@
   margin-top: 18px;
 }
 
-/* Slide 05 — continuum conceptuel (dégradé, aucune donnée) */
-.continuum-band {
-  height: 120px;
-  border-radius: var(--r-lg);
-  background: linear-gradient(90deg, var(--navy) 0%, var(--teal) 45%, var(--coral) 100%);
-  opacity: 0.85;
-  position: relative;
-  overflow: hidden;
-  box-shadow: inset 0 0 40px rgba(0,0,0,0.15);
-}
-.continuum-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.9); box-shadow: 0 0 6px rgba(255,255,255,0.6); }
+/* Slide 05 — continuum conceptuel (SVG : dégradé + nuage de points, aucune donnée) */
 .continuum-caption { font-family: var(--font-body); font-size: 14px; font-style: italic; color: var(--muted); margin-top: 10px; text-align: center; }
 
 /* Slide 06 — PCA pilote (canvas Chart.js réel) */
