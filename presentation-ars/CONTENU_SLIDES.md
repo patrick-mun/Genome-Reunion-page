@@ -591,9 +591,85 @@ Aucun.
 ### Transition
 > « Le même problème de représentation se retrouve dans un autre domaine déjà utilisé en médecine : la pharmacogénétique. »
 
-## SLIDE 15 — DÉMONSTRATEUR 2 : PHARMACOGÉNÉTIQUE — PRINCIPE ⬜ (à faire)
+## SLIDE 15 — DÉMONSTRATEUR 2 : PHARMACOGÉNÉTIQUE — PRINCIPE 🟡
 
-## SLIDE 16 — PRIORISER LES RISQUES MÉDICAMENTEUX ⬜ (à faire)
+### Texte écran
+
+**Titre**
+> Médicament : la diversité génétique peut modifier efficacité, toxicité et posologie
+
+**Schéma causal**
+> Variation génétique → enzyme / transporteur / cible → exposition au médicament → efficacité / toxicité / dose
+
+**Exemples (registre discret, en légende, pas en titre)**
+> CYP2C19 · CYP2D6 · CYP2C9 · TPMT · NUDT15
+
+**Message clé**
+> Génome Réunion ne remplace pas le test pharmacogénétique du patient. Il permet de mieux connaître le paysage pharmacogénétique de la population dans laquelle ce patient est pris en charge.
+
+### Texte oral (complet)
+
+« Deuxième démonstrateur : la pharmacogénétique. C'est un domaine où la génétique influence directement une décision thérapeutique, et où des recommandations existent déjà pour un certain nombre de couples gène-médicament — via la HAS, le CPIC, le DPWG, ou le RNPGx en France.
+
+Le principe est simple : une variation génétique, dans un gène codant une enzyme, un transporteur ou une cible thérapeutique, peut modifier l'exposition réelle d'un patient à un médicament, et donc son efficacité, sa toxicité, ou la dose optimale à utiliser.
+
+Notre question n'est pas de contester ces recommandations, qui reposent sur des preuves solides. Notre question est différente : quelle est la fréquence réelle, à La Réunion, des profils génétiques concernés par ces recommandations ? Génome Réunion ne remplace jamais le test individuel du patient — il permet de mieux connaître le paysage pharmacogénétique de la population dans laquelle ce patient est pris en charge. »
+
+### Références mobilisées
+- Recommandations HAS / CPIC / DPWG / RNPGx pour les couples gène-médicament cités.
+- Gènes structurants : CYP2C19, CYP2D6, CYP2C9, TPMT, NUDT15.
+
+### Concept visuel précis
+- Schéma causal horizontal à 4 étapes, même grammaire graphique que les schémas précédents (cohérence visuelle sur tout le diaporama).
+- Les 5 gènes cités en petite ligne de légende sous le schéma, taille de texte volontairement réduite — ce sont des exemples, pas le cœur du message, pour éviter que la slide ne devienne une liste de gènes à mémoriser.
+- Le message clé occupe la même position et la même hiérarchie visuelle que celui du diagnostic (slide 14) — effet miroir assumé entre les deux démonstrateurs pour que l'auditoire reconnaisse la structure.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Cette connaissance devient réellement sanitaire lorsqu'on la croise avec les médicaments utilisés et la gravité des événements évitables. »
+
+---
+
+## SLIDE 16 — PRIORISER LES RISQUES MÉDICAMENTEUX 🟡
+
+### Texte écran
+
+**Titre**
+> De la génomique à une stratégie de prévention ciblée
+
+**Formule visuelle**
+> Fréquence du profil génétique × Exposition locale au médicament × Niveau de preuve × Gravité du risque = Priorité régionale
+
+**Message clé**
+> L'objectif n'est pas de tester tout le monde pour tout. L'objectif est d'identifier les quelques situations où la pharmacogénétique pourrait avoir le plus fort intérêt local.
+
+**Référence démonstratrice (encart discret)**
+> PREPARE / U-PGx : une stratégie pharmacogénétique préemptive peut réduire certains effets indésirables — la transférabilité à une population très admixée reste à documenter localement.
+
+### Texte oral (complet)
+
+« Le nombre de couples gène-médicament potentiellement intéressants est considérable. Une stratégie utile pour l'ARS doit faire l'inverse d'une approche exhaustive : partir du niveau de preuve clinique, du médicament réellement prescrit à La Réunion, de la fréquence locale du profil génétique concerné, et de la gravité du risque, pour ne retenir que les situations réellement prioritaires.
+
+L'étude européenne PREPARE, menée dans le cadre du consortium U-PGx, a démontré qu'une stratégie pharmacogénétique préemptive — c'est-à-dire connue avant la prescription plutôt que découverte après un incident — pouvait réduire certains effets indésirables. C'est un démonstrateur solide de l'intérêt clinique de l'approche.
+
+Mais cette étude n'a pas été conduite sur une population aussi admixée que celle de La Réunion. La question de la transférabilité de ces résultats reste donc, à ce stade, une question à documenter — pas une réponse déjà acquise. »
+
+### Références mobilisées
+- PREPARE / U-PGx (démonstrateur européen de pharmacogénétique préemptive).
+- Niveaux de preuve HAS / CPIC / DPWG / RNPGx (repris de la slide 15) comme composante de la formule de priorisation.
+
+### Concept visuel précis
+- La formule visuelle est le point focal de la slide : 4 termes multipliés, présentés comme des pastilles reliées par des symboles "×", avec le résultat "Priorité régionale" isolé à droite après un "=" — esthétique proche d'une équation lisible, pas d'une formule mathématique intimidante.
+- Chaque terme de la formule dans une pastille de taille identique (pour ne pas suggérer qu'un facteur pèse plus qu'un autre visuellement — la pondération réelle est une question méthodologique, pas un message de cette slide).
+- L'encart PREPARE en bas, plus petit, cadre distinct, avec la nuance de transférabilité clairement lisible et non reléguée à l'oral seul.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « À terme, cette logique peut déboucher sur un outil régional de sécurisation thérapeutique. »
 
 ## SLIDE 17 — TRAJECTOIRE PHARMACOGÉNOMIQUE ⬜ (à faire)
 
