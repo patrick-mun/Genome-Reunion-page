@@ -273,6 +273,12 @@ Aucun.
 
 ## SLIDE 5 — POURQUOI LA RÉUNION : DIVERSITÉ COMME CONTINUUM 🟡
 
+**2026-09-03 — Révision (sur demande explicite) :** le dégradé SVG conceptuel (barre Lagon →
+Récif → Flamboyant avec nuage de points), jugé n'apporter aucune information utile, est retiré.
+La slide se recentre sur la phrase pivot et son rappel — la mention « la preuve réelle suit à la
+slide suivante » est reportée dans le texte de rappel pour conserver la transition vers la
+slide PCA.
+
 ### Texte écran
 
 **Titre**
@@ -282,7 +288,7 @@ Aucun.
 > Il existe une diversité réunionnaise que la médecine génomique doit apprendre à mieux représenter.
 
 **Sous la phrase, un rappel bref et net**
-> Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal.
+> Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal. La preuve réelle suit à la slide suivante.
 
 ### Texte oral (complet)
 
