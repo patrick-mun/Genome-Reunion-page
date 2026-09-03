@@ -349,22 +349,55 @@
       </div>
       <div class="slide-cols">
         <div class="slide-col">
-          <svg class="svg-figure" viewBox="0 0 460 352" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Entonnoir du lissage involontaire : même politique de santé, même outil, référentiels différemment représentatifs, niveau d'information variable, inégalité potentielle de pertinence">
-            <polygon points="0,10 460,10 425,68 35,68" fill="var(--navy)"/>
-            <text x="230" y="44" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Même politique de santé</text>
+          <svg class="svg-figure" viewBox="0 0 460 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Même politique de santé et même outil appliqués à tous, mais la chaîne se sépare selon la représentativité du référentiel disponible : un patient bien représenté obtient un diagnostic fiable, un patient mal représenté obtient un diagnostic incertain">
+            <defs>
+              <marker id="ar8" markerWidth="9" markerHeight="9" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--muted)"/></marker>
+            </defs>
 
-            <polygon points="35,74 425,74 393,132 67,132" fill="var(--navy)" opacity="0.85"/>
-            <text x="230" y="108" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Même outil / même recommandation</text>
+            <!-- 1. Politique de santé commune -->
+            <rect x="10" y="10" width="440" height="50" rx="10" fill="var(--navy)"/>
+            <text x="230" y="40" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Même politique de santé</text>
+            <line x1="230" y1="60" x2="230" y2="82" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar8)"/>
 
-            <polygon points="67,138 393,138 358,196 102,196" fill="var(--teal)"/>
-            <text x="230" y="164" font-size="13.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Référentiels différemment représentatifs</text>
+            <!-- 2. Outil / recommandation commun -->
+            <rect x="10" y="84" width="440" height="50" rx="10" fill="var(--navy)" opacity="0.85"/>
+            <text x="230" y="114" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Même outil / même recommandation</text>
 
-            <polygon points="102,202 358,202 323,260 137,260" fill="var(--teal)" opacity="0.85"/>
-            <text x="230" y="236" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Niveau d'information variable</text>
+            <!-- 3. Bifurcation : la représentativité du référentiel sépare la chaîne en deux -->
+            <line x1="230" y1="134" x2="230" y2="152" stroke="var(--muted)" stroke-width="2"/>
+            <line x1="230" y1="152" x2="125" y2="172" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar8)"/>
+            <line x1="230" y1="152" x2="335" y2="172" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar8)"/>
 
-            <polygon points="137,266 323,266 300,338 160,338" fill="var(--coral)"/>
-            <text x="230" y="296" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Inégalité potentielle</text>
-            <text x="230" y="316" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">de pertinence</text>
+            <rect x="30" y="174" width="190" height="44" rx="9" fill="var(--teal)"/>
+            <text x="125" y="192" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Référentiel bien</text>
+            <text x="125" y="208" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">représentatif</text>
+
+            <rect x="240" y="174" width="190" height="44" rx="9" fill="var(--coral)"/>
+            <text x="335" y="192" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Référentiel peu</text>
+            <text x="335" y="208" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">représentatif</text>
+
+            <line x1="125" y1="218" x2="125" y2="238" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar8)"/>
+            <line x1="335" y1="218" x2="335" y2="238" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar8)"/>
+
+            <rect x="30" y="240" width="190" height="44" rx="9" fill="var(--teal)" opacity="0.85"/>
+            <text x="125" y="258" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Niveau d'information</text>
+            <text x="125" y="274" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">élevé</text>
+
+            <rect x="240" y="240" width="190" height="44" rx="9" fill="var(--coral)" opacity="0.85"/>
+            <text x="335" y="258" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Niveau d'information</text>
+            <text x="335" y="274" font-size="11.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">limité</text>
+
+            <line x1="125" y1="284" x2="125" y2="304" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar8)"/>
+            <line x1="335" y1="284" x2="335" y2="304" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar8)"/>
+
+            <!-- 4. Issue clinique : même point de départ, pertinence différente à l'arrivée -->
+            <rect x="30" y="306" width="190" height="56" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>
+            <text x="125" y="329" font-size="13" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patient</text>
+            <text x="125" y="347" font-size="11" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">✓ diagnostic fiable</text>
+
+            <rect x="240" y="306" width="190" height="56" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
+            <text x="335" y="329" font-size="13" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patient</text>
+            <text x="335" y="347" font-size="11" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">! diagnostic incertain</text>
           </svg>
         </div>
         <div class="slide-col">
