@@ -16,14 +16,37 @@
 /* Diagrammes SVG dessinés (slides 03, 04, 07) — dimensionnement responsive */
 .svg-figure { width: 100%; height: auto; display: block; }
 
-/* Slide 05 — synthèse sous le schéma de convergence démographique */
-.source-synthesis {
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: 17px;
-  color: var(--muted);
-  margin-top: 18px;
+/* Slide 05 — frise historique du peuplement (reprise du patron de la présentation
+   générale, css/slides/s02-singularite.css du dépôt genome_reunion, adaptée à la
+   palette Lagon/Récif/Flamboyant à la place de bleu/violet/orange) */
+.timeline { display: flex; justify-content: space-between; position: relative; margin: 8px 0 20px; }
+.timeline-line { position: absolute; top: 30px; left: 0; right: 0; height: 2px; background: var(--border); }
+.timeline-step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; z-index: 1; padding: 0 6px; }
+.timeline-node {
+  width: 60px; height: 60px; border-radius: 50%; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-title); font-weight: 700; font-size: 14px; line-height: 1; text-align: center;
 }
+.timeline-node--1 { background: var(--navy); }
+.timeline-node--2 { background: var(--teal); }
+.timeline-node--3 { background: oklch(0.62 0.07 200); }
+.timeline-node--4 { background: var(--coral); }
+.timeline-label { font-family: var(--font-title); font-size: 16px; font-weight: 700; text-align: center; }
+.timeline-label--1 { color: var(--navy); }
+.timeline-label--2 { color: var(--teal); }
+.timeline-label--3 { color: oklch(0.5 0.07 200); }
+.timeline-label--4 { color: var(--coral); }
+.timeline-copy { font-size: 14px; color: var(--muted); text-align: center; line-height: 1.3; }
+
+.history-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.history-quote {
+  border-radius: var(--r-md); padding: 14px 18px;
+  border: 1px solid var(--border); background: var(--bg-light);
+}
+.history-quote--teal { border-left: 4px solid var(--teal); }
+.history-quote--coral { border-left: 4px solid var(--coral); }
+.history-quote-text { font-family: Georgia, serif; font-style: italic; font-size: 15.5px; line-height: 1.4; color: var(--navy); }
+.history-quote-meta { margin-top: 8px; font-family: var(--font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
 
 /* Slide 05 — continuum conceptuel (SVG : dégradé + nuage de points, aucune donnée) */
 .continuum-caption { font-family: var(--font-body); font-size: 14px; font-style: italic; color: var(--muted); margin-top: 10px; text-align: center; }

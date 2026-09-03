@@ -193,35 +193,55 @@ Aucun nécessaire. Slide à laisser respirer — c'est la première où l'audito
 ### Transition
 > « Cette question devient particulièrement importante lorsqu'on regarde la structure démographique de La Réunion. »
 
-## SLIDE 4 — POURQUOI LA RÉUNION : HISTOIRE DÉMOGRAPHIQUE 🟡
+## SLIDE 4 — POURQUOI LA RÉUNION : HISTOIRE DÉMOGRAPHIQUE 🟢 (révisée 2026-09-03)
+
+**2026-09-03 — Révision (sur modèle de la présentation générale) :** remplace le schéma de flux
+convergents (5 flèches vers une carte stylisée) par une frise chronologique, reprise du patron
+visuel et du contenu déjà sourcé de la slide 9 de la présentation générale du projet
+(`genome_reunion/index.html`, section 2 — singularité réunionnaise), adaptée à notre palette
+Lagon/Récif/Flamboyant. Cette version est mieux sourcée (deux citations d'historiens déjà
+vérifiées dans le corpus du projet) et raconte une vraie chronologie plutôt que cinq régions
+juxtaposées sans ordre.
 
 ### Texte écran
 
 **Titre**
-> Une population façonnée par des apports récents et multiples
+> Un peuplement sans autochtones
 
-**Schéma de flux (voir concept visuel) avec, en légende sobre :**
-> Europe · Afrique et Madagascar · Inde du Sud · Chine · océan Indien
+**Frise en 4 étapes (nœuds colorés reliés par une ligne)**
 
-**Ligne de synthèse sous le schéma**
-> Admixture récente + insularité + effets fondateurs + dérive + endogamie locale
+| Étape | Origines |
+|---|---|
+| 1663 — Colonisation / Esclavage | Europe · Afrique · Madagascar |
+| 1848 — Engagisme | Inde du Sud · Chine · Afrique |
+| XXe s. — Migrations | Mayotte · Comores · Madagascar |
+| Aujourd'hui — Population | Admixture unique |
+
+**Message clé (encadré)**
+> La structure réunionnaise ne dérive pas d'un noyau autochtone ancien, mais d'apports successifs importés puis recombinés sur un espace insulaire clos.
+
+**Deux citations d'historiens (cartes côte à côte)**
+> « La Réunion est un laboratoire d'histoire humaine, un monde recomposé où se mêlent les fragments d'identités transplantées. » — Prosper Ève, *Esclavage, métissage, liberté*, 2003
+>
+> « Le marron est l'homme de la rupture ; il rejette le monde colonial et tente d'en bâtir un autre dans les hauteurs. » — Sudel Fuma, *La révolte des oreilles coupées*, 2011
 
 ### Texte oral (complet)
 
-« La population réunionnaise résulte d'une histoire démographique récente — à l'échelle génétique, quelques siècles seulement — qui a mêlé des apports européens, africains et malgaches, sud-asiatiques, chinois, et plus largement de l'océan Indien.
+« La Réunion n'a pas de population autochtone antérieure à sa colonisation — c'est un point de départ important pour comprendre sa diversité génétique.
 
-Cette histoire s'est déroulée dans un contexte particulier : une île, donc une forme d'insularité ; des vagues de peuplement limitées dans le temps, donc des effets fondateurs ; et, pour certaines composantes ou certains territoires, une endogamie locale qui a renforcé certains profils génétiques.
+Le peuplement s'est fait en plusieurs vagues successives : la colonisation et l'esclavage à partir de 1663, avec des apports européens, africains et malgaches ; l'engagisme après l'abolition de l'esclavage en 1848, qui amène des populations d'Inde du Sud, de Chine et à nouveau d'Afrique ; puis, au XXe siècle, des migrations plus récentes depuis Mayotte, les Comores et Madagascar. Ce qui en résulte aujourd'hui est une admixture unique, qui ne ressemble à aucune des populations sources prises isolément.
 
-Aucun de ces mécanismes n'est propre à La Réunion — on les retrouve dans beaucoup de populations insulaires ou d'histoire récente. Ce qui est propre à La Réunion, c'est leur combinaison, sur une population de cette taille, avec cette diversité de sources. »
+Comme le résume l'historien Prosper Ève, La Réunion est un laboratoire d'histoire humaine — un monde recomposé, pas un monde hérité. La structure génétique réunionnaise suit exactement cette logique : elle ne dérive pas d'un noyau ancien, mais d'apports importés puis recombinés sur un espace insulaire clos. »
 
 ### Références mobilisées
-- Travaux spécifiques à La Réunion et à l'océan Indien (littérature de peuplement/démographie génétique locale — à citer précisément selon les sources internes disponibles au moment de la mise en forme finale).
+- Prosper Ève, *Esclavage, métissage, liberté : La Réunion, 1794-1848*, 2003.
+- Sudel Fuma, *La révolte des oreilles coupées*, 2011.
+- Chronologie et contenu repris de la présentation générale du projet (slide "La Réunion : un peuplement sans autochtones"), déjà vérifiés dans le corpus.
 
 ### Concept visuel précis
-- Carte stylisée de l'océan Indien (pas une carte politique détaillée — un tracé simplifié, cohérent avec le style "silhouette" de la slide 1) avec La Réunion au centre.
-- Flèches de flux convergentes vers l'île depuis 5 directions (Europe, Afrique/Madagascar, Inde du Sud, Chine, océan Indien), chacune dans une nuance de la palette Lagon/Récif — **jamais de couleur "raciale" codée par flux** (ex. pas de bleu pour l'Europe et de brun pour l'Afrique : utiliser une seule gamme chromatique déclinée en intensité, pas en teinte).
-- Épaisseur des flèches non proportionnelle à des données précises (on n'a pas ces chiffres) — toutes d'épaisseur comparable, pour ne pas suggérer une hiérarchie d'apport.
-- Sous la carte, la ligne de synthèse en typographie discrète, presque une légende scientifique.
+- Frise horizontale à 4 nœuds circulaires colorés (navy → teal → teal clair → coral, en dégradé de la palette de marque, pas de couleur "raciale" codée par période), reliés par une ligne fine horizontale — patron repris tel quel de la présentation générale.
+- Encadré "Message clé" à accent gauche navy, puis deux cartes de citation à accent gauche teal/coral, avec la source en petites capitales sous chaque citation.
+- Slide plus dense que la moyenne du deck (frise + encadré + 2 citations) mais reste dans une seule hauteur d'écran, sans scroll.
 
 ### Éléments interactifs
 Aucun.
