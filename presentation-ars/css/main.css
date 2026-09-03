@@ -326,7 +326,10 @@ h2.block-title {
 .card--white { background: white; }
 .card--coral { background: oklch(0.97 0.02 30); border-color: oklch(0.88 0.06 30); }
 .card--coral-strong { background: oklch(0.97 0.02 30); border: 2px solid var(--coral); }
-.card--navy-strong { background: var(--navy); border-color: var(--navy); }
+.card--navy-strong { background: var(--navy); border-color: var(--navy); color: white; }
+.card--navy-strong .text-body { color: white; }
+.card--navy-strong .callout { background: rgba(255, 255, 255, 0.1); border-left-color: white; }
+.card--navy-strong .callout-title { color: white; }
 .card--dark { background: rgba(255, 255, 255, 0.08); border-color: rgba(255, 255, 255, 0.12); color: white; }
 .card--dark-strong { background: rgba(255, 255, 255, 0.12); border-color: rgba(232, 101, 74, 0.4); color: white; }
 .card-title { font-family: var(--font-title); font-weight: 700; font-size: 21px; color: var(--navy); }
