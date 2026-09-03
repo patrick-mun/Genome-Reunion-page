@@ -2,42 +2,42 @@
    Familles de classes : eco-* / priority-* */
 
 /* Slide 09 — écosystème génomique (couches concentriques, du mondial au local) */
-.eco-stack { display: flex; flex-direction: column; align-items: center; gap: 4px; flex: 1; justify-content: center; }
+.eco-stack { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; justify-content: center; }
 .eco-layer {
   width: 100%;
-  max-width: 640px;
+  max-width: 820px;
   border-radius: var(--r-lg);
-  padding: 18px 24px;
+  padding: 20px 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 .eco-layer--intl { background: var(--bg-light); border: 1.5px solid var(--border); }
-.eco-layer--nat { max-width: 460px; background: var(--teal); }
-.eco-layer-title { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); }
+.eco-layer--nat { max-width: 600px; background: var(--teal); }
+.eco-layer-title { font-family: var(--font-title); font-weight: 700; font-size: 21px; color: var(--navy); }
 .eco-layer--nat .eco-layer-title { color: white; }
-.eco-tags-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.eco-tags-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .eco-tag { padding: 5px 14px; border-radius: 20px; font-family: var(--font-body); font-size: 15px; background: white; border: 1px solid var(--border); color: var(--navy); }
 .eco-tag--on-teal { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); color: white; }
 /* Variante "carte" avec fonction — pour que la slide 11 reste une fiche mémo distincte de la slide 10 */
-.eco-tag-full { padding: 8px 14px; border-radius: var(--r-sm); background: white; border: 1px solid var(--border); text-align: left; min-width: 150px; }
-.eco-tag-full .name { display: block; font-family: var(--font-title); font-weight: 700; font-size: 15px; color: var(--navy); }
-.eco-tag-full .fn { display: block; font-family: var(--font-body); font-size: 12.5px; color: var(--muted); margin-top: 1px; }
+.eco-tag-full { padding: 10px 16px; border-radius: var(--r-sm); background: white; border: 1px solid var(--border); text-align: left; min-width: 190px; }
+.eco-tag-full .name { display: block; font-family: var(--font-title); font-weight: 700; font-size: 18px; color: var(--navy); }
+.eco-tag-full .fn { display: block; font-family: var(--font-body); font-size: 14.5px; color: var(--muted); margin-top: 2px; }
 .eco-layer--nat .eco-tag-full { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); }
 .eco-layer--nat .eco-tag-full .name { color: white; }
 .eco-layer--nat .eco-tag-full .fn { color: rgba(255,255,255,0.75); }
-.eco-chevron { color: var(--muted); font-size: 18px; line-height: 1; }
+.eco-chevron { color: var(--muted); font-size: 22px; line-height: 1; }
 .eco-core {
-  max-width: 320px;
+  max-width: 420px;
   background: var(--coral);
   border-radius: var(--r-lg);
-  padding: 18px 28px;
+  padding: 18px 32px;
   text-align: center;
 }
-.eco-core-name { font-family: var(--font-title); font-weight: 700; font-size: 22px; color: white; }
-.eco-core-desc { font-family: var(--font-body); font-size: 14px; color: rgba(255,255,255,0.85); margin-top: 4px; }
-.eco-signature { text-align: center; font-family: var(--font-title); font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: 1px; margin-top: 18px; }
+.eco-core-name { font-family: var(--font-title); font-weight: 700; font-size: 27px; color: white; }
+.eco-core-desc { font-family: var(--font-body); font-size: 16.5px; color: rgba(255,255,255,0.85); margin-top: 5px; }
+.eco-signature { text-align: center; font-family: var(--font-title); font-weight: 700; font-size: 21px; color: var(--navy); letter-spacing: 1px; margin-top: 16px; }
 
 /* Slides 10-11 — pipeline additionnel (familles nucléaires) */
 .pipeline-side {
