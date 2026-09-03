@@ -66,8 +66,9 @@
 .selection-legend-tag .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); display: inline-block; }
 .selection-criteria-note { font-family: var(--font-body); font-size: 15px; color: var(--muted); margin-top: 6px; }
 
-/* Slide 12 — matrice de priorités ARS (grille de cartes) */
+/* Slide 12/14 — matrice de priorités ARS / PRS (grille de cartes) */
 .priority-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; flex: 1; align-content: center; }
+.priority-grid--4 .priority-card { padding: 20px 18px; gap: 10px; }
 .priority-card {
   background: var(--bg-light);
   border: 1px solid var(--border);
@@ -81,6 +82,20 @@
 .priority-card--navy { border-top-color: var(--navy); }
 .priority-card--teal { border-top-color: var(--teal); }
 .priority-card--coral { border-top-color: var(--coral); }
+.priority-badge {
+  align-self: flex-start;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: white;
+  background: var(--navy);
+  border-radius: 20px;
+  padding: 4px 10px;
+}
+.priority-card--coral .priority-badge { background: var(--coral); }
+.priority-card--teal .priority-badge { background: var(--teal); }
 .priority-label { font-family: var(--font-title); font-weight: 700; font-size: 17px; color: var(--navy); }
 .priority-value { font-family: var(--font-body); font-size: 14.5px; color: var(--muted); line-height: 1.35; }
 
