@@ -389,7 +389,14 @@ Aucun.
 
 ---
 
-## SLIDE 9 — ÉCOSYSTÈME GÉNOMIQUE (qui fait quoi) 🟡
+## SLIDE 9 — ÉCOSYSTÈME GÉNOMIQUE (qui fait quoi) 🟢 (révisée 2026-09-03)
+
+**2026-09-03 — Révision (audit design/contenu) :** en passant du tableau initial à des couches
+concentriques (voir historique des améliorations visuelles), cette slide était devenue redondante
+avec la slide 8 (positionnement) — même message, même liste d'institutions, juste un habillage
+différent. Corrigé en réintroduisant la fonction de chaque ressource sous chaque étiquette : la
+slide 9 redevient une vraie fiche mémo factuelle, la slide 8 reste la démonstration conceptuelle
+de la complémentarité.
 
 ### Texte écran
 
@@ -529,32 +536,54 @@ parmi ses actions, « Améliorer le diagnostic et la prise en charge des maladie
 une action existante du PRS que Génome Réunion vient concrètement outiller, pas une nouvelle
 demande.
 
+**2026-09-03 — Audit design/contenu/PRS :** en recroisant les 4 priorités avec les actions
+*réellement listées* dans la plaquette (pas seulement leur intitulé), un seul lien est un match
+vérifié mot pour mot : la **priorité 4** (maladies rares). Les trois autres sont des
+rapprochements thématiques défendables mais non vérifiés au niveau de l'action :
+- **Priorité 5** (inégalités) : ses actions réelles parlent de pauvreté, désertification médicale,
+  accès géographique aux soins — pas de représentativité génomique. Le lien tient sur le mot
+  « inégalité », pas sur le contenu de la priorité.
+- **Priorité 2** (prévention) : ses actions réelles sont des dispositifs de terrain (consultations
+  aux âges clés, CLS, bus santé) — pas de pharmacogénétique.
+- **Priorité 14** (numérique) : ses actions réelles sont cybersécurité, téléconsultation,
+  télé-expertise, modules e-santé en formation — rien sur la gouvernance de données génomiques.
+  C'est le lien le plus faible des quatre.
+
+Présenter les 4 cartes avec la même autorité visuelle aurait laissé croire à un niveau de preuve
+égal, face à un auditoire qui connaît son propre document par cœur. Corrigé : seule la priorité 4
+porte le badge plein avec ✓ ; les 3 autres portent un badge en contour avec la formule « dans
+l'esprit de cette priorité », et une note de bas de slide rend la distinction explicite à l'écran,
+pas seulement à l'oral.
+
 ### Texte écran
 
 **Titre**
 > Une ressource ancrée dans le PRS 2023-2033, pas à côté
 
-**Grille de 4 cartes, chacune avec un badge « Priorité N du PRS »**
+**Grille de 4 cartes — un seul badge plein (✓, lien vérifié), trois badges en contour (lien thématique)**
 
-| Priorité PRS | Intitulé officiel | Apport de Génome Réunion |
-|---|---|---|
-| 5 | Réduction des inégalités sociales et territoriales de santé | Réduire un angle mort de représentation dans les outils de médecine génomique |
-| 4 | Parcours de santé coordonnés et accessibles | Soutenir le diagnostic et la prise en charge des maladies rares — une action déjà inscrite au PRS |
-| 2 | Prévention dans le quotidien des Réunionnais | Documenter les profils pharmacogénétiques pour prévenir des risques médicamenteux évitables |
-| 14 | Le numérique au service de la santé | Constituer une ressource de données de santé gouvernée et sécurisée |
+| Priorité PRS | Intitulé officiel | Apport de Génome Réunion | Niveau de preuve |
+|---|---|---|---|
+| 4 | Parcours de santé coordonnés et accessibles | Soutenir le diagnostic et la prise en charge des maladies rares — une action déjà inscrite au PRS | ✓ Vérifié (action citée mot pour mot) |
+| 5 | Réduction des inégalités sociales et territoriales de santé | Dans l'esprit de cette priorité : réduire un angle mort de représentation dans les outils de médecine génomique | Rapprochement thématique |
+| 2 | Prévention dans le quotidien des Réunionnais | Dans l'esprit de cette priorité : documenter les profils pharmacogénétiques pour prévenir des risques médicamenteux évitables | Rapprochement thématique |
+| 14 | Le numérique au service de la santé | Dans l'esprit de cette priorité : constituer une ressource de données de santé gouvernée et sécurisée | Rapprochement thématique (le plus faible) |
+
+**Note de bas de slide (affichée à l'écran)**
+> ✓ Action déjà écrite au PRS · les 3 autres priorités sont des rapprochements thématiques, pas des actions vérifiées mot pour mot.
 
 **Message clé**
 > Génome Réunion ne demande pas d'ajouter une priorité au PRS : il apporte une donnée locale à des priorités qui y figurent déjà.
 
 ### Texte oral (complet)
 
-« Cette slide n'invente rien : elle reprend quatre des quinze priorités que vous avez vous-mêmes fixées dans le PRS 2023-2033, et montre où Génome Réunion vient concrètement les outiller.
+« Cette slide n'invente rien : elle reprend des priorités que vous avez vous-mêmes fixées dans le PRS 2023-2033, et montre où Génome Réunion vient les outiller — mais je veux être précis sur le niveau de preuve de chacune, pas les présenter comme équivalentes.
 
-Je veux m'arrêter sur la priorité 4, parce qu'elle est la plus directe : parmi ses actions figure déjà "améliorer le diagnostic et la prise en charge des maladies rares". Ce n'est pas nous qui proposons cette priorité — elle existe déjà dans votre feuille de route. Ce que nous proposons, c'est une ressource locale pour mieux la servir.
+La priorité 4 est la plus directe : parmi ses actions figure déjà "améliorer le diagnostic et la prise en charge des maladies rares". Ce n'est pas nous qui proposons cette priorité — elle existe déjà dans votre feuille de route, mot pour mot. Ce que nous proposons, c'est une ressource locale pour mieux la servir.
 
-La priorité 5, la réduction des inégalités sociales et territoriales de santé, est le cœur de notre argumentaire d'équité de pertinence développé en première partie. La priorité 2, la prévention dans le quotidien des Réunionnais, est directement servie par notre trajectoire pharmacogénétique. Et la priorité 14, le numérique au service de la santé, correspond à l'exigence de gouvernance des données que nous détaillerons dans la dernière partie.
+Les trois autres cartes sont des rapprochements thématiques, pas des correspondances d'action vérifiées : la priorité 5 sur le mot "inégalité", la priorité 2 sur l'esprit de prévention que porte notre trajectoire pharmacogénétique, la priorité 14 sur l'exigence de gouvernance des données. Je préfère vous le dire ainsi plutôt que de laisser croire à quatre correspondances de même solidité.
 
-Nous ne prétendons pas contribuer aux quinze priorités du PRS. Nous préférons documenter précisément quatre contributions réelles plutôt que revendiquer une pertinence générale. »
+Nous ne prétendons pas contribuer aux quinze priorités du PRS. Nous préférons documenter précisément une contribution vérifiée et trois convergences d'esprit, plutôt que de revendiquer une pertinence générale non vérifiable. »
 
 ### Références mobilisées
 Plaquette de présentation du PRS La Réunion 2023-2033 (ARS La Réunion, Cadre d'Orientations
