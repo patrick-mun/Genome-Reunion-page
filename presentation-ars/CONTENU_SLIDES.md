@@ -193,7 +193,7 @@ Aucun nécessaire. Slide à laisser respirer — c'est la première où l'audito
 ### Transition
 > « Cette question devient particulièrement importante lorsqu'on regarde la structure démographique de La Réunion. »
 
-## SLIDE 4 — POURQUOI LA RÉUNION : HISTOIRE DÉMOGRAPHIQUE 🟡 (révisée 2026-09-03, citation Sudel Fuma à finaliser)
+## SLIDE 4 — POURQUOI LA RÉUNION : HISTOIRE DÉMOGRAPHIQUE 🟢 (révisée 2026-09-03)
 
 **2026-09-03 — Révision (v2, sur demande explicite) :** après un premier passage en frise
 chronologique (1663/1848/XXe/Aujourd'hui, abandonné), reprend finalement le graphique de
@@ -202,16 +202,16 @@ représenter, pas une catégorie à définir") tel quel — mêmes tracés SVG, 
 Lagon/Récif/Flamboyant, aucune adaptation de couleur nécessaire) — avec les 5 branches
 réétiquetées pour représenter les apports démographiques historiques (Europe, Afrique &
 Madagascar, Inde du Sud, Chine, océan Indien) plutôt que des flux anonymes. Titre restauré à sa
-version originale. Les deux citations d'historiens de la v1 sont conservées.
+version originale. Les deux citations d'historiens de la v1 sont conservées dans un premier temps.
 
-**⚠️ Citation Sudel Fuma à remplacer :** la citation actuelle (sur le marronnage, extraite de *La
-révolte des oreilles coupées*) est moins directement liée au sujet de la slide (diversité/
-peuplement) que celle de Prosper Ève. Une recherche d'alternative a été tentée mais les sources
-disponibles (temoignages.re, reunionnaisdumonde.com) sont bloquées par le réseau de cet
-environnement — impossible de vérifier une citation de remplacement mot pour mot sans risquer
-d'en inventer une. **Le porteur de projet doit fournir la citation de remplacement.** En
-attendant, la citation actuelle reste affichée avec une note "à remplacer" directement visible
-dans le code (`index.html`, slide 05).
+**2026-09-03 — Révision (v3, mise en page) :** la citation de Sudel Fuma est retirée (moins
+directement liée au sujet de la slide que celle de Prosper Ève, et sa recherche d'une alternative
+vérifiée s'est heurtée au blocage réseau de cet environnement pour les sources disponibles —
+temoignages.re, reunionnaisdumonde.com — donc pas de remplacement inventé). La carte de gauche est
+réduite (elle ne force plus la hauteur de colonne) et la citation de Prosper Ève, agrandie
+(`.history-quote--lg`), est repositionnée juste en dessous, dans la même colonne. L'espace ainsi
+libéré à droite permet d'agrandir le graphique de convergence vers le bas (`viewBox` de la double
+hélice élargi de 300 à 380 de hauteur, contenu recentré via un `<g transform="translate(0,40)">`).
 
 ### Texte écran
 
@@ -223,15 +223,14 @@ dans le code (`index.html`, slide 05).
 >
 > Message clé : Admixture récente + insularité + effets fondateurs + dérive + endogamie locale
 
+Sous cette carte, la citation d'historien (agrandie) :
+> « La Réunion est un laboratoire d'histoire humaine, un monde recomposé où se mêlent les fragments d'identités transplantées. » — Prosper Ève, *Esclavage, métissage, liberté*, 2003
+
 **Colonne droite — graphique "Une histoire de convergences"**
 5 branches colorées (Europe, Afrique · Madagascar, Inde du Sud, Chine, Océan Indien) convergent
-vers un point central puis se prolongent en double hélice d'ADN.
+vers un point central puis se prolongent en double hélice d'ADN. Le graphique occupe toute la
+hauteur disponible de la colonne.
 > Légende : Des origines et des histoires diverses, mêlées au fil du peuplement de l'île, qui convergent vers un même patrimoine génétique à mieux connaître.
-
-**Deux citations d'historiens (cartes côte à côte)**
-> « La Réunion est un laboratoire d'histoire humaine, un monde recomposé où se mêlent les fragments d'identités transplantées. » — Prosper Ève, *Esclavage, métissage, liberté*, 2003
->
-> « Le marron est l'homme de la rupture ; il rejette le monde colonial et tente d'en bâtir un autre dans les hauteurs. » — Sudel Fuma, *La révolte des oreilles coupées*, 2011 *(⚠️ à remplacer)*
 
 ### Texte oral (complet)
 
