@@ -322,9 +322,86 @@ Aucun. C'est une slide de bascule conceptuelle — elle doit être lue lentement
 ### Transition
 > « La réponse n'est pas de remplacer les dispositifs existants. Elle est de les compléter. »
 
-## SLIDE 8 — POSITIONNEMENT (compléter, pas remplacer) ⬜ (à faire)
+## SLIDE 8 — POSITIONNEMENT (compléter, pas remplacer) 🟡
 
-## SLIDE 9 — ÉCOSYSTÈME GÉNOMIQUE (qui fait quoi) ⬜ (à faire)
+### Texte écran
+
+**Titre**
+> Compléter les référentiels, pas les remplacer
+
+**Schéma à 4 niveaux (voir concept visuel)**
+> Référentiels internationaux (gnomAD / 1000 Genomes / HGDP) → Dispositifs nationaux (PFMG / AURAGEN / SeqOIA) → Ressource locale (Génome Réunion) → Usage (interprétation / pharmacogénétique / recherche / prévention)
+
+**Phrase centrale**
+> Génome Réunion ne remplace pas les grandes bases internationales : il les complète là où elles décrivent insuffisamment notre population.
+
+### Texte oral (complet)
+
+« Avant d'aller plus loin, je veux répondre directement à l'objection la plus naturelle : "cela existe déjà".
+
+Oui — et c'est heureux. Les référentiels internationaux comme gnomAD, 1000 Genomes ou HGDP sont indispensables. Les dispositifs nationaux comme le Plan France Médecine Génomique, AURAGEN ou SeqOIA font un travail que Génome Réunion ne cherche ni à dupliquer ni à concurrencer.
+
+La différence tient en une question. Le Plan France Médecine Génomique répond à : pouvons-nous séquencer ce patient et identifier ses variants ? Génome Réunion répond à une question différente : disposons-nous d'un référentiel suffisamment représentatif pour interpréter certains de ces variants dans le contexte réunionnais ? Ce n'est pas la même couche du système. »
+
+### Références mobilisées
+- gnomAD, 1000 Genomes, HGDP (référentiels internationaux).
+- Plan France Médecine Génomique, AURAGEN, SeqOIA (dispositifs nationaux).
+
+### Concept visuel précis
+- 4 blocs empilés horizontalement ou en escalier (pas une pyramide hiérarchique — plutôt des couches côte à côte de largeur égale, pour éviter de suggérer que Génome Réunion serait "au sommet" ou "à la base").
+- Chaque bloc dans une teinte de la même famille Lagon/Récif, le bloc "Ressource locale / Génome Réunion" seul en Flamboyant pour le repérer immédiatement.
+- Flèches fines entre les blocs, horizontales, suggérant un flux de complémentarité et non une hiérarchie de valeur.
+- La phrase centrale en dessous du schéma, cadre sobre.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Pour situer précisément cette complémentarité, voici comment se répartissent les rôles dans l'écosystème génomique. »
+
+---
+
+## SLIDE 9 — ÉCOSYSTÈME GÉNOMIQUE (qui fait quoi) 🟡
+
+### Texte écran
+
+**Titre**
+> Génome Réunion dans l'écosystème génomique
+
+**Tableau (repris et enrichi de l'ancienne annexe B, remontée en slide principale)**
+
+| Ressource | Fonction |
+|---|---|
+| 1000 Genomes | Populations de référence internationales |
+| gnomAD | Fréquences alléliques internationales |
+| HGDP | Diversité génétique mondiale |
+| Plan France Médecine Génomique | Stratégie nationale de médecine génomique |
+| AURAGEN / SeqOIA | Séquençage génomique clinique |
+| **Génome Réunion** | **Référence populationnelle locale complémentaire** |
+
+**Message sous le tableau**
+> Complémentarité, jamais substitution.
+
+### Texte oral (complet)
+
+« Ce tableau n'a qu'un objectif : que vous repartiez avec une carte claire de qui fait quoi, pour ne jamais confondre Génome Réunion avec un doublon d'un dispositif existant.
+
+Les référentiels internationaux fournissent les populations et fréquences de référence à l'échelle mondiale. Les dispositifs nationaux assurent le séquençage clinique et la stratégie nationale. Génome Réunion occupe une case qui, aujourd'hui, n'est occupée par aucun de ces dispositifs : la référence populationnelle locale, construite spécifiquement pour la diversité réunionnaise. »
+
+### Références mobilisées
+Reprend les mêmes entités que la slide 8 — cette slide est la version "carte de synthèse" que l'ARS peut garder après la réunion, notamment si le support est transmis en PDF.
+
+### Concept visuel précis
+- Tableau sobre, 2 colonnes, alternance de fond très légère entre les lignes pour la lisibilité.
+- Ligne "Génome Réunion" mise en évidence (fond Flamboyant très clair ou bordure Flamboyant), sans être criarde.
+- Message final centré sous le tableau, en petites capitales, comme une signature.
+- Slide volontairement dense en texte par rapport aux autres — c'est la seule du diaporama pensée aussi comme "fiche mémo" autonome, donc c'est assumé.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Pour construire cette référence, le projet s'appuie d'abord sur une cohorte large. »
 
 ## SLIDE 10 — CE QUE LE PROJET CONSTRUIT ⬜ (à faire)
 
