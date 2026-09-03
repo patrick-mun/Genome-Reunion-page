@@ -153,20 +153,23 @@
           <p class="pivot-quote pivot-quote--sm">L'égalité d'accès aux outils ne garantit pas toujours l'équité de pertinence.</p>
         </div>
         <div class="slide-col">
-          <div class="refflow">
-            <div class="refflow-step">Données de référence</div>
-            <div class="refflow-arrow">↓</div>
-            <div class="refflow-step">Algorithmes / interprétation / recommandations</div>
-            <div class="refflow-arrow">↓</div>
-            <div class="refflow-step">Patients</div>
-          </div>
+          <svg class="svg-figure" viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chaîne : données de référence, puis algorithmes et recommandations, puis patients">
+            <defs>
+              <marker id="ar3" markerWidth="9" markerHeight="9" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--muted)"/></marker>
+            </defs>
+            <rect x="30" y="10" width="400" height="64" rx="10" fill="var(--navy)"/>
+            <text x="230" y="48" font-size="17" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Données de référence</text>
+            <line x1="230" y1="74" x2="230" y2="112" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
+            <rect x="10" y="118" width="440" height="72" rx="10" fill="var(--teal)"/>
+            <text x="230" y="150" font-size="16" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Algorithmes / interprétation</text>
+            <text x="230" y="172" font-size="16" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">/ recommandations</text>
+            <line x1="230" y1="190" x2="230" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
+            <rect x="30" y="234" width="400" height="64" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
+            <text x="230" y="272" font-size="17" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patients</text>
+          </svg>
           <div class="refflow-depth">
-            <div class="refflow-depth-label">Profondeur de représentation historique — variable selon les populations</div>
-            <div class="refflow-depth-track">
-              <div class="refflow-depth-seg" style="width:55%;background:var(--navy);"></div>
-              <div class="refflow-depth-seg" style="width:25%;background:var(--teal);"></div>
-              <div class="refflow-depth-seg" style="width:20%;background:var(--coral);"></div>
-            </div>
+            <div class="refflow-depth-label">Profondeur de représentation historique — hétérogène et non uniforme selon les référentiels</div>
+            <div class="refflow-depth-track refflow-depth-track--gradient"></div>
           </div>
           <p class="text-small" style="margin-top:14px;">Popejoy &amp; Fullerton, <em>Nature</em>, 2016 · Fatumo et al., <em>Nature Medicine</em>, 2022.</p>
         </div>
@@ -184,15 +187,37 @@
         <h1 class="slide-title">Une population façonnée par des apports récents et multiples</h1>
       </div>
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:8px;">
-        <div class="source-grid">
-          <div class="source-card">Europe</div>
-          <div class="source-card">Afrique &amp; Madagascar</div>
-          <div class="source-card">Inde du Sud</div>
-          <div class="source-card">Chine</div>
-          <div class="source-card">Océan Indien</div>
-        </div>
-        <div class="source-arrows"><span>↘</span><span>↓</span><span>↓</span><span>↓</span><span>↙</span></div>
-        <div class="source-center">La Réunion</div>
+        <svg class="svg-figure" viewBox="0 0 760 232" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cinq apports démographiques convergeant vers La Réunion : Europe, Afrique et Madagascar, Inde du Sud, Chine, océan Indien">
+          <defs>
+            <marker id="ar4" markerWidth="9" markerHeight="9" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--teal)"/></marker>
+          </defs>
+          <path d="M80,58 Q 220,115 375,150" fill="none" stroke="var(--teal)" stroke-width="2" opacity="0.75" marker-end="url(#ar4)"/>
+          <path d="M255,58 Q 320,108 378,148" fill="none" stroke="var(--teal)" stroke-width="2" opacity="0.75" marker-end="url(#ar4)"/>
+          <path d="M380,58 Q 379,100 380,146" fill="none" stroke="var(--teal)" stroke-width="2" opacity="0.75" marker-end="url(#ar4)"/>
+          <path d="M505,58 Q 440,108 382,148" fill="none" stroke="var(--teal)" stroke-width="2" opacity="0.75" marker-end="url(#ar4)"/>
+          <path d="M680,58 Q 540,115 385,150" fill="none" stroke="var(--teal)" stroke-width="2" opacity="0.75" marker-end="url(#ar4)"/>
+
+          <rect x="20" y="10" width="120" height="48" rx="8" fill="var(--bg-light)" stroke="var(--border)"/>
+          <text x="80" y="39" font-size="14" fill="var(--navy)" text-anchor="middle" font-family="var(--font-body)">Europe</text>
+
+          <rect x="180" y="10" width="150" height="48" rx="8" fill="var(--bg-light)" stroke="var(--border)"/>
+          <text x="255" y="30" font-size="13" fill="var(--navy)" text-anchor="middle" font-family="var(--font-body)">Afrique &amp;</text>
+          <text x="255" y="46" font-size="13" fill="var(--navy)" text-anchor="middle" font-family="var(--font-body)">Madagascar</text>
+
+          <rect x="315" y="10" width="130" height="48" rx="8" fill="var(--bg-light)" stroke="var(--border)"/>
+          <text x="380" y="30" font-size="13" fill="var(--navy)" text-anchor="middle" font-family="var(--font-body)">Inde</text>
+          <text x="380" y="46" font-size="13" fill="var(--navy)" text-anchor="middle" font-family="var(--font-body)">du Sud</text>
+
+          <rect x="450" y="10" width="110" height="48" rx="8" fill="var(--bg-light)" stroke="var(--border)"/>
+          <text x="505" y="39" font-size="14" fill="var(--navy)" text-anchor="middle" font-family="var(--font-body)">Chine</text>
+
+          <rect x="600" y="10" width="160" height="48" rx="8" fill="var(--bg-light)" stroke="var(--border)"/>
+          <text x="680" y="30" font-size="13" fill="var(--navy)" text-anchor="middle" font-family="var(--font-body)">Océan</text>
+          <text x="680" y="46" font-size="13" fill="var(--navy)" text-anchor="middle" font-family="var(--font-body)">Indien</text>
+
+          <rect x="255" y="150" width="250" height="66" rx="12" fill="var(--navy)"/>
+          <text x="380" y="190" font-size="20" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">La Réunion</text>
+        </svg>
         <p class="source-synthesis">Admixture récente + insularité + effets fondateurs + dérive + endogamie locale</p>
       </div>
     </div>
@@ -253,13 +278,23 @@
       </div>
       <div class="slide-cols">
         <div class="slide-col">
-          <div class="lissage-chain">
-            <div class="lissage-row"><div class="lissage-numcol"><div class="step-dot" style="width:30px;height:30px;font-size:14px;background:var(--navy);">1</div><div class="lissage-numline"></div></div><div class="lissage-body">Même politique de santé</div></div>
-            <div class="lissage-row"><div class="lissage-numcol"><div class="lissage-numline"></div><div class="step-dot" style="width:30px;height:30px;font-size:14px;background:var(--navy);">2</div><div class="lissage-numline"></div></div><div class="lissage-body">Même outil / même recommandation</div></div>
-            <div class="lissage-row"><div class="lissage-numcol"><div class="lissage-numline"></div><div class="step-dot" style="width:30px;height:30px;font-size:14px;background:var(--teal);">3</div><div class="lissage-numline"></div></div><div class="lissage-body">Référentiels différemment représentatifs</div></div>
-            <div class="lissage-row"><div class="lissage-numcol"><div class="lissage-numline"></div><div class="step-dot" style="width:30px;height:30px;font-size:14px;background:var(--teal);">4</div><div class="lissage-numline"></div></div><div class="lissage-body">Niveau d'information variable</div></div>
-            <div class="lissage-row"><div class="lissage-numcol"><div class="lissage-numline"></div><div class="step-dot" style="width:30px;height:30px;font-size:14px;background:var(--coral);">5</div></div><div class="lissage-body" style="font-weight:700;color:var(--coral);background:oklch(0.97 0.02 30);">Inégalité potentielle de pertinence</div></div>
-          </div>
+          <svg class="svg-figure" viewBox="0 0 460 352" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Entonnoir du lissage involontaire : même politique de santé, même outil, référentiels différemment représentatifs, niveau d'information variable, inégalité potentielle de pertinence">
+            <polygon points="0,10 460,10 425,68 35,68" fill="var(--navy)"/>
+            <text x="230" y="44" font-size="15" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Même politique de santé</text>
+
+            <polygon points="35,74 425,74 393,132 67,132" fill="var(--navy)" opacity="0.85"/>
+            <text x="230" y="108" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Même outil / même recommandation</text>
+
+            <polygon points="67,138 393,138 358,196 102,196" fill="var(--teal)"/>
+            <text x="230" y="164" font-size="13.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Référentiels différemment représentatifs</text>
+
+            <polygon points="102,202 358,202 323,260 137,260" fill="var(--teal)" opacity="0.85"/>
+            <text x="230" y="236" font-size="14" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Niveau d'information variable</text>
+
+            <polygon points="137,266 323,266 300,338 160,338" fill="var(--coral)"/>
+            <text x="230" y="296" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Inégalité potentielle</text>
+            <text x="230" y="316" font-size="13" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">de pertinence</text>
+          </svg>
         </div>
         <div class="slide-col">
           <p class="pivot-quote pivot-quote--sm">Le diagnostic, le médicament ou le test peuvent être les mêmes ; le niveau d'information disponible pour les interpréter peut ne pas l'être.</p>
