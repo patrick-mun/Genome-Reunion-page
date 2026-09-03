@@ -7,44 +7,65 @@ plus clair sur ~25-30 minutes, + 4 annexes inchangées.
 
 Statut de chaque slide : 🟡 brouillon proposé · 🟢 validé · 🔴 à revoir · ⬜ à faire
 
-**2026-09-03 — Passage au code :** les 20 slides ci-dessous ont été implémentées en HTML/CSS/JS
-dans `presentation-ars/index.html`, sur le modèle visuel du diaporama DRCI (`css/main.css`
-partagé, composants pipeline/callout/formula/toc-row réutilisés) et avec la vraie PCA pilote
-(`js/pca-data.js`, mêmes données que le diaporama DRCI). Les statuts 🟡 ci-dessous restent la
-trace du contenu validé ; le rendu visuel définitif vit désormais dans le code, pas ici.
+**2026-09-03 — Passage au code :** les 20 slides de contenu ci-dessous ont été implémentées en
+HTML/CSS/JS dans `presentation-ars/index.html`, sur le modèle visuel du diaporama DRCI
+(`css/main.css` partagé, composants pipeline/callout/formula/toc-row réutilisés) et avec la
+vraie PCA pilote (`js/pca-data.js`, mêmes données que le diaporama DRCI). Les statuts 🟡
+ci-dessous restent la trace du contenu validé ; le rendu visuel définitif vit désormais dans
+le code, pas ici.
+
+**2026-09-03 — Amélioration visuelle :** les slides 3, 4, 5, 7, 9, 12 et 17 sont passées de
+schémas plats (boîtes CSS + texte) à de vrais diagrammes SVG dessinés (entonnoir, convergence
+de flux, couches concentriques, timeline), sur le modèle des figures du document de synthèse
+scientifique, en gardant la palette de marque.
+
+**2026-09-03 — Slides de transition :** ajout, comme sur le diaporama Région, d'une slide de
+transition (badge numéroté + séparateur vertical + titre) à l'entrée de chacun des 4 actes.
+Le diaporama compte donc désormais **24 slides dans le code** (20 slides de contenu + 4
+transitions), même si la numérotation ci-dessous reste celle du contenu (1-20) pour ne pas
+perturber le suivi de validation. Correspondance : les transitions sont codées en positions
+03, 09, 15 et 21 du fichier HTML ; chaque slide de contenu numérotée N ci-dessous est décalée
+de +1 (actes 2-4) par rapport à sa position dans le code au-delà de sa propre transition.
 Restent à faire : les 3 annexes (A, C, D) et un mode présentateur éventuel.
 
 ---
 
 ## Architecture
 
-### Acte 1 — Comprendre le problème (slides 1-7)
-1. Ouverture
-2. Sommaire / feuille de route *(nouvelle)*
-3. Le problème global (référentiels inégalement représentatifs)
-4. Pourquoi La Réunion — histoire démographique *(scindée de l'ancienne slide 3)*
-5. Pourquoi La Réunion — diversité comme continuum *(scindée de l'ancienne slide 3)*
-6. La preuve locale (PCA pilote)
-7. Le lissage involontaire (égalité ≠ équité de pertinence)
+Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans le code
+(1-24, avec les 4 transitions) entre parenthèses.
 
-### Acte 2 — Comprendre la réponse Génome Réunion (slides 8-12)
-8. Positionnement : compléter, pas remplacer
-9. Écosystème génomique — qui fait quoi *(remontée de l'ancienne annexe B)*
-10. Ce que le projet construit (2 500 → 350 génomes)
-11. Robustesse de la sélection méthodologique
-12. Alignement avec les priorités ARS (matrice)
+### Acte 1 — Comprendre le problème (contenu 1-7 → code 01-02, 04-08)
+1. Ouverture *(code 01)*
+2. Sommaire / feuille de route *(code 02)*
+- *Transition « Partie 1 » (code 03)*
+3. Le problème global (référentiels inégalement représentatifs) *(code 04)*
+4. Pourquoi La Réunion — histoire démographique *(code 05)*
+5. Pourquoi La Réunion — diversité comme continuum *(code 06)*
+6. La preuve locale (PCA pilote) *(code 07)*
+7. Le lissage involontaire (égalité ≠ équité de pertinence) *(code 08)*
 
-### Acte 3 — Comprendre les bénéfices sanitaires (slides 13-17)
-13. Démonstrateur 1 : diagnostic — le problème
-14. Démonstrateur 1 : diagnostic — l'apport *(scindée de l'ancienne slide 10)*
-15. Démonstrateur 2 : pharmacogénétique — principe
-16. Prioriser les risques médicamenteux (formule de priorisation)
-17. Trajectoire vers une plateforme régionale de sécurisation thérapeutique
+### Acte 2 — Comprendre la réponse Génome Réunion (contenu 8-12 → code 10-14)
+- *Transition « Partie 2 » (code 09)*
+8. Positionnement : compléter, pas remplacer *(code 10)*
+9. Écosystème génomique — qui fait quoi *(code 11)*
+10. Ce que le projet construit (2 500 → 350 génomes) *(code 12)*
+11. Robustesse de la sélection méthodologique *(code 13)*
+12. Alignement avec les priorités ARS (matrice) *(code 14)*
 
-### Acte 4 — Rassurer et engager l'ARS (slides 18-20)
-18. Éthique, données et gouvernance
-19. Répartition des rôles (CHU / Région / État / ARS) *(scindée de l'ancienne slide 15)*
-20. Conclusion et demande institutionnelle à l'ARS
+### Acte 3 — Comprendre les bénéfices sanitaires (contenu 13-17 → code 16-20)
+- *Transition « Partie 3 » (code 15)*
+13. Démonstrateur 1 : diagnostic — le problème *(code 16)*
+14. Démonstrateur 1 : diagnostic — l'apport *(code 17)*
+15. Démonstrateur 2 : pharmacogénétique — principe *(code 18)*
+16. Prioriser les risques médicamenteux (formule de priorisation) *(code 19)*
+17. Trajectoire vers une plateforme régionale de sécurisation thérapeutique *(code 20)*
+
+### Acte 4 — Rassurer et engager l'ARS (contenu 18-20 → code 22-24)
+- *Transition « Partie 4 » (code 21)*
+18. Éthique, données et gouvernance *(code 22)*
+19. Répartition des rôles (CHU / Région / État / ARS) *(code 23)*
+20. Conclusion et demande institutionnelle à l'ARS *(code 24)*
 
 ### Annexes (inchangées)
 A. Méthodologie de sélection détaillée
