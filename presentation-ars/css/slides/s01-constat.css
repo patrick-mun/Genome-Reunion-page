@@ -51,9 +51,6 @@
 .frise-title { font-family: var(--font-title); font-weight: 700; font-size: 15px; }
 .frise-sub { font-family: var(--font-body); font-size: 13px; line-height: 1.3; color: var(--muted); }
 
-/* Slide 05 — continuum conceptuel (SVG : dégradé + nuage de points, aucune donnée) */
-.continuum-caption { font-family: var(--font-body); font-size: 14px; font-style: italic; color: var(--muted); margin-top: 10px; text-align: center; }
-
 /* Slide 06 — PCA pilote (canvas Chart.js réel) */
 .pca-wrap { flex: 1; position: relative; background: white; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px 20px; min-height: 0; }
 .pca-caption { color: var(--muted); margin-top: 12px; }
