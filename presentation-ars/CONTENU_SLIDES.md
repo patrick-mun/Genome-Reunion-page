@@ -193,55 +193,63 @@ Aucun nécessaire. Slide à laisser respirer — c'est la première où l'audito
 ### Transition
 > « Cette question devient particulièrement importante lorsqu'on regarde la structure démographique de La Réunion. »
 
-## SLIDE 4 — POURQUOI LA RÉUNION : HISTOIRE DÉMOGRAPHIQUE 🟢 (révisée 2026-09-03)
+## SLIDE 4 — POURQUOI LA RÉUNION : HISTOIRE DÉMOGRAPHIQUE 🟡 (révisée 2026-09-03, citation Sudel Fuma à finaliser)
 
-**2026-09-03 — Révision (sur modèle de la présentation générale) :** remplace le schéma de flux
-convergents (5 flèches vers une carte stylisée) par une frise chronologique, reprise du patron
-visuel et du contenu déjà sourcé de la slide 9 de la présentation générale du projet
-(`genome_reunion/index.html`, section 2 — singularité réunionnaise), adaptée à notre palette
-Lagon/Récif/Flamboyant. Cette version est mieux sourcée (deux citations d'historiens déjà
-vérifiées dans le corpus du projet) et raconte une vraie chronologie plutôt que cinq régions
-juxtaposées sans ordre.
+**2026-09-03 — Révision (v2, sur demande explicite) :** après un premier passage en frise
+chronologique (1663/1848/XXe/Aujourd'hui, abandonné), reprend finalement le graphique de
+convergence en double hélice ADN de `presentation-region/index.html` (slide "Une diversité à
+représenter, pas une catégorie à définir") tel quel — mêmes tracés SVG, même palette (déjà
+Lagon/Récif/Flamboyant, aucune adaptation de couleur nécessaire) — avec les 5 branches
+réétiquetées pour représenter les apports démographiques historiques (Europe, Afrique &
+Madagascar, Inde du Sud, Chine, océan Indien) plutôt que des flux anonymes. Titre restauré à sa
+version originale. Les deux citations d'historiens de la v1 sont conservées.
+
+**⚠️ Citation Sudel Fuma à remplacer :** la citation actuelle (sur le marronnage, extraite de *La
+révolte des oreilles coupées*) est moins directement liée au sujet de la slide (diversité/
+peuplement) que celle de Prosper Ève. Une recherche d'alternative a été tentée mais les sources
+disponibles (temoignages.re, reunionnaisdumonde.com) sont bloquées par le réseau de cet
+environnement — impossible de vérifier une citation de remplacement mot pour mot sans risquer
+d'en inventer une. **Le porteur de projet doit fournir la citation de remplacement.** En
+attendant, la citation actuelle reste affichée avec une note "à remplacer" directement visible
+dans le code (`index.html`, slide 05).
 
 ### Texte écran
 
 **Titre**
-> Un peuplement sans autochtones
+> Une population façonnée par des apports récents et multiples
 
-**Frise en 4 étapes (nœuds colorés reliés par une ligne)**
+**Colonne gauche**
+> La population réunionnaise résulte d'une histoire démographique récente qui a mêlé plusieurs origines sur un espace insulaire clos.
+>
+> Message clé : Admixture récente + insularité + effets fondateurs + dérive + endogamie locale
 
-| Étape | Origines |
-|---|---|
-| 1663 — Colonisation / Esclavage | Europe · Afrique · Madagascar |
-| 1848 — Engagisme | Inde du Sud · Chine · Afrique |
-| XXe s. — Migrations | Mayotte · Comores · Madagascar |
-| Aujourd'hui — Population | Admixture unique |
-
-**Message clé (encadré)**
-> La structure réunionnaise ne dérive pas d'un noyau autochtone ancien, mais d'apports successifs importés puis recombinés sur un espace insulaire clos.
+**Colonne droite — graphique "Une histoire de convergences"**
+5 branches colorées (Europe, Afrique · Madagascar, Inde du Sud, Chine, Océan Indien) convergent
+vers un point central puis se prolongent en double hélice d'ADN.
+> Légende : Des origines et des histoires diverses, mêlées au fil du peuplement de l'île, qui convergent vers un même patrimoine génétique à mieux connaître.
 
 **Deux citations d'historiens (cartes côte à côte)**
 > « La Réunion est un laboratoire d'histoire humaine, un monde recomposé où se mêlent les fragments d'identités transplantées. » — Prosper Ève, *Esclavage, métissage, liberté*, 2003
 >
-> « Le marron est l'homme de la rupture ; il rejette le monde colonial et tente d'en bâtir un autre dans les hauteurs. » — Sudel Fuma, *La révolte des oreilles coupées*, 2011
+> « Le marron est l'homme de la rupture ; il rejette le monde colonial et tente d'en bâtir un autre dans les hauteurs. » — Sudel Fuma, *La révolte des oreilles coupées*, 2011 *(⚠️ à remplacer)*
 
 ### Texte oral (complet)
 
-« La Réunion n'a pas de population autochtone antérieure à sa colonisation — c'est un point de départ important pour comprendre sa diversité génétique.
+« La population réunionnaise résulte d'une histoire démographique récente — à l'échelle génétique, quelques siècles seulement — qui a mêlé des apports européens, africains et malgaches, sud-asiatiques, chinois, et plus largement de l'océan Indien.
 
-Le peuplement s'est fait en plusieurs vagues successives : la colonisation et l'esclavage à partir de 1663, avec des apports européens, africains et malgaches ; l'engagisme après l'abolition de l'esclavage en 1848, qui amène des populations d'Inde du Sud, de Chine et à nouveau d'Afrique ; puis, au XXe siècle, des migrations plus récentes depuis Mayotte, les Comores et Madagascar. Ce qui en résulte aujourd'hui est une admixture unique, qui ne ressemble à aucune des populations sources prises isolément.
+Cette histoire s'est déroulée dans un contexte particulier : une île, donc une forme d'insularité ; des vagues de peuplement limitées dans le temps, donc des effets fondateurs ; et, pour certaines composantes ou certains territoires, une endogamie locale qui a renforcé certains profils génétiques.
 
-Comme le résume l'historien Prosper Ève, La Réunion est un laboratoire d'histoire humaine — un monde recomposé, pas un monde hérité. La structure génétique réunionnaise suit exactement cette logique : elle ne dérive pas d'un noyau ancien, mais d'apports importés puis recombinés sur un espace insulaire clos. »
+Comme le résume l'historien Prosper Ève, La Réunion est un laboratoire d'histoire humaine — un monde recomposé où se mêlent des fragments d'identités transplantées. C'est exactement ce que montre ce graphique : des origines diverses qui convergent, au fil du temps, vers un même patrimoine génétique — celui que Génome Réunion se propose de mieux documenter. »
 
 ### Références mobilisées
 - Prosper Ève, *Esclavage, métissage, liberté : La Réunion, 1794-1848*, 2003.
-- Sudel Fuma, *La révolte des oreilles coupées*, 2011.
-- Chronologie et contenu repris de la présentation générale du projet (slide "La Réunion : un peuplement sans autochtones"), déjà vérifiés dans le corpus.
+- Sudel Fuma, *La révolte des oreilles coupées*, 2011 — citation à revoir (voir note ci-dessus).
+- Graphique et structure de mise en page repris de `presentation-region/index.html`.
 
 ### Concept visuel précis
-- Frise horizontale à 4 nœuds circulaires colorés (navy → teal → teal clair → coral, en dégradé de la palette de marque, pas de couleur "raciale" codée par période), reliés par une ligne fine horizontale — patron repris tel quel de la présentation générale.
-- Encadré "Message clé" à accent gauche navy, puis deux cartes de citation à accent gauche teal/coral, avec la source en petites capitales sous chaque citation.
-- Slide plus dense que la moyenne du deck (frise + encadré + 2 citations) mais reste dans une seule hauteur d'écran, sans scroll.
+- Graphique SVG de convergence (5 traits colorés de largeur variable qui se rejoignent en un point puis se prolongent en double hélice d'ADN twistée), repris à l'identique de la présentation Région — seules les 5 étiquettes de branche sont nouvelles (positionnées en marge gauche du SVG, colorées comme leur trait).
+- Mise en page à deux colonnes : à gauche une carte avec le message clé, à droite le graphique + légende — patron identique à la présentation Région.
+- Sous les deux colonnes, les deux citations d'historiens en pleine largeur.
 
 ### Éléments interactifs
 Aucun.
