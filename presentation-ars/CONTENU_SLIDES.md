@@ -786,9 +786,43 @@ Aucun.
 ### Transition
 > « Ce que cette articulation rend possible, c'est la transformation d'une infrastructure scientifique en ressource sanitaire — et c'est précisément ce que nous venons vous proposer. »
 
-## SLIDE 20 — CONCLUSION / DEMANDE ARS ⬜ (à faire)
-Note : demande finale centrée sur l'accompagnement d'un axe pharmacogénétique/prévention avec l'OMEDIT
-(choix validé le 2026-09-03), en s'appuyant si utile sur la reconnaissance de l'intérêt sanitaire comme socle.
+## SLIDE 20 — CONCLUSION / DEMANDE ARS 🟡
+
+### Texte écran
+
+**Titre**
+> Faire de Génome Réunion une ressource sanitaire, pas seulement scientifique
+
+**Phrase finale (la plus grande typographie du diaporama après la slide 5)**
+> Génome Réunion ne demande pas de créer une médecine spécifique à La Réunion. Il propose de produire la connaissance locale nécessaire pour que les progrès de la médecine génomique nationale bénéficient aux Réunionnais avec le même niveau de pertinence, de sécurité et d'équité.
+
+**Demande institutionnelle (bloc distinct, en bas de slide — le seul appel à l'action du diaporama)**
+> Ce que nous demandons aujourd'hui à l'ARS : accompagner, avec l'OMEDIT, le lancement d'un axe pharmacogénétique et prévention — première étape concrète et mesurable d'articulation entre Génome Réunion et une politique de santé régionale.
+>
+> Cette étape s'inscrit dans une reconnaissance plus large de l'intérêt sanitaire du projet, que nous souhaitons construire avec vous dans la durée.
+
+### Texte oral (complet)
+
+« Je termine sur ce que nous venons concrètement vous demander, parce qu'une adhésion intellectuelle ne suffit pas — elle doit pouvoir se traduire en une action.
+
+Notre demande est volontairement resserrée sur un point précis : que l'ARS accompagne, avec l'OMEDIT, le lancement d'un axe pharmacogénétique et prévention. C'est le point d'entrée le plus concret et le plus mesurable de tout ce que j'ai présenté aujourd'hui — il s'appuie sur une méthodologie déjà solide, sur un précédent européen documenté avec PREPARE, et sur un partenaire naturel, l'OMEDIT, dont c'est directement le champ de compétence.
+
+Nous ne venons pas demander de créer une médecine spécifique à La Réunion. Nous venons demander à produire la connaissance locale nécessaire pour que les progrès de la médecine génomique nationale bénéficient aux Réunionnais avec le même niveau de pertinence, de sécurité et d'équité. »
+
+### Références mobilisées
+Synthèse de l'ensemble du diaporama — dernière slide, pas de nouvelle preuve introduite.
+
+### Concept visuel précis
+- Fond Lagon profond, retour au visuel de la slide 1 — boucle narrative assumée, l'auditoire referme le cercle ouvert à l'ouverture.
+- La phrase finale centrée, seule dans le tiers supérieur de l'écran.
+- Le bloc "demande institutionnelle" clairement isolé visuellement (encadré net, fond Flamboyant très clair, bordure marquée) — c'est la seule slide du diaporama avec un encadré de cette intensité, pour qu'il soit immédiatement identifiable comme "la" chose à retenir et à discuter.
+- Pas de logo de clôture générique type "Merci" surchargé — rester sur le contenu jusqu'à la dernière seconde, la formule de politesse orale suffit.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+Fin du corps principal — bascule orale vers les questions, avec accès possible aux annexes A, C, D selon les questions posées.
 
 ## ANNEXES A, C, D ⬜ (à faire)
 
