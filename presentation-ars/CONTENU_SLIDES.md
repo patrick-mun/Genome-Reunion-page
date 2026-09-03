@@ -213,6 +213,14 @@ réduite (elle ne force plus la hauteur de colonne) et la citation de Prosper È
 libéré à droite permet d'agrandir le graphique de convergence vers le bas (`viewBox` de la double
 hélice élargi de 300 à 380 de hauteur, contenu recentré via un `<g transform="translate(0,40)">`).
 
+**2026-09-03 — Révision (v4, carte + frise) :** la carte de gauche passe en fond bleu marine
+(`.card--navy-strong`) avec texte blanc, pour un contraste plus marqué avec le reste de la slide.
+Une frise chronologique compacte (`.mini-timeline`, 4 jalons : 1663 premiers colons européens,
+1848 abolition de l'esclavage, XIXe-XXe s. engagisme indien/chinois, Aujourd'hui population
+métissée) est ajoutée sous la citation de Prosper Ève, dans l'espace disponible de la colonne
+gauche — elle reprend l'esprit de la frise de `genome_reunion` (`.timeline`) en version réduite,
+sans remplacer le graphique de convergence qui reste l'élément visuel principal à droite.
+
 ### Texte écran
 
 **Titre**
