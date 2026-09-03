@@ -16,13 +16,7 @@
 /* Diagrammes SVG dessinés (slides 03, 04, 07) — dimensionnement responsive */
 .svg-figure { width: 100%; height: auto; display: block; }
 
-/* Slide 03 — bande de profondeur de représentation (dégradé continu, sans hiérarchie chiffrée) */
-.refflow-depth { margin-top: 18px; }
-.refflow-depth-label { font-family: var(--font-body); font-size: 15px; color: var(--muted); margin-bottom: 6px; }
-.refflow-depth-track { height: 20px; border-radius: 4px; overflow: hidden; }
-.refflow-depth-track--gradient { background: linear-gradient(90deg, var(--navy) 0%, var(--teal) 50%, var(--coral) 100%); }
-
-/* Slide 04 — synthèse sous le schéma de convergence démographique */
+/* Slide 05 — synthèse sous le schéma de convergence démographique */
 .source-synthesis {
   text-align: center;
   font-family: var(--font-body);
