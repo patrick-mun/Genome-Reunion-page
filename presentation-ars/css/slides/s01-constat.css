@@ -23,16 +23,18 @@
 .confluence-chart svg { width: 100%; flex: 1; min-height: 0; display: block; }
 .confluence-caption { color: var(--muted); flex-shrink: 0; }
 
-/* Slide 05 — citations d'historiens sur le peuplement */
-.history-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+/* Slide 05 — citation d'historien sur le peuplement, sous la carte de gauche */
 .history-quote {
-  border-radius: var(--r-md); padding: 14px 18px;
+  border-radius: var(--r-md); padding: 14px 18px; margin-top: 14px;
   border: 1px solid var(--border); background: var(--bg-light);
 }
 .history-quote--teal { border-left: 4px solid var(--teal); }
 .history-quote--coral { border-left: 4px solid var(--coral); }
 .history-quote-text { font-family: Georgia, serif; font-style: italic; font-size: 15.5px; line-height: 1.4; color: var(--navy); }
 .history-quote-meta { margin-top: 8px; font-family: var(--font-title); font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.history-quote--lg { padding: 22px 24px; }
+.history-quote--lg .history-quote-text { font-size: 20px; line-height: 1.45; }
+.history-quote--lg .history-quote-meta { font-size: 12px; margin-top: 12px; }
 
 /* Slide 05 — continuum conceptuel (SVG : dégradé + nuage de points, aucune donnée) */
 .continuum-caption { font-family: var(--font-body); font-size: 14px; font-style: italic; color: var(--muted); margin-top: 10px; text-align: center; }
