@@ -16,28 +16,14 @@
 /* Diagrammes SVG dessinés (slides 03, 04, 07) — dimensionnement responsive */
 .svg-figure { width: 100%; height: auto; display: block; }
 
-/* Slide 05 — frise historique du peuplement (reprise du patron de la présentation
-   générale, css/slides/s02-singularite.css du dépôt genome_reunion, adaptée à la
-   palette Lagon/Récif/Flamboyant à la place de bleu/violet/orange) */
-.timeline { display: flex; justify-content: space-between; position: relative; margin: 8px 0 20px; }
-.timeline-line { position: absolute; top: 30px; left: 0; right: 0; height: 2px; background: var(--border); }
-.timeline-step { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; z-index: 1; padding: 0 6px; }
-.timeline-node {
-  width: 60px; height: 60px; border-radius: 50%; color: #fff;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-title); font-weight: 700; font-size: 14px; line-height: 1; text-align: center;
-}
-.timeline-node--1 { background: var(--navy); }
-.timeline-node--2 { background: var(--teal); }
-.timeline-node--3 { background: oklch(0.62 0.07 200); }
-.timeline-node--4 { background: var(--coral); }
-.timeline-label { font-family: var(--font-title); font-size: 16px; font-weight: 700; text-align: center; }
-.timeline-label--1 { color: var(--navy); }
-.timeline-label--2 { color: var(--teal); }
-.timeline-label--3 { color: oklch(0.5 0.07 200); }
-.timeline-label--4 { color: var(--coral); }
-.timeline-copy { font-size: 14px; color: var(--muted); text-align: center; line-height: 1.3; }
+/* Slide 05 — graphique de convergence (repris tel quel de presentation-region/
+   css/slides/s01-region.css — même palette de marque, donc aucune adaptation
+   de couleur nécessaire) */
+.confluence-chart { display: flex; flex-direction: column; gap: 10px; flex: 1; min-height: 0; }
+.confluence-chart svg { width: 100%; flex: 1; min-height: 0; display: block; }
+.confluence-caption { color: var(--muted); flex-shrink: 0; }
 
+/* Slide 05 — citations d'historiens sur le peuplement */
 .history-quotes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
 .history-quote {
   border-radius: var(--r-md); padding: 14px 18px;
