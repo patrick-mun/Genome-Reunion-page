@@ -1,5 +1,5 @@
 /* Slides 03–07 — Acte 1 : Comprendre le problème
-   Familles de classes : pivot-* / refflow-* / source-* / continuum-* / lissage-* */
+   Familles de classes : pivot-* / svg-figure / continuum-* / pca-* */
 
 /* Citation pivot — réutilisée sur plusieurs slides (03, 05, 07, 14, 18, 20) */
 .pivot-quote {
@@ -13,50 +13,16 @@
 .slide--navy .pivot-quote, .slide--teal .pivot-quote { color: white; }
 .pivot-quote--sm { font-size: 26px; }
 
-/* Slide 03 — schéma vertical Données → Algorithmes → Patients */
-.refflow { display: flex; flex-direction: column; gap: 0; flex: 1; justify-content: center; }
-.refflow-step {
-  background: var(--bg-light);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 16px 20px;
-  font-family: var(--font-title);
-  font-weight: 700;
-  font-size: 21px;
-  color: var(--navy);
-  text-align: center;
-}
-.refflow-arrow { display: flex; justify-content: center; padding: 6px 0; color: var(--muted); font-size: 20px; }
+/* Diagrammes SVG dessinés (slides 03, 04, 07) — dimensionnement responsive */
+.svg-figure { width: 100%; height: auto; display: block; }
+
+/* Slide 03 — bande de profondeur de représentation (dégradé continu, sans hiérarchie chiffrée) */
 .refflow-depth { margin-top: 18px; }
 .refflow-depth-label { font-family: var(--font-body); font-size: 15px; color: var(--muted); margin-bottom: 6px; }
-.refflow-depth-track { height: 20px; border-radius: 4px; overflow: hidden; display: flex; background: var(--border); }
-.refflow-depth-seg { height: 100%; }
+.refflow-depth-track { height: 20px; border-radius: 4px; overflow: hidden; }
+.refflow-depth-track--gradient { background: linear-gradient(90deg, var(--navy) 0%, var(--teal) 50%, var(--coral) 100%); }
 
-/* Slide 04 — sources démographiques convergeant vers La Réunion */
-.source-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 4px; }
-.source-card {
-  background: var(--bg-light);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  padding: 14px 10px;
-  text-align: center;
-  font-family: var(--font-body);
-  font-size: 16px;
-  color: var(--navy);
-}
-.source-arrows { display: flex; justify-content: center; gap: 46px; color: var(--teal); font-size: 22px; padding: 4px 0; }
-.source-center {
-  background: var(--navy);
-  border-radius: var(--r-lg);
-  padding: 20px 28px;
-  text-align: center;
-  font-family: var(--font-title);
-  font-weight: 700;
-  font-size: 24px;
-  color: white;
-  max-width: 420px;
-  margin: 0 auto;
-}
+/* Slide 04 — synthèse sous le schéma de convergence démographique */
 .source-synthesis {
   text-align: center;
   font-family: var(--font-body);
@@ -73,31 +39,11 @@
   opacity: 0.85;
   position: relative;
   overflow: hidden;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.15);
 }
-.continuum-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.85); }
+.continuum-dot { position: absolute; width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.9); box-shadow: 0 0 6px rgba(255,255,255,0.6); }
 .continuum-caption { font-family: var(--font-body); font-size: 14px; font-style: italic; color: var(--muted); margin-top: 10px; text-align: center; }
 
 /* Slide 06 — PCA pilote (canvas Chart.js réel) */
 .pca-wrap { flex: 1; position: relative; background: white; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 18px 20px; min-height: 0; }
 .pca-caption { color: var(--muted); margin-top: 12px; }
-
-/* Slide 07 — chaîne du lissage involontaire (réutilise toc-numcol/step-dot) */
-.lissage-chain { display: flex; flex-direction: column; gap: 0; }
-.lissage-row { display: flex; align-items: center; gap: 20px; }
-.lissage-numcol { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; }
-.lissage-numline { width: 2px; height: 22px; background: var(--border); }
-.lissage-body {
-  flex: 1;
-  background: var(--bg-light);
-  border: 1px solid var(--border);
-  border-radius: var(--r-sm);
-  padding: 12px 18px;
-  font-family: var(--font-body);
-  font-size: 18px;
-  color: var(--ink);
-}
-
-@media (max-width: 900px) {
-  .source-grid { grid-template-columns: repeat(2, 1fr); }
-  .source-arrows { display: none; }
-}
