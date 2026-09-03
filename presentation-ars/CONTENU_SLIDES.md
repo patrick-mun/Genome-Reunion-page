@@ -242,9 +242,85 @@ Aucun.
 
 ---
 
-## SLIDE 6 — LA PREUVE LOCALE (PCA) ⬜ (à faire)
+## SLIDE 6 — LA PREUVE LOCALE (PCA) 🟡
 
-## SLIDE 7 — LE LISSAGE INVOLONTAIRE ⬜ (à faire)
+### Texte écran
+
+**Titre**
+> Une première observation locale : la diversité réunionnaise forme un continuum
+
+**Visuel principal**
+PCA pilote (~75 individus réunionnais) projetée sur les populations de référence 1000 Genomes,
+individus réunionnais mis en évidence, populations de référence simplifiées en fond.
+
+**Légende sous la figure (courte, factuelle)**
+> Cohorte pilote, n ≈ 75. Projection sur 1000 Genomes.
+
+**Phrase de cadrage (juste au-dessus ou à côté de la figure)**
+> Cette cohorte pilote ne décrit pas toute La Réunion. Elle montre cependant que la diversité observée localement ne se superpose pas à une seule population de référence.
+
+### Texte oral (complet)
+
+« Voici une première donnée réelle, pas un schéma conceptuel. C'est une analyse en composantes principales — une méthode statistique standard pour visualiser la proximité génétique entre individus — réalisée sur environ 75 personnes réunionnaises, projetées sur les populations de référence du projet 1000 Genomes.
+
+Je veux être précis sur ce que cette figure montre et ce qu'elle ne montre pas. C'est une cohorte encore petite : elle ne prétend pas représenter toute l'île. Mais elle montre déjà, très concrètement, pourquoi un simple rattachement à une population de référence unique serait artificiel : les individus réunionnais se positionnent entre plusieurs pôles de référence, avec de nombreuses positions intermédiaires — exactement ce que prédisait le raisonnement historique que je viens de présenter. »
+
+### Références mobilisées
+- Données pilotes Génome Réunion (PCA interne, ~75 individus).
+- 1000 Genomes Project (populations de référence).
+
+### Concept visuel précis
+- La figure PCA elle-même : axes PC1/PC2 sobres, sans grille chargée, légende de populations de référence en gris/beige discret, points réunionnais en Flamboyant pour ressortir nettement.
+- Pas de cercles ou polygones dessinés autour de "groupes" — laisser le nuage parler, cohérent avec le message anti-catégorisation des slides précédentes.
+- La phrase de cadrage doit être visuellement aussi importante que la figure elle-même (même poids visuel), pour qu'elle ne soit pas lue comme une "petite note" mais comme une des deux informations centrales de la slide.
+
+### Éléments interactifs
+Aucun indispensable. Si le format final le permet, un survol des points réunionnais pourrait afficher "cohorte pilote" en rappel — reste optionnel, à activer seulement si le rendu HTML est aussi utilisé en consultation libre.
+
+### Transition
+> « Cette différence de représentation devient un problème sanitaire lorsqu'elle influence l'interprétation ou la performance d'un outil. »
+
+---
+
+## SLIDE 7 — LE LISSAGE INVOLONTAIRE 🟡
+
+### Texte écran
+
+**Titre**
+> Quand l'égalité de traitement peut produire une inégalité de pertinence
+
+**Chaîne causale (schéma vertical, voir concept visuel)**
+> Même politique de santé → Même outil / même recommandation → Référentiels différemment représentatifs → Niveau d'information variable → Inégalité potentielle de pertinence
+
+**Phrase forte**
+> Le diagnostic, le médicament ou le test peuvent être les mêmes ; le niveau d'information disponible pour les interpréter peut ne pas l'être.
+
+**Encadré de précaution (visuellement distinct, ton rassurant)**
+> Il ne s'agit ni d'une discrimination volontaire ni d'une mauvaise politique de santé. Il s'agit d'un angle mort produit par l'état actuel des connaissances.
+
+### Texte oral (complet)
+
+« C'est le concept central de toute cette présentation, donc je vais prendre le temps de le poser clairement.
+
+Une politique de santé nationale peut être parfaitement égalitaire dans son intention — le même outil, la même recommandation, le même parcours pour tous. Mais si cette politique s'appuie sur des connaissances scientifiques qui représentent différemment les populations, alors le niveau d'information réellement disponible pour interpréter un résultat, chez un patient donné, peut varier.
+
+Ce n'est pas une inégalité de traitement. Personne ne décide de traiter différemment un patient réunionnais. C'est une inégalité de pertinence, involontaire, qui vient de l'état actuel des connaissances — pas d'une intention, pas d'une politique, pas d'un choix.
+
+L'enjeu de Génome Réunion n'est donc pas de contester une politique nationale. C'est d'éviter qu'une politique uniforme ne masque, sans le vouloir, des différences de représentation qui comptent pour le soin. »
+
+### Références mobilisées
+Reprend et synthétise les preuves déjà posées slides 3 et 6 — pas de nouvelle référence introduite ici, volontairement : cette slide est un moment de synthèse conceptuelle, pas d'apport factuel supplémentaire.
+
+### Concept visuel précis
+- Chaîne verticale à 5 maillons reliés par des flèches, densité croissante de couleur Flamboyant à mesure qu'on descend vers "inégalité potentielle de pertinence" — pour donner une sensation de dérive progressive plutôt qu'un saut brutal.
+- L'encadré de précaution est visuellement séparé (fond légèrement distinct, encadré arrondi) pour qu'il ne soit jamais lu comme accessoire — c'est la phrase la plus politiquement sensible du diaporama et elle doit être vue, pas juste dite à l'oral.
+- Éviter tout rouge alarmiste : rester dans la palette de marque (Flamboyant reste chaud mais pas "signal danger").
+
+### Éléments interactifs
+Aucun. C'est une slide de bascule conceptuelle — elle doit être lue lentement, pas manipulée.
+
+### Transition
+> « La réponse n'est pas de remplacer les dispositifs existants. Elle est de les compléter. »
 
 ## SLIDE 8 — POSITIONNEMENT (compléter, pas remplacer) ⬜ (à faire)
 
