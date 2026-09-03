@@ -87,7 +87,7 @@ Aucun. C'est la slide la plus sobre du diaporama — elle doit installer un sile
 
 ---
 
-## SLIDE 2 — SOMMAIRE / FEUILLE DE ROUTE 🟡
+## SLIDE 2 — SOMMAIRE / FEUILLE DE ROUTE 🟢 (validée)
 
 ### Texte écran
 
@@ -124,7 +124,7 @@ Optionnel : au clic sur une pastille, on saute directement à l'acte corresponda
 
 ---
 
-## SLIDE 3 — LE PROBLÈME GLOBAL 🟡
+## SLIDE 3 — LE PROBLÈME GLOBAL 🟢 (validée)
 
 ### Texte écran
 
@@ -165,9 +165,82 @@ Aucun nécessaire. Slide à laisser respirer — c'est la première où l'audito
 ### Transition
 > « Cette question devient particulièrement importante lorsqu'on regarde la structure démographique de La Réunion. »
 
-## SLIDE 4 — POURQUOI LA RÉUNION : HISTOIRE DÉMOGRAPHIQUE ⬜ (à faire)
+## SLIDE 4 — POURQUOI LA RÉUNION : HISTOIRE DÉMOGRAPHIQUE 🟡
 
-## SLIDE 5 — POURQUOI LA RÉUNION : DIVERSITÉ COMME CONTINUUM ⬜ (à faire)
+### Texte écran
+
+**Titre**
+> Une population façonnée par des apports récents et multiples
+
+**Schéma de flux (voir concept visuel) avec, en légende sobre :**
+> Europe · Afrique et Madagascar · Inde du Sud · Chine · océan Indien
+
+**Ligne de synthèse sous le schéma**
+> Admixture récente + insularité + effets fondateurs + dérive + endogamie locale
+
+### Texte oral (complet)
+
+« La population réunionnaise résulte d'une histoire démographique récente — à l'échelle génétique, quelques siècles seulement — qui a mêlé des apports européens, africains et malgaches, sud-asiatiques, chinois, et plus largement de l'océan Indien.
+
+Cette histoire s'est déroulée dans un contexte particulier : une île, donc une forme d'insularité ; des vagues de peuplement limitées dans le temps, donc des effets fondateurs ; et, pour certaines composantes ou certains territoires, une endogamie locale qui a renforcé certains profils génétiques.
+
+Aucun de ces mécanismes n'est propre à La Réunion — on les retrouve dans beaucoup de populations insulaires ou d'histoire récente. Ce qui est propre à La Réunion, c'est leur combinaison, sur une population de cette taille, avec cette diversité de sources. »
+
+### Références mobilisées
+- Travaux spécifiques à La Réunion et à l'océan Indien (littérature de peuplement/démographie génétique locale — à citer précisément selon les sources internes disponibles au moment de la mise en forme finale).
+
+### Concept visuel précis
+- Carte stylisée de l'océan Indien (pas une carte politique détaillée — un tracé simplifié, cohérent avec le style "silhouette" de la slide 1) avec La Réunion au centre.
+- Flèches de flux convergentes vers l'île depuis 5 directions (Europe, Afrique/Madagascar, Inde du Sud, Chine, océan Indien), chacune dans une nuance de la palette Lagon/Récif — **jamais de couleur "raciale" codée par flux** (ex. pas de bleu pour l'Europe et de brun pour l'Afrique : utiliser une seule gamme chromatique déclinée en intensité, pas en teinte).
+- Épaisseur des flèches non proportionnelle à des données précises (on n'a pas ces chiffres) — toutes d'épaisseur comparable, pour ne pas suggérer une hiérarchie d'apport.
+- Sous la carte, la ligne de synthèse en typographie discrète, presque une légende scientifique.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Cette histoire ne produit pas des groupes séparés : elle produit un continuum. »
+
+## SLIDE 5 — POURQUOI LA RÉUNION : DIVERSITÉ COMME CONTINUUM 🟡
+
+### Texte écran
+
+**Titre**
+> Il n'existe pas un génome réunionnais
+
+**Phrase pivot (en exergue, la plus grande typographie de la slide)**
+> Il existe une diversité réunionnaise que la médecine génomique doit apprendre à mieux représenter.
+
+**Sous la phrase, un rappel bref et net**
+> Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal.
+
+### Texte oral (complet)
+
+« Il faut être précis sur ce point, parce que c'est celui sur lequel on nous attend le plus : nous ne cherchons pas à définir une identité génétique réunionnaise, et nous ne cherchons pas non plus à faire correspondre chaque Réunionnais à une des cinq sources que je viens de montrer.
+
+Ce que produit cette histoire, c'est un continuum : la plupart des individus portent, à des degrés divers, des segments de génome hérités de plusieurs de ces apports à la fois. Les catégories continentales classiques — que les référentiels internationaux utilisent souvent pour se structurer — décrivent mal ce continuum, parce qu'elles ont été pensées pour des populations moins admixées.
+
+C'est ce point précis, et lui seul, qui justifie l'existence de Génome Réunion : pas une différence d'identité, une différence de structure de diversité. »
+
+### Références mobilisées
+Aucune nouvelle — cette slide est une clarification conceptuelle de la slide 4, pas un nouvel apport de preuve (la preuve arrive slide suivante avec la PCA).
+
+### Concept visuel précis
+- Rupture volontaire avec le schéma de flux de la slide précédente : ici, un seul visuel abstrait — un dégradé continu de points (nuage), sans groupes ni frontières visibles, suggérant un continuum plutôt que des clusters.
+- Pas de PCA réelle ici (réservée slide 6) : ce nuage est un schéma conceptuel, explicitement non issu de données, pour ne pas préempter la preuve réelle.
+- Fond Sable, nuage en dégradé Lagon → Récif → Flamboyant très doux, aucune ligne de séparation entre "groupes".
+- La phrase pivot occupe le centre optique de la slide — c'est la slide-mémoire du diaporama, celle que l'auditoire doit pouvoir répéter après coup.
+
+### Précaution (rappel du plan narratif)
+Ne jamais associer visuellement les groupes d'ascendance à des couleurs "ethniques" fixes — appliqué strictement ici et à la slide 4.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Et ce continuum n'est pas seulement une déduction historique : nous commençons déjà à l'observer dans nos propres données. »
+
+---
 
 ## SLIDE 6 — LA PREUVE LOCALE (PCA) ⬜ (à faire)
 
