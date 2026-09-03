@@ -65,7 +65,7 @@
   gap: 12px;
 }
 .selection-panel-title { font-family: var(--font-title); font-weight: 700; font-size: 19px; color: var(--navy); }
-.dot-cloud { position: relative; flex: 1; min-height: 180px; background: white; border-radius: var(--r-sm); border: 1px solid var(--border); }
+.dot-cloud { position: relative; flex: 1; min-height: 180px; background: var(--bg-light); border-radius: var(--r-sm); border: 1px solid var(--border); }
 .dot-cloud span { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
 .dot-cloud span.picked { background: var(--coral); width: 12px; height: 12px; box-shadow: 0 0 0 3px oklch(0.90 0.05 30); }
 .selection-legend { display: flex; gap: 16px; align-items: center; }
