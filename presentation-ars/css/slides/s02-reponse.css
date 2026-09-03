@@ -56,9 +56,11 @@
 /* Slide 11 — comparaison tirage aléatoire / sélection raisonnée (nuages de points décoratifs) */
 .selection-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; }
 .selection-panel {
-  background: transparent;
-  border: none;
-  padding: 0;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
