@@ -1,0 +1,65 @@
+/* Slides 08–12 — Acte 2 : Comprendre la réponse Génome Réunion
+   Familles de classes : eco-* / priority-* */
+
+/* Slide 09 — écosystème génomique (tableau) */
+.eco-table { width: 100%; border-collapse: collapse; font-family: var(--font-body); font-size: 20px; }
+.eco-table th {
+  text-align: left;
+  font-family: var(--font-title);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 16px;
+  border-bottom: 2px solid var(--border);
+}
+.eco-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); color: var(--ink); }
+.eco-table tr:nth-child(even) td { background: var(--bg-light); }
+.eco-table tr.eco-row--highlight td { background: oklch(0.97 0.02 30); font-weight: 700; color: var(--navy); border-color: oklch(0.85 0.06 30); }
+.eco-signature { text-align: center; font-family: var(--font-title); font-weight: 700; font-size: 18px; color: var(--navy); letter-spacing: 1px; margin-top: 18px; }
+
+/* Slides 10-11 — pipeline additionnel (familles nucléaires) */
+.pipeline-side {
+  margin-top: 14px;
+  border: 1px dashed var(--border);
+  border-radius: var(--r-md);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: var(--bg-light);
+}
+.pipeline-side-num { font-family: var(--font-title); font-weight: 700; font-size: 26px; color: var(--coral); }
+.pipeline-side-text { font-family: var(--font-body); font-size: 18px; color: var(--ink); }
+
+/* Slide 11 — comparaison tirage aléatoire / sélection raisonnée (nuages de points décoratifs) */
+.selection-compare { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; flex: 1; }
+.selection-panel {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.selection-panel-title { font-family: var(--font-title); font-weight: 700; font-size: 19px; color: var(--navy); }
+.dot-cloud { position: relative; flex: 1; min-height: 180px; background: white; border-radius: var(--r-sm); border: 1px solid var(--border); }
+.dot-cloud span { position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--border); }
+.dot-cloud span.picked { background: var(--coral); width: 12px; height: 12px; box-shadow: 0 0 0 3px oklch(0.90 0.05 30); }
+.selection-legend { display: flex; gap: 16px; align-items: center; }
+.selection-legend-tag { font-family: var(--font-body); font-size: 15px; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.selection-legend-tag .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--coral); display: inline-block; }
+.selection-criteria-note { font-family: var(--font-body); font-size: 15px; color: var(--muted); margin-top: 6px; }
+
+/* Slide 12 — matrice de priorités ARS */
+.priority-list { display: flex; flex-direction: column; gap: 8px; }
+.priority-row { display: flex; align-items: center; gap: 18px; padding: 12px 18px; background: var(--bg-light); border-radius: var(--r-sm); border-left: 4px solid var(--teal); }
+.priority-row:nth-child(odd) { border-left-color: var(--navy); }
+.priority-label { font-family: var(--font-title); font-weight: 700; font-size: 18px; color: var(--navy); width: 190px; flex-shrink: 0; }
+.priority-value { font-family: var(--font-body); font-size: 18px; color: var(--ink); }
+
+@media (max-width: 900px) {
+  .selection-compare { grid-template-columns: 1fr; }
+}
