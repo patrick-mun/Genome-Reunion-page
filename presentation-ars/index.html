@@ -172,24 +172,35 @@
           <p class="pivot-quote pivot-quote--sm">L'égalité d'accès aux outils ne garantit pas toujours l'équité de pertinence.</p>
         </div>
         <div class="slide-col">
-          <svg class="svg-figure" viewBox="0 0 460 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Chaîne : données de référence, puis algorithmes et recommandations, puis patients">
+          <svg class="svg-figure" viewBox="0 0 460 312" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Des données de référence dont la profondeur de représentation est inégale selon les populations, passées au même algorithme, aboutissent à un référentiel adapté pour certains patients et insuffisant pour d'autres">
             <defs>
               <marker id="ar3" markerWidth="9" markerHeight="9" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--muted)"/></marker>
+              <linearGradient id="refGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="var(--navy)"/>
+                <stop offset="50%" stop-color="var(--teal)"/>
+                <stop offset="100%" stop-color="var(--coral)"/>
+              </linearGradient>
             </defs>
-            <rect x="30" y="10" width="400" height="64" rx="10" fill="var(--navy)"/>
-            <text x="230" y="48" font-size="17" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Données de référence</text>
-            <line x1="230" y1="74" x2="230" y2="112" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
-            <rect x="10" y="118" width="440" height="72" rx="10" fill="var(--teal)"/>
-            <text x="230" y="150" font-size="16" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Algorithmes / interprétation</text>
-            <text x="230" y="172" font-size="16" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">/ recommandations</text>
-            <line x1="230" y1="190" x2="230" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
-            <rect x="30" y="234" width="400" height="64" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
-            <text x="230" y="272" font-size="17" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patients</text>
+            <!-- 1. La donnée de référence : profondeur de représentation déjà inégale -->
+            <rect x="30" y="10" width="400" height="70" rx="10" fill="url(#refGrad)"/>
+            <text x="230" y="40" font-size="17" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Données de référence</text>
+            <text x="230" y="62" font-size="12.5" fill="rgba(255,255,255,0.9)" text-anchor="middle" font-family="var(--font-body)">profondeur de représentation variable selon les populations</text>
+            <line x1="230" y1="80" x2="230" y2="112" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
+            <!-- 2. Le même algorithme, appliqué sans distinction -->
+            <rect x="10" y="112" width="440" height="70" rx="10" fill="var(--teal)"/>
+            <text x="230" y="142" font-size="16" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">Algorithmes / interprétation</text>
+            <text x="230" y="164" font-size="16" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">/ recommandations</text>
+            <!-- 3. La bifurcation : même outil, résultat différent selon la profondeur de données disponible -->
+            <line x1="230" y1="182" x2="230" y2="206" stroke="var(--muted)" stroke-width="2"/>
+            <line x1="230" y1="206" x2="128" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
+            <line x1="230" y1="206" x2="332" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
+            <rect x="30" y="230" width="190" height="72" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>
+            <text x="125" y="258" font-size="15" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patient</text>
+            <text x="125" y="278" font-size="12.5" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">✓ référentiel adapté</text>
+            <rect x="240" y="230" width="190" height="72" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
+            <text x="335" y="258" font-size="15" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patient</text>
+            <text x="335" y="278" font-size="12.5" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">! référentiel insuffisant</text>
           </svg>
-          <div class="refflow-depth">
-            <div class="refflow-depth-label">Profondeur de représentation historique — hétérogène et non uniforme selon les référentiels</div>
-            <div class="refflow-depth-track refflow-depth-track--gradient"></div>
-          </div>
           <p class="text-small" style="margin-top:14px;">Popejoy &amp; Fullerton, <em>Nature</em>, 2016 · Fatumo et al., <em>Nature Medicine</em>, 2022.</p>
         </div>
       </div>
