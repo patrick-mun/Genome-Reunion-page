@@ -215,11 +215,18 @@ hélice élargi de 300 à 380 de hauteur, contenu recentré via un `<g transform
 
 **2026-09-03 — Révision (v4, carte + frise) :** la carte de gauche passe en fond bleu marine
 (`.card--navy-strong`) avec texte blanc, pour un contraste plus marqué avec le reste de la slide.
-Une frise chronologique compacte (`.mini-timeline`, 4 jalons : 1663 premiers colons européens,
-1848 abolition de l'esclavage, XIXe-XXe s. engagisme indien/chinois, Aujourd'hui population
-métissée) est ajoutée sous la citation de Prosper Ève, dans l'espace disponible de la colonne
-gauche — elle reprend l'esprit de la frise de `genome_reunion` (`.timeline`) en version réduite,
-sans remplacer le graphique de convergence qui reste l'élément visuel principal à droite.
+Une frise chronologique compacte (4 jalons) est ajoutée sous la citation de Prosper Ève, dans
+l'espace disponible de la colonne gauche, sans remplacer le graphique de convergence qui reste
+l'élément visuel principal à droite.
+
+**2026-09-03 — Révision (v5, frise — sur demande explicite avec maquette) :** la frise est
+redessinée pour reprendre exactement le style demandé — nœuds ronds colorés plus grands avec
+l'année/période en blanc à l'intérieur, titre thématique en gras coloré assorti, sous-titre gris
+listant les apports (classes `.frise`/`.frise-node`/`.frise-title`/`.frise-sub`, qui remplacent
+`.mini-timeline`). Les 4 jalons sont recadrés en grandes vagues de peuplement plutôt qu'en dates
+isolées : 1663 « Colonisation / Esclavage » (Europe · Afrique · Madagascar), 1848 « Engagisme »
+(Inde du Sud · Chine · Afrique), XXe s. « Migrations » (Mayotte · Comores · Madagascar), Auj.
+« Population » (Admixture unique).
 
 ### Texte écran
 
