@@ -671,7 +671,44 @@ Aucun.
 ### Transition
 > « À terme, cette logique peut déboucher sur un outil régional de sécurisation thérapeutique. »
 
-## SLIDE 17 — TRAJECTOIRE PHARMACOGÉNOMIQUE ⬜ (à faire)
+## SLIDE 17 — TRAJECTOIRE PHARMACOGÉNOMIQUE 🟡
+
+### Texte écran
+
+**Titre**
+> Vers une plateforme régionale de sécurisation thérapeutique
+
+**Trajectoire (schéma vertical, voir concept visuel)**
+> Génome Réunion → fréquences pharmacogénétiques locales → priorisation gène-médicament → études cliniques ciblées → validation locale → aide à la décision clinique → prévention
+
+**Cas d'usage futur (encart séparé, présenté explicitement comme prospectif)**
+> Lors d'une prescription : médicament concerné → information pharmacogénétique disponible ? → alerte contextualisée → recommandation validée → décision du médecin ou du pharmacien
+
+**Phrase de sécurité (encadrée, ton institutionnel net)**
+> La plateforme fournirait une aide à la décision ; la décision thérapeutique resterait médicale.
+
+### Texte oral (complet)
+
+« Je veux montrer où cette logique peut mener, à long terme, sans la présenter comme déjà acquise — c'est une trajectoire, pas une annonce.
+
+À partir des fréquences pharmacogénétiques locales et de la priorisation que je viens de décrire, l'étape suivante serait des études cliniques ciblées, menées avec le CHU, les généticiens, les pharmacologues et l'OMEDIT, pour valider localement l'intérêt de certains couples gène-médicament. Ce n'est qu'après cette validation qu'on pourrait envisager une intégration dans une aide à la décision clinique — par exemple une alerte contextualisée au moment de la prescription.
+
+Je le dis clairement, parce que c'est un point sur lequel nous ne voulons laisser aucune ambiguïté : nous ne proposons pas aujourd'hui un système qui adapterait automatiquement une dose. Nous proposons une trajectoire : connaissance, puis validation, puis seulement, éventuellement, intégration dans une aide à la décision. La décision thérapeutique resterait, à chaque étape, une décision médicale. »
+
+### Références mobilisées
+Reprend PREPARE / U-PGx (slide 16) comme précédent de plateforme de pharmacogénétique préemptive à l'échelle d'un système de santé.
+
+### Concept visuel précis
+- Trajectoire verticale en 7 étapes, dégradé de Lagon (début, connaissance) vers Flamboyant (fin, prévention) — cohérent avec le code couleur "dérive progressive" déjà utilisé slide 7, mais ici en registre positif (construction) plutôt qu'en registre d'alerte.
+- Marquer visuellement une rupture nette entre les 3 premières étapes (déjà engagées ou proches) et les 4 dernières (prospectives) — par exemple un trait plein pour les premières, pointillé pour les suivantes.
+- L'encart "cas d'usage futur" clairement étiqueté comme un exemple illustratif prospectif (bordure pointillée, mention "à terme" visible), jamais présenté comme un écran de logiciel existant.
+- La phrase de sécurité dans un encadré à part, fond distinct, position basse de la slide — dernière chose lue, pour qu'elle reste la note de sortie de cette slide.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Une telle ressource ne peut cependant être légitime que si la gouvernance des données est aussi robuste que la science. »
 
 ## SLIDE 18 — ÉTHIQUE, DONNÉES, CONFIANCE ⬜ (à faire)
 
