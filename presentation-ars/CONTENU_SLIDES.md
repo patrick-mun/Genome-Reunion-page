@@ -476,7 +476,47 @@ Aucun.
 ### Transition
 > « Cette ressource n'a de valeur pour l'ARS que si elle répond à des priorités sanitaires concrètes. »
 
-## SLIDE 12 — ALIGNEMENT AVEC L'ARS (matrice priorités) ⬜ (à faire)
+## SLIDE 12 — ALIGNEMENT AVEC L'ARS (matrice priorités) 🟡
+
+### Texte écran
+
+**Titre**
+> Une ressource à l'intersection de plusieurs priorités sanitaires
+
+**Matrice (tableau 2 colonnes)**
+
+| Priorité ARS | Apport potentiel de Génome Réunion |
+|---|---|
+| Équité en santé | Réduire un angle mort de représentation |
+| Diagnostic | Contextualiser certains variants |
+| Maladies rares | Soutenir l'interprétation et les parcours |
+| Médicament | Documenter les profils pharmacogénétiques |
+| Prévention | Identifier des risques évitables |
+| Données | Créer une ressource gouvernée et sécurisée |
+| Innovation | Transformer une connaissance locale en usage |
+
+**Message clé**
+> L'intérêt du projet pour l'ARS se situe à l'intersection de l'équité, du diagnostic, du médicament, des données et de la prévention.
+
+### Texte oral (complet)
+
+« Cette matrice résume, en une seule slide, pourquoi ce projet relève selon nous du champ de l'ARS et pas seulement du champ de la recherche.
+
+Je ne vais pas commenter chaque ligne — le tableau reste sous vos yeux — mais je veux insister sur un point : ce ne sont pas sept bénéfices indépendants. C'est une même ressource qui, selon l'angle sous lequel on la regarde, éclaire l'équité, le diagnostic, les maladies rares, le médicament, la prévention, la gouvernance des données et l'innovation. C'est cette transversalité qui, à notre sens, justifie que l'ARS s'y intéresse au-delà d'un simple soutien scientifique. »
+
+### Références mobilisées
+Aucune nouvelle — synthèse volontaire de tout l'Acte 2 sous une forme actionnable pour l'auditoire ARS.
+
+### Concept visuel précis
+- Tableau à deux colonnes, ligne par ligne, avec une puce de couleur discrète (dégradé Lagon→Flamboyant) en début de ligne plutôt qu'un tableau à bordures lourdes — évite l'effet "tableur administratif".
+- Le message clé en bas de slide, dans un bandeau distinct, reprend les mots-clés du tableau en gras pour créer un effet de rappel visuel immédiat.
+- C'est la seule slide de l'Acte 2 avec un fond légèrement différent (Sable plus soutenu) pour marquer qu'on referme ce chapitre et qu'on bascule vers les démonstrateurs concrets.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Le premier usage concret est probablement celui qui est déjà le plus proche de notre pratique quotidienne : l'interprétation diagnostique. »
 
 ## SLIDE 13 — DÉMONSTRATEUR 1 : DIAGNOSTIC — LE PROBLÈME ⬜ (à faire)
 
