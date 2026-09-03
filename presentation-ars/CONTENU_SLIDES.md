@@ -358,15 +358,25 @@ Aucun indispensable. Si le format final le permet, un survol des points réunion
 
 ---
 
-## SLIDE 7 — LE LISSAGE INVOLONTAIRE 🟡
+## SLIDE 7 — LE LISSAGE INVOLONTAIRE 🟢 (révisée 2026-09-03)
+
+**2026-09-03 — Révision (sur demande explicite) :** le schéma initial était un entonnoir à 5
+niveaux uniformes, jugé trop neutre — il rétrécissait visuellement sans jamais montrer *pour qui*
+la chaîne se dégrade, ni la bifurcation réelle de la décision clinique. Redessiné sur le même
+principe que la slide 4 (boîtes + flèches, bifurcation) : les deux premières étapes restent
+communes (même politique, même outil), puis le schéma se sépare en deux chemins à partir de la
+représentativité du référentiel — un patient bien représenté aboutit à un diagnostic fiable, un
+patient mal représenté à un diagnostic incertain. Rend la chaîne décisionnelle concrète et visible
+plutôt qu'abstraite.
 
 ### Texte écran
 
 **Titre**
 > Quand l'égalité de traitement peut produire une inégalité de pertinence
 
-**Chaîne causale (schéma vertical, voir concept visuel)**
-> Même politique de santé → Même outil / même recommandation → Référentiels différemment représentatifs → Niveau d'information variable → Inégalité potentielle de pertinence
+**Chaîne causale bifurquée (schéma vertical, voir concept visuel)**
+> Même politique de santé → Même outil / même recommandation → (bifurcation) → Référentiel bien représentatif → Niveau d'information élevé → Patient : diagnostic fiable
+> Même politique de santé → Même outil / même recommandation → (bifurcation) → Référentiel peu représentatif → Niveau d'information limité → Patient : diagnostic incertain
 
 **Phrase forte**
 > Le diagnostic, le médicament ou le test peuvent être les mêmes ; le niveau d'information disponible pour les interpréter peut ne pas l'être.
