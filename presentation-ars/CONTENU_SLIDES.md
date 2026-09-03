@@ -518,9 +518,78 @@ Aucun.
 ### Transition
 > « Le premier usage concret est probablement celui qui est déjà le plus proche de notre pratique quotidienne : l'interprétation diagnostique. »
 
-## SLIDE 13 — DÉMONSTRATEUR 1 : DIAGNOSTIC — LE PROBLÈME ⬜ (à faire)
+## SLIDE 13 — DÉMONSTRATEUR 1 : DIAGNOSTIC — LE PROBLÈME 🟡
 
-## SLIDE 14 — DÉMONSTRATEUR 1 : DIAGNOSTIC — L'APPORT ⬜ (à faire)
+### Texte écran
+
+**Titre**
+> Diagnostic : ce variant est-il réellement rare ?
+
+**Question centrale (grande typographie, seule sur l'écran ou presque)**
+> Ce variant est-il réellement rare, ou est-il simplement mal représenté dans les bases disponibles ?
+
+**Sous la question, une situation clinique en une phrase**
+> Un généticien retrouve chez un patient un variant absent — ou très rare — des bases de données de contrôle disponibles.
+
+### Texte oral (complet)
+
+« Je veux partir d'une situation que tout généticien clinique connaît. Vous retrouvez chez un patient un variant qui apparaît absent, ou extrêmement rare, dans les bases de contrôle que vous consultez pour l'interprétation.
+
+Deux explications sont possibles, et elles ne mènent pas à la même conclusion clinique. Soit ce variant est effectivement rare dans la population générale — ce qui est une information en soi. Soit il n'est pas rare, mais la population qui le porte le plus est simplement sous-représentée dans les bases que vous consultez — et dans ce cas, l'apparente rareté ne reflète pas la biologie, elle reflète un manque de données.
+
+C'est exactement le problème documenté par Manrai et ses collègues dans le New England Journal of Medicine : des variants ont été surinterprétés comme pathogènes parce que les populations de contrôle disponibles à l'époque ne représentaient pas suffisamment certaines ascendances. »
+
+### Références mobilisées
+- Manrai et al., *New England Journal of Medicine* — erreurs d'interprétation liées à une représentation insuffisante de certaines populations de contrôle.
+
+### Concept visuel précis
+- Slide volontairement épurée : la question centrale occupe le centre de l'écran, grande typographie, seule vraie "image" de la slide est typographique.
+- En dessous, une icône très simple évoquant un dossier/variant (un petit rectangle avec une marque, pas d'illustration ADN) associée à la phrase de situation clinique.
+- Fond Lagon profond (rupture avec le fond Sable des slides précédentes) pour signaler l'entrée dans le premier démonstrateur, cohérent avec le fond de la slide 1.
+
+### Éléments interactifs
+Aucun — c'est une slide de tension, à laisser en silence quelques secondes à l'oral avant d'enchaîner.
+
+### Transition
+> « Une donnée supplémentaire peut aider à répondre à cette question. »
+
+---
+
+## SLIDE 14 — DÉMONSTRATEUR 1 : DIAGNOSTIC — L'APPORT 🟡
+
+### Texte écran
+
+**Titre**
+> Une donnée de plus pour interpréter, jamais pour décider seule
+
+**Schéma (voir concept visuel)**
+> Variant trouvé chez le patient → Référentiels internationaux + fréquence réunionnaise → Information supplémentaire pour l'interprétation
+
+**Message clé**
+> Génome Réunion ne pose pas le diagnostic. Il apporte une donnée supplémentaire susceptible de réduire certaines incertitudes.
+
+### Texte oral (complet)
+
+« Voici ce que Génome Réunion peut apporter, très concrètement, à la situation que je viens de décrire : une fréquence populationnelle locale, qui vient s'ajouter — jamais se substituer — aux référentiels internationaux déjà consultés.
+
+Je veux être précis sur les limites. Une fréquence locale ne remplace aucun des autres critères d'interprétation : pas la ségrégation familiale, pas les prédictions fonctionnelles, pas les données cliniques. Mais elle peut empêcher qu'un variant paraisse exceptionnel uniquement parce que la population qui le porte le plus est mal représentée ailleurs.
+
+Nous ne prétendons pas que cela résoudra tous les variants de signification incertaine. Nous disons que cela peut contribuer, dans certains cas, à mieux les instruire. »
+
+### Références mobilisées
+- Reprend Manrai et al. (slide 13) comme justification du mécanisme.
+- Base de fréquences locales Génome Réunion (issue du pipeline présenté slide 10).
+
+### Concept visuel précis
+- Schéma horizontal à 3 étapes, dans le même langage graphique que le pipeline de la slide 10, pour créer une continuité visuelle explicite entre "ce que le projet construit" et "ce que ça sert à faire".
+- Le bloc "fréquence réunionnaise" en Flamboyant, les autres blocs en Lagon/Récif — cohérent avec le code couleur "apport local" déjà établi.
+- Le message clé en bas, avec la deuxième phrase ("il apporte une donnée...") légèrement plus petite que la première, pour marquer une hiérarchie : l'affirmation de prudence prime sur la promesse.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Le même problème de représentation se retrouve dans un autre domaine déjà utilisé en médecine : la pharmacogénétique. »
 
 ## SLIDE 15 — DÉMONSTRATEUR 2 : PHARMACOGÉNÉTIQUE — PRINCIPE ⬜ (à faire)
 
