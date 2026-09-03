@@ -51,7 +51,7 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 9. Écosystème génomique — qui fait quoi *(code 11)*
 10. Ce que le projet construit (2 500 → 350 génomes) *(code 12)*
 11. Robustesse de la sélection méthodologique *(code 13)*
-12. Alignement avec les priorités ARS (matrice) *(code 14)*
+12. Alignement avec le PRS 2023-2033 (matrice ancrée sur 4 priorités numérotées réelles) *(code 14)*
 
 ### Acte 3 — Comprendre les bénéfices sanitaires (contenu 13-17 → code 16-20)
 - *Transition « Partie 3 » (code 15)*
@@ -504,41 +504,69 @@ Aucun.
 ### Transition
 > « Cette ressource n'a de valeur pour l'ARS que si elle répond à des priorités sanitaires concrètes. »
 
-## SLIDE 12 — ALIGNEMENT AVEC L'ARS (matrice priorités) 🟡
+## SLIDE 12 — ALIGNEMENT AVEC LE PRS (matrice de priorités) 🟢 (révisée 2026-09-03, ancrée sur le PRS réel)
+
+**2026-09-03 — Révision :** la première version de cette slide mappait Génome Réunion sur des
+catégories génériques ("Équité en santé", "Diagnostic"...) sans les relier aux vraies priorités
+de l'ARS. Le porteur a fourni la plaquette officielle du **PRS La Réunion 2023-2033** (COS,
+15 priorités à 10 ans). Cette slide est reconstruite pour citer explicitement les priorités
+numérotées correspondantes — plus crédible et plus vérifiable par l'auditoire, qui a écrit ce
+document lui-même.
+
+### Les 15 priorités du COS 2023-2033 (pour référence)
+1. La démocratie en santé — 2. La prévention dans le quotidien des Réunionnais — 3. Un
+environnement favorable à la santé — 4. Des parcours de santé coordonnés et accessibles —
+5. La réduction des inégalités sociales et territoriales de santé — 6. La santé des femmes —
+7. La santé de la mère et de l'enfant — 8. La santé nutritionnelle — 9. La santé mentale —
+10. Les conduites addictives — 11. La qualité de vie et la santé des personnes vivant avec un
+handicap — 12. La qualité de vie et la santé des personnes âgées — 13. Les compétences et
+ressources humaines en santé — 14. Le numérique au service de la santé — 15. La veille et la
+surveillance sanitaire et la réponse aux situations exceptionnelles.
+
+Génome Réunion ne prétend contribuer qu'aux priorités pour lesquelles l'apport est direct et
+vérifiable — pas aux 15 par principe. Point notable : la **priorité 4** cite déjà littéralement,
+parmi ses actions, « Améliorer le diagnostic et la prise en charge des maladies rares » — c'est
+une action existante du PRS que Génome Réunion vient concrètement outiller, pas une nouvelle
+demande.
 
 ### Texte écran
 
 **Titre**
-> Une ressource à l'intersection de plusieurs priorités sanitaires
+> Une ressource ancrée dans le PRS 2023-2033, pas à côté
 
-**Matrice (tableau 2 colonnes)**
+**Grille de 4 cartes, chacune avec un badge « Priorité N du PRS »**
 
-| Priorité ARS | Apport potentiel de Génome Réunion |
-|---|---|
-| Équité en santé | Réduire un angle mort de représentation |
-| Diagnostic | Contextualiser certains variants |
-| Maladies rares | Soutenir l'interprétation et les parcours |
-| Médicament | Documenter les profils pharmacogénétiques |
-| Prévention | Identifier des risques évitables |
-| Données | Créer une ressource gouvernée et sécurisée |
-| Innovation | Transformer une connaissance locale en usage |
+| Priorité PRS | Intitulé officiel | Apport de Génome Réunion |
+|---|---|---|
+| 5 | Réduction des inégalités sociales et territoriales de santé | Réduire un angle mort de représentation dans les outils de médecine génomique |
+| 4 | Parcours de santé coordonnés et accessibles | Soutenir le diagnostic et la prise en charge des maladies rares — une action déjà inscrite au PRS |
+| 2 | Prévention dans le quotidien des Réunionnais | Documenter les profils pharmacogénétiques pour prévenir des risques médicamenteux évitables |
+| 14 | Le numérique au service de la santé | Constituer une ressource de données de santé gouvernée et sécurisée |
 
 **Message clé**
-> L'intérêt du projet pour l'ARS se situe à l'intersection de l'équité, du diagnostic, du médicament, des données et de la prévention.
+> Génome Réunion ne demande pas d'ajouter une priorité au PRS : il apporte une donnée locale à des priorités qui y figurent déjà.
 
 ### Texte oral (complet)
 
-« Cette matrice résume, en une seule slide, pourquoi ce projet relève selon nous du champ de l'ARS et pas seulement du champ de la recherche.
+« Cette slide n'invente rien : elle reprend quatre des quinze priorités que vous avez vous-mêmes fixées dans le PRS 2023-2033, et montre où Génome Réunion vient concrètement les outiller.
 
-Je ne vais pas commenter chaque ligne — le tableau reste sous vos yeux — mais je veux insister sur un point : ce ne sont pas sept bénéfices indépendants. C'est une même ressource qui, selon l'angle sous lequel on la regarde, éclaire l'équité, le diagnostic, les maladies rares, le médicament, la prévention, la gouvernance des données et l'innovation. C'est cette transversalité qui, à notre sens, justifie que l'ARS s'y intéresse au-delà d'un simple soutien scientifique. »
+Je veux m'arrêter sur la priorité 4, parce qu'elle est la plus directe : parmi ses actions figure déjà "améliorer le diagnostic et la prise en charge des maladies rares". Ce n'est pas nous qui proposons cette priorité — elle existe déjà dans votre feuille de route. Ce que nous proposons, c'est une ressource locale pour mieux la servir.
+
+La priorité 5, la réduction des inégalités sociales et territoriales de santé, est le cœur de notre argumentaire d'équité de pertinence développé en première partie. La priorité 2, la prévention dans le quotidien des Réunionnais, est directement servie par notre trajectoire pharmacogénétique. Et la priorité 14, le numérique au service de la santé, correspond à l'exigence de gouvernance des données que nous détaillerons dans la dernière partie.
+
+Nous ne prétendons pas contribuer aux quinze priorités du PRS. Nous préférons documenter précisément quatre contributions réelles plutôt que revendiquer une pertinence générale. »
 
 ### Références mobilisées
-Aucune nouvelle — synthèse volontaire de tout l'Acte 2 sous une forme actionnable pour l'auditoire ARS.
+Plaquette de présentation du PRS La Réunion 2023-2033 (ARS La Réunion, Cadre d'Orientations
+Stratégiques — 15 priorités à 10 ans), fournie par le porteur de projet.
 
 ### Concept visuel précis
-- Tableau à deux colonnes, ligne par ligne, avec une puce de couleur discrète (dégradé Lagon→Flamboyant) en début de ligne plutôt qu'un tableau à bordures lourdes — évite l'effet "tableur administratif".
-- Le message clé en bas de slide, dans un bandeau distinct, reprend les mots-clés du tableau en gras pour créer un effet de rappel visuel immédiat.
-- C'est la seule slide de l'Acte 2 avec un fond légèrement différent (Sable plus soutenu) pour marquer qu'on referme ce chapitre et qu'on bascule vers les démonstrateurs concrets.
+- Grille de 4 cartes (au lieu du tableau à 7 lignes de la version précédente), chacune avec un
+  badge coloré "Priorité N du PRS" en haut, l'intitulé officiel de la priorité, puis l'apport de
+  Génome Réunion — plus crédible qu'une simple liste de mots-clés génériques.
+- Un seul badge/carte non chiffré resterait acceptable pour une contribution transversale, mais
+  volontairement évité ici : les 4 cartes retenues sont toutes rattachées à un numéro de priorité
+  vérifiable, pour ne jamais donner l'impression d'un survol non maîtrisé du document.
 
 ### Éléments interactifs
 Aucun.
