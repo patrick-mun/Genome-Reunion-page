@@ -710,9 +710,81 @@ Aucun.
 ### Transition
 > « Une telle ressource ne peut cependant être légitime que si la gouvernance des données est aussi robuste que la science. »
 
-## SLIDE 18 — ÉTHIQUE, DONNÉES, CONFIANCE ⬜ (à faire)
+## SLIDE 18 — ÉTHIQUE, DONNÉES, CONFIANCE 🟡
 
-## SLIDE 19 — RÉPARTITION DES RÔLES (CHU / Région / État / ARS) ⬜ (à faire)
+### Texte écran
+
+**Titre**
+> Une ressource sensible qui exige une gouvernance explicite
+
+**5 blocs (grille, voir concept visuel)**
+- **Participants** — consentement, information
+- **Données** — pseudonymisation, sécurité
+- **Accès** — gouvernance, droits d'usage
+- **Usage clinique** — distinction recherche / diagnostic
+- **Population** — non-stigmatisation, restitution
+
+**Phrase pivot (en exergue)**
+> Ascendance génétique, identité culturelle et origine sociale ne sont pas des notions interchangeables.
+
+### Texte oral (complet)
+
+« Nous travaillons sur une donnée extrêmement informative, et donc sensible. La question qui se pose n'est donc pas seulement ce que nous pouvons techniquement faire avec elle, mais dans quel cadre nous décidons collectivement de le faire.
+
+Cinq dimensions structurent ce cadre. Le consentement et l'information des participants, en amont. La pseudonymisation et la sécurité des données, sur le plan technique. La gouvernance de l'accès et des droits d'usage, sur le plan organisationnel. La distinction claire entre recherche et diagnostic, sur le plan clinique. Et, pour la population dans son ensemble, la question de la non-stigmatisation et de la restitution des résultats.
+
+Je veux insister sur un point de vocabulaire, parce qu'il est central pour éviter tout malentendu : l'ascendance génétique, l'identité culturelle et l'origine sociale ne sont pas des notions interchangeables. Ce projet étudie la première. Il ne prétend rien dire des deux autres. »
+
+### Références mobilisées
+Principes de gouvernance internes au projet (cf. `template/` : documents de gouvernance et données) — cadre RGPD applicable, à préciser si la question est posée en Q&A plutôt qu'affiché à l'écran.
+
+### Concept visuel précis
+- Grille de 5 blocs de taille égale, disposés en ligne ou en arc léger, chaque bloc avec une icône minimaliste distincte (cadenas pour données, poignée de main pour consentement, etc.) — pas d'icônes ADN ni de symboles ethniques.
+- La phrase pivot occupe une position centrale forte, seule sur sa propre bande visuelle sous la grille — c'est, avec la slide 5, l'autre "phrase-mémoire" du diaporama.
+- Palette volontairement plus sobre que les slides de démonstrateurs (moins de Flamboyant, plus de Lagon/gris) pour installer un registre de sérieux institutionnel.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « C'est précisément à ce stade que le rôle de chaque acteur — CHU, Région, État, ARS — devient structurant. »
+
+---
+
+## SLIDE 19 — RÉPARTITION DES RÔLES (CHU / Région / État / ARS) 🟡
+
+### Texte écran
+
+**Titre**
+> Une articulation claire entre quatre acteurs
+
+**4 blocs (voir concept visuel)**
+- **CHU** — expertise clinique, génétique, données, recherche
+- **Région** — infrastructure, innovation, capacité territoriale
+- **État et dispositifs nationaux** — séquençage, référentiels, cadre national
+- **ARS** — lecture sanitaire, équité, prévention, articulation avec le système de soins
+
+### Texte oral (complet)
+
+« Avant de conclure, je veux être précis sur un point d'organisation, parce qu'il conditionne la crédibilité de tout ce qui précède : ce projet n'a pas besoin que l'ARS fasse le travail d'un autre acteur.
+
+Le CHU porte l'expertise clinique, génétique et scientifique — c'est le porteur médical naturel du projet. La Région apporte l'infrastructure et une capacité d'investissement territorial. L'État et les dispositifs nationaux fournissent le cadre, le séquençage clinique et les référentiels de référence.
+
+L'ARS a un rôle différent de ces trois-là, et c'est précisément celui qui nous intéresse ici : une lecture sanitaire du projet, une attention à l'équité, une articulation avec le Projet régional de santé, l'offre de soins et la prévention. Ce n'est pas un rôle de financeur parmi d'autres. C'est un rôle qu'aucun des trois autres acteurs ne peut occuper à sa place. »
+
+### Références mobilisées
+Articulation institutionnelle du projet — cohérente avec la présentation Région existante (`presentation-region/`), sans reprendre son angle recherche/innovation : ici, seul le rôle de chaque acteur est rappelé, du point de vue sanitaire.
+
+### Concept visuel précis
+- 4 blocs de largeur égale, disposés en ligne, sans hiérarchie visuelle entre eux (même taille, même poids typographique) — le message est la complémentarité, pas une préséance d'un acteur sur un autre.
+- Le bloc ARS légèrement mis en avant (bordure Flamboyant, les 3 autres en Lagon/Récif neutres) puisque c'est l'acteur auquel s'adresse la présentation, sans que cela ne minimise visuellement les trois autres.
+- Pas de logos institutionnels tiers (CHU, Région, État) sans autorisation préalable de les utiliser — à confirmer avant mise en forme finale ; à défaut, rester en texte seul.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Ce que cette articulation rend possible, c'est la transformation d'une infrastructure scientifique en ressource sanitaire — et c'est précisément ce que nous venons vous proposer. »
 
 ## SLIDE 20 — CONCLUSION / DEMANDE ARS ⬜ (à faire)
 Note : demande finale centrée sur l'accompagnement d'un axe pharmacogénétique/prévention avec l'OMEDIT
