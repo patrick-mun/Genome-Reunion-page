@@ -830,5 +830,6 @@ Fin du corps principal — bascule orale vers les questions, avec accès possibl
 
 ## Personas (support de préparation Q&A, pas nécessairement des slides)
 
-⬜ À formaliser après le corps du diaporama : garant-partenaire de l'équité sanitaire (principal) +
-direction générale / offre de soins / santé publique / numérique / pharmacologie.
+🟢 Validé — landing page unique `presentation-ars/personas.html` regroupant les 6 personas
+fonctionnels : garant-partenaire de l'équité sanitaire (principal) + direction générale /
+offre de soins / santé publique / numérique / pharmacologie.
