@@ -403,9 +403,78 @@ Aucun.
 ### Transition
 > « Pour construire cette référence, le projet s'appuie d'abord sur une cohorte large. »
 
-## SLIDE 10 — CE QUE LE PROJET CONSTRUIT ⬜ (à faire)
+## SLIDE 10 — CE QUE LE PROJET CONSTRUIT 🟡
 
-## SLIDE 11 — ROBUSTESSE DE LA SÉLECTION ⬜ (à faire)
+### Texte écran
+
+**Titre**
+> De 2 500 participants à une référence génomique locale
+
+**Pipeline (schéma horizontal, voir concept visuel)**
+> ≈ 2 500 participants génotypés → caractérisation de la diversité → sélection d'environ 350 génomes informatifs → séquençage du génome entier (WGS) → base de fréquences locales → ressource sanitaire et scientifique
+
+**Encart séparé**
+> + ≈ 100 familles nucléaires, pour la reconstruction haplotypique
+
+### Texte oral (complet)
+
+« Concrètement, voici ce que construit le projet. Nous ne séquençons pas quelques centaines de personnes au hasard.
+
+Nous commençons par génotyper environ 2 500 participants — une technique plus légère que le séquençage complet, qui permet de caractériser la structure de diversité de la population. C'est seulement à partir de cette caractérisation que nous sélectionnons environ 350 génomes pour un séquençage complet : ceux qui apportent le plus d'information sur la diversité observée.
+
+À cela s'ajoute un volet spécifique d'environ 100 familles nucléaires — parents et enfants — qui permet de reconstruire des haplotypes, c'est-à-dire des blocs de variants transmis ensemble, une information précieuse pour l'interprétation clinique future. »
+
+### Références mobilisées
+Chiffres internes du projet (2 500 participants, 350 génomes WGS, 100 familles) — cohérents avec la méthodologie de sélection déjà publiée par le projet (cf. `template/` : documents de méthodologie de sélection).
+
+### Concept visuel précis
+- Pipeline horizontal en 5 étapes, flèches fines, icônes minimalistes (pas de pictogrammes ADN clichés type double hélice tournante — rester sobre, une forme géométrique simple par étape suffit).
+- L'encart "familles nucléaires" positionné en dessous du pipeline, relié par une ligne pointillée plutôt qu'intégré dans la chaîne principale, pour marquer que c'est un volet complémentaire parallèle et non une étape séquentielle.
+- Chiffres clés (2 500 / 350 / 100) en grande typographie Flamboyant, seuls éléments "chiffrés" de toute la slide pour qu'ils ressortent.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Dans une population admixée, la manière de sélectionner ces génomes est aussi importante que leur nombre. »
+
+---
+
+## SLIDE 11 — ROBUSTESSE DE LA SÉLECTION 🟡
+
+### Texte écran
+
+**Titre**
+> Représenter la diversité plutôt que multiplier les génomes redondants
+
+**Comparaison à deux volets (voir concept visuel)**
+> Tirage aléatoire : plusieurs individus très proches dans l'espace de diversité
+> Sélection raisonnée : meilleure couverture de l'espace génétique
+
+**Mention discrète en bas de slide (petite typographie, registre "détails disponibles sur demande")**
+> Critères pris en compte : structure de population (PCA, ADMIXTURE), parenté, homozygotie (ROH/IBD), diversité, répartition géographique.
+
+### Texte oral (complet)
+
+« La méthode complète est disponible en détail si vous le souhaitez — elle est d'ailleurs publiée. Mais le principe tient en une phrase : nous ne voulons pas consommer un budget de séquençage sur des génomes redondants quand l'objectif est de construire une référence populationnelle.
+
+Un tirage aléatoire de 350 personnes dans une cohorte de 2 500 aurait de bonnes chances de sur-représenter les profils les plus fréquents et de sous-représenter les profils rares — exactement le problème que nous cherchons à corriger, reproduit à notre propre échelle. La sélection raisonnée, à l'inverse, vise une couverture maximale de la diversité observée, en tenant compte de la structure de population, de la parenté entre participants, et de la géographie. »
+
+### Références mobilisées
+Méthodologie de sélection du projet (documents `template/` : justification des choix, protocole de validation) — disponible en annexe A pour le niveau de détail technique complet.
+
+### Concept visuel précis
+- Deux schémas côte à côte, même style que les autres nuages conceptuels du diaporama (cohérence avec slide 5) :
+  - à gauche, un nuage de points avec plusieurs points sélectionnés (en Flamboyant) regroupés dans une même zone dense ;
+  - à droite, le même nuage avec des points sélectionnés bien répartis sur toute l'étendue du nuage.
+- Pas de jargon visible à l'écran (PCA, ADMIXTURE, ROH, IBD restent en petite légende technique, non commentés à l'oral sauf question).
+- Cette slide doit se lire quasi sans texte — l'opposition visuelle entre les deux nuages doit suffire à faire comprendre le principe avant même la phrase orale.
+
+### Éléments interactifs
+Aucun.
+
+### Transition
+> « Cette ressource n'a de valeur pour l'ARS que si elle répond à des priorités sanitaires concrètes. »
 
 ## SLIDE 12 — ALIGNEMENT AVEC L'ARS (matrice priorités) ⬜ (à faire)
 
