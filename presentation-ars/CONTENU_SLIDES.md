@@ -7,6 +7,13 @@ plus clair sur ~25-30 minutes, + 4 annexes inchangées.
 
 Statut de chaque slide : 🟡 brouillon proposé · 🟢 validé · 🔴 à revoir · ⬜ à faire
 
+**2026-09-03 — Passage au code :** les 20 slides ci-dessous ont été implémentées en HTML/CSS/JS
+dans `presentation-ars/index.html`, sur le modèle visuel du diaporama DRCI (`css/main.css`
+partagé, composants pipeline/callout/formula/toc-row réutilisés) et avec la vraie PCA pilote
+(`js/pca-data.js`, mêmes données que le diaporama DRCI). Les statuts 🟡 ci-dessous restent la
+trace du contenu validé ; le rendu visuel définitif vit désormais dans le code, pas ici.
+Restent à faire : les 3 annexes (A, C, D) et un mode présentateur éventuel.
+
 ---
 
 ## Architecture
