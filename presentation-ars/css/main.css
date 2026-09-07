@@ -455,6 +455,10 @@ h2.block-title {
   gap: 12px;
   padding: 26px 28px;
 }
+/* Variante compacte : hauteur naturelle (contenu centré) plutôt qu'étirée sur tout le bloc —
+   pour les pipelines à contenu court, afin d'éviter un grand vide sous le texte */
+.pipeline--compact { flex: 0 0 auto; }
+.pipeline--compact .pipeline-step { flex: 1; justify-content: center; padding: 40px 32px; gap: 10px; }
 .pipeline-step:first-child { border-radius: 16px 0 0 16px; }
 .pipeline-step:last-child { border-radius: 0 16px 16px 0; }
 .pipeline-arrow { flex-shrink: 0; width: 34px; position: relative; }
