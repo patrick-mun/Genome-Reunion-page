@@ -27,34 +27,22 @@ jobs:
           path = Path('presentation-ars/index.html')
           html = path.read_text(encoding='utf-8')
 
-          old = '''            <line x1="230" y1="206" x2="128" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
-            <line x1="230" y1="206" x2="332" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
-            <rect x="30" y="230" width="190" height="72" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>
-            <text x="125" y="258" font-size="15" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Population mieux représentée</text>
-            <text x="125" y="278" font-size="12.5" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">information plus robuste</text>
-            <rect x="240" y="230" width="190" height="72" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
-            <text x="335" y="258" font-size="15" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Population moins représentée</text>
-            <text x="335" y="278" font-size="12.5" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">information plus limitée</text>'''
+          replacements = [
+              ('<line x1="230" y1="206" x2="128" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>', '<line x1="230" y1="206" x2="118" y2="226" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>'),
+              ('<line x1="230" y1="206" x2="332" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>', '<line x1="230" y1="206" x2="342" y2="226" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>'),
+              ('<rect x="30" y="230" width="190" height="72" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>', '<rect x="20" y="228" width="195" height="74" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>'),
+              ('<text x="125" y="258" font-size="15" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Population mieux représentée</text>', '<text x="117.5" y="248" font-size="13.5" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">\n              <tspan x="117.5" dy="0">Population mieux</tspan>\n              <tspan x="117.5" dy="17">représentée</tspan>\n            </text>'),
+              ('<text x="125" y="278" font-size="12.5" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">information plus robuste</text>', '<text x="117.5" y="289" font-size="12.2" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">information plus robuste</text>'),
+              ('<rect x="240" y="230" width="190" height="72" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>', '<rect x="245" y="228" width="195" height="74" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>'),
+              ('<text x="335" y="258" font-size="15" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Population moins représentée</text>', '<text x="342.5" y="248" font-size="13.5" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">\n              <tspan x="342.5" dy="0">Population moins</tspan>\n              <tspan x="342.5" dy="17">représentée</tspan>\n            </text>'),
+              ('<text x="335" y="278" font-size="12.5" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">information plus limitée</text>', '<text x="342.5" y="289" font-size="12.2" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">information plus limitée</text>'),
+          ]
 
-          new = '''            <line x1="230" y1="206" x2="118" y2="226" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
-            <line x1="230" y1="206" x2="342" y2="226" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
-            <rect x="20" y="228" width="195" height="74" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>
-            <text x="117.5" y="248" font-size="13.5" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">
-              <tspan x="117.5" dy="0">Population mieux</tspan>
-              <tspan x="117.5" dy="17">représentée</tspan>
-            </text>
-            <text x="117.5" y="289" font-size="12.2" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">information plus robuste</text>
-            <rect x="245" y="228" width="195" height="74" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
-            <text x="342.5" y="248" font-size="13.5" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">
-              <tspan x="342.5" dy="0">Population moins</tspan>
-              <tspan x="342.5" dy="17">représentée</tspan>
-            </text>
-            <text x="342.5" y="289" font-size="12.2" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">information plus limitée</text>'''
+          for old, new in replacements:
+              if old not in html:
+                  raise SystemExit(f'Slide 4 marker not found: {old[:60]}')
+              html = html.replace(old, new, 1)
 
-          if old not in html:
-              raise SystemExit('Slide 4 target block not found')
-
-          html = html.replace(old, new, 1)
           path.write_text(html, encoding='utf-8')
           PY
 
