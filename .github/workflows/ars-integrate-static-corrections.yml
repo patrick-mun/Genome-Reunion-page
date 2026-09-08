@@ -1,0 +1,239 @@
+name: Integrate ARS static corrections
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ars-integrate-static-corrections.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Integrate corrections into static source
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          index_path = Path('presentation-ars/index.html')
+          app_path = Path('presentation-ars/js/app.js')
+
+          html = index_path.read_text(encoding='utf-8')
+          app = app_path.read_text(encoding='utf-8')
+
+          def replace_once(text, old, new, label):
+              count = text.count(old)
+              if count != 1:
+                  raise SystemExit(f'{label}: expected 1 occurrence, found {count}')
+              return text.replace(old, new, 1)
+
+          # Static counter: the deck now contains 25 slides.
+          html = replace_once(html, '1 / 24', '1 / 25', 'counter')
+
+          # Slide 05 — demographic history.
+          html = replace_once(
+              html,
+              'data-label="05 — Histoire démographique" data-notes="Admixture récente + insularité + effets fondateurs + dérive + endogamie locale. Graphique repris de la présentation Région (convergence en double hélice), branches réétiquetées avec les apports historiques."',
+              'data-label="05 — Histoire démographique" data-notes="Admixture récente + insularité ; effets fondateurs et endogamie à présenter comme documentés dans certaines composantes ou certains contextes, jamais comme caractéristiques uniformes de toute la population."',
+              'slide05 notes')
+          html = replace_once(
+              html,
+              "La population réunionnaise résulte d'une histoire démographique récente qui a mêlé plusieurs origines sur un espace insulaire clos.",
+              "La population réunionnaise résulte d'une histoire démographique récente, marquée par des vagues successives de peuplement et par la rencontre de plusieurs origines dans un contexte insulaire.",
+              'slide05 intro')
+          html = replace_once(
+              html,
+              'Admixture récente + insularité + effets fondateurs + dérive + endogamie locale',
+              'Admixture récente + insularité + effets fondateurs documentés dans certaines composantes + dérive + endogamie locale dans certains contextes',
+              'slide05 callout')
+
+          quote_pattern = re.compile(
+              r'\n\s*<div class="history-quote history-quote--teal history-quote--lg">\s*'
+              r'<p class="history-quote-text">.*?</p>\s*'
+              r'<div class="history-quote-meta">.*?</div>\s*'
+              r'</div>',
+              re.S,
+          )
+          html, n = quote_pattern.subn('', html, count=1)
+          if n != 1:
+              raise SystemExit(f'slide05 quote: expected 1 removal, found {n}')
+
+          html = replace_once(html, 'Admixture unique', 'Population fortement admixée', 'slide05 population label')
+          html = replace_once(
+              html,
+              "Des origines et des histoires diverses, mêlées au fil du peuplement de l'île, qui convergent vers un même patrimoine génétique à mieux connaître.",
+              "Des origines et des histoires diverses, mêlées au fil du peuplement de l'île, qui ont contribué à un patrimoine génétique aujourd'hui fortement admixé et à mieux documenter.",
+              'slide05 caption')
+
+          # Slide 06 — continuum wording.
+          html = replace_once(
+              html,
+              "Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal. La preuve réelle suit à la slide suivante.",
+              "Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum de diversité. Les grandes catégories continentales de référence ne suffisent pas nécessairement à décrire la combinaison d'ascendances observée à La Réunion. La preuve pilote suit à la slide suivante.",
+              'slide06 wording')
+
+          # Slide 07 — PCA pilot wording.
+          html = replace_once(
+              html,
+              'data-label="07 — La preuve locale (PCA)" data-notes="PCA pilote n≈75 projetée sur 1000 Genomes — continuum, pas un cluster homogène."',
+              'data-label="07 — La preuve locale (PCA)" data-notes="PCA pilote n≈75 projetée sur 1000 Genomes : première observation compatible avec une structure fortement admixée et des positions intermédiaires ; ne pas présenter comme démonstration exhaustive de toute La Réunion."',
+              'slide07 notes')
+          html = replace_once(
+              html,
+              'Une première observation locale : la diversité réunionnaise forme un continuum',
+              "Une première observation locale : des positions compatibles avec un continuum d'admixture",
+              'slide07 title')
+          html = replace_once(
+              html,
+              "PCA globale : projection de la cohorte pilote réunionnaise (n≈75) sur l'espace des composantes principales des populations de référence 1000 Genomes (AFR, AMR, EAS, EUR, SAS). Les échantillons réunionnais se répartissent en continu entre les clusters de référence, hors de tout cluster homogène.",
+              "PCA globale : projection de la cohorte pilote réunionnaise (n≈75) sur les composantes principales des populations de référence 1000 Genomes. Les positions intermédiaires observées sont compatibles avec une structure fortement admixée ; cette cohorte pilote ne constitue pas une représentation exhaustive de La Réunion.",
+              'slide07 aria')
+          html = replace_once(
+              html,
+              'Cette cohorte pilote ne décrit pas toute La Réunion. Elle montre cependant que la diversité observée localement ne se superpose pas à une seule population de référence.',
+              'Cette cohorte pilote ne décrit pas toute La Réunion. Elle montre des positions intermédiaires entre plusieurs populations de référence, compatibles avec une structure fortement admixée.',
+              'slide07 caption')
+
+          # Slide 08 — representativeness affects information robustness, not diagnosis by itself.
+          html = replace_once(
+              html,
+              'data-label="08 — Le lissage involontaire" data-notes="Concept central du diaporama — inégalité involontaire de pertinence, pas de traitement."',
+              'data-label="08 — Le lissage involontaire" data-notes="Concept central : la représentativité modifie la robustesse de l’information populationnelle disponible pour l’interprétation ; elle ne garantit ni n’invalide à elle seule un diagnostic."',
+              'slide08 notes')
+          html = replace_once(
+              html,
+              'Même politique de santé et même outil appliqués à tous, mais la chaîne se sépare selon la représentativité du référentiel disponible : un patient bien représenté obtient un diagnostic fiable, un patient mal représenté obtient un diagnostic incertain',
+              "Même politique de santé et même outil appliqués à tous, mais le niveau d'information populationnelle disponible varie selon la représentativité du référentiel : une représentation plus robuste réduit l'incertitude populationnelle, sans déterminer à elle seule le diagnostic clinique.",
+              'slide08 aria')
+
+          start = html.index('<!-- 08 — Le lissage involontaire -->')
+          end = html.index('<!-- 09 — [Section] La réponse -->', start)
+          s08 = html[start:end]
+          if s08.count('>Patient</text>') != 2:
+              raise SystemExit('slide08: expected exactly 2 Patient SVG labels')
+          s08 = s08.replace('>Patient</text>', '>Interprétation</text>')
+          s08 = replace_once(s08, '✓ diagnostic fiable', 'information plus robuste', 'slide08 robust')
+          s08 = replace_once(s08, '! diagnostic incertain', 'incertitude plus élevée', 'slide08 uncertainty')
+          html = html[:start] + s08 + html[end:]
+
+          # Slide 10 and 12 notes.
+          html = replace_once(
+              html,
+              'data-label="10 — Positionnement" data-notes="Neutraliser l\'objection \'cela existe déjà\'."',
+              'data-label="10 — Positionnement" data-notes="Le PFMG organise l’accès national au séquençage génomique et à son interprétation clinique. Génome Réunion apporte une couche différente : une référence populationnelle locale complémentaire, sans duplication des dispositifs nationaux."',
+              'slide10 notes')
+          html = replace_once(
+              html,
+              'data-label="12 — Ce que le projet construit" data-notes="2500 participants génotypés → 350 génomes WGS → base de fréquences locales."',
+              'data-label="12 — Ce que le projet construit" data-notes="2 500 participants génotypés → sélection raisonnée de 350 génomes WGS → identification des variants → fréquences locales recalibrées sur la cohorte large de 2 500 participants."',
+              'slide12 notes')
+
+          # Slide 19 — actionability is part of prioritisation.
+          html = replace_once(
+              html,
+              'data-label="19 — Prioriser les risques" data-notes="PREPARE / U-PGx — transférabilité à documenter localement."',
+              'data-label="19 — Prioriser les risques" data-notes="Priorisation populationnelle : fréquence locale × exposition au médicament × preuve et actionnabilité × gravité du risque. L’OMEDIT constitue un interlocuteur naturel pour relier ce travail au bon usage et à la prévention de l’iatrogénie."',
+              'slide19 notes')
+          html = replace_once(html, '>Niveau de preuve</span>', '>Preuve &amp; actionnabilité</span>', 'slide19 formula')
+
+          # Slide 22 — operational Q&A note.
+          html = replace_once(
+              html,
+              'data-label="22 — Éthique &amp; données" data-notes="Ascendance génétique ≠ identité culturelle ≠ origine sociale."',
+              'data-label="22 — Éthique &amp; données" data-notes="Préparer en Q&amp;A : lieu d’hébergement, comité d’accès, critères d’autorisation des requêtes, données pouvant quitter le CHU, articulation éventuelle avec l’EDS, sécurité et risque de ré-identification des données agrégées."',
+              'slide22 notes')
+
+          # Slide 23 — previous JS selector no longer matched the redesigned card.
+          html = replace_once(
+              html,
+              '<li>Articulation avec le PRS 2023-2033 et l\'offre de soins</li>',
+              '<li>Articulation avec le PRS 2023-2033, l’OMEDIT et l’offre de soins</li>',
+              'slide23 ARS role')
+
+          # Slide 24 — pragmatic feasibility request.
+          html = replace_once(
+              html,
+              'data-label="24 — Conclusion &amp; demande ARS" data-notes="Demande : accompagnement d\'un axe pharmacogénétique/prévention avec l\'OMEDIT."',
+              'data-label="24 — Conclusion &amp; demande ARS" data-notes="Demande pragmatique : co-construire avec l’ARS et l’OMEDIT une première étude de faisabilité pharmacogénétique régionale permettant d’identifier 2 à 3 couples gène–médicament prioritaires à évaluer à La Réunion."',
+              'slide24 notes')
+          html = replace_once(
+              html,
+              "Ce que nous demandons aujourd'hui à l'ARS : accompagner, avec l'OMEDIT, le lancement d'un axe pharmacogénétique et prévention — première étape concrète et mesurable d'articulation entre Génome Réunion et une politique de santé régionale.",
+              "Ce que nous proposons aujourd'hui à l'ARS et à l'OMEDIT : co-construire avec le CHU une première étude de faisabilité pharmacogénétique régionale, afin d'identifier à partir des données locales et du niveau de preuve existant 2 à 3 couples gène–médicament prioritaires à évaluer à La Réunion.",
+              'slide24 ask1')
+          html = replace_once(
+              html,
+              "Cette étape s'inscrit dans une reconnaissance plus large de l'intérêt sanitaire du projet, que nous souhaitons construire avec vous dans la durée.",
+              "Cette première étape, limitée et mesurable, permettrait d'instruire sur des données réelles l'intérêt d'un déploiement ultérieur en prévention et sécurisation thérapeutique.",
+              'slide24 ask2')
+
+          # Remove all editorial/scientific mutation logic from app.js.
+          app = re.sub(
+              r'/\* app\.js — Génome Réunion · Présentation ARS La Réunion\n'
+              r'\s*Navigation du deck, accessibilité clavier, menu mobile\.\n.*?\*/',
+              '/* app.js — Génome Réunion · Présentation ARS La Réunion\n   Navigation du deck, accessibilité clavier, menu mobile. */',
+              app,
+              count=1,
+              flags=re.S,
+          )
+          app, n = re.subn(
+              r'\n\s*function slideByLabel\(prefix\) \{.*?\n\s*applyScientificCorrections\(\);\n',
+              '\n',
+              app,
+              count=1,
+              flags=re.S,
+          )
+          if n != 1:
+              raise SystemExit(f'app.js correction block: expected 1 removal, found {n}')
+
+          # Validation.
+          required_html = [
+              'Population fortement admixée',
+              "des positions compatibles avec un continuum d'admixture",
+              'information plus robuste',
+              'incertitude plus élevée',
+              'Preuve &amp; actionnabilité',
+              '2 à 3 couples gène–médicament prioritaires',
+              'PRS 2023-2033, l’OMEDIT et l’offre de soins',
+          ]
+          for needle in required_html:
+              if needle not in html:
+                  raise SystemExit(f'missing integrated correction: {needle}')
+
+          forbidden_html = [
+              'espace insulaire clos',
+              'Admixture unique',
+              '✓ diagnostic fiable',
+              '! diagnostic incertain',
+              "Ce que nous demandons aujourd'hui à l'ARS : accompagner, avec l'OMEDIT, le lancement d'un axe pharmacogénétique",
+          ]
+          for needle in forbidden_html:
+              if needle in html:
+                  raise SystemExit(f'old dynamic wording still present: {needle}')
+
+          if 'applyScientificCorrections' in app or 'slideByLabel' in app or 'replaceSvgText' in app:
+              raise SystemExit('app.js still contains editorial correction logic')
+          if html.count('<section class="slide ') != 25:
+              raise SystemExit(f'expected 25 slides, found {html.count("<section class=\"slide ")}')
+
+          index_path.write_text(html, encoding='utf-8')
+          app_path.write_text(app, encoding='utf-8')
+          PY
+
+      - name: Commit migrated sources
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add presentation-ars/index.html presentation-ars/js/app.js
+          git commit -m "Intègre les correctifs ARS dans le HTML source"
+          git push origin main
