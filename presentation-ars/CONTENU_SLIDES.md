@@ -21,9 +21,9 @@ scientifique, en gardant la palette de marque.
 
 **2026-09-03 — Slides de transition :** ajout, comme sur le diaporama Région, d'une slide de
 transition (badge numéroté + séparateur vertical + titre) à l'entrée de chacun des 4 actes.
-Le diaporama compte donc désormais **24 slides dans le code** (20 slides de contenu + 4
-transitions), même si la numérotation ci-dessous reste celle du contenu (1-20) pour ne pas
-perturber le suivi de validation. Correspondance : les transitions sont codées en positions
+Le diaporama affiche désormais **25 écrans dans le code** : 20 slides de contenu + 4
+transitions + 1 slide de clôture / remerciements. La numérotation ci-dessous reste celle du
+contenu (1-20) pour ne pas perturber le suivi de validation. Correspondance : les transitions sont codées en positions
 03, 09, 15 et 21 du fichier HTML ; chaque slide de contenu numérotée N ci-dessous est décalée
 de +1 (actes 2-4) par rapport à sa position dans le code au-delà de sa propre transition.
 Restent à faire : les 3 annexes (A, C, D) et un mode présentateur éventuel.
@@ -33,7 +33,7 @@ Restent à faire : les 3 annexes (A, C, D) et un mode présentateur éventuel.
 ## Architecture
 
 Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans le code
-(1-24, avec les 4 transitions) entre parenthèses.
+(1-25, avec les 4 transitions et la slide de clôture) entre parenthèses.
 
 ### Acte 1 — Comprendre le problème (contenu 1-7 → code 01-02, 04-08)
 1. Ouverture *(code 01)*
@@ -61,11 +61,12 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 16. Prioriser les risques médicamenteux (formule de priorisation) *(code 19)*
 17. Trajectoire possible vers la sécurisation thérapeutique *(code 20)*
 
-### Acte 4 — Rassurer et engager l'ARS (contenu 18-20 → code 22-24)
+### Acte 4 — Rassurer et engager l'ARS (contenu 18-20 → code 22-24, clôture code 25)
 - *Transition « Partie 4 » (code 21)*
 18. Éthique, données et gouvernance *(code 22)*
 19. Répartition des rôles (CHU / Région / État / ARS) *(code 23)*
 20. Conclusion et demande institutionnelle à l'ARS *(code 24)*
+- *Clôture / remerciements (code 25)*
 
 ### Annexes (inchangées)
 A. Méthodologie de sélection détaillée
