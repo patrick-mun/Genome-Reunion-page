@@ -3,7 +3,7 @@
 
 Base : plan narratif ARS (sept. 2026) + synthèse stratégique/personas (sept. 2026).
 Architecture validée le 2026-09-03 : **20 slides principales** (au lieu de 15), pour un rythme
-plus clair sur ~25-30 minutes, + 4 annexes inchangées.
+plus clair sur ~25-30 minutes, + 3 annexes prévues (A, C, D) ; l’ancienne annexe B a été fusionnée dans le corps de la présentation.
 
 Statut de chaque slide : 🟡 brouillon proposé · 🟢 validé · 🔴 à revoir · ⬜ à faire
 
@@ -51,7 +51,7 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 9. Écosystème génomique — qui fait quoi *(code 11)*
 10. Ce que le projet construit (2 500 → 350 génomes) *(code 12)*
 11. Robustesse de la sélection méthodologique *(code 13)*
-12. Alignement avec le PRS 2023-2033 (matrice ancrée sur 4 priorités numérotées réelles) *(code 14)*
+12. Alignement avec le PRS 2023-2033 (1 ancrage direct vérifié + 3 convergences thématiques) *(code 14)*
 
 ### Acte 3 — Comprendre les bénéfices sanitaires (contenu 13-17 → code 16-20)
 - *Transition « Partie 3 » (code 15)*
@@ -68,11 +68,12 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 20. Conclusion et demande institutionnelle à l'ARS *(code 24)*
 - *Clôture / remerciements (code 25)*
 
-### Annexes (inchangées)
+### Annexes prévues
 A. Méthodologie de sélection détaillée
-B. *(fusionnée dans la slide 9 principale — annexe B supprimée)*
 C. Pharmacogénétique : de la preuve au déploiement
 D. Test de résistance rapide (Q&A par direction ARS)
+
+*Ancienne annexe B : fusionnée dans la slide 9 principale et supprimée comme annexe autonome.*
 
 ---
 
