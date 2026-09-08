@@ -11,12 +11,30 @@
 .ethics-card-desc { font-family: var(--font-body); font-size: 14px; color: var(--ink); line-height: 1.4; }
 
 /* Slide 19 — 4 rôles institutionnels */
-.role-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; flex: 1; }
-.role-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 22px 18px; display: flex; flex-direction: column; gap: 8px; }
+.role-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: stretch; }
+.role-card { background: var(--bg-light); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 22px 18px; display: flex; flex-direction: column; gap: 10px; }
 .role-card--ars { border: 2px solid var(--coral); background: oklch(0.97 0.02 30); }
 .role-name { font-family: var(--font-title); font-weight: 700; font-size: 20px; color: var(--navy); }
 .role-card--ars .role-name { color: var(--coral); }
 .role-desc { font-family: var(--font-body); font-size: 15px; color: var(--ink); line-height: 1.4; }
+.role-list { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+.role-list li { font-family: var(--font-body); font-size: 14.5px; color: var(--ink); line-height: 1.35; padding-left: 14px; position: relative; }
+.role-list li::before { content: "—"; position: absolute; left: 0; color: var(--muted); }
+.role-card--ars .role-list li::before { color: var(--coral); }
+
+/* Slide 19 — convergence des 4 rôles vers une gouvernance partagée */
+.role-converge { margin-top: 22px; }
+.role-converge-lines { display: grid; grid-template-columns: repeat(4, 1fr); }
+.role-converge-lines span { display: block; width: 2px; height: 26px; background: var(--border); margin: 0 auto; position: relative; }
+.role-converge-lines span::after {
+  content: ""; position: absolute; bottom: -1px; left: 50%; transform: translateX(-50%);
+  border-left: 6px solid transparent; border-right: 6px solid transparent; border-top: 8px solid var(--border);
+}
+.role-converge-bar {
+  margin-top: 6px; background: var(--navy); color: white; text-align: center;
+  padding: 16px; border-radius: var(--r-md);
+  font-family: var(--font-title); font-weight: 700; font-size: 19px;
+}
 
 /* Slide 20 — demande institutionnelle */
 .ask-box {
