@@ -749,12 +749,17 @@ Aucun.
 **Message clé**
 > L'objectif n'est pas de tester tout le monde pour tout. L'objectif est d'identifier les quelques situations où la pharmacogénétique pourrait avoir le plus fort intérêt local.
 
+**Articulation sanitaire potentielle**
+> ARS La Réunion · OMEDIT La Réunion — lien avec le bon usage du médicament, la prévention de l'iatrogénie et l'évaluation d'éventuelles priorités régionales.
+
 **Référence démonstratrice (encart discret)**
 > PREPARE / U-PGx : dans PREPARE, une stratégie pharmacogénétique préemptive guidée par un panel de 12 gènes a été associée à une réduction des effets indésirables médicamenteux cliniquement pertinents dans le cadre étudié. Transférabilité et intérêt médico-économique à La Réunion : à évaluer.
 
 ### Texte oral (complet)
 
 « Le nombre de couples gène-médicament potentiellement intéressants est considérable. Une stratégie utile pour l'ARS doit faire l'inverse d'une approche exhaustive : partir du niveau de preuve clinique, du médicament réellement prescrit à La Réunion, de la fréquence locale du profil génétique concerné, et de la gravité du risque, pour ne retenir que les situations réellement prioritaires.
+
+C'est précisément à ce niveau que l'ARS et l'OMEDIT peuvent constituer une articulation sanitaire pertinente : relier les données populationnelles au bon usage du médicament, à la prévention de l'iatrogénie et à l'identification de quelques priorités régionales à évaluer.
 
 Dans PREPARE, étude européenne menée dans le cadre du consortium U-PGx, 6 944 participants ont été inclus. Une stratégie pharmacogénétique préemptive guidée par un panel de 12 gènes a été associée à une diminution des effets indésirables médicamenteux cliniquement pertinents dans le cadre étudié.
 
