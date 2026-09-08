@@ -1,0 +1,32 @@
+name: ARS point 9 trajectory wording
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ars-point9-trajectory.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Refine slide 20 trajectory wording
+        run: python presentation-ars/tools/point9_patch.py
+      - name: Commit changes
+        run: |
+          git config user.name "patrick-mun"
+          git config user.email "78493429+patrick-mun@users.noreply.github.com"
+          git add presentation-ars/index.html presentation-ars/CONTENU_SLIDES.md
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Rend prospective la trajectoire de la slide 20"
+          git push origin main
