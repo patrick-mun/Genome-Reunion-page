@@ -975,13 +975,41 @@ Synthèse de l'ensemble du diaporama — dernière slide, pas de nouvelle preuve
 - Fond Lagon profond, retour au visuel de la slide 1 — boucle narrative assumée, l'auditoire referme le cercle ouvert à l'ouverture.
 - La phrase finale centrée, seule dans le tiers supérieur de l'écran.
 - Le bloc "demande institutionnelle" clairement isolé visuellement (encadré net, fond Flamboyant très clair, bordure marquée) — c'est la seule slide du diaporama avec un encadré de cette intensité, pour qu'il soit immédiatement identifiable comme "la" chose à retenir et à discuter.
-- Pas de logo de clôture générique type "Merci" surchargé — rester sur le contenu jusqu'à la dernière seconde, la formule de politesse orale suffit.
 
 ### Éléments interactifs
 Aucun.
 
 ### Transition
-Fin du corps principal — bascule orale vers les questions, avec accès possible aux annexes A, C, D selon les questions posées.
+Bascule vers la slide de remerciement (25), qui reste à l'écran pendant les questions.
+
+## SLIDE 21 — REMERCIEMENTS 🟢 (ajoutée 2026-09-03, sur demande explicite)
+
+**2026-09-03 — Ajout :** la v1 de la slide 20 documentait volontairement l'absence de slide de
+clôture générique (« rester sur le contenu jusqu'à la dernière seconde »). Sur demande explicite,
+ce choix est révisé : une slide de remerciement/contact est ajoutée après la demande
+institutionnelle, pour laisser les coordonnées du projet visibles à l'écran pendant les
+questions de la salle plutôt que de finir sur un mur de texte dense. Le deck passe de 24 à 25
+slides.
+
+### Texte écran
+
+**Titre**
+> Merci de votre attention
+
+**Rappel du message clé**
+> Représenter la diversité réunionnaise pour une médecine génomique plus pertinente et plus équitable — avec vous.
+
+**Contact (vérifié, repris de `index.html` du site vitrine)**
+> Laboratoire de Génétique, CHU de La Réunion
+> genome.reunion@chu-reunion.fr
+
+### Concept visuel précis
+Même gabarit `hero-slide` que l'ouverture (slide 1) et la conclusion (slide 20) — fond Lagon,
+vagues Lagon/Récif/Flamboyant, logo blanc — pour boucler visuellement le diaporama.
+
+### Transition
+Fin du diaporama — bascule orale vers les questions, avec accès possible aux annexes A, C, D
+selon les questions posées.
 
 ## ANNEXES A, C, D ⬜ (à faire)
 
