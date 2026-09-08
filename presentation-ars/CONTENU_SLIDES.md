@@ -900,7 +900,14 @@ Aucun.
 
 ---
 
-## SLIDE 19 — RÉPARTITION DES RÔLES (CHU / Région / État / ARS) 🟡
+## SLIDE 19 — RÉPARTITION DES RÔLES (CHU / Région / État / ARS) 🟢 (révisée 2026-09-03)
+
+**2026-09-03 — Révision (sur demande explicite) :** les 4 cartes n'avaient qu'une ligne de
+mots-clés, et le titre promettait une « articulation claire » que le visuel ne montrait pas (4
+blocs sans aucun lien entre eux). Chaque carte est étoffée de 2-3 responsabilités concrètes en
+liste, et un connecteur visuel (flèches convergentes + bandeau « Gouvernance partagée du Génome
+Réunion ») est ajouté sous la grille pour représenter effectivement l'articulation entre les
+quatre acteurs.
 
 ### Texte écran
 
@@ -908,10 +915,13 @@ Aucun.
 > Une articulation claire entre quatre acteurs
 
 **4 blocs (voir concept visuel)**
-- **CHU** — expertise clinique, génétique, données, recherche
-- **Région** — infrastructure, innovation, capacité territoriale
-- **État et dispositifs nationaux** — séquençage, référentiels, cadre national
-- **ARS** — lecture sanitaire, équité, prévention, articulation avec le système de soins
+- **CHU** — Porteur scientifique et clinique du projet · Recueil, hébergement et analyse des données génomiques · Recherche et interprétation clinique
+- **Région** — Financement des infrastructures et équipements · Soutien à l'innovation et à l'attractivité territoriale · Renforcement de la capacité de recherche locale
+- **État et dispositifs nationaux** — Séquençage via les plateformes nationales (AURAGEN / SeqOIA) · Référentiels et cadre réglementaire (Plan France Médecine Génomique) · Articulation avec la stratégie nationale
+- **ARS** — Lecture sanitaire régionale et priorisation des besoins · Veille sur l'équité d'accès et la prévention · Articulation avec le PRS 2023-2033 et l'offre de soins
+
+**Bandeau de convergence (sous la grille)**
+> Gouvernance partagée du Génome Réunion
 
 ### Texte oral (complet)
 
