@@ -182,10 +182,11 @@ Deux publications de référence l'ont documenté : Popejoy et Fullerton dans Na
 
 ### Concept visuel précis
 - Schéma vertical à 3 blocs reliés par des flèches descendantes :
-  **Données de référence** → **Algorithmes / interprétation / recommandations** → **Patients**
+  **Données de référence** → **Algorithmes / interprétation / recommandations** → **Robustesse de l'information populationnelle**
 - Sur le bloc "Données de référence", une représentation visuelle très simple (pas de carte du monde, pas de drapeaux) suggérant une profondeur de représentation inégale — par exemple une barre segmentée où certains segments sont plus "denses" que d'autres, sans légende ethnique, juste "profondeur de représentation historique variable selon les populations".
 - Couleurs : Lagon/Récif pour les blocs neutres, un seul accent Flamboyant sur la barre de densité pour attirer l'œil sans dramatiser.
 - Éviter tout visuel qui ressemblerait à une hiérarchie de qualité entre populations — c'est une question de profondeur de données, pas de valeur.
+- À l'issue du schéma, parler d'une **information populationnelle plus robuste ou plus limitée** selon la représentativité ; ne pas qualifier un référentiel entier d'« adapté » ou d'« insuffisant ».
 
 ### Éléments interactifs
 Aucun nécessaire. Slide à laisser respirer — c'est la première où l'auditoire doit vraiment s'arrêter sur l'idée, pas la parcourir vite.
