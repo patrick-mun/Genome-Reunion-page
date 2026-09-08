@@ -853,7 +853,13 @@ Aucun.
 ### Transition
 > « Une telle ressource ne peut cependant être légitime que si la gouvernance des données est aussi robuste que la science. »
 
-## SLIDE 18 — ÉTHIQUE, DONNÉES, CONFIANCE 🟡
+## SLIDE 18 — ÉTHIQUE, DONNÉES, CONFIANCE 🟢 (révisée 2026-09-03)
+
+**2026-09-03 — Révision (sur demande explicite) :** les 5 cartes ne portaient que 2 mots de
+description chacune, jugées trop ternes et pas assez explicites pour l'ARS. Chaque carte est
+étoffée d'une phrase d'engagement concret et gagne une bordure supérieure colorée (navy/teal/
+coral, cycle repris du style des cartes PRS de la slide 14) pour casser la monotonie visuelle. La
+phrase pivot est centrée dans l'espace libéré sous les cartes.
 
 ### Texte écran
 
@@ -861,11 +867,11 @@ Aucun.
 > Une ressource sensible qui exige une gouvernance explicite
 
 **5 blocs (grille, voir concept visuel)**
-- **Participants** — consentement, information
-- **Données** — pseudonymisation, sécurité
-- **Accès** — gouvernance, droits d'usage
-- **Usage clinique** — distinction recherche / diagnostic
-- **Population** — non-stigmatisation, restitution
+- **Participants** — Consentement éclairé et révocable à tout moment, information continue sur l'avancement du projet.
+- **Données** — Pseudonymisation systématique, hébergement sécurisé, accès tracé et audité.
+- **Accès** — Comité de gouvernance dédié, droits d'usage définis projet par projet.
+- **Usage clinique** — Distinction stricte recherche / diagnostic ; aucun résultat individuel sans validation clinique.
+- **Population** — Restitution collective des résultats, vigilance sur toute lecture stigmatisante.
 
 **Phrase pivot (en exergue)**
 > Ascendance génétique, identité culturelle et origine sociale ne sont pas des notions interchangeables.
