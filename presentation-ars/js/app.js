@@ -20,6 +20,33 @@
 
   function clamp(i) { return Math.max(0, Math.min(total - 1, i)); }
 
+  function slideHash(i) {
+    return '#slide-' + (clamp(i) + 1);
+  }
+
+  function indexFromHash(hash) {
+    var raw = (hash || '').replace(/^#/, '');
+    var named = raw.match(/^slide-(\d+)$/i);
+
+    if (named) {
+      var displayedNumber = parseInt(named[1], 10);
+      if (displayedNumber >= 1 && displayedNumber <= total) {
+        return { valid: true, index: displayedNumber - 1, legacy: false };
+      }
+      return { valid: false, index: 0, legacy: false };
+    }
+
+    // Compatibilité avec les anciens liens numériques zéro-based : #21 = slide 22.
+    if (/^\d+$/.test(raw)) {
+      var legacyIndex = parseInt(raw, 10);
+      if (legacyIndex >= 0 && legacyIndex < total) {
+        return { valid: true, index: legacyIndex, legacy: true };
+      }
+    }
+
+    return { valid: false, index: 0, legacy: false };
+  }
+
   function partAt(i) {
     return slides[i] ? slides[i].dataset.part || '' : '';
   }
@@ -51,7 +78,7 @@
     if (next === current && !(opts && opts.force)) return;
     current = next;
     render();
-    history.replaceState(null, '', '#' + current);
+    history.replaceState(null, '', slideHash(current));
     broadcastState();
   }
 
@@ -116,14 +143,19 @@
     touchStartX = null;
   }, { passive: true });
 
-  // Point d'entrée : hash d'URL (#12) permet le deep-link
-  var initial = parseInt(location.hash.replace('#', ''), 10);
-  current = clamp(Number.isInteger(initial) ? initial : 0);
+  // Deep-link lisible : #slide-22 ouvre la slide 22.
+  // Les anciens liens numériques zéro-based restent acceptés : #21 ouvre aussi la slide 22.
+  var initial = indexFromHash(location.hash);
+  current = clamp(initial.valid ? initial.index : 0);
   render();
 
+  if (initial.valid && initial.legacy) {
+    history.replaceState(null, '', slideHash(current));
+  }
+
   window.addEventListener('hashchange', function () {
-    var i = parseInt(location.hash.replace('#', ''), 10);
-    if (Number.isInteger(i)) goTo(i, { force: true });
+    var target = indexFromHash(location.hash);
+    if (target.valid) goTo(target.index, { force: true });
   });
 
   window.deckApp = { goTo: goTo, next: next, prev: prev, getIndex: function () { return current; }, total: total, slides: slides };
