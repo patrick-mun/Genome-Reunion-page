@@ -42,7 +42,7 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 3. Le problème global (référentiels inégalement représentatifs) *(code 04)*
 4. Pourquoi La Réunion — histoire démographique *(code 05)*
 5. Pourquoi La Réunion — diversité comme continuum *(code 06)*
-6. La preuve locale (PCA pilote) *(code 07)*
+6. Observation pilote locale (PCA) *(code 07)*
 7. Le lissage involontaire (égalité ≠ équité de pertinence) *(code 08)*
 
 ### Acte 2 — Comprendre la réponse Génome Réunion (contenu 8-12 → code 10-14)
@@ -288,7 +288,7 @@ slide PCA.
 > Il existe une diversité réunionnaise que la médecine génomique doit apprendre à mieux représenter.
 
 **Sous la phrase, un rappel bref et net**
-> Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal. La preuve réelle suit à la slide suivante.
+> Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal. L'observation pilote suit à la slide suivante.
 
 ### Texte oral (complet)
 
@@ -299,11 +299,11 @@ Ce que produit cette histoire, c'est un continuum : la plupart des individus por
 C'est ce point précis, et lui seul, qui justifie l'existence de Génome Réunion : pas une différence d'identité, une différence de structure de diversité. »
 
 ### Références mobilisées
-Aucune nouvelle — cette slide est une clarification conceptuelle de la slide 4, pas un nouvel apport de preuve (la preuve arrive slide suivante avec la PCA).
+Aucune nouvelle — cette slide est une clarification conceptuelle de la slide 4, pas un nouvel apport de preuve (l'observation pilote arrive à la slide suivante avec la PCA).
 
 ### Concept visuel précis
 - Rupture volontaire avec le schéma de flux de la slide précédente : ici, un seul visuel abstrait — un dégradé continu de points (nuage), sans groupes ni frontières visibles, suggérant un continuum plutôt que des clusters.
-- Pas de PCA réelle ici (réservée slide 6) : ce nuage est un schéma conceptuel, explicitement non issu de données, pour ne pas préempter la preuve réelle.
+- Pas de PCA réelle ici (réservée slide 6) : ce nuage est un schéma conceptuel, explicitement non issu de données, pour ne pas préempter l'observation réelle.
 - Fond Sable, nuage en dégradé Lagon → Récif → Flamboyant très doux, aucune ligne de séparation entre "groupes".
 - La phrase pivot occupe le centre optique de la slide — c'est la slide-mémoire du diaporama, celle que l'auditoire doit pouvoir répéter après coup.
 
@@ -318,12 +318,14 @@ Aucun.
 
 ---
 
-## SLIDE 6 — LA PREUVE LOCALE (PCA) 🟡
+## SLIDE 6 — OBSERVATION PILOTE LOCALE (PCA) 🟢
+
+**Révision terminologique 2026-09-08 :** le vocabulaire « preuve visuelle / preuve locale » est remplacé par « observation pilote » afin de refléter le statut réel de la cohorte n≈75. La PCA reste une donnée locale informative, mais n’est pas présentée comme une démonstration exhaustive de la population réunionnaise.
 
 ### Texte écran
 
 **Titre**
-> Une première observation locale : la diversité réunionnaise forme un continuum
+> Une première observation locale : des positions compatibles avec un continuum d'admixture
 
 **Visuel principal**
 PCA pilote (~75 individus réunionnais) projetée sur les populations de référence 1000 Genomes,
