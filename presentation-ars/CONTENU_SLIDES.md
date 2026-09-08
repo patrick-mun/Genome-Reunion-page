@@ -59,7 +59,7 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 14. Démonstrateur 1 : diagnostic — l'apport *(code 17)*
 15. Démonstrateur 2 : pharmacogénétique — principe *(code 18)*
 16. Prioriser les risques médicamenteux (formule de priorisation) *(code 19)*
-17. Trajectoire vers une plateforme régionale de sécurisation thérapeutique *(code 20)*
+17. Trajectoire possible vers la sécurisation thérapeutique *(code 20)*
 
 ### Acte 4 — Rassurer et engager l'ARS (contenu 18-20 → code 22-24)
 - *Transition « Partie 4 » (code 21)*
@@ -780,7 +780,7 @@ Aucun.
 ### Texte écran
 
 **Titre**
-> Vers une plateforme régionale de sécurisation thérapeutique
+> Une trajectoire possible vers la sécurisation thérapeutique
 
 **Trajectoire (schéma vertical, voir concept visuel)**
 > Génome Réunion → fréquences pharmacogénétiques locales → priorisation gène-médicament → études cliniques ciblées → validation locale → aide à la décision clinique → prévention
@@ -793,14 +793,14 @@ Aucun.
 
 ### Texte oral (complet)
 
-« Je veux montrer où cette logique peut mener, à long terme, sans la présenter comme déjà acquise — c'est une trajectoire, pas une annonce.
+« Je veux montrer une trajectoire possible, pas annoncer une plateforme déjà décidée.
 
-À partir des fréquences pharmacogénétiques locales et de la priorisation que je viens de décrire, l'étape suivante serait des études cliniques ciblées, menées avec le CHU, les généticiens, les pharmacologues et l'OMEDIT, pour valider localement l'intérêt de certains couples gène-médicament. Ce n'est qu'après cette validation qu'on pourrait envisager une intégration dans une aide à la décision clinique — par exemple une alerte contextualisée au moment de la prescription.
+À partir des fréquences pharmacogénétiques locales et de la priorisation que je viens de décrire, l'étape suivante serait d'abord une étude de faisabilité puis, si elle est concluante, des études cliniques ciblées avec le CHU, les généticiens, les pharmacologues et l'OMEDIT. L'objectif serait de valider localement l'intérêt de quelques couples gène-médicament prioritaires.
 
-Je le dis clairement, parce que c'est un point sur lequel nous ne voulons laisser aucune ambiguïté : nous ne proposons pas aujourd'hui un système qui adapterait automatiquement une dose. Nous proposons une trajectoire : connaissance, puis validation, puis seulement, éventuellement, intégration dans une aide à la décision. La décision thérapeutique resterait, à chaque étape, une décision médicale. »
+Ce n'est qu'après cette validation, et après une décision institutionnelle sur l'opportunité, la gouvernance et l'intégration au système de soins, qu'un éventuel outil d'aide à la décision pourrait être envisagé. Nous ne proposons donc pas aujourd'hui un système qui adapterait automatiquement une dose : nous proposons une séquence connaissance, faisabilité, validation, puis décision. La décision thérapeutique resterait, à chaque étape, une décision médicale. »
 
 ### Références mobilisées
-Reprend PREPARE / U-PGx (slide 16) comme précédent de plateforme de pharmacogénétique préemptive à l'échelle d'un système de santé.
+Reprend PREPARE / U-PGx (slide 16) comme précédent d'implémentation d'une stratégie pharmacogénétique préemptive à l'échelle d'un système de santé ; cela ne préjuge pas de la forme d'un éventuel dispositif réunionnais.
 
 ### Concept visuel précis
 - Trajectoire verticale en 7 étapes, dégradé de Lagon (début, connaissance) vers Flamboyant (fin, prévention) — cohérent avec le code couleur "dérive progressive" déjà utilisé slide 7, mais ici en registre positif (construction) plutôt qu'en registre d'alerte.
