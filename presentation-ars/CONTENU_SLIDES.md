@@ -750,18 +750,18 @@ Aucun.
 > L'objectif n'est pas de tester tout le monde pour tout. L'objectif est d'identifier les quelques situations où la pharmacogénétique pourrait avoir le plus fort intérêt local.
 
 **Référence démonstratrice (encart discret)**
-> PREPARE / U-PGx : une stratégie pharmacogénétique préemptive peut réduire certains effets indésirables — la transférabilité à une population très admixée reste à documenter localement.
+> PREPARE / U-PGx : dans PREPARE, une stratégie pharmacogénétique préemptive guidée par un panel de 12 gènes a été associée à une réduction des effets indésirables médicamenteux cliniquement pertinents dans le cadre étudié. Transférabilité et intérêt médico-économique à La Réunion : à évaluer.
 
 ### Texte oral (complet)
 
 « Le nombre de couples gène-médicament potentiellement intéressants est considérable. Une stratégie utile pour l'ARS doit faire l'inverse d'une approche exhaustive : partir du niveau de preuve clinique, du médicament réellement prescrit à La Réunion, de la fréquence locale du profil génétique concerné, et de la gravité du risque, pour ne retenir que les situations réellement prioritaires.
 
-L'étude européenne PREPARE, menée dans le cadre du consortium U-PGx, a démontré qu'une stratégie pharmacogénétique préemptive — c'est-à-dire connue avant la prescription plutôt que découverte après un incident — pouvait réduire certains effets indésirables. C'est un démonstrateur solide de l'intérêt clinique de l'approche.
+Dans PREPARE, étude européenne menée dans le cadre du consortium U-PGx, 6 944 participants ont été inclus. Une stratégie pharmacogénétique préemptive guidée par un panel de 12 gènes a été associée à une diminution des effets indésirables médicamenteux cliniquement pertinents dans le cadre étudié.
 
-Mais cette étude n'a pas été conduite sur une population aussi admixée que celle de La Réunion. La question de la transférabilité de ces résultats reste donc, à ce stade, une question à documenter — pas une réponse déjà acquise. »
+Mais 97,7 % des participants se déclaraient européens, méditerranéens ou moyen-orientaux. Ce résultat constitue un argument clinique important, sans préjuger du bénéfice à La Réunion : la transférabilité à une population fortement admixée, les couples gène–médicament prioritaires et l'intérêt médico-économique local restent à évaluer. »
 
 ### Références mobilisées
-- PREPARE / U-PGx (démonstrateur européen de pharmacogénétique préemptive).
+- PREPARE / U-PGx, *Lancet* 2023 : étude d'implémentation d'un panel pharmacogénétique de 12 gènes, 6 944 participants ; interprétation locale à discuter au regard de la structure de population et du contexte de soins réunionnais.
 - Niveaux de preuve HAS / CPIC / DPWG / RNPGx (repris de la slide 15) comme composante de la formule de priorisation.
 
 ### Concept visuel précis
