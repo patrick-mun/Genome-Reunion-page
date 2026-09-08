@@ -857,9 +857,13 @@ Aucun.
 
 **2026-09-03 — Révision (sur demande explicite) :** les 5 cartes ne portaient que 2 mots de
 description chacune, jugées trop ternes et pas assez explicites pour l'ARS. Chaque carte est
-étoffée d'une phrase d'engagement concret et gagne une bordure supérieure colorée (navy/teal/
-coral, cycle repris du style des cartes PRS de la slide 14) pour casser la monotonie visuelle. La
-phrase pivot est centrée dans l'espace libéré sous les cartes.
+étoffée et gagne une bordure supérieure colorée (navy/teal/coral, cycle repris du style des cartes
+PRS de la slide 14) pour casser la monotonie visuelle. La phrase pivot est centrée dans l'espace
+libéré sous les cartes.
+
+**2026-09-08 — Audit ARS :** les formulations sont sécurisées pour distinguer les principes de
+gouvernance déjà retenus des modalités opérationnelles qui restent à formaliser dans le cadre
+réglementaire applicable au projet.
 
 ### Texte écran
 
@@ -867,11 +871,11 @@ phrase pivot est centrée dans l'espace libéré sous les cartes.
 > Une ressource sensible qui exige une gouvernance explicite
 
 **5 blocs (grille, voir concept visuel)**
-- **Participants** — Consentement éclairé et révocable à tout moment, information continue sur l'avancement du projet.
-- **Données** — Pseudonymisation systématique, hébergement sécurisé, accès tracé et audité.
-- **Accès** — Comité de gouvernance dédié, droits d'usage définis projet par projet.
-- **Usage clinique** — Distinction stricte recherche / diagnostic ; aucun résultat individuel sans validation clinique.
-- **Population** — Restitution collective des résultats, vigilance sur toute lecture stigmatisante.
+- **Participants** — Information claire des participants, consentement et exercice des droits selon le cadre réglementaire retenu.
+- **Données** — Pseudonymisation, hébergement sécurisé et traçabilité des accès selon l'architecture retenue.
+- **Accès** — Gouvernance et règles d'accès à formaliser avant l'ouverture de la ressource.
+- **Usage clinique** — Séparation stricte entre recherche et diagnostic ; politique de retour individuel encadrée.
+- **Population** — Restitution collective et vigilance contre toute interprétation stigmatisante.
 
 **Phrase pivot (en exergue)**
 > Ascendance génétique, identité culturelle et origine sociale ne sont pas des notions interchangeables.
@@ -880,7 +884,7 @@ phrase pivot est centrée dans l'espace libéré sous les cartes.
 
 « Nous travaillons sur une donnée extrêmement informative, et donc sensible. La question qui se pose n'est donc pas seulement ce que nous pouvons techniquement faire avec elle, mais dans quel cadre nous décidons collectivement de le faire.
 
-Cinq dimensions structurent ce cadre. Le consentement et l'information des participants, en amont. La pseudonymisation et la sécurité des données, sur le plan technique. La gouvernance de l'accès et des droits d'usage, sur le plan organisationnel. La distinction claire entre recherche et diagnostic, sur le plan clinique. Et, pour la population dans son ensemble, la question de la non-stigmatisation et de la restitution des résultats.
+Cinq dimensions structurent ce cadre. L'information, le consentement et l'exercice des droits des participants, d'abord. La pseudonymisation, la sécurité et la traçabilité des accès, ensuite. Les règles d'accès et de gouvernance devront être formalisées avant l'ouverture de la ressource. Sur le plan clinique, recherche et diagnostic resteront strictement distingués, avec une politique de retour individuel encadrée. Enfin, pour la population dans son ensemble, nous devons prévoir une restitution collective et une vigilance constante contre toute interprétation stigmatisante.
 
 Je veux insister sur un point de vocabulaire, parce qu'il est central pour éviter tout malentendu : l'ascendance génétique, l'identité culturelle et l'origine sociale ne sont pas des notions interchangeables. Ce projet étudie la première. Il ne prétend rien dire des deux autres. »
 
