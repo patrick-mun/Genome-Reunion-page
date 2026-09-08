@@ -1,0 +1,176 @@
+from pathlib import Path
+
+html_path = Path('presentation-ars/index.html')
+css_path = Path('presentation-ars/css/slides/s02-reponse.css')
+md_path = Path('presentation-ars/CONTENU_SLIDES.md')
+
+html = html_path.read_text(encoding='utf-8')
+css = css_path.read_text(encoding='utf-8')
+md = md_path.read_text(encoding='utf-8')
+
+slide_marker = '<!-- 14 — Alignement avec le PRS -->'
+slide_pos = html.index(slide_marker)
+old_note = 'data-notes="Ancrer explicitement sur les priorités numérotées du COS 2023-2033, pas sur des catégories génériques. La priorité 4 cite déjà littéralement les maladies rares comme action."'
+new_note = 'data-notes="Hiérarchie explicite : priorité 4 = ancrage direct vérifié dans le PRS ; priorités 5, 2 et 14 = convergences thématiques, présentées avec un poids visuel secondaire."'
+if old_note in html[slide_pos:]:
+    html = html[:slide_pos] + html[slide_pos:].replace(old_note, new_note, 1)
+
+wrap_start = html.index('      <div class="priority-grid-wrap">', slide_pos)
+wrap_end = html.index('\n    </div>\n  </div>\n</section>\n\n<!-- 15', wrap_start)
+
+new_wrap = '''      <div class="priority-grid-wrap priority-hierarchy">
+        <div class="priority-section-label priority-section-label--direct">Ancrage direct dans le PRS</div>
+        <div class="priority-direct priority-card priority-card--teal">
+          <div class="priority-badge priority-badge--verified">Priorité 4 du PRS</div>
+          <div class="priority-direct-content">
+            <div>
+              <div class="priority-label priority-label--lg">Parcours de santé coordonnés et accessibles</div>
+              <div class="priority-value">Le PRS inclut explicitement l’amélioration du diagnostic et de la prise en charge des maladies rares.</div>
+            </div>
+            <div class="priority-contribution">
+              <span class="priority-contribution-label">Apport de Génome Réunion</span>
+              <span>Ajouter une référence populationnelle locale susceptible de mieux contextualiser certains variants dans les parcours de diagnostic.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="priority-section-label">Convergences thématiques</div>
+        <div class="priority-convergences">
+          <div class="priority-card priority-card--coral">
+            <div class="priority-badge priority-badge--soft">Priorité 5 du PRS</div>
+            <div class="priority-label">Réduction des inégalités sociales et territoriales de santé</div>
+            <div class="priority-value">Convergence d’esprit : questionner les écarts de pertinence liés à la représentation des populations dans les outils génomiques.</div>
+          </div>
+          <div class="priority-card priority-card--navy">
+            <div class="priority-badge priority-badge--soft">Priorité 2 du PRS</div>
+            <div class="priority-label">Prévention dans le quotidien des Réunionnais</div>
+            <div class="priority-value">Convergence : évaluer des usages pharmacogénétiques susceptibles de prévenir certains risques médicamenteux évitables.</div>
+          </div>
+          <div class="priority-card priority-card--coral">
+            <div class="priority-badge priority-badge--soft">Priorité 14 du PRS</div>
+            <div class="priority-label">Le numérique au service de la santé</div>
+            <div class="priority-value">Convergence : construire une ressource génomique gouvernée et sécurisée, au service d’usages sanitaires futurs.</div>
+          </div>
+        </div>
+
+        <p class="priority-foot-note">1 ancrage direct vérifié · 3 convergences thématiques présentées comme telles.</p>
+        <p class="pivot-quote pivot-quote--sm" style="text-align:center;">Génome Réunion ne demande pas d’ajouter une priorité au PRS : il propose d’outiller une action déjà inscrite et d’explorer trois convergences.</p>
+      </div>'''
+html = html[:wrap_start] + new_wrap + html[wrap_end:]
+
+if '.priority-hierarchy {' not in css:
+    css_insert = '''
+/* Slide 14 — hiérarchie PRS : 1 ancrage direct + 3 convergences thématiques */
+.priority-hierarchy { gap: 14px; }
+.priority-section-label {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.priority-section-label--direct { color: var(--teal); }
+.priority-direct {
+  padding: 18px 22px;
+  border: 2px solid var(--teal);
+  border-top-width: 5px;
+  background: oklch(0.975 0.012 200);
+}
+.priority-direct-content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+  align-items: center;
+}
+.priority-label--lg { font-size: 22px; margin-bottom: 6px; }
+.priority-contribution {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.priority-contribution-label {
+  display: block;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.priority-convergences { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.priority-convergences .priority-card { padding: 14px 14px; gap: 7px; background: #fff; }
+.priority-convergences .priority-label { font-size: 15px; }
+.priority-convergences .priority-value { font-size: 13.5px; }
+'''
+    css = css.replace('\n@media (max-width: 900px) {', css_insert + '\n@media (max-width: 900px) {', 1)
+    css = css.replace(
+        '  .priority-grid, .eco-tags-row { grid-template-columns: 1fr 1fr; }',
+        '  .priority-grid, .eco-tags-row { grid-template-columns: 1fr 1fr; }\n  .priority-direct-content, .priority-convergences { grid-template-columns: 1fr; }',
+        1,
+    )
+
+md_start = md.index('## SLIDE 12 — ALIGNEMENT AVEC LE PRS')
+md_end = md.index('## SLIDE 13 —', md_start)
+md_section = '''## SLIDE 12 — ALIGNEMENT AVEC LE PRS 🟢 (hiérarchie révisée 2026-09-08)
+
+### Principe de la slide
+
+La slide distingue désormais visuellement deux niveaux de relation avec le PRS 2023-2033 :
+
+1. **un ancrage direct vérifié** : la priorité 4, dont les actions incluent explicitement l’amélioration du diagnostic et de la prise en charge des maladies rares ;
+2. **trois convergences thématiques** : priorités 5, 2 et 14, présentées comme des rapprochements d’esprit et non comme des actions déjà écrites pour Génome Réunion.
+
+### Texte écran
+
+**Titre**
+> Une ressource ancrée dans le PRS 2023-2033, pas à côté
+
+**Ancrage direct dans le PRS**
+
+- **Priorité 4 — Parcours de santé coordonnés et accessibles**  
+  Le PRS inclut explicitement l’amélioration du diagnostic et de la prise en charge des maladies rares.  
+  **Apport de Génome Réunion :** ajouter une référence populationnelle locale susceptible de mieux contextualiser certains variants dans les parcours de diagnostic.
+
+**Convergences thématiques**
+
+- **Priorité 5 — Réduction des inégalités sociales et territoriales de santé**  
+  Convergence d’esprit : questionner les écarts de pertinence liés à la représentation des populations dans les outils génomiques.
+- **Priorité 2 — Prévention dans le quotidien des Réunionnais**  
+  Convergence : évaluer des usages pharmacogénétiques susceptibles de prévenir certains risques médicamenteux évitables.
+- **Priorité 14 — Le numérique au service de la santé**  
+  Convergence : construire une ressource génomique gouvernée et sécurisée, au service d’usages sanitaires futurs.
+
+**Message clé**
+> Génome Réunion ne demande pas d’ajouter une priorité au PRS : il propose d’outiller une action déjà inscrite et d’explorer trois convergences.
+
+### Texte oral
+
+« Je veux distinguer clairement deux niveaux, parce qu’ils n’ont pas la même force.
+
+Le premier est un ancrage direct. Dans la priorité 4 du PRS, consacrée aux parcours de santé coordonnés et accessibles, figure déjà l’amélioration du diagnostic et de la prise en charge des maladies rares. C’est ici que le lien avec Génome Réunion est le plus solide : une référence populationnelle locale peut devenir une information supplémentaire pour mieux contextualiser certains variants dans le parcours diagnostique.
+
+Les trois autres priorités ne sont pas des correspondances d’action mot pour mot. Ce sont des convergences thématiques : la réduction des inégalités, parce que nous questionnons la pertinence des référentiels ; la prévention, à travers la pharmacogénétique ; et le numérique, par la construction d’une ressource de données gouvernée et sécurisée.
+
+Je préfère cette hiérarchie explicite à quatre cartes qui donneraient l’impression que les quatre liens ont la même force. »
+
+### Référence institutionnelle
+Plaquette du PRS La Réunion 2023-2033 — Cadre d’Orientations Stratégiques et priorités à 10 ans.
+
+### Transition
+> « Le premier usage concret est probablement celui qui est déjà le plus proche de notre pratique quotidienne : l’interprétation diagnostique. »
+
+---
+
+'''
+md = md[:md_start] + md_section + md[md_end:]
+
+html_path.write_text(html, encoding='utf-8')
+css_path.write_text(css, encoding='utf-8')
+md_path.write_text(md, encoding='utf-8')
