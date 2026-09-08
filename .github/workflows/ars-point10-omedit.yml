@@ -1,0 +1,32 @@
+name: ARS point 10 OMEDIT visibility
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ars-point10-omedit.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Add OMEDIT visibility on slide 19
+        run: python presentation-ars/tools/point10_patch.py
+      - name: Commit changes
+        run: |
+          git config user.name "patrick-mun"
+          git config user.email "78493429+patrick-mun@users.noreply.github.com"
+          git add presentation-ars/index.html presentation-ars/CONTENU_SLIDES.md
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Introduit l'OMEDIT avant la demande finale"
+          git push origin main
