@@ -906,6 +906,8 @@ Aucun.
 
 ## SLIDE 19 — RÉPARTITION DES RÔLES (CHU / Région / État / ARS) 🟢 (révisée 2026-09-03)
 
+**Révision institutionnelle 2026-09-08 :** les formulations sont sécurisées pour distinguer les rôles possibles des engagements déjà acquis : la Région est présentée comme levier de financement, AURAGEN/SeqOIA comme accès national au séquençage clinique, et le PFMG comme stratégie et organisation nationales — pas comme cadre réglementaire du projet. L'OMEDIT est explicitement rattaché au rôle sanitaire de l'ARS.
+
 **2026-09-03 — Révision (sur demande explicite) :** les 4 cartes n'avaient qu'une ligne de
 mots-clés, et le titre promettait une « articulation claire » que le visuel ne montrait pas (4
 blocs sans aucun lien entre eux). Chaque carte est étoffée de 2-3 responsabilités concrètes en
@@ -920,9 +922,9 @@ quatre acteurs.
 
 **4 blocs (voir concept visuel)**
 - **CHU** — Porteur scientifique et clinique du projet · Recueil, hébergement et analyse des données génomiques · Recherche et interprétation clinique
-- **Région** — Financement des infrastructures et équipements · Soutien à l'innovation et à l'attractivité territoriale · Renforcement de la capacité de recherche locale
-- **État et dispositifs nationaux** — Séquençage via les plateformes nationales (AURAGEN / SeqOIA) · Référentiels et cadre réglementaire (Plan France Médecine Génomique) · Articulation avec la stratégie nationale
-- **ARS** — Lecture sanitaire régionale et priorisation des besoins · Veille sur l'équité d'accès et la prévention · Articulation avec le PRS 2023-2033 et l'offre de soins
+- **Région** — Leviers de financement des infrastructures et équipements · Soutien à l'innovation et à l'attractivité territoriale · Renforcement de la capacité de recherche locale
+- **État et dispositifs nationaux** — Accès national au séquençage génomique clinique via AURAGEN / SeqOIA · Stratégie et organisation nationales de médecine génomique (PFMG) · Articulation avec les dispositifs et infrastructures nationaux
+- **ARS** — Lecture sanitaire régionale et priorisation des besoins · Veille sur l'équité d'accès et la prévention · Articulation avec le PRS 2023-2033, l'OMEDIT et l'offre de soins
 
 **Bandeau de convergence (sous la grille)**
 > Gouvernance partagée du Génome Réunion
@@ -931,9 +933,9 @@ quatre acteurs.
 
 « Avant de conclure, je veux être précis sur un point d'organisation, parce qu'il conditionne la crédibilité de tout ce qui précède : ce projet n'a pas besoin que l'ARS fasse le travail d'un autre acteur.
 
-Le CHU porte l'expertise clinique, génétique et scientifique — c'est le porteur médical naturel du projet. La Région apporte l'infrastructure et une capacité d'investissement territorial. L'État et les dispositifs nationaux fournissent le cadre, le séquençage clinique et les référentiels de référence.
+Le CHU porte l'expertise clinique, génétique et scientifique — c'est le porteur médical naturel du projet. La Région peut mobiliser des leviers de financement et d'innovation territoriale, sans préjuger ici d'un engagement déjà accordé. Les dispositifs nationaux, eux, organisent l'accès au séquençage génomique clinique — notamment via AURAGEN et SeqOIA — et la stratégie nationale portée par le PFMG ; cela ne signifie pas que le séquençage de Génome Réunion serait nécessairement réalisé par ces plateformes.
 
-L'ARS a un rôle différent de ces trois-là, et c'est précisément celui qui nous intéresse ici : une lecture sanitaire du projet, une attention à l'équité, une articulation avec le Projet régional de santé, l'offre de soins et la prévention. Ce n'est pas un rôle de financeur parmi d'autres. C'est un rôle qu'aucun des trois autres acteurs ne peut occuper à sa place. »
+L'ARS a un rôle différent de ces trois-là, et c'est précisément celui qui nous intéresse ici : une lecture sanitaire du projet, une attention à l'équité et à la prévention, et une articulation avec le Projet régional de santé, l'OMEDIT et l'offre de soins. Ce n'est pas un rôle de financeur parmi d'autres. C'est un rôle qu'aucun des trois autres acteurs ne peut occuper à sa place. »
 
 ### Références mobilisées
 Articulation institutionnelle du projet — cohérente avec la présentation Région existante (`presentation-region/`), sans reprendre son angle recherche/innovation : ici, seul le rôle de chaque acteur est rappelé, du point de vue sanitaire.
