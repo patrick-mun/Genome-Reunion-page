@@ -118,7 +118,57 @@
 .priority-grid-wrap { display: flex; flex-direction: column; justify-content: center; gap: 26px; flex: 1; }
 .priority-foot-note { font-family: var(--font-body); font-size: 13px; color: var(--muted); text-align: center; font-style: italic; }
 
+/* Slide 14 — hiérarchie PRS : 1 ancrage direct + 3 convergences thématiques */
+.priority-hierarchy { gap: 14px; }
+.priority-section-label {
+  font-family: var(--font-title);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.priority-section-label--direct { color: var(--teal); }
+.priority-direct {
+  padding: 18px 22px;
+  border: 2px solid var(--teal);
+  border-top-width: 5px;
+  background: oklch(0.975 0.012 200);
+}
+.priority-direct-content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 22px;
+  align-items: center;
+}
+.priority-label--lg { font-size: 22px; margin-bottom: 6px; }
+.priority-contribution {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+.priority-contribution-label {
+  display: block;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 6px;
+}
+.priority-convergences { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.priority-convergences .priority-card { padding: 14px 14px; gap: 7px; background: #fff; }
+.priority-convergences .priority-label { font-size: 15px; }
+.priority-convergences .priority-value { font-size: 13.5px; }
+
 @media (max-width: 900px) {
   .selection-compare { grid-template-columns: 1fr; }
   .priority-grid, .eco-tags-row { grid-template-columns: 1fr 1fr; }
+  .priority-direct-content, .priority-convergences { grid-template-columns: 1fr; }
 }

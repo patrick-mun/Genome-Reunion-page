@@ -28,7 +28,7 @@
   </div>
   <div id="nav-right">
     <button class="nbtn" id="bp" aria-label="Diapositive précédente">‹</button>
-    <span id="ctr" aria-live="polite">1 / 24</span>
+    <span id="ctr" aria-live="polite">1 / 25</span>
     <button class="nbtn" id="bn" aria-label="Diapositive suivante">›</button>
     <button id="burger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -92,7 +92,7 @@
             <div class="toc-tags">
               <span class="toc-tag">Référentiels inégalement représentatifs</span>
               <span class="toc-tag">Diversité réunionnaise</span>
-              <span class="toc-tag">Preuve locale (PCA)</span>
+              <span class="toc-tag">Observation pilote (PCA)</span>
               <span class="toc-tag">Lissage involontaire</span>
             </div>
           </div>
@@ -122,7 +122,7 @@
         <div class="toc-row">
           <div class="toc-numcol"><div class="step-dot" style="background:var(--muted);">4</div></div>
           <div class="toc-body">
-            <div class="toc-headrow"><h2>Une gouvernance</h2><span class="toc-range">Slides 21 → 24</span></div>
+            <div class="toc-headrow"><h2>Une gouvernance</h2><span class="toc-range">Slides 21 → 25</span></div>
             <div class="toc-tags">
               <span class="toc-tag">Éthique &amp; données</span>
               <span class="toc-tag">Répartition des rôles</span>
@@ -155,7 +155,7 @@
 </section>
 
 <!-- 04 — Le problème global -->
-<section class="slide slide--white" data-part="constat" data-label="04 — Le problème global" data-notes="Les grandes bases sont indispensables mais représentent différemment les populations.">
+<section class="slide slide--white" data-part="constat" data-label="04 — Le problème global" data-notes="Les grandes bases sont indispensables mais représentent différemment les populations ; parler de robustesse variable de l'information populationnelle, jamais de référentiel globalement adapté ou insuffisant.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header">
@@ -172,7 +172,7 @@
           <p class="pivot-quote pivot-quote--sm">L'égalité d'accès aux outils ne garantit pas toujours l'équité de pertinence.</p>
         </div>
         <div class="slide-col">
-          <svg class="svg-figure" viewBox="0 0 460 312" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Des données de référence dont la profondeur de représentation est inégale selon les populations, passées au même algorithme, aboutissent à un référentiel adapté pour certains patients et insuffisant pour d'autres">
+          <svg class="svg-figure" viewBox="0 0 460 312" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Des données de référence dont la profondeur de représentation varie selon les populations sont mobilisées par les mêmes outils d'interprétation ; selon la représentativité disponible, l'information populationnelle peut être plus robuste ou plus limitée.">
             <defs>
               <marker id="ar3" markerWidth="9" markerHeight="9" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--muted)"/></marker>
               <linearGradient id="refGrad" x1="0" y1="0" x2="1" y2="0">
@@ -192,14 +192,20 @@
             <text x="230" y="164" font-size="16" font-weight="700" fill="#fff" text-anchor="middle" font-family="var(--font-title)">/ recommandations</text>
             <!-- 3. La bifurcation : même outil, résultat différent selon la profondeur de données disponible -->
             <line x1="230" y1="182" x2="230" y2="206" stroke="var(--muted)" stroke-width="2"/>
-            <line x1="230" y1="206" x2="128" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
-            <line x1="230" y1="206" x2="332" y2="228" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
-            <rect x="30" y="230" width="190" height="72" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>
-            <text x="125" y="258" font-size="15" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patient</text>
-            <text x="125" y="278" font-size="12.5" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">✓ référentiel adapté</text>
-            <rect x="240" y="230" width="190" height="72" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
-            <text x="335" y="258" font-size="15" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patient</text>
-            <text x="335" y="278" font-size="12.5" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">! référentiel insuffisant</text>
+            <line x1="230" y1="206" x2="118" y2="226" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
+            <line x1="230" y1="206" x2="342" y2="226" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar3)"/>
+            <rect x="20" y="228" width="195" height="74" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>
+            <text x="117.5" y="248" font-size="13.5" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">
+              <tspan x="117.5" dy="0">Population mieux</tspan>
+              <tspan x="117.5" dy="17">représentée</tspan>
+            </text>
+            <text x="117.5" y="289" font-size="12.2" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">information plus robuste</text>
+            <rect x="245" y="228" width="195" height="74" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
+            <text x="342.5" y="248" font-size="13.5" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">
+              <tspan x="342.5" dy="0">Population moins</tspan>
+              <tspan x="342.5" dy="17">représentée</tspan>
+            </text>
+            <text x="342.5" y="289" font-size="12.2" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">information plus limitée</text>
           </svg>
           <p class="text-small" style="margin-top:14px;">Popejoy &amp; Fullerton, <em>Nature</em>, 2016 · Fatumo et al., <em>Nature Medicine</em>, 2022.</p>
         </div>
@@ -209,7 +215,7 @@
 </section>
 
 <!-- 05 — Pourquoi La Réunion : histoire démographique -->
-<section class="slide slide--cream" data-part="constat" data-label="05 — Histoire démographique" data-notes="Admixture récente + insularité + effets fondateurs + dérive + endogamie locale. Graphique repris de la présentation Région (convergence en double hélice), branches réétiquetées avec les apports historiques.">
+<section class="slide slide--cream" data-part="constat" data-label="05 — Histoire démographique" data-notes="Admixture récente + insularité ; effets fondateurs et endogamie à présenter comme documentés dans certaines composantes ou certains contextes, jamais comme caractéristiques uniformes de toute la population.">
   <div class="slide-inner">
     <div class="slide-pad slide-pad--tight">
       <div class="slide-header">
@@ -220,15 +226,11 @@
       <div class="slide-cols slide-cols--stretch">
         <div class="slide-col">
           <div class="card card--navy-strong" style="padding:20px 22px;gap:12px;">
-            <p class="text-body">La population réunionnaise résulte d'une histoire démographique récente qui a mêlé plusieurs origines sur un espace insulaire clos.</p>
+            <p class="text-body">La population réunionnaise résulte d'une histoire démographique récente, marquée par des vagues successives de peuplement et par la rencontre de plusieurs origines dans un contexte insulaire.</p>
             <div class="callout callout--navy">
               <div class="callout-title">Message clé</div>
-              Admixture récente + insularité + effets fondateurs + dérive + endogamie locale
+              Admixture récente + insularité + effets fondateurs documentés dans certaines composantes + dérive + endogamie locale dans certains contextes
             </div>
-          </div>
-          <div class="history-quote history-quote--teal history-quote--lg">
-            <p class="history-quote-text">« La Réunion est un laboratoire d'histoire humaine, un monde recomposé où se mêlent les fragments d'identités transplantées. »</p>
-            <div class="history-quote-meta">Prosper Ève · <em>Esclavage, métissage, liberté</em>, 2003</div>
           </div>
           <div class="frise">
             <div class="frise-track"></div>
@@ -250,7 +252,7 @@
             <div class="frise-step">
               <div class="frise-node" style="background:#E8600A;">Auj.</div>
               <div class="frise-title" style="color:#E8600A;">Population</div>
-              <div class="frise-sub">Admixture unique</div>
+              <div class="frise-sub">Population fortement admixée</div>
             </div>
           </div>
         </div>
@@ -299,7 +301,7 @@
                 fill="none" stroke="var(--coral)" stroke-width="7" stroke-linecap="round"/>
             </g>
             </svg>
-            <p class="text-small confluence-caption">Des origines et des histoires diverses, mêlées au fil du peuplement de l'île, qui convergent vers un même patrimoine génétique à mieux connaître.</p>
+            <p class="text-small confluence-caption">Des origines et des histoires diverses, mêlées au fil du peuplement de l'île, qui ont contribué à un patrimoine génétique aujourd'hui fortement admixé et à mieux documenter.</p>
           </div>
         </div>
       </div>
@@ -315,32 +317,32 @@
         <span class="slide-eyebrow">Il n'existe pas un génome réunionnais</span>
       </div>
       <p class="pivot-quote" style="max-width:820px;">Il existe une diversité réunionnaise que la médecine génomique doit apprendre à mieux représenter.</p>
-      <p class="text-body" style="max-width:680px;margin-top:12px;">Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal. La preuve réelle suit à la slide suivante.</p>
+      <p class="text-body" style="max-width:680px;margin-top:12px;">Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum de diversité. Les grandes catégories continentales de référence ne suffisent pas nécessairement à décrire la combinaison d'ascendances observée à La Réunion. L'observation pilote suit à la slide suivante.</p>
     </div>
   </div>
 </section>
 
-<!-- 07 — La preuve locale (PCA) -->
-<section class="slide slide--cream" data-part="constat" data-label="07 — La preuve locale (PCA)" data-notes="PCA pilote n≈75 projetée sur 1000 Genomes — continuum, pas un cluster homogène.">
+<!-- 07 — Observation pilote (PCA) -->
+<section class="slide slide--cream" data-part="constat" data-label="07 — Observation pilote (PCA)" data-notes="PCA pilote n≈75 projetée sur 1000 Genomes : première observation compatible avec une structure fortement admixée et des positions intermédiaires ; ne pas présenter comme démonstration exhaustive de toute La Réunion.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header slide-header--split">
         <div>
-          <span class="slide-eyebrow">Preuve visuelle</span>
-          <h1 class="slide-title" style="font-size:42px;">Une première observation locale : la diversité réunionnaise forme un continuum</h1>
+          <span class="slide-eyebrow">Observation pilote</span>
+          <h1 class="slide-title" style="font-size:42px;">Une première observation locale : des positions compatibles avec un continuum d'admixture</h1>
         </div>
         <div class="text-body">Cohorte pilote projetée sur 1000 Genomes — <strong style="color:var(--coral);">n ≈ 75</strong></div>
       </div>
       <div class="pca-wrap">
-        <canvas id="pcaScatterChart" role="img" aria-label="PCA globale : projection de la cohorte pilote réunionnaise (n≈75) sur l'espace des composantes principales des populations de référence 1000 Genomes (AFR, AMR, EAS, EUR, SAS). Les échantillons réunionnais se répartissent en continu entre les clusters de référence, hors de tout cluster homogène."></canvas>
+        <canvas id="pcaScatterChart" role="img" aria-label="PCA globale : projection de la cohorte pilote réunionnaise (n≈75) sur les composantes principales des populations de référence 1000 Genomes. Les positions intermédiaires observées sont compatibles avec une structure fortement admixée ; cette cohorte pilote ne constitue pas une représentation exhaustive de La Réunion."></canvas>
       </div>
-      <p class="text-small pca-caption">Cette cohorte pilote ne décrit pas toute La Réunion. Elle montre cependant que la diversité observée localement ne se superpose pas à une seule population de référence.</p>
+      <p class="text-small pca-caption">Cette cohorte pilote ne décrit pas toute La Réunion. Elle montre des positions intermédiaires entre plusieurs populations de référence, compatibles avec une structure fortement admixée.</p>
     </div>
   </div>
 </section>
 
 <!-- 08 — Le lissage involontaire -->
-<section class="slide slide--white" data-part="constat" data-label="08 — Le lissage involontaire" data-notes="Concept central du diaporama — inégalité involontaire de pertinence, pas de traitement.">
+<section class="slide slide--white" data-part="constat" data-label="08 — Le lissage involontaire" data-notes="Concept central : la représentativité modifie la robustesse de l’information populationnelle disponible pour l’interprétation ; elle ne garantit ni n’invalide à elle seule un diagnostic.">
   <div class="slide-inner">
     <div class="slide-pad" style="gap:20px;">
       <div class="slide-header">
@@ -349,7 +351,7 @@
       </div>
       <div class="slide-cols">
         <div class="slide-col">
-          <svg class="svg-figure" viewBox="0 0 460 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Même politique de santé et même outil appliqués à tous, mais la chaîne se sépare selon la représentativité du référentiel disponible : un patient bien représenté obtient un diagnostic fiable, un patient mal représenté obtient un diagnostic incertain">
+          <svg class="svg-figure" viewBox="0 0 460 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Même politique de santé et même outil appliqués à tous, mais le niveau d'information populationnelle disponible varie selon la représentativité du référentiel : une représentation plus robuste réduit l'incertitude populationnelle, sans déterminer à elle seule le diagnostic clinique.">
             <defs>
               <marker id="ar8" markerWidth="9" markerHeight="9" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="var(--muted)"/></marker>
             </defs>
@@ -392,12 +394,12 @@
 
             <!-- 4. Issue clinique : même point de départ, pertinence différente à l'arrivée -->
             <rect x="30" y="306" width="190" height="56" rx="10" fill="#fff" stroke="var(--teal)" stroke-width="2.5"/>
-            <text x="125" y="329" font-size="13" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patient</text>
-            <text x="125" y="347" font-size="11" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">✓ diagnostic fiable</text>
+            <text x="125" y="329" font-size="13" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Interprétation</text>
+            <text x="125" y="347" font-size="11" font-weight="600" fill="var(--teal)" text-anchor="middle" font-family="var(--font-body)">information plus robuste</text>
 
             <rect x="240" y="306" width="190" height="56" rx="10" fill="#fff" stroke="var(--coral)" stroke-width="2.5"/>
-            <text x="335" y="329" font-size="13" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Patient</text>
-            <text x="335" y="347" font-size="11" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">! diagnostic incertain</text>
+            <text x="335" y="329" font-size="13" font-weight="700" fill="var(--navy)" text-anchor="middle" font-family="var(--font-title)">Interprétation</text>
+            <text x="335" y="347" font-size="11" font-weight="600" fill="var(--coral)" text-anchor="middle" font-family="var(--font-body)">incertitude plus élevée</text>
           </svg>
         </div>
         <div class="slide-col">
@@ -432,7 +434,7 @@
 </section>
 
 <!-- 10 — Positionnement -->
-<section class="slide slide--white" data-part="reponse" data-label="10 — Positionnement" data-notes="Neutraliser l'objection 'cela existe déjà'.">
+<section class="slide slide--white" data-part="reponse" data-label="10 — Positionnement" data-notes="Le PFMG organise l’accès national au séquençage génomique et à son interprétation clinique. Génome Réunion apporte une couche différente : une référence populationnelle locale complémentaire, sans duplication des dispositifs nationaux.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header">
@@ -508,7 +510,7 @@
 </section>
 
 <!-- 12 — Ce que le projet construit -->
-<section class="slide slide--white" data-part="reponse" data-label="12 — Ce que le projet construit" data-notes="2500 participants génotypés → 350 génomes WGS → base de fréquences locales.">
+<section class="slide slide--white" data-part="reponse" data-label="12 — Ce que le projet construit" data-notes="2 500 participants génotypés → sélection raisonnée de 350 génomes WGS → identification des variants → fréquences locales recalibrées sur la cohorte large de 2 500 participants.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header">
@@ -588,38 +590,50 @@
 </section>
 
 <!-- 14 — Alignement avec le PRS -->
-<section class="slide slide--white" data-part="reponse" data-label="14 — Alignement avec le PRS" data-notes="Ancrer explicitement sur les priorités numérotées du COS 2023-2033, pas sur des catégories génériques. La priorité 4 cite déjà littéralement les maladies rares comme action.">
+<section class="slide slide--white" data-part="reponse" data-label="14 — Alignement avec le PRS" data-notes="Hiérarchie explicite : priorité 4 = ancrage direct vérifié dans le PRS ; priorités 5, 2 et 14 = convergences thématiques, présentées avec un poids visuel secondaire.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header">
         <span class="slide-eyebrow">Retour vers l'ARS</span>
         <h1 class="slide-title" style="font-size:38px;">Une ressource ancrée dans le PRS 2023-2033, pas à côté</h1>
       </div>
-      <div class="priority-grid-wrap">
-        <div class="priority-grid priority-grid--4">
-          <div class="priority-card priority-card--teal">
-            <div class="priority-badge priority-badge--verified">Priorité 4 du PRS</div>
-            <div class="priority-label">Parcours de santé coordonnés et accessibles</div>
-            <div class="priority-value">Soutenir le diagnostic et la prise en charge des maladies rares — une action déjà inscrite au PRS</div>
+      <div class="priority-grid-wrap priority-hierarchy">
+        <div class="priority-section-label priority-section-label--direct">Ancrage direct dans le PRS</div>
+        <div class="priority-direct priority-card priority-card--teal">
+          <div class="priority-badge priority-badge--verified">Priorité 4 du PRS</div>
+          <div class="priority-direct-content">
+            <div>
+              <div class="priority-label priority-label--lg">Parcours de santé coordonnés et accessibles</div>
+              <div class="priority-value">Le PRS inclut explicitement l’amélioration du diagnostic et de la prise en charge des maladies rares.</div>
+            </div>
+            <div class="priority-contribution">
+              <span class="priority-contribution-label">Apport de Génome Réunion</span>
+              <span>Ajouter une référence populationnelle locale susceptible de mieux contextualiser certains variants dans les parcours de diagnostic.</span>
+            </div>
           </div>
+        </div>
+
+        <div class="priority-section-label">Convergences thématiques</div>
+        <div class="priority-convergences">
           <div class="priority-card priority-card--coral">
             <div class="priority-badge priority-badge--soft">Priorité 5 du PRS</div>
             <div class="priority-label">Réduction des inégalités sociales et territoriales de santé</div>
-            <div class="priority-value">Dans l'esprit de cette priorité : réduire un angle mort de représentation dans les outils de médecine génomique</div>
+            <div class="priority-value">Convergence d’esprit : questionner les écarts de pertinence liés à la représentation des populations dans les outils génomiques.</div>
           </div>
           <div class="priority-card priority-card--navy">
             <div class="priority-badge priority-badge--soft">Priorité 2 du PRS</div>
             <div class="priority-label">Prévention dans le quotidien des Réunionnais</div>
-            <div class="priority-value">Dans l'esprit de cette priorité : documenter les profils pharmacogénétiques pour prévenir des risques médicamenteux évitables</div>
+            <div class="priority-value">Convergence : évaluer des usages pharmacogénétiques susceptibles de prévenir certains risques médicamenteux évitables.</div>
           </div>
           <div class="priority-card priority-card--coral">
             <div class="priority-badge priority-badge--soft">Priorité 14 du PRS</div>
             <div class="priority-label">Le numérique au service de la santé</div>
-            <div class="priority-value">Dans l'esprit de cette priorité : constituer une ressource de données de santé gouvernée et sécurisée</div>
+            <div class="priority-value">Convergence : construire une ressource génomique gouvernée et sécurisée, au service d’usages sanitaires futurs.</div>
           </div>
         </div>
-        <p class="priority-foot-note">✓ Action déjà écrite au PRS · les 3 autres priorités sont des rapprochements thématiques, pas des actions vérifiées mot pour mot.</p>
-        <p class="pivot-quote pivot-quote--sm" style="text-align:center;">Génome Réunion ne demande pas d'ajouter une priorité au PRS : il apporte une donnée locale à des priorités qui y figurent déjà.</p>
+
+        <p class="priority-foot-note">1 ancrage direct vérifié · 3 convergences thématiques présentées comme telles.</p>
+        <p class="pivot-quote pivot-quote--sm" style="text-align:center;">Génome Réunion ne demande pas d’ajouter une priorité au PRS : il propose d’outiller une action déjà inscrite et d’explorer trois convergences.</p>
       </div>
     </div>
   </div>
@@ -717,7 +731,7 @@
 </section>
 
 <!-- 19 — Prioriser les risques médicamenteux -->
-<section class="slide slide--white" data-part="benefices" data-label="19 — Prioriser les risques" data-notes="PREPARE / U-PGx — transférabilité à documenter localement.">
+<section class="slide slide--white" data-part="benefices" data-label="19 — Prioriser les risques" data-notes="Priorisation populationnelle : fréquence locale × exposition au médicament × preuve et actionnabilité × gravité du risque. L’OMEDIT constitue un interlocuteur naturel pour relier ce travail au bon usage et à la prévention de l’iatrogénie.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header">
@@ -728,27 +742,29 @@
         <p class="formula-text">
           <span style="color:#7AB5CC;">Fréquence du profil génétique</span> ×
           <span style="color:oklch(0.72 0.15 160);">Exposition locale au médicament</span> ×
-          <span style="color:oklch(0.78 0.12 80);">Niveau de preuve</span> ×
+          <span style="color:oklch(0.78 0.12 80);">Preuve &amp; actionnabilité</span> ×
           <span style="color:var(--coral);">Gravité du risque</span> =
           <span style="font-weight:700;">Priorité régionale</span>
         </p>
       </div>
       <p class="pivot-quote pivot-quote--sm" style="text-align:center;">L'objectif n'est pas de tester tout le monde pour tout. L'objectif est d'identifier les quelques situations où la pharmacogénétique pourrait avoir le plus fort intérêt local.</p>
+      <p class="text-small" style="text-align:center;margin-top:-2px;color:var(--muted);"><strong style="color:var(--navy);">Articulation sanitaire potentielle :</strong> ARS La Réunion · OMEDIT La Réunion</p>
       <div class="callout callout--navy">
         <div class="callout-title">PREPARE / U-PGx</div>
-        Une stratégie pharmacogénétique préemptive peut réduire certains effets indésirables — la transférabilité à une population très admixée reste à documenter localement.
+        Dans l'étude PREPARE (essai pragmatique en cluster, 7 pays européens, n≈6 944), un panel pharmacogénétique de 12 gènes a été associé à une réduction de 30&nbsp;% des effets indésirables médicamenteux cliniquement pertinents chez les patients porteurs d'une interaction gène–médicament actionnable — effet confirmé après correction d'un déséquilibre de recrutement entre les bras de l'étude. Transférabilité et intérêt médico-économique à La Réunion : à évaluer.
       </div>
+      <p class="text-small" style="margin-top:10px;">Swen et al., <em>The Lancet</em>, 2023 · Guchelaar et al., <em>Clinical Pharmacology &amp; Therapeutics</em>, 2025.</p>
     </div>
   </div>
 </section>
 
 <!-- 20 — Trajectoire pharmacogénomique -->
-<section class="slide slide--cream" data-part="benefices" data-label="20 — Trajectoire" data-notes="Une trajectoire, pas une annonce — la décision thérapeutique reste médicale.">
+<section class="slide slide--cream" data-part="benefices" data-label="20 — Trajectoire" data-notes="Trajectoire prospective conditionnée par la faisabilité, la validation locale et une décision institutionnelle ; la décision thérapeutique reste médicale.">
   <div class="slide-inner">
     <div class="slide-pad slide-pad--tight">
       <div class="slide-header">
         <span class="slide-eyebrow">Démonstrateur 2 — Pharmacogénétique</span>
-        <h1 class="slide-title" style="font-size:38px;">Vers une plateforme régionale de sécurisation thérapeutique</h1>
+        <h1 class="slide-title" style="font-size:38px;">Une trajectoire possible vers la sécurisation thérapeutique</h1>
       </div>
       <div class="slide-cols">
         <div class="slide-col">
@@ -801,7 +817,7 @@
             </div>
           </div>
           <div class="safety-box">
-            <p class="safety-text">La plateforme fournirait une aide à la décision ; la décision thérapeutique resterait médicale.</p>
+            <p class="safety-text">Un éventuel outil régional d’aide à la décision ne serait envisagé qu’après validation locale et décision institutionnelle ; la décision thérapeutique resterait médicale.</p>
           </div>
         </div>
       </div>
@@ -829,7 +845,7 @@
 </section>
 
 <!-- 22 — Éthique, données, confiance -->
-<section class="slide slide--white" data-part="gouvernance" data-label="22 — Éthique &amp; données" data-notes="Ascendance génétique ≠ identité culturelle ≠ origine sociale.">
+<section class="slide slide--white" data-part="gouvernance" data-label="22 — Éthique &amp; données" data-notes="Principes de gouvernance à formaliser dans le cadre réglementaire retenu. Préparer en Q&amp;A : lieu d’hébergement, comité d’accès, critères d’autorisation des requêtes, données pouvant quitter le CHU, articulation éventuelle avec l’EDS, sécurité et risque de ré-identification des données agrégées.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header">
@@ -839,23 +855,23 @@
       <div class="ethics-grid">
         <div class="ethics-card ethics-card--navy">
           <div class="ethics-card-title">Participants</div>
-          <div class="ethics-card-desc">Consentement éclairé et révocable à tout moment, information continue sur l'avancement du projet.</div>
+          <div class="ethics-card-desc">Information claire des participants, consentement et exercice des droits selon le cadre réglementaire retenu.</div>
         </div>
         <div class="ethics-card ethics-card--teal">
           <div class="ethics-card-title">Données</div>
-          <div class="ethics-card-desc">Pseudonymisation systématique, hébergement sécurisé, accès tracé et audité.</div>
+          <div class="ethics-card-desc">Pseudonymisation, hébergement sécurisé et traçabilité des accès selon l'architecture retenue.</div>
         </div>
         <div class="ethics-card ethics-card--coral">
           <div class="ethics-card-title">Accès</div>
-          <div class="ethics-card-desc">Comité de gouvernance dédié, droits d'usage définis projet par projet.</div>
+          <div class="ethics-card-desc">Gouvernance et règles d'accès à formaliser avant l'ouverture de la ressource.</div>
         </div>
         <div class="ethics-card ethics-card--navy">
           <div class="ethics-card-title">Usage clinique</div>
-          <div class="ethics-card-desc">Distinction stricte recherche / diagnostic ; aucun résultat individuel sans validation clinique.</div>
+          <div class="ethics-card-desc">Séparation stricte entre recherche et diagnostic ; politique de retour individuel encadrée.</div>
         </div>
         <div class="ethics-card ethics-card--teal">
           <div class="ethics-card-title">Population</div>
-          <div class="ethics-card-desc">Restitution collective des résultats, vigilance sur toute lecture stigmatisante.</div>
+          <div class="ethics-card-desc">Restitution collective et vigilance contre toute interprétation stigmatisante.</div>
         </div>
       </div>
       <div style="flex:1;display:flex;align-items:center;justify-content:center;min-height:0;">
@@ -866,7 +882,7 @@
 </section>
 
 <!-- 23 — Répartition des rôles -->
-<section class="slide slide--cream" data-part="gouvernance" data-label="23 — Répartition des rôles" data-notes="Ce projet n'a pas besoin que l'ARS fasse le travail d'un autre acteur.">
+<section class="slide slide--cream" data-part="gouvernance" data-label="23 — Répartition des rôles" data-notes="Rôles complémentaires : ne pas présenter les contributions de la Région, des dispositifs nationaux ou de l’ARS comme des engagements déjà acquis ; distinguer clairement accès national, leviers de financement et rôle sanitaire régional.">
   <div class="slide-inner">
     <div class="slide-pad">
       <div class="slide-header">
@@ -885,7 +901,7 @@
         <div class="role-card">
           <div class="role-name">Région</div>
           <ul class="role-list">
-            <li>Financement des infrastructures et équipements</li>
+            <li>Leviers de financement des infrastructures et équipements</li>
             <li>Soutien à l'innovation et à l'attractivité territoriale</li>
             <li>Renforcement de la capacité de recherche locale</li>
           </ul>
@@ -893,9 +909,9 @@
         <div class="role-card">
           <div class="role-name">État &amp; dispositifs nationaux</div>
           <ul class="role-list">
-            <li>Séquençage via les plateformes nationales (AURAGEN / SeqOIA)</li>
-            <li>Référentiels et cadre réglementaire (Plan France Médecine Génomique)</li>
-            <li>Articulation avec la stratégie nationale</li>
+            <li>Accès national au séquençage génomique clinique via AURAGEN / SeqOIA</li>
+            <li>Stratégie et organisation nationales de médecine génomique (PFMG)</li>
+            <li>Articulation avec les dispositifs et infrastructures nationaux</li>
           </ul>
         </div>
         <div class="role-card role-card--ars">
@@ -903,7 +919,7 @@
           <ul class="role-list">
             <li>Lecture sanitaire régionale et priorisation des besoins</li>
             <li>Veille sur l'équité d'accès et la prévention</li>
-            <li>Articulation avec le PRS 2023-2033 et l'offre de soins</li>
+            <li>Articulation avec le PRS 2023-2033, l’OMEDIT et l’offre de soins</li>
           </ul>
         </div>
       </div>
@@ -916,7 +932,7 @@
 </section>
 
 <!-- 24 — Conclusion / demande ARS -->
-<section class="slide slide--navy" data-part="gouvernance" data-label="24 — Conclusion &amp; demande ARS" data-notes="Demande : accompagnement d'un axe pharmacogénétique/prévention avec l'OMEDIT.">
+<section class="slide slide--navy" data-part="gouvernance" data-label="24 — Conclusion &amp; demande ARS" data-notes="Demande pragmatique : co-construire avec l’ARS et l’OMEDIT une première étude de faisabilité pharmacogénétique régionale permettant d’identifier 2 à 3 couples gène–médicament prioritaires à évaluer à La Réunion.">
   <div class="slide-inner">
     <div class="hero-slide">
       <div class="hero-waves">
@@ -940,8 +956,8 @@
         <p class="hero-subtitle" style="max-width:820px;">Génome Réunion ne demande pas de créer une médecine spécifique à La Réunion. Il propose de produire la connaissance locale nécessaire pour que les progrès de la médecine génomique nationale bénéficient aux Réunionnais avec le même niveau de pertinence, de sécurité et d'équité.</p>
         <div class="ask-box">
           <div class="ask-label">Demande institutionnelle</div>
-          <p class="ask-text">Ce que nous demandons aujourd'hui à l'ARS : accompagner, avec l'OMEDIT, le lancement d'un axe pharmacogénétique et prévention — première étape concrète et mesurable d'articulation entre Génome Réunion et une politique de santé régionale.</p>
-          <p class="ask-text">Cette étape s'inscrit dans une reconnaissance plus large de l'intérêt sanitaire du projet, que nous souhaitons construire avec vous dans la durée.</p>
+          <p class="ask-text">Ce que nous proposons aujourd'hui à l'ARS et à l'OMEDIT : co-construire avec le CHU une première étude de faisabilité pharmacogénétique régionale, afin d'identifier à partir des données locales et du niveau de preuve existant 2 à 3 couples gène–médicament prioritaires à évaluer à La Réunion.</p>
+          <p class="ask-text">Cette première étape, limitée et mesurable, permettrait d'instruire sur des données réelles l'intérêt d'un déploiement ultérieur en prévention et sécurisation thérapeutique.</p>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@
 
 Base : plan narratif ARS (sept. 2026) + synthèse stratégique/personas (sept. 2026).
 Architecture validée le 2026-09-03 : **20 slides principales** (au lieu de 15), pour un rythme
-plus clair sur ~25-30 minutes, + 4 annexes inchangées.
+plus clair sur ~25-30 minutes, + 3 annexes prévues (A, C, D) ; l’ancienne annexe B a été fusionnée dans le corps de la présentation.
 
 Statut de chaque slide : 🟡 brouillon proposé · 🟢 validé · 🔴 à revoir · ⬜ à faire
 
@@ -21,9 +21,9 @@ scientifique, en gardant la palette de marque.
 
 **2026-09-03 — Slides de transition :** ajout, comme sur le diaporama Région, d'une slide de
 transition (badge numéroté + séparateur vertical + titre) à l'entrée de chacun des 4 actes.
-Le diaporama compte donc désormais **24 slides dans le code** (20 slides de contenu + 4
-transitions), même si la numérotation ci-dessous reste celle du contenu (1-20) pour ne pas
-perturber le suivi de validation. Correspondance : les transitions sont codées en positions
+Le diaporama affiche désormais **25 écrans dans le code** : 20 slides de contenu + 4
+transitions + 1 slide de clôture / remerciements. La numérotation ci-dessous reste celle du
+contenu (1-20) pour ne pas perturber le suivi de validation. Correspondance : les transitions sont codées en positions
 03, 09, 15 et 21 du fichier HTML ; chaque slide de contenu numérotée N ci-dessous est décalée
 de +1 (actes 2-4) par rapport à sa position dans le code au-delà de sa propre transition.
 Restent à faire : les 3 annexes (A, C, D) et un mode présentateur éventuel.
@@ -33,7 +33,7 @@ Restent à faire : les 3 annexes (A, C, D) et un mode présentateur éventuel.
 ## Architecture
 
 Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans le code
-(1-24, avec les 4 transitions) entre parenthèses.
+(1-25, avec les 4 transitions et la slide de clôture) entre parenthèses.
 
 ### Acte 1 — Comprendre le problème (contenu 1-7 → code 01-02, 04-08)
 1. Ouverture *(code 01)*
@@ -42,7 +42,7 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 3. Le problème global (référentiels inégalement représentatifs) *(code 04)*
 4. Pourquoi La Réunion — histoire démographique *(code 05)*
 5. Pourquoi La Réunion — diversité comme continuum *(code 06)*
-6. La preuve locale (PCA pilote) *(code 07)*
+6. Observation pilote locale (PCA) *(code 07)*
 7. Le lissage involontaire (égalité ≠ équité de pertinence) *(code 08)*
 
 ### Acte 2 — Comprendre la réponse Génome Réunion (contenu 8-12 → code 10-14)
@@ -51,7 +51,7 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 9. Écosystème génomique — qui fait quoi *(code 11)*
 10. Ce que le projet construit (2 500 → 350 génomes) *(code 12)*
 11. Robustesse de la sélection méthodologique *(code 13)*
-12. Alignement avec le PRS 2023-2033 (matrice ancrée sur 4 priorités numérotées réelles) *(code 14)*
+12. Alignement avec le PRS 2023-2033 (1 ancrage direct vérifié + 3 convergences thématiques) *(code 14)*
 
 ### Acte 3 — Comprendre les bénéfices sanitaires (contenu 13-17 → code 16-20)
 - *Transition « Partie 3 » (code 15)*
@@ -59,19 +59,21 @@ Numérotation ci-dessous = contenu (1-20, cette section). Position réelle dans 
 14. Démonstrateur 1 : diagnostic — l'apport *(code 17)*
 15. Démonstrateur 2 : pharmacogénétique — principe *(code 18)*
 16. Prioriser les risques médicamenteux (formule de priorisation) *(code 19)*
-17. Trajectoire vers une plateforme régionale de sécurisation thérapeutique *(code 20)*
+17. Trajectoire possible vers la sécurisation thérapeutique *(code 20)*
 
-### Acte 4 — Rassurer et engager l'ARS (contenu 18-20 → code 22-24)
+### Acte 4 — Rassurer et engager l'ARS (contenu 18-20 → code 22-24, clôture code 25)
 - *Transition « Partie 4 » (code 21)*
 18. Éthique, données et gouvernance *(code 22)*
 19. Répartition des rôles (CHU / Région / État / ARS) *(code 23)*
 20. Conclusion et demande institutionnelle à l'ARS *(code 24)*
+- *Clôture / remerciements (code 25)*
 
-### Annexes (inchangées)
+### Annexes prévues
 A. Méthodologie de sélection détaillée
-B. *(fusionnée dans la slide 9 principale — annexe B supprimée)*
 C. Pharmacogénétique : de la preuve au déploiement
 D. Test de résistance rapide (Q&A par direction ARS)
+
+*Ancienne annexe B : fusionnée dans la slide 9 principale et supprimée comme annexe autonome.*
 
 ---
 
@@ -182,10 +184,11 @@ Deux publications de référence l'ont documenté : Popejoy et Fullerton dans Na
 
 ### Concept visuel précis
 - Schéma vertical à 3 blocs reliés par des flèches descendantes :
-  **Données de référence** → **Algorithmes / interprétation / recommandations** → **Patients**
+  **Données de référence** → **Algorithmes / interprétation / recommandations** → **Robustesse de l'information populationnelle**
 - Sur le bloc "Données de référence", une représentation visuelle très simple (pas de carte du monde, pas de drapeaux) suggérant une profondeur de représentation inégale — par exemple une barre segmentée où certains segments sont plus "denses" que d'autres, sans légende ethnique, juste "profondeur de représentation historique variable selon les populations".
 - Couleurs : Lagon/Récif pour les blocs neutres, un seul accent Flamboyant sur la barre de densité pour attirer l'œil sans dramatiser.
 - Éviter tout visuel qui ressemblerait à une hiérarchie de qualité entre populations — c'est une question de profondeur de données, pas de valeur.
+- À l'issue du schéma, parler d'une **information populationnelle plus robuste ou plus limitée** selon la représentativité ; ne pas qualifier un référentiel entier d'« adapté » ou d'« insuffisant ».
 
 ### Éléments interactifs
 Aucun nécessaire. Slide à laisser respirer — c'est la première où l'auditoire doit vraiment s'arrêter sur l'idée, pas la parcourir vite.
@@ -288,7 +291,7 @@ slide PCA.
 > Il existe une diversité réunionnaise que la médecine génomique doit apprendre à mieux représenter.
 
 **Sous la phrase, un rappel bref et net**
-> Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal. La preuve réelle suit à la slide suivante.
+> Nous ne cherchons pas à définir une identité génétique réunionnaise. Nous cherchons à représenter un continuum que les catégories continentales classiques décrivent mal. L'observation pilote suit à la slide suivante.
 
 ### Texte oral (complet)
 
@@ -299,11 +302,11 @@ Ce que produit cette histoire, c'est un continuum : la plupart des individus por
 C'est ce point précis, et lui seul, qui justifie l'existence de Génome Réunion : pas une différence d'identité, une différence de structure de diversité. »
 
 ### Références mobilisées
-Aucune nouvelle — cette slide est une clarification conceptuelle de la slide 4, pas un nouvel apport de preuve (la preuve arrive slide suivante avec la PCA).
+Aucune nouvelle — cette slide est une clarification conceptuelle de la slide 4, pas un nouvel apport de preuve (l'observation pilote arrive à la slide suivante avec la PCA).
 
 ### Concept visuel précis
 - Rupture volontaire avec le schéma de flux de la slide précédente : ici, un seul visuel abstrait — un dégradé continu de points (nuage), sans groupes ni frontières visibles, suggérant un continuum plutôt que des clusters.
-- Pas de PCA réelle ici (réservée slide 6) : ce nuage est un schéma conceptuel, explicitement non issu de données, pour ne pas préempter la preuve réelle.
+- Pas de PCA réelle ici (réservée slide 6) : ce nuage est un schéma conceptuel, explicitement non issu de données, pour ne pas préempter l'observation réelle.
 - Fond Sable, nuage en dégradé Lagon → Récif → Flamboyant très doux, aucune ligne de séparation entre "groupes".
 - La phrase pivot occupe le centre optique de la slide — c'est la slide-mémoire du diaporama, celle que l'auditoire doit pouvoir répéter après coup.
 
@@ -318,12 +321,14 @@ Aucun.
 
 ---
 
-## SLIDE 6 — LA PREUVE LOCALE (PCA) 🟡
+## SLIDE 6 — OBSERVATION PILOTE LOCALE (PCA) 🟢
+
+**Révision terminologique 2026-09-08 :** le vocabulaire « preuve visuelle / preuve locale » est remplacé par « observation pilote » afin de refléter le statut réel de la cohorte n≈75. La PCA reste une donnée locale informative, mais n’est pas présentée comme une démonstration exhaustive de la population réunionnaise.
 
 ### Texte écran
 
 **Titre**
-> Une première observation locale : la diversité réunionnaise forme un continuum
+> Une première observation locale : des positions compatibles avec un continuum d'admixture
 
 **Visuel principal**
 PCA pilote (~75 individus réunionnais) projetée sur les populations de référence 1000 Genomes,
@@ -569,97 +574,55 @@ Aucun.
 ### Transition
 > « Cette ressource n'a de valeur pour l'ARS que si elle répond à des priorités sanitaires concrètes. »
 
-## SLIDE 12 — ALIGNEMENT AVEC LE PRS (matrice de priorités) 🟢 (révisée 2026-09-03, ancrée sur le PRS réel)
+## SLIDE 12 — ALIGNEMENT AVEC LE PRS 🟢 (hiérarchie révisée 2026-09-08)
 
-**2026-09-03 — Révision :** la première version de cette slide mappait Génome Réunion sur des
-catégories génériques ("Équité en santé", "Diagnostic"...) sans les relier aux vraies priorités
-de l'ARS. Le porteur a fourni la plaquette officielle du **PRS La Réunion 2023-2033** (COS,
-15 priorités à 10 ans). Cette slide est reconstruite pour citer explicitement les priorités
-numérotées correspondantes — plus crédible et plus vérifiable par l'auditoire, qui a écrit ce
-document lui-même.
+### Principe de la slide
 
-### Les 15 priorités du COS 2023-2033 (pour référence)
-1. La démocratie en santé — 2. La prévention dans le quotidien des Réunionnais — 3. Un
-environnement favorable à la santé — 4. Des parcours de santé coordonnés et accessibles —
-5. La réduction des inégalités sociales et territoriales de santé — 6. La santé des femmes —
-7. La santé de la mère et de l'enfant — 8. La santé nutritionnelle — 9. La santé mentale —
-10. Les conduites addictives — 11. La qualité de vie et la santé des personnes vivant avec un
-handicap — 12. La qualité de vie et la santé des personnes âgées — 13. Les compétences et
-ressources humaines en santé — 14. Le numérique au service de la santé — 15. La veille et la
-surveillance sanitaire et la réponse aux situations exceptionnelles.
+La slide distingue désormais visuellement deux niveaux de relation avec le PRS 2023-2033 :
 
-Génome Réunion ne prétend contribuer qu'aux priorités pour lesquelles l'apport est direct et
-vérifiable — pas aux 15 par principe. Point notable : la **priorité 4** cite déjà littéralement,
-parmi ses actions, « Améliorer le diagnostic et la prise en charge des maladies rares » — c'est
-une action existante du PRS que Génome Réunion vient concrètement outiller, pas une nouvelle
-demande.
-
-**2026-09-03 — Audit design/contenu/PRS :** en recroisant les 4 priorités avec les actions
-*réellement listées* dans la plaquette (pas seulement leur intitulé), un seul lien est un match
-vérifié mot pour mot : la **priorité 4** (maladies rares). Les trois autres sont des
-rapprochements thématiques défendables mais non vérifiés au niveau de l'action :
-- **Priorité 5** (inégalités) : ses actions réelles parlent de pauvreté, désertification médicale,
-  accès géographique aux soins — pas de représentativité génomique. Le lien tient sur le mot
-  « inégalité », pas sur le contenu de la priorité.
-- **Priorité 2** (prévention) : ses actions réelles sont des dispositifs de terrain (consultations
-  aux âges clés, CLS, bus santé) — pas de pharmacogénétique.
-- **Priorité 14** (numérique) : ses actions réelles sont cybersécurité, téléconsultation,
-  télé-expertise, modules e-santé en formation — rien sur la gouvernance de données génomiques.
-  C'est le lien le plus faible des quatre.
-
-Présenter les 4 cartes avec la même autorité visuelle aurait laissé croire à un niveau de preuve
-égal, face à un auditoire qui connaît son propre document par cœur. Corrigé : seule la priorité 4
-porte le badge plein avec ✓ ; les 3 autres portent un badge en contour avec la formule « dans
-l'esprit de cette priorité », et une note de bas de slide rend la distinction explicite à l'écran,
-pas seulement à l'oral.
+1. **un ancrage direct vérifié** : la priorité 4, dont les actions incluent explicitement l’amélioration du diagnostic et de la prise en charge des maladies rares ;
+2. **trois convergences thématiques** : priorités 5, 2 et 14, présentées comme des rapprochements d’esprit et non comme des actions déjà écrites pour Génome Réunion.
 
 ### Texte écran
 
 **Titre**
 > Une ressource ancrée dans le PRS 2023-2033, pas à côté
 
-**Grille de 4 cartes — un seul badge plein (✓, lien vérifié), trois badges en contour (lien thématique)**
+**Ancrage direct dans le PRS**
 
-| Priorité PRS | Intitulé officiel | Apport de Génome Réunion | Niveau de preuve |
-|---|---|---|---|
-| 4 | Parcours de santé coordonnés et accessibles | Soutenir le diagnostic et la prise en charge des maladies rares — une action déjà inscrite au PRS | ✓ Vérifié (action citée mot pour mot) |
-| 5 | Réduction des inégalités sociales et territoriales de santé | Dans l'esprit de cette priorité : réduire un angle mort de représentation dans les outils de médecine génomique | Rapprochement thématique |
-| 2 | Prévention dans le quotidien des Réunionnais | Dans l'esprit de cette priorité : documenter les profils pharmacogénétiques pour prévenir des risques médicamenteux évitables | Rapprochement thématique |
-| 14 | Le numérique au service de la santé | Dans l'esprit de cette priorité : constituer une ressource de données de santé gouvernée et sécurisée | Rapprochement thématique (le plus faible) |
+- **Priorité 4 — Parcours de santé coordonnés et accessibles**  
+  Le PRS inclut explicitement l’amélioration du diagnostic et de la prise en charge des maladies rares.  
+  **Apport de Génome Réunion :** ajouter une référence populationnelle locale susceptible de mieux contextualiser certains variants dans les parcours de diagnostic.
 
-**Note de bas de slide (affichée à l'écran)**
-> ✓ Action déjà écrite au PRS · les 3 autres priorités sont des rapprochements thématiques, pas des actions vérifiées mot pour mot.
+**Convergences thématiques**
+
+- **Priorité 5 — Réduction des inégalités sociales et territoriales de santé**  
+  Convergence d’esprit : questionner les écarts de pertinence liés à la représentation des populations dans les outils génomiques.
+- **Priorité 2 — Prévention dans le quotidien des Réunionnais**  
+  Convergence : évaluer des usages pharmacogénétiques susceptibles de prévenir certains risques médicamenteux évitables.
+- **Priorité 14 — Le numérique au service de la santé**  
+  Convergence : construire une ressource génomique gouvernée et sécurisée, au service d’usages sanitaires futurs.
 
 **Message clé**
-> Génome Réunion ne demande pas d'ajouter une priorité au PRS : il apporte une donnée locale à des priorités qui y figurent déjà.
+> Génome Réunion ne demande pas d’ajouter une priorité au PRS : il propose d’outiller une action déjà inscrite et d’explorer trois convergences.
 
-### Texte oral (complet)
+### Texte oral
 
-« Cette slide n'invente rien : elle reprend des priorités que vous avez vous-mêmes fixées dans le PRS 2023-2033, et montre où Génome Réunion vient les outiller — mais je veux être précis sur le niveau de preuve de chacune, pas les présenter comme équivalentes.
+« Je veux distinguer clairement deux niveaux, parce qu’ils n’ont pas la même force.
 
-La priorité 4 est la plus directe : parmi ses actions figure déjà "améliorer le diagnostic et la prise en charge des maladies rares". Ce n'est pas nous qui proposons cette priorité — elle existe déjà dans votre feuille de route, mot pour mot. Ce que nous proposons, c'est une ressource locale pour mieux la servir.
+Le premier est un ancrage direct. Dans la priorité 4 du PRS, consacrée aux parcours de santé coordonnés et accessibles, figure déjà l’amélioration du diagnostic et de la prise en charge des maladies rares. C’est ici que le lien avec Génome Réunion est le plus solide : une référence populationnelle locale peut devenir une information supplémentaire pour mieux contextualiser certains variants dans le parcours diagnostique.
 
-Les trois autres cartes sont des rapprochements thématiques, pas des correspondances d'action vérifiées : la priorité 5 sur le mot "inégalité", la priorité 2 sur l'esprit de prévention que porte notre trajectoire pharmacogénétique, la priorité 14 sur l'exigence de gouvernance des données. Je préfère vous le dire ainsi plutôt que de laisser croire à quatre correspondances de même solidité.
+Les trois autres priorités ne sont pas des correspondances d’action mot pour mot. Ce sont des convergences thématiques : la réduction des inégalités, parce que nous questionnons la pertinence des référentiels ; la prévention, à travers la pharmacogénétique ; et le numérique, par la construction d’une ressource de données gouvernée et sécurisée.
 
-Nous ne prétendons pas contribuer aux quinze priorités du PRS. Nous préférons documenter précisément une contribution vérifiée et trois convergences d'esprit, plutôt que de revendiquer une pertinence générale non vérifiable. »
+Je préfère cette hiérarchie explicite à quatre cartes qui donneraient l’impression que les quatre liens ont la même force. »
 
-### Références mobilisées
-Plaquette de présentation du PRS La Réunion 2023-2033 (ARS La Réunion, Cadre d'Orientations
-Stratégiques — 15 priorités à 10 ans), fournie par le porteur de projet.
-
-### Concept visuel précis
-- Grille de 4 cartes (au lieu du tableau à 7 lignes de la version précédente), chacune avec un
-  badge coloré "Priorité N du PRS" en haut, l'intitulé officiel de la priorité, puis l'apport de
-  Génome Réunion — plus crédible qu'une simple liste de mots-clés génériques.
-- Un seul badge/carte non chiffré resterait acceptable pour une contribution transversale, mais
-  volontairement évité ici : les 4 cartes retenues sont toutes rattachées à un numéro de priorité
-  vérifiable, pour ne jamais donner l'impression d'un survol non maîtrisé du document.
-
-### Éléments interactifs
-Aucun.
+### Référence institutionnelle
+Plaquette du PRS La Réunion 2023-2033 — Cadre d’Orientations Stratégiques et priorités à 10 ans.
 
 ### Transition
-> « Le premier usage concret est probablement celui qui est déjà le plus proche de notre pratique quotidienne : l'interprétation diagnostique. »
+> « Le premier usage concret est probablement celui qui est déjà le plus proche de notre pratique quotidienne : l’interprétation diagnostique. »
+
+---
 
 ## SLIDE 13 — DÉMONSTRATEUR 1 : DIAGNOSTIC — LE PROBLÈME 🟡
 
@@ -775,7 +738,18 @@ Aucun.
 
 ---
 
-## SLIDE 16 — PRIORISER LES RISQUES MÉDICAMENTEUX 🟡
+## SLIDE 16 — PRIORISER LES RISQUES MÉDICAMENTEUX 🟢 (révisée 2026-09-09)
+
+**2026-09-09 — Précision sourcée (sur demande explicite, PDF fournis par le porteur) :** le
+chiffre de 30&nbsp;% de réduction des effets indésirables médicamenteux dans PREPARE est
+maintenant cité explicitement, avec la nuance essentielle rapportée par les auteurs eux-mêmes :
+cet effet, observé initialement à la fois chez les patients porteurs et non porteurs d'une
+interaction gène-médicament actionnable (ce qui était statistiquement suspect), s'est avéré dû à
+un déséquilibre de « case-mix » entre les bras de l'étude (ajout de centres en cours d'essai,
+changements de prescription). Une fois cet effet de confusion corrigé, seul l'effet chez les
+patients **actionnables** restait significatif — c'est cette version, la seule scientifiquement
+correcte, qui est citée à l'écran. Deux références sont ajoutées en toutes lettres sous l'encart
+(Swen et al., *Lancet* 2023 ; Guchelaar et al., *Clinical Pharmacology & Therapeutics* 2025).
 
 ### Texte écran
 
@@ -788,19 +762,27 @@ Aucun.
 **Message clé**
 > L'objectif n'est pas de tester tout le monde pour tout. L'objectif est d'identifier les quelques situations où la pharmacogénétique pourrait avoir le plus fort intérêt local.
 
+**Articulation sanitaire potentielle**
+> ARS La Réunion · OMEDIT La Réunion — lien avec le bon usage du médicament, la prévention de l'iatrogénie et l'évaluation d'éventuelles priorités régionales.
+
 **Référence démonstratrice (encart discret)**
-> PREPARE / U-PGx : une stratégie pharmacogénétique préemptive peut réduire certains effets indésirables — la transférabilité à une population très admixée reste à documenter localement.
+> PREPARE / U-PGx : dans l'étude PREPARE (essai pragmatique en cluster, 7 pays européens, n≈6 944), un panel pharmacogénétique de 12 gènes a été associé à une réduction de 30 % des effets indésirables médicamenteux cliniquement pertinents chez les patients porteurs d'une interaction gène–médicament actionnable — effet confirmé après correction d'un déséquilibre de recrutement entre les bras de l'étude. Transférabilité et intérêt médico-économique à La Réunion : à évaluer.
+>
+> Sources citées à l'écran : Swen et al., *The Lancet*, 2023 · Guchelaar et al., *Clinical Pharmacology & Therapeutics*, 2025.
 
 ### Texte oral (complet)
 
 « Le nombre de couples gène-médicament potentiellement intéressants est considérable. Une stratégie utile pour l'ARS doit faire l'inverse d'une approche exhaustive : partir du niveau de preuve clinique, du médicament réellement prescrit à La Réunion, de la fréquence locale du profil génétique concerné, et de la gravité du risque, pour ne retenir que les situations réellement prioritaires.
 
-L'étude européenne PREPARE, menée dans le cadre du consortium U-PGx, a démontré qu'une stratégie pharmacogénétique préemptive — c'est-à-dire connue avant la prescription plutôt que découverte après un incident — pouvait réduire certains effets indésirables. C'est un démonstrateur solide de l'intérêt clinique de l'approche.
+C'est précisément à ce niveau que l'ARS et l'OMEDIT peuvent constituer une articulation sanitaire pertinente : relier les données populationnelles au bon usage du médicament, à la prévention de l'iatrogénie et à l'identification de quelques priorités régionales à évaluer.
 
-Mais cette étude n'a pas été conduite sur une population aussi admixée que celle de La Réunion. La question de la transférabilité de ces résultats reste donc, à ce stade, une question à documenter — pas une réponse déjà acquise. »
+Dans PREPARE, étude européenne menée dans le cadre du consortium U-PGx, 6 944 participants ont été inclus. Une stratégie pharmacogénétique préemptive guidée par un panel de 12 gènes a été associée à une diminution des effets indésirables médicamenteux cliniquement pertinents dans le cadre étudié.
+
+Mais 97,7 % des participants se déclaraient européens, méditerranéens ou moyen-orientaux. Ce résultat constitue un argument clinique important, sans préjuger du bénéfice à La Réunion : la transférabilité à une population fortement admixée, les couples gène–médicament prioritaires et l'intérêt médico-économique local restent à évaluer. »
 
 ### Références mobilisées
-- PREPARE / U-PGx (démonstrateur européen de pharmacogénétique préemptive).
+- Swen JJ et al., « A 12-gene pharmacogenetic panel to prevent adverse drug reactions: an open-label, multicentre, controlled, cluster-randomised crossover implementation study », *The Lancet* 401, 347-356 (2023) — étude PREPARE, 6 944 participants, 30 % de réduction des EIM chez les patients actionnables.
+- Guchelaar HJ et al., « Pharmacogenetic Implementation Studies—Lessons Learned From the PREPARE Study », *Clinical Pharmacology & Therapeutics* 118(4), 803-812 (2025) — explique le déséquilibre de case-mix qui restreint l'effet observé aux seuls patients actionnables ; table de puissance post-hoc par médicament (5,3 % à 51,5 %) qui étaye directement l'argument de priorisation de cette slide.
 - Niveaux de preuve HAS / CPIC / DPWG / RNPGx (repris de la slide 15) comme composante de la formule de priorisation.
 
 ### Concept visuel précis
@@ -819,7 +801,7 @@ Aucun.
 ### Texte écran
 
 **Titre**
-> Vers une plateforme régionale de sécurisation thérapeutique
+> Une trajectoire possible vers la sécurisation thérapeutique
 
 **Trajectoire (schéma vertical, voir concept visuel)**
 > Génome Réunion → fréquences pharmacogénétiques locales → priorisation gène-médicament → études cliniques ciblées → validation locale → aide à la décision clinique → prévention
@@ -832,14 +814,14 @@ Aucun.
 
 ### Texte oral (complet)
 
-« Je veux montrer où cette logique peut mener, à long terme, sans la présenter comme déjà acquise — c'est une trajectoire, pas une annonce.
+« Je veux montrer une trajectoire possible, pas annoncer une plateforme déjà décidée.
 
-À partir des fréquences pharmacogénétiques locales et de la priorisation que je viens de décrire, l'étape suivante serait des études cliniques ciblées, menées avec le CHU, les généticiens, les pharmacologues et l'OMEDIT, pour valider localement l'intérêt de certains couples gène-médicament. Ce n'est qu'après cette validation qu'on pourrait envisager une intégration dans une aide à la décision clinique — par exemple une alerte contextualisée au moment de la prescription.
+À partir des fréquences pharmacogénétiques locales et de la priorisation que je viens de décrire, l'étape suivante serait d'abord une étude de faisabilité puis, si elle est concluante, des études cliniques ciblées avec le CHU, les généticiens, les pharmacologues et l'OMEDIT. L'objectif serait de valider localement l'intérêt de quelques couples gène-médicament prioritaires.
 
-Je le dis clairement, parce que c'est un point sur lequel nous ne voulons laisser aucune ambiguïté : nous ne proposons pas aujourd'hui un système qui adapterait automatiquement une dose. Nous proposons une trajectoire : connaissance, puis validation, puis seulement, éventuellement, intégration dans une aide à la décision. La décision thérapeutique resterait, à chaque étape, une décision médicale. »
+Ce n'est qu'après cette validation, et après une décision institutionnelle sur l'opportunité, la gouvernance et l'intégration au système de soins, qu'un éventuel outil d'aide à la décision pourrait être envisagé. Nous ne proposons donc pas aujourd'hui un système qui adapterait automatiquement une dose : nous proposons une séquence connaissance, faisabilité, validation, puis décision. La décision thérapeutique resterait, à chaque étape, une décision médicale. »
 
 ### Références mobilisées
-Reprend PREPARE / U-PGx (slide 16) comme précédent de plateforme de pharmacogénétique préemptive à l'échelle d'un système de santé.
+Reprend PREPARE / U-PGx (slide 16) comme précédent d'implémentation d'une stratégie pharmacogénétique préemptive à l'échelle d'un système de santé ; cela ne préjuge pas de la forme d'un éventuel dispositif réunionnais.
 
 ### Concept visuel précis
 - Trajectoire verticale en 7 étapes, dégradé de Lagon (début, connaissance) vers Flamboyant (fin, prévention) — cohérent avec le code couleur "dérive progressive" déjà utilisé slide 7, mais ici en registre positif (construction) plutôt qu'en registre d'alerte.
@@ -857,9 +839,13 @@ Aucun.
 
 **2026-09-03 — Révision (sur demande explicite) :** les 5 cartes ne portaient que 2 mots de
 description chacune, jugées trop ternes et pas assez explicites pour l'ARS. Chaque carte est
-étoffée d'une phrase d'engagement concret et gagne une bordure supérieure colorée (navy/teal/
-coral, cycle repris du style des cartes PRS de la slide 14) pour casser la monotonie visuelle. La
-phrase pivot est centrée dans l'espace libéré sous les cartes.
+étoffée et gagne une bordure supérieure colorée (navy/teal/coral, cycle repris du style des cartes
+PRS de la slide 14) pour casser la monotonie visuelle. La phrase pivot est centrée dans l'espace
+libéré sous les cartes.
+
+**2026-09-08 — Audit ARS :** les formulations sont sécurisées pour distinguer les principes de
+gouvernance déjà retenus des modalités opérationnelles qui restent à formaliser dans le cadre
+réglementaire applicable au projet.
 
 ### Texte écran
 
@@ -867,11 +853,11 @@ phrase pivot est centrée dans l'espace libéré sous les cartes.
 > Une ressource sensible qui exige une gouvernance explicite
 
 **5 blocs (grille, voir concept visuel)**
-- **Participants** — Consentement éclairé et révocable à tout moment, information continue sur l'avancement du projet.
-- **Données** — Pseudonymisation systématique, hébergement sécurisé, accès tracé et audité.
-- **Accès** — Comité de gouvernance dédié, droits d'usage définis projet par projet.
-- **Usage clinique** — Distinction stricte recherche / diagnostic ; aucun résultat individuel sans validation clinique.
-- **Population** — Restitution collective des résultats, vigilance sur toute lecture stigmatisante.
+- **Participants** — Information claire des participants, consentement et exercice des droits selon le cadre réglementaire retenu.
+- **Données** — Pseudonymisation, hébergement sécurisé et traçabilité des accès selon l'architecture retenue.
+- **Accès** — Gouvernance et règles d'accès à formaliser avant l'ouverture de la ressource.
+- **Usage clinique** — Séparation stricte entre recherche et diagnostic ; politique de retour individuel encadrée.
+- **Population** — Restitution collective et vigilance contre toute interprétation stigmatisante.
 
 **Phrase pivot (en exergue)**
 > Ascendance génétique, identité culturelle et origine sociale ne sont pas des notions interchangeables.
@@ -880,7 +866,7 @@ phrase pivot est centrée dans l'espace libéré sous les cartes.
 
 « Nous travaillons sur une donnée extrêmement informative, et donc sensible. La question qui se pose n'est donc pas seulement ce que nous pouvons techniquement faire avec elle, mais dans quel cadre nous décidons collectivement de le faire.
 
-Cinq dimensions structurent ce cadre. Le consentement et l'information des participants, en amont. La pseudonymisation et la sécurité des données, sur le plan technique. La gouvernance de l'accès et des droits d'usage, sur le plan organisationnel. La distinction claire entre recherche et diagnostic, sur le plan clinique. Et, pour la population dans son ensemble, la question de la non-stigmatisation et de la restitution des résultats.
+Cinq dimensions structurent ce cadre. L'information, le consentement et l'exercice des droits des participants, d'abord. La pseudonymisation, la sécurité et la traçabilité des accès, ensuite. Les règles d'accès et de gouvernance devront être formalisées avant l'ouverture de la ressource. Sur le plan clinique, recherche et diagnostic resteront strictement distingués, avec une politique de retour individuel encadrée. Enfin, pour la population dans son ensemble, nous devons prévoir une restitution collective et une vigilance constante contre toute interprétation stigmatisante.
 
 Je veux insister sur un point de vocabulaire, parce qu'il est central pour éviter tout malentendu : l'ascendance génétique, l'identité culturelle et l'origine sociale ne sont pas des notions interchangeables. Ce projet étudie la première. Il ne prétend rien dire des deux autres. »
 
@@ -902,6 +888,8 @@ Aucun.
 
 ## SLIDE 19 — RÉPARTITION DES RÔLES (CHU / Région / État / ARS) 🟢 (révisée 2026-09-03)
 
+**Révision institutionnelle 2026-09-08 :** les formulations sont sécurisées pour distinguer les rôles possibles des engagements déjà acquis : la Région est présentée comme levier de financement, AURAGEN/SeqOIA comme accès national au séquençage clinique, et le PFMG comme stratégie et organisation nationales — pas comme cadre réglementaire du projet. L'OMEDIT est explicitement rattaché au rôle sanitaire de l'ARS.
+
 **2026-09-03 — Révision (sur demande explicite) :** les 4 cartes n'avaient qu'une ligne de
 mots-clés, et le titre promettait une « articulation claire » que le visuel ne montrait pas (4
 blocs sans aucun lien entre eux). Chaque carte est étoffée de 2-3 responsabilités concrètes en
@@ -916,9 +904,9 @@ quatre acteurs.
 
 **4 blocs (voir concept visuel)**
 - **CHU** — Porteur scientifique et clinique du projet · Recueil, hébergement et analyse des données génomiques · Recherche et interprétation clinique
-- **Région** — Financement des infrastructures et équipements · Soutien à l'innovation et à l'attractivité territoriale · Renforcement de la capacité de recherche locale
-- **État et dispositifs nationaux** — Séquençage via les plateformes nationales (AURAGEN / SeqOIA) · Référentiels et cadre réglementaire (Plan France Médecine Génomique) · Articulation avec la stratégie nationale
-- **ARS** — Lecture sanitaire régionale et priorisation des besoins · Veille sur l'équité d'accès et la prévention · Articulation avec le PRS 2023-2033 et l'offre de soins
+- **Région** — Leviers de financement des infrastructures et équipements · Soutien à l'innovation et à l'attractivité territoriale · Renforcement de la capacité de recherche locale
+- **État et dispositifs nationaux** — Accès national au séquençage génomique clinique via AURAGEN / SeqOIA · Stratégie et organisation nationales de médecine génomique (PFMG) · Articulation avec les dispositifs et infrastructures nationaux
+- **ARS** — Lecture sanitaire régionale et priorisation des besoins · Veille sur l'équité d'accès et la prévention · Articulation avec le PRS 2023-2033, l'OMEDIT et l'offre de soins
 
 **Bandeau de convergence (sous la grille)**
 > Gouvernance partagée du Génome Réunion
@@ -927,9 +915,9 @@ quatre acteurs.
 
 « Avant de conclure, je veux être précis sur un point d'organisation, parce qu'il conditionne la crédibilité de tout ce qui précède : ce projet n'a pas besoin que l'ARS fasse le travail d'un autre acteur.
 
-Le CHU porte l'expertise clinique, génétique et scientifique — c'est le porteur médical naturel du projet. La Région apporte l'infrastructure et une capacité d'investissement territorial. L'État et les dispositifs nationaux fournissent le cadre, le séquençage clinique et les référentiels de référence.
+Le CHU porte l'expertise clinique, génétique et scientifique — c'est le porteur médical naturel du projet. La Région peut mobiliser des leviers de financement et d'innovation territoriale, sans préjuger ici d'un engagement déjà accordé. Les dispositifs nationaux, eux, organisent l'accès au séquençage génomique clinique — notamment via AURAGEN et SeqOIA — et la stratégie nationale portée par le PFMG ; cela ne signifie pas que le séquençage de Génome Réunion serait nécessairement réalisé par ces plateformes.
 
-L'ARS a un rôle différent de ces trois-là, et c'est précisément celui qui nous intéresse ici : une lecture sanitaire du projet, une attention à l'équité, une articulation avec le Projet régional de santé, l'offre de soins et la prévention. Ce n'est pas un rôle de financeur parmi d'autres. C'est un rôle qu'aucun des trois autres acteurs ne peut occuper à sa place. »
+L'ARS a un rôle différent de ces trois-là, et c'est précisément celui qui nous intéresse ici : une lecture sanitaire du projet, une attention à l'équité et à la prévention, et une articulation avec le Projet régional de santé, l'OMEDIT et l'offre de soins. Ce n'est pas un rôle de financeur parmi d'autres. C'est un rôle qu'aucun des trois autres acteurs ne peut occuper à sa place. »
 
 ### Références mobilisées
 Articulation institutionnelle du projet — cohérente avec la présentation Région existante (`presentation-region/`), sans reprendre son angle recherche/innovation : ici, seul le rôle de chaque acteur est rappelé, du point de vue sanitaire.
