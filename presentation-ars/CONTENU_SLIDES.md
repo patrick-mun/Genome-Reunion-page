@@ -738,7 +738,18 @@ Aucun.
 
 ---
 
-## SLIDE 16 — PRIORISER LES RISQUES MÉDICAMENTEUX 🟡
+## SLIDE 16 — PRIORISER LES RISQUES MÉDICAMENTEUX 🟢 (révisée 2026-09-09)
+
+**2026-09-09 — Précision sourcée (sur demande explicite, PDF fournis par le porteur) :** le
+chiffre de 30&nbsp;% de réduction des effets indésirables médicamenteux dans PREPARE est
+maintenant cité explicitement, avec la nuance essentielle rapportée par les auteurs eux-mêmes :
+cet effet, observé initialement à la fois chez les patients porteurs et non porteurs d'une
+interaction gène-médicament actionnable (ce qui était statistiquement suspect), s'est avéré dû à
+un déséquilibre de « case-mix » entre les bras de l'étude (ajout de centres en cours d'essai,
+changements de prescription). Une fois cet effet de confusion corrigé, seul l'effet chez les
+patients **actionnables** restait significatif — c'est cette version, la seule scientifiquement
+correcte, qui est citée à l'écran. Deux références sont ajoutées en toutes lettres sous l'encart
+(Swen et al., *Lancet* 2023 ; Guchelaar et al., *Clinical Pharmacology & Therapeutics* 2025).
 
 ### Texte écran
 
@@ -755,7 +766,9 @@ Aucun.
 > ARS La Réunion · OMEDIT La Réunion — lien avec le bon usage du médicament, la prévention de l'iatrogénie et l'évaluation d'éventuelles priorités régionales.
 
 **Référence démonstratrice (encart discret)**
-> PREPARE / U-PGx : dans PREPARE, une stratégie pharmacogénétique préemptive guidée par un panel de 12 gènes a été associée à une réduction des effets indésirables médicamenteux cliniquement pertinents dans le cadre étudié. Transférabilité et intérêt médico-économique à La Réunion : à évaluer.
+> PREPARE / U-PGx : dans l'étude PREPARE (essai pragmatique en cluster, 7 pays européens, n≈6 944), un panel pharmacogénétique de 12 gènes a été associé à une réduction de 30 % des effets indésirables médicamenteux cliniquement pertinents chez les patients porteurs d'une interaction gène–médicament actionnable — effet confirmé après correction d'un déséquilibre de recrutement entre les bras de l'étude. Transférabilité et intérêt médico-économique à La Réunion : à évaluer.
+>
+> Sources citées à l'écran : Swen et al., *The Lancet*, 2023 · Guchelaar et al., *Clinical Pharmacology & Therapeutics*, 2025.
 
 ### Texte oral (complet)
 
@@ -768,7 +781,8 @@ Dans PREPARE, étude européenne menée dans le cadre du consortium U-PGx, 6 944
 Mais 97,7 % des participants se déclaraient européens, méditerranéens ou moyen-orientaux. Ce résultat constitue un argument clinique important, sans préjuger du bénéfice à La Réunion : la transférabilité à une population fortement admixée, les couples gène–médicament prioritaires et l'intérêt médico-économique local restent à évaluer. »
 
 ### Références mobilisées
-- PREPARE / U-PGx, *Lancet* 2023 : étude d'implémentation d'un panel pharmacogénétique de 12 gènes, 6 944 participants ; interprétation locale à discuter au regard de la structure de population et du contexte de soins réunionnais.
+- Swen JJ et al., « A 12-gene pharmacogenetic panel to prevent adverse drug reactions: an open-label, multicentre, controlled, cluster-randomised crossover implementation study », *The Lancet* 401, 347-356 (2023) — étude PREPARE, 6 944 participants, 30 % de réduction des EIM chez les patients actionnables.
+- Guchelaar HJ et al., « Pharmacogenetic Implementation Studies—Lessons Learned From the PREPARE Study », *Clinical Pharmacology & Therapeutics* 118(4), 803-812 (2025) — explique le déséquilibre de case-mix qui restreint l'effet observé aux seuls patients actionnables ; table de puissance post-hoc par médicament (5,3 % à 51,5 %) qui étaye directement l'argument de priorisation de cette slide.
 - Niveaux de preuve HAS / CPIC / DPWG / RNPGx (repris de la slide 15) comme composante de la formule de priorisation.
 
 ### Concept visuel précis
