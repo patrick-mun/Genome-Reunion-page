@@ -1,0 +1,13 @@
+{
+  "name": "presentation-region-pdf-export",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Génère le PDF de secours (paysage, image pure) de la présentation Région Réunion.",
+  "scripts": {
+    "export": "node export-pdf.js"
+  },
+  "dependencies": {
+    "pdf-lib": "^1.17.1",
+    "playwright": "^1.56.1"
+  }
+}
