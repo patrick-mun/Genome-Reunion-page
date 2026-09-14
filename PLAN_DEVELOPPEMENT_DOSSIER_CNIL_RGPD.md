@@ -3,25 +3,19 @@
 **Projet :** Génome Réunion  
 **Porteur scientifique :** CHU de La Réunion — Service de génétique moléculaire  
 **Document :** plan maître de développement et de suivi réglementaire  
-**Version :** 0.4  
+**Version :** 0.5  
 **Date de mise à jour :** 14 septembre 2026  
 **Statut :** document de travail évolutif
 
 ---
 
-## 1. Objectif
+## 1. Règles de travail
 
-Ce fichier est la **feuille de route unique** de construction du dossier CNIL / RGPD de Génome Réunion.
-
-Il sert à ordonner les travaux, suivre les arbitrages DPO / DRCI / DSIO / CRB / EFS, tracer les décisions et éviter de rédiger trop tôt des documents dépendant de décisions non stabilisées.
-
-### Règles de travail
-
-1. Ne jamais présumer qu’une méthodologie de référence CNIL s’applique.
-2. Distinguer systématiquement : **décidé / envisagé / à confirmer / à arbitrer / validé**.
-3. Employer **pseudonymisé** et non « pseudo-anonymisé » lorsqu’un lien avec l’identité peut être restauré.
+1. Ne jamais présumer qu'une méthodologie de référence CNIL s'applique.
+2. Distinguer : **décidé / envisagé / à confirmer / à arbitrer / validé**.
+3. Employer **pseudonymisé** et non « pseudo-anonymisé » lorsqu'un lien avec l'identité peut être restauré.
 4. Séparer la phase populationnelle initiale des extensions cliniques, pharmacogénétiques, IA et nouvelles cohortes.
-5. Toute décision structurante doit être enregistrée dans le journal des décisions.
+5. Toute décision structurante doit être tracée dans le journal des décisions.
 
 ### Statuts
 
@@ -29,141 +23,104 @@ Il sert à ordonner les travaux, suivre les arbitrages DPO / DRCI / DSIO / CRB /
 |---|---|
 | ⬜ | À faire |
 | 🟨 | En cours |
-| 🟧 | Bloqué |
+| 🟧 | Verrou / décision nécessaire |
 | 🟦 | Hypothèse forte / à valider institutionnellement |
-| ✅ | Validé |
+| ✅ | Validé ou fonctionnellement établi |
 | ⛔ | Hors phase initiale |
 
 ---
 
-# 2. Vue d’ensemble
+# 2. Vue d'ensemble
 
 | Phase | Objet | Statut | Prochaine action |
 |---|---|---:|---|
 | 0 | Cadrage et corpus documentaire | ✅ | maintenir les sources |
 | 1 | Circuit recrutement / EFS / CRB | ✅ fonctionnellement | validation institutionnelle ultérieure |
-| 2 | Qualification RIPH / non-RIPH et cadre CNIL | 🟨 | tester la conformité complète MR-004 |
-| 3 | Acteurs, responsabilités et conventions | ⬜ | après Phase 2 |
+| 2 | Qualification RNIPH / MR-004 | 🟨 | lever les verrous de la grille MR-004 |
+| 3 | Acteurs, responsabilités et conventions | ⬜ | responsable de traitement puis rôles EFS/CRB/POPgen |
 | 4 | Données et minimisation | ⬜ | dictionnaire des variables |
 | 5 | Flux détaillés et pseudonymisation | ⬜ | cartographie complète |
-| 6 | Échantillons biologiques / CRB | ⬜ | cadre de banque et retrait |
+| 6 | Échantillons biologiques / CRB | ⬜ | conservation, retrait, aliquotage |
 | 7 | Infrastructure, sécurité et hébergement | ⬜ | architecture de production |
-| 8 | Gouvernance, accès et publication | ⬜ | DAC et niveaux d’accès |
-| 9 | Information, droits et conservation | ⬜ | après stabilisation du traitement |
+| 8 | Gouvernance, accès et publication | ⬜ | DAC et variants rares |
+| 9 | Information, droits et conservation | ⬜ | notice et procédures |
 | 10 | AIPD / DPIA | ⬜ | après flux + sécurité |
 | 11 | Dossier réglementaire complet | ⬜ | assembler les éléments validés |
-| 12 | Validation institutionnelle et formalités | ⬜ | DRCI / DPO / CPP / CNIL selon cadre |
+| 12 | Validation institutionnelle et formalités | ⬜ | DRCI / DPO / CNIL selon résultat |
 | 13 | Checklist avant collecte | ⬜ | validation finale |
 | 14 | Ouverture contrôlée aux chercheurs | ⬜ | après gouvernance |
 | 15 | Extensions futures | ⛔ | analyses réglementaires séparées |
 
 ---
 
-# 3. Phase 0 — Cadrage et corpus documentaire
-
-**Statut : ✅**
-
-Principales sources :
-
-- `README.md`
-- `template/Genome_Reunion_synthese_scientifique (14) (6).html`
-- `template/METHODOLOGIE_validation_protocole_v1_5.html`
-- `template/METHODOLOGIE_validation_annexeB_simulation_v1_5.html`
-- `template/GENOME_REUNION_justification_choix_Sdiv.html`
-- `template/Genome_Reunion_synthese_infrastructure_v5_4.html`
-- `template/architecture_pipeline.html`
-- documents EFS / CRB / conventions à intégrer lorsqu’ils seront disponibles.
-
----
-
-# 4. Phase 1 — Circuit recrutement / EFS / CRB
+# 3. Phase 1 — Circuit EFS / CRB
 
 **Statut : ✅ Fonctionnellement clôturée**  
 **Livrable :** `CNIL_01_CIRCUIT_EFS_PRELEVEMENT.md`
 
-## Circuit retenu
+Circuit retenu :
 
-1. Présentation du projet lors de l’entretien avec le médecin EFS.
-2. Information du participant et accord écrit signé.
-3. Aucun tube supplémentaire pour Génome Réunion.
-4. Utilisation d’un reliquat de tube EDTA du circuit EFS.
-5. L’EFS génère le code pseudonyme.
-6. L’EFS conserve la table identité ↔ code.
-7. Le CHU / CRB ne reçoit pas l’identité.
-8. Transmission au CRB : tube codé + lieu / centre de prélèvement ; âge uniquement s’il est finalement jugé nécessaire.
-9. Enregistrement CRB → extraction ADN → conservation en banque.
-10. Aliquot d’ADN mis à disposition de l’équipe de recherche.
-
-Les modalités de transport, convention, durée de conservation et retrait seront traitées dans les phases dédiées et ne bloquent plus la qualification réglementaire.
+1. information du donneur lors de l'entretien avec le médecin EFS ;
+2. accord écrit signé ;
+3. aucun tube supplémentaire pour Génome Réunion ;
+4. utilisation d'un reliquat EDTA EFS ;
+5. code pseudonyme généré par l'EFS ;
+6. table identité ↔ code conservée par l'EFS ;
+7. CHU / CRB sans accès à l'identité ;
+8. transfert : tube codé + centre de prélèvement ; âge uniquement si nécessaire ;
+9. CRB : enregistrement → extraction → banque ADN ;
+10. aliquot d'ADN pour les analyses autorisées.
 
 ---
 
-# 5. Phase 2 — Qualification RIPH / non-RIPH et cadre CNIL
+# 4. Phase 2 — Qualification RNIPH / MR-004
 
-**Statut : 🟨 En cours**  
-**Livrable :** `CNIL_02_QUALIFICATION_REGLEMENTAIRE.md`
+**Statut : 🟨 En cours**
 
-## 5.1 Hypothèse réglementaire actuelle
+### Livrables
 
-> **Hypothèse forte : phase initiale = RNIPH / non-RIPH ; MR-004 = méthodologie de référence principale à tester.**
+- `CNIL_02_QUALIFICATION_REGLEMENTAIRE.md`
+- `CNIL_02A_SOURCES_EXTERNES_REFERENCE.md`
+- `CNIL_02B_GRILLE_CONFORMITE_MR004.md`
+
+## 4.1 Hypothèse actuelle
+
+> **Hypothèse forte : la phase initiale est une RNIPH et la MR-004 constitue le cadre CNIL principal à tester.**
 
 Cette hypothèse reste soumise à validation DRCI / DPO.
 
-### Arguments principaux
+## 4.2 Résultat de la grille MR-004
 
-- [x] absence de prélèvement ou d’acte supplémentaire réalisé pour la recherche ;
-- [x] utilisation secondaire d’un reliquat EDTA prélevé dans le cadre du don ;
-- [x] information spécifique du participant ;
-- [x] accord écrit ;
-- [x] pseudonymisation avant transfert au CHU ;
-- [x] identité conservée uniquement par l’EFS ;
-- [x] production de données génétiques à partir d’un élément du corps prélevé à une autre fin ;
-- [x] la MR-004 admet en principe les données génétiques strictement nécessaires à une RNIPH.
+Aucune incompatibilité certaine avec la MR-004 n'est identifiée à ce stade.
 
-## 5.2 Vérification MR-004 à réaliser
+Les principaux verrous sont :
 
-Construire une grille :
+- [ ] **qualification RNIPH formellement validée par la DRCI** ;
+- [ ] **responsable de traitement identifié** ;
+- [ ] **base légale RGPD validée par le DPO** ;
+- [ ] **protocole réglementaire unique rédigé et validé scientifiquement** ;
+- [ ] **KING / parenté explicitement limité à l'analyse de structure et au contrôle de parenté, sans finalité d'identification ou de ré-identification** ;
+- [ ] **rôles EFS / CRB / POPgen / plateformes qualifiés** ;
+- [ ] **dictionnaire des données et justification de minimisation** ;
+- [ ] **information spécifique génétique conforme au CSP actuel** ;
+- [ ] **durée de conservation de l'étude MR-004 séparée de la future ressource durable** ;
+- [ ] **architecture de sécurité finalisée** ;
+- [ ] **AIPD réalisée sans risque résiduel élevé** ;
+- [ ] **vérification de l'engagement MR-004 du CHU et inscription au registre / répertoire public**.
 
-**exigence MR-004 → situation Génome Réunion → conforme / à confirmer / non conforme → action**
+## 4.3 Sources externes
 
-Points à vérifier :
+1000G / IGSR et les datasets EGA nécessaires peuvent être intégrés au même traitement scientifique comme **panels externes de référence**, sous réserve de :
 
-- [ ] caractère d’intérêt public ;
-- [ ] responsable de traitement ;
-- [ ] catégories de données autorisées ;
-- [ ] justification scientifique de chaque variable ;
-- [ ] information des participants ;
-- [ ] droits ;
-- [ ] pseudonymisation ;
-- [ ] destinataires ;
-- [ ] sous-traitants ;
-- [ ] transferts ;
-- [ ] sécurité ;
-- [ ] durées de conservation ;
-- [ ] AIPD ;
-- [ ] registre du traitement ;
-- [ ] enregistrement au répertoire public des recherches ;
-- [ ] déclaration de conformité MR-004 ou nécessité d’autorisation spécifique.
+- les décrire dans le protocole ;
+- documenter leur rôle analytique ;
+- limiter les données importées au nécessaire ;
+- respecter les conditions DAC / DAA propres à chaque dataset EGA ;
+- ne pas transformer un panel externe en nouvelle cohorte étudiée pour elle-même sans réévaluation réglementaire.
 
-## 5.3 Point génétique spécifique
+## 4.4 Frontière avec la ressource durable
 
-Le recours à un reliquat prélevé à une autre fin fait entrer l’examen génétique dans le mécanisme spécifique prévu pour la recherche sur des éléments biologiques prélevés à d’autres fins.
-
-À traiter :
-
-- [ ] information relative à la finalité génétique ;
-- [ ] opposition / retrait ;
-- [ ] découvertes génétiques potentiellement pertinentes pour la santé ;
-- [ ] possibilité de ne pas être informé de telles découvertes ;
-- [ ] circuit via le médecin détenteur de l’identité si nécessaire.
-
-## 5.4 Point critique — ressource durable
-
-La MR-004 peut être adaptée à **l’étude initiale**, mais elle ne doit pas être considérée automatiquement comme couvrant une **ressource génomique durable multi-projets**.
-
-Séparer :
-
-### Étude initiale
+La MR-004 est évaluée pour **l'étude initiale** :
 
 - 2 500 SNP ;
 - sélection des 350 ;
@@ -172,185 +129,151 @@ Séparer :
 - fréquences ;
 - référentiel initial.
 
-**Hypothèse : RNIPH + MR-004.**
-
-### Ressource durable
-
-- conservation à long terme ;
-- réutilisations successives ;
-- chercheurs externes ;
-- enrichissements ;
-- nouveaux projets.
-
-**Analyse réglementaire séparée nécessaire.**
-
-## 5.5 Point critique — publication / ré-identification
-
-- [ ] variants ultra-rares ;
-- [ ] variants fondateurs ;
-- [ ] petits sous-groupes ;
-- [ ] haplotypes rares ;
-- [ ] données familiales ;
-- [ ] combinaison secteur + ascendance + variant.
-
-La politique de publication devra empêcher qu’une diffusion publique permette la ré-identification.
-
-## 5.6 Volet familles
-
-Le volet 100 familles reste à qualifier séparément selon l’origine des échantillons et l’existence éventuelle d’un prélèvement spécifique.
+La future ressource durable multi-projets devra disposer d'un cadre distinct ou complémentaire. Elle ne sera pas considérée automatiquement couverte par cette MR-004.
 
 ---
 
-# 6. Phase 3 — Acteurs, responsabilités et conventions
+# 5. Ordre de travail retenu pour terminer la Phase 2
 
-**Statut : ⬜**
+## Étape 2.1 — Responsable de traitement et base légale
 
-Acteurs à qualifier : CHU, service de génétique, DRCI, DPO, DSIO, CRB, EFS, POPgen, plateformes de génotypage / séquençage, hébergeur éventuel et partenaires scientifiques.
+- [ ] identifier formellement le responsable de traitement ;
+- [ ] vérifier si le CHU dispose déjà d'un engagement de conformité MR-004 ;
+- [ ] valider la base légale article 6 RGPD ;
+- [ ] valider l'exception article 9 pour données génétiques / santé.
 
+## Étape 2.2 — Protocole réglementaire
+
+- [ ] transformer la documentation scientifique existante en protocole MR-004 unique ;
+- [ ] intégrer finalités, personnes, données, sources, méthode et durée ;
+- [ ] intégrer 1000G / EGA comme sources externes ;
+- [ ] préciser explicitement que KING n'a aucune finalité d'identification / ré-identification.
+
+## Étape 2.3 — Données et acteurs
+
+- [ ] dictionnaire des données ;
+- [ ] justification scientifique variable par variable ;
+- [ ] acteurs / destinataires / sous-traitants ;
+- [ ] conventions / contrats.
+
+## Étape 2.4 — Droits, conservation, sécurité
+
+- [ ] information génétique ;
+- [ ] droits / opposition / retrait ;
+- [ ] durées ;
+- [ ] séparation étude / ressource durable ;
+- [ ] sécurité ;
+- [ ] AIPD.
+
+## Étape 2.5 — Contrôle final
+
+- [ ] reprendre chaque ligne de `CNIL_02B_GRILLE_CONFORMITE_MR004.md` ;
+- [ ] convertir les lignes 🟧 / 🟨 en ✅ ou 🟦 validé ;
+- [ ] si une exigence reste incompatible : analyser une demande d'autorisation spécifique ;
+- [ ] sinon : préparer la mise en œuvre sous MR-004.
+
+---
+
+# 6. Phases suivantes
+
+## Phase 3 — Acteurs et responsabilités
+
+CHU, EFS, CRB, POPgen, plateformes, hébergeur, partenaires scientifiques.  
 **Livrable :** `CNIL_03_ACTEURS_RESPONSABILITES.md` + matrice RACI / RGPD.
 
----
+## Phase 4 — Données et minimisation
 
-# 7. Phase 4 — Données et minimisation
-
-**Statut : ⬜**
-
-À fixer : code participant, sexe, âge ou absence d’âge, lieu / secteur, ascendance déclarée, SNP, PCA, ADMIXTURE, KING, ROH, IBD, S_div, WGS, phasage, imputation, LAI et données familiales nécessaires.
-
-Extensions cliniques, prescriptions, iatrogénie, protéomique, AURAGEN et IA sur données réelles restent **hors phase initiale**.
-
+Code, sexe, âge éventuel, centre / secteur, ascendance déclarée, SNP, WGS, PCA, ADMIXTURE, KING, ROH, IBD, S_div, phasage, imputation, LAI.  
 **Livrable :** `CNIL_04_DICTIONNAIRE_DONNEES.md`.
 
----
+## Phase 5 — Flux et pseudonymisation
 
-# 8. Phase 5 — Flux et pseudonymisation
-
-**Statut : ⬜**
-
-Documenter : **source → donnée → transformation → stockage → utilisateur → destination**.
-
-Le modèle initial est déjà établi : **EFS détient identité + table ; CRB et recherche travaillent sur le code pseudonyme**.
-
+**source → donnée → transformation → stockage → utilisateur → destination**.  
 **Livrable :** `CNIL_05_CARTOGRAPHIE_FLUX.md`.
 
----
+## Phase 6 — Échantillons biologiques / CRB
 
-# 9. Phase 6 — Échantillons biologiques / CRB
-
-**Statut : ⬜**
-
-À traiter : cadre réglementaire du CRB, déclaration du programme / collection si nécessaire, conservation, aliquotage, durée, destruction, retrait et réutilisation future.
-
+Conservation, aliquotage, retrait, destruction, réutilisation.  
 **Livrable :** `CNIL_06_ECHANTILLONS_CRB.md`.
 
----
+## Phase 7 — Infrastructure / sécurité
 
-# 10. Phase 7 — Infrastructure, sécurité et hébergement
-
-**Statut : ⬜**
-
-À traiter : architecture on-premise / cloud / hybride, HDS, chiffrement, MFA, RBAC, logs, sauvegardes, restauration, segmentation, exports, transferts, incidents et violations.
-
+Hébergement, chiffrement, MFA, RBAC, logs, sauvegardes, transferts, incidents.  
 **Livrable :** `CNIL_07_SECURITE_INFRASTRUCTURE.md`.
 
----
+## Phase 8 — Gouvernance / accès
 
-# 11. Phase 8 — Gouvernance, accès et publication
-
-**Statut : ⬜**
-
-À traiter : comité de gouvernance, comité scientifique, DAC, niveaux d’accès, analyses sur site, exports, variants rares et audits.
-
+DAC, niveaux d'accès, variants rares, publication.  
 **Livrable :** `CNIL_08_GOUVERNANCE_ACCES.md`.
 
----
+## Phase 9 — Information / droits / conservation
 
-# 12. Phase 9 — Information, droits et conservation
-
-**Statut : ⬜**
-
-À traiter : notice, droits, retrait, découvertes incidentes, durées par catégorie de données et articulation avec les analyses déjà agrégées.
-
+Notice, opposition, retrait, résultats génétiques, durées.  
 **Livrable :** `CNIL_09_DROITS_CONSERVATION.md`.
 
----
+## Phase 10 — AIPD
 
-# 13. Phase 10 — AIPD / DPIA
-
-**Statut : ⬜**
-
-Méthode : **menace → événement redouté → probabilité → gravité → mesures → risque résiduel**.
-
+**menace → événement redouté → probabilité → gravité → mesures → risque résiduel**.  
 **Livrable :** `CNIL_10_AIPD.md`.
 
 ---
 
-# 14. Phases 11 à 15
-
-- **11 — Dossier complet :** assembler uniquement les éléments validés.
-- **12 — Validation institutionnelle :** DRCI, DPO, DSIO, CRB, EFS, juridique, formalités CNIL / CPP selon qualification.
-- **13 — Avant collecte :** test à blanc et checklist complète.
-- **14 — Avant ouverture chercheurs :** DAC, charte, environnement sécurisé, journalisation et politique d’export.
-- **15 — Extensions futures :** clinique, pharmacogénétique, autres cohortes, protéomique, IA, océan Indien / DOM-TOM.
-
----
-
-# 15. Tableau de suivi courant
+# 7. Tableau de suivi courant
 
 | ID | Sujet | Statut | Prochaine action |
 |---|---|---:|---|
-| S01 | Corpus documentaire | ✅ | maintenir les sources |
-| S02 | Circuit EFS / CRB | ✅ fonctionnellement | validation institutionnelle ultérieure |
-| S03 | Qualification RIPH | 🟦 RNIPH probable | validation DRCI |
-| S04 | MR applicable | 🟨 MR-004 à tester | grille exhaustive de conformité |
-| S05 | Responsable de traitement | ⬜ | Phase 3 |
-| S06 | Statut EFS | ⬜ | Phase 3 |
-| S07 | Statut POPgen | ⬜ | Phase 3 |
-| S08 | Volet familles | ⬜ | qualification séparée |
-| S09 | Dictionnaire de données | ⬜ | Phase 4 |
-| S10 | Pseudonymisation | 🟨 principe EFS établi | Phase 5 |
-| S11 | Infrastructure | ⬜ | Phase 7 |
-| S12 | HDS | ⬜ | Phase 7 |
-| S13 | CRB / collection | 🟨 | Phase 6 |
-| S14 | Durées de conservation | ⬜ | Phase 9 |
-| S15 | Ressource durable | 🟧 cadre à distinguer de MR-004 | analyse dédiée |
-| S16 | Gouvernance DAC | ⬜ | Phase 8 |
-| S17 | AIPD | ⬜ | Phase 10 |
-| S18 | Notice / document participant final | ⬜ | Phase 9 puis 11 |
-| S19 | IA | ⛔ | extension future |
-| S20 | Données cliniques | ⛔ | extension future |
+| S01 | Circuit EFS / CRB | ✅ | validation institutionnelle ultérieure |
+| S02 | Qualification RNIPH | 🟦 | validation DRCI |
+| S03 | Grille MR-004 | ✅ réalisée | lever les verrous |
+| S04 | Responsable de traitement | 🟧 | DPO / DRCI / juridique |
+| S05 | Base légale | 🟧 | DPO |
+| S06 | Protocole réglementaire | 🟨 | formaliser le corpus scientifique |
+| S07 | KING / parenté | 🟧 | verrouiller la finalité non-identifiante |
+| S08 | 1000G / EGA | 🟨 | annexe sources + DAC / DAA |
+| S09 | Acteurs / contrats | 🟧 | Phase 3 |
+| S10 | Dictionnaire de données | 🟨 | Phase 4 |
+| S11 | Pseudonymisation | 🟦 | modèle EFS établi, formalisation Phase 5 |
+| S12 | Ressource durable | 🟧 | cadre distinct à définir |
+| S13 | Infrastructure | 🟨 | Phase 7 |
+| S14 | AIPD | 🟧 | Phase 10 |
+| S15 | Volet 100 familles | 🟧 | qualification séparée avant intégration |
+| S16 | IA / clinique / AURAGEN | ⛔ | extensions futures |
 
 ---
 
-# 16. Prochaine étape
+# 8. Prochaine étape active
 
-## Phase active : **Phase 2 — grille de conformité MR-004**
+## **Étape 2.1 — Responsable de traitement et base légale**
 
-La prochaine tâche est de vérifier la MR-004 **article par article / exigence par exigence** contre le projet Génome Réunion.
+Avant d'approfondir les documents participants ou l'AIPD, il faut déterminer :
 
-Aucune déclaration de conformité ne sera proposée avant cette vérification.
+1. qui est juridiquement responsable du traitement ;
+2. si le CHU a déjà déclaré sa conformité à la MR-004 ;
+3. quelle base légale article 6 RGPD sera retenue ;
+4. quelle condition article 9 RGPD fonde le traitement des données génétiques.
 
 ---
 
-# 17. Journal des décisions
+# 9. Journal des décisions
 
 | Date | Décision / constat | Statut | Impact |
 |---|---|---|---|
-| 2026-09-14 | Développement du dossier section par section. | ✅ | méthode générale |
-| 2026-09-14 | Circuit EFS → CRB décrit et minimisé. | ✅ fonctionnellement | Phase 1 clôturée |
-| 2026-09-14 | L’EFS génère les codes et conserve seul la table identité ↔ code. | ✅ projet | pseudonymisation |
-| 2026-09-14 | Le CRB reçoit tube codé + lieu de prélèvement ; âge seulement si nécessaire. | ✅ / âge à arbitrer | minimisation |
-| 2026-09-14 | Hypothèse réglementaire principale : RNIPH. | 🟦 à valider DRCI | Phase 2 |
-| 2026-09-14 | MR-004 retenue comme cadre principal à tester pour l’étude initiale. | 🟦 à vérifier exhaustivement | Phase 2 |
-| 2026-09-14 | La ressource génomique durable ne sera pas considérée automatiquement couverte par la MR-004 initiale. | ✅ méthode de séparation | analyse réglementaire future dédiée |
+| 2026-09-14 | Circuit EFS → CRB fonctionnellement clôturé. | ✅ | Phase 1 |
+| 2026-09-14 | Hypothèse principale : RNIPH. | 🟦 | validation DRCI |
+| 2026-09-14 | MR-004 retenue comme cadre principal à tester. | 🟦 | Phase 2 |
+| 2026-09-14 | 1000G / EGA sont intégrés comme panels externes de référence dans la même étude, avec traçabilité dédiée. | ✅ méthode | protocole / annexe sources |
+| 2026-09-14 | Grille MR-004 réalisée : aucune incompatibilité certaine, plusieurs verrous à lever. | ✅ | plan de conformité |
+| 2026-09-14 | KING doit être décrit comme outil d'estimation / contrôle de parenté sans finalité d'identification ou ré-identification. | 🟧 à formaliser | condition MR-004 critique |
+| 2026-09-14 | La ressource durable reste séparée du traitement initial MR-004. | ✅ méthode | cadre futur distinct |
 
 ---
 
-# 18. Historique
+# 10. Historique
 
 | Version | Date | Modification |
 |---|---|---|
 | 0.1 | 2026-09-14 | Création du plan maître |
-| 0.2 | 2026-09-14 | Intégration du circuit EFS → CRB |
-| 0.3 | 2026-09-14 | Codage EFS et minimisation des données transmises |
-| 0.4 | 2026-09-14 | Phase 2 : hypothèse RNIPH + MR-004 et séparation de la ressource durable |
+| 0.2 | 2026-09-14 | Circuit EFS → CRB |
+| 0.3 | 2026-09-14 | Codage EFS et minimisation |
+| 0.4 | 2026-09-14 | Hypothèse RNIPH + MR-004 et séparation ressource durable |
+| 0.5 | 2026-09-14 | Grille de conformité MR-004 réalisée et ordre de levée des verrous défini |
