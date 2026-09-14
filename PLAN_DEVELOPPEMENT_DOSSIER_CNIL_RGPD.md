@@ -3,7 +3,7 @@
 **Projet :** Génome Réunion  
 **Porteur scientifique :** CHU de La Réunion — Service de génétique moléculaire  
 **Document :** plan maître de développement et de suivi réglementaire  
-**Version :** 0.2  
+**Version :** 0.3  
 **Date de mise à jour :** 14 septembre 2026  
 **Statut :** document de travail évolutif
 
@@ -43,7 +43,7 @@ Ce document n'est pas le dossier CNIL définitif.
 | 🟨 | En cours |
 | 🟧 | Bloqué |
 | 🟦 | Décrit / à valider institutionnellement |
-| ✅ | Validé |
+| ✅ | Validé comme choix de conception du projet |
 | ⛔ | Hors phase initiale |
 
 ---
@@ -53,11 +53,11 @@ Ce document n'est pas le dossier CNIL définitif.
 | Phase | Objet | Statut | Prochaine action |
 |---|---|---:|---|
 | 0 | Cadrage et corpus documentaire | ✅ | maintenir les sources |
-| 1 | Circuit recrutement / EFS / CRB | 🟦 | confirmer les points institutionnels restants |
-| 2 | Qualification RIPH / non-RIPH et cadre CNIL | 🟨 | prochaine phase de travail |
+| 1 | Circuit recrutement / EFS / CRB | ✅ | circuit fonctionnel clos ; formalisation institutionnelle dans les phases suivantes |
+| 2 | Qualification RIPH / non-RIPH et cadre CNIL | 🟨 | phase active |
 | 3 | Acteurs, responsabilités et conventions | ⬜ | après première qualification Phase 2 |
-| 4 | Données et minimisation | ⬜ | fixer le dictionnaire de données |
-| 5 | Flux détaillés et pseudonymisation | ⬜ | cartographier tous les échanges |
+| 4 | Données et minimisation | ⬜ | arbitrer notamment l'âge et fixer le dictionnaire de données |
+| 5 | Flux détaillés et pseudonymisation | ⬜ | compléter les échanges ; principe EFS déjà fixé |
 | 6 | Échantillons biologiques / CRB | ⬜ | cadre de conservation et aliquotage |
 | 7 | Infrastructure, sécurité et hébergement | ⬜ | architecture de production |
 | 8 | Gouvernance, accès et publication | ⬜ | DAC et niveaux d'accès |
@@ -100,22 +100,30 @@ Ce document n'est pas le dossier CNIL définitif.
 
 # 5. Phase 1 — Circuit recrutement / EFS / CRB
 
-**Statut : 🟦 Circuit décrit — validation institutionnelle restante**
+**Statut : ✅ Circuit fonctionnel stabilisé**
 
 **Livrable dédié :** `CNIL_01_CIRCUIT_EFS_PRELEVEMENT.md`
 
-## 5.1 Circuit actuellement décrit
+## 5.1 Circuit retenu
 
 1. Le projet est expliqué au donneur **lors de l'entretien avec le médecin de l'EFS**.
 2. Le participant donne un **accord écrit signé après explication du projet**.
-3. Aucun tube supplémentaire n'est actuellement prévu spécifiquement pour Génome Réunion.
+3. Aucun tube supplémentaire n'est prévu spécifiquement pour Génome Réunion dans le circuit retenu.
 4. Le matériel utilisé est un **reliquat de tube EDTA** disponible à l'EFS.
-5. Le reliquat est **pseudonymisé avant transfert**.
-6. L'EFS transfère le prélèvement pseudonymisé au **CRB du CHU de La Réunion**.
-7. Le CRB enregistre et trace le prélèvement.
-8. Le prélèvement est dirigé vers un poste d'extraction.
-9. L'ADN obtenu est conservé en banque par le CRB.
-10. Le CRB réalise un **aliquot d'ADN** pour les analyses autorisées de l'équipe de recherche.
+5. L'**EFS génère le code pseudonyme**.
+6. L'**EFS conserve et gère la table de correspondance identité ↔ code**.
+7. Le CRB ne reçoit pas l'identité directe du participant.
+8. L'EFS transmet au CRB :
+   - le tube EDTA reliquat identifié par son code ;
+   - le site / lieu de prélèvement EFS ;
+   - éventuellement l'âge, uniquement si cette donnée est finalement retenue comme nécessaire.
+9. Aucune autre information personnelle n'est nécessaire à ce stade.
+10. Le CRB enregistre et trace le prélèvement.
+11. Le prélèvement est dirigé vers un poste d'extraction.
+12. L'ADN obtenu est conservé en banque par le CRB.
+13. Le CRB réalise un **aliquot d'ADN** pour les analyses autorisées de l'équipe de recherche.
+
+> **Attention :** le site / lieu de prélèvement EFS ne doit pas être confondu avec la commune ou le lieu de résidence du participant.
 
 ## 5.2 Points résolus
 
@@ -123,42 +131,46 @@ Ce document n'est pas le dossier CNIL définitif.
 - [x] principe d'information préalable ;
 - [x] accord écrit signé ;
 - [x] utilisation d'un reliquat de tube EDTA ;
-- [x] absence de tube supplémentaire dans le circuit actuellement prévu ;
-- [x] pseudonymisation avant transfert ;
+- [x] absence de tube supplémentaire dans le circuit retenu ;
+- [x] EFS générateur du code pseudonyme ;
+- [x] EFS gestionnaire de la table identité ↔ code ;
+- [x] absence de transmission de l'identité directe au CRB ;
+- [x] transmission minimale : code + tube + site de prélèvement ;
+- [x] âge laissé comme variable optionnelle à arbitrer ;
 - [x] transfert EFS → CRB ;
 - [x] enregistrement CRB ;
 - [x] extraction ADN ;
 - [x] conservation de l'ADN en banque ;
 - [x] aliquot destiné à l'équipe de recherche.
 
-## 5.3 Points restant à confirmer
+## 5.3 Éléments déplacés vers les phases suivantes
 
-- [ ] qui attribue le premier identifiant pseudonyme ;
-- [ ] où se trouve la table de correspondance identité ↔ code ;
-- [ ] le CHU peut-il réidentifier ou seul l'EFS le peut-il ;
-- [ ] quelles données non biologiques accompagnent le prélèvement ;
-- [ ] moment exact de la signature par rapport au don ;
-- [ ] conservation temporaire du tube avant transfert ;
-- [ ] transport EFS → CRB : conditionnement, température, traçabilité ;
-- [ ] convention EFS–CHU ;
-- [ ] validation du cadre CRB pour ce stockage ;
-- [ ] règles de retrait / destruction ;
-- [ ] validation formelle du circuit par EFS / DRCI / DPO.
+Ils ne bloquent plus la Phase 1 :
+
+- [ ] transport EFS → CRB : Phase 5 / Phase 6 ;
+- [ ] convention EFS–CHU : Phase 3 ;
+- [ ] responsabilités juridiques EFS / CHU : Phase 3 ;
+- [ ] cadre réglementaire et qualité du CRB : Phase 6 ;
+- [ ] règles de conservation / destruction / retrait : Phase 6 et Phase 9 ;
+- [ ] contenu réglementaire de l'information et de l'accord écrit : Phase 9 ;
+- [ ] qualification RIPH / non-RIPH et cadre CNIL : Phase 2.
 
 ## 5.4 Critère de sortie
 
-Le circuit opérationnel est suffisamment décrit pour **commencer la Phase 2**, mais la Phase 1 ne sera marquée ✅ qu'après validation institutionnelle des points ci-dessus.
+**Critère atteint.** Le circuit matériel et informationnel initial est suffisamment décrit pour engager la qualification réglementaire.
 
 ---
 
 # 6. Phase 2 — Qualification RIPH / non-RIPH et cadre CNIL
 
-**Statut : 🟨 Prochaine phase active**
+**Statut : 🟨 Phase active**
 
 ## Objectifs
 
 - [ ] qualifier la cohorte principale au regard du Code de la santé publique ;
 - [ ] analyser spécifiquement l'utilisation d'un reliquat de tube EDTA obtenu dans le cadre du don ;
+- [ ] prendre en compte que l'accord écrit est recueilli avant utilisation du reliquat ;
+- [ ] prendre en compte que l'EFS conserve l'identité et la table de correspondance ;
 - [ ] déterminer si le circuit relève d'une RIPH ou d'une recherche non-RIPH ;
 - [ ] déterminer les conséquences sur la saisine éventuelle d'un CPP ;
 - [ ] analyser MR-001 ;
@@ -210,6 +222,10 @@ Pouvoir rédiger une phrase institutionnellement validable décrivant la qualifi
 - [ ] rôle RGPD ;
 - [ ] convention / contrat nécessaire.
 
+### Point déjà fixé
+
+- [x] l'EFS génère le code pseudonyme et conserve la table de correspondance identité ↔ code.
+
 ### Livrable
 
 - [ ] `CNIL_03_ACTEURS_RESPONSABILITES.md`
@@ -223,10 +239,11 @@ Pouvoir rédiger une phrase institutionnellement validable décrivant la qualifi
 
 ### Cohorte principale
 
-- [ ] identifiant participant ;
+- [x] code pseudonyme ;
+- [x] site / lieu de prélèvement EFS transmis au CRB ;
+- [ ] âge : **à arbitrer selon nécessité scientifique et réglementaire** ;
 - [ ] sexe ;
-- [ ] âge ou justification de son absence ;
-- [ ] commune / secteur ;
+- [ ] commune / secteur de résidence si réellement nécessaire ;
 - [ ] ascendance déclarée ;
 - [ ] données SNP ;
 - [ ] PCA / ADMIXTURE ;
@@ -235,6 +252,10 @@ Pouvoir rédiger une phrase institutionnellement validable décrivant la qualifi
 - [ ] données de sélection S_div ;
 - [ ] WGS des 350 ;
 - [ ] phasage / imputation / LAI.
+
+### Règle de minimisation déjà retenue
+
+À l'étape EFS → CRB, aucune donnée personnelle supplémentaire n'est transmise en dehors du **code**, du **site de prélèvement**, et éventuellement de l'**âge** si sa nécessité est démontrée.
 
 ### Volet familles
 
@@ -268,7 +289,7 @@ Documenter selon : **source → donnée → transformation → stockage → util
 ### Flux principaux
 
 - [ ] participant → EFS ;
-- [ ] EFS → CRB ;
+- [x] EFS → CRB : code + tube EDTA reliquat + site de prélèvement (+ âge si retenu) ;
 - [ ] CRB → extraction ;
 - [ ] CRB → équipe de recherche ;
 - [ ] laboratoire → génotypage ;
@@ -282,10 +303,11 @@ Documenter selon : **source → donnée → transformation → stockage → util
 
 ### Pseudonymisation
 
-- [ ] générateur du code ;
-- [ ] format ;
-- [ ] table de correspondance ;
-- [ ] droits d'accès ;
+- [x] générateur du code : **EFS** ;
+- [ ] format du code ;
+- [x] table de correspondance : **gérée et conservée par l'EFS** ;
+- [ ] droits d'accès internes EFS à la table ;
+- [x] absence d'identité directe transmise au CRB dans le circuit retenu ;
 - [ ] absence d'identifiants directs dans les fichiers génomiques ;
 - [ ] vérification des métadonnées exportées.
 
@@ -380,13 +402,13 @@ Documenter selon : **source → donnée → transformation → stockage → util
 - [ ] droits d'accès / rectification / limitation / opposition selon cadre ;
 - [ ] retrait ;
 - [ ] conséquences sur les analyses déjà agrégées ;
-- [ ] durées : identité / consentement / SNP / FASTQ / BAM-CRAM / VCF / dérivés / logs / échantillons.
+- [ ] durées : identité / accord / SNP / FASTQ / BAM-CRAM / VCF / dérivés / logs / échantillons.
 
 ### Livrable
 
 - [ ] `CNIL_09_DROITS_CONSERVATION.md`
 
-> La notice et le document de consentement définitifs ne sont rédigés qu'après stabilisation de cette phase.
+> La notice et le document d'accord / consentement définitifs ne sont rédigés qu'après stabilisation de cette phase.
 
 ---
 
@@ -442,7 +464,7 @@ Traiter au minimum :
 - [ ] AIPD ;
 - [ ] registre ;
 - [ ] notice ;
-- [ ] consentement si requis ;
+- [ ] consentement / accord si requis ;
 - [ ] procédures et chartes.
 
 ## Phase 12 — Validation institutionnelle
@@ -460,7 +482,7 @@ Traiter au minimum :
 
 ## Phase 13 — Avant ouverture de la collecte
 
-- [ ] circuit EFS validé ;
+- [ ] circuit EFS validé institutionnellement ;
 - [ ] qualification réglementaire validée ;
 - [ ] documents participant validés ;
 - [ ] CRB prêt ;
@@ -509,18 +531,18 @@ Chaque extension devra être réanalysée séparément :
 | ID | Sujet | Statut | Prochaine action |
 |---|---|---:|---|
 | S01 | Corpus documentaire | ✅ | maintenir les sources |
-| S02 | Circuit EFS / CRB | 🟦 | faire confirmer les points ouverts |
-| S03 | Qualification RIPH | 🟨 | analyser le circuit désormais décrit |
+| S02 | Circuit EFS / CRB | ✅ | phase fonctionnelle close |
+| S03 | Qualification RIPH | 🟨 | analyser le circuit désormais stabilisé |
 | S04 | MR applicable | 🟧 | après première qualification RIPH/non-RIPH |
 | S05 | Responsable de traitement | ⬜ | Phase 3 |
 | S06 | Statut EFS | ⬜ | Phase 3 |
 | S07 | Statut POPgen | ⬜ | Phase 3 |
 | S08 | Volet familles | ⬜ | Phase 2 puis Phase 4 |
-| S09 | Dictionnaire de données | ⬜ | Phase 4 |
-| S10 | Pseudonymisation | ⬜ | Phase 5 |
+| S09 | Dictionnaire de données | ⬜ | Phase 4 ; arbitrer l'âge |
+| S10 | Pseudonymisation | 🟨 | principe EFS fixé ; compléter droits/format en Phase 5 |
 | S11 | Infrastructure de production | ⬜ | Phase 7 |
 | S12 | HDS | ⬜ | Phase 7 |
-| S13 | CRB | 🟨 | circuit connu, cadre à valider |
+| S13 | CRB | 🟨 | circuit connu, cadre à formaliser |
 | S14 | Durées de conservation | ⬜ | Phase 9 |
 | S15 | Gouvernance DAC | ⬜ | Phase 8 |
 | S16 | AIPD | ⬜ | Phase 10 |
@@ -535,11 +557,11 @@ Chaque extension devra être réanalysée séparément :
 
 ## Phase active : **Phase 2 — qualification réglementaire**
 
-Le circuit matériel est maintenant suffisamment décrit pour commencer l'analyse réglementaire suivante :
+Le circuit matériel et le périmètre minimal de transmission sont maintenant stabilisés :
 
-> **accord écrit lors de l'entretien EFS → utilisation d'un reliquat de tube EDTA → pseudonymisation → transfert au CRB → extraction → banque ADN → aliquot recherche**
+> **accord écrit lors de l'entretien EFS → reliquat de tube EDTA → code généré par l'EFS → table identité/code conservée à l'EFS → transmission au CRB du code + tube + site de prélèvement (+ âge uniquement si retenu) → extraction → banque ADN → aliquot recherche.**
 
-L'objectif de la prochaine étape sera de déterminer, sans présumer du résultat, si ce montage relève d'une **RIPH ou d'une recherche non-RIPH**, puis d'en déduire le cadre CNIL à tester.
+L'objectif de la prochaine étape est de déterminer, sans présumer du résultat, si ce montage relève d'une **RIPH ou d'une recherche non-RIPH**, puis d'en déduire le cadre CNIL à tester.
 
 ---
 
@@ -550,10 +572,13 @@ L'objectif de la prochaine étape sera de déterminer, sans présumer du résult
 | 2026-09-14 | Le dossier sera développé section par section. | ✅ | méthode générale |
 | 2026-09-14 | La phase initiale est séparée des extensions cliniques et IA. | 🟦 | périmètre initial |
 | 2026-09-14 | Le recrutement EFS est traité avant la qualification RIPH / MR. | ✅ | ordre de travail |
-| 2026-09-14 | Le projet est expliqué lors de l'entretien avec le médecin EFS et l'accord du participant est signé après explication. | 🟦 | circuit EFS |
-| 2026-09-14 | Le matériel biologique prévu est un reliquat de tube EDTA ; aucun tube supplémentaire n'est actuellement prévu pour le projet. | 🟦 | élément majeur de qualification réglementaire |
-| 2026-09-14 | Le reliquat est pseudonymisé avant transfert EFS → CRB. | 🟦 | architecture de pseudonymisation à préciser |
-| 2026-09-14 | Le CRB enregistre le prélèvement, extrait l'ADN, conserve l'ADN en banque et prépare un aliquot pour l'équipe de recherche. | 🟦 | gouvernance CRB à formaliser |
+| 2026-09-14 | Le projet est expliqué lors de l'entretien avec le médecin EFS et l'accord du participant est signé après explication. | ✅ | circuit EFS |
+| 2026-09-14 | Le matériel biologique prévu est un reliquat de tube EDTA ; aucun tube supplémentaire n'est prévu pour le projet. | ✅ | élément majeur de qualification réglementaire |
+| 2026-09-14 | L'EFS génère le code pseudonyme et conserve la table de correspondance identité ↔ code. | ✅ | architecture de pseudonymisation initiale |
+| 2026-09-14 | Le CRB ne reçoit pas l'identité directe ; la transmission initiale est limitée au code, au tube et au site de prélèvement. | ✅ | minimisation des données |
+| 2026-09-14 | L'âge reste une variable optionnelle et sera retenu seulement si sa nécessité est démontrée. | 🟨 À arbitrer Phase 4 | minimisation |
+| 2026-09-14 | Le site de prélèvement EFS est distingué du lieu de résidence du participant. | ✅ | dictionnaire de données |
+| 2026-09-14 | Le CRB enregistre le prélèvement, extrait l'ADN, conserve l'ADN en banque et prépare un aliquot pour l'équipe de recherche. | ✅ | circuit CRB |
 | 2026-09-14 | Les données génomiques individuelles restent considérées comme données personnelles pseudonymisées tant qu'une anonymisation réelle n'est pas démontrée. | 🟦 | vocabulaire / sécurité |
 | 2026-09-14 | L'AIPD sera réalisée après stabilisation des flux, acteurs et mesures de sécurité. | ✅ | ordre de travail |
 
@@ -565,6 +590,7 @@ L'objectif de la prochaine étape sera de déterminer, sans présumer du résult
 |---|---|---|
 | 0.1 | 2026-09-14 | Création du plan maître |
 | 0.2 | 2026-09-14 | Intégration du circuit EFS → CRB → extraction → banque ADN → aliquot ; Phase 2 ouverte |
+| 0.3 | 2026-09-14 | Phase 1 clôturée : code et table gérés par l'EFS ; transmission minimale au CRB ; âge laissé à arbitrer |
 
 ---
 
