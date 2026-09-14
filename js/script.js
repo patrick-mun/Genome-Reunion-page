@@ -22,6 +22,20 @@ const TAG_CLASS = {
 // à chaque évolution notable du site.
 const OFFICIAL_NEWS = [
   {
+    date: '14/09/2026',
+    category: 'Nouveau document',
+    title: 'Personas — ARS La Réunion',
+    desc: "Réalisation des personas institutionnels et fonctionnels préparant les échanges avec l’ARS : attentes, critères de décision, points de vigilance, messages clés et questions probables.",
+    link: { url: 'presentation-ars/personas.html', label: 'Voir les personas →' }
+  },
+  {
+    date: '14/09/2026',
+    category: 'Nouveau document',
+    title: 'Présentation pour l’ARS La Réunion',
+    desc: "Finalisation du support de présentation destiné à l’ARS : équité de pertinence, référentiel populationnel local, démonstrateurs diagnostic et pharmacogénétique, gouvernance et demande institutionnelle.",
+    link: { url: 'presentation-ars/index.html', label: 'Voir la présentation →' }
+  },
+  {
     date: '02/09/2026',
     category: 'Nouveau document',
     title: 'Fiche persona — Huguette Bello',
