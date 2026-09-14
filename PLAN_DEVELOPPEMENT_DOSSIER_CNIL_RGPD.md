@@ -3,110 +3,89 @@
 **Projet :** Génome Réunion  
 **Porteur scientifique :** CHU de La Réunion — Service de génétique moléculaire  
 **Document :** plan maître de développement et de suivi réglementaire  
-**Version initiale :** 14 septembre 2026  
-**Statut :** document de travail évolutif  
+**Version :** 0.2  
+**Date de mise à jour :** 14 septembre 2026  
+**Statut :** document de travail évolutif
 
 ---
 
-## 1. Objectif du document
+## 1. Objectif
 
-Ce fichier sert de **feuille de route unique** pour construire progressivement le dossier CNIL / RGPD de Génome Réunion.
+Ce fichier est la **feuille de route unique** de construction du dossier CNIL / RGPD de Génome Réunion.
 
-Il doit permettre de :
+Il sert à :
 
-- savoir **par quoi commencer** ;
-- éviter de rédiger trop tôt des documents qui dépendraient de décisions non prises ;
+- ordonner les travaux ;
+- éviter de rédiger trop tôt des documents dépendant de décisions non prises ;
 - suivre les arbitrages DPO / DRCI / DSIO / CRB / EFS ;
-- tracer les décisions et les points encore ouverts ;
-- identifier les documents à produire à chaque étape ;
-- disposer d'une checklist avant l'ouverture de la collecte ;
-- disposer d'une checklist avant l'ouverture de la ressource aux chercheurs.
+- tracer les décisions ;
+- identifier les livrables de chaque phase ;
+- préparer l'ouverture de la collecte puis l'accès scientifique à la ressource.
 
-Ce document n'est **pas** le dossier CNIL lui-même. Il organise sa construction.
-
----
-
-## 2. Principes de travail
-
-### 2.1 Règles générales
-
-1. Ne jamais considérer une méthodologie de référence CNIL comme applicable avant démonstration.
-2. Distinguer systématiquement :
-   - **décidé** ;
-   - **envisagé** ;
-   - **à confirmer** ;
-   - **à arbitrer** ;
-   - **validé DPO/DRCI**.
-3. Ne jamais qualifier une donnée génomique individuelle d'« anonyme » sans démonstration.
-4. Séparer autant que possible :
-   - la phase populationnelle initiale ;
-   - le volet familles ;
-   - les extensions cliniques ;
-   - la pharmacogénétique clinique ;
-   - l'IA ;
-   - les extensions à d'autres cohortes ou populations.
-5. Utiliser en priorité les sources officielles :
-   - CNIL ;
-   - EUR-Lex / RGPD ;
-   - Légifrance / Code de la santé publique ;
-   - ministère de la Santé ;
-   - méthodologies de référence CNIL en vigueur.
-6. Toute décision importante doit être enregistrée dans le **journal des décisions** en fin de document.
-
-### 2.2 Statuts utilisés
-
-| Symbole | Statut | Signification |
-|---|---|---|
-| ⬜ | À faire | étape non commencée |
-| 🟨 | En cours | travail commencé, non stabilisé |
-| 🟧 | Bloqué | décision externe ou information manquante |
-| 🟦 | À valider | proposition préparée, validation institutionnelle requise |
-| ✅ | Validé | décision formellement stabilisée |
-| ⛔ | Hors phase initiale | volontairement exclu du traitement initial |
+Ce document n'est pas le dossier CNIL définitif.
 
 ---
 
-# 3. Vue d'ensemble du développement
+## 2. Règles de travail
 
-| Phase | Objet | Statut | Dépendance principale |
+1. Ne jamais présumer qu'une méthodologie de référence CNIL s'applique.
+2. Distinguer systématiquement : **décidé / envisagé / à confirmer / à arbitrer / validé**.
+3. Ne jamais qualifier un génome individuel d'« anonyme » sans démonstration.
+4. Employer **pseudonymisé** et non « pseudo-anonymisé » lorsqu'un lien avec l'identité peut être restauré par un acteur autorisé.
+5. Séparer la phase populationnelle initiale des extensions cliniques, pharmacogénétiques, IA et nouvelles cohortes.
+6. Toute décision structurante doit être enregistrée dans le journal des décisions.
+
+### Statuts
+
+| Symbole | Statut |
+|---|---|
+| ⬜ | À faire |
+| 🟨 | En cours |
+| 🟧 | Bloqué |
+| 🟦 | Décrit / à valider institutionnellement |
+| ✅ | Validé |
+| ⛔ | Hors phase initiale |
+
+---
+
+# 3. Vue d'ensemble
+
+| Phase | Objet | Statut | Prochaine action |
 |---|---|---:|---|
-| 0 | Cadrage et corpus documentaire | ✅ | — |
-| 1 | Qualification réglementaire du recrutement et du prélèvement EFS | 🟨 | EFS + DRCI |
-| 2 | Qualification RIPH / non-RIPH et cadre CNIL potentiel | ⬜ | Phase 1 |
-| 3 | Acteurs, responsabilités et contrats | ⬜ | Phases 1–2 |
-| 4 | Périmètre exact des données et minimisation | ⬜ | Phases 1–2 |
-| 5 | Cartographie détaillée des flux et pseudonymisation | ⬜ | Phases 3–4 |
-| 6 | Échantillons biologiques et CRB | ⬜ | Phases 1–4 |
-| 7 | Architecture informatique, sécurité et hébergement | ⬜ | Phase 5 |
-| 8 | Gouvernance, accès scientifique et publication | ⬜ | Phases 4–7 |
-| 9 | Information, droits et durées de conservation | ⬜ | Phases 2–8 |
-| 10 | AIPD / DPIA | ⬜ | Phases 2–9 |
-| 11 | Rédaction du dossier réglementaire complet | ⬜ | Phases 1–10 |
-| 12 | Validation institutionnelle et formalités | ⬜ | Phase 11 |
-| 13 | Checklist avant ouverture de la collecte | ⬜ | Phase 12 |
-| 14 | Ouverture contrôlée de la ressource aux chercheurs | ⬜ | collecte + gouvernance |
-| 15 | Extensions futures : clinique, pharmacogénétique, IA, nouvelles cohortes | ⛔ | nouvelle analyse dédiée |
+| 0 | Cadrage et corpus documentaire | ✅ | maintenir les sources |
+| 1 | Circuit recrutement / EFS / CRB | 🟦 | confirmer les points institutionnels restants |
+| 2 | Qualification RIPH / non-RIPH et cadre CNIL | 🟨 | prochaine phase de travail |
+| 3 | Acteurs, responsabilités et conventions | ⬜ | après première qualification Phase 2 |
+| 4 | Données et minimisation | ⬜ | fixer le dictionnaire de données |
+| 5 | Flux détaillés et pseudonymisation | ⬜ | cartographier tous les échanges |
+| 6 | Échantillons biologiques / CRB | ⬜ | cadre de conservation et aliquotage |
+| 7 | Infrastructure, sécurité et hébergement | ⬜ | architecture de production |
+| 8 | Gouvernance, accès et publication | ⬜ | DAC et niveaux d'accès |
+| 9 | Information, droits et conservation | ⬜ | après stabilisation du traitement |
+| 10 | AIPD / DPIA | ⬜ | après flux + sécurité |
+| 11 | Dossier réglementaire complet | ⬜ | assembler les éléments validés |
+| 12 | Validation institutionnelle et formalités | ⬜ | DRCI / DPO / CPP / CNIL selon cadre |
+| 13 | Checklist avant collecte | ⬜ | validation finale |
+| 14 | Ouverture contrôlée aux chercheurs | ⬜ | après gouvernance |
+| 15 | Extensions futures | ⛔ | mini-projets réglementaires séparés |
 
 ---
 
 # 4. Phase 0 — Cadrage et corpus documentaire
 
-**Objectif :** définir le périmètre de travail et identifier les documents de référence du projet.
+**Statut : ✅**
 
-**Statut : ✅ Validé comme base de travail**
+### Réalisé
 
-### Travaux réalisés
+- [x] périmètre général du projet identifié ;
+- [x] dépôt GitHub principal identifié ;
+- [x] synthèse scientifique identifiée ;
+- [x] méthodologies de sélection / validation identifiées ;
+- [x] infrastructure logicielle identifiée ;
+- [x] première cartographie réglementaire réalisée ;
+- [x] circuit EFS identifié comme premier verrou à traiter.
 
-- [x] Définir les objectifs généraux du dossier CNIL / RGPD.
-- [x] Définir la règle de travail section par section.
-- [x] Identifier le dépôt principal : `patrick-mun/Genome-Reunion-page`.
-- [x] Identifier la synthèse scientifique comme source structurante.
-- [x] Identifier la synthèse d'infrastructure logicielle.
-- [x] Identifier les méthodologies de sélection / validation.
-- [x] Réaliser une première cartographie réglementaire exploratoire.
-- [x] Identifier le recrutement EFS comme premier verrou réglementaire.
-
-### Sources projet principales déjà identifiées
+### Sources projet structurantes
 
 - `README.md`
 - `template/Genome_Reunion_synthese_scientifique (14) (6).html`
@@ -115,260 +94,223 @@ Ce document n'est **pas** le dossier CNIL lui-même. Il organise sa construction
 - `template/GENOME_REUNION_justification_choix_Sdiv.html`
 - `template/Genome_Reunion_synthese_infrastructure_v5_4.html`
 - `template/architecture_pipeline.html`
-- documents EFS à intégrer lorsqu'ils seront disponibles ;
-- conventions et documents institutionnels à intégrer lorsqu'ils seront disponibles.
-
-### Critère de sortie
-
-Le projet, ses grandes composantes et ses sources sont suffisamment définis pour commencer la qualification du recrutement et du prélèvement.
+- documents EFS / CRB / conventions à ajouter lorsqu'ils seront disponibles.
 
 ---
 
-# 5. Phase 1 — Qualification du recrutement et du prélèvement EFS
+# 5. Phase 1 — Circuit recrutement / EFS / CRB
 
-**Objectif :** décrire factuellement ce qui se passe depuis le contact avec le donneur jusqu'à l'arrivée de l'ADN ou de l'échantillon au CHU.
+**Statut : 🟦 Circuit décrit — validation institutionnelle restante**
 
-**Statut : 🟨 En cours — priorité immédiate**
+**Livrable dédié :** `CNIL_01_CIRCUIT_EFS_PRELEVEMENT.md`
 
-## 5.1 Questions à résoudre
+## 5.1 Circuit actuellement décrit
 
-- [ ] Qui présente Génome Réunion au donneur ?
-- [ ] Qui recueille son accord ?
-- [ ] À quel moment du parcours EFS ?
-- [ ] Le participant est-il inclus avant, pendant ou après le don ?
-- [ ] Un tube supplémentaire est-il prélevé spécifiquement pour Génome Réunion ?
-- [ ] Utilise-t-on une fraction / un reliquat du prélèvement EFS existant ?
-- [ ] Le prélèvement Génome Réunion peut-il être dissocié du don de sang ?
-- [ ] Qui réalise matériellement le prélèvement ?
-- [ ] Quel établissement est responsable du prélèvement biologique ?
-- [ ] Qui attribue le premier identifiant projet ?
-- [ ] Quelles données administratives restent à l'EFS ?
-- [ ] Quelles données sont transmises au CHU ?
-- [ ] L'EFS conserve-t-il une table d'identification ?
-- [ ] Le CHU possède-t-il une seconde table de correspondance ?
-- [ ] Où est stocké le matériel biologique avant transfert ?
-- [ ] Quelle convention EFS–CHU doit encadrer ce circuit ?
+1. Le projet est expliqué au donneur **lors de l'entretien avec le médecin de l'EFS**.
+2. Le participant donne un **accord écrit signé après explication du projet**.
+3. Aucun tube supplémentaire n'est actuellement prévu spécifiquement pour Génome Réunion.
+4. Le matériel utilisé est un **reliquat de tube EDTA** disponible à l'EFS.
+5. Le reliquat est **pseudonymisé avant transfert**.
+6. L'EFS transfère le prélèvement pseudonymisé au **CRB du CHU de La Réunion**.
+7. Le CRB enregistre et trace le prélèvement.
+8. Le prélèvement est dirigé vers un poste d'extraction.
+9. L'ADN obtenu est conservé en banque par le CRB.
+10. Le CRB réalise un **aliquot d'ADN** pour les analyses autorisées de l'équipe de recherche.
 
-## 5.2 Livrables
+## 5.2 Points résolus
 
-- [ ] `CNIL_01_CIRCUIT_EFS_PRELEVEMENT.md`
-- [ ] schéma simple : **participant → EFS → prélèvement → codage → transport → CHU/CRB → extraction ADN**
-- [ ] tableau des données détenues par l'EFS et par le CHU à chaque étape.
-- [ ] liste des points à valider formellement avec EFS / DRCI.
+- [x] acteur présentant le projet : médecin EFS ;
+- [x] principe d'information préalable ;
+- [x] accord écrit signé ;
+- [x] utilisation d'un reliquat de tube EDTA ;
+- [x] absence de tube supplémentaire dans le circuit actuellement prévu ;
+- [x] pseudonymisation avant transfert ;
+- [x] transfert EFS → CRB ;
+- [x] enregistrement CRB ;
+- [x] extraction ADN ;
+- [x] conservation de l'ADN en banque ;
+- [x] aliquot destiné à l'équipe de recherche.
 
-## 5.3 Critère de sortie
+## 5.3 Points restant à confirmer
 
-La DRCI doit pouvoir comprendre exactement **quel acte est réalisé pour la recherche** et à quel moment.
+- [ ] qui attribue le premier identifiant pseudonyme ;
+- [ ] où se trouve la table de correspondance identité ↔ code ;
+- [ ] le CHU peut-il réidentifier ou seul l'EFS le peut-il ;
+- [ ] quelles données non biologiques accompagnent le prélèvement ;
+- [ ] moment exact de la signature par rapport au don ;
+- [ ] conservation temporaire du tube avant transfert ;
+- [ ] transport EFS → CRB : conditionnement, température, traçabilité ;
+- [ ] convention EFS–CHU ;
+- [ ] validation du cadre CRB pour ce stockage ;
+- [ ] règles de retrait / destruction ;
+- [ ] validation formelle du circuit par EFS / DRCI / DPO.
 
-> Tant que cette phase n'est pas stabilisée, ne pas figer RIPH 2 / RIPH 3 / non-RIPH ni MR-001 / MR-003.
+## 5.4 Critère de sortie
+
+Le circuit opérationnel est suffisamment décrit pour **commencer la Phase 2**, mais la Phase 1 ne sera marquée ✅ qu'après validation institutionnelle des points ci-dessus.
 
 ---
 
 # 6. Phase 2 — Qualification RIPH / non-RIPH et cadre CNIL
 
-**Objectif :** déterminer le chemin réglementaire applicable au traitement initial.
+**Statut : 🟨 Prochaine phase active**
 
-**Statut : ⬜ À faire après Phase 1**
+## Objectifs
 
-## 6.1 Analyse à réaliser
+- [ ] qualifier la cohorte principale au regard du Code de la santé publique ;
+- [ ] analyser spécifiquement l'utilisation d'un reliquat de tube EDTA obtenu dans le cadre du don ;
+- [ ] déterminer si le circuit relève d'une RIPH ou d'une recherche non-RIPH ;
+- [ ] déterminer les conséquences sur la saisine éventuelle d'un CPP ;
+- [ ] analyser MR-001 ;
+- [ ] analyser MR-003 ;
+- [ ] réserver MR-004 aux situations qui relèvent réellement de réutilisations non-RIPH ;
+- [ ] identifier le cas échéant une nécessité d'autorisation CNIL spécifique ;
+- [ ] distinguer consentement à la recherche, accord sur l'utilisation du reliquat et consentement requis pour l'examen des caractéristiques génétiques ;
+- [ ] qualifier séparément le volet 100 familles si nécessaire.
 
-- [ ] qualifier la cohorte principale 2 500 participants ;
-- [ ] qualifier le prélèvement biologique ;
-- [ ] qualifier le volet 350 WGS ;
-- [ ] qualifier séparément le volet 100 familles ;
-- [ ] déterminer si les familles peuvent être intégrées au même protocole ;
-- [ ] comparer les conditions MR-001 ;
-- [ ] comparer les conditions MR-003 ;
-- [ ] évaluer MR-004 uniquement pour les éventuelles réutilisations secondaires ;
-- [ ] identifier les cas nécessitant une autorisation CNIL spécifique ;
-- [ ] déterminer la nécessité et le type de saisine CPP ;
-- [ ] documenter la base juridique RGPD ;
-- [ ] documenter la condition permettant le traitement des données génétiques ;
-- [ ] distinguer consentement à la recherche et consentement à l'examen génétique.
-
-## 6.2 Livrables
+### Livrable
 
 - [ ] `CNIL_02_QUALIFICATION_REGLEMENTAIRE.md`
-- [ ] arbre de décision RIPH / non-RIPH.
-- [ ] tableau comparatif MR-001 / MR-003 / MR-004 / autorisation spécifique.
-- [ ] liste des obligations résultant du cadre retenu.
+- [ ] arbre de décision RIPH / non-RIPH ;
+- [ ] tableau MR-001 / MR-003 / MR-004 / autorisation spécifique ;
+- [ ] points soumis à validation DRCI / DPO.
 
-## 6.3 Validation requise
+### Critère de sortie
 
-- [ ] DRCI
-- [ ] DPO
-- [ ] direction juridique si nécessaire
-
-## 6.4 Critère de sortie
-
-Une phrase formelle doit pouvoir être écrite :
-
-> « La phase initiale du projet Génome Réunion est qualifiée comme [...] et le traitement de données relève de [...] sous réserve du respect des conditions suivantes [...]. »
+Pouvoir rédiger une phrase institutionnellement validable décrivant la qualification réglementaire de la phase initiale.
 
 ---
 
-# 7. Phase 3 — Acteurs, responsabilités et contrats
+# 7. Phase 3 — Acteurs, responsabilités et conventions
 
-**Objectif :** déterminer qui fait quoi, pour quelle finalité et sous quelle responsabilité.
+**Statut : ⬜**
 
-**Statut : ⬜ À faire**
+### Acteurs
 
-## 7.1 Acteurs à qualifier
+- [ ] CHU de La Réunion ;
+- [ ] Service de génétique moléculaire ;
+- [ ] DRCI ;
+- [ ] DPO ;
+- [ ] DSIO ;
+- [ ] CRB ;
+- [ ] EFS La Réunion ;
+- [ ] POPgen ;
+- [ ] plateformes de génotypage / séquençage ;
+- [ ] hébergeur éventuel ;
+- [ ] partenaires scientifiques.
 
-- [ ] CHU de La Réunion
-- [ ] Service de génétique moléculaire
-- [ ] DRCI
-- [ ] DPO
-- [ ] DSIO
-- [ ] CRB
-- [ ] EFS La Réunion
-- [ ] POPgen
-- [ ] plateforme de génotypage
-- [ ] plateforme de séquençage
-- [ ] hébergeur éventuel
-- [ ] EPITECH Réunion si accès à des données réelles
-- [ ] partenaires scientifiques
-- [ ] AURAGEN / SeqOIA uniquement pour les extensions futures
+### À déterminer pour chaque acteur
 
-## 7.2 Pour chaque acteur
-
-Documenter :
-
-- [ ] finalité propre ou finalité décidée par le CHU ;
-- [ ] moyens essentiels contrôlés ;
-- [ ] accès aux données ;
-- [ ] nature des données reçues ;
-- [ ] possibilité de réutilisation ;
+- [ ] finalités ;
+- [ ] moyens essentiels ;
+- [ ] données reçues ;
+- [ ] accès ;
+- [ ] réutilisation éventuelle ;
 - [ ] durée de conservation ;
-- [ ] localisation des données ;
-- [ ] rôle possible : responsable, conjoint, sous-traitant, destinataire, partenaire.
+- [ ] rôle RGPD ;
+- [ ] convention / contrat nécessaire.
 
-## 7.3 Livrables
+### Livrable
 
 - [ ] `CNIL_03_ACTEURS_RESPONSABILITES.md`
 - [ ] matrice RACI / RGPD.
-- [ ] liste des contrats et conventions nécessaires.
-- [ ] liste des articles 26 / 28 RGPD potentiellement applicables.
 
 ---
 
-# 8. Phase 4 — Périmètre des données et minimisation
+# 8. Phase 4 — Données et minimisation
 
-**Objectif :** fixer précisément quelles données sont réellement nécessaires à la phase initiale.
+**Statut : ⬜**
 
-**Statut : ⬜ À faire**
+### Cohorte principale
 
-## 8.1 Cohorte principale
-
-Décider et documenter :
-
+- [ ] identifiant participant ;
 - [ ] sexe ;
-- [ ] âge ou absence d'âge ;
-- [ ] commune ;
-- [ ] secteur géographique ;
+- [ ] âge ou justification de son absence ;
+- [ ] commune / secteur ;
 - [ ] ascendance déclarée ;
-- [ ] critères d'inclusion ;
-- [ ] identifiant ;
 - [ ] données SNP ;
-- [ ] PCA ;
-- [ ] ADMIXTURE ;
-- [ ] KING ;
-- [ ] ROH ;
-- [ ] IBD ;
+- [ ] PCA / ADMIXTURE ;
+- [ ] KING / parenté ;
+- [ ] ROH / IBD ;
 - [ ] données de sélection S_div ;
-- [ ] données WGS des 350 ;
-- [ ] données de phasage / imputation / LAI.
+- [ ] WGS des 350 ;
+- [ ] phasage / imputation / LAI.
 
-## 8.2 Familles
+### Volet familles
 
-- [ ] structure familiale minimale nécessaire ;
-- [ ] relations parent-enfant ;
-- [ ] gestion des informations indirectes sur des apparentés ;
-- [ ] gestion des discordances de parenté ;
-- [ ] données non nécessaires à exclure.
+- [ ] structure familiale minimale ;
+- [ ] liens parent-enfant ;
+- [ ] informations indirectes sur les apparentés ;
+- [ ] discordances de parenté ;
+- [ ] données à exclure.
 
-## 8.3 Extensions à exclure du traitement initial
+### Extensions hors phase initiale
 
-- [ ] données cliniques individuelles → ⛔
-- [ ] prescriptions → ⛔
-- [ ] iatrogénie → ⛔
-- [ ] pharmacogénétique clinique → ⛔
-- [ ] protéomique → ⛔
-- [ ] AURAGEN → ⛔
-- [ ] autres populations / DOM-TOM → ⛔
-- [ ] entraînement de modèles IA sur données réelles → ⛔
+- [x] données cliniques individuelles → ⛔
+- [x] prescriptions / iatrogénie → ⛔
+- [x] pharmacogénétique clinique → ⛔
+- [x] protéomique → ⛔
+- [x] AURAGEN / autres cohortes → ⛔
+- [x] entraînement IA sur données réelles → ⛔
 
-## 8.4 Livrables
+### Livrable
 
 - [ ] `CNIL_04_DICTIONNAIRE_DONNEES.md`
-- [ ] dictionnaire complet des variables.
-- [ ] justification de nécessité pour chaque variable.
-- [ ] colonne : « collectée / dérivée / calculée / externe ».
 
 ---
 
-# 9. Phase 5 — Flux de données et pseudonymisation
+# 9. Phase 5 — Flux et pseudonymisation
 
-**Objectif :** savoir où va chaque donnée depuis sa création jusqu'à sa destruction ou son archivage.
+**Statut : ⬜**
 
-**Statut : ⬜ À faire**
+Documenter selon : **source → donnée → transformation → stockage → utilisateur → destination**.
 
-## 9.1 Flux à documenter
+### Flux principaux
 
-Pour chaque flux :
+- [ ] participant → EFS ;
+- [ ] EFS → CRB ;
+- [ ] CRB → extraction ;
+- [ ] CRB → équipe de recherche ;
+- [ ] laboratoire → génotypage ;
+- [ ] CHU → POPgen / WGS ;
+- [ ] WGS → CHU ;
+- [ ] stockage → calcul bioinformatique ;
+- [ ] calcul → PostgreSQL / fichiers ;
+- [ ] ressource → chercheurs internes ;
+- [ ] ressource → DAC → chercheurs externes ;
+- [ ] ressource → diffusion agrégée.
 
-**source → donnée → transformation → stockage → utilisateur → destination**
+### Pseudonymisation
 
-- [ ] EFS → CHU
-- [ ] EFS → CRB
-- [ ] CRB → laboratoire
-- [ ] laboratoire → génotypage
-- [ ] génotypage → CHU
-- [ ] CHU → POPgen / WGS
-- [ ] POPgen → CHU
-- [ ] CHU → stockage
-- [ ] stockage → calcul bioinformatique
-- [ ] calcul → base PostgreSQL / fichiers
-- [ ] base → chercheurs internes
-- [ ] base → DAC
-- [ ] DAC → chercheurs externes
-- [ ] base → publication agrégée
+- [ ] générateur du code ;
+- [ ] format ;
+- [ ] table de correspondance ;
+- [ ] droits d'accès ;
+- [ ] absence d'identifiants directs dans les fichiers génomiques ;
+- [ ] vérification des métadonnées exportées.
 
-## 9.2 Pseudonymisation
-
-- [ ] définir qui crée l'identifiant ;
-- [ ] définir le format de l'identifiant ;
-- [ ] définir où se trouve la table de correspondance ;
-- [ ] interdire la présence d'identifiants directs dans les fichiers génomiques ;
-- [ ] séparer les droits d'accès à la clé et aux données scientifiques ;
-- [ ] définir les procédures de recodage si nécessaire ;
-- [ ] vérifier les métadonnées de fichiers exportés.
-
-## 9.3 Livrables
+### Livrable
 
 - [ ] `CNIL_05_CARTOGRAPHIE_FLUX.md`
-- [ ] schéma général des flux.
-- [ ] schéma de pseudonymisation.
-- [ ] matrice source/destination/données/base juridique.
 
 ---
 
-# 10. Phase 6 — Échantillons biologiques et CRB
+# 10. Phase 6 — Échantillons biologiques / CRB
 
-**Objectif :** traiter séparément la gouvernance du matériel biologique.
+**Statut : ⬜**
 
-**Statut : ⬜ À faire**
-
-- [ ] vérifier le cadre réglementaire du CRB ;
-- [ ] vérifier si Génome Réunion entre dans son périmètre existant ;
-- [ ] définir propriété / responsabilité / garde des échantillons ;
-- [ ] définir conditions d'aliquotage ;
-- [ ] définir conditions de transfert ;
-- [ ] définir durée de conservation ;
-- [ ] définir politique de destruction ;
-- [ ] définir conséquences d'un retrait participant ;
-- [ ] définir réutilisation future autorisée ou non ;
-- [ ] distinguer échantillon, ADN extrait et données génomiques.
+- [ ] cadre réglementaire et qualité du CRB ;
+- [ ] enregistrement du prélèvement ;
+- [ ] conservation du tube avant extraction si applicable ;
+- [ ] extraction ADN ;
+- [ ] conservation de l'ADN en banque ;
+- [ ] aliquotage ;
+- [ ] sortie d'aliquot ;
+- [ ] traçabilité ;
+- [ ] durée de conservation ;
+- [ ] destruction ;
+- [ ] retrait participant ;
+- [ ] réutilisation future.
 
 ### Livrable
 
@@ -376,420 +318,254 @@ Pour chaque flux :
 
 ---
 
-# 11. Phase 7 — Architecture informatique, sécurité et hébergement
+# 11. Phase 7 — Infrastructure, sécurité et hébergement
 
-**Objectif :** transformer l'architecture logicielle en architecture de production conforme aux exigences institutionnelles.
-
-**Statut : ⬜ À faire**
-
-## 11.1 Infrastructure
+**Statut : ⬜**
 
 - [ ] on-premise / cloud / hybride ;
 - [ ] périmètre HDS à déterminer ;
 - [ ] localisation des données ;
-- [ ] environnements développement / test / production séparés ;
-- [ ] interdiction de données réelles dans les environnements non autorisés.
-
-## 11.2 Sécurité
-
-- [ ] chiffrement en transit ;
-- [ ] chiffrement au repos ;
+- [ ] séparation dev / test / production ;
+- [ ] chiffrement transit / repos ;
 - [ ] gestion des clés ;
 - [ ] MFA ;
 - [ ] RBAC ;
-- [ ] journalisation ;
-- [ ] conservation des logs ;
-- [ ] revue périodique des droits ;
-- [ ] suppression des accès au départ d'un utilisateur ;
-- [ ] sauvegardes ;
-- [ ] tests de restauration ;
+- [ ] logs et audit ;
+- [ ] revue des habilitations ;
+- [ ] sauvegardes et restauration ;
 - [ ] segmentation réseau ;
-- [ ] gestion des postes ;
-- [ ] exports ;
-- [ ] supports amovibles ;
+- [ ] exports et supports amovibles ;
 - [ ] transferts sécurisés ;
-- [ ] supervision ;
-- [ ] tests de vulnérabilité ;
-- [ ] procédure d'incident ;
-- [ ] procédure de violation de données.
+- [ ] gestion des incidents et violations.
 
-## 11.3 Livrables
+### Livrable
 
 - [ ] `CNIL_07_SECURITE_INFRASTRUCTURE.md`
-- [ ] schéma d'architecture de production.
-- [ ] matrice des contrôles de sécurité.
-- [ ] politique d'habilitation.
-- [ ] politique de journalisation.
 
 ---
 
-# 12. Phase 8 — Gouvernance, accès scientifique et publication
+# 12. Phase 8 — Gouvernance, accès et publication
 
-**Objectif :** définir les conditions d'utilisation de la ressource après sa constitution.
-
-**Statut : ⬜ À faire**
-
-## 12.1 Gouvernance
+**Statut : ⬜**
 
 - [ ] comité de gouvernance ;
 - [ ] comité scientifique ;
 - [ ] Data Access Committee ;
-- [ ] conflits d'intérêts ;
-- [ ] procédure d'appel / réexamen éventuelle.
+- [ ] données publiques ;
+- [ ] données en accès contrôlé ;
+- [ ] données très restreintes ;
+- [ ] analyses sur site ;
+- [ ] règles d'export ;
+- [ ] variants rares / fondateurs ;
+- [ ] retrait des droits ;
+- [ ] audits.
 
-## 12.2 Niveaux d'accès
-
-### Public
-
-- [ ] méthodes ;
-- [ ] statistiques générales ;
-- [ ] publications ;
-- [ ] fréquences suffisamment agrégées.
-
-### Contrôlé
-
-- [ ] génotypes pseudonymisés ;
-- [ ] WGS individuels ;
-- [ ] métadonnées fines ;
-- [ ] données familiales.
-
-### Très restreint
-
-- [ ] table de correspondance ;
-- [ ] identité ;
-- [ ] éventuelles futures données cliniques.
-
-## 12.3 Publication de variants rares
-
-- [ ] seuils de diffusion ;
-- [ ] risque de ré-identification ;
-- [ ] règles pour variants fondateurs ;
-- [ ] contrôle avant publication.
-
-## 12.4 Livrables
+### Livrable
 
 - [ ] `CNIL_08_GOUVERNANCE_ACCES.md`
-- [ ] charte d'accès.
-- [ ] formulaire de demande scientifique.
-- [ ] modèle de décision DAC.
-- [ ] politique de publication.
 
 ---
 
 # 13. Phase 9 — Information, droits et conservation
 
-**Objectif :** définir ce qui sera expliqué aux participants et comment leurs droits seront exercés.
-
-**Statut : ⬜ À faire après stabilisation des phases précédentes**
-
-## 13.1 Information
+**Statut : ⬜**
 
 - [ ] finalités ;
 - [ ] données génétiques ;
 - [ ] destinataires ;
 - [ ] partage scientifique ;
-- [ ] conservation ;
-- [ ] données familiales ;
 - [ ] résultats collectifs ;
 - [ ] retour individuel ou absence de retour ;
 - [ ] découvertes incidentes ;
-- [ ] usages futurs ;
-- [ ] IA comme extension non automatiquement couverte.
-
-## 13.2 Droits
-
-- [ ] accès ;
-- [ ] rectification ;
-- [ ] limitation ;
-- [ ] opposition si applicable ;
+- [ ] droits d'accès / rectification / limitation / opposition selon cadre ;
 - [ ] retrait ;
-- [ ] conséquences lorsque les données ont déjà été agrégées ;
-- [ ] contact DPO ;
-- [ ] CNIL.
+- [ ] conséquences sur les analyses déjà agrégées ;
+- [ ] durées : identité / consentement / SNP / FASTQ / BAM-CRAM / VCF / dérivés / logs / échantillons.
 
-## 13.3 Conservation
-
-À définir par catégorie :
-
-- [ ] identité ;
-- [ ] table de correspondance ;
-- [ ] consentements / preuves réglementaires ;
-- [ ] SNP ;
-- [ ] FASTQ ;
-- [ ] BAM/CRAM ;
-- [ ] VCF ;
-- [ ] données dérivées ;
-- [ ] fréquences ;
-- [ ] logs ;
-- [ ] échantillons biologiques.
-
-### Livrables
+### Livrable
 
 - [ ] `CNIL_09_DROITS_CONSERVATION.md`
-- [ ] tableau des durées et justifications.
-- [ ] procédure de retrait.
 
-> La notice d'information et le consentement définitifs ne seront rédigés qu'après cette étape.
+> La notice et le document de consentement définitifs ne sont rédigés qu'après stabilisation de cette phase.
 
 ---
 
 # 14. Phase 10 — AIPD / DPIA
 
-**Objectif :** évaluer les risques du traitement stabilisé et les mesures de réduction.
+**Statut : ⬜**
 
-**Statut : ⬜ À faire lorsque les flux et l'architecture sont suffisamment stabilisés**
-
-## 14.1 Risques à traiter au minimum
+Traiter au minimum :
 
 - [ ] unicité du génome ;
 - [ ] ré-identification ;
-- [ ] croisement avec bases généalogiques ;
 - [ ] parenté ;
-- [ ] informations sur les apparentés ;
+- [ ] apparentés ;
 - [ ] ascendance ;
 - [ ] origine géographique ;
-- [ ] stigmatisation de groupes ;
-- [ ] consanguinité ;
-- [ ] parenté inattendue ;
-- [ ] publication de variants rares ;
+- [ ] stigmatisation ;
+- [ ] consanguinité / parenté inattendue ;
+- [ ] variants rares ;
 - [ ] export scientifique ;
-- [ ] accès interne abusif ;
 - [ ] compromission de compte ;
-- [ ] attaque externe ;
-- [ ] perte de support ;
-- [ ] défaut de sauvegarde ;
-- [ ] transfert international ;
+- [ ] attaques externes ;
+- [ ] transferts ;
 - [ ] conservation longue ;
 - [ ] membership inference ;
-- [ ] reconstruction à partir de statistiques agrégées ;
+- [ ] reconstruction à partir de données agrégées ;
 - [ ] futurs usages IA.
 
-## 14.2 Méthode
+### Méthode
 
-Pour chaque risque :
+**menace → événement redouté → probabilité → gravité → mesures → risque résiduel**
 
-**menace → événement redouté → probabilité → gravité → mesures existantes → mesures supplémentaires → risque résiduel**
-
-## 14.3 Livrables
+### Livrable
 
 - [ ] `CNIL_10_AIPD.md`
-- [ ] matrice des risques.
-- [ ] plan de traitement des risques.
-- [ ] liste des risques résiduels à accepter ou réduire.
 
 ---
 
-# 15. Phase 11 — Rédaction du dossier réglementaire complet
+# 15. Phases 11 à 14 — Finalisation et ouverture
 
-**Objectif :** assembler uniquement les éléments déjà validés.
+## Phase 11 — Dossier complet
 
-**Statut : ⬜ À faire**
-
-## Livrables prévus
-
-- [ ] fiche d'identité du traitement ;
+- [ ] fiche traitement ;
 - [ ] résumé exécutif ;
 - [ ] description scientifique ;
-- [ ] finalités ;
-- [ ] base juridique ;
-- [ ] catégories de personnes ;
-- [ ] catégories de données ;
-- [ ] origine des données ;
+- [ ] finalités / bases juridiques ;
+- [ ] personnes / données ;
 - [ ] flux ;
-- [ ] acteurs et responsabilités ;
-- [ ] destinataires ;
-- [ ] sous-traitants ;
-- [ ] transferts ;
+- [ ] acteurs / destinataires / sous-traitants ;
 - [ ] sécurité ;
-- [ ] durées ;
+- [ ] conservation ;
 - [ ] droits ;
 - [ ] gouvernance ;
 - [ ] AIPD ;
-- [ ] registre du traitement ;
-- [ ] notice d'information ;
+- [ ] registre ;
+- [ ] notice ;
 - [ ] consentement si requis ;
-- [ ] charte d'accès ;
-- [ ] procédure d'accès scientifique ;
-- [ ] politique de publication ;
-- [ ] politique variants rares ;
-- [ ] procédure de retrait ;
-- [ ] procédure de violation de données ;
-- [ ] liste des contrats ;
-- [ ] liste des validations DPO/DRCI restantes.
+- [ ] procédures et chartes.
 
----
+## Phase 12 — Validation institutionnelle
 
-# 16. Phase 12 — Validation institutionnelle et formalités
-
-**Statut : ⬜ À faire**
-
-- [ ] validation scientifique ;
-- [ ] validation DRCI ;
-- [ ] validation DPO ;
-- [ ] validation DSIO ;
-- [ ] validation CRB ;
-- [ ] validation EFS ;
-- [ ] validation juridique ;
+- [ ] DRCI ;
+- [ ] DPO ;
+- [ ] DSIO ;
+- [ ] CRB ;
+- [ ] EFS ;
+- [ ] juridique ;
 - [ ] CPP si applicable ;
-- [ ] déclaration de conformité à la MR retenue si applicable ;
+- [ ] déclaration MR si applicable ;
 - [ ] autorisation CNIL si nécessaire ;
-- [ ] contrats article 28 ;
-- [ ] accords de responsabilité conjointe article 26 si nécessaires ;
-- [ ] conventions de transfert / accès ;
-- [ ] intégration au registre du CHU.
+- [ ] conventions et contrats.
 
----
+## Phase 13 — Avant ouverture de la collecte
 
-# 17. Phase 13 — Checklist avant ouverture de la collecte
-
-**Statut : ⬜ À faire**
-
-La collecte ne doit pas être ouverte tant que les éléments nécessaires ne sont pas validés.
-
-- [ ] qualification réglementaire validée ;
-- [ ] promoteur identifié si applicable ;
-- [ ] responsable de traitement identifié ;
-- [ ] formalités CNIL/CPP réalisées ;
-- [ ] information participant validée ;
-- [ ] consentement validé si requis ;
 - [ ] circuit EFS validé ;
-- [ ] convention EFS–CHU signée ;
+- [ ] qualification réglementaire validée ;
+- [ ] documents participant validés ;
 - [ ] CRB prêt ;
 - [ ] pseudonymisation opérationnelle ;
-- [ ] habilitations créées ;
-- [ ] MFA opérationnelle lorsque requise ;
-- [ ] chiffrement opérationnel ;
-- [ ] logs opérationnels ;
-- [ ] sauvegardes testées ;
-- [ ] procédure incident disponible ;
+- [ ] infrastructure sécurisée ;
+- [ ] habilitations ;
+- [ ] sauvegardes ;
 - [ ] AIPD validée ;
 - [ ] personnel formé ;
-- [ ] test à blanc du circuit complet réalisé.
+- [ ] test à blanc du circuit.
 
----
-
-# 18. Phase 14 — Ouverture de la ressource aux chercheurs
-
-**Statut : ⬜ Future**
-
-Avant tout accès externe :
+## Phase 14 — Avant ouverture aux chercheurs
 
 - [ ] DAC constitué ;
-- [ ] charte d'accès validée ;
-- [ ] catégories de données classées ;
-- [ ] règles variants rares validées ;
-- [ ] environnement sécurisé disponible ;
-- [ ] procédure de demande testée ;
-- [ ] contrat utilisateur disponible ;
-- [ ] journalisation des accès active ;
-- [ ] politique d'export active ;
-- [ ] retrait automatique des droits prévu ;
-- [ ] audit périodique planifié.
+- [ ] charte d'accès ;
+- [ ] classification des données ;
+- [ ] environnement sécurisé ;
+- [ ] procédure de demande ;
+- [ ] contrat utilisateur ;
+- [ ] journalisation ;
+- [ ] politique d'export ;
+- [ ] audit périodique.
 
 ---
 
-# 19. Phase 15 — Extensions futures
+# 16. Phase 15 — Extensions futures
 
 **Statut : ⛔ Hors phase initiale**
 
-Chaque extension doit être considérée comme un mini-projet réglementaire et ne doit jamais être supposée couverte automatiquement.
-
-Extensions identifiées :
+Chaque extension devra être réanalysée séparément :
 
 - données cliniques hospitalières ;
-- diagnostic ;
-- maladies rares ;
+- diagnostic / maladies rares ;
 - pharmacogénétique clinique ;
-- prescriptions ;
-- iatrogénie ;
-- données biologiques ;
+- prescriptions / iatrogénie ;
 - protéomique ;
 - AURAGEN / SeqOIA ;
-- autres populations de l'océan Indien ;
-- autres DOM-TOM ;
-- entraînement de modèles IA ;
-- utilisation de modèles commerciaux / API externes.
-
-Pour chaque extension, réexaminer :
-
-- [ ] finalité ;
-- [ ] base juridique ;
-- [ ] information ;
-- [ ] consentement ;
-- [ ] compatibilité avec la MR ;
-- [ ] AIPD ;
-- [ ] destinataires ;
-- [ ] transferts ;
-- [ ] hébergement ;
-- [ ] sécurité ;
-- [ ] comité d'accès.
+- autres populations de l'océan Indien / DOM-TOM ;
+- entraînement ou inférence IA sur données génomiques ;
+- modèles commerciaux et API externes.
 
 ---
 
-# 20. Tableau de suivi courant
+# 17. Tableau de suivi courant
 
-| ID | Sujet | Statut | Responsable / interlocuteur | Prochaine action |
-|---|---|---:|---|---|
-| S01 | Corpus documentaire | ✅ | Projet | maintenir la liste des sources |
-| S02 | Circuit EFS exact | 🟨 | EFS / DRCI | documenter le prélèvement et le codage |
-| S03 | Qualification RIPH | 🟧 | DRCI | attendre S02 |
-| S04 | MR applicable | 🟧 | DPO / DRCI | attendre S02 + S03 |
-| S05 | Responsable de traitement | ⬜ | CHU / DPO | traiter après qualification |
-| S06 | Statut EFS | ⬜ | DPO / juridique | traiter avec flux et convention |
-| S07 | Statut POPgen | ⬜ | DRCI / juridique | préciser autonomie et réutilisation |
-| S08 | Volet 100 familles | ⬜ | DRCI / DPO | déterminer intégration ou sous-volet |
-| S09 | Dictionnaire de données | ⬜ | scientifique + DPO | après périmètre initial |
-| S10 | Architecture de pseudonymisation | ⬜ | DSIO / DPO | après cartographie flux |
-| S11 | Infrastructure de production | ⬜ | DSIO | arbitrer on-prem/cloud/hybride |
-| S12 | HDS | ⬜ | DPO / DSIO / juridique | qualifier selon architecture et origine des données |
-| S13 | CRB | ⬜ | CRB / DRCI | vérifier cadre de conservation |
-| S14 | Durées de conservation | ⬜ | DPO / scientifique | après flux et finalités |
-| S15 | Gouvernance DAC | ⬜ | projet / DRCI | phase 8 |
-| S16 | AIPD | ⬜ | DPO / projet | après stabilisation flux + sécurité |
-| S17 | Notice / consentement | ⬜ | DRCI / DPO | seulement après qualification |
-| S18 | IA | ⛔ | futur | hors traitement initial |
-| S19 | Données cliniques | ⛔ | futur | hors traitement initial |
-| S20 | AURAGEN / autres cohortes | ⛔ | futur | nouvelle analyse dédiée |
-
----
-
-# 21. Prochaine étape recommandée
-
-## Étape active : **Phase 1 — circuit EFS**
-
-Ne pas commencer par l'AIPD, le consentement ou l'architecture cloud.
-
-La prochaine séance de travail doit produire uniquement une description factuelle du parcours :
-
-> **Donneur EFS → information Génome Réunion → inclusion → prélèvement / récupération de matériel biologique → codage → transport → réception CHU/CRB → extraction ADN**
-
-Une fois ce circuit validé, il devient possible de traiter proprement la qualification **RIPH / non-RIPH**.
+| ID | Sujet | Statut | Prochaine action |
+|---|---|---:|---|
+| S01 | Corpus documentaire | ✅ | maintenir les sources |
+| S02 | Circuit EFS / CRB | 🟦 | faire confirmer les points ouverts |
+| S03 | Qualification RIPH | 🟨 | analyser le circuit désormais décrit |
+| S04 | MR applicable | 🟧 | après première qualification RIPH/non-RIPH |
+| S05 | Responsable de traitement | ⬜ | Phase 3 |
+| S06 | Statut EFS | ⬜ | Phase 3 |
+| S07 | Statut POPgen | ⬜ | Phase 3 |
+| S08 | Volet familles | ⬜ | Phase 2 puis Phase 4 |
+| S09 | Dictionnaire de données | ⬜ | Phase 4 |
+| S10 | Pseudonymisation | ⬜ | Phase 5 |
+| S11 | Infrastructure de production | ⬜ | Phase 7 |
+| S12 | HDS | ⬜ | Phase 7 |
+| S13 | CRB | 🟨 | circuit connu, cadre à valider |
+| S14 | Durées de conservation | ⬜ | Phase 9 |
+| S15 | Gouvernance DAC | ⬜ | Phase 8 |
+| S16 | AIPD | ⬜ | Phase 10 |
+| S17 | Notice / consentement final | ⬜ | Phase 9 puis 11 |
+| S18 | IA | ⛔ | extension future |
+| S19 | Données cliniques | ⛔ | extension future |
+| S20 | AURAGEN / autres cohortes | ⛔ | extension future |
 
 ---
 
-# 22. Journal des décisions
+# 18. Prochaine étape
+
+## Phase active : **Phase 2 — qualification réglementaire**
+
+Le circuit matériel est maintenant suffisamment décrit pour commencer l'analyse réglementaire suivante :
+
+> **accord écrit lors de l'entretien EFS → utilisation d'un reliquat de tube EDTA → pseudonymisation → transfert au CRB → extraction → banque ADN → aliquot recherche**
+
+L'objectif de la prochaine étape sera de déterminer, sans présumer du résultat, si ce montage relève d'une **RIPH ou d'une recherche non-RIPH**, puis d'en déduire le cadre CNIL à tester.
+
+---
+
+# 19. Journal des décisions
 
 | Date | Décision / constat | Statut | Impact |
 |---|---|---|---|
-| 2026-09-14 | Le dossier CNIL sera développé section par section et non comme un document massif produit en une fois. | ✅ | méthode générale |
-| 2026-09-14 | La phase initiale doit être distinguée des extensions cliniques et IA. | 🟦 À confirmer institutionnellement | simplifie le périmètre réglementaire initial |
-| 2026-09-14 | Le recrutement / prélèvement EFS constitue le premier verrou à résoudre avant de figer RIPH ou MR. | ✅ comme priorité méthodologique | Phase 1 prioritaire |
-| 2026-09-14 | Les données génomiques individuelles seront traitées comme données personnelles pseudonymisées tant qu'une anonymisation réelle n'est pas démontrée. | 🟦 À valider DPO | vocabulaire et architecture |
-| 2026-09-14 | L'AIPD sera réalisée après stabilisation suffisante des flux, acteurs et mesures de sécurité. | ✅ comme ordre de travail | évite une AIPD prématurée |
+| 2026-09-14 | Le dossier sera développé section par section. | ✅ | méthode générale |
+| 2026-09-14 | La phase initiale est séparée des extensions cliniques et IA. | 🟦 | périmètre initial |
+| 2026-09-14 | Le recrutement EFS est traité avant la qualification RIPH / MR. | ✅ | ordre de travail |
+| 2026-09-14 | Le projet est expliqué lors de l'entretien avec le médecin EFS et l'accord du participant est signé après explication. | 🟦 | circuit EFS |
+| 2026-09-14 | Le matériel biologique prévu est un reliquat de tube EDTA ; aucun tube supplémentaire n'est actuellement prévu pour le projet. | 🟦 | élément majeur de qualification réglementaire |
+| 2026-09-14 | Le reliquat est pseudonymisé avant transfert EFS → CRB. | 🟦 | architecture de pseudonymisation à préciser |
+| 2026-09-14 | Le CRB enregistre le prélèvement, extrait l'ADN, conserve l'ADN en banque et prépare un aliquot pour l'équipe de recherche. | 🟦 | gouvernance CRB à formaliser |
+| 2026-09-14 | Les données génomiques individuelles restent considérées comme données personnelles pseudonymisées tant qu'une anonymisation réelle n'est pas démontrée. | 🟦 | vocabulaire / sécurité |
+| 2026-09-14 | L'AIPD sera réalisée après stabilisation des flux, acteurs et mesures de sécurité. | ✅ | ordre de travail |
 
 ---
 
-# 23. Historique des mises à jour
+# 20. Historique
 
 | Version | Date | Modification |
 |---|---|---|
-| 0.1 | 2026-09-14 | Création du plan maître CNIL / RGPD et du tableau de suivi |
+| 0.1 | 2026-09-14 | Création du plan maître |
+| 0.2 | 2026-09-14 | Intégration du circuit EFS → CRB → extraction → banque ADN → aliquot ; Phase 2 ouverte |
 
 ---
 
-**Règle de maintenance :** après chaque décision importante ou validation institutionnelle, mettre à jour au minimum :
-
-1. le statut de la phase concernée ;
-2. le tableau de suivi courant ;
-3. le journal des décisions ;
-4. l'historique des mises à jour.
+**Règle de maintenance :** après chaque décision importante, mettre à jour le statut de la phase, le tableau de suivi, le journal des décisions et l'historique.
