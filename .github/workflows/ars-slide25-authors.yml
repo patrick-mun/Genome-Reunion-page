@@ -1,0 +1,32 @@
+name: ARS slide 25 authors
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/ars-slide25-authors.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Add authors to slide 25
+        run: python presentation-ars/tools/point25_authors_patch.py
+      - name: Commit changes
+        run: |
+          git config user.name "patrick-mun"
+          git config user.email "78493429+patrick-mun@users.noreply.github.com"
+          git add presentation-ars/index.html
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "Ajoute les auteurs à la slide 25 ARS"
+          git push origin main
