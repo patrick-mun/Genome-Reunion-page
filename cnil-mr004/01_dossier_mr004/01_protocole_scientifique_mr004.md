@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.2 — préremplissage à partir du corpus du dépôt  
+**Version :** 0.3 — intégration de la pharmacogénétique populationnelle  
 **Date :** 15 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point que le corpus ne permet pas encore de considérer comme stabilisé.
@@ -19,7 +19,7 @@
 
 **CHU de La Réunion — Service de génétique moléculaire.**
 
-Le projet vise la constitution d’un référentiel génomique local destiné à mieux représenter la diversité génétique de la population réunionnaise dans les analyses de génétique des populations et, à terme, à améliorer certains processus d’interprétation biomédicale.
+Le projet vise la constitution d’un référentiel génomique local destiné à mieux représenter la diversité génétique de la population réunionnaise dans les analyses de génétique des populations et, à terme, à améliorer certains processus d’interprétation biomédicale, notamment en génétique médicale et en pharmacogénétique.
 
 Le projet ne vise pas à définir un « génome réunionnais » ni une identité génétique de la population. Il vise à représenter un **continuum de diversité génétique**, dans une population historiquement admixée et marquée localement par des effets fondateurs.
 
@@ -75,14 +75,16 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Pseudonymisation | Code généré et table identité ↔ code conservée par l’EFS |
 | Données transmises au CRB | tube codé + site de prélèvement ; âge uniquement si finalement nécessaire |
 | Génotypage | Puce SNP de type Global Diversity Array / technologie équivalente (~1,9 M SNP dans le corpus actuel) |
-| Analyses principales | QC, PCA, ADMIXTURE, KING, ROH, IBD, sélection géo-ancestrale, phasage, imputation, LAI, recalibrage des fréquences |
+| Analyses principales | QC, PCA, ADMIXTURE, KING, ROH, IBD, sélection géo-ancestrale, phasage, imputation, LAI, recalibrage des fréquences, analyses pharmacogénétiques populationnelles |
 | Sélection WGS | 350 individus sélectionnés parmi les 2 500 |
 | WGS | 350 génomes complets, pris en charge dans le schéma actuel par POPgen |
 | Panels externes | 1000G / IGSR + datasets EGA autorisés |
+| Pharmacogénétique populationnelle | Incluse : fréquences de variants pharmacogénétiques et identification de couples gène–médicament d’intérêt collectif |
+| Pharmacogénétique clinique individuelle | Hors traitement initial : prescriptions, réponse au traitement, recommandation ou adaptation individuelle de posologie |
 | Durée globale du projet | 36 mois dans le corpus scientifique / économique |
 | Ressource durable | Séparée du traitement MR-004 initial ; cadre à définir ultérieurement |
 | Volet 100 familles | Scientifiquement prévu, mais **hors périmètre réglementaire initial tant que son circuit n’est pas qualifié** |
-| Données cliniques / IA / pharmacogénétique clinique | Hors traitement initial ; extensions à réévaluer séparément |
+| Données cliniques / IA | Hors traitement initial ; extensions à réévaluer séparément |
 
 ---
 
@@ -90,11 +92,13 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 
 ## 3.1 Contexte
 
-Les bases génomiques internationales utilisées en diagnostic et en recherche représentent imparfaitement certaines populations non européennes et, plus particulièrement, les populations fortement admixées et fondatrices.
+Les bases génomiques internationales utilisées en diagnostic, en pharmacogénétique et en recherche représentent imparfaitement certaines populations non européennes et, plus particulièrement, les populations fortement admixées et fondatrices.
 
 La population réunionnaise est issue d’apports historiques multiples, notamment européens, africains, malgaches, sud-asiatiques et est-asiatiques, avec des proportions variables selon les individus et les zones géographiques. Le contexte insulaire a également pu produire localement des phénomènes de dérive génétique, d’effet fondateur et d’endogamie.
 
 Cette structure complexe n’est pas correctement décrite par une simple stratification géographique ni par des référentiels essentiellement construits à partir de populations externes.
+
+La sous-représentation de cette diversité peut avoir des conséquences non seulement sur l’interprétation diagnostique des variants, mais également sur l’évaluation de variants pharmacogénétiques dont les fréquences peuvent varier entre populations et composantes ancestrales. L’utilisation de référentiels externes sans données locales peut donc limiter la pertinence des connaissances disponibles pour la population réunionnaise.
 
 ## 3.2 Problème scientifique
 
@@ -105,9 +109,25 @@ L’absence d’un référentiel local peut affecter :
 - la proportion de variants de signification incertaine ;
 - l’interprétation de certains profils de ROH / IBD ;
 - l’utilisation de scores et référentiels calibrés majoritairement sur d’autres populations ;
-- la reproductibilité des analyses de génétique des populations dans le contexte réunionnais.
+- la reproductibilité des analyses de génétique des populations dans le contexte réunionnais ;
+- l’estimation des fréquences de variants pharmacogénétiques dans une population fortement admixée ;
+- la transposabilité à La Réunion de connaissances pharmacogénétiques provenant principalement de populations de référence extérieures ;
+- l’identification de variants ou de profils pharmacogénétiques suffisamment fréquents localement pour justifier des études cliniques ciblées ultérieures.
 
-## 3.3 Intérêt public
+Le projet cherche donc à fournir un socle populationnel permettant d’étudier les variants pharmacogénétiques **au niveau collectif**, sans utiliser à ce stade de données de prescription, de réponse au traitement ou de décision thérapeutique individuelle.
+
+## 3.3 Problème médical et sanitaire
+
+La sous-représentation génomique de la population réunionnaise peut conduire à une moindre pertinence locale de certains référentiels utilisés en médecine génomique.
+
+Deux conséquences médicales principales sont considérées dans Génome Réunion :
+
+1. **Interprétation diagnostique :** un variant fréquent localement mais rare dans les bases internationales peut être surinterprété, tandis que l’absence de données locales peut contribuer au maintien de variants de signification incertaine.
+2. **Pharmacogénétique :** les fréquences de variants influençant le métabolisme, l’efficacité ou la toxicité de certains médicaments peuvent différer selon les populations et les profils d’ascendance. Sans référentiel local, il est difficile d’estimer correctement la fréquence populationnelle de ces variants et de déterminer quels couples gène–médicament méritent d’être étudiés prioritairement à La Réunion.
+
+La phase initiale ne cherche pas à modifier directement une prescription ni à produire une recommandation individuelle de posologie. Elle vise à produire les connaissances populationnelles nécessaires pour déterminer, dans un second temps et sous un cadre réglementaire adapté, quelles études cliniques ou actions de prévention médicamenteuse pourraient être pertinentes.
+
+## 3.4 Intérêt public
 
 Le projet vise à produire une connaissance collective et une infrastructure scientifique locale susceptibles de réduire les biais liés à la sous-représentation génomique de La Réunion.
 
@@ -116,8 +136,15 @@ L’intérêt public attendu repose notamment sur :
 - une meilleure description de la diversité génétique de la population réunionnaise ;
 - la constitution de fréquences alléliques locales plus adaptées ;
 - l’amélioration future de l’interprétation de variants en génétique médicale ;
+- la réduction de certaines incertitudes liées aux variants de signification incertaine ;
 - une meilleure connaissance des effets fondateurs et de la structure d’admixture ;
+- la constitution d’un référentiel de fréquences de variants pharmacogénétiques pertinent pour la population réunionnaise ;
+- l’identification de couples gène–médicament ou de variants pharmacogénétiques prioritaires pouvant justifier des études cliniques ciblées ultérieures ;
+- la préparation d’actions futures de prévention de certains risques médicamenteux ou d’adaptation de posologie, qui devront être évaluées dans des protocoles cliniques distincts avant tout usage individuel ;
+- la réduction des inégalités de connaissance liées à l’utilisation de référentiels principalement construits à partir de populations moins admixées ou mieux représentées ;
 - la mise à disposition de résultats agrégés et d’une ressource de référence encadrée pour la recherche.
+
+La pharmacogénétique est donc considérée ici comme un **enjeu d’intérêt public populationnel et de préparation de futures recherches cliniques**, et non comme une décision thérapeutique automatisée ou une prise en charge médicale individuelle dans le cadre du présent protocole.
 
 **Statut réglementaire de la justification d’intérêt public : à formaliser et valider dans la version institutionnelle.**
 
@@ -139,7 +166,9 @@ L’intérêt public attendu repose notamment sur :
 6. Développer un panel local utile au phasage et à l’imputation.
 7. Recalibrer les fréquences observées dans le panel WGS sur la cohorte des ~2 500 participants.
 8. Comparer et contextualiser la cohorte réunionnaise à l’aide de panels externes pertinents.
-9. Produire des résultats agrégés, des indicateurs de qualité et un référentiel initial utilisable dans des projets de recherche ultérieurs sous gouvernance adaptée.
+9. Caractériser, à l’échelle populationnelle, la fréquence de variants pharmacogénétiques d’intérêt dans la population réunionnaise.
+10. Identifier des couples gène–médicament ou des profils pharmacogénétiques susceptibles de justifier des études cliniques ciblées ultérieures, sans produire de recommandation individuelle dans la phase initiale.
+11. Produire des résultats agrégés, des indicateurs de qualité et un référentiel initial utilisable dans des projets de recherche ultérieurs sous gouvernance adaptée.
 
 ## 4.3 Finalités explicitement hors périmètre initial
 
@@ -148,7 +177,8 @@ Ne sont pas considérées comme automatiquement couvertes par le présent protoc
 - croisement avec les données cliniques hospitalières ;
 - diagnostic individuel ;
 - données de prescription et d’iatrogénie ;
-- pharmacogénétique clinique individuelle ;
+- pharmacogénétique clinique individuelle, incluant corrélation génotype–réponse au traitement chez un patient ;
+- recommandation ou adaptation individuelle de médicament ou de posologie ;
 - protéomique ;
 - réutilisation de génomes AURAGEN / SeqOIA ou d’autres cohortes ;
 - entraînement de modèles d’IA sur les données individuelles Génome Réunion ;
@@ -177,7 +207,8 @@ Cette cohorte constitue la base populationnelle utilisée pour :
 - la caractérisation de la structure génétique ;
 - l’audit de représentativité de la cohorte EFS ;
 - la sélection des 350 WGS ;
-- le recalibrage des fréquences issues du panel WGS.
+- le recalibrage des fréquences issues du panel WGS ;
+- l’estimation populationnelle de la fréquence de variants pharmacogénétiques accessibles par le génotypage et/ou le WGS.
 
 ## 5.3 Panel WGS
 
@@ -190,7 +221,7 @@ Le corpus scientifique prévoit un panel hybride combinant :
 - un noyau principal géo-ancestral d’environ 90–95 % (ordre de grandeur actuel : ~322 individus) ;
 - un bras de découverte contrôlé d’environ 5–10 % (ordre de grandeur actuel : ~28 individus).
 
-Les fréquences observées dans les 350 seront donc recalibrées sur la cohorte large.
+Les fréquences observées dans les 350 seront donc recalibrées sur la cohorte large, y compris lorsque des variants pharmacogénétiques sont décrits à partir du WGS.
 
 ## 5.4 Volet 100 familles
 
@@ -311,6 +342,7 @@ Les modalités de transport, de conservation, de retrait et de destruction sont 
 - données d’imputation ;
 - LAI si retenue ;
 - fréquences alléliques brutes, pondérées, imputées et/ou recalibrées ;
+- fréquences et annotations de variants pharmacogénétiques retenus pour l’analyse populationnelle ;
 - indicateurs d’incertitude et de qualité.
 
 ## 8.3 Point à arbitrer — variable géographique
@@ -443,6 +475,19 @@ Le corpus prévoit notamment l’utilisation de SHAPEIT4 et d’un phasage progr
 
 L’imputation vise à projeter une partie de l’information du WGS vers la cohorte large ; la LAI peut compléter la description d’une population fortement admixée.
 
+## 10.6 Pharmacogénétique populationnelle
+
+La phase initiale prévoit l’analyse, à l’échelle populationnelle, de variants pharmacogénétiques identifiés dans les données SNP et/ou WGS.
+
+Les objectifs sont :
+
+- estimer leurs fréquences dans la cohorte réunionnaise ;
+- documenter leur distribution dans une population fortement admixée ;
+- comparer, lorsque pertinent, ces fréquences avec des référentiels externes ;
+- identifier des variants ou couples gène–médicament suffisamment pertinents localement pour justifier des études cliniques ultérieures.
+
+Cette analyse reste **populationnelle et descriptive**. Le protocole initial n’utilise pas de données de prescription, de réponse thérapeutique ou d’événement indésirable et ne produit aucune recommandation médicale individuelle.
+
 ---
 
 # 11. Sélection des 350 WGS
@@ -497,7 +542,7 @@ Selon le pipeline et la plateforme retenus :
 - fichiers de séquençage bruts ;
 - fichiers alignés ;
 - fichiers de variants ;
-- données dérivées nécessaires au QC, au phasage, à l’imputation et au référentiel.
+- données dérivées nécessaires au QC, au phasage, à l’imputation, aux analyses pharmacogénétiques populationnelles et au référentiel.
 
 ## 12.4 Principe de sécurité
 
@@ -540,10 +585,12 @@ La phase initiale doit produire notamment :
 - un panel local de première génération ;
 - des données de phasage / imputation ;
 - des fréquences génétiques locales recalibrées ;
+- un ensemble de fréquences de variants pharmacogénétiques d’intérêt au niveau populationnel ;
+- une liste argumentée de variants ou couples gène–médicament pouvant justifier des études cliniques spécifiques ultérieures ;
 - des intervalles / statuts de fiabilité lorsque nécessaire ;
 - des résultats agrégés destinés aux publications et au référentiel initial.
 
-Les résultats individuels ne sont pas destinés à être rendus publics.
+Les résultats individuels ne sont pas destinés à être rendus publics ni à guider directement une prescription dans le cadre du présent protocole.
 
 ---
 
@@ -581,6 +628,12 @@ Les panels externes peuvent présenter des différences de technologie, build, c
 
 Mitigation : harmonisation, intersection de variants, QC et rapports de batch effect.
 
+## 15.5 Pharmacogénétique
+
+Les fréquences pharmacogénétiques produites dans cette phase sont des estimations populationnelles. Elles ne permettent pas, à elles seules, de conclure à l’efficacité, à la toxicité ou à la posologie optimale d’un médicament chez un individu.
+
+Toute traduction clinique nécessitera des données cliniques, pharmacologiques et de prescription ainsi qu’un protocole spécifique.
+
 ---
 
 # 16. Calendrier
@@ -596,7 +649,7 @@ Le calendrier actuellement décrit dans la synthèse scientifique comprend notam
 - **M1–3** : accès et harmonisation des panels témoins 1000G / EGA ;
 - **M1–5** : validation externe / simulations / comparaison des stratégies de sélection ;
 - **M4–9** : traitement SNP de la cohorte Réunion, QC, PCA / ADMIXTURE, calcul `S_div`, sélection des 350 ;
-- **M8–22** : WGS des 350, retour des données, QC, base de variants et recalibrage des fréquences.
+- **M8–22** : WGS des 350, retour des données, QC, base de variants, recalibrage des fréquences et analyses populationnelles associées, dont la pharmacogénétique descriptive.
 
 Le corpus scientifique comporte ensuite d’autres phases (familles, IA, portail clinique) qui **ne sont pas automatiquement incluses dans le présent périmètre MR-004 initial**.
 
@@ -630,7 +683,7 @@ Les durées de conservation doivent être définies séparément pour :
 - VCF / gVCF ;
 - données dérivées ;
 - rapports QC ;
-- fréquences agrégées ;
+- fréquences agrégées, y compris pharmacogénétiques ;
 - logs et traces d’audit.
 
 ## 17.3 Ressource durable
@@ -651,6 +704,7 @@ Les publications porteront principalement sur :
 - structure populationnelle ;
 - caractéristiques de la cohorte ;
 - fréquences et statistiques agrégées ;
+- fréquences populationnelles de variants pharmacogénétiques et priorisation de couples gène–médicament pour de futures études ;
 - performance / validation des méthodes de sélection ;
 - résultats de phasage / imputation et de recalibrage.
 
@@ -686,6 +740,7 @@ La version finale de la note d’information devra préciser notamment :
 
 - finalité de la recherche ;
 - nature génétique des données ;
+- existence d’analyses pharmacogénétiques populationnelles sans décision thérapeutique individuelle dans la phase initiale ;
 - pseudonymisation ;
 - rôle respectif EFS / CHU ;
 - catégories de données utilisées ;
@@ -759,6 +814,7 @@ Annexes scientifiques de référence :
 | 2 500 SNP / 350 WGS / 100 familles | synthèse scientifique + README |
 | Panel hybride 322 + 28 (ordre de grandeur actuel) | synthèse scientifique / méthodologie de sélection |
 | PCA / ADMIXTURE / KING / ROH / IBD / phasage / imputation | synthèse scientifique + méthodologies |
+| Pharmacogénétique populationnelle | objectifs scientifiques du projet + synthèse scientifique |
 | 1000G / EGA comme panels témoins | synthèse scientifique + `CNIL_02A` |
 | POPgen pour 350 WGS | README + synthèse scientifique |
 | Durée globale 36 mois | synthèse scientifique / plan économique |
@@ -793,6 +849,7 @@ Annexes scientifiques de référence :
 - [ ] confirmer la puce / nombre final de SNP ;
 - [ ] confirmer la version finale de la stratégie 350 (322 + 28 ou ratio final issu de la validation) ;
 - [ ] confirmer la liste finale des panels EGA ;
+- [ ] définir la liste initiale des gènes / variants / recommandations pharmacogénétiques de référence à étudier au niveau populationnel ;
 - [ ] confirmer le pipeline WGS et les formats effectivement conservés ;
 - [ ] harmoniser le calendrier réglementaire avec le calendrier scientifique final.
 
@@ -823,9 +880,10 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.2, le corpus du dépôt permet de décrire de manière cohérente :
+Au stade de cette version 0.3, le corpus du dépôt permet de décrire de manière cohérente :
 
-- la justification scientifique ;
+- la justification scientifique et médicale ;
+- l’intérêt public incluant la pharmacogénétique populationnelle ;
 - les objectifs ;
 - la cohorte principale ;
 - le circuit biologique ;
