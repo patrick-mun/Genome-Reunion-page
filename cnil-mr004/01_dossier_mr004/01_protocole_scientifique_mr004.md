@@ -1,9 +1,9 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.4 — intégration du circuit CRB des 100 familles nucléaires  
+**Version :** 0.5 — clarification du consentement et de la finalité technique des 100 familles nucléaires  
 **Date :** 15 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
-**Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point que le corpus ne permet pas encore de considérer comme stabilisé.
+**Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
 
 ---
 
@@ -29,16 +29,15 @@ Le projet ne vise pas à définir un « génome réunionnais » ni une identité
 
 Pour la cohorte populationnelle principale, cette qualification repose notamment sur l’utilisation secondaire d’un **reliquat de tube EDTA prélevé dans le cadre du don de sang**, sans acte ni prélèvement supplémentaire organisé pour Génome Réunion.
 
-Pour le **volet des 100 familles nucléaires**, le circuit envisagé repose également sur l’absence de prélèvement supplémentaire : les familles sont sélectionnées par le **CRB du CHU de La Réunion** à partir de **reliquats d’ADN déjà conservés**, associés à un **consentement écrit signé autorisant la recherche**. Le CRB réalise la sélection et la **pseudonymisation avant toute mise à disposition** des échantillons ou données aux équipes de recherche. Les équipes de recherche ne reçoivent pas l’identité directe des personnes concernées.
+Pour le **volet des 100 familles nucléaires**, aucun prélèvement supplémentaire n’est prévu. Le CRB sélectionne des **reliquats d’ADN déjà conservés** provenant de patients ayant signé un **consentement recherche** après information et discussion avec le patient lors d’une consultation médicale, dans le cadre réglementaire applicable. Ces consentements encadrent les analyses de recherche nécessaires au projet.
 
-Ce second circuit est compatible en principe avec l’hypothèse RNIPH / MR-004, sous réserve de vérifier institutionnellement :
+Le CRB réalise la sélection des familles et la **pseudonymisation avant toute mise à disposition** des échantillons ou données aux équipes de recherche. Les équipes de recherche ne reçoivent pas l’identité directe des personnes concernées.
 
-- l’origine et le statut réglementaire des reliquats d’ADN conservés au CRB ;
-- la portée exacte du consentement de recherche signé et sa compatibilité avec les analyses prévues dans Génome Réunion ;
-- les règles de sélection et de pseudonymisation appliquées par le CRB ;
-- les modalités de retrait / opposition applicables à ce volet.
+La finalité de ce volet est strictement **technique et méthodologique** : les familles nucléaires sont utilisées pour améliorer et contrôler le phasage par transmission mendélienne. Elles ne sont pas utilisées pour décrire les fréquences de variants dans la population réunionnaise, pour constituer le panel WGS des 350, ni pour les analyses pharmacogénétiques populationnelles.
 
-**Statut : À valider DRCI / DPO.**
+La version du consentement recherche applicable et la traçabilité de sa signature seront conservées comme pièces justificatives du dossier réglementaire.
+
+**Statut général RNIPH / MR-004 : À valider DRCI / DPO.**
 
 ## 1.4 Responsable de traitement
 
@@ -80,8 +79,11 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Population principale | Environ 2 500 participants recrutés via l’EFS La Réunion |
 | Matériel biologique cohorte principale | Reliquat de tube EDTA issu du circuit habituel EFS |
 | Volet familles | Environ 100 familles nucléaires sélectionnées par le CRB à partir de reliquats d’ADN déjà conservés |
-| Consentement volet familles | Consentement écrit signé autorisant la recherche ; portée exacte à vérifier pour Génome Réunion |
+| Consentement volet familles | Consentement recherche écrit et signé après information et discussion en consultation médicale |
 | Pseudonymisation volet familles | Réalisée par le CRB avant mise à disposition aux équipes de recherche |
+| Finalité volet familles | Amélioration et contrôle du phasage par transmission mendélienne uniquement |
+| Utilisation pour fréquences / description de variants | Non |
+| Utilisation pharmacogénétique des familles | Non |
 | Prélèvement supplémentaire pour la recherche | Non prévu, ni pour la cohorte principale ni pour le volet familial |
 | Information / accord cohorte principale | Information lors de l’entretien avec le médecin EFS + accord écrit signé |
 | Pseudonymisation cohorte principale | Code généré et table identité ↔ code conservée par l’EFS |
@@ -175,11 +177,12 @@ La pharmacogénétique est donc considérée ici comme un **enjeu d’intérêt 
 4. Construire une sélection de 350 individus maximisant la couverture de la diversité génétique sous contrainte de budget WGS.
 5. Produire le WGS des 350 individus sélectionnés.
 6. Développer un panel local utile au phasage et à l’imputation.
-7. Recalibrer les fréquences observées dans le panel WGS sur la cohorte des ~2 500 participants.
-8. Comparer et contextualiser la cohorte réunionnaise à l’aide de panels externes pertinents.
-9. Caractériser, à l’échelle populationnelle, la fréquence de variants pharmacogénétiques d’intérêt dans la population réunionnaise.
-10. Identifier des couples gène–médicament ou des profils pharmacogénétiques susceptibles de justifier des études cliniques ciblées ultérieures, sans produire de recommandation individuelle dans la phase initiale.
-11. Produire des résultats agrégés, des indicateurs de qualité et un référentiel initial utilisable dans des projets de recherche ultérieurs sous gouvernance adaptée.
+7. Utiliser les 100 familles nucléaires comme ressource technique indépendante pour améliorer et contrôler le phasage par transmission mendélienne, sans les intégrer aux calculs de fréquences populationnelles.
+8. Recalibrer les fréquences observées dans le panel WGS sur la cohorte des ~2 500 participants.
+9. Comparer et contextualiser la cohorte réunionnaise à l’aide de panels externes pertinents.
+10. Caractériser, à l’échelle populationnelle, la fréquence de variants pharmacogénétiques d’intérêt dans la population réunionnaise.
+11. Identifier des couples gène–médicament ou des profils pharmacogénétiques susceptibles de justifier des études cliniques ciblées ultérieures, sans produire de recommandation individuelle dans la phase initiale.
+12. Produire des résultats agrégés, des indicateurs de qualité et un référentiel initial utilisable dans des projets de recherche ultérieurs sous gouvernance adaptée.
 
 ## 4.3 Finalités explicitement hors périmètre initial
 
@@ -194,6 +197,7 @@ Ne sont pas considérées comme automatiquement couvertes par le présent protoc
 - réutilisation de génomes AURAGEN / SeqOIA ou d’autres cohortes ;
 - entraînement de modèles d’IA sur les données individuelles Génome Réunion ;
 - portail clinique ou décision médicale automatisée ;
+- utilisation des 100 familles pour estimer les fréquences populationnelles ou décrire la distribution de variants dans la population réunionnaise ;
 - toute analyse visant l’identification ou la ré-identification d’un participant.
 
 Ces extensions devront faire l’objet d’une nouvelle analyse réglementaire avant mise en œuvre.
@@ -236,18 +240,32 @@ Les fréquences observées dans les 350 seront donc recalibrées sur la cohorte 
 
 ## 5.4 Volet 100 familles nucléaires
 
-Le projet prévoit environ **100 familles nucléaires**, soit environ 300 individus, utilisées comme ressource technique pour le phasage par transmission et le contrôle mendélien.
+Le projet prévoit environ **100 familles nucléaires**, soit environ 300 individus, constituant une **ressource technique de phasage** distincte de la cohorte populationnelle.
 
-Le circuit retenu est distinct de celui de la cohorte EFS :
+Les échantillons proviennent de reliquats d’ADN déjà conservés au CRB. Les patients concernés ont signé un **consentement recherche** après information et discussion lors d’une consultation médicale, conformément au cadre institutionnel et réglementaire applicable.
 
-1. le CRB identifie des familles nucléaires à partir de reliquats d’ADN déjà conservés ;
-2. seuls les dossiers disposant d’un **consentement écrit signé autorisant la recherche** peuvent être considérés ;
-3. le CRB vérifie l’éligibilité technique des échantillons ;
-4. le CRB réalise la **pseudonymisation avant mise à disposition** ;
-5. les équipes de recherche reçoivent uniquement les échantillons et/ou données pseudonymisés nécessaires aux analyses ;
-6. aucune identité directe n’est transmise aux équipes de recherche.
+Le CRB :
 
-Ce volet est proposé comme composante du périmètre initial, sous réserve de validation DRCI / DPO de la portée des consentements existants, du statut des reliquats d’ADN et du circuit CRB.
+1. identifie les familles nucléaires répondant aux critères techniques ;
+2. vérifie l’existence du consentement recherche signé ;
+3. vérifie la disponibilité et la qualité des reliquats d’ADN ;
+4. pseudonymise les échantillons et données avant mise à disposition ;
+5. ne transmet aux équipes de recherche que les éléments nécessaires au phasage et au contrôle mendélien.
+
+Les familles nucléaires sont utilisées uniquement pour :
+
+- fournir des contraintes de transmission mendélienne ;
+- améliorer la précision du phasage haplotypique ;
+- mesurer le gain de phasage obtenu par l’ajout de données familiales ;
+- contribuer aux contrôles qualité liés à la transmission.
+
+Elles **ne sont pas utilisées** pour :
+
+- calculer ou recalibrer les fréquences alléliques de la population réunionnaise ;
+- décrire des variants ou leur distribution populationnelle ;
+- sélectionner les 350 WGS ;
+- réaliser les analyses pharmacogénétiques populationnelles ;
+- produire une interprétation clinique individuelle.
 
 ---
 
@@ -255,10 +273,10 @@ Ce volet est proposé comme composante du périmètre initial, sous réserve de 
 
 ## 6.1 Population cible opérationnelle
 
-Deux sources de participants sont envisagées :
+Deux sources de participants sont distinguées :
 
 - la cohorte populationnelle principale recrutée parmi les donneurs pris en charge par l’EFS La Réunion et ayant reçu une information spécifique sur Génome Réunion ;
-- le volet familial constitué à partir de personnes dont l’ADN est déjà conservé au CRB et pour lesquelles un consentement écrit autorisant la recherche est disponible.
+- le volet familial constitué à partir de personnes dont l’ADN est déjà conservé au CRB et disposant d’un consentement recherche signé recueilli après information et discussion en consultation médicale.
 
 ## 6.2 Critères d’inclusion actuellement établis — cohorte principale
 
@@ -292,17 +310,13 @@ Le corpus actuel ne permet pas encore de considérer comme définitivement étab
 Critères actuellement identifiés :
 
 - présence d’un reliquat d’ADN conservé au CRB ;
-- existence d’un consentement écrit signé autorisant la recherche ;
-- appartenance à une structure de famille nucléaire exploitable pour les analyses prévues ;
+- existence d’un consentement recherche écrit et signé ;
+- consentement recueilli après information et discussion lors d’une consultation médicale ;
+- appartenance à une famille nucléaire exploitable pour le phasage par transmission ;
 - quantité et qualité d’ADN suffisantes ;
 - pseudonymisation par le CRB avant mise à disposition.
 
-Restent à formaliser :
-
-- la portée exacte du consentement au regard de Génome Réunion ;
-- les critères précis définissant une famille nucléaire éligible ;
-- les règles de retrait / opposition ;
-- les modalités de conservation et de réutilisation des aliquots.
+Les critères techniques précis définissant une famille nucléaire exploitable seront documentés dans le protocole de phasage.
 
 ---
 
@@ -356,8 +370,8 @@ Le volet familial repose sur des **reliquats d’ADN déjà conservés au CRB**.
 
 Le CRB :
 
-1. identifie les familles nucléaires potentiellement éligibles ;
-2. vérifie l’existence d’un consentement écrit signé autorisant la recherche ;
+1. identifie les familles nucléaires potentiellement exploitables pour le phasage ;
+2. vérifie l’existence du consentement recherche écrit et signé ;
 3. vérifie la disponibilité et la qualité des reliquats d’ADN ;
 4. attribue ou applique un identifiant pseudonyme adapté au projet ;
 5. conserve le lien avec l’identité dans le cadre institutionnel autorisé ;
@@ -400,15 +414,16 @@ Aucune identité directe n’est transmise aux équipes de recherche dans ce cir
 
 ## 8.3 Données du volet familial
 
-Les données du volet familial sont limitées à ce qui est nécessaire au phasage et au contrôle mendélien, notamment :
+Les données du volet familial sont limitées à ce qui est nécessaire au phasage et au contrôle mendélien :
 
 - identifiant pseudonyme ;
-- lien familial nécessaire à la structure de la famille nucléaire ;
-- données de génotypage ;
+- structure de parenté nécessaire à la représentation de la famille nucléaire ;
+- génotypes utiles au phasage ;
 - indicateurs de qualité ;
-- informations dérivées nécessaires au phasage par transmission et au contrôle mendélien.
+- erreurs / cohérences mendéliennes ;
+- informations haplotypiques dérivées nécessaires à l’évaluation du phasage.
 
-Les identités directes ne sont pas transmises aux équipes de recherche.
+Ces données ne sont pas intégrées aux calculs de fréquences alléliques populationnelles et ne sont pas utilisées pour décrire des variants individuels ou populationnels.
 
 ## 8.4 Point à arbitrer — variable géographique
 
@@ -516,7 +531,7 @@ Ces outils ne sont pas utilisés pour attribuer une identité ethnique individue
 
 ## 10.3 KING / parenté
 
-KING est utilisé pour estimer la parenté entre **échantillons pseudonymisés**, afin de :
+KING est utilisé pour estimer la parenté entre **échantillons pseudonymisés** de la cohorte principale, afin de :
 
 - mesurer la structure de parenté de la cohorte ;
 - éviter une surreprésentation familiale excessive dans la sélection WGS ;
@@ -536,15 +551,21 @@ Objectifs :
 
 ## 10.5 Phasage / imputation / LAI
 
-Le corpus prévoit notamment l’utilisation de SHAPEIT4 et d’un phasage progressif sur la cohorte SNP, enrichi par les WGS et par le volet des 100 familles nucléaires sous réserve de validation réglementaire de son intégration.
+Le phasage est réalisé sur la cohorte SNP et enrichi par les WGS. Les 100 familles nucléaires apportent en complément des **contraintes de transmission mendélienne** utilisées exclusivement pour améliorer et contrôler la qualité du phasage.
 
-Les familles nucléaires apportent des contraintes de transmission mendélienne utiles au phasage et au contrôle de qualité. Elles ne servent pas à estimer directement les fréquences populationnelles de la cohorte principale.
+Leur apport peut être évalué par comparaison entre :
+
+- phasage statistique sans familles ;
+- phasage enrichi par les transmissions familiales ;
+- phasage ultérieurement enrichi par les 350 WGS.
+
+Les familles nucléaires ne contribuent pas aux estimations de fréquences populationnelles.
 
 L’imputation vise à projeter une partie de l’information du WGS vers la cohorte large ; la LAI peut compléter la description d’une population fortement admixée.
 
 ## 10.6 Pharmacogénétique populationnelle
 
-La phase initiale prévoit l’analyse, à l’échelle populationnelle, de variants pharmacogénétiques identifiés dans les données SNP et/ou WGS.
+La phase initiale prévoit l’analyse, à l’échelle populationnelle, de variants pharmacogénétiques identifiés dans les données SNP et/ou WGS de la cohorte principale.
 
 Les objectifs sont :
 
@@ -552,6 +573,8 @@ Les objectifs sont :
 - documenter leur distribution dans une population fortement admixée ;
 - comparer, lorsque pertinent, ces fréquences avec des référentiels externes ;
 - identifier des variants ou couples gène–médicament suffisamment pertinents localement pour justifier des études cliniques ultérieures.
+
+Les données des 100 familles nucléaires ne sont pas utilisées dans ces analyses pharmacogénétiques populationnelles.
 
 Cette analyse reste **populationnelle et descriptive**. Le protocole initial n’utilise pas de données de prescription, de réponse thérapeutique ou d’événement indésirable et ne produit aucune recommandation médicale individuelle.
 
@@ -587,6 +610,8 @@ Le corpus actuel prévoit notamment :
 Les variables dérivées utilisées par l’algorithme restent des données génétiques pseudonymisées.
 
 La sélection n’a aucune finalité clinique individuelle ni d’identification des participants.
+
+Les 100 familles nucléaires ne participent pas à cette sélection.
 
 ---
 
@@ -633,6 +658,7 @@ Les éléments réglementairement pertinents sont :
 - recalibrage des fréquences sur les ~2 500 ;
 - analyses de sensibilité aux panels externes ;
 - maîtrise des batch effects ;
+- évaluation séparée du gain de phasage apporté par les familles nucléaires ;
 - non-utilisation des données pour identifier ou réidentifier les participants.
 
 Les méthodologies détaillées sont conservées comme annexes scientifiques du projet.
@@ -650,12 +676,15 @@ La phase initiale doit produire notamment :
 - une sélection WGS documentée et auditée ;
 - 350 WGS ;
 - un panel local de première génération ;
-- des données de phasage / imputation, incluant l’apport des familles nucléaires si leur intégration réglementaire est validée ;
-- des fréquences génétiques locales recalibrées ;
+- un phasage amélioré et contrôlé grâce aux transmissions mendéliennes des familles nucléaires ;
+- des données d’imputation ;
+- des fréquences génétiques locales recalibrées uniquement à partir de la cohorte populationnelle principale ;
 - un ensemble de fréquences de variants pharmacogénétiques d’intérêt au niveau populationnel ;
 - une liste argumentée de variants ou couples gène–médicament pouvant justifier des études cliniques spécifiques ultérieures ;
 - des intervalles / statuts de fiabilité lorsque nécessaire ;
 - des résultats agrégés destinés aux publications et au référentiel initial.
+
+Les résultats issus du volet familial sont limités à l’évaluation et à l’amélioration du phasage. Ils ne sont pas utilisés pour produire des fréquences ou une description populationnelle des variants.
 
 Les résultats individuels ne sont pas destinés à être rendus publics ni à guider directement une prescription dans le cadre du présent protocole.
 
@@ -716,7 +745,7 @@ Le calendrier actuellement décrit dans la synthèse scientifique comprend notam
 - **M1–3** : accès et harmonisation des panels témoins 1000G / EGA ;
 - **M1–5** : validation externe / simulations / comparaison des stratégies de sélection ;
 - **M4–9** : traitement SNP de la cohorte Réunion, QC, PCA / ADMIXTURE, calcul `S_div`, sélection des 350 ;
-- **M4–14** : sélection des 100 familles nucléaires au CRB, génotypage, contrôles mendéliens et contribution au phasage, sous réserve de validation réglementaire ;
+- **M4–14** : sélection des 100 familles nucléaires au CRB, génotypage, contrôles mendéliens et amélioration du phasage ;
 - **M8–22** : WGS des 350, retour des données, QC, base de variants, recalibrage des fréquences et analyses populationnelles associées, dont la pharmacogénétique descriptive.
 
 Le corpus scientifique comporte ensuite d’autres phases (IA, portail clinique) qui **ne sont pas automatiquement incluses dans le présent périmètre MR-004 initial**.
@@ -803,12 +832,14 @@ La gouvernance définitive, le Data Access Committee, les critères d’accès e
 
 # 19. Information des participants et droits
 
-Deux circuits d’information / consentement doivent être distingués :
+Deux circuits doivent être distingués :
 
-- **cohorte principale EFS** : information sur Génome Réunion lors de l’entretien EFS et accord écrit signé ;
-- **volet familial CRB** : utilisation de reliquats d’ADN déjà conservés pour lesquels un consentement écrit signé autorisant la recherche existe ; la compatibilité précise de ce consentement avec Génome Réunion doit être vérifiée avant inclusion.
+- **cohorte principale EFS** : information spécifique sur Génome Réunion lors de l’entretien EFS et accord écrit signé ;
+- **volet familial CRB** : reliquats d’ADN déjà conservés provenant de patients ayant signé un consentement recherche après information et discussion en consultation médicale ; les familles sont ensuite sélectionnées et pseudonymisées par le CRB avant mise à disposition aux équipes.
 
-La version finale de la note d’information devra préciser notamment :
+Le volet familial étant limité au phasage et au contrôle mendélien, ses données ne sont pas utilisées pour les fréquences populationnelles, la description des variants ou la pharmacogénétique.
+
+La version finale de la note d’information de la cohorte EFS devra préciser notamment :
 
 - finalité de la recherche ;
 - nature génétique des données ;
@@ -826,7 +857,7 @@ La version finale de la note d’information devra préciser notamment :
 - contact DPO ;
 - règles relatives aux éventuelles découvertes génétiques pertinentes pour la santé.
 
-**La note d’information définitive sera produite après stabilisation du protocole et des responsabilités.**
+Le consentement recherche utilisé pour le volet familial et sa version applicable seront conservés comme preuves documentaires du dossier.
 
 ---
 
@@ -882,10 +913,11 @@ Annexes scientifiques de référence :
 
 # 22. Traçabilité des informations intégrées depuis le dépôt
 
-| Élément intégré au protocole | Source principale dans le dépôt |
+| Élément intégré au protocole | Source principale dans le dépôt / projet |
 |---|---|
 | 2 500 SNP / 350 WGS / 100 familles | synthèse scientifique + README |
-| Circuit 100 familles : reliquats ADN CRB + consentement recherche + pseudonymisation CRB | information projet à formaliser / valider institutionnellement |
+| Circuit 100 familles : reliquats ADN CRB + consentement recherche signé en consultation + pseudonymisation CRB | fonctionnement du projet à documenter dans les preuves institutionnelles |
+| Finalité des 100 familles limitée au phasage / contrôle mendélien | méthodologie scientifique + décision de conception |
 | Panel hybride 322 + 28 (ordre de grandeur actuel) | synthèse scientifique / méthodologie de sélection |
 | PCA / ADMIXTURE / KING / ROH / IBD / phasage / imputation | synthèse scientifique + méthodologies |
 | Pharmacogénétique populationnelle | objectifs scientifiques du projet + synthèse scientifique |
@@ -945,26 +977,29 @@ Annexes scientifiques de référence :
 
 ## 23.6 Volet familles
 
-- [x] principe de sélection par le CRB à partir de reliquats d’ADN déjà conservés ;
-- [x] existence d’un consentement écrit signé autorisant la recherche ;
+- [x] sélection par le CRB à partir de reliquats d’ADN déjà conservés ;
+- [x] consentement recherche écrit et signé après information / discussion en consultation médicale ;
+- [x] consentement couvrant les analyses de recherche nécessaires au volet ;
 - [x] pseudonymisation par le CRB avant mise à disposition aux équipes ;
-- [ ] vérifier la portée exacte des consentements pour Génome Réunion ;
-- [ ] documenter précisément l’origine réglementaire des reliquats d’ADN ;
-- [ ] formaliser les critères d’éligibilité des familles nucléaires ;
-- [ ] valider l’intégration du volet familial au périmètre RNIPH / MR-004 avec la DRCI / le DPO.
+- [x] finalité limitée à l’amélioration / contrôle du phasage et aux transmissions mendéliennes ;
+- [x] exclusion des familles des calculs de fréquences et de la description populationnelle des variants ;
+- [ ] conserver la version applicable du formulaire de consentement comme preuve documentaire ;
+- [ ] formaliser les critères techniques d’éligibilité des familles nucléaires ;
+- [ ] validation institutionnelle finale de l’intégration au périmètre RNIPH / MR-004.
 
 ---
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.4, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.5, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
 - les objectifs ;
 - la cohorte principale ;
 - le circuit biologique EFS → CRB ;
-- le circuit prévu des 100 familles nucléaires à partir de reliquats d’ADN du CRB ;
+- le circuit des 100 familles nucléaires à partir de reliquats d’ADN du CRB et de consentements recherche signés ;
+- la finalité strictement technique du volet familial pour l’amélioration du phasage ;
 - la pseudonymisation ;
 - les grandes catégories de données ;
 - les panels externes ;
@@ -974,4 +1009,4 @@ Au stade de cette version 0.4, le corpus du dépôt et les décisions de concept
 - le calendrier général ;
 - les exclusions du traitement initial.
 
-Les principaux éléments encore manquants relèvent surtout des **arbitrages institutionnels, du dictionnaire final de données, des responsabilités, de la validation de la portée des consentements familiaux, des durées de conservation et des contrats**, et non d’un manque de description scientifique du projet.
+Les principaux éléments encore manquants relèvent surtout des **arbitrages institutionnels, du dictionnaire final de données, des responsabilités, des durées de conservation et des contrats**, et non d’un manque de description scientifique du projet.
