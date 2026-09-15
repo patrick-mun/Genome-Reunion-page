@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.3 — intégration de la pharmacogénétique populationnelle  
+**Version :** 0.4 — intégration du circuit CRB des 100 familles nucléaires  
 **Date :** 15 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point que le corpus ne permet pas encore de considérer comme stabilisé.
@@ -27,7 +27,16 @@ Le projet ne vise pas à définir un « génome réunionnais » ni une identité
 
 **Hypothèse actuelle : recherche n’impliquant pas la personne humaine (RNIPH / non-RIPH), avec MR-004 comme méthodologie de référence principale à tester.**
 
-Cette qualification repose notamment sur l’utilisation secondaire d’un **reliquat de tube EDTA prélevé dans le cadre du don de sang**, sans acte ni prélèvement supplémentaire organisé pour Génome Réunion.
+Pour la cohorte populationnelle principale, cette qualification repose notamment sur l’utilisation secondaire d’un **reliquat de tube EDTA prélevé dans le cadre du don de sang**, sans acte ni prélèvement supplémentaire organisé pour Génome Réunion.
+
+Pour le **volet des 100 familles nucléaires**, le circuit envisagé repose également sur l’absence de prélèvement supplémentaire : les familles sont sélectionnées par le **CRB du CHU de La Réunion** à partir de **reliquats d’ADN déjà conservés**, associés à un **consentement écrit signé autorisant la recherche**. Le CRB réalise la sélection et la **pseudonymisation avant toute mise à disposition** des échantillons ou données aux équipes de recherche. Les équipes de recherche ne reçoivent pas l’identité directe des personnes concernées.
+
+Ce second circuit est compatible en principe avec l’hypothèse RNIPH / MR-004, sous réserve de vérifier institutionnellement :
+
+- l’origine et le statut réglementaire des reliquats d’ADN conservés au CRB ;
+- la portée exacte du consentement de recherche signé et sa compatibilité avec les analyses prévues dans Génome Réunion ;
+- les règles de sélection et de pseudonymisation appliquées par le CRB ;
+- les modalités de retrait / opposition applicables à ce volet.
 
 **Statut : À valider DRCI / DPO.**
 
@@ -53,7 +62,7 @@ La désignation formelle du **responsable de mise en œuvre** et/ou de l’**inv
 ## 1.6 Partenaires / acteurs déjà identifiés
 
 - EFS La Réunion — recrutement / information / codage / source du reliquat EDTA ;
-- CRB du CHU de La Réunion — réception, enregistrement, extraction, conservation de l’ADN, aliquotage ;
+- CRB du CHU de La Réunion — réception, enregistrement, extraction, conservation de l’ADN, aliquotage et sélection/pseudonymisation du volet des 100 familles nucléaires ;
 - POPgen — prise en charge prévue du WGS des 350 individus sélectionnés ;
 - plateformes de génotypage / séquençage potentielles : CNG, GenomEast, CNRGH ou autre plateforme retenue ;
 - 1000 Genomes / IGSR — panel de référence public ;
@@ -69,10 +78,13 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 |---|---|
 | Type de recherche | RNIPH présumée — MR-004 à confirmer |
 | Population principale | Environ 2 500 participants recrutés via l’EFS La Réunion |
-| Matériel biologique | Reliquat de tube EDTA issu du circuit habituel EFS |
-| Prélèvement supplémentaire pour la recherche | Non |
-| Information / accord | Information lors de l’entretien avec le médecin EFS + accord écrit signé |
-| Pseudonymisation | Code généré et table identité ↔ code conservée par l’EFS |
+| Matériel biologique cohorte principale | Reliquat de tube EDTA issu du circuit habituel EFS |
+| Volet familles | Environ 100 familles nucléaires sélectionnées par le CRB à partir de reliquats d’ADN déjà conservés |
+| Consentement volet familles | Consentement écrit signé autorisant la recherche ; portée exacte à vérifier pour Génome Réunion |
+| Pseudonymisation volet familles | Réalisée par le CRB avant mise à disposition aux équipes de recherche |
+| Prélèvement supplémentaire pour la recherche | Non prévu, ni pour la cohorte principale ni pour le volet familial |
+| Information / accord cohorte principale | Information lors de l’entretien avec le médecin EFS + accord écrit signé |
+| Pseudonymisation cohorte principale | Code généré et table identité ↔ code conservée par l’EFS |
 | Données transmises au CRB | tube codé + site de prélèvement ; âge uniquement si finalement nécessaire |
 | Génotypage | Puce SNP de type Global Diversity Array / technologie équivalente (~1,9 M SNP dans le corpus actuel) |
 | Analyses principales | QC, PCA, ADMIXTURE, KING, ROH, IBD, sélection géo-ancestrale, phasage, imputation, LAI, recalibrage des fréquences, analyses pharmacogénétiques populationnelles |
@@ -83,7 +95,6 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Pharmacogénétique clinique individuelle | Hors traitement initial : prescriptions, réponse au traitement, recommandation ou adaptation individuelle de posologie |
 | Durée globale du projet | 36 mois dans le corpus scientifique / économique |
 | Ressource durable | Séparée du traitement MR-004 initial ; cadre à définir ultérieurement |
-| Volet 100 familles | Scientifiquement prévu, mais **hors périmètre réglementaire initial tant que son circuit n’est pas qualifié** |
 | Données cliniques / IA | Hors traitement initial ; extensions à réévaluer séparément |
 
 ---
@@ -193,7 +204,7 @@ Ces extensions devront faire l’objet d’une nouvelle analyse réglementaire a
 
 ## 5.1 Nature de l’étude
 
-Étude observationnelle de génomique populationnelle reposant sur la réutilisation, à des fins scientifiques, d’un reliquat biologique issu du circuit EFS.
+Étude observationnelle de génomique populationnelle reposant sur la réutilisation, à des fins scientifiques, de matériels biologiques déjà prélevés et conservés : reliquats de tube EDTA issus du circuit EFS pour la cohorte principale et reliquats d’ADN conservés au CRB pour le volet familial.
 
 Aucun prélèvement sanguin supplémentaire n’est actuellement prévu spécifiquement pour Génome Réunion.
 
@@ -223,13 +234,20 @@ Le corpus scientifique prévoit un panel hybride combinant :
 
 Les fréquences observées dans les 350 seront donc recalibrées sur la cohorte large, y compris lorsque des variants pharmacogénétiques sont décrits à partir du WGS.
 
-## 5.4 Volet 100 familles
+## 5.4 Volet 100 familles nucléaires
 
-Le corpus scientifique prévoit également environ 100 familles nucléaires, soit ~300 individus hors cohorte principale, pour le phasage par transmission et le contrôle mendélien.
+Le projet prévoit environ **100 familles nucléaires**, soit environ 300 individus, utilisées comme ressource technique pour le phasage par transmission et le contrôle mendélien.
 
-**Ce volet n’est pas intégré au présent périmètre réglementaire initial tant que son mode de recrutement, l’origine des prélèvements et son information/accord spécifique n’ont pas été qualifiés.**
+Le circuit retenu est distinct de celui de la cohorte EFS :
 
-Il pourra être ajouté par amendement ou protocole spécifique après analyse DRCI / DPO.
+1. le CRB identifie des familles nucléaires à partir de reliquats d’ADN déjà conservés ;
+2. seuls les dossiers disposant d’un **consentement écrit signé autorisant la recherche** peuvent être considérés ;
+3. le CRB vérifie l’éligibilité technique des échantillons ;
+4. le CRB réalise la **pseudonymisation avant mise à disposition** ;
+5. les équipes de recherche reçoivent uniquement les échantillons et/ou données pseudonymisés nécessaires aux analyses ;
+6. aucune identité directe n’est transmise aux équipes de recherche.
+
+Ce volet est proposé comme composante du périmètre initial, sous réserve de validation DRCI / DPO de la portée des consentements existants, du statut des reliquats d’ADN et du circuit CRB.
 
 ---
 
@@ -237,9 +255,12 @@ Il pourra être ajouté par amendement ou protocole spécifique après analyse D
 
 ## 6.1 Population cible opérationnelle
 
-Participants recrutés parmi les donneurs pris en charge par l’EFS La Réunion et ayant reçu une information spécifique sur Génome Réunion.
+Deux sources de participants sont envisagées :
 
-## 6.2 Critères d’inclusion actuellement établis
+- la cohorte populationnelle principale recrutée parmi les donneurs pris en charge par l’EFS La Réunion et ayant reçu une information spécifique sur Génome Réunion ;
+- le volet familial constitué à partir de personnes dont l’ADN est déjà conservé au CRB et pour lesquelles un consentement écrit autorisant la recherche est disponible.
+
+## 6.2 Critères d’inclusion actuellement établis — cohorte principale
 
 - participation au circuit EFS ;
 - information préalable sur le projet lors de l’entretien avec le médecin EFS ;
@@ -248,14 +269,14 @@ Participants recrutés parmi les donneurs pris en charge par l’EFS La Réunion
 - attribution d’un identifiant pseudonyme par l’EFS ;
 - quantité / qualité biologique suffisante pour permettre l’extraction et les analyses prévues.
 
-## 6.3 Critères d’exclusion actuellement établis ou logiquement nécessaires
+## 6.3 Critères d’exclusion actuellement établis ou logiquement nécessaires — cohorte principale
 
 - absence d’accord écrit / opposition du participant ;
 - absence ou insuffisance de reliquat biologique exploitable ;
 - impossibilité technique d’obtenir une donnée génétique de qualité suffisante ;
 - échec majeur des contrôles qualité rendant l’échantillon non exploitable pour les analyses prévues.
 
-## 6.4 Critères restant à formaliser
+## 6.4 Critères restant à formaliser — cohorte principale
 
 Le corpus actuel ne permet pas encore de considérer comme définitivement établis :
 
@@ -266,30 +287,47 @@ Le corpus actuel ne permet pas encore de considérer comme définitivement étab
 
 **À confirmer avec EFS / DRCI.**
 
+## 6.5 Critères spécifiques — volet familles
+
+Critères actuellement identifiés :
+
+- présence d’un reliquat d’ADN conservé au CRB ;
+- existence d’un consentement écrit signé autorisant la recherche ;
+- appartenance à une structure de famille nucléaire exploitable pour les analyses prévues ;
+- quantité et qualité d’ADN suffisantes ;
+- pseudonymisation par le CRB avant mise à disposition.
+
+Restent à formaliser :
+
+- la portée exacte du consentement au regard de Génome Réunion ;
+- les critères précis définissant une famille nucléaire éligible ;
+- les règles de retrait / opposition ;
+- les modalités de conservation et de réutilisation des aliquots.
+
 ---
 
-# 7. Origine des échantillons et circuit EFS → CRB
+# 7. Origine des échantillons et circuits biologiques
 
-## 7.1 Information et accord
+## 7.1 Cohorte principale — information et accord
 
 Le projet est présenté au donneur lors de l’entretien avec le médecin de l’EFS. Le participant reçoit une explication du projet puis signe un accord écrit.
 
 La forme réglementaire définitive du document d’information / accord sera finalisée après validation de la qualification RNIPH / MR-004.
 
-## 7.2 Origine biologique
+## 7.2 Cohorte principale — origine biologique
 
 Le matériel biologique utilisé est un **reliquat de tube EDTA issu du circuit habituel du don de sang**.
 
 Aucun tube supplémentaire spécifique Génome Réunion n’est prévu dans le circuit actuel.
 
-## 7.3 Codage
+## 7.3 Cohorte principale — codage
 
 - l’EFS génère le code pseudonyme ;
 - l’EFS conserve la table identité ↔ code ;
 - le CHU / CRB ne reçoit pas l’identité directe dans le circuit prévu ;
 - l’équipe de recherche travaille sur les codes pseudonymes.
 
-## 7.4 Données transmises au CRB
+## 7.4 Cohorte principale — données transmises au CRB
 
 À ce stade :
 
@@ -300,7 +338,7 @@ Aucun tube supplémentaire spécifique Génome Réunion n’est prévu dans le c
 
 Aucune autre donnée personnelle n’est considérée comme nécessaire dans le circuit actuellement figé.
 
-## 7.5 Traitement CRB
+## 7.5 Cohorte principale — traitement CRB
 
 Le CRB :
 
@@ -311,6 +349,21 @@ Le CRB :
 5. prépare un aliquot pour les analyses autorisées de l’équipe de recherche.
 
 Les modalités de transport, de conservation, de retrait et de destruction sont traitées dans les documents dédiés et restent à valider avant ouverture de la collecte.
+
+## 7.6 Volet familles — circuit CRB
+
+Le volet familial repose sur des **reliquats d’ADN déjà conservés au CRB**.
+
+Le CRB :
+
+1. identifie les familles nucléaires potentiellement éligibles ;
+2. vérifie l’existence d’un consentement écrit signé autorisant la recherche ;
+3. vérifie la disponibilité et la qualité des reliquats d’ADN ;
+4. attribue ou applique un identifiant pseudonyme adapté au projet ;
+5. conserve le lien avec l’identité dans le cadre institutionnel autorisé ;
+6. met à disposition des équipes de recherche uniquement les aliquots et informations pseudonymisés nécessaires au phasage et au contrôle mendélien.
+
+Aucune identité directe n’est transmise aux équipes de recherche dans ce circuit.
 
 ---
 
@@ -345,7 +398,19 @@ Les modalités de transport, de conservation, de retrait et de destruction sont 
 - fréquences et annotations de variants pharmacogénétiques retenus pour l’analyse populationnelle ;
 - indicateurs d’incertitude et de qualité.
 
-## 8.3 Point à arbitrer — variable géographique
+## 8.3 Données du volet familial
+
+Les données du volet familial sont limitées à ce qui est nécessaire au phasage et au contrôle mendélien, notamment :
+
+- identifiant pseudonyme ;
+- lien familial nécessaire à la structure de la famille nucléaire ;
+- données de génotypage ;
+- indicateurs de qualité ;
+- informations dérivées nécessaires au phasage par transmission et au contrôle mendélien.
+
+Les identités directes ne sont pas transmises aux équipes de recherche.
+
+## 8.4 Point à arbitrer — variable géographique
 
 Le corpus scientifique utilise une logique de **secteurs géographiques / cellules géo-ancestrales**, alors que le circuit réglementaire actuel transmet uniquement le **site de prélèvement EFS**.
 
@@ -356,7 +421,7 @@ Deux options devront être départagées :
 
 **Statut : À arbitrer avant gel du dictionnaire de données.**
 
-## 8.4 Sexe
+## 8.5 Sexe
 
 Le corpus scientifique mentionne le sexe notamment dans certains contrôles qualité / audits de représentativité, mais le circuit EFS actuellement figé ne prévoit pas sa transmission.
 
@@ -364,7 +429,7 @@ Le corpus scientifique mentionne le sexe notamment dans certains contrôles qual
 
 S’il est retenu, sa nécessité devra être documentée explicitement ; sinon il restera exclu du flux réglementaire initial.
 
-## 8.5 Ascendance déclarée
+## 8.6 Ascendance déclarée
 
 La méthodologie scientifique repose principalement sur une ascendance **génétique inférée** via PCA / ADMIXTURE et panels de référence.
 
@@ -471,7 +536,9 @@ Objectifs :
 
 ## 10.5 Phasage / imputation / LAI
 
-Le corpus prévoit notamment l’utilisation de SHAPEIT4 et d’un phasage progressif, d’abord sur la cohorte SNP puis enrichi par les WGS et, éventuellement, par le volet familial si celui-ci est réglementairement intégré ultérieurement.
+Le corpus prévoit notamment l’utilisation de SHAPEIT4 et d’un phasage progressif sur la cohorte SNP, enrichi par les WGS et par le volet des 100 familles nucléaires sous réserve de validation réglementaire de son intégration.
+
+Les familles nucléaires apportent des contraintes de transmission mendélienne utiles au phasage et au contrôle de qualité. Elles ne servent pas à estimer directement les fréquences populationnelles de la cohorte principale.
 
 L’imputation vise à projeter une partie de l’information du WGS vers la cohorte large ; la LAI peut compléter la description d’une population fortement admixée.
 
@@ -583,7 +650,7 @@ La phase initiale doit produire notamment :
 - une sélection WGS documentée et auditée ;
 - 350 WGS ;
 - un panel local de première génération ;
-- des données de phasage / imputation ;
+- des données de phasage / imputation, incluant l’apport des familles nucléaires si leur intégration réglementaire est validée ;
 - des fréquences génétiques locales recalibrées ;
 - un ensemble de fréquences de variants pharmacogénétiques d’intérêt au niveau populationnel ;
 - une liste argumentée de variants ou couples gène–médicament pouvant justifier des études cliniques spécifiques ultérieures ;
@@ -649,9 +716,10 @@ Le calendrier actuellement décrit dans la synthèse scientifique comprend notam
 - **M1–3** : accès et harmonisation des panels témoins 1000G / EGA ;
 - **M1–5** : validation externe / simulations / comparaison des stratégies de sélection ;
 - **M4–9** : traitement SNP de la cohorte Réunion, QC, PCA / ADMIXTURE, calcul `S_div`, sélection des 350 ;
+- **M4–14** : sélection des 100 familles nucléaires au CRB, génotypage, contrôles mendéliens et contribution au phasage, sous réserve de validation réglementaire ;
 - **M8–22** : WGS des 350, retour des données, QC, base de variants, recalibrage des fréquences et analyses populationnelles associées, dont la pharmacogénétique descriptive.
 
-Le corpus scientifique comporte ensuite d’autres phases (familles, IA, portail clinique) qui **ne sont pas automatiquement incluses dans le présent périmètre MR-004 initial**.
+Le corpus scientifique comporte ensuite d’autres phases (IA, portail clinique) qui **ne sont pas automatiquement incluses dans le présent périmètre MR-004 initial**.
 
 ## 16.3 Point à harmoniser
 
@@ -671,7 +739,7 @@ Le calendrier réglementaire final devra distinguer clairement :
 
 Le corpus économique budgète une conservation CRB sur **36 mois**, mais cette durée correspond à un **horizon de projet / chiffrage** et ne constitue pas à elle seule une durée réglementaire de conservation validée.
 
-La durée de conservation du reliquat, de l’ADN en banque et des aliquots doit être définie avec le CRB / DRCI / DPO.
+La durée de conservation des reliquats, de l’ADN en banque et des aliquots doit être définie avec le CRB / DRCI / DPO, y compris pour le volet familial.
 
 ## 17.2 Données génétiques
 
@@ -684,6 +752,7 @@ Les durées de conservation doivent être définies séparément pour :
 - données dérivées ;
 - rapports QC ;
 - fréquences agrégées, y compris pharmacogénétiques ;
+- données de phasage issues du volet familial ;
 - logs et traces d’audit.
 
 ## 17.3 Ressource durable
@@ -734,7 +803,10 @@ La gouvernance définitive, le Data Access Committee, les critères d’accès e
 
 # 19. Information des participants et droits
 
-Le participant est informé à l’EFS avant utilisation du reliquat et signe un accord écrit.
+Deux circuits d’information / consentement doivent être distingués :
+
+- **cohorte principale EFS** : information sur Génome Réunion lors de l’entretien EFS et accord écrit signé ;
+- **volet familial CRB** : utilisation de reliquats d’ADN déjà conservés pour lesquels un consentement écrit signé autorisant la recherche existe ; la compatibilité précise de ce consentement avec Génome Réunion doit être vérifiée avant inclusion.
 
 La version finale de la note d’information devra préciser notamment :
 
@@ -742,7 +814,7 @@ La version finale de la note d’information devra préciser notamment :
 - nature génétique des données ;
 - existence d’analyses pharmacogénétiques populationnelles sans décision thérapeutique individuelle dans la phase initiale ;
 - pseudonymisation ;
-- rôle respectif EFS / CHU ;
+- rôle respectif EFS / CHU / CRB ;
 - catégories de données utilisées ;
 - panels externes ;
 - destinataires ;
@@ -764,7 +836,8 @@ Les mesures détaillées sont traitées dans `08_securite_aipd.md` et dans l’A
 
 Principes déjà retenus :
 
-- identité et table de correspondance conservées à l’EFS ;
+- identité et table de correspondance de la cohorte principale conservées à l’EFS ;
+- pour le volet familial, pseudonymisation réalisée par le CRB avant mise à disposition aux équipes ;
 - recherche sur identifiants pseudonymes ;
 - absence d’identifiants directs dans les fichiers analytiques ;
 - droits d’accès limités aux personnels habilités ;
@@ -812,6 +885,7 @@ Annexes scientifiques de référence :
 | Élément intégré au protocole | Source principale dans le dépôt |
 |---|---|
 | 2 500 SNP / 350 WGS / 100 familles | synthèse scientifique + README |
+| Circuit 100 familles : reliquats ADN CRB + consentement recherche + pseudonymisation CRB | information projet à formaliser / valider institutionnellement |
 | Panel hybride 322 + 28 (ordre de grandeur actuel) | synthèse scientifique / méthodologie de sélection |
 | PCA / ADMIXTURE / KING / ROH / IBD / phasage / imputation | synthèse scientifique + méthodologies |
 | Pharmacogénétique populationnelle | objectifs scientifiques du projet + synthèse scientifique |
@@ -871,22 +945,26 @@ Annexes scientifiques de référence :
 
 ## 23.6 Volet familles
 
-- [ ] décrire le recrutement ;
-- [ ] décrire l’origine des prélèvements ;
-- [ ] qualifier RIPH / RNIPH ;
-- [ ] décider s’il sera intégré par amendement ou traité comme sous-protocole distinct.
+- [x] principe de sélection par le CRB à partir de reliquats d’ADN déjà conservés ;
+- [x] existence d’un consentement écrit signé autorisant la recherche ;
+- [x] pseudonymisation par le CRB avant mise à disposition aux équipes ;
+- [ ] vérifier la portée exacte des consentements pour Génome Réunion ;
+- [ ] documenter précisément l’origine réglementaire des reliquats d’ADN ;
+- [ ] formaliser les critères d’éligibilité des familles nucléaires ;
+- [ ] valider l’intégration du volet familial au périmètre RNIPH / MR-004 avec la DRCI / le DPO.
 
 ---
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.3, le corpus du dépôt permet de décrire de manière cohérente :
+Au stade de cette version 0.4, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
 - les objectifs ;
 - la cohorte principale ;
-- le circuit biologique ;
+- le circuit biologique EFS → CRB ;
+- le circuit prévu des 100 familles nucléaires à partir de reliquats d’ADN du CRB ;
 - la pseudonymisation ;
 - les grandes catégories de données ;
 - les panels externes ;
@@ -896,4 +974,4 @@ Au stade de cette version 0.3, le corpus du dépôt permet de décrire de maniè
 - le calendrier général ;
 - les exclusions du traitement initial.
 
-Les principaux éléments encore manquants relèvent surtout des **arbitrages institutionnels, du dictionnaire final de données, des responsabilités, des durées de conservation et des contrats**, et non d’un manque de description scientifique du projet.
+Les principaux éléments encore manquants relèvent surtout des **arbitrages institutionnels, du dictionnaire final de données, des responsabilités, de la validation de la portée des consentements familiaux, des durées de conservation et des contrats**, et non d’un manque de description scientifique du projet.
