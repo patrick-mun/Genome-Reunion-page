@@ -55,6 +55,9 @@ Phasage / imputation / LAI
         ↓
 Recalibrage des fréquences sur la cohorte large
         ↓
+Analyse pharmacogénétique populationnelle
+(fréquences de variants / couples gène–médicament d’intérêt)
+        ↓
 Référentiel génomique initial et résultats agrégés
 ```
 
@@ -76,7 +79,8 @@ Produire un profil génétique suffisamment dense pour :
 - mesurer la diversité ;
 - estimer les apparentements ;
 - sélectionner les individus informatifs pour le WGS ;
-- servir de socle au recalibrage ultérieur des fréquences.
+- servir de socle au recalibrage ultérieur des fréquences ;
+- contribuer, lorsque les marqueurs sont disponibles, à l’estimation de fréquences de variants pharmacogénétiques.
 
 ### Données produites
 
@@ -223,7 +227,8 @@ Selon le pipeline retenu :
 - fichiers bruts de séquençage ;
 - données alignées ;
 - variants ;
-- données dérivées nécessaires aux analyses.
+- données dérivées nécessaires aux analyses ;
+- variants pharmacogénétiques exploitables au niveau populationnel.
 
 ### Risque particulier
 
@@ -260,11 +265,47 @@ Les fréquences observées dans les 350 ne sont donc pas utilisées naïvement c
 
 Le projet prévoit un recalibrage sur la cohorte large des ~2 500 participants au moyen de méthodes de pondération, stratification et/ou imputation.
 
-Cette étape vise à produire des estimations plus robustes de fréquences génétiques locales.
+Cette étape vise à produire des estimations plus robustes de fréquences génétiques locales, y compris pour les variants pharmacogénétiques lorsqu’ils sont concernés par le panel WGS enrichi.
 
 ---
 
-## 13. Résultats produits
+## 13. Pharmacogénétique populationnelle
+
+### Finalité
+
+La pharmacogénétique fait partie des objectifs scientifiques et sanitaires du référentiel Génome Réunion.
+
+Dans la phase initiale MR-004, elle est étudiée **au niveau populationnel** afin de :
+
+- estimer les fréquences de variants pharmacogénétiques dans la population réunionnaise ;
+- documenter leur distribution dans une population fortement admixée ;
+- comparer ces fréquences à des référentiels externes pertinents lorsque cela est scientifiquement justifié ;
+- identifier les variants et couples gène–médicament susceptibles d’avoir un intérêt local particulier ;
+- hiérarchiser les questions qui pourront ensuite faire l’objet d’études cliniques spécifiques.
+
+### Données utilisées
+
+- génotypes SNP lorsque les variants pharmacogénétiques pertinents sont couverts ;
+- WGS des 350 individus ;
+- fréquences recalibrées sur la cohorte large lorsque cela est méthodologiquement possible ;
+- annotations pharmacogénétiques externes de référence nécessaires à l’interprétation scientifique.
+
+### Limite réglementaire et clinique
+
+Cette phase ne comporte pas :
+
+- données individuelles de prescription ;
+- réponse thérapeutique ;
+- données d’iatrogénie ;
+- recommandation individuelle de médicament ;
+- adaptation individuelle de posologie ;
+- décision clinique automatisée.
+
+La pharmacogénétique clinique individuelle nécessitera une extension réglementaire et scientifique distincte.
+
+---
+
+## 14. Résultats produits
 
 La phase initiale peut produire notamment :
 
@@ -276,14 +317,16 @@ La phase initiale peut produire notamment :
 - listes de sélection WGS ;
 - données de phasage et imputation ;
 - fréquences alléliques locales ;
+- fréquences de variants pharmacogénétiques au niveau populationnel ;
+- priorisation de couples gène–médicament pouvant justifier des études ultérieures ;
 - indicateurs de qualité et d’incertitude ;
 - résultats agrégés destinés aux publications et au référentiel initial.
 
-Les résultats individuels ne sont pas destinés à être rendus publics.
+Les résultats individuels ne sont pas destinés à être rendus publics ni à être utilisés pour une décision thérapeutique dans la phase initiale.
 
 ---
 
-## 14. Analyses exclues de la phase initiale
+## 15. Analyses exclues de la phase initiale
 
 Ne sont pas considérés comme automatiquement couverts par la présente phase MR-004 :
 
@@ -291,6 +334,7 @@ Ne sont pas considérés comme automatiquement couverts par la présente phase M
 - diagnostic individuel ;
 - données de prescription / iatrogénie ;
 - pharmacogénétique clinique individuelle ;
+- recommandation ou adaptation individuelle de médicament ou de posologie ;
 - protéomique ;
 - réutilisation AURAGEN / autres cohortes ;
 - entraînement de modèles IA sur données réelles ;
@@ -300,7 +344,7 @@ Ces extensions feront l’objet d’une nouvelle analyse réglementaire avant mi
 
 ---
 
-## 15. Renvoi aux documents scientifiques
+## 16. Renvoi aux documents scientifiques
 
 Le présent document reste volontairement synthétique.
 
