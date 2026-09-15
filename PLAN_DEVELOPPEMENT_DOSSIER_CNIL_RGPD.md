@@ -3,7 +3,7 @@
 **Projet :** Génome Réunion  
 **Porteur scientifique :** CHU de La Réunion — Service de génétique moléculaire  
 **Document :** plan maître de développement et de suivi réglementaire  
-**Version :** 0.6  
+**Version :** 0.7  
 **Date de mise à jour :** 15 septembre 2026  
 **Statut :** document de travail évolutif
 
@@ -16,7 +16,7 @@
 3. Employer **pseudonymisé** et non « pseudo-anonymisé » lorsqu'un lien avec l'identité peut être restauré.
 4. Séparer la phase populationnelle initiale des extensions cliniques, pharmacogénétiques, IA et nouvelles cohortes.
 5. Toute décision structurante doit être tracée dans le journal des décisions.
-6. Le dossier de travail MR-004 est désormais structuré selon le **Starter Kit MR-004 de la Plateforme des données de santé**, avec séparation entre pièces constitutives et preuves de conformité à conserver.
+6. Le dossier de travail MR-004 est structuré selon le **Starter Kit MR-004 de la Plateforme des données de santé**, avec séparation entre pièces constitutives et preuves de conformité à conserver.
 7. Le dépôt GitHub étant public, les preuves confidentielles ou nominatives ne doivent jamais y être stockées ; seules les trames, index et versions expurgées peuvent y figurer.
 
 ### Statuts
@@ -38,9 +38,9 @@
 |---|---|---:|---|
 | 0 | Cadrage et corpus documentaire | ✅ | maintenir les sources |
 | 1 | Circuit recrutement / EFS / CRB | ✅ fonctionnellement | validation institutionnelle ultérieure |
-| 2 | Qualification RNIPH / MR-004 | 🟨 | consolider le protocole Starter Kit et lever les verrous institutionnels |
+| 2 | Qualification RNIPH / MR-004 | 🟨 | relire le protocole prérempli et lever les verrous institutionnels |
 | 3 | Acteurs, responsabilités et conventions | ⬜ | responsable de traitement puis rôles EFS/CRB/POPgen |
-| 4 | Données et minimisation | ⬜ | dictionnaire des variables |
+| 4 | Données et minimisation | ⬜ | arbitrer géographie / âge / sexe et dictionnaire final |
 | 5 | Flux détaillés et pseudonymisation | ⬜ | cartographie complète |
 | 6 | Échantillons biologiques / CRB | ⬜ | conservation, retrait, aliquotage |
 | 7 | Infrastructure, sécurité et hébergement | ⬜ | architecture de production |
@@ -88,7 +88,7 @@ Circuit retenu :
 
 ### Structure Starter Kit
 
-Le dossier `cnil-mr004/` devient la structure réglementaire principale de travail :
+Le dossier `cnil-mr004/` est la structure réglementaire principale de travail :
 
 ```text
 cnil-mr004/
@@ -119,7 +119,44 @@ cnil-mr004/
 
 Cette hypothèse reste soumise à validation DRCI / DPO.
 
-## 4.2 Résultat de la grille MR-004
+## 4.2 Protocole scientifique Starter Kit
+
+`cnil-mr004/01_dossier_mr004/01_protocole_scientifique_mr004.md` est désormais **prérempli en version 0.2** à partir du corpus scientifique, méthodologique, infrastructure et CNIL du dépôt.
+
+Le préremplissage couvre :
+
+- titre / identification ;
+- contexte et intérêt public ;
+- objectifs principal et secondaires ;
+- cohorte 2 500 ;
+- circuit EFS → CRB ;
+- données utilisées ;
+- panels 1000G / EGA ;
+- méthodes analytiques ;
+- sélection des 350 WGS ;
+- WGS ;
+- résultats attendus ;
+- limites ;
+- calendrier ;
+- conservation à arbitrer ;
+- publication / gouvernance ;
+- points à compléter.
+
+Le **volet 100 familles est laissé hors périmètre réglementaire initial** tant que son propre circuit de recrutement / prélèvement n'est pas qualifié.
+
+### Point d'harmonisation identifié
+
+La méthodologie scientifique utilise des secteurs géographiques et mentionne un audit EFS avec certaines variables, alors que le circuit réglementaire actuellement stabilisé transmet uniquement le **site de prélèvement EFS** et éventuellement l'âge.
+
+Il faut donc arbitrer :
+
+- si le site EFS suffit comme variable géographique ;
+- ou si une autre donnée géographique est réellement nécessaire et doit être ajoutée au flux ;
+- si l'âge est nécessaire ;
+- si le sexe est nécessaire ;
+- si une ascendance déclarée est encore nécessaire, ou si l'ascendance génétique inférée suffit.
+
+## 4.3 Résultat de la grille MR-004
 
 Aucune incompatibilité certaine avec la MR-004 n'est identifiée à ce stade.
 
@@ -128,7 +165,7 @@ Les principaux verrous restent :
 - [ ] **qualification RNIPH formellement validée par la DRCI** ;
 - [ ] **responsable de traitement identifié** ;
 - [ ] **base légale RGPD validée par le DPO** ;
-- [ ] **protocole réglementaire unique rédigé et validé scientifiquement** ;
+- [ ] **protocole réglementaire prérempli relu, harmonisé et validé scientifiquement** ;
 - [ ] **rôles EFS / CRB / POPgen / plateformes qualifiés** ;
 - [ ] **dictionnaire des données et justification de minimisation** ;
 - [ ] **information spécifique génétique conforme au CSP actuel** ;
@@ -137,21 +174,20 @@ Les principaux verrous restent :
 - [ ] **AIPD réalisée sans risque résiduel élevé** ;
 - [ ] **vérification de l'engagement MR-004 du CHU et inscription au registre / répertoire public**.
 
-### Position corrigée sur KING
+### Position sur KING
 
-KING est un **outil analytique de quantification / contrôle de parenté entre échantillons pseudonymisés**. Il n'est pas utilisé pour identifier nominativement les participants. Il doit être documenté dans le protocole comme méthode analytique, sans être considéré comme un verrou MR-004 en soi. Le risque lié aux inférences de parenté reste à traiter dans l'AIPD et la gouvernance.
+KING est un **outil analytique de quantification / contrôle de parenté entre échantillons pseudonymisés**. Il n'est pas utilisé pour identifier nominativement les participants. Il est documenté dans le protocole comme méthode analytique. Le risque lié aux inférences de parenté reste à traiter dans l'AIPD et la gouvernance.
 
-## 4.3 Sources externes
+## 4.4 Sources externes
 
-1000G / IGSR et les datasets EGA nécessaires peuvent être intégrés au même traitement scientifique comme **panels externes de référence**, sous réserve de :
+1000G / IGSR et les datasets EGA nécessaires sont intégrés au protocole comme **panels externes de référence**, sous réserve de :
 
-- les décrire dans le protocole ;
 - documenter leur rôle analytique ;
 - limiter les données importées au nécessaire ;
 - respecter les conditions DAC / DAA propres à chaque dataset EGA ;
 - ne pas transformer un panel externe en nouvelle cohorte étudiée pour elle-même sans réévaluation réglementaire.
 
-## 4.4 Frontière avec la ressource durable
+## 4.5 Frontière avec la ressource durable
 
 La MR-004 est évaluée pour **l'étude initiale** :
 
@@ -168,20 +204,21 @@ La future ressource durable multi-projets devra disposer d'un cadre distinct ou 
 
 # 5. Ordre de travail retenu pour terminer la Phase 2
 
-## Étape 2.1 — Responsable de traitement et base légale
+## Étape 2.1 — Relecture du protocole Starter Kit
+
+- [x] préremplir `cnil-mr004/01_dossier_mr004/01_protocole_scientifique_mr004.md` ;
+- [ ] relire section par section avec le porteur scientifique ;
+- [ ] arbitrer les variables géographiques / âge / sexe ;
+- [ ] confirmer les critères d'inclusion / exclusion ;
+- [ ] harmoniser le calendrier réglementaire ;
+- [ ] geler une version scientifique prête pour DRCI / DPO.
+
+## Étape 2.2 — Responsable de traitement et base légale
 
 - [ ] identifier formellement le responsable de traitement ;
 - [ ] vérifier si le CHU dispose déjà d'un engagement de conformité MR-004 ;
 - [ ] valider la base légale article 6 RGPD ;
 - [ ] valider l'exception article 9 pour données génétiques / santé.
-
-## Étape 2.2 — Protocole Starter Kit MR-004
-
-- [ ] compléter `cnil-mr004/01_dossier_mr004/01_protocole_scientifique_mr004.md` ;
-- [ ] intégrer finalités, personnes, données, sources, méthodes et calendrier ;
-- [ ] intégrer 1000G / EGA comme sources externes ;
-- [ ] intégrer les méthodes analytiques déjà documentées ;
-- [ ] faire valider scientifiquement le protocole.
 
 ## Étape 2.3 — Données et acteurs
 
@@ -202,7 +239,7 @@ La future ressource durable multi-projets devra disposer d'un cadre distinct ou 
 ## Étape 2.5 — Contrôle final
 
 - [ ] reprendre chaque ligne de `CNIL_02B_GRILLE_CONFORMITE_MR004.md` ;
-- [ ] vérifier l'existence des preuves correspondantes dans l'inventaire `cnil-mr004/02_preuves_a_conserver/` ;
+- [ ] vérifier l'existence des preuves correspondantes dans `cnil-mr004/02_preuves_a_conserver/` ;
 - [ ] si une exigence reste incompatible : analyser une demande d'autorisation spécifique ;
 - [ ] sinon : préparer la mise en œuvre sous MR-004 et l'enregistrement dans le répertoire public PDS.
 
@@ -217,7 +254,7 @@ CHU, EFS, CRB, POPgen, plateformes, hébergeur, partenaires scientifiques.
 
 ## Phase 4 — Données et minimisation
 
-Code, sexe, âge éventuel, centre / secteur, ascendance déclarée, SNP, WGS, PCA, ADMIXTURE, KING, ROH, IBD, S_div, phasage, imputation, LAI.  
+Code, âge éventuel, site / secteur, sexe éventuel, SNP, WGS, PCA, ADMIXTURE, KING, ROH, IBD, S_div, phasage, imputation, LAI.  
 **Livrable :** `CNIL_04_DICTIONNAIRE_DONNEES.md`.
 
 ## Phase 5 — Flux et pseudonymisation
@@ -260,34 +297,38 @@ Notice, opposition, retrait, résultats génétiques, durées.
 | S02 | Qualification RNIPH | 🟦 | validation DRCI |
 | S03 | Grille MR-004 | ✅ réalisée | lever les verrous |
 | S04 | Structure Starter Kit MR-004 | ✅ créée | remplir progressivement les pièces |
-| S05 | Responsable de traitement | 🟧 | DPO / DRCI / juridique |
-| S06 | Base légale | 🟧 | DPO |
-| S07 | Protocole réglementaire | 🟨 | compléter la trame Starter Kit |
-| S08 | KING / parenté | ✅ méthode analytique compatible en conception | documenter dans protocole + AIPD |
-| S09 | 1000G / EGA | 🟨 | annexe sources + DAC / DAA |
-| S10 | Acteurs / contrats | 🟧 | Phase 3 |
-| S11 | Dictionnaire de données | 🟨 | Phase 4 |
-| S12 | Pseudonymisation | 🟦 | modèle EFS établi, formalisation Phase 5 |
-| S13 | Ressource durable | 🟧 | cadre distinct à définir |
-| S14 | Infrastructure | 🟨 | Phase 7 |
-| S15 | AIPD | 🟧 | Phase 10 |
-| S16 | Volet 100 familles | 🟧 | qualification séparée avant intégration |
-| S17 | IA / clinique / AURAGEN | ⛔ | extensions futures |
+| S05 | Protocole scientifique MR-004 | 🟨 version 0.2 préremplie | relecture section par section |
+| S06 | Responsable de traitement | 🟧 | DPO / DRCI / juridique |
+| S07 | Base légale | 🟧 | DPO |
+| S08 | KING / parenté | ✅ méthode analytique compatible en conception | AIPD / gouvernance |
+| S09 | 1000G / EGA | 🟨 | compléter accessions + DAC / DAA |
+| S10 | Géographie / âge / sexe | 🟧 arbitrage scientifique / minimisation | relecture protocole |
+| S11 | Acteurs / contrats | 🟧 | Phase 3 |
+| S12 | Dictionnaire de données | 🟨 | Phase 4 |
+| S13 | Pseudonymisation | 🟦 | modèle EFS établi, formalisation Phase 5 |
+| S14 | Ressource durable | 🟧 | cadre distinct à définir |
+| S15 | Infrastructure | 🟨 | Phase 7 |
+| S16 | AIPD | 🟧 | Phase 10 |
+| S17 | Volet 100 familles | 🟧 | qualification séparée avant intégration |
+| S18 | IA / clinique / AURAGEN | ⛔ | extensions futures |
 
 ---
 
 # 8. Prochaine étape active
 
-## **Étape 2.1 — Responsable de traitement et base légale**
+## **Relecture du protocole scientifique MR-004 version 0.2**
 
-Avant d'approfondir les documents participants ou l'AIPD, il faut déterminer :
+La prochaine séance doit relire le fichier :
 
-1. qui est juridiquement responsable du traitement ;
-2. si le CHU a déjà déclaré sa conformité à la MR-004 ;
-3. quelle base légale article 6 RGPD sera retenue ;
-4. quelle condition article 9 RGPD fonde le traitement des données génétiques.
+`cnil-mr004/01_dossier_mr004/01_protocole_scientifique_mr004.md`
 
-En parallèle, le protocole scientifique MR-004 peut être complété à partir du corpus existant.
+section par section, afin de :
+
+1. valider ce qui est correctement décrit ;
+2. corriger les formulations scientifiques ;
+3. arbitrer les données réellement nécessaires ;
+4. identifier les informations institutionnelles manquantes ;
+5. produire ensuite une version 0.3 plus proche du document transmissible à la DRCI / DPO.
 
 ---
 
@@ -298,11 +339,14 @@ En parallèle, le protocole scientifique MR-004 peut être complété à partir 
 | 2026-09-14 | Circuit EFS → CRB fonctionnellement clôturé. | ✅ | Phase 1 |
 | 2026-09-14 | Hypothèse principale : RNIPH. | 🟦 | validation DRCI |
 | 2026-09-14 | MR-004 retenue comme cadre principal à tester. | 🟦 | Phase 2 |
-| 2026-09-14 | 1000G / EGA sont intégrés comme panels externes de référence dans la même étude, avec traçabilité dédiée. | ✅ méthode | protocole / annexe sources |
+| 2026-09-14 | 1000G / EGA intégrés comme panels externes de référence dans la même étude, avec traçabilité dédiée. | ✅ méthode | protocole / annexe sources |
 | 2026-09-14 | Grille MR-004 réalisée : aucune incompatibilité certaine, plusieurs verrous à lever. | ✅ | plan de conformité |
 | 2026-09-15 | KING est reclassé comme méthode analytique de parenté sur données pseudonymisées, et non comme verrou MR-004. | ✅ | protocole + AIPD |
 | 2026-09-15 | Structure de dossier fondée sur le Starter Kit MR-004 créée dans `cnil-mr004/`. | ✅ | structure documentaire de référence |
 | 2026-09-15 | Les preuves confidentielles seront conservées hors GitHub public dans un espace institutionnel sécurisé. | ✅ | sécurité documentaire |
+| 2026-09-15 | Protocole scientifique MR-004 prérempli à partir du corpus du dépôt. | ✅ version de travail | relecture section par section |
+| 2026-09-15 | Volet 100 familles maintenu hors protocole réglementaire initial jusqu'à qualification de son circuit. | ✅ méthode | évite de mélanger deux cadres non stabilisés |
+| 2026-09-15 | Incohérence à arbitrer entre variable géographique de la méthodologie et données réellement transmises par l'EFS. | 🟧 | dictionnaire de données / minimisation |
 | 2026-09-14 | La ressource durable reste séparée du traitement initial MR-004. | ✅ méthode | cadre futur distinct |
 
 ---
@@ -317,3 +361,4 @@ En parallèle, le protocole scientifique MR-004 peut être complété à partir 
 | 0.4 | 2026-09-14 | Hypothèse RNIPH + MR-004 et séparation ressource durable |
 | 0.5 | 2026-09-14 | Grille de conformité MR-004 réalisée et ordre de levée des verrous défini |
 | 0.6 | 2026-09-15 | Structure Starter Kit MR-004 créée, inventaire des preuves ajouté, KING reclassé comme méthode analytique |
+| 0.7 | 2026-09-15 | Protocole scientifique MR-004 v0.2 prérempli depuis le dépôt ; points d'harmonisation identifiés |
