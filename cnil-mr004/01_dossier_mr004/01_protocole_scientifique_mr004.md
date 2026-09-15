@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.6 — génotypage SNP internalisé sur iScan au CHU  
+**Version :** 0.7 — intégration du portail web public de résultats agrégés  
 **Date :** 15 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -95,6 +95,8 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Panels externes | 1000G / IGSR + datasets EGA autorisés |
 | Pharmacogénétique populationnelle | Incluse : fréquences de variants pharmacogénétiques et identification de couples gène–médicament d’intérêt collectif |
 | Pharmacogénétique clinique individuelle | Hors traitement initial : prescriptions, réponse au traitement, recommandation ou adaptation individuelle de posologie |
+| Portail web public | Inclus : diffusion de résultats agrégés, fréquences locales et variants nouvellement observés ou de fréquence différente sous réserve de règles de contrôle de divulgation |
+| Portail clinique / données individuelles | Hors traitement initial |
 | Durée globale du projet | 36 mois dans le corpus scientifique / économique |
 | Ressource durable | Séparée du traitement MR-004 initial ; cadre à définir ultérieurement |
 | Données cliniques / IA | Hors traitement initial ; extensions à réévaluer séparément |
@@ -155,9 +157,12 @@ L’intérêt public attendu repose notamment sur :
 - l’identification de couples gène–médicament ou de variants pharmacogénétiques prioritaires pouvant justifier des études cliniques ciblées ultérieures ;
 - la préparation d’actions futures de prévention de certains risques médicamenteux ou d’adaptation de posologie, qui devront être évaluées dans des protocoles cliniques distincts avant tout usage individuel ;
 - la réduction des inégalités de connaissance liées à l’utilisation de référentiels principalement construits à partir de populations moins admixées ou mieux représentées ;
-- la mise à disposition de résultats agrégés et d’une ressource de référence encadrée pour la recherche.
+- la mise à disposition de résultats agrégés et d’une ressource de référence encadrée pour la recherche ;
+- la **diffusion publique, via un portail web dédié, de résultats agrégés utiles à la communauté scientifique et médicale**, notamment des fréquences alléliques locales, des comparaisons avec les référentiels externes et des variants nouvellement observés ou présentant une fréquence sensiblement différente, dans le respect de règles de contrôle de divulgation.
 
 La pharmacogénétique est donc considérée ici comme un **enjeu d’intérêt public populationnel et de préparation de futures recherches cliniques**, et non comme une décision thérapeutique automatisée ou une prise en charge médicale individuelle dans le cadre du présent protocole.
+
+Le portail web public constitue un **outil de restitution et de valorisation des résultats de la recherche**. Il ne donnera pas accès aux données individuelles pseudonymisées ni à des résultats dont le niveau de détail pourrait permettre une ré-identification directe ou indirecte.
 
 **Statut réglementaire de la justification d’intérêt public : à formaliser et valider dans la version institutionnelle.**
 
@@ -183,6 +188,7 @@ La pharmacogénétique est donc considérée ici comme un **enjeu d’intérêt 
 10. Caractériser, à l’échelle populationnelle, la fréquence de variants pharmacogénétiques d’intérêt dans la population réunionnaise.
 11. Identifier des couples gène–médicament ou des profils pharmacogénétiques susceptibles de justifier des études cliniques ciblées ultérieures, sans produire de recommandation individuelle dans la phase initiale.
 12. Produire des résultats agrégés, des indicateurs de qualité et un référentiel initial utilisable dans des projets de recherche ultérieurs sous gouvernance adaptée.
+13. **Mettre à disposition un portail web public de restitution des résultats agrégés**, permettant notamment de consulter des fréquences locales et des différences avec des référentiels externes, sous réserve de règles de publication empêchant la divulgation de données individuelles ou ré-identifiantes.
 
 ## 4.3 Finalités explicitement hors périmètre initial
 
@@ -196,7 +202,7 @@ Ne sont pas considérées comme automatiquement couvertes par le présent protoc
 - protéomique ;
 - réutilisation de génomes AURAGEN / SeqOIA ou d’autres cohortes ;
 - entraînement de modèles d’IA sur les données individuelles Génome Réunion ;
-- portail clinique ou décision médicale automatisée ;
+- **portail clinique ou portail donnant accès à des données individuelles/pseudonymisées ou permettant une décision médicale individualisée** ;
 - utilisation des 100 familles pour estimer les fréquences populationnelles ou décrire la distribution de variants dans la population réunionnaise ;
 - toute analyse visant l’identification ou la ré-identification d’un participant.
 
@@ -682,7 +688,23 @@ La phase initiale doit produire notamment :
 - un ensemble de fréquences de variants pharmacogénétiques d’intérêt au niveau populationnel ;
 - une liste argumentée de variants ou couples gène–médicament pouvant justifier des études cliniques spécifiques ultérieures ;
 - des intervalles / statuts de fiabilité lorsque nécessaire ;
-- des résultats agrégés destinés aux publications et au référentiel initial.
+- des résultats agrégés destinés aux publications et au référentiel initial ;
+- un **portail web public de restitution des résultats agrégés**.
+
+## 14.1 Portail web public de restitution
+
+Le portail public pourra présenter notamment :
+
+- des fréquences alléliques locales ;
+- des comparaisons avec des bases ou panels de référence externes ;
+- des variants nouvellement observés dans la cohorte réunionnaise ;
+- des variants dont la fréquence locale apparaît sensiblement différente de celle observée dans les référentiels externes ;
+- des résultats agrégés de pharmacogénétique populationnelle ;
+- des éléments méthodologiques et indicateurs de qualité nécessaires à l’interprétation des résultats publiés.
+
+La publication d’un variant ou d’une fréquence sera conditionnée à des **règles de contrôle de divulgation**. Les variants ultra-rares, les petits sous-groupes, les haplotypes rares ou les combinaisons de variables susceptibles d’augmenter le risque de ré-identification pourront être supprimés, regroupés, masqués ou réservés à un accès contrôlé.
+
+Le portail public ne donnera accès ni aux fichiers individuels, ni aux identifiants pseudonymes, ni aux données WGS individuelles, ni aux résultats du volet familial.
 
 Les résultats issus du volet familial sont limités à l’évaluation et à l’amélioration du phasage. Ils ne sont pas utilisés pour produire des fréquences ou une description populationnelle des variants.
 
@@ -746,9 +768,10 @@ Le calendrier actuellement décrit dans la synthèse scientifique comprend notam
 - **M1–5** : validation externe / simulations / comparaison des stratégies de sélection ;
 - **M4–9** : génotypage SNP réalisé en interne au CHU sur iScan Illumina, traitement de la cohorte Réunion, QC, PCA / ADMIXTURE, calcul `S_div`, sélection des 350 ;
 - **M4–14** : sélection des 100 familles nucléaires au CRB, génotypage, contrôles mendéliens et amélioration du phasage ;
-- **M8–22** : WGS des 350, retour des données, QC, base de variants, recalibrage des fréquences et analyses populationnelles associées, dont la pharmacogénétique descriptive.
+- **M8–22** : WGS des 350, retour des données, QC, base de variants, recalibrage des fréquences et analyses populationnelles associées, dont la pharmacogénétique descriptive ;
+- **M22–36** : consolidation des résultats agrégés, définition des règles de contrôle de divulgation et mise en ligne progressive du portail public de restitution.
 
-Le corpus scientifique comporte ensuite d’autres phases (IA, portail clinique) qui **ne sont pas automatiquement incluses dans le présent périmètre MR-004 initial**.
+Les phases d’IA clinique, de portail clinique ou de décision médicale individualisée **ne sont pas automatiquement incluses dans le présent périmètre MR-004 initial**.
 
 ## 16.3 Point à harmoniser
 
@@ -783,6 +806,8 @@ Les durées de conservation doivent être définies séparément pour :
 - fréquences agrégées, y compris pharmacogénétiques ;
 - données de phasage issues du volet familial ;
 - logs et traces d’audit.
+
+Les résultats rendus publics via le portail devront être distingués des données personnelles et pseudonymisées ayant servi à les produire. La pérennisation du portail au-delà de la recherche initiale sera réévaluée avec le cadre de la future ressource durable.
 
 ## 17.3 Ressource durable
 
@@ -820,13 +845,30 @@ Une vigilance renforcée est requise pour :
 - petits sous-groupes ;
 - combinaisons secteur + profil ancestral + variant susceptibles d’augmenter le risque de ré-identification.
 
-Une politique spécifique de publication / contrôle de divulgation devra être définie avant ouverture de la ressource.
+Une politique spécifique de publication / contrôle de divulgation devra être définie avant ouverture publique du portail.
 
-## 18.4 Accès scientifique futur
+## 18.4 Portail web public
 
-Le principe envisagé est un accès contrôlé aux données individuelles et une diffusion plus large des résultats suffisamment agrégés.
+Le projet prévoit la création d’un **portail web public de restitution des résultats agrégés de Génome Réunion**.
 
-La gouvernance définitive, le Data Access Committee, les critères d’accès et les règles d’export relèvent d’un document spécifique.
+Ce portail pourra permettre la consultation de résultats validés issus de la recherche, notamment :
+
+- fréquence locale d’un variant ;
+- comparaison de cette fréquence à des référentiels externes ;
+- identification de variants nouvellement observés dans la cohorte ;
+- mise en évidence de différences de fréquence jugées scientifiquement pertinentes ;
+- informations agrégées relatives à certains variants pharmacogénétiques ;
+- niveau de qualité, de couverture ou d’incertitude associé à l’estimation publiée.
+
+Avant publication, chaque catégorie de résultat devra respecter des règles de minimisation et de contrôle de divulgation. Un résultat ne devra pas être rendu public lorsque la combinaison de sa rareté, de la taille du sous-groupe ou des informations associées crée un risque excessif de ré-identification.
+
+Le portail n’exposera **aucune donnée individuelle pseudonymisée**, aucun identifiant de participant, aucune donnée familiale individuelle et aucun fichier génomique individuel.
+
+## 18.5 Accès scientifique futur
+
+Le principe envisagé pour les données individuelles reste un accès contrôlé, distinct du portail public. La diffusion plus large concerne uniquement les résultats suffisamment agrégés et validés pour publication.
+
+La gouvernance définitive, le Data Access Committee, les critères d’accès et les règles d’export relèvent d’un document spécifique et du cadre futur de la ressource durable.
 
 ---
 
@@ -844,6 +886,8 @@ La version finale de la note d’information de la cohorte EFS devra préciser n
 - finalité de la recherche ;
 - nature génétique des données ;
 - existence d’analyses pharmacogénétiques populationnelles sans décision thérapeutique individuelle dans la phase initiale ;
+- existence d’un portail public de restitution de résultats agrégés ;
+- principe de non-publication des données individuelles et des résultats à risque de ré-identification ;
 - pseudonymisation ;
 - rôle respectif EFS / CHU / CRB ;
 - catégories de données utilisées ;
@@ -877,6 +921,8 @@ Principes déjà retenus :
 - séparation des environnements de développement, test et production ;
 - interdiction d’utiliser des services externes non autorisés avec les données génomiques ;
 - gestion spécifique des exports et des données WGS ;
+- séparation technique entre l’environnement contenant les données individuelles/pseudonymisées et le portail public ;
+- publication sur le portail uniquement de résultats préalablement agrégés, validés et soumis aux règles de contrôle de divulgation ;
 - AIPD obligatoire avant mise en œuvre.
 
 L’architecture finale (on-premise / hybride / autre) reste à valider par la DSIO / DPO.
@@ -922,6 +968,7 @@ Annexes scientifiques de référence :
 | Panel hybride 322 + 28 (ordre de grandeur actuel) | synthèse scientifique / méthodologie de sélection |
 | PCA / ADMIXTURE / KING / ROH / IBD / phasage / imputation | synthèse scientifique + méthodologies |
 | Pharmacogénétique populationnelle | objectifs scientifiques du projet + synthèse scientifique |
+| Portail web public de résultats agrégés | objectif de valorisation / diffusion de Génome Réunion |
 | 1000G / EGA comme panels témoins | synthèse scientifique + `CNIL_02A` |
 | POPgen pour 350 WGS | README + synthèse scientifique |
 | Durée globale 36 mois | synthèse scientifique / plan économique |
@@ -968,13 +1015,15 @@ Annexes scientifiques de référence :
 - [x] génotypage SNP réalisé en interne au CHU de La Réunion sur iScan Illumina ;
 - [ ] finaliser les conventions et clauses RGPD.
 
-## 23.5 Conservation / gouvernance
+## 23.5 Conservation / gouvernance / diffusion
 
 - [ ] fixer les durées par catégorie de données ;
 - [ ] fixer les durées du matériel biologique ;
 - [ ] séparer formellement l’étude MR-004 de la ressource durable ;
-- [ ] définir la politique de publication des variants rares ;
-- [ ] définir le DAC / accès chercheurs.
+- [ ] définir les seuils et règles de contrôle de divulgation applicables au portail public ;
+- [ ] définir la politique de publication des variants rares / fondateurs ;
+- [ ] définir le processus de validation d’un résultat avant publication sur le portail ;
+- [ ] définir le DAC / accès chercheurs pour les données non publiques.
 
 ## 23.6 Volet familles
 
@@ -992,7 +1041,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.6, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
@@ -1009,6 +1058,7 @@ Au stade de cette version 0.6, le corpus du dépôt et les décisions de concept
 - la sélection des 350 WGS ;
 - les limites scientifiques ;
 - le calendrier général ;
+- le **portail web public de restitution des résultats agrégés**, séparé des données individuelles et soumis à des règles de contrôle de divulgation ;
 - les exclusions du traitement initial.
 
-Les principaux éléments encore manquants relèvent surtout des **arbitrages institutionnels, du dictionnaire final de données, des responsabilités, des durées de conservation et des contrats**, et non d’un manque de description scientifique du projet.
+Les principaux éléments encore manquants relèvent surtout des **arbitrages institutionnels, du dictionnaire final de données, des responsabilités, des durées de conservation, des contrats et de la définition formelle des règles de diffusion publique**, et non d’un manque de description scientifique du projet.
