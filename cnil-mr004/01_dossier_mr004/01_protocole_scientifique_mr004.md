@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.5 — clarification du consentement et de la finalité technique des 100 familles nucléaires  
+**Version :** 0.6 — génotypage SNP internalisé sur iScan au CHU  
 **Date :** 15 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -51,7 +51,7 @@ Le dépôt identifie notamment l’équipe suivante :
 
 - Patrick MUNIER — Service de génétique moléculaire, CHU de La Réunion ;
 - Dr Thomas HUBY — responsable génétique moléculaire, CHU de La Réunion ;
-- Susie GUILLY — Service de génétique moléculaire ;
+- Susie GUILLY — Ingénieur, service de génétique moléculaire ;
 - Dr Fanny FERROUL — Service de génétique médicale.
 
 La désignation formelle du **responsable de mise en œuvre** et/ou de l’**investigateur / responsable scientifique institutionnel** reste à inscrire dans la version soumise.
@@ -62,8 +62,8 @@ La désignation formelle du **responsable de mise en œuvre** et/ou de l’**inv
 
 - EFS La Réunion — recrutement / information / codage / source du reliquat EDTA ;
 - CRB du CHU de La Réunion — réception, enregistrement, extraction, conservation de l’ADN, aliquotage et sélection/pseudonymisation du volet des 100 familles nucléaires ;
+- Service de génétique moléculaire du CHU de La Réunion — réalisation en interne du génotypage SNP sur **iScan Illumina** ;
 - POPgen — prise en charge prévue du WGS des 350 individus sélectionnés ;
-- plateformes de génotypage / séquençage potentielles : CNG, GenomEast, CNRGH ou autre plateforme retenue ;
 - 1000 Genomes / IGSR — panel de référence public ;
 - European Genome-phenome Archive (EGA) — panels externes à accès contrôlé selon besoins analytiques.
 
@@ -88,7 +88,7 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Information / accord cohorte principale | Information lors de l’entretien avec le médecin EFS + accord écrit signé |
 | Pseudonymisation cohorte principale | Code généré et table identité ↔ code conservée par l’EFS |
 | Données transmises au CRB | tube codé + site de prélèvement ; âge uniquement si finalement nécessaire |
-| Génotypage | Puce SNP de type Global Diversity Array / technologie équivalente (~1,9 M SNP dans le corpus actuel) |
+| Génotypage | Génotypage SNP réalisé en interne au CHU de La Réunion sur **iScan Illumina**, avec puce de type Global Diversity Array (~1,9 M SNP dans le corpus actuel) |
 | Analyses principales | QC, PCA, ADMIXTURE, KING, ROH, IBD, sélection géo-ancestrale, phasage, imputation, LAI, recalibrage des fréquences, analyses pharmacogénétiques populationnelles |
 | Sélection WGS | 350 individus sélectionnés parmi les 2 500 |
 | WGS | 350 génomes complets, pris en charge dans le schéma actuel par POPgen |
@@ -744,7 +744,7 @@ Le calendrier actuellement décrit dans la synthèse scientifique comprend notam
 
 - **M1–3** : accès et harmonisation des panels témoins 1000G / EGA ;
 - **M1–5** : validation externe / simulations / comparaison des stratégies de sélection ;
-- **M4–9** : traitement SNP de la cohorte Réunion, QC, PCA / ADMIXTURE, calcul `S_div`, sélection des 350 ;
+- **M4–9** : génotypage SNP réalisé en interne au CHU sur iScan Illumina, traitement de la cohorte Réunion, QC, PCA / ADMIXTURE, calcul `S_div`, sélection des 350 ;
 - **M4–14** : sélection des 100 familles nucléaires au CRB, génotypage, contrôles mendéliens et amélioration du phasage ;
 - **M8–22** : WGS des 350, retour des données, QC, base de variants, recalibrage des fréquences et analyses populationnelles associées, dont la pharmacogénétique descriptive.
 
@@ -916,6 +916,7 @@ Annexes scientifiques de référence :
 | Élément intégré au protocole | Source principale dans le dépôt / projet |
 |---|---|
 | 2 500 SNP / 350 WGS / 100 familles | synthèse scientifique + README |
+| Génotypage SNP interne au CHU sur iScan Illumina | organisation opérationnelle du projet |
 | Circuit 100 familles : reliquats ADN CRB + consentement recherche signé en consultation + pseudonymisation CRB | fonctionnement du projet à documenter dans les preuves institutionnelles |
 | Finalité des 100 familles limitée au phasage / contrôle mendélien | méthodologie scientifique + décision de conception |
 | Panel hybride 322 + 28 (ordre de grandeur actuel) | synthèse scientifique / méthodologie de sélection |
@@ -964,7 +965,7 @@ Annexes scientifiques de référence :
 - [ ] qualifier juridiquement EFS ;
 - [ ] qualifier juridiquement CRB ;
 - [ ] qualifier POPgen ;
-- [ ] choisir / qualifier la plateforme de génotypage ;
+- [x] génotypage SNP réalisé en interne au CHU de La Réunion sur iScan Illumina ;
 - [ ] finaliser les conventions et clauses RGPD.
 
 ## 23.5 Conservation / gouvernance
@@ -991,13 +992,14 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.5, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.6, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
 - les objectifs ;
 - la cohorte principale ;
 - le circuit biologique EFS → CRB ;
+- le génotypage SNP réalisé en interne au CHU sur iScan Illumina ;
 - le circuit des 100 familles nucléaires à partir de reliquats d’ADN du CRB et de consentements recherche signés ;
 - la finalité strictement technique du volet familial pour l’amélioration du phasage ;
 - la pseudonymisation ;
