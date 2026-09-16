@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.3 — critères d’inclusion et minimisation des données géographiques  
+**Version :** 0.7.4 — vérification déclarative des critères d’inclusion  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -295,6 +295,8 @@ Deux sources de participants sont distinguées :
 - attribution d’un identifiant pseudonyme par l’EFS ;
 - quantité / qualité biologique suffisante pour permettre l’extraction et les analyses prévues.
 
+La résidence à La Réunion et la naissance des deux parents à La Réunion sont vérifiées sur simple déclaration du donneur lors de l’entretien EFS, sans demande de justificatif.
+
 ## 6.3 Critères d’exclusion actuellement établis ou logiquement nécessaires — cohorte principale
 
 - non-respect des critères de résidence ou de naissance des deux parents à La Réunion ;
@@ -308,7 +310,7 @@ Deux sources de participants sont distinguées :
 Le corpus actuel ne permet pas encore de considérer comme définitivement établis :
 
 - un critère d’âge propre à la recherche ;
-- les modalités de vérification et de traçabilité, par l’EFS, des critères de résidence et de naissance des deux parents à La Réunion ;
+- le support de traçabilité de l’éligibilité au sein de l’EFS ;
 - d’éventuels critères spécifiques d’exclusion liés au don de sang au-delà de ceux gérés par l’EFS.
 
 **À confirmer avec EFS / DRCI.**
@@ -332,7 +334,7 @@ Les critères techniques précis définissant une famille nucléaire exploitable
 
 ## 7.1 Cohorte principale — information et accord
 
-Le projet est présenté au donneur lors de l’entretien avec le médecin de l’EFS. Le participant reçoit une explication du projet puis signe un accord écrit.
+Le projet est présenté au donneur lors de l’entretien avec le médecin de l’EFS. Les critères de résidence et de naissance des deux parents à La Réunion sont vérifiés sur simple déclaration du donneur, sans justificatif. Le participant reçoit une explication du projet puis signe un accord écrit.
 
 La forme réglementaire définitive du document d’information / accord sera finalisée après validation de la qualification RNIPH / MR-004.
 
@@ -453,7 +455,7 @@ La méthodologie scientifique repose principalement sur une ascendance **génét
 
 Le critère d’inclusion « deux parents nés à La Réunion » définit l’ancrage familial retenu pour la cohorte. Il ne correspond pas à une catégorie d’ascendance génétique.
 
-Aucun recueil des origines ethniques ou continentales déclarées n’est prévu. Les lieux précis de naissance des parents ne sont pas transmis aux équipes de recherche ; les modalités de vérification et de traçabilité du critère d’inclusion par l’EFS restent à formaliser.
+Aucun recueil des origines ethniques ou continentales déclarées n’est prévu. Le critère de naissance des deux parents à La Réunion est vérifié sur simple déclaration du donneur lors de l’entretien EFS, sans justificatif. Les lieux précis de naissance des parents ne sont pas transmis aux équipes de recherche.
 
 ---
 
@@ -992,7 +994,8 @@ Annexes scientifiques de référence :
 - [ ] décider si l’âge est transmis au CRB / recherche ;
 - [ ] décider si le sexe est nécessaire ;
 - [x] retenir la résidence à La Réunion et la naissance des deux parents à La Réunion comme critères d’inclusion ;
-- [ ] formaliser avec l’EFS la vérification et la traçabilité de ces critères ;
+- [x] vérifier les critères de résidence et de naissance des deux parents sur simple déclaration du donneur lors de l’entretien EFS, sans justificatif ;
+- [ ] formaliser avec l’EFS le support de traçabilité de l’éligibilité ;
 - [x] retenir uniquement le point de collecte EFS comme donnée géographique transmise, sans adresse, commune ni quartier de résidence ;
 - [x] ne pas recueillir les origines ethniques ou continentales déclarées ;
 - [ ] formaliser les critères d’exclusion du protocole.
@@ -1040,7 +1043,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.3, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.4, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
