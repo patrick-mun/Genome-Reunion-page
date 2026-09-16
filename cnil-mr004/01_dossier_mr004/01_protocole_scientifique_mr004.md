@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.12 — clarification des limites du panel WGS  
+**Version :** 0.7.13 — durée de la recherche fixée à 36 mois  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -97,7 +97,7 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Pharmacogénétique clinique individuelle | Hors traitement initial : prescriptions, réponse au traitement, recommandation ou adaptation individuelle de posologie |
 | Portail web public | Inclus : diffusion de résultats agrégés, fréquences locales et variants nouvellement observés ou de fréquence différente sous réserve de règles de contrôle de divulgation |
 | Portail clinique / données individuelles | Hors traitement initial |
-| Durée globale du projet | 36 mois dans le corpus scientifique / économique |
+| Durée de la recherche décrite dans ce protocole | 36 mois, jusqu’à la restitution des résultats agrégés |
 | Ressource durable | Séparée du traitement MR-004 initial ; cadre à définir ultérieurement |
 | Données cliniques / IA | Hors traitement initial ; extensions à réévaluer séparément |
 
@@ -741,11 +741,11 @@ Toute traduction clinique nécessitera des données cliniques, pharmacologiques 
 
 # 16. Calendrier
 
-## 16.1 Durée globale
+## 16.1 Durée de la recherche
 
-Le corpus scientifique et économique actuel prévoit une durée globale de **36 mois**.
+La recherche décrite dans ce protocole est prévue sur **36 mois**, de son lancement à la restitution des résultats agrégés, incluant leur mise à disposition sur le portail public.
 
-## 16.2 Phases utiles au périmètre MR-004 initial
+## 16.2 Phases de la recherche
 
 Le calendrier actuellement décrit dans la synthèse scientifique comprend notamment :
 
@@ -758,15 +758,9 @@ Le calendrier actuellement décrit dans la synthèse scientifique comprend notam
 
 Les phases d’IA clinique, de portail clinique ou de décision médicale individualisée **ne sont pas automatiquement incluses dans le présent périmètre MR-004 initial**.
 
-## 16.3 Point à harmoniser
+## 16.3 Durée de la recherche et conservation
 
-Le calendrier réglementaire final devra distinguer clairement :
-
-- la durée de la **recherche MR-004 initiale** ;
-- la durée du projet institutionnel global sur 36 mois ;
-- la durée éventuelle de la future ressource durable.
-
-**À arbitrer avant version finale.**
+La durée de 36 mois concerne les travaux prévus au présent protocole. Les durées de conservation des échantillons et des données ainsi que la pérennisation éventuelle de la ressource au-delà de la recherche sont traitées en section 17.
 
 ---
 
@@ -958,7 +952,7 @@ Annexes scientifiques de référence :
 | Portail web public de résultats agrégés | objectif de valorisation / diffusion de Génome Réunion |
 | 1000G / EGA comme panels témoins | synthèse scientifique + `CNIL_02A` |
 | POPgen pour 350 WGS | README + synthèse scientifique |
-| Durée globale 36 mois | synthèse scientifique / plan économique |
+| Durée de la recherche : 36 mois | synthèse scientifique / plan économique + décision de conception |
 | Circuit EFS → CRB | `CNIL_01_CIRCUIT_EFS_PRELEVEMENT.md` |
 | Hypothèse RNIPH + MR-004 | `CNIL_02_QUALIFICATION_REGLEMENTAIRE.md` |
 | Méthodes analytiques réglementaires | `CNIL_02C_METHODES_ANALYTIQUES_MR004.md` |
@@ -995,7 +989,7 @@ Annexes scientifiques de référence :
 - [ ] confirmer la liste finale des panels EGA ;
 - [ ] définir la liste initiale des gènes / variants / recommandations pharmacogénétiques de référence à étudier au niveau populationnel ;
 - [ ] confirmer le pipeline WGS et les formats effectivement conservés ;
-- [ ] harmoniser le calendrier réglementaire avec le calendrier scientifique final.
+- [x] fixer à 36 mois la durée de la recherche décrite dans ce protocole, jusqu’à la restitution des résultats agrégés.
 
 ## 23.4 Acteurs / flux
 
@@ -1033,7 +1027,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.12, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.13, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
