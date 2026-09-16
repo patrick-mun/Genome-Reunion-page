@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.2, clarification du consentement génétique et du retrait  
-**Version précédente :** 0.8.1, phasage réservé aux besoins internes des analyses  
+**Version :** 0.8.3, situations particulières d’information du volet familial  
+**Version précédente :** 0.8.2, clarification du consentement génétique et du retrait  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -315,9 +315,11 @@ Les familles nucléaires issues de consultations de génétique peuvent comprend
 
 **Statut : modalités à documenter avec le CRB et le DPO.**
 
-### 5.4.2 Personnes ne pouvant pas être informées
+### 5.4.2 Situations particulières d’information
 
-Le CRB exclut de la sélection toute famille dont un membre ne peut pas recevoir l’information requise (personne injoignable, décédée ou hors d’état d’exprimer sa volonté). Cette règle maintient le volet dans le cadre de la MR-004, qui ne couvre pas les dérogations à l’information individuelle.
+Lorsqu’un membre d’une famille est injoignable, décédé ou hors d’état de recevoir l’information, le CRB vérifie les informations et consentements déjà recueillis. La DRCI et le DPO déterminent les conditions applicables à l’utilisation de ses échantillons et données, au regard des règles relatives aux examens génétiques et à la MR-004.
+
+Aucun génotypage de cet échantillon n’est réalisé pour le projet tant que ces conditions ne sont pas établies. Si son utilisation ne peut être couverte par le cadre retenu, l’échantillon est exclu et l’exploitabilité technique de la famille est réévaluée.
 
 ### 5.4.3 Dissociation possible
 
@@ -380,7 +382,7 @@ Critères actuellement identifiés :
 - quantité et qualité d’ADN suffisantes ;
 - pseudonymisation par le CRB avant mise à disposition ;
 - couverture de l’examen génétique à des fins de recherche par le consentement signé, ou information complémentaire délivrée sans opposition ;
-- possibilité d’informer chaque membre de la famille, et les titulaires de l’autorité parentale pour un mineur (sections 5.4.1 et 5.4.2).
+- respect des conditions d’information définies en sections 5.4.1 et 5.4.2.
 
 Les critères techniques précis définissant une famille nucléaire exploitable seront documentés dans le protocole de phasage.
 
@@ -1216,7 +1218,7 @@ Annexes scientifiques de référence :
 - [ ] conserver la version applicable du formulaire de consentement comme preuve documentaire ;
 - [ ] formaliser les critères techniques d’éligibilité des familles nucléaires ;
 - [ ] documenter l’inclusion des mineurs (autorité parentale, information adaptée, majorité) ;
-- [ ] exclure les familles dont un membre ne peut pas être informé ;
+- [ ] documenter, le cas échéant, les situations particulières d’information (section 5.4.2) ;
 - [ ] décrire la séparation fonctionnelle diagnostic / recherche dans l’AIPD ;
 - [ ] arbitrer une éventuelle dissociation du calendrier du volet familial ;
 - [ ] validation institutionnelle finale de l’intégration au périmètre RNIPH / MR-004.
@@ -1225,7 +1227,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.8.2, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.8.3, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
@@ -1256,6 +1258,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 ---
 
 # 25. Journal des modifications
+
+## Version 0.8.3
+
+- Section 5.4.2 : remplacement de l’exclusion automatique des familles par un examen des conditions d’utilisation de l’échantillon ; harmonisation par renvois courts en sections 6.5 et 23.6.
 
 ## Version 0.8.2
 
