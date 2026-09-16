@@ -1,8 +1,9 @@
-# Protocole scientifique MR-004 — Génome Réunion
+# Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.7.18 — circuit des demandes de retrait via l’EFS  
+**Version :** 0.8.1, phasage réservé aux besoins internes des analyses  
+**Version précédente :** 0.8.0, intégration de l’analyse réglementaire du 16 septembre 2026  
 **Date :** 16 septembre 2026  
-**Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
+**Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
 
 ---
@@ -11,13 +12,13 @@
 
 ## 1.1 Titre
 
-**Génome Réunion — constitution d’un référentiel génomique populationnel local de première génération pour la population réunionnaise.**
+**Génome Réunion : constitution d’un référentiel génomique populationnel local de première génération pour la population réunionnaise.**
 
 **Titre court :** Génome Réunion.
 
 ## 1.2 Porteur institutionnel
 
-**CHU de La Réunion — Service de génétique moléculaire.**
+**CHU de La Réunion, Service de génétique moléculaire.**
 
 Le projet vise la constitution d’un référentiel génomique local destiné à mieux représenter la diversité génétique de la population réunionnaise dans les analyses de génétique des populations et, à terme, à améliorer certains processus d’interprétation biomédicale, notamment en génétique médicale et en pharmacogénétique.
 
@@ -29,7 +30,18 @@ Le projet ne vise pas à définir un « génome réunionnais » ni une identité
 
 Pour la cohorte populationnelle principale, cette qualification repose notamment sur l’utilisation secondaire d’un **reliquat de tube EDTA prélevé dans le cadre du don de sang**, sans acte ni prélèvement supplémentaire organisé pour Génome Réunion.
 
-Pour le **volet des 100 familles nucléaires**, aucun prélèvement supplémentaire n’est prévu. Le CRB sélectionne des **reliquats d’ADN déjà conservés** provenant de patients ayant signé un **consentement recherche** après information et discussion avec le patient lors d’une consultation médicale, dans le cadre réglementaire applicable. Ces consentements encadrent les analyses de recherche nécessaires au projet.
+L’argumentaire de qualification retenu pour la cohorte principale repose sur les éléments suivants :
+
+- aucun acte, examen ou prélèvement n’est pratiqué sur la personne pour les besoins de la recherche ;
+- le matériel analysé est un reliquat du tube EDTA prélevé selon le circuit habituel du don de sang, sans modification de ce circuit ;
+- les analyses portent in vitro sur une collection d’échantillons biologiques déclarée au titre de l’article L. 1243-3 du code de la santé publique (section 7.7) ;
+- l’entretien avec le médecin de l’EFS sert uniquement à informer le donneur, à vérifier son éligibilité et à recueillir son consentement à l’examen de ses caractéristiques génétiques ; les réponses aux questions d’éligibilité ne sont pas transmises aux équipes de recherche.
+
+La constitution prospective de la collection, avec un entretien dédié et un consentement signé, place toutefois le projet à la frontière de la recherche impliquant la personne humaine non interventionnelle (catégorie 3). La DRCI rédige une note de qualification motivée avant tout engagement dans la MR-004. Si cette note conclut à une RIPH de catégorie 3, le projet relève de l’avis d’un CPP et de la MR-001 ou de la MR-003, et le présent protocole devra être adapté.
+
+**Statut : note de qualification à produire par la DRCI.**
+
+Pour le **volet des 100 familles nucléaires**, aucun prélèvement supplémentaire n’est prévu. Le CRB sélectionne des **reliquats d’ADN déjà conservés** provenant de patients ayant signé un **consentement recherche** après information et discussion avec le patient lors d’une consultation médicale, dans le cadre réglementaire applicable. Le CRB vérifie, sur la version applicable du formulaire, que ce consentement couvre l’examen des caractéristiques génétiques à des fins de recherche. Si le formulaire ne comporte qu’une information générale sur l’utilisation des échantillons à des fins scientifiques, les personnes reçoivent une information complémentaire propre à Génome Réunion avant tout génotypage (section 19.2).
 
 Le CRB réalise la sélection des familles et la **pseudonymisation avant toute mise à disposition** des échantillons ou données aux équipes de recherche. Les équipes de recherche ne reçoivent pas l’identité directe des personnes concernées.
 
@@ -49,10 +61,10 @@ La version du consentement recherche applicable et la traçabilité de sa signat
 
 Le dépôt identifie notamment l’équipe suivante :
 
-- Patrick MUNIER — Service de génétique moléculaire, CHU de La Réunion ;
-- Dr Thomas HUBY — responsable génétique moléculaire, CHU de La Réunion ;
-- Susie GUILLY — Ingénieur, service de génétique moléculaire ;
-- Dr Fanny FERROUL — Service de génétique médicale.
+- Patrick MUNIER, Service de génétique moléculaire, CHU de La Réunion ;
+- Dr Thomas HUBY, responsable génétique moléculaire, CHU de La Réunion ;
+- Susie GUILLY, ingénieur, service de génétique moléculaire ;
+- Dr Fanny FERROUL, Service de génétique médicale.
 
 La désignation formelle du **responsable de mise en œuvre** et/ou de l’**investigateur / responsable scientifique institutionnel** reste à inscrire dans la version soumise.
 
@@ -60,14 +72,34 @@ La désignation formelle du **responsable de mise en œuvre** et/ou de l’**inv
 
 ## 1.6 Partenaires / acteurs déjà identifiés
 
-- EFS La Réunion — recrutement / information / codage / source du reliquat EDTA ;
-- CRB du CHU de La Réunion — réception, enregistrement, extraction, conservation de l’ADN, aliquotage et sélection/pseudonymisation du volet des 100 familles nucléaires ;
-- Service de génétique moléculaire du CHU de La Réunion — réalisation en interne du génotypage SNP sur **iScan Illumina** ;
-- POPgen — prise en charge prévue du WGS des 350 individus sélectionnés et restitution des données pseudonymisées au service de génétique moléculaire du CHU pour analyse ;
-- 1000 Genomes / IGSR — panel de référence public ;
-- European Genome-phenome Archive (EGA) — panels externes à accès contrôlé selon besoins analytiques.
+- EFS La Réunion : recrutement / information / codage / source du reliquat EDTA ;
+- CRB du CHU de La Réunion : réception, enregistrement, extraction, conservation de l’ADN, aliquotage et sélection/pseudonymisation du volet des 100 familles nucléaires ;
+- Service de génétique moléculaire du CHU de La Réunion : réalisation en interne du génotypage SNP sur **iScan Illumina** ;
+- POPGEN, projet pilote du Plan France Médecine Génomique 2025 dont l’Inserm est responsable de traitement : prise en charge prévue du WGS des 350 individus sélectionnés et restitution des données pseudonymisées au service de génétique moléculaire du CHU pour analyse ; organisme séquenceur et qualification RGPD à confirmer (section 12.2) ;
+- 1000 Genomes / IGSR : panel de référence public ;
+- European Genome-phenome Archive (EGA) : panels externes à accès contrôlé selon besoins analytiques.
 
 Le rôle RGPD précis de chaque acteur est traité séparément dans la phase « acteurs / responsabilités / conventions ».
+
+## 1.7 Consentement génétique et base légale RGPD
+
+Le projet distingue deux cadres juridiques.
+
+**Consentement à l’examen des caractéristiques génétiques.** Pour la cohorte principale, le donneur exprime un **consentement exprès écrit à l’examen de ses caractéristiques génétiques à des fins de recherche scientifique, au sens de l’article 16-10 du Code civil**. Le protocole retient ce régime plutôt que la non-opposition prévue par l’article L. 1130-5 du code de la santé publique : ce dernier régime ne s’applique pas aux recherches dont la publication des résultats pourrait permettre de lever l’anonymat des personnes, et le projet prévoit un portail public. Le participant peut retirer ce consentement à tout moment, sans justification.
+
+Pour le volet familial, le régime dépend du formulaire signé : consentement exprès couvrant l’examen génétique à des fins de recherche, ou non-opposition après information complémentaire au sens de l’article L. 1130-5. Ce second régime reste envisageable pour ce volet, car le projet ne publie aucun résultat familial.
+
+**Base légale RGPD.** Hypothèse de travail : exécution d’une mission d’intérêt public (article 6.1.e du RGPD), avec l’exception de l’article 9.2.j (recherche scientifique) ou 9.2.i (intérêt public dans le domaine de la santé publique). Le consentement génétique ne constitue pas la base légale RGPD du traitement.
+
+**Retrait et opposition (proposition).** Le retrait du consentement génétique et l’exercice du droit d’opposition RGPD produisent le même effet opérationnel : arrêt de toute nouvelle analyse, destruction des échantillons restants et effacement des données individuelles non encore intégrées à des résultats agrégés ou publiés. Les résultats déjà agrégés ou publiés ne sont pas modifiés.
+
+**Statut : base légale et effets du retrait à valider DPO / DRCI.**
+
+## 1.8 Financement
+
+Le projet est financé par le FEDER sur 36 mois. La version déposée précisera les montants, l’organisme gestionnaire et les éventuels cofinancements. Le formulaire d’enregistrement MR-004 du répertoire public de la Plateforme des données de santé ne comporte pas de champ dédié au financement : la description du projet le mentionne.
+
+**Statut : détails du financement à compléter.**
 
 ---
 
@@ -75,31 +107,34 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 
 | Élément | Description actuelle |
 |---|---|
-| Type de recherche | RNIPH présumée — MR-004 à confirmer |
+| Type de recherche | RNIPH présumée, MR-004 à confirmer après note de qualification DRCI |
 | Population principale | Environ 2 500 participants recrutés via l’EFS, résidant à La Réunion et dont les deux parents sont nés à La Réunion |
 | Matériel biologique cohorte principale | Reliquats de tubes EDTA issus des dons EFS, constitués en collection au fil des dons à partir du lancement de l’étude |
 | Volet familles | Environ 100 familles nucléaires sélectionnées par le CRB à partir de reliquats d’ADN déjà conservés |
-| Consentement volet familles | Consentement recherche écrit et signé après information et discussion en consultation médicale |
+| Consentement volet familles | Consentement recherche écrit et signé après information et discussion en consultation médicale ; couverture de l’examen génétique à vérifier, information complémentaire si nécessaire |
 | Pseudonymisation volet familles | Réalisée par le CRB avant mise à disposition aux équipes de recherche |
 | Finalité volet familles | Amélioration et contrôle du phasage par transmission mendélienne uniquement |
 | Utilisation pour fréquences / description de variants | Non |
 | Utilisation pharmacogénétique des familles | Non |
 | Prélèvement supplémentaire pour la recherche | Non prévu, ni pour la cohorte principale ni pour le volet familial |
-| Information / accord cohorte principale | Information lors de l’entretien avec le médecin EFS et remise d’une note écrite conservée par le donneur, avant signature de l’accord |
+| Information / consentement cohorte principale | Information lors de l’entretien avec le médecin EFS et remise d’une note écrite conservée par le donneur, avant signature du consentement exprès écrit à l’examen génétique (article 16-10 du Code civil) |
 | Pseudonymisation cohorte principale | Code généré et table identité ↔ code conservée par l’EFS |
 | Données transmises au CRB | tube codé + site de prélèvement ; âge uniquement si finalement nécessaire |
 | Génotypage | Génotypage SNP réalisé en interne au CHU de La Réunion sur **iScan Illumina**, avec puce de type Global Diversity Array (~1,9 M SNP dans le corpus actuel) |
 | Analyses principales | QC, PCA, ADMIXTURE, KING, ROH, IBD, sélection géo-ancestrale, phasage, imputation, LAI, recalibrage des fréquences, analyses pharmacogénétiques populationnelles |
 | Sélection WGS | 350 individus sélectionnés parmi les 2 500 |
-| WGS | 350 génomes complets prévus auprès de POPgen ; aliquots d’ADN pseudonymisés envoyés par le CRB et données restituées directement au service de génétique moléculaire du CHU pour analyse |
+| WGS | 350 génomes complets prévus auprès de POPGEN (organisme séquenceur et qualification RGPD à confirmer) ; aliquots d’ADN pseudonymisés envoyés par le CRB et données restituées directement au service de génétique moléculaire du CHU pour analyse |
 | Panels externes | 1000G / IGSR + datasets EGA autorisés |
-| Pharmacogénétique populationnelle | Incluse : fréquences de variants pharmacogénétiques et identification de couples gène–médicament d’intérêt collectif |
+| Pharmacogénétique populationnelle | Incluse : fréquences de variants pharmacogénétiques et identification de couples gène-médicament d’intérêt collectif |
 | Pharmacogénétique clinique individuelle | Hors traitement initial : prescriptions, réponse au traitement, recommandation ou adaptation individuelle de posologie |
-| Portail web public | Inclus : diffusion de résultats agrégés, fréquences locales et variants nouvellement observés ou de fréquence différente sous réserve de règles de contrôle de divulgation |
+| Portail web public | Inclus : diffusion de résultats agrégés, fréquences locales et variants nouvellement observés ou de fréquence différente, sous réserve des règles minimales de contrôle de divulgation (section 18.4) |
 | Portail clinique / données individuelles | Hors traitement initial |
 | Durée de la recherche décrite dans ce protocole | 36 mois, jusqu’à la restitution des résultats agrégés |
 | Ressource durable | Séparée du traitement MR-004 initial ; cadre à définir ultérieurement |
 | Données cliniques / IA | Hors traitement initial ; extensions à réévaluer séparément |
+| Découvertes génétiques incidentes | Information de la personne via le détenteur de l’identité, sauf opposition (section 19.1) |
+| Collection biologique | Déclaration CODECOH à réaliser avant ouverture de la collecte (section 7.7) |
+| Financement | FEDER, 36 mois |
 
 ---
 
@@ -138,7 +173,7 @@ La sous-représentation génomique de la population réunionnaise peut conduire 
 Deux conséquences médicales principales sont considérées dans Génome Réunion :
 
 1. **Interprétation diagnostique :** un variant fréquent localement mais rare dans les bases internationales peut être surinterprété, tandis que l’absence de données locales peut contribuer au maintien de variants de signification incertaine.
-2. **Pharmacogénétique :** les fréquences de variants influençant le métabolisme, l’efficacité ou la toxicité de certains médicaments peuvent différer selon les populations et les profils d’ascendance. Sans référentiel local, il est difficile d’estimer correctement la fréquence populationnelle de ces variants et de déterminer quels couples gène–médicament méritent d’être étudiés prioritairement à La Réunion.
+2. **Pharmacogénétique :** les fréquences de variants influençant le métabolisme, l’efficacité ou la toxicité de certains médicaments peuvent différer selon les populations et les profils d’ascendance. Sans référentiel local, il est difficile d’estimer correctement la fréquence populationnelle de ces variants et de déterminer quels couples gène-médicament méritent d’être étudiés prioritairement à La Réunion.
 
 La phase initiale ne cherche pas à modifier directement une prescription ni à produire une recommandation individuelle de posologie. Elle vise à produire les connaissances populationnelles nécessaires pour déterminer, dans un second temps et sous un cadre réglementaire adapté, quelles études cliniques ou actions de prévention médicamenteuse pourraient être pertinentes.
 
@@ -154,7 +189,7 @@ L’intérêt public attendu repose notamment sur :
 - la réduction de certaines incertitudes liées aux variants de signification incertaine ;
 - une meilleure connaissance des effets fondateurs et de la structure d’admixture ;
 - la constitution d’un référentiel de fréquences de variants pharmacogénétiques pertinent pour la population réunionnaise ;
-- l’identification de couples gène–médicament ou de variants pharmacogénétiques prioritaires pouvant justifier des études cliniques ciblées ultérieures ;
+- l’identification de couples gène-médicament ou de variants pharmacogénétiques prioritaires pouvant justifier des études cliniques ciblées ultérieures ;
 - la préparation d’actions futures de prévention de certains risques médicamenteux ou d’adaptation de posologie, qui devront être évaluées dans des protocoles cliniques distincts avant tout usage individuel ;
 - la réduction des inégalités de connaissance liées à l’utilisation de référentiels principalement construits à partir de populations moins admixées ou mieux représentées ;
 - la mise à disposition de résultats agrégés et d’une ressource de référence encadrée pour la recherche ;
@@ -186,9 +221,9 @@ Le portail web public constitue un **outil de restitution et de valorisation des
 8. Recalibrer les fréquences observées dans le panel WGS sur la cohorte des ~2 500 participants.
 9. Comparer et contextualiser la cohorte réunionnaise à l’aide de panels externes pertinents.
 10. Caractériser, à l’échelle populationnelle, la fréquence de variants pharmacogénétiques d’intérêt dans la population réunionnaise.
-11. Identifier des couples gène–médicament ou des profils pharmacogénétiques susceptibles de justifier des études cliniques ciblées ultérieures, sans produire de recommandation individuelle dans la phase initiale.
+11. Identifier des couples gène-médicament ou des profils pharmacogénétiques susceptibles de justifier des études cliniques ciblées ultérieures, sans produire de recommandation individuelle dans la phase initiale.
 12. Produire des résultats agrégés, des indicateurs de qualité et un référentiel initial utilisable dans des projets de recherche ultérieurs sous gouvernance adaptée.
-13. **Mettre à disposition un portail web public de restitution des résultats agrégés**, permettant notamment de consulter des fréquences locales et des différences avec des référentiels externes, sous réserve de règles de publication empêchant la divulgation de données individuelles ou ré-identifiantes.
+13. **Mettre à disposition un portail web public de restitution des résultats agrégés**, permettant notamment de consulter des fréquences locales et des différences avec des référentiels externes, sous réserve des règles minimales de contrôle de divulgation définies en section 18.4.
 
 ## 4.3 Finalités explicitement hors périmètre initial
 
@@ -197,7 +232,7 @@ Ne sont pas considérées comme automatiquement couvertes par le présent protoc
 - croisement avec les données cliniques hospitalières ;
 - diagnostic individuel ;
 - données de prescription et d’iatrogénie ;
-- pharmacogénétique clinique individuelle, incluant corrélation génotype–réponse au traitement chez un patient ;
+- pharmacogénétique clinique individuelle, incluant corrélation génotype-réponse au traitement chez un patient ;
 - recommandation ou adaptation individuelle de médicament ou de posologie ;
 - protéomique ;
 - réutilisation de génomes AURAGEN / SeqOIA ou d’autres cohortes ;
@@ -216,7 +251,7 @@ Ces extensions devront faire l’objet d’une nouvelle analyse réglementaire a
 
 Étude observationnelle de génomique populationnelle reposant sur l’utilisation secondaire, à des fins scientifiques, de matériels biologiques issus de deux circuits distincts :
 
-- **Cohorte principale EFS :** la collection biologique sera constituée à partir du lancement de l’étude, au fil des dons de sang, par récupération de reliquats de tubes EDTA issus du circuit habituel EFS, après information et accord écrit signé des donneurs. Ces reliquats ne constituent pas une collection déjà disponible avant le lancement de l’étude.
+- **Cohorte principale EFS :** la collection biologique sera constituée à partir du lancement de l’étude, au fil des dons de sang, par récupération de reliquats de tubes EDTA issus du circuit habituel EFS, après information et consentement écrit des donneurs. Ces reliquats ne constituent pas une collection déjà disponible avant le lancement de l’étude.
 - **Volet familial CRB :** utilisation de reliquats d’ADN déjà conservés au CRB, selon les conditions décrites en section 5.4.
 
 Aucun prélèvement sanguin supplémentaire n’est actuellement prévu spécifiquement pour Génome Réunion.
@@ -262,7 +297,6 @@ Les familles nucléaires sont utilisées uniquement pour :
 
 - fournir des contraintes de transmission mendélienne ;
 - améliorer la précision du phasage haplotypique ;
-- mesurer le gain de phasage obtenu par l’ajout de données familiales ;
 - contribuer aux contrôles qualité liés à la transmission.
 
 Elles **ne sont pas utilisées** pour :
@@ -272,6 +306,26 @@ Elles **ne sont pas utilisées** pour :
 - sélectionner les 350 WGS ;
 - réaliser les analyses pharmacogénétiques populationnelles ;
 - produire une interprétation clinique individuelle.
+
+### 5.4.1 Mineurs
+
+Les familles nucléaires issues de consultations de génétique peuvent comprendre un enfant mineur, souvent cas index. Pour chaque mineur inclus :
+
+- le CRB vérifie que les titulaires de l’autorité parentale ont signé le consentement recherche ;
+- l’information complémentaire éventuelle s’adresse aux titulaires de l’autorité parentale et s’adapte au niveau de compréhension du mineur ;
+- le protocole de phasage précise le devenir des données lorsque le mineur atteint la majorité, notamment son information et sa possibilité de s’opposer.
+
+**Statut : modalités à documenter avec le CRB et le DPO.**
+
+### 5.4.2 Personnes ne pouvant pas être informées
+
+Le CRB exclut de la sélection toute famille dont un membre ne peut pas recevoir l’information requise (personne injoignable, décédée ou hors d’état d’exprimer sa volonté). Cette règle maintient le volet dans le cadre de la MR-004, qui ne couvre pas les dérogations à l’information individuelle.
+
+### 5.4.3 Dissociation possible
+
+Si les conditions d’information et de consentement du volet familial ne sont pas réunies à l’ouverture de la collecte EFS, le volet familial pourra suivre un calendrier distinct, sans retarder la cohorte principale.
+
+**Statut : À arbitrer.**
 
 ---
 
@@ -284,28 +338,30 @@ Deux sources de participants sont distinguées :
 - la cohorte populationnelle principale recrutée parmi les donneurs pris en charge par l’EFS La Réunion, résidant à La Réunion et dont les deux parents sont nés à La Réunion, ayant reçu une information spécifique sur Génome Réunion ;
 - le volet familial constitué à partir de personnes dont l’ADN est déjà conservé au CRB et disposant d’un consentement recherche signé recueilli après information et discussion en consultation médicale.
 
-## 6.2 Critères d’inclusion actuellement établis — cohorte principale
+## 6.2 Critères d’inclusion actuellement établis : cohorte principale
 
 - participation au circuit EFS ;
 - résidence à La Réunion ;
 - naissance des deux parents à La Réunion ;
-- information préalable sur le projet lors de l’entretien avec le médecin EFS, accompagnée d’une note écrite remise au donneur pour conservation avant signature de son accord ;
-- accord écrit signé pour la participation au projet ;
+- information préalable sur le projet lors de l’entretien avec le médecin EFS, accompagnée d’une note écrite remise au donneur pour conservation avant signature de son consentement ;
+- consentement exprès écrit à l’examen des caractéristiques génétiques à des fins de recherche (article 16-10 du Code civil) ;
 - disponibilité d’un reliquat de tube EDTA utilisable pour le projet ;
 - attribution d’un identifiant pseudonyme par l’EFS ;
 - quantité / qualité biologique suffisante pour permettre l’extraction et les analyses prévues.
 
 La résidence à La Réunion et la naissance des deux parents à La Réunion sont vérifiées sur simple déclaration du donneur lors de l’entretien EFS, sans demande de justificatif.
 
-## 6.3 Critères d’exclusion actuellement établis ou logiquement nécessaires — cohorte principale
+Les donneurs de sang étant majeurs, la cohorte principale n’inclut aucun mineur.
+
+## 6.3 Critères d’exclusion actuellement établis ou logiquement nécessaires : cohorte principale
 
 - non-respect des critères de résidence ou de naissance des deux parents à La Réunion ;
-- absence d’accord écrit / opposition du participant ;
+- absence de consentement écrit, ou retrait du consentement ;
 - absence ou insuffisance de reliquat biologique exploitable ;
 - impossibilité technique d’obtenir une donnée génétique de qualité suffisante ;
 - échec majeur des contrôles qualité rendant l’échantillon non exploitable pour les analyses prévues.
 
-## 6.4 Critères restant à formaliser — cohorte principale
+## 6.4 Critères restant à formaliser : cohorte principale
 
 Le corpus actuel ne permet pas encore de considérer comme définitivement établis :
 
@@ -315,7 +371,7 @@ Le corpus actuel ne permet pas encore de considérer comme définitivement étab
 
 **À confirmer avec EFS / DRCI.**
 
-## 6.5 Critères spécifiques — volet familles
+## 6.5 Critères spécifiques : volet familles
 
 Critères actuellement identifiés :
 
@@ -324,7 +380,9 @@ Critères actuellement identifiés :
 - consentement recueilli après information et discussion lors d’une consultation médicale ;
 - appartenance à une famille nucléaire exploitable pour le phasage par transmission ;
 - quantité et qualité d’ADN suffisantes ;
-- pseudonymisation par le CRB avant mise à disposition.
+- pseudonymisation par le CRB avant mise à disposition ;
+- couverture de l’examen génétique à des fins de recherche par le consentement signé, ou information complémentaire délivrée sans opposition ;
+- possibilité d’informer chaque membre de la famille, et les titulaires de l’autorité parentale pour un mineur (sections 5.4.1 et 5.4.2).
 
 Les critères techniques précis définissant une famille nucléaire exploitable seront documentés dans le protocole de phasage.
 
@@ -332,37 +390,39 @@ Les critères techniques précis définissant une famille nucléaire exploitable
 
 # 7. Origine des échantillons et circuits biologiques
 
-## 7.1 Cohorte principale — information et accord
+## 7.1 Cohorte principale : information et consentement
 
-Le projet est présenté au donneur lors de l’entretien avec le médecin de l’EFS. Les critères de résidence et de naissance des deux parents à La Réunion sont vérifiés sur simple déclaration du donneur, sans justificatif. Le participant reçoit une explication du projet ainsi qu’une note d’information écrite qu’il peut conserver, avant de signer son accord écrit.
+Le projet est présenté au donneur lors de l’entretien avec le médecin de l’EFS. Les critères de résidence et de naissance des deux parents à La Réunion sont vérifiés sur simple déclaration du donneur, sans justificatif. Le participant reçoit une explication du projet ainsi qu’une note d’information écrite qu’il peut conserver, avant de signer un consentement exprès écrit à l’examen de ses caractéristiques génétiques (section 1.7).
 
-La forme réglementaire définitive du document d’information / accord sera finalisée après validation de la qualification RNIPH / MR-004.
+Le formulaire comporte au minimum : la finalité de l’examen, la possibilité de retrait, la possibilité de s’opposer à être informé d’une découverte génétique incidente (section 19.1) et, sous réserve d’arbitrage, une case optionnelle d’accord pour la conservation dans la future ressource durable (section 17.3).
 
-## 7.2 Cohorte principale — origine biologique
+La forme réglementaire définitive du document d’information et de consentement sera finalisée après validation de la qualification RNIPH / MR-004.
 
-Le matériel biologique utilisé est un **reliquat de tube EDTA issu du circuit habituel du don de sang**. La collection sera constituée au fil des dons à partir du lancement de l’étude, après information et accord écrit signé des donneurs ; elle n’est pas déjà disponible avant ce lancement.
+## 7.2 Cohorte principale : origine biologique
+
+Le matériel biologique utilisé est un **reliquat de tube EDTA issu du circuit habituel du don de sang**. La collection sera constituée au fil des dons à partir du lancement de l’étude, après information et consentement écrit des donneurs ; elle n’est pas déjà disponible avant ce lancement.
 
 Aucun tube supplémentaire spécifique Génome Réunion n’est prévu dans le circuit actuel.
 
-## 7.3 Cohorte principale — codage
+## 7.3 Cohorte principale : codage
 
 - l’EFS génère le code pseudonyme ;
 - l’EFS conserve la table identité ↔ code ;
 - le CHU / CRB ne reçoit pas l’identité directe dans le circuit prévu ;
 - l’équipe de recherche travaille sur les codes pseudonymes.
 
-## 7.4 Cohorte principale — données transmises au CRB
+## 7.4 Cohorte principale : données transmises au CRB
 
 À ce stade :
 
 - code pseudonyme ;
 - tube EDTA reliquat ;
-- point de collecte EFS, fixe ou mobile ;
-- âge uniquement si cette variable est finalement retenue comme scientifiquement nécessaire.
+- point de collecte EFS, fixe ou mobile, sous forme de code de site, sans date de collecte ;
+- âge uniquement si cette variable est finalement retenue comme scientifiquement nécessaire, et alors en classes.
 
 Aucune autre donnée personnelle n’est considérée comme nécessaire dans le circuit actuellement figé.
 
-## 7.5 Cohorte principale — traitement CRB
+## 7.5 Cohorte principale : traitement CRB
 
 Le CRB :
 
@@ -371,11 +431,11 @@ Le CRB :
 3. réalise l’extraction de l’ADN ;
 4. conserve l’ADN en banque ;
 5. prépare un aliquot pour les analyses autorisées de l’équipe de recherche ;
-6. après sélection des 350 participants, adresse directement à POPgen leurs aliquots d’ADN pseudonymisés pour le WGS.
+6. après sélection des 350 participants, adresse directement à POPGEN leurs aliquots d’ADN pseudonymisés pour le WGS.
 
 Les modalités de transport, de conservation, de retrait et de destruction sont traitées dans les documents dédiés et restent à valider avant ouverture de la collecte.
 
-## 7.6 Volet familles — circuit CRB
+## 7.6 Volet familles : circuit CRB
 
 Le volet familial repose sur des **reliquats d’ADN déjà conservés au CRB**.
 
@@ -390,6 +450,18 @@ Le CRB :
 
 Aucune identité directe n’est transmise aux équipes de recherche dans ce circuit.
 
+## 7.7 Encadrement de la collection biologique
+
+La MR-004 exige que les données proviennent de collections d’échantillons biologiques légalement constituées, après accomplissement des formalités requises. Avant l’ouverture de la collecte :
+
+- le CHU déclare la conservation et la préparation à des fins scientifiques de la collection Génome Réunion (reliquats EFS et ADN extraits) sur le téléservice CODECOH, au titre de l’article L. 1243-3 du code de la santé publique, par une déclaration initiale ou une modification de la déclaration du CRB ; depuis le 28 mai 2026, le ministère chargé de la recherche instruit seul ces déclarations, dans un délai de deux mois ;
+- la DRCI vérifie si l’avis d’un comité de protection des personnes reste requis pour la constitution de la collection ;
+- le CRB vérifie que les reliquats d’ADN du volet familial relèvent d’une conservation déjà déclarée, ou complète la déclaration ;
+- une convention entre l’EFS et le CHU encadre la remise des reliquats, leur traçabilité et leur devenir ;
+- une convention entre le CHU et l’organisme de séquençage fixe les travaux, le devenir des aliquots d’ADN et leur restitution ou destruction en fin de prestation (section 12.2).
+
+**Statut : formalités à réaliser avant ouverture de la collecte.**
+
 ---
 
 # 8. Données utilisées et justification de nécessité
@@ -399,8 +471,9 @@ Aucune identité directe n’est transmise aux équipes de recherche dans ce cir
 | Donnée | Statut | Justification actuelle |
 |---|---|---|
 | Code pseudonyme | Retenu | Traçabilité scientifique sans identité directe |
-| Point de collecte EFS, fixe ou mobile | Retenu | Documentation de la répartition géographique de la collecte ; ne décrit pas le lieu de résidence |
-| Âge | À arbitrer | À conserver uniquement si nécessité scientifique démontrée |
+| Point de collecte EFS, fixe ou mobile | Retenu | Code de site ; documentation de la répartition géographique de la collecte ; ne décrit pas le lieu de résidence |
+| Date de collecte | Non transmise | Évite un quasi-identifiant (site mobile, date et âge combinés) |
+| Âge | À arbitrer | À conserver uniquement si nécessité scientifique démontrée ; transmis alors en classes (par exemple décennales) |
 | Sexe déclaré | Non transmis | Sexe chromosomique inféré à partir des données de génotypage pour les contrôles qualité |
 | Identité civile | Non transmise | Non nécessaire aux analyses scientifiques |
 | Table identité ↔ code | Conservée par EFS | Non nécessaire à l’équipe de recherche |
@@ -434,15 +507,19 @@ Les données du volet familial sont limitées à ce qui est nécessaire au phasa
 - génotypes utiles au phasage ;
 - indicateurs de qualité ;
 - erreurs / cohérences mendéliennes ;
-- informations haplotypiques dérivées nécessaires à l’évaluation du phasage.
+- informations haplotypiques dérivées nécessaires au contrôle qualité du phasage.
 
-Ces données ne sont pas intégrées aux calculs de fréquences alléliques populationnelles et ne sont pas utilisées pour décrire des variants individuels ou populationnels.
+Leurs limites d’usage sont décrites en section 5.4.
 
 ## 8.4 Variable géographique retenue
 
 Le **point de collecte EFS, fixe ou mobile**, est la seule donnée géographique transmise au CRB et utilisée pour les analyses. Aucune adresse, commune ou quartier de résidence n’est transmis ni ajouté aux données de recherche.
 
 Les collectes mobiles couvrent l’île. Le point de collecte documente la géographie du recrutement, sans être assimilé au lieu de résidence du participant. La composante géographique de la sélection sera interprétée dans cette limite.
+
+Le point de collecte est transmis sous forme de code de site, sans date de collecte. La composante géographique de `S_div` utilise uniquement des attributs du site (code, microrégion et, le cas échéant, coordonnées du site de collecte), jamais une adresse ou une localisation rattachée au domicile du participant. Le traitement ne comporte donc aucun géocodage des personnes, catégorie de données exclue de la MR-004. Les codes des sites mobiles à faible effectif pourront être regroupés par microrégion.
+
+**Statut : granularité géographique à valider DPO.**
 
 ## 8.5 Sexe
 
@@ -476,7 +553,7 @@ Ils ne servent pas à attribuer une identité aux participants réunionnais et l
 
 ### Socle public
 
-- **1000 Genomes high-coverage / IGSR** — socle multi-ancestral, 26 populations, utilisé pour PCA, ADMIXTURE, phasage et imputation.
+- **1000 Genomes high-coverage / IGSR** : socle multi-ancestral, 26 populations, utilisé pour PCA, ADMIXTURE, phasage et imputation.
 
 ### Sources prioritaires ou complémentaires à accès contrôlé / selon disponibilité
 
@@ -528,7 +605,7 @@ Objectifs :
 - construire des profils génétiques continus ;
 - contribuer à la sélection des individus WGS.
 
-Ces outils ne sont pas utilisés pour attribuer une identité ethnique individuelle.
+Ces outils ne sont pas utilisés pour attribuer une identité ethnique individuelle. Les proportions d’ascendance inférées restent des données génétiques pseudonymisées ; l’AIPD traite le risque qu’elles soient interprétées comme des données révélant une origine ethnique au sens de l’article 9 du RGPD. Aucune proportion d’ascendance individuelle n’est publiée.
 
 ## 10.3 KING / parenté
 
@@ -554,15 +631,13 @@ Objectifs :
 
 Le phasage est réalisé sur la cohorte SNP et enrichi par les WGS. Les 100 familles nucléaires apportent en complément des **contraintes de transmission mendélienne** utilisées exclusivement pour améliorer et contrôler la qualité du phasage.
 
-Leur apport peut être évalué par comparaison entre :
-
-- phasage statistique sans familles ;
-- phasage enrichi par les transmissions familiales ;
-- phasage ultérieurement enrichi par les 350 WGS.
+Le phasage et ses contrôles qualité répondent aux besoins internes des analyses du projet, sans objectif de comparaison méthodologique ni de publication de ses performances.
 
 Les familles nucléaires ne contribuent pas aux estimations de fréquences populationnelles.
 
 L’imputation vise à projeter une partie de l’information du WGS vers la cohorte large ; la LAI peut compléter la description d’une population fortement admixée.
+
+Le phasage, l’imputation et la LAI s’exécutent dans l’environnement du CHU. L’équipe n’utilise aucun serveur d’imputation externe, en particulier les services publics hébergés hors de l’Union européenne.
 
 ## 10.6 Pharmacogénétique populationnelle
 
@@ -573,11 +648,13 @@ Les objectifs sont :
 - estimer leurs fréquences dans la cohorte réunionnaise ;
 - documenter leur distribution dans une population fortement admixée ;
 - comparer, lorsque pertinent, ces fréquences avec des référentiels externes ;
-- identifier des variants ou couples gène–médicament suffisamment pertinents localement pour justifier des études cliniques ultérieures.
+- identifier des variants ou couples gène-médicament suffisamment pertinents localement pour justifier des études cliniques ultérieures.
 
 Les données des 100 familles nucléaires ne sont pas utilisées dans ces analyses pharmacogénétiques populationnelles.
 
 Cette analyse reste **populationnelle et descriptive**. Le protocole initial n’utilise pas de données de prescription, de réponse thérapeutique ou d’événement indésirable et ne produit aucune recommandation médicale individuelle.
+
+Un génotype pharmacogénétique individuel peut toutefois justifier une mesure de prévention pour la personne (par exemple un génotype DPYD déficitaire ou l’allèle HLA-B\*57:01). Ces situations relèvent de la procédure de découvertes incidentes (section 19.1).
 
 ---
 
@@ -618,11 +695,22 @@ Les 100 familles nucléaires ne participent pas à cette sélection.
 
 ## 12.2 Production
 
-Le séquençage WGS des 350 participants sélectionnés est prévu auprès de **POPgen**. Le CRB adresse directement à POPgen les aliquots d’ADN pseudonymisés correspondants, sans transmission d’identité directe ni de table de correspondance.
+Le séquençage WGS des 350 participants sélectionnés est prévu auprès de **POPGEN**. Le CRB adresse directement à POPGEN les aliquots d’ADN pseudonymisés correspondants, sans transmission d’identité directe ni de table de correspondance.
 
-POPgen restitue directement les données de séquençage pseudonymisées au **service de génétique moléculaire du CHU de La Réunion**, qui réalise les analyses prévues au protocole.
+POPGEN restitue directement les données de séquençage pseudonymisées au **service de génétique moléculaire du CHU de La Réunion**, qui réalise les analyses prévues au protocole.
 
-**Circuits retenus :** aliquots d’ADN du CRB vers POPgen ; données de séquençage de POPgen vers le service de génétique moléculaire du CHU pour analyse. Le rôle RGPD de POPgen, les conventions et les modalités techniques de transport, de transfert sécurisé et de conservation restent à formaliser et à valider institutionnellement.
+**Circuits retenus :** aliquots d’ADN du CRB vers POPGEN ; données de séquençage de POPGEN vers le service de génétique moléculaire du CHU pour analyse. Le rôle RGPD de POPGEN, les conventions et les modalités techniques de transport, de transfert sécurisé et de conservation restent à formaliser et à valider institutionnellement.
+
+POPGEN est un projet pilote du Plan France Médecine Génomique 2025 dont l’Inserm est responsable de traitement ; ce n’est pas un prestataire de séquençage. Avant tout envoi d’échantillon, les conventions précisent :
+
+- l’organisme qui réalise effectivement le séquençage ;
+- la qualification RGPD de chaque intervenant : sous-traitant (article 28 du RGPD) si le séquençage est réalisé pour le compte du CHU sans autre usage, responsable conjoint si POPGEN détermine une partie des finalités ou des moyens ;
+- l’absence de conservation de copie des données par POPGEN au-delà de la prestation, ou à défaut les conditions de cette conservation ;
+- le cadre de l’envoi d’ADN : contrat de collaboration fixant les travaux et le devenir des échantillons, ou contrat de sous-traitance prévoyant la restitution ou la destruction des aliquots restants.
+
+Toute intégration des génomes Génome Réunion à la base de référence nationale POPGEN constituerait une finalité distincte, hors du présent protocole, qui exigerait une analyse réglementaire propre et l’information des participants.
+
+**Statut : À confirmer DRCI / juridique.**
 
 ## 12.3 Données produites
 
@@ -655,10 +743,31 @@ Les éléments réglementairement pertinents sont :
 - recalibrage des fréquences sur les ~2 500 ;
 - analyses de sensibilité aux panels externes ;
 - maîtrise des batch effects ;
-- évaluation séparée du gain de phasage apporté par les familles nucléaires ;
+- contrôle qualité interne du phasage à l’aide des transmissions mendéliennes des familles nucléaires ;
 - non-utilisation des données pour identifier ou réidentifier les participants.
 
 Les méthodologies détaillées sont conservées comme annexes scientifiques du projet.
+
+## 13.1 Justification des effectifs
+
+Les ordres de grandeur ci-dessous supposent un échantillonnage aléatoire simple et un variant génotypé ou imputé de façon fiable. Les simulations de la méthodologie de validation les affineront.
+
+| Indicateur | Cohorte de ~2 500 participants (5 000 allèles) | Panel de 350 WGS (700 allèles) |
+|---|---|---|
+| Probabilité d’observer au moins une copie d’un variant de fréquence 0,1 % | > 99 % | environ 50 % |
+| Probabilité d’observer au moins une copie d’un variant de fréquence 0,5 % | > 99 % | environ 97 % |
+| Demi-largeur de l’intervalle de confiance à 95 % pour une fréquence de 5 % | environ 0,6 point | environ 1,6 point |
+| Demi-largeur de l’intervalle de confiance à 95 % pour une fréquence de 20 % | environ 1,1 point | environ 3,0 points |
+
+Le panel de 350 WGS sert à découvrir et caractériser les variants, en particulier ceux dont la fréquence locale atteint au moins 0,5 %. La cohorte de ~2 500 participants apporte la précision des fréquences après imputation et recalibrage. Le panel WGS n’étant pas un échantillon aléatoire, ses fréquences brutes ne sont pas utilisées sans recalibrage (section 15.2).
+
+**Statut : à compléter avec les résultats des simulations de sélection.**
+
+## 13.2 Plan de gestion des données
+
+Un plan de gestion des données, document distinct, décrit avant le début du traitement : les formats et volumes par catégorie (SNP, FASTQ, BAM / CRAM, VCF / gVCF, données dérivées), les environnements de stockage et de calcul, la sauvegarde, le versionnement des pipelines et des données, les droits d’accès, la journalisation, les exports, ainsi que la destruction ou l’archivage en fin de recherche.
+
+**Statut : document à produire avec la DSIO.**
 
 ---
 
@@ -673,11 +782,11 @@ La phase initiale doit produire notamment :
 - une sélection WGS documentée et auditée ;
 - 350 WGS ;
 - un panel local de première génération ;
-- un phasage amélioré et contrôlé grâce aux transmissions mendéliennes des familles nucléaires, dont les résultats et indicateurs restent internes ;
+- un phasage amélioré et contrôlé grâce aux transmissions mendéliennes des familles nucléaires, réservé aux besoins internes des analyses (section 18.1) ;
 - des données d’imputation ;
 - des fréquences génétiques locales recalibrées uniquement à partir de la cohorte populationnelle principale ;
 - un ensemble de fréquences de variants pharmacogénétiques d’intérêt au niveau populationnel ;
-- une liste argumentée de variants ou couples gène–médicament pouvant justifier des études cliniques spécifiques ultérieures ;
+- une liste argumentée de variants ou couples gène-médicament pouvant justifier des études cliniques spécifiques ultérieures ;
 - des intervalles / statuts de fiabilité lorsque nécessaire ;
 - des résultats agrégés destinés aux publications et au référentiel initial ;
 - un **portail web public de restitution des résultats agrégés**.
@@ -688,16 +797,14 @@ Le portail public pourra présenter notamment :
 
 - des fréquences alléliques locales ;
 - des comparaisons avec des bases ou panels de référence externes ;
-- des variants nouvellement observés dans la cohorte réunionnaise ;
+- des variants nouvellement observés dans la cohorte réunionnaise, dans le respect des règles de la section 18.4 ;
 - des variants dont la fréquence locale apparaît sensiblement différente de celle observée dans les référentiels externes ;
 - des résultats agrégés de pharmacogénétique populationnelle ;
 - des éléments méthodologiques et indicateurs de qualité nécessaires à l’interprétation des résultats publiés.
 
-La publication d’un variant ou d’une fréquence sera conditionnée à des **règles de contrôle de divulgation**. Les variants ultra-rares, les petits sous-groupes, les haplotypes rares ou les combinaisons de variables susceptibles d’augmenter le risque de ré-identification pourront être supprimés, regroupés, masqués ou réservés à un accès contrôlé.
+La publication d’un variant ou d’une fréquence sera conditionnée à des **règles de contrôle de divulgation**. Les variants ultra-rares, les petits sous-groupes, les haplotypes rares ou les combinaisons de variables susceptibles d’augmenter le risque de ré-identification pourront être supprimés, regroupés, masqués ou réservés à un accès contrôlé. Les règles minimales applicables figurent en section 18.4.
 
 Le portail public ne donnera accès ni aux fichiers individuels, ni aux identifiants pseudonymes, ni aux données WGS individuelles, ni aux résultats du volet familial.
-
-Les résultats issus du volet familial sont limités à l’évaluation et à l’amélioration du phasage. Ils ne sont pas utilisés pour produire des fréquences ou une description populationnelle des variants.
 
 Les résultats individuels ne sont pas destinés à être rendus publics ni à guider directement une prescription dans le cadre du présent protocole.
 
@@ -749,12 +856,13 @@ La recherche décrite dans ce protocole est prévue sur **36 mois**, de son lanc
 
 Le calendrier actuellement décrit dans la synthèse scientifique comprend notamment :
 
-- **M1–3** : accès et harmonisation des panels témoins 1000G / EGA ;
-- **M1–5** : validation externe / simulations / comparaison des stratégies de sélection ;
-- **M4–9** : génotypage SNP réalisé en interne au CHU sur iScan Illumina, traitement de la cohorte Réunion, QC, PCA / ADMIXTURE, calcul `S_div`, sélection des 350 ;
-- **M4–14** : sélection des 100 familles nucléaires au CRB, génotypage, contrôles mendéliens et amélioration du phasage ;
-- **M8–22** : WGS des 350, retour des données, QC, base de variants, recalibrage des fréquences et analyses populationnelles associées, dont la pharmacogénétique descriptive ;
-- **M22–36** : consolidation des résultats agrégés, définition des règles de contrôle de divulgation et mise en ligne progressive du portail public de restitution.
+- **M0 (avant lancement)** : note de qualification DRCI, validation scientifique du protocole, AIPD, déclaration CODECOH, conventions, formulaire de consentement et enregistrement au répertoire public de la Plateforme des données de santé, prérequis à l’ouverture de la collecte EFS ;
+- **M1 à M3** : accès et harmonisation des panels témoins 1000G / EGA ;
+- **M1 à M5** : validation externe / simulations / comparaison des stratégies de sélection ;
+- **M4 à M9** : génotypage SNP réalisé en interne au CHU sur iScan Illumina, traitement de la cohorte Réunion, QC, PCA / ADMIXTURE, calcul `S_div`, sélection des 350 ;
+- **M4 à M14** : sélection des 100 familles nucléaires au CRB, génotypage, contrôles mendéliens et amélioration du phasage ;
+- **M8 à M22** : WGS des 350, retour des données, QC, base de variants, recalibrage des fréquences et analyses populationnelles associées, dont la pharmacogénétique descriptive ;
+- **M22 à M36** : consolidation des résultats agrégés, définition des règles de contrôle de divulgation et mise en ligne progressive du portail public de restitution.
 
 Les phases d’IA clinique, de portail clinique ou de décision médicale individualisée **ne sont pas automatiquement incluses dans le présent périmètre MR-004 initial**.
 
@@ -768,7 +876,7 @@ La durée de 36 mois concerne les travaux prévus au présent protocole. Les dur
 
 ## 17.1 Matériel biologique
 
-Le principe retenu est de conserver au CRB l’ADN restant au-delà des **36 mois de recherche**, afin de permettre des vérifications et, dans un cadre adapté, de futures recherches.
+Le principe retenu est de conserver au CRB l’ADN restant au-delà des **36 mois de recherche**, afin de permettre des vérifications liées à la présente recherche. Toute utilisation pour de futures recherches relève du cadre distinct de la ressource durable (section 17.3) et de la déclaration de collection (section 7.7).
 
 La durée précise et les conditions de conservation et de réutilisation seront définies avec le CRB / DRCI / DPO, en tenant compte de l’information et des consentements applicables. Cette décision ne vaut pas autorisation générale de réutilisation.
 
@@ -776,9 +884,9 @@ Les durées applicables aux autres reliquats et aliquots, ainsi qu’au volet fa
 
 ## 17.2 Données génétiques
 
-Le principe de conservation des données de génotypage et de séquençage au-delà des 36 mois est retenu.
+Le principe de conservation des données de génotypage et de séquençage au-delà des 36 mois est retenu, dans les limites fixées par la MR-004.
 
-Pour la recherche décrite dans ce protocole, les données personnelles seront conservées au plus tard jusqu’à deux ans après la dernière publication des résultats ou, en l’absence de publication, jusqu’à la signature du rapport final. Elles feront ensuite l’objet d’un archivage à accès restreint, pour une durée à définir avec le DPO dans la limite de vingt ans ou selon la réglementation applicable.
+Pour la recherche décrite dans ce protocole, les données personnelles seront conservées au plus tard jusqu’à deux ans après la dernière publication des résultats ou, en l’absence de publication, jusqu’à la signature du rapport final. Elles feront ensuite l’objet d’un archivage à accès restreint, pour une durée à définir avec le DPO dans la limite de vingt ans ou selon la réglementation applicable. Pendant l’archivage, les données ne font l’objet d’aucune exploitation scientifique ; l’archive sert uniquement à la justification et au contrôle de la recherche.
 
 Les formats conservés et les modalités d’archivage seront précisés avec la DSIO / DRCI / DPO. Toute réutilisation pour une nouvelle recherche fera l’objet d’un examen réglementaire et des formalités nécessaires.
 
@@ -800,6 +908,10 @@ Les résultats rendus publics via le portail devront être distingués des donn�
 
 La conservation à long terme dans une ressource génomique multi-projets n’est pas considérée comme automatiquement couverte par le présent traitement MR-004.
 
+Pour préparer ce futur cadre, le formulaire de consentement de la cohorte principale pourra comporter une case optionnelle par laquelle le donneur accepte la conservation de ses échantillons et données dans une ressource génomique durable, sous réserve de l’information prévue à ce moment et des formalités applicables. Un refus sur cette case n’empêche pas la participation à Génome Réunion. Cette case évite de réinformer l’ensemble des participants lors de la création de la ressource.
+
+**Statut de la case optionnelle : À arbitrer DRCI / DPO.**
+
 **Statut : cadre distinct à définir.**
 
 ---
@@ -814,11 +926,11 @@ Les publications porteront principalement sur :
 - structure populationnelle ;
 - caractéristiques de la cohorte ;
 - fréquences et statistiques agrégées ;
-- fréquences populationnelles de variants pharmacogénétiques et priorisation de couples gène–médicament pour de futures études ;
+- fréquences populationnelles de variants pharmacogénétiques et priorisation de couples gène-médicament pour de futures études ;
 - performance / validation des méthodes de sélection ;
 - résultats d’imputation et de recalibrage.
 
-Les résultats et indicateurs de phasage restent internes, comme éléments techniques nécessaires aux calculs ; ils ne font pas l’objet d’une publication ni d’une diffusion sur le portail public.
+Les données familiales, les haplotypes, les résultats de phasage et les indicateurs de contrôle qualité associés restent internes. Aucune publication des performances du phasage ni comparaison méthodologique avec et sans familles n’est prévue.
 
 ## 18.2 Données individuelles
 
@@ -834,7 +946,7 @@ Une vigilance renforcée est requise pour :
 - petits sous-groupes ;
 - combinaisons secteur + profil ancestral + variant susceptibles d’augmenter le risque de ré-identification.
 
-Une politique spécifique de publication / contrôle de divulgation devra être définie avant ouverture publique du portail.
+Les règles minimales figurent en section 18.4 ; la politique détaillée de publication et ses seuils chiffrés seront fixés avant ouverture publique du portail.
 
 ## 18.4 Portail web public
 
@@ -851,6 +963,17 @@ Ce portail pourra permettre la consultation de résultats validés issus de la r
 
 Avant publication, chaque catégorie de résultat devra respecter des règles de minimisation et de contrôle de divulgation. Un résultat ne devra pas être rendu public lorsque la combinaison de sa rareté, de la taille du sous-groupe ou des informations associées crée un risque excessif de ré-identification.
 
+La MR-004 interdit toute présentation des résultats permettant une identification directe ou indirecte. Des fréquences agrégées ne garantissent pas à elles seules l’anonymat : les attaques par inférence d’appartenance exploitent des fréquences alléliques, et une population fondatrice de taille modeste augmente ce risque. Les règles minimales suivantes s’appliquent :
+
+- le portail n’affiche pas la fréquence d’un variant dont le comptage allélique est inférieur à un seuil minimal, ou l’affiche uniquement en classe de fréquence ; les singletons et les variants observés chez un très petit nombre de participants ne sont pas publiés individuellement ;
+- le portail ne publie aucune fréquence par point de collecte, par microrégion ou par groupe d’ascendance lorsque l’effectif du sous-groupe est inférieur à un seuil minimal ;
+- le portail ne publie aucun haplotype, aucune donnée de phasage et aucune proportion d’ascendance individuelle ;
+- les résultats qui ne satisfont pas ces règles relèvent de l’accès contrôlé (section 18.5) ;
+- les comparaisons publiques se limitent aux référentiels en accès ouvert ; les fréquences dérivées de jeux de données EGA ne sont affichées que si leurs conditions d’accès l’autorisent ;
+- l’AIPD évalue le risque résiduel du portail ; une conclusion de risque résiduel élevé ferait sortir le traitement du cadre de la MR-004.
+
+**Statut : valeurs des seuils à fixer avant ouverture du portail (À arbitrer).**
+
 Le portail n’exposera **aucune donnée individuelle pseudonymisée**, aucun identifiant de participant, aucune donnée familiale individuelle et aucun fichier génomique individuel.
 
 ## 18.5 Accès scientifique futur
@@ -865,10 +988,10 @@ La gouvernance définitive, le Data Access Committee, les critères d’accès e
 
 Deux circuits doivent être distingués :
 
-- **cohorte principale EFS** : information spécifique sur Génome Réunion lors de l’entretien EFS et remise d’une note d’information écrite que le donneur peut conserver, avant la signature de son accord ;
+- **cohorte principale EFS** : information spécifique sur Génome Réunion lors de l’entretien EFS et remise d’une note d’information écrite que le donneur peut conserver, avant la signature du consentement exprès écrit à l’examen génétique ;
 - **volet familial CRB** : reliquats d’ADN déjà conservés provenant de patients ayant signé un consentement recherche après information et discussion en consultation médicale ; les familles sont ensuite sélectionnées et pseudonymisées par le CRB avant mise à disposition aux équipes.
 
-Le volet familial étant limité au phasage et au contrôle mendélien, ses données ne sont pas utilisées pour les fréquences populationnelles, la description des variants ou la pharmacogénétique.
+Les limites d’usage du volet familial sont décrites en section 5.4 ; son information est traitée en section 19.2.
 
 La version finale de la note d’information de la cohorte EFS devra préciser notamment :
 
@@ -888,7 +1011,8 @@ La version finale de la note d’information de la cohorte EFS devra préciser n
 - modalités d’opposition / retrait ;
 - droits RGPD ;
 - contact DPO ;
-- règles relatives aux éventuelles découvertes génétiques pertinentes pour la santé.
+- procédure applicable aux découvertes génétiques incidentes et possibilité de s’y opposer (section 19.1) ;
+- existence d’une case optionnelle relative à la ressource durable, si elle est retenue (section 17.3).
 
 Pour la cohorte principale, l’EFS est l’interlocuteur opérationnel des donneurs souhaitant se retirer ou s’opposer à l’utilisation de leurs données. Il retrouve le code de recherche à partir de la table de correspondance et relaie la demande au CHU sous ce code, sans transmettre l’identité du donneur à l’équipe de recherche. Le donneur peut également contacter directement le DPO ; le recours à l’EFS n’est pas une condition préalable.
 
@@ -896,9 +1020,33 @@ Les coordonnées utiles et les modalités pratiques de traitement des demandes s
 
 Le consentement recherche utilisé pour le volet familial et sa version applicable seront conservés comme preuves documentaires du dossier.
 
+## 19.1 Découvertes génétiques incidentes
+
+Le séquençage de 350 génomes complets rend probable la découverte, chez plusieurs participants, de caractéristiques génétiques pouvant justifier des mesures de prévention ou de soins pour la personne ou sa famille. Dans le régime de non-opposition, l’article L. 1130-5 du code de la santé publique impose d’informer la personne de telles découvertes, sauf opposition préalable, et l’article D. 1131-22-4 confie ce contact au médecin détenteur de son identité. Le protocole applique une procédure équivalente à l’ensemble des participants.
+
+**Politique de recherche (À arbitrer).** Deux options restent ouvertes : aucune recherche active, l’équipe ne signalant que les découvertes fortuites manifestes ; ou recherche active limitée à une liste définie dans une version figée, par exemple la liste ACMG des gènes à rapporter.
+
+**Circuit de retour.** Pour la cohorte principale, l’équipe de recherche signale le code pseudonyme et la caractéristique à un référent désigné ; l’EFS, détenteur de la table de correspondance, identifie la personne ; un médecin la contacte, sauf opposition, et l’oriente vers une consultation de génétique du CHU. Pour le volet familial, le signalement passe par le CRB et le médecin détenteur de l’identité.
+
+**Confirmation.** Aucun résultat de recherche n’est rendu sans confirmation, sur un nouveau prélèvement, par un laboratoire autorisé à réaliser l’examen des caractéristiques génétiques à des fins médicales.
+
+**Opposition.** Le formulaire de consentement et la note d’information indiquent que la personne peut s’opposer, à tout moment et par tout moyen, à être informée d’une découverte incidente, ainsi que la démarche à suivre.
+
+**Pharmacogénétique.** La version déposée précisera si un génotype pharmacogénétique à fort impact (par exemple DPYD déficitaire ou allèle HLA-B\*57:01) entre dans cette procédure.
+
+**Statut : politique, liste, référents et circuit à valider avec la génétique médicale, l’EFS, la DRCI et le DPO.**
+
+## 19.2 Information du volet familial
+
+La MR-004 impose une information individuelle des personnes avant la mise en œuvre de la recherche, sauf si la réutilisation a été annoncée lors de la collecte avec renvoi vers un dispositif d’information spécifique, ou si les personnes disposent déjà des informations requises.
+
+Le CRB relit la version applicable du consentement recherche. Si elle ne couvre pas l’examen génétique à des fins de recherche ou ne remplit pas ces conditions, chaque membre de la famille, ou les titulaires de l’autorité parentale pour un mineur, reçoit une lettre d’information individuelle propre à Génome Réunion. Cette lettre décrit le programme de recherche, indique la possibilité de s’opposer et laisse un délai d’opposition avant tout génotypage.
+
+**Statut : À vérifier sur la version applicable du formulaire.**
+
 ---
 
-# 20. Sécurité et confidentialité — principes applicables au protocole
+# 20. Sécurité et confidentialité : principes applicables au protocole
 
 Les mesures détaillées sont traitées dans `08_securite_aipd.md` et dans l’AIPD.
 
@@ -916,13 +1064,17 @@ Principes déjà retenus :
 - gestion spécifique des exports et des données WGS ;
 - séparation technique entre l’environnement contenant les données individuelles/pseudonymisées et le portail public ;
 - publication sur le portail uniquement de résultats préalablement agrégés, validés et soumis aux règles de contrôle de divulgation ;
-- AIPD obligatoire avant mise en œuvre.
+- séparation fonctionnelle entre diagnostic et recherche pour le volet familial : environnements distincts, interdiction de rapprocher les données de recherche des données de diagnostic des mêmes patients, journalisation des accès ;
+- exécution locale du phasage, de l’imputation et des analyses, sans service en ligne hébergé hors de l’Union européenne ;
+- AIPD obligatoire avant mise en œuvre, couvrant notamment le portail public, le volet familial et l’inférence d’ascendance.
 
 L’architecture finale (on-premise / hybride / autre) reste à valider par la DSIO / DPO.
 
 ---
 
 # 21. Documents réglementaires et annexes associés
+
+> Les chemins de fichiers ci-dessous relèvent du dépôt interne. La version déposée les remplacera par les intitulés des annexes.
 
 Le protocole doit être lu avec :
 
@@ -937,7 +1089,11 @@ Le protocole doit être lu avec :
 - `cnil-mr004/01_dossier_mr004/05_donnees_sources_methodes.md` ;
 - `cnil-mr004/01_dossier_mr004/06_acteurs_flux_responsabilites.md` ;
 - `cnil-mr004/01_dossier_mr004/07_conservation_gouvernance.md` ;
-- `cnil-mr004/01_dossier_mr004/08_securite_aipd.md`.
+- `cnil-mr004/01_dossier_mr004/08_securite_aipd.md` ;
+- `analyse_reglementaire_protocole_mr004_v0-7-16.md` (note d’analyse du 16 septembre 2026) ;
+- note de qualification DRCI (à produire) ;
+- plan de gestion des données (à produire) ;
+- déclaration CODECOH et conventions EFS / CHU et CHU / organisme séquenceur (à réaliser).
 
 Annexes scientifiques de référence :
 
@@ -948,7 +1104,18 @@ Annexes scientifiques de référence :
 - `template/Genome_Reunion_synthese_infrastructure_v5_4.html` ;
 - `template/architecture_pipeline.html`.
 
+## 21.1 Références réglementaires
+
+- Code civil, article 16-10.
+- Code de la santé publique, articles L. 1121-1, L. 1130-5, L. 1243-3 et D. 1131-22-1 à D. 1131-22-5.
+- Règlement (UE) 2016/679 (RGPD), articles 6, 9, 13, 14, 21, 28 et 35.
+- CNIL, délibération n° 2018-155 du 3 mai 2018 portant homologation de la méthodologie de référence MR-004.
+- Plateforme des données de santé, guide pédagogique de la procédure simplifiée MR-004 (octobre 2025).
+- Ministère chargé de la recherche, réglementation de la conservation d’éléments et produits du corps humain à des fins scientifiques (mise à jour du 28 mai 2026).
+
 ---
+
+> **Annexe interne.** Les sections 22 à 25 servent au pilotage du dossier. Elles seront retirées de la version déposée et conservées dans le dossier de conformité.
 
 # 22. Traçabilité des informations intégrées depuis le dépôt
 
@@ -963,12 +1130,14 @@ Annexes scientifiques de référence :
 | Pharmacogénétique populationnelle | objectifs scientifiques du projet + synthèse scientifique |
 | Portail web public de résultats agrégés | objectif de valorisation / diffusion de Génome Réunion |
 | 1000G / EGA comme panels témoins | synthèse scientifique + `CNIL_02A` |
-| POPgen pour 350 WGS | README + synthèse scientifique |
+| POPGEN pour 350 WGS | README + synthèse scientifique |
 | Durée de la recherche : 36 mois | synthèse scientifique / plan économique + décision de conception |
 | Circuit EFS → CRB | `CNIL_01_CIRCUIT_EFS_PRELEVEMENT.md` |
 | Hypothèse RNIPH + MR-004 | `CNIL_02_QUALIFICATION_REGLEMENTAIRE.md` |
 | Méthodes analytiques réglementaires | `CNIL_02C_METHODES_ANALYTIQUES_MR004.md` |
 | Séparation de la ressource durable | plan CNIL + grille MR-004 |
+| Consentement génétique, découvertes incidentes, volet familial, portail, POPGEN, collection biologique | note d’analyse réglementaire du 16 septembre 2026 |
+| Financement FEDER sur 36 mois | plan économique du projet |
 
 ---
 
@@ -980,19 +1149,26 @@ Annexes scientifiques de référence :
 - [ ] nommer formellement le responsable de mise en œuvre / responsable scientifique ;
 - [ ] valider définitivement la qualification RNIPH ;
 - [ ] confirmer la base légale RGPD ;
-- [ ] vérifier l’engagement de conformité MR-004 du CHU.
+- [ ] vérifier l’engagement de conformité MR-004 du CHU ;
+- [ ] obtenir la note de qualification motivée de la DRCI ;
+- [ ] faire valider scientifiquement le protocole avant le début du traitement ;
+- [ ] enregistrer l’étude au répertoire public des projets de la PDS avant son commencement ;
+- [ ] inscrire le traitement au registre des activités de traitement ;
+- [ ] réaliser la déclaration CODECOH et vérifier l’exigence d’un avis CPP.
 
 ## 23.2 Population / collecte
 
 - [ ] formaliser l’âge d’inclusion éventuel ;
-- [ ] décider si l’âge est transmis au CRB / recherche ;
+- [ ] décider si l’âge est transmis au CRB / recherche, en classes si retenu ;
 - [x] ne pas recueillir ni transmettre le sexe déclaré ; inférer le sexe chromosomique à partir du génotypage pour les contrôles qualité ;
 - [x] retenir la résidence à La Réunion et la naissance des deux parents à La Réunion comme critères d’inclusion ;
 - [x] vérifier les critères de résidence et de naissance des deux parents sur simple déclaration du donneur lors de l’entretien EFS, sans justificatif ;
 - [ ] formaliser avec l’EFS le support de traçabilité de l’éligibilité ;
 - [x] retenir uniquement le point de collecte EFS comme donnée géographique transmise, sans adresse, commune ni quartier de résidence ;
 - [x] ne pas recueillir les origines ethniques ou continentales déclarées ;
-- [ ] formaliser les critères d’exclusion du protocole.
+- [ ] formaliser les critères d’exclusion du protocole ;
+- [ ] valider la granularité du point de collecte (code de site, regroupement des sites mobiles) ;
+- [ ] rédiger le formulaire de consentement (article 16-10, découvertes incidentes, case optionnelle ressource durable).
 
 ## 23.3 Méthodes
 
@@ -1001,15 +1177,19 @@ Annexes scientifiques de référence :
 - [ ] confirmer la liste finale des panels EGA ;
 - [ ] définir la liste initiale des gènes / variants / recommandations pharmacogénétiques de référence à étudier au niveau populationnel ;
 - [ ] confirmer le pipeline WGS et les formats effectivement conservés ;
+- [ ] compléter la justification des effectifs avec les simulations ;
+- [ ] produire le plan de gestion des données ;
+- [ ] arbitrer la politique de découvertes incidentes et le statut des variants pharmacogénétiques à fort impact ;
 - [x] fixer à 36 mois la durée de la recherche décrite dans ce protocole, jusqu’à la restitution des résultats agrégés.
 
 ## 23.4 Acteurs / flux
 
 - [ ] qualifier juridiquement EFS ;
 - [ ] qualifier juridiquement CRB ;
-- [x] envoi direct à POPgen des aliquots d’ADN pseudonymisés des 350 participants par le CRB ;
-- [x] restitution directe des données de séquençage pseudonymisées par POPgen au service de génétique moléculaire du CHU pour analyse ;
-- [ ] qualifier POPgen ;
+- [x] envoi direct à POPGEN des aliquots d’ADN pseudonymisés des 350 participants par le CRB ;
+- [x] restitution directe des données de séquençage pseudonymisées par POPGEN au service de génétique moléculaire du CHU pour analyse ;
+- [ ] identifier l’organisme séquenceur et qualifier POPGEN (sous-traitant ou responsable conjoint) ; exclure ou encadrer toute conservation de copie ;
+- [ ] conclure la convention EFS / CHU sur la remise des reliquats ;
 - [x] génotypage SNP réalisé en interne au CHU de La Réunion sur iScan Illumina ;
 - [ ] finaliser les conventions et clauses RGPD.
 
@@ -1020,7 +1200,9 @@ Annexes scientifiques de référence :
 - [x] retenir le principe de conservation de l’ADN restant au CRB après les 36 mois pour vérifications ou futures recherches dans un cadre adapté ;
 - [ ] fixer les durées du matériel biologique ;
 - [ ] séparer formellement l’étude MR-004 de la ressource durable ;
-- [ ] définir les seuils et règles de contrôle de divulgation applicables au portail public ;
+- [ ] chiffrer les seuils des règles minimales de divulgation (section 18.4) ;
+- [ ] arbitrer la case optionnelle de consentement à la ressource durable ;
+- [x] réserver le phasage et ses contrôles qualité aux besoins internes des analyses, sans comparaison méthodologique ni publication de ses performances (section 18.1) ;
 - [ ] définir la politique de publication des variants rares / fondateurs ;
 - [ ] définir le processus de validation d’un résultat avant publication sur le portail ;
 - [ ] définir le DAC / accès chercheurs pour les données non publiques.
@@ -1029,19 +1211,23 @@ Annexes scientifiques de référence :
 
 - [x] sélection par le CRB à partir de reliquats d’ADN déjà conservés ;
 - [x] consentement recherche écrit et signé après information / discussion en consultation médicale ;
-- [x] consentement couvrant les analyses de recherche nécessaires au volet ;
+- [ ] vérifier sur la version applicable du formulaire que le consentement couvre l’examen génétique à des fins de recherche ; à défaut, information complémentaire individuelle ;
 - [x] pseudonymisation par le CRB avant mise à disposition aux équipes ;
 - [x] finalité limitée à l’amélioration / contrôle du phasage et aux transmissions mendéliennes ;
 - [x] exclusion des familles des calculs de fréquences et de la description populationnelle des variants ;
 - [ ] conserver la version applicable du formulaire de consentement comme preuve documentaire ;
 - [ ] formaliser les critères techniques d’éligibilité des familles nucléaires ;
+- [ ] documenter l’inclusion des mineurs (autorité parentale, information adaptée, majorité) ;
+- [ ] exclure les familles dont un membre ne peut pas être informé ;
+- [ ] décrire la séparation fonctionnelle diagnostic / recherche dans l’AIPD ;
+- [ ] arbitrer une éventuelle dissociation du calendrier du volet familial ;
 - [ ] validation institutionnelle finale de l’intégration au périmètre RNIPH / MR-004.
 
 ---
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.18, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.8.1, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
@@ -1059,6 +1245,46 @@ Au stade de cette version 0.7.18, le corpus du dépôt et les décisions de conc
 - les limites scientifiques ;
 - le calendrier général ;
 - le **portail web public de restitution des résultats agrégés**, séparé des données individuelles et soumis à des règles de contrôle de divulgation ;
-- les exclusions du traitement initial.
+- les exclusions du traitement initial ;
+- le consentement génétique et la base légale RGPD envisagée ;
+- la procédure de découvertes incidentes ;
+- les règles minimales du portail public ;
+- l’encadrement de la collection biologique.
+
+Restent ouverts avant dépôt : la note de qualification DRCI, la qualification de POPGEN, les seuils du portail, la politique de découvertes incidentes, les modalités du volet familial et la déclaration CODECOH.
 
 Les principaux éléments encore manquants relèvent surtout des **arbitrages institutionnels, du dictionnaire final de données, des responsabilités, des durées de conservation, des contrats et de la définition formelle des règles de diffusion publique**, et non d’un manque de description scientifique du projet.
+
+---
+
+# 25. Journal des modifications
+
+## Version 0.8.1
+
+- Retrait de la comparaison méthodologique et de la publication des performances du phasage ; maintien des contrôles qualité internes (sections 5.4, 8.3, 10.5, 13, 14, 18.1 et 23.5).
+- Réintégration des décisions validées en versions 0.7.17 et 0.7.18 : note écrite conservée par le donneur avant signature et circuit de retrait via l’EFS, avec possibilité de contacter directement le DPO (sections 2, 6.2, 7.1 et 19).
+- Les autres propositions et points à arbitrer de la version 0.8.0 sont conservés pour la poursuite de la relecture.
+
+## Version 0.8.0 (historique)
+
+| Section | Modification | Motif |
+|---|---|---|
+| En-tête, 1, 2, 6, 7, 10, 16, 20 | Suppression des tirets cadratins et demi-cadratins ; « POPgen » harmonisé en « POPGEN » | Règle typographique du projet |
+| 1.3 | Argumentaire de qualification RNIPH et conséquence d’une requalification | Qualification présentée comme simple hypothèse |
+| 1.3, 6.5, 19.2, 23.6 | Vérification de la couverture de l’examen génétique par le consentement familial ; case 23.6 décochée | Article D. 1131-22-5 ; information individuelle exigée par la MR-004 |
+| 1.7 | Consentement génétique (article 16-10), base légale RGPD, articulation retrait / opposition | « Accord écrit » sans qualification juridique |
+| 1.8 | Financement FEDER | Rubrique attendue d’un protocole ; mention reprise dans la description du répertoire public |
+| 2, 5.1, 6.2, 6.3, 7.1, 7.2, 19 | « Accord écrit » remplacé par « consentement exprès écrit » | Idem 1.7 |
+| 5.4.1 à 5.4.3 | Mineurs, personnes ne pouvant pas être informées, dissociation possible | Angles morts du volet familial |
+| 7.4, 8.1, 8.4 | Code de site sans date ; âge en classes ; absence de géocodage des personnes | Quasi-identifiants ; exclusion du géocodage par la MR-004 |
+| 7.7 | Déclaration CODECOH, avis CPP à vérifier, conventions | Collection biologique non mentionnée |
+| 8.3, 14.1, 19 | Répétitions sur le volet familial remplacées par des renvois à 5.4 | Allègement |
+| 10.2, 10.5, 10.6, 20 | Ascendance inférée ; exécution locale ; renvoi pharmacogénétique vers 19.1 ; séparation fonctionnelle | AIPD ; transferts hors UE |
+| 12.2 | Statut de POPGEN, qualification RGPD, devenir des données et des échantillons | POPGEN est un projet de recherche, pas un prestataire |
+| 13.1, 13.2 | Justification des effectifs ; plan de gestion des données | Rubriques manquantes |
+| 14, 18.1 | Publication possible d’indicateurs agrégés de phasage | Décision de la version 0.7.16 modifiée, à arbitrer |
+| 14.1, 18.3, 18.4 | Règles minimales de divulgation du portail | Exigence de la MR-004 sur la présentation des résultats |
+| 16.2 | Étape M0 des formalités préalables | Enregistrement et validation avant commencement |
+| 17 | Distinction archivage / futures recherches ; case optionnelle ressource durable | Périmètre de la MR-004 |
+| 19.1 | Procédure de découvertes incidentes | Articles L. 1130-5 et D. 1131-22-4 |
+| 21 à 24 | Mention d’annexe interne ; références réglementaires ; checklist complétée ; position mise à jour | Préparation du dépôt |
