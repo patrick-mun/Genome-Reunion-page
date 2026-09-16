@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.16 — encadrement de la conservation et de l’archivage des données  
+**Version :** 0.7.17 — remise de la note d’information au donneur  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -85,7 +85,7 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Utilisation pour fréquences / description de variants | Non |
 | Utilisation pharmacogénétique des familles | Non |
 | Prélèvement supplémentaire pour la recherche | Non prévu, ni pour la cohorte principale ni pour le volet familial |
-| Information / accord cohorte principale | Information lors de l’entretien avec le médecin EFS + accord écrit signé |
+| Information / accord cohorte principale | Information lors de l’entretien avec le médecin EFS et remise d’une note écrite conservée par le donneur, avant signature de l’accord |
 | Pseudonymisation cohorte principale | Code généré et table identité ↔ code conservée par l’EFS |
 | Données transmises au CRB | tube codé + site de prélèvement ; âge uniquement si finalement nécessaire |
 | Génotypage | Génotypage SNP réalisé en interne au CHU de La Réunion sur **iScan Illumina**, avec puce de type Global Diversity Array (~1,9 M SNP dans le corpus actuel) |
@@ -289,7 +289,7 @@ Deux sources de participants sont distinguées :
 - participation au circuit EFS ;
 - résidence à La Réunion ;
 - naissance des deux parents à La Réunion ;
-- information préalable sur le projet lors de l’entretien avec le médecin EFS ;
+- information préalable sur le projet lors de l’entretien avec le médecin EFS, accompagnée d’une note écrite remise au donneur pour conservation avant signature de son accord ;
 - accord écrit signé pour la participation au projet ;
 - disponibilité d’un reliquat de tube EDTA utilisable pour le projet ;
 - attribution d’un identifiant pseudonyme par l’EFS ;
@@ -334,7 +334,7 @@ Les critères techniques précis définissant une famille nucléaire exploitable
 
 ## 7.1 Cohorte principale — information et accord
 
-Le projet est présenté au donneur lors de l’entretien avec le médecin de l’EFS. Les critères de résidence et de naissance des deux parents à La Réunion sont vérifiés sur simple déclaration du donneur, sans justificatif. Le participant reçoit une explication du projet puis signe un accord écrit.
+Le projet est présenté au donneur lors de l’entretien avec le médecin de l’EFS. Les critères de résidence et de naissance des deux parents à La Réunion sont vérifiés sur simple déclaration du donneur, sans justificatif. Le participant reçoit une explication du projet ainsi qu’une note d’information écrite qu’il peut conserver, avant de signer son accord écrit.
 
 La forme réglementaire définitive du document d’information / accord sera finalisée après validation de la qualification RNIPH / MR-004.
 
@@ -865,7 +865,7 @@ La gouvernance définitive, le Data Access Committee, les critères d’accès e
 
 Deux circuits doivent être distingués :
 
-- **cohorte principale EFS** : information spécifique sur Génome Réunion lors de l’entretien EFS et accord écrit signé ;
+- **cohorte principale EFS** : information spécifique sur Génome Réunion lors de l’entretien EFS et remise d’une note d’information écrite que le donneur peut conserver, avant la signature de son accord ;
 - **volet familial CRB** : reliquats d’ADN déjà conservés provenant de patients ayant signé un consentement recherche après information et discussion en consultation médicale ; les familles sont ensuite sélectionnées et pseudonymisées par le CRB avant mise à disposition aux équipes.
 
 Le volet familial étant limité au phasage et au contrôle mendélien, ses données ne sont pas utilisées pour les fréquences populationnelles, la description des variants ou la pharmacogénétique.
@@ -1037,7 +1037,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.16, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.17, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
