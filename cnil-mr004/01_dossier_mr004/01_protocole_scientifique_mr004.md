@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7 — intégration du portail web public de résultats agrégés  
-**Date :** 15 septembre 2026  
+**Version :** 0.7.1 — clarification de la constitution de la collection EFS  
+**Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
 
@@ -77,7 +77,7 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 |---|---|
 | Type de recherche | RNIPH présumée — MR-004 à confirmer |
 | Population principale | Environ 2 500 participants recrutés via l’EFS La Réunion |
-| Matériel biologique cohorte principale | Reliquat de tube EDTA issu du circuit habituel EFS |
+| Matériel biologique cohorte principale | Reliquats de tubes EDTA issus des dons EFS, constitués en collection au fil des dons à partir du lancement de l’étude |
 | Volet familles | Environ 100 familles nucléaires sélectionnées par le CRB à partir de reliquats d’ADN déjà conservés |
 | Consentement volet familles | Consentement recherche écrit et signé après information et discussion en consultation médicale |
 | Pseudonymisation volet familles | Réalisée par le CRB avant mise à disposition aux équipes de recherche |
@@ -214,7 +214,10 @@ Ces extensions devront faire l’objet d’une nouvelle analyse réglementaire a
 
 ## 5.1 Nature de l’étude
 
-Étude observationnelle de génomique populationnelle reposant sur la réutilisation, à des fins scientifiques, de matériels biologiques déjà prélevés et conservés : reliquats de tube EDTA issus du circuit EFS pour la cohorte principale et reliquats d’ADN conservés au CRB pour le volet familial.
+Étude observationnelle de génomique populationnelle reposant sur l’utilisation secondaire, à des fins scientifiques, de matériels biologiques issus de deux circuits distincts :
+
+- **Cohorte principale EFS :** la collection biologique sera constituée à partir du lancement de l’étude, au fil des dons de sang, par récupération de reliquats de tubes EDTA issus du circuit habituel EFS, après information et accord écrit signé des donneurs. Ces reliquats ne constituent pas une collection déjà disponible avant le lancement de l’étude.
+- **Volet familial CRB :** utilisation de reliquats d’ADN déjà conservés au CRB, selon les conditions décrites en section 5.4.
 
 Aucun prélèvement sanguin supplémentaire n’est actuellement prévu spécifiquement pour Génome Réunion.
 
@@ -336,7 +339,7 @@ La forme réglementaire définitive du document d’information / accord sera fi
 
 ## 7.2 Cohorte principale — origine biologique
 
-Le matériel biologique utilisé est un **reliquat de tube EDTA issu du circuit habituel du don de sang**.
+Le matériel biologique utilisé est un **reliquat de tube EDTA issu du circuit habituel du don de sang**. La collection sera constituée au fil des dons à partir du lancement de l’étude, après information et accord écrit signé des donneurs ; elle n’est pas déjà disponible avant ce lancement.
 
 Aucun tube supplémentaire spécifique Génome Réunion n’est prévu dans le circuit actuel.
 
@@ -1041,7 +1044,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.1, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
