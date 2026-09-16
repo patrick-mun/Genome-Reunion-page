@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.7 — harmonisation des méthodes et du contrôle qualité  
+**Version :** 0.7.8 — simplification de la méthode de sélection WGS  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -595,15 +595,9 @@ La sélection vise un compromis entre :
 
 ## 11.2 Méthode
 
-La méthode scientifique est fondée sur un score `S_div`, une logique géo-ancestrale et un bras de découverte contrôlé.
+La sélection repose sur le score de diversité génétique `S_div`, une composante géographique fondée sur les points de collecte EFS et un bras de découverte contrôlé.
 
-Le corpus actuel prévoit notamment :
-
-- une sélection principale / noyau géo-ancestral ;
-- un bras de découverte ;
-- des analyses de sensibilité des paramètres ;
-- plusieurs listes de sélection possibles (`selection_stricte_350`, `selection_hybride_350`, éventuellement consensus) ;
-- validation avant gel de la liste finale.
+La méthode fait l’objet d’une validation avant la sélection définitive des 350 participants. Les paramètres et procédures détaillés sont décrits dans les annexes méthodologiques scientifiques.
 
 ## 11.3 Conséquence réglementaire
 
@@ -1038,7 +1032,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.7, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.8, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
