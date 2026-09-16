@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.5 — sexe chromosomique inféré et absence de transmission déclarative  
+**Version :** 0.7.6 — harmonisation de la traçabilité des panels externes  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -491,15 +491,11 @@ Le corpus mentionne notamment :
 
 La liste définitive dépendra des autorisations obtenues et des besoins analytiques.
 
-## 9.3 Règle EGA
+## 9.3 Traçabilité et conditions d’utilisation des panels externes
 
-Pour chaque dataset EGA :
+Chaque panel utilisé sera identifié dans un inventaire précisant sa source, sa version ou accession, les données nécessaires aux analyses et leurs conditions d’utilisation.
 
-- accession exacte à tracer ;
-- DAC / DAA à archiver ;
-- finalité d’usage à documenter ;
-- données importées limitées au strict nécessaire ;
-- règles de stockage, conservation, publication et redistribution à respecter.
+Pour les données à accès contrôlé, les autorisations et accords applicables seront conservés et leurs conditions respectées, notamment concernant le stockage, la conservation, la publication et la redistribution.
 
 Aucun panel externe ne sera étudié comme une nouvelle cohorte autonome sans nouvelle analyse réglementaire.
 
@@ -1041,7 +1037,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.5, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.6, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
