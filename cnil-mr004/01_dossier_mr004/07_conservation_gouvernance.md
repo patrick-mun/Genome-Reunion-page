@@ -10,6 +10,8 @@ La durée précise et les conditions de conservation et de réutilisation seront
 
 Les durées applicables aux autres reliquats et aliquots, ainsi qu’au volet familial, restent à préciser.
 
+Le principe retenu est de conserver les données de génotypage et de séquençage pseudonymisées au-delà des **36 mois de recherche**, pour permettre des vérifications et, dans un cadre adapté, de futures recherches. Les formats conservés, les durées et les modalités d’archivage et d’accès seront définis avec la DSIO / DRCI / DPO. La conservation ne vaut pas autorisation générale de réutilisation.
+
 Définir séparément :
 
 - identité conservée par l’EFS ;
