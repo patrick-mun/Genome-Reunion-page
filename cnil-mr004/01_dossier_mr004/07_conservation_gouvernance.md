@@ -10,7 +10,11 @@ La durée précise et les conditions de conservation et de réutilisation seront
 
 Les durées applicables aux autres reliquats et aliquots, ainsi qu’au volet familial, restent à préciser.
 
-Le principe retenu est de conserver les données de génotypage et de séquençage pseudonymisées au-delà des **36 mois de recherche**, pour permettre des vérifications et, dans un cadre adapté, de futures recherches. Les formats conservés, les durées et les modalités d’archivage et d’accès seront définis avec la DSIO / DRCI / DPO. La conservation ne vaut pas autorisation générale de réutilisation.
+Le principe de conservation des données de génotypage et de séquençage au-delà des 36 mois est retenu.
+
+Pour la recherche décrite dans ce protocole, les données personnelles seront conservées au plus tard jusqu’à deux ans après la dernière publication des résultats ou, en l’absence de publication, jusqu’à la signature du rapport final. Elles feront ensuite l’objet d’un archivage à accès restreint, pour une durée à définir avec le DPO dans la limite de vingt ans ou selon la réglementation applicable.
+
+Les formats conservés et les modalités d’archivage seront précisés avec la DSIO / DRCI / DPO. Toute réutilisation pour une nouvelle recherche fera l’objet d’un examen réglementaire et des formalités nécessaires.
 
 Définir séparément :
 
