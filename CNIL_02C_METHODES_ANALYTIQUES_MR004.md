@@ -1,7 +1,7 @@
 # Génome Réunion — Méthodes d’analyse des données génétiques pour le dossier MR-004
 
 **Document :** CNIL_02C_METHODES_ANALYTIQUES_MR004  
-**Date :** 15 septembre 2026  
+**Date :** 16 septembre 2026  
 **Statut :** section réglementaire de travail — à intégrer au protocole MR-004  
 
 ---
@@ -61,7 +61,7 @@ Analyse pharmacogénétique populationnelle
 Référentiel génomique initial et résultats agrégés
 ```
 
-Toutes les analyses sont réalisées sur des **identifiants pseudonymes**. L’équipe de recherche ne dispose pas de la table identité ↔ code, conservée par l’EFS.
+Toutes les analyses sont réalisées sur des **identifiants pseudonymes**. Les tables identité ↔ code sont conservées par l’EFS pour la cohorte principale et par le CRB pour le volet familial ; elles ne sont pas transmises à l’équipe de recherche.
 
 ---
 
@@ -99,7 +99,7 @@ Le contrôle qualité vise à vérifier la fiabilité technique des données ava
 Il peut comprendre notamment :
 
 - taux de génotypage ;
-- cohérence du sexe biologique lorsque cette information est utilisée à des fins de QC ;
+- sexe chromosomique inféré à partir du génotypage, sans recueil ni transmission du sexe déclaré par l’EFS ;
 - hétérozygotie ;
 - duplicats ;
 - anomalies techniques ;
@@ -251,9 +251,9 @@ La Local Ancestry Inference (LAI) peut être utilisée pour décrire l’ascenda
 - SNP des ~2 500 participants ;
 - WGS des 350 ;
 - panels externes ;
-- éventuellement données familiales si le volet familial est réglementairement intégré ultérieurement.
+- génotypes et structure de parenté pseudonymisés des 100 familles nucléaires, utilisés uniquement pour améliorer et contrôler le phasage par transmission mendélienne.
 
-Le volet des 100 familles n’est pas automatiquement inclus dans cette section tant que sa qualification réglementaire propre n’est pas stabilisée.
+Les familles sont sélectionnées et pseudonymisées par le CRB à partir de reliquats d’ADN déjà conservés, avec consentement recherche écrit et signé. Elles ne contribuent ni aux fréquences populationnelles, ni à la sélection des 350 WGS, ni aux analyses pharmacogénétiques populationnelles. L’intégration de ce volet au périmètre RNIPH / MR-004 reste à valider institutionnellement.
 
 ---
 
