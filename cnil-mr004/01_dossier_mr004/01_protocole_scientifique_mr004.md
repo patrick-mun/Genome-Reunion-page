@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.2 — clarification de la collection EFS et simplification du design WGS  
+**Version :** 0.7.3 — critères d’inclusion et minimisation des données géographiques  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -76,7 +76,7 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Élément | Description actuelle |
 |---|---|
 | Type de recherche | RNIPH présumée — MR-004 à confirmer |
-| Population principale | Environ 2 500 participants recrutés via l’EFS La Réunion |
+| Population principale | Environ 2 500 participants recrutés via l’EFS, résidant à La Réunion et dont les deux parents sont nés à La Réunion |
 | Matériel biologique cohorte principale | Reliquats de tubes EDTA issus des dons EFS, constitués en collection au fil des dons à partir du lancement de l’étude |
 | Volet familles | Environ 100 familles nucléaires sélectionnées par le CRB à partir de reliquats d’ADN déjà conservés |
 | Consentement volet familles | Consentement recherche écrit et signé après information et discussion en consultation médicale |
@@ -281,12 +281,14 @@ Elles **ne sont pas utilisées** pour :
 
 Deux sources de participants sont distinguées :
 
-- la cohorte populationnelle principale recrutée parmi les donneurs pris en charge par l’EFS La Réunion et ayant reçu une information spécifique sur Génome Réunion ;
+- la cohorte populationnelle principale recrutée parmi les donneurs pris en charge par l’EFS La Réunion, résidant à La Réunion et dont les deux parents sont nés à La Réunion, ayant reçu une information spécifique sur Génome Réunion ;
 - le volet familial constitué à partir de personnes dont l’ADN est déjà conservé au CRB et disposant d’un consentement recherche signé recueilli après information et discussion en consultation médicale.
 
 ## 6.2 Critères d’inclusion actuellement établis — cohorte principale
 
 - participation au circuit EFS ;
+- résidence à La Réunion ;
+- naissance des deux parents à La Réunion ;
 - information préalable sur le projet lors de l’entretien avec le médecin EFS ;
 - accord écrit signé pour la participation au projet ;
 - disponibilité d’un reliquat de tube EDTA utilisable pour le projet ;
@@ -295,6 +297,7 @@ Deux sources de participants sont distinguées :
 
 ## 6.3 Critères d’exclusion actuellement établis ou logiquement nécessaires — cohorte principale
 
+- non-respect des critères de résidence ou de naissance des deux parents à La Réunion ;
 - absence d’accord écrit / opposition du participant ;
 - absence ou insuffisance de reliquat biologique exploitable ;
 - impossibilité technique d’obtenir une donnée génétique de qualité suffisante ;
@@ -305,8 +308,7 @@ Deux sources de participants sont distinguées :
 Le corpus actuel ne permet pas encore de considérer comme définitivement établis :
 
 - un critère d’âge propre à la recherche ;
-- un critère de résidence ;
-- un critère fondé sur une ascendance déclarée ;
+- les modalités de vérification et de traçabilité, par l’EFS, des critères de résidence et de naissance des deux parents à La Réunion ;
 - d’éventuels critères spécifiques d’exclusion liés au don de sang au-delà de ceux gérés par l’EFS.
 
 **À confirmer avec EFS / DRCI.**
@@ -353,7 +355,7 @@ Aucun tube supplémentaire spécifique Génome Réunion n’est prévu dans le c
 
 - code pseudonyme ;
 - tube EDTA reliquat ;
-- site / lieu de prélèvement EFS ;
+- point de collecte EFS, fixe ou mobile ;
 - âge uniquement si cette variable est finalement retenue comme scientifiquement nécessaire.
 
 Aucune autre donnée personnelle n’est considérée comme nécessaire dans le circuit actuellement figé.
@@ -394,7 +396,7 @@ Aucune identité directe n’est transmise aux équipes de recherche dans ce cir
 | Donnée | Statut | Justification actuelle |
 |---|---|---|
 | Code pseudonyme | Retenu | Traçabilité scientifique sans identité directe |
-| Site / centre de prélèvement EFS | Retenu | Documentation de la collecte / analyse de représentativité ; usage géographique exact à préciser |
+| Point de collecte EFS, fixe ou mobile | Retenu | Documentation de la répartition géographique de la collecte ; ne décrit pas le lieu de résidence |
 | Âge | À arbitrer | À conserver uniquement si nécessité scientifique démontrée |
 | Identité civile | Non transmise | Non nécessaire aux analyses scientifiques |
 | Table identité ↔ code | Conservée par EFS | Non nécessaire à l’équipe de recherche |
@@ -431,16 +433,11 @@ Les données du volet familial sont limitées à ce qui est nécessaire au phasa
 
 Ces données ne sont pas intégrées aux calculs de fréquences alléliques populationnelles et ne sont pas utilisées pour décrire des variants individuels ou populationnels.
 
-## 8.4 Point à arbitrer — variable géographique
+## 8.4 Variable géographique retenue
 
-Le corpus scientifique utilise une logique de **secteurs géographiques / cellules géo-ancestrales**, alors que le circuit réglementaire actuel transmet uniquement le **site de prélèvement EFS**.
+Le **point de collecte EFS, fixe ou mobile**, est la seule donnée géographique transmise au CRB et utilisée pour les analyses. Aucune adresse, commune ou quartier de résidence n’est transmis ni ajouté aux données de recherche.
 
-Deux options devront être départagées :
-
-1. le site EFS suffit comme variable géographique opérationnelle ;
-2. une autre variable géographique (par exemple secteur ou commune de résidence) est réellement nécessaire, auquel cas elle devra être ajoutée au protocole avec justification de minimisation et nouvelle validation du flux.
-
-**Statut : À arbitrer avant gel du dictionnaire de données.**
+Les collectes mobiles couvrent l’île. Le point de collecte documente la géographie du recrutement, sans être assimilé au lieu de résidence du participant. La composante géographique de la sélection sera interprétée dans cette limite.
 
 ## 8.5 Sexe
 
@@ -454,9 +451,9 @@ S’il est retenu, sa nécessité devra être documentée explicitement ; sinon 
 
 La méthodologie scientifique repose principalement sur une ascendance **génétique inférée** via PCA / ADMIXTURE et panels de référence.
 
-Aucune transmission d’une ascendance déclarée n’est actuellement incluse dans le circuit EFS minimal stabilisé.
+Le critère d’inclusion « deux parents nés à La Réunion » définit l’ancrage familial retenu pour la cohorte. Il ne correspond pas à une catégorie d’ascendance génétique.
 
-**Statut : non collectée dans le circuit actuel ; toute réintroduction devra être justifiée et validée.**
+Aucun recueil des origines ethniques ou continentales déclarées n’est prévu. Les lieux précis de naissance des parents ne sont pas transmis aux équipes de recherche ; les modalités de vérification et de traçabilité du critère d’inclusion par l’EFS restent à formaliser.
 
 ---
 
@@ -734,7 +731,7 @@ Mitigation : recalibrage sur la cohorte SNP large par pondération, stratificati
 
 ## 15.3 Biais de recrutement EFS
 
-Les donneurs EFS peuvent ne pas reproduire exactement la structure de l’ensemble de la population réunionnaise.
+Les donneurs EFS peuvent ne pas reproduire exactement la structure de l’ensemble de la population réunionnaise. Les critères de résidence à La Réunion et de naissance des deux parents à La Réunion délimitent la population recrutée ; l’extrapolation des résultats à l’ensemble des résidents doit tenir compte de cette restriction. Le point de collecte ne permet pas de connaître leur répartition par lieu de résidence.
 
 Le corpus prévoit un **audit de représentativité de la cohorte EFS**, avec comparaison à des données de référence populationnelles, avant interprétation finale.
 
@@ -994,8 +991,10 @@ Annexes scientifiques de référence :
 - [ ] formaliser l’âge d’inclusion éventuel ;
 - [ ] décider si l’âge est transmis au CRB / recherche ;
 - [ ] décider si le sexe est nécessaire ;
-- [ ] définir précisément la variable géographique utilisée pour l’analyse / sélection ;
-- [ ] confirmer qu’aucune ascendance déclarée n’est nécessaire dans le circuit initial ;
+- [x] retenir la résidence à La Réunion et la naissance des deux parents à La Réunion comme critères d’inclusion ;
+- [ ] formaliser avec l’EFS la vérification et la traçabilité de ces critères ;
+- [x] retenir uniquement le point de collecte EFS comme donnée géographique transmise, sans adresse, commune ni quartier de résidence ;
+- [x] ne pas recueillir les origines ethniques ou continentales déclarées ;
 - [ ] formaliser les critères d’exclusion du protocole.
 
 ## 23.3 Méthodes
@@ -1041,7 +1040,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.2, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.3, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
