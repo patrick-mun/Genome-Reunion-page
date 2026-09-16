@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.13 — durée de la recherche fixée à 36 mois  
+**Version :** 0.7.14 — conservation de l’ADN au-delà de la recherche  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -768,9 +768,11 @@ La durée de 36 mois concerne les travaux prévus au présent protocole. Les dur
 
 ## 17.1 Matériel biologique
 
-Le corpus économique budgète une conservation CRB sur **36 mois**, mais cette durée correspond à un **horizon de projet / chiffrage** et ne constitue pas à elle seule une durée réglementaire de conservation validée.
+Le principe retenu est de conserver au CRB l’ADN restant au-delà des **36 mois de recherche**, afin de permettre des vérifications et, dans un cadre adapté, de futures recherches.
 
-La durée de conservation des reliquats, de l’ADN en banque et des aliquots doit être définie avec le CRB / DRCI / DPO, y compris pour le volet familial.
+La durée précise et les conditions de conservation et de réutilisation seront définies avec le CRB / DRCI / DPO, en tenant compte de l’information et des consentements applicables. Cette décision ne vaut pas autorisation générale de réutilisation.
+
+Les durées applicables aux autres reliquats et aliquots, ainsi qu’au volet familial, restent à préciser.
 
 ## 17.2 Données génétiques
 
@@ -1004,6 +1006,7 @@ Annexes scientifiques de référence :
 ## 23.5 Conservation / gouvernance / diffusion
 
 - [ ] fixer les durées par catégorie de données ;
+- [x] retenir le principe de conservation de l’ADN restant au CRB après les 36 mois pour vérifications ou futures recherches dans un cadre adapté ;
 - [ ] fixer les durées du matériel biologique ;
 - [ ] séparer formellement l’étude MR-004 de la ressource durable ;
 - [ ] définir les seuils et règles de contrôle de divulgation applicables au portail public ;
@@ -1027,7 +1030,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.13, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.14, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
