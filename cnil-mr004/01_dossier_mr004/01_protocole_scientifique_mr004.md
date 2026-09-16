@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.4 — vérification déclarative des critères d’inclusion  
+**Version :** 0.7.5 — sexe chromosomique inféré et absence de transmission déclarative  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -400,12 +400,14 @@ Aucune identité directe n’est transmise aux équipes de recherche dans ce cir
 | Code pseudonyme | Retenu | Traçabilité scientifique sans identité directe |
 | Point de collecte EFS, fixe ou mobile | Retenu | Documentation de la répartition géographique de la collecte ; ne décrit pas le lieu de résidence |
 | Âge | À arbitrer | À conserver uniquement si nécessité scientifique démontrée |
+| Sexe déclaré | Non transmis | Sexe chromosomique inféré à partir des données de génotypage pour les contrôles qualité |
 | Identité civile | Non transmise | Non nécessaire aux analyses scientifiques |
 | Table identité ↔ code | Conservée par EFS | Non nécessaire à l’équipe de recherche |
 
 ## 8.2 Données génétiques produites
 
 - génotypes SNP ;
+- sexe chromosomique inféré à partir du génotypage pour les contrôles qualité ;
 - indicateurs de qualité ;
 - coordonnées PCA ;
 - composantes ADMIXTURE ;
@@ -443,11 +445,7 @@ Les collectes mobiles couvrent l’île. Le point de collecte documente la géog
 
 ## 8.5 Sexe
 
-Le corpus scientifique mentionne le sexe notamment dans certains contrôles qualité / audits de représentativité, mais le circuit EFS actuellement figé ne prévoit pas sa transmission.
-
-**Statut : À arbitrer.**
-
-S’il est retenu, sa nécessité devra être documentée explicitement ; sinon il restera exclu du flux réglementaire initial.
+Le sexe déclaré n’est pas recueilli pour la recherche ni transmis par l’EFS. Le sexe chromosomique est inféré à partir des données de génotypage et utilisé pour les contrôles qualité ; il constitue une donnée génétique dérivée.
 
 ## 8.6 Ascendance déclarée
 
@@ -992,7 +990,7 @@ Annexes scientifiques de référence :
 
 - [ ] formaliser l’âge d’inclusion éventuel ;
 - [ ] décider si l’âge est transmis au CRB / recherche ;
-- [ ] décider si le sexe est nécessaire ;
+- [x] ne pas recueillir ni transmettre le sexe déclaré ; inférer le sexe chromosomique à partir du génotypage pour les contrôles qualité ;
 - [x] retenir la résidence à La Réunion et la naissance des deux parents à La Réunion comme critères d’inclusion ;
 - [x] vérifier les critères de résidence et de naissance des deux parents sur simple déclaration du donneur lors de l’entretien EFS, sans justificatif ;
 - [ ] formaliser avec l’EFS le support de traçabilité de l’éligibilité ;
@@ -1043,7 +1041,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.4, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.5, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
