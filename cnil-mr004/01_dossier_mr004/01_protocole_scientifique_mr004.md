@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.11 — maintien des résultats de phasage en interne  
+**Version :** 0.7.12 — clarification des limites du panel WGS  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -707,15 +707,9 @@ Les résultats individuels ne sont pas destinés à être rendus publics ni à g
 
 ## 15.1 Taille du panel WGS
 
-Le panel de 350 WGS est une ressource de première génération.
+Le panel de 350 WGS constitue une ressource de première génération. Sa taille limite la précision des estimations de fréquence, particulièrement pour les variants rares et les sous-groupes peu représentés.
 
-Le corpus scientifique considère :
-
-- les variants de MAF ≥ 1 % comme interprétables avec prudence ;
-- les variants de 0,5–1 % comme fragiles ;
-- les variants < 0,5 % comme insuffisamment fiables pour une interprétation populationnelle robuste à ce stade.
-
-Les variants ultra-rares et certains effets fondateurs localisés nécessiteront des extensions ultérieures.
+Les résultats seront interprétés en tenant compte de cette incertitude, de la qualité des données et du recalibrage sur la cohorte principale. Certains variants rares ou effets fondateurs localisés pourront nécessiter des études complémentaires.
 
 ## 15.2 Biais de sélection
 
@@ -1039,7 +1033,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.11, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.12, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
