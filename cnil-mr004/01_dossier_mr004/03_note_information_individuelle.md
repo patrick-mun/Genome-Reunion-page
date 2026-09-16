@@ -7,6 +7,12 @@
 
 La note d’information écrite sera remise au donneur lors de l’entretien EFS, avant la signature de son accord. Le donneur pourra conserver cet exemplaire.
 
+## Circuit de retrait retenu — cohorte EFS
+
+Pour la cohorte principale, l’EFS est l’interlocuteur opérationnel des donneurs souhaitant se retirer ou s’opposer à l’utilisation de leurs données. Il retrouve le code de recherche à partir de la table de correspondance et relaie la demande au CHU sous ce code, sans transmettre l’identité du donneur à l’équipe de recherche. Le donneur peut également contacter directement le DPO ; le recours à l’EFS n’est pas une condition préalable.
+
+Les coordonnées utiles et les modalités pratiques de traitement des demandes seront précisées avec l’EFS et le DPO dans la note d’information.
+
 ## Rubriques à prévoir
 
 - identité du responsable de traitement ;
