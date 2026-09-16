@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.10 — restitution des données WGS au CHU pour analyse  
+**Version :** 0.7.11 — maintien des résultats de phasage en interne  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -673,7 +673,7 @@ La phase initiale doit produire notamment :
 - une sélection WGS documentée et auditée ;
 - 350 WGS ;
 - un panel local de première génération ;
-- un phasage amélioré et contrôlé grâce aux transmissions mendéliennes des familles nucléaires ;
+- un phasage amélioré et contrôlé grâce aux transmissions mendéliennes des familles nucléaires, dont les résultats et indicateurs restent internes ;
 - des données d’imputation ;
 - des fréquences génétiques locales recalibrées uniquement à partir de la cohorte populationnelle principale ;
 - un ensemble de fréquences de variants pharmacogénétiques d’intérêt au niveau populationnel ;
@@ -820,7 +820,9 @@ Les publications porteront principalement sur :
 - fréquences et statistiques agrégées ;
 - fréquences populationnelles de variants pharmacogénétiques et priorisation de couples gène–médicament pour de futures études ;
 - performance / validation des méthodes de sélection ;
-- résultats de phasage / imputation et de recalibrage.
+- résultats d’imputation et de recalibrage.
+
+Les résultats et indicateurs de phasage restent internes, comme éléments techniques nécessaires aux calculs ; ils ne font pas l’objet d’une publication ni d’une diffusion sur le portail public.
 
 ## 18.2 Données individuelles
 
@@ -1037,7 +1039,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.10, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.11, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
