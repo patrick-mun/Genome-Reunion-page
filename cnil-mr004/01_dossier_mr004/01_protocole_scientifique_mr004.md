@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.14 — conservation de l’ADN au-delà de la recherche  
+**Version :** 0.7.15 — conservation des données génétiques au-delà de la recherche  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -776,6 +776,8 @@ Les durées applicables aux autres reliquats et aliquots, ainsi qu’au volet fa
 
 ## 17.2 Données génétiques
 
+Le principe retenu est de conserver les données de génotypage et de séquençage pseudonymisées au-delà des **36 mois de recherche**, pour permettre des vérifications et, dans un cadre adapté, de futures recherches. Les formats conservés, les durées et les modalités d’archivage et d’accès seront définis avec la DSIO / DRCI / DPO. La conservation ne vaut pas autorisation générale de réutilisation.
+
 Les durées de conservation doivent être définies séparément pour :
 
 - génotypes SNP ;
@@ -1005,6 +1007,7 @@ Annexes scientifiques de référence :
 
 ## 23.5 Conservation / gouvernance / diffusion
 
+- [x] retenir le principe de conservation des données de génotypage et de séquençage après les 36 mois ;
 - [ ] fixer les durées par catégorie de données ;
 - [x] retenir le principe de conservation de l’ADN restant au CRB après les 36 mois pour vérifications ou futures recherches dans un cadre adapté ;
 - [ ] fixer les durées du matériel biologique ;
@@ -1030,7 +1033,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.14, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.15, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
