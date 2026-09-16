@@ -4,6 +4,12 @@
 
 ## 1. Conservation
 
+Le principe retenu est de conserver au CRB l’ADN restant au-delà des **36 mois de recherche**, afin de permettre des vérifications et, dans un cadre adapté, de futures recherches.
+
+La durée précise et les conditions de conservation et de réutilisation seront définies avec le CRB / DRCI / DPO, en tenant compte de l’information et des consentements applicables. Cette décision ne vaut pas autorisation générale de réutilisation.
+
+Les durées applicables aux autres reliquats et aliquots, ainsi qu’au volet familial, restent à préciser.
+
 Définir séparément :
 
 - identité conservée par l’EFS ;
