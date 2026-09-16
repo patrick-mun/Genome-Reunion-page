@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.8 — simplification de la méthode de sélection WGS  
+**Version :** 0.7.9 — précision du circuit CRB vers POPgen  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -91,7 +91,7 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 | Génotypage | Génotypage SNP réalisé en interne au CHU de La Réunion sur **iScan Illumina**, avec puce de type Global Diversity Array (~1,9 M SNP dans le corpus actuel) |
 | Analyses principales | QC, PCA, ADMIXTURE, KING, ROH, IBD, sélection géo-ancestrale, phasage, imputation, LAI, recalibrage des fréquences, analyses pharmacogénétiques populationnelles |
 | Sélection WGS | 350 individus sélectionnés parmi les 2 500 |
-| WGS | 350 génomes complets, pris en charge dans le schéma actuel par POPgen |
+| WGS | 350 génomes complets prévus auprès de POPgen ; envoi direct des aliquots d’ADN pseudonymisés par le CRB |
 | Panels externes | 1000G / IGSR + datasets EGA autorisés |
 | Pharmacogénétique populationnelle | Incluse : fréquences de variants pharmacogénétiques et identification de couples gène–médicament d’intérêt collectif |
 | Pharmacogénétique clinique individuelle | Hors traitement initial : prescriptions, réponse au traitement, recommandation ou adaptation individuelle de posologie |
@@ -370,7 +370,8 @@ Le CRB :
 2. assure sa traçabilité interne ;
 3. réalise l’extraction de l’ADN ;
 4. conserve l’ADN en banque ;
-5. prépare un aliquot pour les analyses autorisées de l’équipe de recherche.
+5. prépare un aliquot pour les analyses autorisées de l’équipe de recherche ;
+6. après sélection des 350 participants, adresse directement à POPgen leurs aliquots d’ADN pseudonymisés pour le WGS.
 
 Les modalités de transport, de conservation, de retrait et de destruction sont traitées dans les documents dédiés et restent à valider avant ouverture de la collecte.
 
@@ -617,9 +618,9 @@ Les 100 familles nucléaires ne participent pas à cette sélection.
 
 ## 12.2 Production
 
-Le corpus actuel prévoit une prise en charge du séquençage WGS par **POPgen**.
+Le séquençage WGS des 350 participants sélectionnés est prévu auprès de **POPgen**. Le CRB adresse directement à POPgen les aliquots d’ADN pseudonymisés correspondants, sans transmission d’identité directe ni de table de correspondance.
 
-**Statut du partenaire et modalités exactes de transfert / conservation / restitution : À qualifier en Phase 3.**
+**Circuit d’envoi retenu : CRB → POPgen.** Le rôle RGPD de POPgen, les conventions et les modalités de transport, de conservation et de restitution restent à formaliser et à valider institutionnellement.
 
 ## 12.3 Données produites
 
@@ -1002,6 +1003,7 @@ Annexes scientifiques de référence :
 
 - [ ] qualifier juridiquement EFS ;
 - [ ] qualifier juridiquement CRB ;
+- [x] envoi direct à POPgen des aliquots d’ADN pseudonymisés des 350 participants par le CRB ;
 - [ ] qualifier POPgen ;
 - [x] génotypage SNP réalisé en interne au CHU de La Réunion sur iScan Illumina ;
 - [ ] finaliser les conventions et clauses RGPD.
@@ -1032,7 +1034,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.8, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.9, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
