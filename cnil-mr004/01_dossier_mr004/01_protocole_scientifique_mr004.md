@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.17 — remise de la note d’information au donneur  
+**Version :** 0.7.18 — circuit des demandes de retrait via l’EFS  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -890,6 +890,10 @@ La version finale de la note d’information de la cohorte EFS devra préciser n
 - contact DPO ;
 - règles relatives aux éventuelles découvertes génétiques pertinentes pour la santé.
 
+Pour la cohorte principale, l’EFS est l’interlocuteur opérationnel des donneurs souhaitant se retirer ou s’opposer à l’utilisation de leurs données. Il retrouve le code de recherche à partir de la table de correspondance et relaie la demande au CHU sous ce code, sans transmettre l’identité du donneur à l’équipe de recherche. Le donneur peut également contacter directement le DPO ; le recours à l’EFS n’est pas une condition préalable.
+
+Les coordonnées utiles et les modalités pratiques de traitement des demandes seront précisées avec l’EFS et le DPO dans la note d’information.
+
 Le consentement recherche utilisé pour le volet familial et sa version applicable seront conservés comme preuves documentaires du dossier.
 
 ---
@@ -1037,7 +1041,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.17, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.18, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
