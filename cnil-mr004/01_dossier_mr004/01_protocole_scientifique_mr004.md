@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.15 — conservation des données génétiques au-delà de la recherche  
+**Version :** 0.7.16 — encadrement de la conservation et de l’archivage des données  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -776,7 +776,11 @@ Les durées applicables aux autres reliquats et aliquots, ainsi qu’au volet fa
 
 ## 17.2 Données génétiques
 
-Le principe retenu est de conserver les données de génotypage et de séquençage pseudonymisées au-delà des **36 mois de recherche**, pour permettre des vérifications et, dans un cadre adapté, de futures recherches. Les formats conservés, les durées et les modalités d’archivage et d’accès seront définis avec la DSIO / DRCI / DPO. La conservation ne vaut pas autorisation générale de réutilisation.
+Le principe de conservation des données de génotypage et de séquençage au-delà des 36 mois est retenu.
+
+Pour la recherche décrite dans ce protocole, les données personnelles seront conservées au plus tard jusqu’à deux ans après la dernière publication des résultats ou, en l’absence de publication, jusqu’à la signature du rapport final. Elles feront ensuite l’objet d’un archivage à accès restreint, pour une durée à définir avec le DPO dans la limite de vingt ans ou selon la réglementation applicable.
+
+Les formats conservés et les modalités d’archivage seront précisés avec la DSIO / DRCI / DPO. Toute réutilisation pour une nouvelle recherche fera l’objet d’un examen réglementaire et des formalités nécessaires.
 
 Les durées de conservation doivent être définies séparément pour :
 
@@ -1033,7 +1037,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.15, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.16, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
