@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.3, situations particulières d’information du volet familial  
-**Version précédente :** 0.8.2, clarification du consentement génétique et du retrait  
+**Version :** 0.8.4, clarification du cadre de la ressource durable  
+**Version précédente :** 0.8.3, situations particulières d’information du volet familial  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -906,13 +906,11 @@ Les résultats rendus publics via le portail devront être distingués des donn�
 
 ## 17.3 Ressource durable
 
-La conservation à long terme dans une ressource génomique multi-projets n’est pas considérée comme automatiquement couverte par le présent traitement MR-004.
+La constitution d’une ressource génomique durable destinée à plusieurs recherches relève d’un cadre distinct du présent protocole.
 
-Pour préparer ce futur cadre, le formulaire de consentement de la cohorte principale pourra comporter une case optionnelle par laquelle le donneur accepte la conservation de ses échantillons et données dans une ressource génomique durable, sous réserve de l’information prévue à ce moment et des formalités applicables. Un refus sur cette case n’empêche pas la participation à Génome Réunion. Cette case évite de réinformer l’ensemble des participants lors de la création de la ressource.
+Une case optionnelle de consentement à cette conservation pourra être proposée, après définition de sa portée et validation par la DRCI et le DPO. Son refus n’empêchera pas la participation à Génome Réunion. Les futures utilisations resteront soumises aux formalités et obligations d’information applicables.
 
-**Statut de la case optionnelle : À arbitrer DRCI / DPO.**
-
-**Statut : cadre distinct à définir.**
+**Statut : cadre de la ressource et case optionnelle à définir avec la DRCI et le DPO.**
 
 ---
 
@@ -1227,7 +1225,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.8.3, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.8.4, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
@@ -1258,6 +1256,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 ---
 
 # 25. Journal des modifications
+
+## Version 0.8.4
+
+- Section 17.3 : rédaction allégée du cadre de la ressource durable ; suppression de la promesse de dispense d’information ultérieure liée à la case optionnelle.
 
 ## Version 0.8.3
 
