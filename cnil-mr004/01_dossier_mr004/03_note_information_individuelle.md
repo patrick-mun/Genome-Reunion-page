@@ -3,6 +3,10 @@
 **Statut :** trame à rédiger ultérieurement à partir du modèle Starter Kit MR-004  
 **Ne pas utiliser comme version participant tant qu’elle n’est pas validée DPO / DRCI / EFS.**
 
+## Modalité de remise retenue
+
+La note d’information écrite sera remise au donneur lors de l’entretien EFS, avant la signature de son accord. Le donneur pourra conserver cet exemplaire.
+
 ## Rubriques à prévoir
 
 - identité du responsable de traitement ;
