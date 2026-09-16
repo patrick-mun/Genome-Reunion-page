@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.1 — clarification de la constitution de la collection EFS  
+**Version :** 0.7.2 — clarification de la collection EFS et simplification du design WGS  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -240,10 +240,7 @@ Cette cohorte constitue la base populationnelle utilisée pour :
 
 Ce panel n’est pas un échantillon aléatoire simple et **ne doit pas être interprété seul comme représentatif de la population réunionnaise**.
 
-Le corpus scientifique prévoit un panel hybride combinant :
-
-- un noyau principal géo-ancestral d’environ 90–95 % (ordre de grandeur actuel : ~322 individus) ;
-- un bras de découverte contrôlé d’environ 5–10 % (ordre de grandeur actuel : ~28 individus).
+La sélection combine un noyau principal géo-ancestral et un bras de découverte contrôlé. Les modalités détaillées sont décrites dans la méthodologie scientifique de sélection.
 
 Les fréquences observées dans les 350 seront donc recalibrées sur la cohorte large, y compris lorsque des variants pharmacogénétiques sont décrits à partir du WGS.
 
@@ -1044,7 +1041,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.1, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.2, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
