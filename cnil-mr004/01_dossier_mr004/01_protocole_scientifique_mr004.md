@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.1, phasage réservé aux besoins internes des analyses  
-**Version précédente :** 0.8.0, intégration de l’analyse réglementaire du 16 septembre 2026  
+**Version :** 0.8.2, clarification du consentement génétique et du retrait  
+**Version précédente :** 0.8.1, phasage réservé aux besoins internes des analyses  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -83,17 +83,15 @@ Le rôle RGPD précis de chaque acteur est traité séparément dans la phase «
 
 ## 1.7 Consentement génétique et base légale RGPD
 
-Le projet distingue deux cadres juridiques.
+**Consentement à l’examen génétique.** Pour la cohorte principale, un consentement exprès écrit à l’examen des caractéristiques génétiques à des fins de recherche scientifique est recueilli avant toute analyse, conformément à l’article 16-10 du Code civil. Le donneur reçoit préalablement une information spécifique et une note écrite qu’il conserve. Il peut retirer son consentement en tout ou partie, à tout moment et sans formalité particulière.
 
-**Consentement à l’examen des caractéristiques génétiques.** Pour la cohorte principale, le donneur exprime un **consentement exprès écrit à l’examen de ses caractéristiques génétiques à des fins de recherche scientifique, au sens de l’article 16-10 du Code civil**. Le protocole retient ce régime plutôt que la non-opposition prévue par l’article L. 1130-5 du code de la santé publique : ce dernier régime ne s’applique pas aux recherches dont la publication des résultats pourrait permettre de lever l’anonymat des personnes, et le projet prévoit un portail public. Le participant peut retirer ce consentement à tout moment, sans justification.
+Pour le volet familial, le CRB vérifie la portée du consentement déjà signé. Les éventuelles démarches complémentaires d’information ou de consentement sont définies avec la DRCI et le DPO avant tout génotypage, selon les conditions décrites en section 19.2.
 
-Pour le volet familial, le régime dépend du formulaire signé : consentement exprès couvrant l’examen génétique à des fins de recherche, ou non-opposition après information complémentaire au sens de l’article L. 1130-5. Ce second régime reste envisageable pour ce volet, car le projet ne publie aucun résultat familial.
+**Base légale RGPD.** Le consentement à l’examen génétique est distinct du fondement juridique du traitement des données. Le fondement envisagé est la mission d’intérêt public du CHU, au titre de l’article 6.1.e du RGPD. L’exception applicable au traitement des données génétiques au titre de l’article 9 reste à confirmer par le DPO.
 
-**Base légale RGPD.** Hypothèse de travail : exécution d’une mission d’intérêt public (article 6.1.e du RGPD), avec l’exception de l’article 9.2.j (recherche scientifique) ou 9.2.i (intérêt public dans le domaine de la santé publique). Le consentement génétique ne constitue pas la base légale RGPD du traitement.
+**Retrait et opposition.** Le retrait du consentement met fin aux examens génétiques concernés par ce retrait. Les conséquences sur les échantillons restants et les données déjà produites, ainsi que les modalités d’exercice du droit d’opposition, seront précisées dans la note d’information après validation par la DRCI et le DPO. Les résultats déjà rendus effectivement anonymes ne permettent plus de retirer la contribution individuelle d’un participant. Le circuit des demandes est décrit en section 19.
 
-**Retrait et opposition (proposition).** Le retrait du consentement génétique et l’exercice du droit d’opposition RGPD produisent le même effet opérationnel : arrêt de toute nouvelle analyse, destruction des échantillons restants et effacement des données individuelles non encore intégrées à des résultats agrégés ou publiés. Les résultats déjà agrégés ou publiés ne sont pas modifiés.
-
-**Statut : base légale et effets du retrait à valider DPO / DRCI.**
+**Statut : fondement RGPD et modalités de retrait à finaliser avec la DRCI et le DPO avant le lancement de l’étude.**
 
 ## 1.8 Financement
 
@@ -1227,7 +1225,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.8.1, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.8.2, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
@@ -1258,6 +1256,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 ---
 
 # 25. Journal des modifications
+
+## Version 0.8.2
+
+- Section 1.7 : intégration de la rédaction validée distinguant consentement génétique et fondement RGPD ; retrait de la justification par le portail public ; clarification du retrait et maintien des modalités opérationnelles à valider avec la DRCI et le DPO.
 
 ## Version 0.8.1
 
