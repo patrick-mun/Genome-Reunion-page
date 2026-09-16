@@ -1,6 +1,6 @@
 # Protocole scientifique MR-004 — Génome Réunion
 
-**Version :** 0.7.6 — harmonisation de la traçabilité des panels externes  
+**Version :** 0.7.7 — harmonisation des méthodes et du contrôle qualité  
 **Date :** 16 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -510,6 +510,7 @@ La description détaillée est documentée dans `CNIL_02C_METHODES_ANALYTIQUES_M
 Le contrôle qualité porte notamment sur :
 
 - taux de données manquantes ;
+- sexe chromosomique inféré à partir du génotypage ;
 - hétérozygotie ;
 - duplicats ;
 - cohérence des données ;
@@ -1037,7 +1038,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.7.6, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.7.7, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
