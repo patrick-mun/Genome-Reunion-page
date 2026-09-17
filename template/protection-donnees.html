@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protection des données : Génome Réunion</title>
+<style>
+:root {
+  --bg:       #f0f4f8;
+  --bg-card:  #ffffff;
+  --border:   #cbd5e1;
+  --text:     #1e293b;
+  --muted:    #64748b;
+  --teal:     #0d9488;
+  --blue:     #2563eb;
+  --amber:    #d97706;
+  --green:    #059669;
+  --r:        10px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* ── Header ── */
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.site-header a {
+  color: var(--teal);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+.site-header a:hover { text-decoration: underline; }
+.site-header .sep { color: var(--border); }
+
+/* ── Page wrapper ── */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* ── Hero ── */
+.hero-badge {
+  display: inline-block;
+  background: #fef3c7;
+  color: var(--amber);
+  border: 1px solid #fde68a;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  margin-bottom: 16px;
+}
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+  margin-bottom: 40px;
+  max-width: 620px;
+}
+
+/* ── Cards ── */
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.doc-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 28px 24px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color .18s, box-shadow .18s;
+}
+.doc-card:hover {
+  border-color: var(--teal);
+  box-shadow: 0 4px 16px rgba(13,148,136,.10);
+}
+.doc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+}
+.doc-icon.amber  { background: #fef3c7; }
+.doc-icon.purple { background: #f3e8ff; }
+.doc-icon.blue   { background: #dbeafe; }
+.doc-icon.green  { background: #d1fae5; }
+
+.doc-card h2 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+.doc-card p {
+  font-size: .9rem;
+  color: var(--muted);
+  line-height: 1.5;
+  flex: 1;
+}
+.doc-arrow {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--teal);
+  margin-top: 6px;
+}
+.doc-arrow.amber { color: var(--amber); }
+
+.doc-gh-btn {
+  position: absolute;
+  top: 12px; right: 12px;
+  color: #8c959f;
+  cursor: pointer;
+  line-height: 0;
+  transition: color .15s;
+}
+.doc-gh-btn:hover { color: #1f2328; }
+
+/* ── Info box ── */
+.info-box {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  border-radius: var(--r);
+  padding: 18px 22px;
+  font-size: .88rem;
+  color: #92400e;
+  line-height: 1.6;
+}
+.info-box strong { color: var(--amber); }
+</style>
+
+<header class="site-header">
+  <a href="../index.html">← Retour au projet</a>
+  <span class="sep">/</span>
+  <span>Protection des données</span>
+</header>
+
+<main class="page">
+  <div class="hero-badge">Protection des données</div>
+  <h1>Déclaration CNIL et protection des données</h1>
+  <p class="subtitle">
+    Documents réglementaires du projet Génome Réunion : démarche de déclaration
+    auprès de la CNIL, protocole scientifique MR-004, formulaire d'enregistrement
+    et analyse des points de vigilance avant dépôt. Le guide pratique est le bon
+    point de départ pour qui découvre ce type de démarche.
+  </p>
+
+  <div class="docs-grid">
+    <a href="../cnil-mr004/html/guide_pratique_depot_reglementaire_genome_reunion.html" target="_blank" class="doc-card">
+      <div class="doc-icon green">🧭</div>
+      <h2>Guide pratique du dépôt réglementaire</h2>
+      <p>Document d'entrée, pensé pour une personne qui n'a jamais fait cette démarche : vue d'ensemble en une image, rôle de chaque interlocuteur, étapes des voies MR-004, MR-001 et MR-003, et glossaire des acronymes.</p>
+      <div class="doc-arrow" style="color:#059669;">Consulter le guide →</div>
+    </a>
+    <a href="../cnil-mr004/html/protocole_scientifique_mr004_v0-8-0.html" target="_blank" class="doc-card">
+      <div class="doc-icon blue">📄</div>
+      <h2>Protocole scientifique MR-004</h2>
+      <p>Version 0.8.0 : qualification RNIPH, consentement, découvertes génétiques incidentes, volet familial, collection biologique, portail public et calendrier du dépôt.</p>
+      <div class="doc-arrow" style="color:#2563eb;">Consulter le protocole →</div>
+    </a>
+    <a href="../cnil-mr004/html/formulaire_repertoire_public_pds.html" target="_blank" class="doc-card">
+      <div class="doc-icon amber">📝</div>
+      <h2>Formulaire du répertoire public (PDS)</h2>
+      <p>Rubriques rédigées de la démarche d'enregistrement MR-004 sur le répertoire public de la Plateforme des données de santé, prêtes à relire puis à recopier en ligne.</p>
+      <div class="doc-arrow" style="color:var(--amber);">Consulter le formulaire →</div>
+    </a>
+    <a href="../cnil-mr004/html/note_analyse_reglementaire.html" target="_blank" class="doc-card">
+      <div class="doc-icon purple">🔍</div>
+      <h2>Note d'analyse réglementaire</h2>
+      <p>Points de vigilance identifiés avant dépôt : qualification RNIPH, nature du consentement, découvertes incidentes, volet familial, portail public, rôle de POPGEN, collection biologique.</p>
+      <div class="doc-arrow" style="color:#7B5EA7;">Consulter la note →</div>
+    </a>
+  </div>
+
+  <div class="info-box">
+    <strong>Note :</strong> ces documents sont des versions de travail, à faire
+    valider par la direction de la recherche clinique et de l'innovation (DRCI)
+    et par le délégué à la protection des données (DPO) avant tout dépôt. Ils
+    s'ouvrent dans un nouvel onglet.
+  </div>
+</main>
+
+</body>
+</html>
