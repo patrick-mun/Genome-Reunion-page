@@ -233,9 +233,10 @@ table {
   width: 100%;
   margin: 1em 0;
   font-size: 0.95em;
-  /* Tables must not split across pages */
-  page-break-inside: avoid;
-  break-inside: avoid;
+  /* Long tables (e.g. section 2, 22, 25) are taller than one printed page;
+     forcing them to stay whole produced a blank filler page and duplicated
+     header/rows. Let tables break between rows instead — the header row
+     still repeats on each page (see thead below). */
 }
 
 th, td {
@@ -249,6 +250,13 @@ th, td {
 thead th {
   background: var(--accent);
   color: #fff;
+}
+
+tr {
+  /* A row itself must stay whole; the table as a whole may still break
+     between rows across pages (see table {} above). */
+  page-break-inside: avoid;
+  break-inside: avoid;
 }
 
 tbody tr:nth-child(even) {
@@ -914,7 +922,7 @@ nav.toc-page { page: tocpage; }
     page-break-before: auto;  /* h2 already has page-break-before: page in base styles */
   }
 
-  table, figure, aside.callout, .summary, pre {
+  figure, aside.callout, .summary, pre {
     page-break-inside: avoid;
     break-inside: avoid;
   }
