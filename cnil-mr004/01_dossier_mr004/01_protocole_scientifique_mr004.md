@@ -1,8 +1,8 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.4, clarification du cadre de la ressource durable  
-**Version précédente :** 0.8.3, situations particulières d’information du volet familial  
-**Date :** 16 septembre 2026  
+**Version :** 0.8.5, financement en attente de démarche  
+**Version précédente :** 0.8.4, clarification du cadre de la ressource durable  
+**Date :** 18 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
 
@@ -95,9 +95,9 @@ Pour le volet familial, le CRB vérifie la portée du consentement déjà signé
 
 ## 1.8 Financement
 
-Le projet est financé par le FEDER sur 36 mois. La version déposée précisera les montants, l’organisme gestionnaire et les éventuels cofinancements. Le formulaire d’enregistrement MR-004 du répertoire public de la Plateforme des données de santé ne comporte pas de champ dédié au financement : la description du projet le mentionne.
+Le financement du projet est en cours de recherche. La voie FEDER envisagée initialement n’est pas mobilisable en l’état ; une démarche de financement alternative reste à engager. La durée de 36 mois retenue pour la recherche (section 16.1) constitue l’objectif du projet indépendamment de la source de financement finalement obtenue : aucune analyse ne débutera avant que le financement soit acquis dans son intégralité. Le formulaire d’enregistrement MR-004 du répertoire public de la Plateforme des données de santé ne comporte pas de champ dédié au financement : la description du projet le mentionnera une fois la démarche aboutie.
 
-**Statut : détails du financement à compléter.**
+**Statut : démarche de financement à engager ; organisme(s) et montants à préciser dès qu’ils seront connus.**
 
 ---
 
@@ -132,7 +132,7 @@ Le projet est financé par le FEDER sur 36 mois. La version déposée précisera
 | Données cliniques / IA | Hors traitement initial ; extensions à réévaluer séparément |
 | Découvertes génétiques incidentes | Information de la personne via le détenteur de l’identité, sauf opposition (section 19.1) |
 | Collection biologique | Déclaration CODECOH à réaliser avant ouverture de la collecte (section 7.7) |
-| Financement | FEDER, 36 mois |
+| Financement | En attente de démarche (voie FEDER non mobilisable en l’état) ; durée cible de la recherche inchangée : 36 mois |
 
 ---
 
@@ -1135,7 +1135,7 @@ Annexes scientifiques de référence :
 | Méthodes analytiques réglementaires | `CNIL_02C_METHODES_ANALYTIQUES_MR004.md` |
 | Séparation de la ressource durable | plan CNIL + grille MR-004 |
 | Consentement génétique, découvertes incidentes, volet familial, portail, POPGEN, collection biologique | note d’analyse réglementaire du 16 septembre 2026 |
-| Financement FEDER sur 36 mois | plan économique du projet |
+| Financement en attente de démarche ; durée cible de 36 mois | plan économique du projet |
 
 ---
 
@@ -1256,6 +1256,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 ---
 
 # 25. Journal des modifications
+
+## Version 0.8.5
+
+- Sections 1.8, 2 et 22 : la voie de financement FEDER envisagée n’étant plus mobilisable, remplacement de l’affirmation d’un financement acquis par un statut « démarche à engager » ; la durée cible de 36 mois est maintenue, aucune analyse ne pouvant de toute façon débuter avant financement complet du projet.
 
 ## Version 0.8.4
 
