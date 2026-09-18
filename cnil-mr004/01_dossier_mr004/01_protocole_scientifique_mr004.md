@@ -1239,7 +1239,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.8.4, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.8.6, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
