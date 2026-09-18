@@ -22,6 +22,20 @@ const TAG_CLASS = {
 // à chaque évolution notable du site.
 const OFFICIAL_NEWS = [
   {
+    date: '18/09/2026',
+    category: 'Mise à jour',
+    title: 'Protocole scientifique MR-004 revu (v0.8.11)',
+    desc: "Financement clarifié (voie FEDER non mobilisable, démarche à engager sans changer la durée cible de 36 mois), justification bibliographique de la précision du phasage ajoutée en section 13.1, deux schémas de synthèse ajoutés (circuit des échantillons, usages des trois populations), suivi interne détaillé déplacé dans un document séparé pour alléger le protocole.",
+    link: { url: 'template/protection-donnees.html', label: 'Voir la page Protection des données →' }
+  },
+  {
+    date: '17/09/2026',
+    category: 'Nouveau document',
+    title: 'Carte « Protection des données »',
+    desc: "Nouvelle carte dans la section Documents : démarche de déclaration CNIL du projet sous méthodologie MR-004, avec le guide pratique du dépôt réglementaire, le protocole scientifique, le formulaire d'enregistrement au répertoire public de la Plateforme des données de santé et la note d'analyse réglementaire.",
+    link: { url: 'template/protection-donnees.html', label: 'Voir la page →' }
+  },
+  {
     date: '14/09/2026',
     category: 'Nouveau document',
     title: 'Personas — ARS La Réunion',
