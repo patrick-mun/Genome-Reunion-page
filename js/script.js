@@ -25,7 +25,7 @@ const OFFICIAL_NEWS = [
     date: '18/09/2026',
     category: 'Mise à jour',
     title: 'Protocole scientifique MR-004 revu (v0.8.11)',
-    desc: "Financement clarifié (voie FEDER non mobilisable, démarche à engager sans changer la durée cible de 36 mois), justification bibliographique de la précision du phasage ajoutée en section 13.1, deux schémas de synthèse ajoutés (circuit des échantillons, usages des trois populations), suivi interne détaillé déplacé dans un document séparé pour alléger le protocole.",
+    desc: "Justification bibliographique de la précision du phasage ajoutée en section 13.1, deux schémas de synthèse ajoutés (circuit des échantillons, usages des trois populations), suivi interne détaillé déplacé dans un document séparé pour alléger le protocole.",
     link: { url: 'template/protection-donnees.html', label: 'Voir la page Protection des données →' }
   },
   {
