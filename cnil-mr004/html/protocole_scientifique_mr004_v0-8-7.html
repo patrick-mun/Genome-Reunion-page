@@ -1185,12 +1185,12 @@ main > section[id^="s"] h2 { break-before: auto; page-break-before: auto; }
   <div class="cover-accent-band"></div>
   <div class="cover-center">
     <h1>Protocole scientifique <span class="cr-nw">MR-004</span> : Génome Réunion</h1>
-    <div class="cover-subtitle">Version 0.8.6, justification bibliographique du phasage en section 13.1</div>
+    <div class="cover-subtitle">Version 0.8.7, harmonisation des titres de la section 13.1</div>
   </div>
   <div class="cover-meta"><table><tr><td>Auteur</td><td>Patrick MUNIER, CHU de La Réunion, Service de génétique moléculaire</td></tr>
 <tr><td>Statut</td><td>Document de travail, à valider par la DRCI et le DPO</td></tr>
 <tr><td>Date</td><td>18 septembre 2026</td></tr>
-<tr><td>Version</td><td>0.8.6</td></tr></table></div>
+<tr><td>Version</td><td>0.8.7</td></tr></table></div>
 </section>
 
 <nav class="toc-page" id="toc">
@@ -1225,8 +1225,8 @@ main > section[id^="s"] h2 { break-before: auto; page-break-before: auto; }
 
 <main>
 <section id="s1">
-<p><strong>Version :</strong> 0.8.6, justification bibliographique du phasage en section 13.1<br />
-<strong>Version précédente :</strong> 0.8.5, financement en attente de démarche<br />
+<p><strong>Version :</strong> 0.8.7, harmonisation des titres de la section 13.1<br />
+<strong>Version précédente :</strong> 0.8.6, justification bibliographique du phasage en section 13.1<br />
 <strong>Date :</strong> 18 septembre 2026<br />
 Statut : document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée<br />
 <strong>Règle de lecture :</strong> toute mention <strong>À confirmer / À arbitrer / À valider DRCI-DPO</strong> correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.</p>
@@ -1968,8 +1968,7 @@ Statut : document de travail à relire avec l’équipe, la DRCI et le DPO ; les
 <p>Les méthodologies détaillées sont conservées comme annexes scientifiques du projet.</p>
 <h3>13.1 Justification des effectifs</h3>
 <p>Le dimensionnement de la cohorte répond à deux exigences distinctes : la puissance statistique sur les fréquences alléliques, et la précision du phasage haplotypique. La seconde n’est pas secondaire à la première : le phasage conditionne directement la fiabilité de toute analyse réalisée a posteriori sur ces génomes (IBD, ROH, inférence d’ascendance locale, imputation, haplotypes pharmacogénétiques), y compris pour des recherches ultérieures menées sur cette même ressource. Un phasage imprécis fragiliserait rétroactivement l’ensemble des résultats produits par le projet.</p>
-<h4>Puissance statistique sur les fréquences alléliques</h4>
-<p>Les ordres de grandeur ci-dessous supposent un échantillonnage aléatoire simple et un variant génotypé ou imputé de façon fiable. Les simulations de la méthodologie de validation les affineront.</p>
+<p><strong>Puissance statistique sur les fréquences alléliques.</strong> Les ordres de grandeur ci-dessous supposent un échantillonnage aléatoire simple et un variant génotypé ou imputé de façon fiable. Les simulations de la méthodologie de validation les affineront.</p>
 <table>
 <thead>
 <tr>
@@ -2002,8 +2001,7 @@ Statut : document de travail à relire avec l’équipe, la DRCI et le DPO ; les
 </tbody>
 </table>
 <p>Le panel de 350 WGS sert à découvrir et caractériser les variants, en particulier ceux dont la fréquence locale atteint au moins <span class="cr-nw">0,5 %</span>. La cohorte de ~2 500 participants apporte la précision des fréquences après imputation et recalibrage. Le panel WGS n’étant pas un échantillon aléatoire, ses fréquences brutes ne sont pas utilisées sans recalibrage (section 15.2).</p>
-<h4>Précision du phasage haplotypique</h4>
-<p>La précision du phasage statistique augmente avec la taille de la cohorte, avec des gains décroissants aux effectifs élevés (Browning &amp; Browning, 2011). Des évaluations récentes réalisées avec SHAPEIT4 dans des populations admixées montrent une amélioration particulièrement marquée entre 580 et 2 890 individus, puis un gain plus faible entre 2 890 et 5 780 individus (Williams et al., 2012). La cohorte Génome Réunion de 2 500 participants se situe ainsi dans cette plage intermédiaire. Elle dépasse par ailleurs le seuil pratique de 2 000 échantillons à partir duquel le pipeline SHAPEIT5, dédié au phasage des variants rares, est recommandé (Hofmeister et al., 2023).</p>
+<p><strong>Précision du phasage haplotypique.</strong> La précision du phasage statistique augmente avec la taille de la cohorte, avec des gains décroissants aux effectifs élevés (Browning &amp; Browning, 2011). Des évaluations récentes réalisées avec SHAPEIT4 dans des populations admixées montrent une amélioration particulièrement marquée entre 580 et 2 890 individus, puis un gain plus faible entre 2 890 et 5 780 individus (Williams et al., 2012). La cohorte Génome Réunion de 2 500 participants se situe ainsi dans cette plage intermédiaire. Elle dépasse par ailleurs le seuil pratique de 2 000 échantillons à partir duquel le pipeline SHAPEIT5, dédié au phasage des variants rares, est recommandé (Hofmeister et al., 2023).</p>
 <p>Aucun panel externe ne peut se substituer à cet effectif local pour le phasage de la cohorte réunionnaise : l’admixture continue de la population rend les panels de référence à étiquettes de population (1000 Genomes, GenomeAsia notamment) inutilisables comme référence directe à cette fin (section 9.1).</p>
 <p>Les environ 100 familles nucléaires (section 5.4) complètent ce dispositif de deux manières : elles apportent une information mendélienne au phasage final (contraintes de transmission, section 10.5), et elles permettent d’établir expérimentalement, par la mesure du taux d’erreurs de phase (<em>switch error rate</em>) sur des trios indépendants, la courbe de saturation de la précision du phasage en fonction de l’effectif — une démonstration que des panels externes non admixés ne permettraient pas de reproduire dans le contexte réunionnais (Avadhanam &amp; Williams, 2025).</p>
 <p><strong>Références.</strong> Browning SR, Browning BL. <em>Haplotype phasing: existing methods and new developments.</em> Nature Reviews Genetics, 2011;12(10):703-714. DOI: 10.1038/nrg3054. — Williams et al. <em>Phasing of Many Thousands of Genotyped Samples.</em> American Journal of Human Genetics, 2012;91:238-251. DOI: 10.1016/j.ajhg.2012.06.013. — Avadhanam &amp; Williams. <em>Phase-free local ancestry inference mitigates the impact of switch errors on phase-based methods.</em> G3, 2025. DOI: 10.1093/g3journal/jkaf122. — Delaneau O, Zagury JF, Robinson MR, Marchini JL, Dermitzakis ET. <em>Accurate, scalable and integrative haplotype estimation</em> (SHAPEIT4). Nature Communications, 2019;10:5436. DOI: 10.1038/s41467-019-13225-y. — Hofmeister RJ, Ribeiro DM, Rubinacci S, Delaneau O. <em>Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank</em> (SHAPEIT5). Nature Genetics, 2023;55:1243-1249. DOI: 10.1038/s41588-023-01415-w.</p>
@@ -2478,7 +2476,7 @@ Statut : document de travail à relire avec l’équipe, la DRCI et le DPO ; les
 <section id="s25">
 <h2>24. Position actuelle du protocole</h2>
 
-<p>Au stade de cette version 0.8.6, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :</p>
+<p>Au stade de cette version 0.8.7, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :</p>
 <ul>
 <li>la justification scientifique et médicale ;</li>
 <li>l’intérêt public incluant la pharmacogénétique populationnelle ;</li>
@@ -2510,6 +2508,10 @@ Statut : document de travail à relire avec l’équipe, la DRCI et le DPO ; les
 <section id="s26">
 <h2>25. Journal des modifications</h2>
 
+<h3>Version 0.8.7</h3>
+<ul>
+<li>Section 13.1 : remplacement des deux sous-titres non numérotés (« Puissance statistique... », « Précision du phasage... ») par des amorces en gras dans le paragraphe, pour s’aligner sur la convention typographique déjà utilisée ailleurs dans le document (par exemple section 19.1) plutôt que d’introduire un nouveau niveau de titre.</li>
+</ul>
 <h3>Version 0.8.6</h3>
 <ul>
 <li>Section 13.1 : ajout de la justification bibliographique du dimensionnement pour la précision du phasage haplotypique (Browning &amp; Browning 2011 ; Williams et al. 2012 ; Avadhanam &amp; Williams 2025 ; Delaneau et al. 2019 ; Hofmeister et al. 2023), distincte de la puissance statistique sur les fréquences alléliques déjà présente ; explicitation du rôle des 100 familles nucléaires et de l’inutilisabilité des panels externes du fait de l’admixture (renvois aux sections 5.4, 9.1 et 10.5).</li>
@@ -2646,7 +2648,7 @@ Statut : document de travail à relire avec l’équipe, la DRCI et le DPO ; les
 </section>
 </main>
 
-<footer class="page-footer"><span>Génome Réunion · Protocole scientifique <span class="cr-nw">MR-004</span> <span class="cr-nw">v0.8.6</span> · CHU de La Réunion</span></footer>
+<footer class="page-footer"><span>Génome Réunion · Protocole scientifique <span class="cr-nw">MR-004</span> <span class="cr-nw">v0.8.7</span> · CHU de La Réunion</span></footer>
 
 </body>
 </html>

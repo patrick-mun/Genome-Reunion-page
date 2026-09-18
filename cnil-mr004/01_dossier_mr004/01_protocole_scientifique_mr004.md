@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.6, justification bibliographique du phasage en section 13.1  
-**Version précédente :** 0.8.5, financement en attente de démarche  
+**Version :** 0.8.7, harmonisation des titres de la section 13.1  
+**Version précédente :** 0.8.6, justification bibliographique du phasage en section 13.1  
 **Date :** 18 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -752,9 +752,7 @@ Les méthodologies détaillées sont conservées comme annexes scientifiques du 
 
 Le dimensionnement de la cohorte répond à deux exigences distinctes : la puissance statistique sur les fréquences alléliques, et la précision du phasage haplotypique. La seconde n'est pas secondaire à la première : le phasage conditionne directement la fiabilité de toute analyse réalisée a posteriori sur ces génomes (IBD, ROH, inférence d'ascendance locale, imputation, haplotypes pharmacogénétiques), y compris pour des recherches ultérieures menées sur cette même ressource. Un phasage imprécis fragiliserait rétroactivement l'ensemble des résultats produits par le projet.
 
-### Puissance statistique sur les fréquences alléliques
-
-Les ordres de grandeur ci-dessous supposent un échantillonnage aléatoire simple et un variant génotypé ou imputé de façon fiable. Les simulations de la méthodologie de validation les affineront.
+**Puissance statistique sur les fréquences alléliques.** Les ordres de grandeur ci-dessous supposent un échantillonnage aléatoire simple et un variant génotypé ou imputé de façon fiable. Les simulations de la méthodologie de validation les affineront.
 
 | Indicateur | Cohorte de ~2 500 participants (5 000 allèles) | Panel de 350 WGS (700 allèles) |
 |---|---|---|
@@ -765,9 +763,7 @@ Les ordres de grandeur ci-dessous supposent un échantillonnage aléatoire simpl
 
 Le panel de 350 WGS sert à découvrir et caractériser les variants, en particulier ceux dont la fréquence locale atteint au moins 0,5 %. La cohorte de ~2 500 participants apporte la précision des fréquences après imputation et recalibrage. Le panel WGS n’étant pas un échantillon aléatoire, ses fréquences brutes ne sont pas utilisées sans recalibrage (section 15.2).
 
-### Précision du phasage haplotypique
-
-La précision du phasage statistique augmente avec la taille de la cohorte, avec des gains décroissants aux effectifs élevés (Browning & Browning, 2011). Des évaluations récentes réalisées avec SHAPEIT4 dans des populations admixées montrent une amélioration particulièrement marquée entre 580 et 2 890 individus, puis un gain plus faible entre 2 890 et 5 780 individus (Williams et al., 2012). La cohorte Génome Réunion de 2 500 participants se situe ainsi dans cette plage intermédiaire. Elle dépasse par ailleurs le seuil pratique de 2 000 échantillons à partir duquel le pipeline SHAPEIT5, dédié au phasage des variants rares, est recommandé (Hofmeister et al., 2023).
+**Précision du phasage haplotypique.** La précision du phasage statistique augmente avec la taille de la cohorte, avec des gains décroissants aux effectifs élevés (Browning & Browning, 2011). Des évaluations récentes réalisées avec SHAPEIT4 dans des populations admixées montrent une amélioration particulièrement marquée entre 580 et 2 890 individus, puis un gain plus faible entre 2 890 et 5 780 individus (Williams et al., 2012). La cohorte Génome Réunion de 2 500 participants se situe ainsi dans cette plage intermédiaire. Elle dépasse par ailleurs le seuil pratique de 2 000 échantillons à partir duquel le pipeline SHAPEIT5, dédié au phasage des variants rares, est recommandé (Hofmeister et al., 2023).
 
 Aucun panel externe ne peut se substituer à cet effectif local pour le phasage de la cohorte réunionnaise : l'admixture continue de la population rend les panels de référence à étiquettes de population (1000 Genomes, GenomeAsia notamment) inutilisables comme référence directe à cette fin (section 9.1).
 
@@ -1239,7 +1235,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.8.6, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.8.7, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
@@ -1270,6 +1266,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 ---
 
 # 25. Journal des modifications
+
+## Version 0.8.7
+
+- Section 13.1 : remplacement des deux sous-titres non numérotés (« Puissance statistique... », « Précision du phasage... ») par des amorces en gras dans le paragraphe, pour s'aligner sur la convention typographique déjà utilisée ailleurs dans le document (par exemple section 19.1) plutôt que d'introduire un nouveau niveau de titre.
 
 ## Version 0.8.6
 
