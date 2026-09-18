@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.5, financement en attente de démarche  
-**Version précédente :** 0.8.4, clarification du cadre de la ressource durable  
+**Version :** 0.8.6, justification bibliographique du phasage en section 13.1  
+**Version précédente :** 0.8.5, financement en attente de démarche  
 **Date :** 18 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -750,6 +750,10 @@ Les méthodologies détaillées sont conservées comme annexes scientifiques du 
 
 ## 13.1 Justification des effectifs
 
+Le dimensionnement de la cohorte répond à deux exigences distinctes : la puissance statistique sur les fréquences alléliques, et la précision du phasage haplotypique. La seconde n'est pas secondaire à la première : le phasage conditionne directement la fiabilité de toute analyse réalisée a posteriori sur ces génomes (IBD, ROH, inférence d'ascendance locale, imputation, haplotypes pharmacogénétiques), y compris pour des recherches ultérieures menées sur cette même ressource. Un phasage imprécis fragiliserait rétroactivement l'ensemble des résultats produits par le projet.
+
+### Puissance statistique sur les fréquences alléliques
+
 Les ordres de grandeur ci-dessous supposent un échantillonnage aléatoire simple et un variant génotypé ou imputé de façon fiable. Les simulations de la méthodologie de validation les affineront.
 
 | Indicateur | Cohorte de ~2 500 participants (5 000 allèles) | Panel de 350 WGS (700 allèles) |
@@ -761,7 +765,17 @@ Les ordres de grandeur ci-dessous supposent un échantillonnage aléatoire simpl
 
 Le panel de 350 WGS sert à découvrir et caractériser les variants, en particulier ceux dont la fréquence locale atteint au moins 0,5 %. La cohorte de ~2 500 participants apporte la précision des fréquences après imputation et recalibrage. Le panel WGS n’étant pas un échantillon aléatoire, ses fréquences brutes ne sont pas utilisées sans recalibrage (section 15.2).
 
-**Statut : à compléter avec les résultats des simulations de sélection.**
+### Précision du phasage haplotypique
+
+La précision du phasage statistique augmente avec la taille de la cohorte, avec des gains décroissants aux effectifs élevés (Browning & Browning, 2011). Des évaluations récentes réalisées avec SHAPEIT4 dans des populations admixées montrent une amélioration particulièrement marquée entre 580 et 2 890 individus, puis un gain plus faible entre 2 890 et 5 780 individus (Williams et al., 2012). La cohorte Génome Réunion de 2 500 participants se situe ainsi dans cette plage intermédiaire. Elle dépasse par ailleurs le seuil pratique de 2 000 échantillons à partir duquel le pipeline SHAPEIT5, dédié au phasage des variants rares, est recommandé (Hofmeister et al., 2023).
+
+Aucun panel externe ne peut se substituer à cet effectif local pour le phasage de la cohorte réunionnaise : l'admixture continue de la population rend les panels de référence à étiquettes de population (1000 Genomes, GenomeAsia notamment) inutilisables comme référence directe à cette fin (section 9.1).
+
+Les environ 100 familles nucléaires (section 5.4) complètent ce dispositif de deux manières : elles apportent une information mendélienne au phasage final (contraintes de transmission, section 10.5), et elles permettent d'établir expérimentalement, par la mesure du taux d'erreurs de phase (*switch error rate*) sur des trios indépendants, la courbe de saturation de la précision du phasage en fonction de l'effectif — une démonstration que des panels externes non admixés ne permettraient pas de reproduire dans le contexte réunionnais (Avadhanam & Williams, 2025).
+
+**Références.** Browning SR, Browning BL. *Haplotype phasing: existing methods and new developments.* Nature Reviews Genetics, 2011;12(10):703-714. DOI: 10.1038/nrg3054. — Williams et al. *Phasing of Many Thousands of Genotyped Samples.* American Journal of Human Genetics, 2012;91:238-251. DOI: 10.1016/j.ajhg.2012.06.013. — Avadhanam & Williams. *Phase-free local ancestry inference mitigates the impact of switch errors on phase-based methods.* G3, 2025. DOI: 10.1093/g3journal/jkaf122. — Delaneau O, Zagury JF, Robinson MR, Marchini JL, Dermitzakis ET. *Accurate, scalable and integrative haplotype estimation* (SHAPEIT4). Nature Communications, 2019;10:5436. DOI: 10.1038/s41467-019-13225-y. — Hofmeister RJ, Ribeiro DM, Rubinacci S, Delaneau O. *Accurate rare variant phasing of whole-genome and whole-exome sequencing data in the UK Biobank* (SHAPEIT5). Nature Genetics, 2023;55:1243-1249. DOI: 10.1038/s41588-023-01415-w.
+
+**Statut : à compléter avec les résultats des simulations de sélection et la mesure expérimentale du switch error rate sur les familles nucléaires.**
 
 ## 13.2 Plan de gestion des données
 
@@ -1256,6 +1270,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 ---
 
 # 25. Journal des modifications
+
+## Version 0.8.6
+
+- Section 13.1 : ajout de la justification bibliographique du dimensionnement pour la précision du phasage haplotypique (Browning & Browning 2011 ; Williams et al. 2012 ; Avadhanam & Williams 2025 ; Delaneau et al. 2019 ; Hofmeister et al. 2023), distincte de la puissance statistique sur les fréquences alléliques déjà présente ; explicitation du rôle des 100 familles nucléaires et de l'inutilisabilité des panels externes du fait de l'admixture (renvois aux sections 5.4, 9.1 et 10.5).
 
 ## Version 0.8.5
 
