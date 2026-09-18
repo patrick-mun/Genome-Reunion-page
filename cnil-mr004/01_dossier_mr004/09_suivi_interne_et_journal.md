@@ -154,6 +154,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 
 # 25. Journal des modifications
 
+## Version 0.8.10
+
+- Figure 1 (section 5) : correction de la légende, qui ne citait pas les sections 10.6 et 11.3 alors que deux des trois exclusions affichées (sélection des 350, pharmacogénétique) y sont détaillées. Correction de l'espacement entre le texte d'exclusion et la flèche de la figure, qui se chevauchaient visuellement (relevé par l'auteur sur une capture d'écran).
+
 ## Version 0.8.9
 
 - Extraction des sections 22 à 25 du protocole scientifique vers le présent document de suivi, pour alléger le protocole en vue du dépôt ; mise à jour du renvoi correspondant dans l'en-tête du protocole.
