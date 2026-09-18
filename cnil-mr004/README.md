@@ -42,7 +42,8 @@ cnil-mr004/
 │   ├── 05_donnees_sources_methodes.md
 │   ├── 06_acteurs_flux_responsabilites.md
 │   ├── 07_conservation_gouvernance.md
-│   └── 08_securite_aipd.md
+│   ├── 08_securite_aipd.md
+│   └── 09_suivi_interne_et_journal.md
 └── 02_preuves_a_conserver/
     ├── README.md
     ├── 01_formalites_registre.md
