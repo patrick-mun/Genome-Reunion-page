@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.10, correction de la Figure 1 (légende et espacement)  
-**Version précédente :** 0.8.9, retrait du suivi interne et ajout de deux schémas de synthèse  
+**Version :** 0.8.11, ajout d’un renvoi de synthèse vers le suivi interne  
+**Version précédente :** 0.8.10, correction de la Figure 1 (légende et espacement)  
 **Date :** 18 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; le suivi interne du dossier (traçabilité, points à arbitrer, position d’avancement, journal des modifications) est tenu séparément dans `09_suivi_interne_et_journal.md`, hors du présent document  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -1180,4 +1180,8 @@ Annexes scientifiques de référence :
 - CNIL, délibération n° 2018-155 du 3 mai 2018 portant homologation de la méthodologie de référence MR-004.
 - Plateforme des données de santé, guide pédagogique de la procédure simplifiée MR-004 (octobre 2025).
 - Ministère chargé de la recherche, réglementation de la conservation d’éléments et produits du corps humain à des fins scientifiques (mise à jour du 28 mai 2026).
+
+## 21.2 Suivi du dossier
+
+L’avancement détaillé du dossier (traçabilité des informations intégrées, liste des points restant à arbitrer, position actuelle du protocole et journal des modifications) est tenu à jour séparément dans `cnil-mr004/01_dossier_mr004/09_suivi_interne_et_journal.md`, document de pilotage interne non destiné à la version déposée.
 
