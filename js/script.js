@@ -36,6 +36,34 @@ const OFFICIAL_NEWS = [
     link: { url: 'template/protection-donnees.html', label: 'Voir la page →' }
   },
   {
+    date: '17/09/2026',
+    category: 'Nouveau document',
+    title: 'Guide pratique du dépôt réglementaire',
+    desc: "Document d'entrée pour la démarche de déclaration CNIL : vue d'ensemble en une image, rôle de chaque interlocuteur (DRCI, DPO, CRB, EFS, CPP, CESREES, CNIL, PDS, ANSM), étapes des voies MR-004, MR-001 et MR-003, et glossaire des acronymes.",
+    link: { url: 'cnil-mr004/html/guide_pratique_depot_reglementaire_genome_reunion.html', label: 'Voir le guide →' }
+  },
+  {
+    date: '17/09/2026',
+    category: 'Nouveau document',
+    title: 'Protocole scientifique MR-004',
+    desc: "Qualification RNIPH, consentement, découvertes génétiques incidentes, volet familial, collection biologique, portail public et calendrier du dépôt.",
+    link: { url: 'template/protection-donnees.html', label: 'Voir la page Protection des données →' }
+  },
+  {
+    date: '17/09/2026',
+    category: 'Nouveau document',
+    title: 'Formulaire du répertoire public (PDS)',
+    desc: "Rubriques rédigées de la démarche d'enregistrement MR-004 sur le répertoire public de la Plateforme des données de santé, prêtes à relire puis à recopier en ligne.",
+    link: { url: 'cnil-mr004/html/formulaire_repertoire_public_pds.html', label: 'Voir le formulaire →' }
+  },
+  {
+    date: '17/09/2026',
+    category: 'Nouveau document',
+    title: 'Note d’analyse réglementaire',
+    desc: "Points de vigilance identifiés avant dépôt : qualification RNIPH, nature du consentement, découvertes incidentes, volet familial, portail public, rôle de POPGEN, collection biologique.",
+    link: { url: 'cnil-mr004/html/note_analyse_reglementaire.html', label: 'Voir la note →' }
+  },
+  {
     date: '14/09/2026',
     category: 'Nouveau document',
     title: 'Personas — ARS La Réunion',
