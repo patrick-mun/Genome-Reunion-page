@@ -1,9 +1,9 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.8, allègement des répétitions sur le volet familial  
-**Version précédente :** 0.8.7, harmonisation des titres de la section 13.1  
+**Version :** 0.8.9, retrait du suivi interne et ajout de deux schémas de synthèse  
+**Version précédente :** 0.8.8, allègement des répétitions sur le volet familial  
 **Date :** 18 septembre 2026  
-**Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
+**Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; le suivi interne du dossier (traçabilité, points à arbitrer, position d’avancement, journal des modifications) est tenu séparément dans `09_suivi_interne_et_journal.md`, hors du présent document  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
 
 ---
@@ -254,6 +254,30 @@ Ces extensions devront faire l’objet d’une nouvelle analyse réglementaire a
 
 Aucun prélèvement sanguin supplémentaire n’est actuellement prévu spécifiquement pour Génome Réunion.
 
+<figure class="cr-fig" id="fig-triade">
+<svg class="cr-svg cr-svg--wide" viewBox="0 0 760 260" role="img" aria-labelledby="triade-t triade-d" xmlns="http://www.w3.org/2000/svg">
+<title id="triade-t">Trois populations aux usages distincts</title>
+<desc id="triade-d">La cohorte principale d’environ 2 500 participants contient le panel WGS de 350 individus. Les familles nucléaires, ressource séparée d’environ 100, contribuent uniquement au phasage et ne sont jamais utilisées pour les fréquences, la sélection des 350 ou la pharmacogénétique.</desc>
+<defs><marker id="cr-arrow-triade" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5B6B77" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="20" y="30" width="440" height="180" rx="10" fill="#E3E8EF" stroke="#0F3A56" stroke-width="1.5"/>
+<text class="cr-th" x="240" y="55" text-anchor="middle" dominant-baseline="central" fill="#0F3A56">Cohorte principale</text>
+<text class="cr-ts" x="240" y="72" text-anchor="middle" dominant-baseline="central" fill="#3E5566">~2 500 participants</text>
+<text class="cr-lb" x="40" y="95" dominant-baseline="central" fill="#3E5566">• Génotypage SNP, structure génétique</text>
+<text class="cr-lb" x="40" y="111" dominant-baseline="central" fill="#3E5566">• Sélection des 350, recalibrage des fréquences</text>
+<text class="cr-lb" x="40" y="127" dominant-baseline="central" fill="#3E5566">• Pharmacogénétique populationnelle</text>
+<rect x="250" y="148" width="190" height="48" rx="8" fill="#E4F0F5" stroke="#1E6E8C" stroke-width="1"/>
+<text class="cr-th" x="345" y="165" text-anchor="middle" dominant-baseline="central" fill="#0F3A56">Panel WGS</text>
+<text class="cr-ts" x="345" y="181" text-anchor="middle" dominant-baseline="central" fill="#2B5A70">350 (sous-ensemble)</text>
+<rect x="520" y="30" width="220" height="64" rx="8" fill="#F1F1EE" stroke="#8C8C86" stroke-width="1"/>
+<text class="cr-th" x="630" y="50" text-anchor="middle" dominant-baseline="central" fill="#2E2E2B">Familles nucléaires</text>
+<text class="cr-ts" x="630" y="68" text-anchor="middle" dominant-baseline="central" fill="#55554F">~100 (phasage uniquement)</text>
+<path d="M560 94 V150 H460" fill="none" stroke="#5B6B77" stroke-width="1.2" marker-end="url(#cr-arrow-triade)"/>
+<text class="cr-lb" x="565" y="112" dominant-baseline="central" fill="#4A5963">Phasage</text>
+<text class="cr-lb" x="520" y="145" dominant-baseline="central" fill="#8A2F17">Non utilisées pour :</text>
+<text class="cr-lb" x="520" y="161" dominant-baseline="central" fill="#8A2F17">fréquences · sélection 350 ·</text>
+<text class="cr-lb" x="520" y="177" dominant-baseline="central" fill="#8A2F17">pharmacogénétique (§ 5.4)</text>
+</svg><figcaption>Figure 1 : trois populations aux usages distincts. Source : synthèse de l’auteur, à partir des sections 1.3, 5.2 à 5.4 et 10.5.</figcaption></figure>
+
 ## 5.2 Cohorte principale
 
 Environ **2 500 participants** recrutés en collaboration avec l’EFS La Réunion.
@@ -389,6 +413,44 @@ Les critères techniques précis définissant une famille nucléaire exploitable
 ---
 
 # 7. Origine des échantillons et circuits biologiques
+
+<figure class="cr-fig" id="fig-circuit">
+<svg class="cr-svg cr-svg--wide" viewBox="0 0 760 350" role="img" aria-labelledby="circuit-t circuit-d" xmlns="http://www.w3.org/2000/svg">
+<title id="circuit-t">Circuit des échantillons et frontière de pseudonymisation</title>
+<desc id="circuit-d">La cohorte principale suit le circuit donneur puis EFS puis CRB puis POPGEN jusqu’au service de génétique moléculaire du CHU. Le volet familial suit un circuit séparé via le CRB jusqu’au même service, pour le phasage uniquement. L’identité directe n’est connue qu’à l’étape EFS, et par le CRB en interne pour le volet familial ; l’équipe de recherche ne reçoit que des données pseudonymisées.</desc>
+<defs><marker id="cr-arrow-circuit" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#5B6B77" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect x="20" y="20" width="130" height="56" rx="8" fill="#F1F1EE" stroke="#8C8C86" stroke-width="1"/>
+<text class="cr-th" x="85" y="40" text-anchor="middle" dominant-baseline="central" fill="#2E2E2B">Donneur</text>
+<text class="cr-ts" x="85" y="58" text-anchor="middle" dominant-baseline="central" fill="#55554F">Don de sang (EFS)</text>
+<path d="M150 48 L170 48" fill="none" stroke="#5B6B77" stroke-width="1.2" marker-end="url(#cr-arrow-circuit)"/>
+<rect x="170" y="20" width="190" height="56" rx="8" fill="#E3E8EF" stroke="#0F3A56" stroke-width="1"/>
+<text class="cr-th" x="265" y="40" text-anchor="middle" dominant-baseline="central" fill="#0F3A56">EFS</text>
+<text class="cr-ts" x="265" y="58" text-anchor="middle" dominant-baseline="central" fill="#3E5566">Consentement, codage</text>
+<path d="M360 48 L380 48" fill="none" stroke="#5B6B77" stroke-width="1.2" marker-end="url(#cr-arrow-circuit)"/>
+<rect x="380" y="20" width="170" height="56" rx="8" fill="#E4F0F5" stroke="#1E6E8C" stroke-width="1"/>
+<text class="cr-th" x="465" y="40" text-anchor="middle" dominant-baseline="central" fill="#0F3A56">CRB</text>
+<text class="cr-ts" x="465" y="58" text-anchor="middle" dominant-baseline="central" fill="#2B5A70">Extraction, conservation</text>
+<path d="M550 48 L570 48" fill="none" stroke="#5B6B77" stroke-width="1.2" marker-end="url(#cr-arrow-circuit)"/>
+<rect x="570" y="20" width="170" height="56" rx="8" fill="#E4F0F5" stroke="#1E6E8C" stroke-width="1"/>
+<text class="cr-th" x="655" y="40" text-anchor="middle" dominant-baseline="central" fill="#0F3A56">POPGEN</text>
+<text class="cr-ts" x="655" y="58" text-anchor="middle" dominant-baseline="central" fill="#2B5A70">WGS des 350 sélectionnés</text>
+<rect x="20" y="140" width="300" height="56" rx="8" fill="#F1F1EE" stroke="#8C8C86" stroke-width="1"/>
+<text class="cr-th" x="170" y="160" text-anchor="middle" dominant-baseline="central" fill="#2E2E2B">Patients CRB</text>
+<text class="cr-ts" x="170" y="178" text-anchor="middle" dominant-baseline="central" fill="#55554F">Reliquats déjà conservés + consentement</text>
+<path d="M320 168 L340 168" fill="none" stroke="#5B6B77" stroke-width="1.2" marker-end="url(#cr-arrow-circuit)"/>
+<rect x="340" y="140" width="260" height="56" rx="8" fill="#E4F0F5" stroke="#1E6E8C" stroke-width="1"/>
+<text class="cr-th" x="470" y="160" text-anchor="middle" dominant-baseline="central" fill="#0F3A56">CRB</text>
+<text class="cr-ts" x="470" y="178" text-anchor="middle" dominant-baseline="central" fill="#2B5A70">Vérifie consentement, pseudonymise</text>
+<path d="M655 76 V210 H460 V250" fill="none" stroke="#5B6B77" stroke-width="1.2" marker-end="url(#cr-arrow-circuit)"/>
+<path d="M470 196 V240 H300 V250" fill="none" stroke="#5B6B77" stroke-width="1.2" marker-end="url(#cr-arrow-circuit)"/>
+<rect x="210" y="250" width="340" height="56" rx="8" fill="#E4F0F5" stroke="#1E6E8C" stroke-width="1"/>
+<text class="cr-th" x="380" y="270" text-anchor="middle" dominant-baseline="central" fill="#0F3A56">Service de génétique moléculaire du CHU</text>
+<text class="cr-ts" x="380" y="288" text-anchor="middle" dominant-baseline="central" fill="#2B5A70">Analyses (cohorte + WGS) · Phasage (familles)</text>
+<rect x="20" y="312" width="14" height="14" rx="3" fill="#E3E8EF" stroke="#0F3A56" stroke-width="1"/>
+<text class="cr-lb" x="42" y="319" dominant-baseline="central" fill="#4A5963">Identité directe connue (EFS ; CRB en interne pour le volet familial)</text>
+<rect x="20" y="332" width="14" height="14" rx="3" fill="#E4F0F5" stroke="#1E6E8C" stroke-width="1"/>
+<text class="cr-lb" x="42" y="339" dominant-baseline="central" fill="#4A5963">Équipe de recherche : données pseudonymisées uniquement</text>
+</svg><figcaption>Figure 2 : circuit des échantillons et frontière de pseudonymisation. Source : synthèse de l’auteur, à partir des sections 5 et 7.</figcaption></figure>
 
 ## 7.1 Cohorte principale : information et consentement
 
@@ -1119,206 +1181,3 @@ Annexes scientifiques de référence :
 - Plateforme des données de santé, guide pédagogique de la procédure simplifiée MR-004 (octobre 2025).
 - Ministère chargé de la recherche, réglementation de la conservation d’éléments et produits du corps humain à des fins scientifiques (mise à jour du 28 mai 2026).
 
----
-
-> **Annexe interne.** Les sections 22 à 25 servent au pilotage du dossier. Elles seront retirées de la version déposée et conservées dans le dossier de conformité.
-
-# 22. Traçabilité des informations intégrées depuis le dépôt
-
-| Élément intégré au protocole | Source principale dans le dépôt / projet |
-|---|---|
-| 2 500 SNP / 350 WGS / 100 familles | synthèse scientifique + README |
-| Génotypage SNP interne au CHU sur iScan Illumina | organisation opérationnelle du projet |
-| Circuit 100 familles : reliquats ADN CRB + consentement recherche signé en consultation + pseudonymisation CRB | fonctionnement du projet à documenter dans les preuves institutionnelles |
-| Finalité des 100 familles limitée au phasage / contrôle mendélien | méthodologie scientifique + décision de conception |
-| Panel hybride 322 + 28 (ordre de grandeur actuel) | synthèse scientifique / méthodologie de sélection |
-| PCA / ADMIXTURE / KING / ROH / IBD / phasage / imputation | synthèse scientifique + méthodologies |
-| Pharmacogénétique populationnelle | objectifs scientifiques du projet + synthèse scientifique |
-| Portail web public de résultats agrégés | objectif de valorisation / diffusion de Génome Réunion |
-| 1000G / EGA comme panels témoins | synthèse scientifique + `CNIL_02A` |
-| POPGEN pour 350 WGS | README + synthèse scientifique |
-| Durée de la recherche : 36 mois | synthèse scientifique / plan économique + décision de conception |
-| Circuit EFS → CRB | `CNIL_01_CIRCUIT_EFS_PRELEVEMENT.md` |
-| Hypothèse RNIPH + MR-004 | `CNIL_02_QUALIFICATION_REGLEMENTAIRE.md` |
-| Méthodes analytiques réglementaires | `CNIL_02C_METHODES_ANALYTIQUES_MR004.md` |
-| Séparation de la ressource durable | plan CNIL + grille MR-004 |
-| Consentement génétique, découvertes incidentes, volet familial, portail, POPGEN, collection biologique | note d’analyse réglementaire du 16 septembre 2026 |
-| Financement en attente de démarche ; durée cible de 36 mois | plan économique du projet |
-
----
-
-# 23. Points à relire et compléter ensemble
-
-## 23.1 Points institutionnels
-
-- [ ] confirmer le responsable de traitement ;
-- [ ] nommer formellement le responsable de mise en œuvre / responsable scientifique ;
-- [ ] valider définitivement la qualification RNIPH ;
-- [ ] confirmer la base légale RGPD ;
-- [ ] vérifier l’engagement de conformité MR-004 du CHU ;
-- [ ] obtenir la note de qualification motivée de la DRCI ;
-- [ ] faire valider scientifiquement le protocole avant le début du traitement ;
-- [ ] enregistrer l’étude au répertoire public des projets de la PDS avant son commencement ;
-- [ ] inscrire le traitement au registre des activités de traitement ;
-- [ ] réaliser la déclaration CODECOH et vérifier l’exigence d’un avis CPP.
-
-## 23.2 Population / collecte
-
-- [ ] formaliser l’âge d’inclusion éventuel ;
-- [ ] décider si l’âge est transmis au CRB / recherche, en classes si retenu ;
-- [x] ne pas recueillir ni transmettre le sexe déclaré ; inférer le sexe chromosomique à partir du génotypage pour les contrôles qualité ;
-- [x] retenir la résidence à La Réunion et la naissance des deux parents à La Réunion comme critères d’inclusion ;
-- [x] vérifier les critères de résidence et de naissance des deux parents sur simple déclaration du donneur lors de l’entretien EFS, sans justificatif ;
-- [ ] formaliser avec l’EFS le support de traçabilité de l’éligibilité ;
-- [x] retenir uniquement le point de collecte EFS comme donnée géographique transmise, sans adresse, commune ni quartier de résidence ;
-- [x] ne pas recueillir les origines ethniques ou continentales déclarées ;
-- [ ] formaliser les critères d’exclusion du protocole ;
-- [ ] valider la granularité du point de collecte (code de site, regroupement des sites mobiles) ;
-- [ ] rédiger le formulaire de consentement (article 16-10, découvertes incidentes, case optionnelle ressource durable).
-
-## 23.3 Méthodes
-
-- [ ] confirmer la puce / nombre final de SNP ;
-- [ ] confirmer la version finale de la stratégie 350 (322 + 28 ou ratio final issu de la validation) ;
-- [ ] confirmer la liste finale des panels EGA ;
-- [ ] définir la liste initiale des gènes / variants / recommandations pharmacogénétiques de référence à étudier au niveau populationnel ;
-- [ ] confirmer le pipeline WGS et les formats effectivement conservés ;
-- [ ] compléter la justification des effectifs avec les simulations ;
-- [ ] produire le plan de gestion des données ;
-- [ ] arbitrer la politique de découvertes incidentes et le statut des variants pharmacogénétiques à fort impact ;
-- [x] fixer à 36 mois la durée de la recherche décrite dans ce protocole, jusqu’à la restitution des résultats agrégés.
-
-## 23.4 Acteurs / flux
-
-- [ ] qualifier juridiquement EFS ;
-- [ ] qualifier juridiquement CRB ;
-- [x] envoi direct à POPGEN des aliquots d’ADN pseudonymisés des 350 participants par le CRB ;
-- [x] restitution directe des données de séquençage pseudonymisées par POPGEN au service de génétique moléculaire du CHU pour analyse ;
-- [ ] identifier l’organisme séquenceur et qualifier POPGEN (sous-traitant ou responsable conjoint) ; exclure ou encadrer toute conservation de copie ;
-- [ ] conclure la convention EFS / CHU sur la remise des reliquats ;
-- [x] génotypage SNP réalisé en interne au CHU de La Réunion sur iScan Illumina ;
-- [ ] finaliser les conventions et clauses RGPD.
-
-## 23.5 Conservation / gouvernance / diffusion
-
-- [x] retenir le principe de conservation des données de génotypage et de séquençage après les 36 mois ;
-- [ ] fixer les durées par catégorie de données ;
-- [x] retenir le principe de conservation de l’ADN restant au CRB après les 36 mois pour vérifications ou futures recherches dans un cadre adapté ;
-- [ ] fixer les durées du matériel biologique ;
-- [ ] séparer formellement l’étude MR-004 de la ressource durable ;
-- [ ] chiffrer les seuils des règles minimales de divulgation (section 18.4) ;
-- [ ] arbitrer la case optionnelle de consentement à la ressource durable ;
-- [x] réserver le phasage et ses contrôles qualité aux besoins internes des analyses, sans comparaison méthodologique ni publication de ses performances (section 18.1) ;
-- [ ] définir la politique de publication des variants rares / fondateurs ;
-- [ ] définir le processus de validation d’un résultat avant publication sur le portail ;
-- [ ] définir le DAC / accès chercheurs pour les données non publiques.
-
-## 23.6 Volet familles
-
-- [x] sélection par le CRB à partir de reliquats d’ADN déjà conservés ;
-- [x] consentement recherche écrit et signé après information / discussion en consultation médicale ;
-- [ ] vérifier sur la version applicable du formulaire que le consentement couvre l’examen génétique à des fins de recherche ; à défaut, information complémentaire individuelle ;
-- [x] pseudonymisation par le CRB avant mise à disposition aux équipes ;
-- [x] finalité limitée à l’amélioration / contrôle du phasage et aux transmissions mendéliennes ;
-- [x] exclusion des familles des calculs de fréquences et de la description populationnelle des variants ;
-- [ ] conserver la version applicable du formulaire de consentement comme preuve documentaire ;
-- [ ] formaliser les critères techniques d’éligibilité des familles nucléaires ;
-- [ ] documenter l’inclusion des mineurs (autorité parentale, information adaptée, majorité) ;
-- [ ] documenter, le cas échéant, les situations particulières d’information (section 5.4.2) ;
-- [ ] décrire la séparation fonctionnelle diagnostic / recherche dans l’AIPD ;
-- [ ] arbitrer une éventuelle dissociation du calendrier du volet familial ;
-- [ ] validation institutionnelle finale de l’intégration au périmètre RNIPH / MR-004.
-
----
-
-# 24. Position actuelle du protocole
-
-Au stade de cette version 0.8.8, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
-
-- la justification scientifique et médicale ;
-- l’intérêt public incluant la pharmacogénétique populationnelle ;
-- les objectifs ;
-- la cohorte principale ;
-- le circuit biologique EFS → CRB ;
-- le génotypage SNP réalisé en interne au CHU sur iScan Illumina ;
-- le circuit des 100 familles nucléaires à partir de reliquats d’ADN du CRB et de consentements recherche signés ;
-- la finalité strictement technique du volet familial pour l’amélioration du phasage ;
-- la pseudonymisation ;
-- les grandes catégories de données ;
-- les panels externes ;
-- les méthodes analytiques ;
-- la sélection des 350 WGS ;
-- les limites scientifiques ;
-- le calendrier général ;
-- le **portail web public de restitution des résultats agrégés**, séparé des données individuelles et soumis à des règles de contrôle de divulgation ;
-- les exclusions du traitement initial ;
-- le consentement génétique et la base légale RGPD envisagée ;
-- la procédure de découvertes incidentes ;
-- les règles minimales du portail public ;
-- l’encadrement de la collection biologique.
-
-Restent ouverts avant dépôt : la note de qualification DRCI, la qualification de POPGEN, les seuils du portail, la politique de découvertes incidentes, les modalités du volet familial et la déclaration CODECOH.
-
-Les principaux éléments encore manquants relèvent surtout des **arbitrages institutionnels, du dictionnaire final de données, des responsabilités, des durées de conservation, des contrats et de la définition formelle des règles de diffusion publique**, et non d’un manque de description scientifique du projet.
-
----
-
-# 25. Journal des modifications
-
-## Version 0.8.8
-
-- Sections 1.3, 10.5, 10.6 et 11.3 : allègement des répétitions du principe « familles nucléaires non utilisées pour les fréquences / la pharmacogénétique / la sélection des 350 », remplacées par des renvois courts à la section 5.4 (canonique), sur le modèle déjà appliqué en section 8.3. Correction d'une désynchronisation : cet allègement avait déjà été appliqué au HTML publié lors de la régénération 0.8.4 mais jamais reporté dans la source markdown.
-
-## Version 0.8.7
-
-- Section 13.1 : remplacement des deux sous-titres non numérotés (« Puissance statistique... », « Précision du phasage... ») par des amorces en gras dans le paragraphe, pour s'aligner sur la convention typographique déjà utilisée ailleurs dans le document (par exemple section 19.1) plutôt que d'introduire un nouveau niveau de titre.
-
-## Version 0.8.6
-
-- Section 13.1 : ajout de la justification bibliographique du dimensionnement pour la précision du phasage haplotypique (Browning & Browning 2011 ; Williams et al. 2012 ; Avadhanam & Williams 2025 ; Delaneau et al. 2019 ; Hofmeister et al. 2023), distincte de la puissance statistique sur les fréquences alléliques déjà présente ; explicitation du rôle des 100 familles nucléaires et de l'inutilisabilité des panels externes du fait de l'admixture (renvois aux sections 5.4, 9.1 et 10.5).
-
-## Version 0.8.5
-
-- Sections 1.8, 2 et 22 : la voie de financement FEDER envisagée n’étant plus mobilisable, remplacement de l’affirmation d’un financement acquis par un statut « démarche à engager » ; la durée cible de 36 mois est maintenue, aucune analyse ne pouvant de toute façon débuter avant financement complet du projet.
-
-## Version 0.8.4
-
-- Section 17.3 : rédaction allégée du cadre de la ressource durable ; suppression de la promesse de dispense d’information ultérieure liée à la case optionnelle.
-
-## Version 0.8.3
-
-- Section 5.4.2 : remplacement de l’exclusion automatique des familles par un examen des conditions d’utilisation de l’échantillon ; harmonisation par renvois courts en sections 6.5 et 23.6.
-
-## Version 0.8.2
-
-- Section 1.7 : intégration de la rédaction validée distinguant consentement génétique et fondement RGPD ; retrait de la justification par le portail public ; clarification du retrait et maintien des modalités opérationnelles à valider avec la DRCI et le DPO.
-
-## Version 0.8.1
-
-- Retrait de la comparaison méthodologique et de la publication des performances du phasage ; maintien des contrôles qualité internes (sections 5.4, 8.3, 10.5, 13, 14, 18.1 et 23.5).
-- Réintégration des décisions validées en versions 0.7.17 et 0.7.18 : note écrite conservée par le donneur avant signature et circuit de retrait via l’EFS, avec possibilité de contacter directement le DPO (sections 2, 6.2, 7.1 et 19).
-- Les autres propositions et points à arbitrer de la version 0.8.0 sont conservés pour la poursuite de la relecture.
-
-## Version 0.8.0 (historique)
-
-| Section | Modification | Motif |
-|---|---|---|
-| En-tête, 1, 2, 6, 7, 10, 16, 20 | Suppression des tirets cadratins et demi-cadratins ; « POPgen » harmonisé en « POPGEN » | Règle typographique du projet |
-| 1.3 | Argumentaire de qualification RNIPH et conséquence d’une requalification | Qualification présentée comme simple hypothèse |
-| 1.3, 6.5, 19.2, 23.6 | Vérification de la couverture de l’examen génétique par le consentement familial ; case 23.6 décochée | Article D. 1131-22-5 ; information individuelle exigée par la MR-004 |
-| 1.7 | Consentement génétique (article 16-10), base légale RGPD, articulation retrait / opposition | « Accord écrit » sans qualification juridique |
-| 1.8 | Financement FEDER | Rubrique attendue d’un protocole ; mention reprise dans la description du répertoire public |
-| 2, 5.1, 6.2, 6.3, 7.1, 7.2, 19 | « Accord écrit » remplacé par « consentement exprès écrit » | Idem 1.7 |
-| 5.4.1 à 5.4.3 | Mineurs, personnes ne pouvant pas être informées, dissociation possible | Angles morts du volet familial |
-| 7.4, 8.1, 8.4 | Code de site sans date ; âge en classes ; absence de géocodage des personnes | Quasi-identifiants ; exclusion du géocodage par la MR-004 |
-| 7.7 | Déclaration CODECOH, avis CPP à vérifier, conventions | Collection biologique non mentionnée |
-| 8.3, 14.1, 19 | Répétitions sur le volet familial remplacées par des renvois à 5.4 | Allègement |
-| 10.2, 10.5, 10.6, 20 | Ascendance inférée ; exécution locale ; renvoi pharmacogénétique vers 19.1 ; séparation fonctionnelle | AIPD ; transferts hors UE |
-| 12.2 | Statut de POPGEN, qualification RGPD, devenir des données et des échantillons | POPGEN est un projet de recherche, pas un prestataire |
-| 13.1, 13.2 | Justification des effectifs ; plan de gestion des données | Rubriques manquantes |
-| 14, 18.1 | Publication possible d’indicateurs agrégés de phasage | Décision de la version 0.7.16 modifiée, à arbitrer |
-| 14.1, 18.3, 18.4 | Règles minimales de divulgation du portail | Exigence de la MR-004 sur la présentation des résultats |
-| 16.2 | Étape M0 des formalités préalables | Enregistrement et validation avant commencement |
-| 17 | Distinction archivage / futures recherches ; case optionnelle ressource durable | Périmètre de la MR-004 |
-| 19.1 | Procédure de découvertes incidentes | Articles L. 1130-5 et D. 1131-22-4 |
-| 21 à 24 | Mention d’annexe interne ; références réglementaires ; checklist complétée ; position mise à jour | Préparation du dépôt |
