@@ -154,6 +154,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 
 # 25. Journal des modifications
 
+## Version 0.8.11
+
+- Ajout d'une nouvelle section 21.2 « Suivi du dossier » dans le protocole : une phrase de synthèse en fin de section 21 renvoie explicitement vers le présent document pour la traçabilité, les points à arbitrer, la position actuelle et le journal des modifications, sans réintroduire ce contenu dans le protocole lui-même.
+
 ## Version 0.8.10
 
 - Figure 1 (section 5) : correction de la légende, qui ne citait pas les sections 10.6 et 11.3 alors que deux des trois exclusions affichées (sélection des 350, pharmacogénétique) y sont détaillées. Correction de l'espacement entre le texte d'exclusion et la flèche de la figure, qui se chevauchaient visuellement (relevé par l'auteur sur une capture d'écran).
