@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.9, retrait du suivi interne et ajout de deux schémas de synthèse  
-**Version précédente :** 0.8.8, allègement des répétitions sur le volet familial  
+**Version :** 0.8.10, correction de la Figure 1 (légende et espacement)  
+**Version précédente :** 0.8.9, retrait du suivi interne et ajout de deux schémas de synthèse  
 **Date :** 18 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; le suivi interne du dossier (traçabilité, points à arbitrer, position d’avancement, journal des modifications) est tenu séparément dans `09_suivi_interne_et_journal.md`, hors du présent document  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -273,10 +273,10 @@ Aucun prélèvement sanguin supplémentaire n’est actuellement prévu spécifi
 <text class="cr-ts" x="630" y="68" text-anchor="middle" dominant-baseline="central" fill="#55554F">~100 (phasage uniquement)</text>
 <path d="M560 94 V150 H460" fill="none" stroke="#5B6B77" stroke-width="1.2" marker-end="url(#cr-arrow-triade)"/>
 <text class="cr-lb" x="565" y="112" dominant-baseline="central" fill="#4A5963">Phasage</text>
-<text class="cr-lb" x="520" y="145" dominant-baseline="central" fill="#8A2F17">Non utilisées pour :</text>
-<text class="cr-lb" x="520" y="161" dominant-baseline="central" fill="#8A2F17">fréquences · sélection 350 ·</text>
-<text class="cr-lb" x="520" y="177" dominant-baseline="central" fill="#8A2F17">pharmacogénétique (§ 5.4)</text>
-</svg><figcaption>Figure 1 : trois populations aux usages distincts. Source : synthèse de l’auteur, à partir des sections 1.3, 5.2 à 5.4 et 10.5.</figcaption></figure>
+<text class="cr-lb" x="520" y="170" dominant-baseline="central" fill="#8A2F17">Non utilisées pour :</text>
+<text class="cr-lb" x="520" y="186" dominant-baseline="central" fill="#8A2F17">fréquences · sélection 350 ·</text>
+<text class="cr-lb" x="520" y="202" dominant-baseline="central" fill="#8A2F17">pharmacogénétique (§ 5.4)</text>
+</svg><figcaption>Figure 1 : trois populations aux usages distincts. Source : synthèse de l’auteur, à partir des sections 1.3, 5.2 à 5.4, 10.5, 10.6 et 11.3.</figcaption></figure>
 
 ## 5.2 Cohorte principale
 
