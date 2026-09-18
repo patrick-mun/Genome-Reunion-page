@@ -1,7 +1,7 @@
 # Protocole scientifique MR-004 : Génome Réunion
 
-**Version :** 0.8.7, harmonisation des titres de la section 13.1  
-**Version précédente :** 0.8.6, justification bibliographique du phasage en section 13.1  
+**Version :** 0.8.8, allègement des répétitions sur le volet familial  
+**Version précédente :** 0.8.7, harmonisation des titres de la section 13.1  
 **Date :** 18 septembre 2026  
 **Statut :** document de travail à relire avec l’équipe, la DRCI et le DPO ; les sections 22 à 25 forment une annexe interne à retirer de la version déposée  
 **Règle de lecture :** toute mention **À confirmer / À arbitrer / À valider DRCI-DPO** correspond à un point institutionnel ou documentaire qui n’est pas encore formellement validé dans le dossier final.
@@ -45,7 +45,7 @@ Pour le **volet des 100 familles nucléaires**, aucun prélèvement supplémenta
 
 Le CRB réalise la sélection des familles et la **pseudonymisation avant toute mise à disposition** des échantillons ou données aux équipes de recherche. Les équipes de recherche ne reçoivent pas l’identité directe des personnes concernées.
 
-La finalité de ce volet est strictement **technique et méthodologique** : les familles nucléaires sont utilisées pour améliorer et contrôler le phasage par transmission mendélienne. Elles ne sont pas utilisées pour décrire les fréquences de variants dans la population réunionnaise, pour constituer le panel WGS des 350, ni pour les analyses pharmacogénétiques populationnelles.
+La finalité de ce volet est strictement **technique et méthodologique**, limitée à l’amélioration et au contrôle du phasage par transmission mendélienne ; ses limites d’usage sont décrites en section 5.4.
 
 La version du consentement recherche applicable et la traçabilité de sa signature seront conservées comme pièces justificatives du dossier réglementaire.
 
@@ -631,9 +631,7 @@ Objectifs :
 
 Le phasage est réalisé sur la cohorte SNP et enrichi par les WGS. Les 100 familles nucléaires apportent en complément des **contraintes de transmission mendélienne** utilisées exclusivement pour améliorer et contrôler la qualité du phasage.
 
-Le phasage et ses contrôles qualité répondent aux besoins internes des analyses du projet, sans objectif de comparaison méthodologique ni de publication de ses performances.
-
-Les familles nucléaires ne contribuent pas aux estimations de fréquences populationnelles.
+Le phasage et ses contrôles qualité répondent aux besoins internes des analyses du projet, sans objectif de comparaison méthodologique ni de publication de ses performances. Les limites d’usage des familles nucléaires sont décrites en section 5.4.
 
 L’imputation vise à projeter une partie de l’information du WGS vers la cohorte large ; la LAI peut compléter la description d’une population fortement admixée.
 
@@ -650,7 +648,7 @@ Les objectifs sont :
 - comparer, lorsque pertinent, ces fréquences avec des référentiels externes ;
 - identifier des variants ou couples gène-médicament suffisamment pertinents localement pour justifier des études cliniques ultérieures.
 
-Les données des 100 familles nucléaires ne sont pas utilisées dans ces analyses pharmacogénétiques populationnelles.
+Les données des 100 familles nucléaires ne sont pas utilisées dans ces analyses (section 5.4).
 
 Cette analyse reste **populationnelle et descriptive**. Le protocole initial n’utilise pas de données de prescription, de réponse thérapeutique ou d’événement indésirable et ne produit aucune recommandation médicale individuelle.
 
@@ -683,7 +681,7 @@ Les variables dérivées utilisées par l’algorithme restent des données gén
 
 La sélection n’a aucune finalité clinique individuelle ni d’identification des participants.
 
-Les 100 familles nucléaires ne participent pas à cette sélection.
+Les 100 familles nucléaires ne participent pas à cette sélection (section 5.4).
 
 ---
 
@@ -1235,7 +1233,7 @@ Annexes scientifiques de référence :
 
 # 24. Position actuelle du protocole
 
-Au stade de cette version 0.8.7, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
+Au stade de cette version 0.8.8, le corpus du dépôt et les décisions de conception permettent de décrire de manière cohérente :
 
 - la justification scientifique et médicale ;
 - l’intérêt public incluant la pharmacogénétique populationnelle ;
@@ -1266,6 +1264,10 @@ Les principaux éléments encore manquants relèvent surtout des **arbitrages in
 ---
 
 # 25. Journal des modifications
+
+## Version 0.8.8
+
+- Sections 1.3, 10.5, 10.6 et 11.3 : allègement des répétitions du principe « familles nucléaires non utilisées pour les fréquences / la pharmacogénétique / la sélection des 350 », remplacées par des renvois courts à la section 5.4 (canonique), sur le modèle déjà appliqué en section 8.3. Correction d'une désynchronisation : cet allègement avait déjà été appliqué au HTML publié lors de la régénération 0.8.4 mais jamais reporté dans la source markdown.
 
 ## Version 0.8.7
 
