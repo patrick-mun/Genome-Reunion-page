@@ -47,6 +47,7 @@ Genome-Reunion-page/
 │   ├── financement.html                # Page financement
 │   ├── presentation.html               # Page présentation
 │   ├── communication.html              # Supports de communication
+│   ├── livret/                         # Livret donneur A5 (web + PDF imposition A4 + PDF A5)
 │   ├── architecture_pipeline.html      # Architecture du pipeline de validation
 │   ├── Genome_Reunion_synthese_infrastructure_v5_4.html
 │   └── Stratégie visuelle Genome Reunion - Standalone.html  # Bundle auto-extractible, alimente l'onglet Communication
