@@ -22,6 +22,13 @@ const TAG_CLASS = {
 // à chaque évolution notable du site.
 const OFFICIAL_NEWS = [
   {
+    date: '06/10/2026',
+    category: 'Nouveau document',
+    title: 'Livret donneur A5 (version de travail)',
+    desc: "Réalisation du livret remis aux donneurs de l'EFS : pourquoi le projet, ce qu'il apporte, déroulement du don, données et droits, et accord de participation à détacher en deux exemplaires. Disponible en version web et en PDF (A5 et imposition A4, prêt à imprimer) dans la carte « Livret donneur » de la page Communication.",
+    link: { url: 'template/communication.html', label: 'Voir la page Communication →' }
+  },
+  {
     date: '18/09/2026',
     category: 'Mise à jour',
     title: 'Protocole scientifique MR-004 revu (v0.8.11)',
