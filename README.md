@@ -41,8 +41,8 @@ Genome-Reunion-page/
 │   ├── METHODOLOGIE_validation_protocole_v1_5.html
 │   ├── METHODOLOGIE_validation_annexeB_simulation_v1_5.html
 │   ├── Genome_Reunion_synthese_scientifique (14) (6).html
-│   ├── Genome_Reunion_Landing_v4.html
-│   ├── Genome_Reunion_Participer_v4.html
+│   ├── Genome_Reunion_Landing_v4.html  # redirige vers le nouveau site
+│   ├── Genome_Reunion_Participer_v4.html # redirige vers la page Participer du nouveau site
 │   ├── feder.html                      # Demande de financement FEDER
 │   ├── financement.html                # Page financement
 │   ├── presentation.html               # Page présentation
